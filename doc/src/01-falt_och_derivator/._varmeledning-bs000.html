@@ -1,0 +1,286 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Datoruppgift 2: Värmeledning">
+
+<title>FFM232, Datoruppgift 2: Värmeledning</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [(u'Inledning', 1, None, '___sec0'),
+              (u'Numerisk behandling av v\xe4rmeledningsekvationen',
+               1,
+               None,
+               '___sec1'),
+              (u'Uppgifter', 1, None, '___sec2'),
+              (u'Uppgift 1: Temperaturf\xf6rdelning i betongv\xe4gg med Dirichlet randvillkor',
+               2,
+               None,
+               '___sec3'),
+              (u'Goda r\xe5d:', 3, None, '___sec4'),
+              (u'Uppgift 2: Temperaturf\xf6rdelning i betongv\xe4gg med Neumann randvillkor',
+               2,
+               None,
+               '___sec5'),
+              (u'Goda r\xe5d:', 3, None, '___sec6'),
+              (u'Uppgift 3: Temperaturf\xf6rdelning i betongv\xe4gg med olika randvillkor',
+               2,
+               None,
+               '___sec7'),
+              (u'Uppgift 4: Temperaturf\xf6rdelning i betongv\xe4gg med v\xe4rmek\xe4lla',
+               2,
+               None,
+               '___sec8'),
+              (u'Goda r\xe5d:', 3, None, '___sec9'),
+              (u'Om rapporten', 1, None, '___sec10')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="varmeledning-bs.html">FFM232, Datoruppgift 2: Värmeledning</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Inledning</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;"><b>Numerisk behandling av värmeledningsekvationen</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Uppgifter</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 1: Temperaturfördelning i betongvägg med Dirichlet randvillkor</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goda råd:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 2: Temperaturfördelning i betongvägg med Neumann randvillkor</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goda råd:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 3: Temperaturfördelning i betongvägg med olika randvillkor</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 4: Temperaturfördelning i betongvägg med värmekälla</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goda råd:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;"><b>Om rapporten</b></a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM232, Datoruppgift 2: Värmeledning</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Ulf Torkelsson, Astrofysik, Chalmers och Göteborgs universitet -->
+
+<center>
+<b>Ulf Torkelsson, Astrofysik, Chalmers och Göteborgs universitet</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>(Notationsanpassad och mycket lätt modifierad 2010)</h4></center> <!-- date -->
+<br>
+<center><p><img src="fig-varmeledning/Fourier.png" align="bottom" width=300></p></center>
+
+<p>
+</div> <!-- end jumbotron -->
+
+<h1 id="___sec0">Inledning </h1>
+
+<p>
+I den här laborationen skall vi studera värmeledningen genom en husvägg. Den fysikaliska processen beskrivs av värmeledningsekvationen
+$$
+\begin{equation}
+  \frac{\partial T}{\partial t} = k \nabla^2 T,
+\end{equation}
+$$
+
+där \( T \) beskriver temperaturen som en funktion läget och tiden, och \( k = \lambda /(c\rho) \), där \( \lambda \) är värmeledningsförmågan, \( c \) värmekapacitiviten och \( \rho \) materialets densitet. För att ge en entydig lösning måste värmeledningsekvationen kompletteras med begynnelse- och rand-villkor för temperaturen, det vill säga vi måste beskriva temperaturfördelningen i väggen vid starttidpunkten, och ge villkor för temperaturen eller temperaturgradienten på väggens inner- och yttersidor vid varje tidpunkt.
+
+<h1 id="___sec1">Numerisk behandling av värmeledningsekvationen </h1>
+
+<p>
+Det finns analytiska tekniker för att lösa den tidsberoende värmeledningsekvationen, men dessa kräver metoder som ingår i Fourier-analyskursen, och faller därmed utanför ramen för vår kurs. Däremot kan vi konstruera en enkel numerisk metod för att lösa värmeledningsekvationen.  Låt oss till att börja med anta att väggen har en oändlig utsträckning, men endast en ändlig tjocklek \( d \), så att vi bara behöver studera temperaturvariationer genom väggen. Värmeledningsekvationen reduceras då till den endimensionella ekvationen
+$$
+\begin{equation}
+  \frac{\partial T}{\partial t} = k \frac{\partial^2 T}{\partial x^2},
+\end{equation}
+$$
+
+där \( x \) är avståndet från väggens innersida. Vi delar nu in väggen i \( m \) punkter, så att den första och sista punkten ligger på väggens inner- respektive yttersida, och övriga punkter ligger på ett avstånd \( \delta x = d/(m-1) \) från varandra. \( \nabla^2 T \) i punkten \( x_i \) kan då skrivas
+$$
+\begin{equation}
+  \frac{\partial^2 T_i}{\partial x^2} = \frac{T_{i+1} - 2 T_i +
+T_{i-1}}{\delta x^2}.
+\end{equation}
+$$
+
+På samma sätt kan vi approximera tidsderivatan i punkten \( i \) med
+$$
+\begin{equation}
+  \frac{\partial T_i}{\partial t} = \frac{T_i\left(t+\delta t\right) - T_i
+\left(t\right)}{\delta t}.
+\end{equation}
+$$
+
+Detta ger oss differensekvationen
+$$
+\begin{equation}
+  \frac{T_i\left(t+\delta t\right) -T_i\left(t\right)}{\delta t} = k
+\frac{T_{i+1}\left(t\right) - 2 T_i\left(t\right) +
+T_{i-1}\left(t\right)}{\delta x^2}.
+\end{equation}
+$$
+
+Vi kan nu lösa ut \( T_i(t + \delta t) \):
+$$
+\begin{equation}
+  T_i\left(t + \delta t\right) = T_i\left(t\right) + \delta t k
+\frac{T_{i+1}\left(t\right) - 2 T_i\left(t\right) +
+T_{i-1}\left(t\right)}{\delta x^2}.
+\tag{1}
+\end{equation}
+$$
+
+Detta ger oss en enkel metod för att lösa värmeledningsekvationen.
+
+<p>
+Vad som nu återstår att göra är att bestämma storleken på tidssteget \( \delta t \).  Om \( \delta t \) blir för stor blir nämligen vår algoritm instabil.  För stabilitet krävs ett tidssteg
+$$
+\begin{equation}
+  \delta t = K \frac{\delta x^2}{k},
+\end{equation}
+$$
+
+där \( K \) skall vara av storleksordningen 0.5.  Det syns tydligt om algoritmen blir instabil, eftersom i så fall kommer temperaturen snabbt att bli orimligt hög i någon punkt. Vårt uttryck för \( \delta t \) visar också på begränsningen med vår metod.  Tidssteget kommer att bli väldigt kort om vi behöver ett kort avstånd mellan våra punkter. Därför används mer sofistikerade metoder i professionella beräkningar.
+
+<h1 id="___sec2">Uppgifter </h1>
+
+<p>
+Uppgifterna nedan går ut på att lösa och visualisera temperaturfördelningen genom en betongvägg med olika randvillkor.
+
+<h2 id="___sec3">Uppgift 1: Temperaturfördelning i betongvägg med Dirichlet randvillkor </h2>
+
+<p>
+Skriv ett Matlab-program för att studera hur temperaturfördelningen genom en betongvägg utvecklas med tiden.  Vi antar att betongväggen är 30 cm tjock, och att vid starttidpunkten \( (t = 0) \) håller hela väggen temperaturen \( 0\,^\mathrm{o}\mathrm{C} \), utom väggens innersida som håller temperaturen \( 22\,^\mathrm{o}\mathrm{C} \).  Väggens inner- och yttersidor antar vi håller konstant temperatur.  Erforderliga materialkonstanter kan hittas i t.ex. Physics Handbook. Ange i rapporten vilka numeriska värden ni använder. Tänk också på att ge en explicit skala på tidsaxeln så man kan se hur snabbt tidsförloppet är. Bestäm dessutom analytiskt den stationära temperaturfördelningen i väggen.
+
+<h3 id="___sec4">Goda råd: </h3>
+
+Börja med att bestämma hur många punkter du skall använda, 20 till 30 stycken torde räcka.  Den första punkten kommer då att ligga på väggens innersida och den sista punkten på väggens yttersida.  Skapa sedan två vektorer <em>T1</em> och <em>T2</em>, som båda har lika många element som antalet punkter i väggen.  <em>T1</em> skall få lagra temperaturen vid den gamla tidpunkten, medan <em>T2</em> kommer att innehålla temperaturen vid den nya tidpunkten, vilken beräknas ur Ekv. <a href="#mjx-eqn-1">(1)</a>.  Alltså måste du sätta <em>T1</em> till väggens temperaturfördelning vid \( t = 0 \). Detta är enkelt att göra om du använder funktionen <code>zeros(m)</code>, som ger dig en flyttalsvektor med \( m \) element, som alla är 0, och sedan kan du bara ändra på temperaturen i den första punkten.  Beräkna sedan övriga konstanter som du behöver.  Konstruera sedan en loop för att beräkna <em>T2</em> ur <em>T1</em> enligt Ekv. <a href="#mjx-eqn-1">(1)</a>, men ta inte med de första och sista punkterna i <em>T2</em>, ty dessa representerar randvillkoren.  Upprepa sedan beräkningen av <em>T2</em> så många gånger som behövs för att du skall kunna följa temperaturutvecklingen.  Tänk på att i slutet av varje steg, när hela <em>T2</em> är beräknad måste du tilldela <em>T1</em> det värde som <em>T2</em> har.
+
+<p>
+Vi har nu löst värmeledningsekvationen med randvillkoret att temperaturen är konstant på väggens inner- och yttersidor.  Detta är ett exempel på ett Dirichlet-villkor.  I ett värmeledningsproblem betyder detta att väggen hela tiden tar emot eller avger precis så mycket värme som krävs för att den skall behålla samma temperatur. En annan möjlighet är att väggens inner- och yttersidor är isolerade på ett sådant sätt att de inte kan ta emot eller avge någon värme till omgivningen.  Det betyder att värmeströmmen, \( -\lambda \nabla T \) är 0 på väggens sidor, alltså måste \( \nabla T \) försvinna där. Sådana randvillkor kallar vi för Neumann-villkor.
+
+<h2 id="___sec5">Uppgift 2: Temperaturfördelning i betongvägg med Neumann randvillkor </h2>
+
+<p>
+Antag att vi vid \( t = 0 \) har följande temperaturfördelning i väggen
+$$
+\begin{equation}
+  T\left(x\right) = T_0 \frac{x\left(d-x\right)}{d^2},
+\end{equation}
+$$
+
+där \( 0 \le x \le d \), och att \( T_0 = 100\,^\mathrm{o}\mathrm{C} \).  Vidare antar vi att ingen värme passerar genom väggens begränsningsytor. Följ temperaturprofilens utveckling med tiden. Bestäm dessutom analytiskt den stationära temperaturfördelningen i väggen.
+
+<h3 id="___sec6">Goda råd: </h3>
+
+Man kan approximativt uppfylla randvillkoret att \( \partial_x T = 0 \) på ränderna genom att sätta <code>T1(1) = T1(2)</code> och <code>T1(m) = T1(m-1)</code>.  Strängt taget så betyder det att derivatan blir 0 någonstans mellan de båda första respektive de båda sista punkterna, men detta räcker för våra syften. Som överkurs går det att generalisera den här metoden så att derivatan blir 0 precis på randen.
+
+<h2 id="___sec7">Uppgift 3: Temperaturfördelning i betongvägg med olika randvillkor </h2>
+
+<p>
+Man kan också blanda de båda formerna av randvillkor.  Antag att vår vägg på insidan håller temperaturen \( 22\,^\mathrm{o}\mathrm{C} \), medan yttersidan är isolerad, så att ingen värme passerar igenom den.  Följ utvecklingen av temperaturfördelningen i väggen om det inre av väggen från början håller \( 0\,^\mathrm{o}\mathrm{C} \). Bestäm dessutom analytiskt den stationära temperaturfördelningen i väggen.
+
+<h2 id="___sec8">Uppgift 4: Temperaturfördelning i betongvägg med värmekälla </h2>
+
+<p>
+Modifiera nu värmeledningsekvationen, och algoritmen i Ekv. <a href="#mjx-eqn-1">(1)</a>, så att ni kan ta med att det finns en värmekälltäthet \( s \) i väggen.  Lös den nya ekvationen för fallet att ni har en konstant värmekälltäthet på \( 1\,\mathrm{kW}\,\mathrm{m}^{-3} \).  Antag att hela väggen från början har temperaturen \( 0\,^\mathrm{o}\mathrm{C} \), att väggens båda sidor håller denna temperatur hela tiden. Bestäm dessutom analytiskt den stationära temperaturfördelningen i väggen.
+
+<h3 id="___sec9">Goda råd: </h3>
+
+Tänk på enheten för \( s \), och jämför med hur vi gör i föreläsningsanteckningarna.
+
+<h1 id="___sec10">Om rapporten </h1>
+
+<ul>
+<li> Rapporten skall skrivas i TeX/LaTeX. Arbetar man i par lämnas en gemensam rapport in.</li>  
+<li> Rapporten skall inte omfatta mer än fyra sidor inklusive era figurer.</li>
+<li> Beskriv kortfattat i rapporten hur ni går tillväga och vilka ekvationer ni använder, men ni behöver inte redovisa era program.</li> 
+<li> Tänk på att ge så mycket detaljer så att någon annan kan upprepa era beräkningar. Glöm inte enheter.</li> 
+<li> Redovisa era resultat i grafisk form när det är lämpligt.</li> 
+<li> Diskutera och tolka era resultat.</li>
+</ul>
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._varmeledning-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

@@ -1,0 +1,26 @@
+translating doconce text in 04-integralsatser.do.txt to html
+*** error: \\ and array/matrix declaration on the same line:
+    \end{array}\right| \nonumber \\
+    -> split into multiple lines!
+translating doconce text in 04-integralsatser.do.txt to html
+output in 04-integralsatser.html
+translating doconce text in 04-integralsatser.do.txt to html
+output in 04-integralsatser-bs.html
+translating doconce text in 04-integralsatser.do.txt to pdflatex
+open file with encoding utf-8
+*** made directory latex_figs for admon figures
+output in 04-integralsatser.tex
+translating doconce text in 04-integralsatser.do.txt to html
+output in 04-integralsatser.html
+translating doconce text in 04-integralsatser.do.txt to html
+output in 04-integralsatser-bs.html
+translating doconce text in 04-integralsatser.do.txt to pdflatex
+open file with encoding utf-8
+output in 04-integralsatser.tex
+translating doconce text in 04-integralsatser.do.txt to html
+output in 04-integralsatser.html
+translating doconce text in 04-integralsatser.do.txt to html
+output in 04-integralsatser-bs.html
+translating doconce text in 04-integralsatser.do.txt to pdflatex
+open file with encoding utf-8
+output in 04-integralsatser.tex

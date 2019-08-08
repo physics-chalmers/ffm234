@@ -1,0 +1,478 @@
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.html
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi\phi =
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+*** made directory latex_figs for admon figures
+*** error: character "," is not legal in notice admon title:
+   "Exempel: Stagnationsström, konservativt hastighetsfält"
+    for --latex_admon=mdfbox
+    see if you can replace , by "and" or a dash...
+    (the character will simply be removed if you override the abortion)
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.html
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi\phi =
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.html
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi\phi =
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.html
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi\phi =
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.html
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi\phi =
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.html
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi\phi =
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.html
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html
+translating doconce text in 08-potentialteori.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+0c_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+rtial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0c_0 = \phi(\vec{r}_0)c_x = d\phi/dx(\vec{r}_0)xy\phi = xy\
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori.tex
+translating doconce text in 08-potentialteori.do.txt to html
+*** warning: found reference "figurerna ref{fig:xy}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:xy}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:xy})?)
+*** warning: found reference "och ref{fig:x2y2}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:x2y2}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:x2y2})?)
+output in 08-potentialteori-bs.html

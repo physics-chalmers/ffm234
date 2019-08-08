@@ -1,0 +1,121 @@
+
+# Information about all exercises in the file 01-falt_och_derivator.do.txt.
+# The information can be loaded into a Python list of dicts by
+#
+# f = open('.01-falt_och_derivator.exerinfo', 'r')
+# exer = eval(f.read())
+#
+[{'answer': '$[\\Phi]$/längd. Notera att $[\\hat{n}]=1$.',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': '=====',
+  'hints': [],
+  'keywords': None,
+  'label': None,
+  'no': 1,
+  'solution': '',
+  'solution_file': None,
+  'subex': [],
+  'text': 'Vad blir enheten på denna riktningsderivata?\n'
+          '\n'
+          'Gradientoperatorn\n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          '  \\vnabla = \\left(\\frac{\\partial}{\\partial x}, '
+          '\\frac{\\partial}{\\partial y},\n'
+          '\\frac{\\partial}{\\partial z}\\right),\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'är i sig själv inte en vektor, utan den är en vektoroperator, som '
+          'tar ett skalärfält och producerar ett vektorfält.  Skillnaden '
+          'mellan en vektoroperator och en vektor kommer att märkas när vi '
+          'bekantar oss med räknereglerna för vektoroperatorer.\n'
+          '\n'
+          'Det är enkelt att visa att $\\vnabla \\Phi$ är ortogonal mot '
+          'nivåytorna för $\\Phi$.  Låt $\\hat{e}_t$ vara en tangentvektor '
+          'till en nivåyta genom en punkt $\\vec{r}_0$. Eftersom $\\Phi = '
+          '\\Phi_0$ (konstant) längs nivåytan gäller att \n'
+          '!bt\n'
+          '\\[\n'
+          '\\hat{e}_t \\cdot \\vnabla \\Phi = 0 \\quad \\Rightarrow \\quad '
+          '\\hat{e}_t \\perp \\vnabla \\Phi.\n'
+          '\\]\n'
+          '\n'
+          '!et\n'
+          '\n'
+          'Kurvor som i varje punkt har $\\vnabla \\Phi$ som tangentvektor '
+          'kallas för _fältlinjer_.\n'
+          '\n'
+          '=== Exempel ===\n'
+          '\n'
+          'Betrakta en bergstopp med en höjdyta som ges av\n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          'h(\\vec{r}) = \\frac{h_0}{1+\\frac{x^2+y^2}{R^2}},\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'där $h$ ger höjden över havet, $h_0$ är höjden på toppen av berget, '
+          'och $R$ är ett mått på bergets utbredning.\n'
+          '\n'
+          '\n'
+          'FIGURE:[fig/hojd_surface.png, width=600 frac=0.8]\n'
+          '\n'
+          'Vi kan göra en höjdkarta genom att rita upp några nivåytor, dvs '
+          'kurvor som motsvarar konstanta värden på $h$. Vi ser enkelt att '
+          'kurvan $x^2 + y^2 = C^2$ (konstant) ger $h_C = '
+          '\\frac{h_0}{1+\\frac{C^2}{R^2}}$ (konstant) och att höjdkurvorna '
+          'därför motsvarar cirklar med centrum i origo ($x=y=0$).\n'
+          '\n'
+          '\n'
+          'FIGURE:[fig/hojd_contour.png, width=600 frac=0.8]\n'
+          '\n'
+          'Eller kombinerat med höjdkurvor enligt en kontinuerlig färgskala\n'
+          '\n'
+          'FIGURE:[fig/hojd_contour_colormesh.png, width=600 frac=0.8]\n'
+          '\n'
+          'Gradienten av detta fält kommer att motsvara höjdändringen per '
+          'längdenhet i horisontalplanet. Vi finner denna genom att skriva '
+          '$x^2 + y^2 = r^2$ så att $h=h(r)$. Vi får\n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          '\\frac{\\mbox{d}h}{\\mbox{d}r} = - \\frac{h_0}{(1+r^2/R^2)^2} '
+          '\\frac{2r}{R^2}\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'Vidare är \n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          '\\frac{\\partial r}{\\partial x} = \\frac{1}{2} (x^2 + y^2)^{-1/2} '
+          '2 x = \\frac{x}{r},\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'och pss $\\partial_y r = y/r$. Därför blir\n'
+          '!bt\n'
+          '\\begin{align}\n'
+          '\\vnabla h &= \\hat{x} \\partial_x h + \\hat{y} \\partial_y h \n'
+          '= \\hat{x} \\frac{\\partial h}{\\partial r} \\frac{\\partial '
+          'r}{\\partial x}\n'
+          '+ \\hat{y} \\frac{\\partial h}{\\partial r} \\frac{\\partial '
+          'r}{\\partial y} \\\\ \n'
+          '&= - \\frac{2h_0}{R^2 (1+r^2/R^2)^2} \\left( x \\hat{x} + y '
+          '\\hat{y} \\right).\n'
+          '\\end{align}\n'
+          '\n'
+          '!et\n'
+          'Riktningen på denna vektor ser vi är $x\\hat{x} + y\\hat{y} = '
+          'r\\hat{r}$, dvs den horisontella höjdgradienten är riktad radiellt '
+          'inåt - mot större värden av $h$.\n'
+          '\n'
+          '\n'
+          'FIGURE:[fig/hojd_gradient.png, width=600 frac=0.8]',
+  'title': 'Enhet på riktningsderivata',
+  'type': 'Problem',
+  'type_visible': False}]

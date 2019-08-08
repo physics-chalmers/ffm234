@@ -1,0 +1,270 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [(u'12. Tensorer', 1, None, '___sec0'),
+              (u'Koordinattransformationer', 2, None, '___sec1'),
+              (u'Skal\xe4rer och vektorer', 2, None, '___sec2'),
+              (u'Tensorer', 2, None, '___sec3'),
+              (u'Exempel: vektor-vektor', 3, None, '___sec4'),
+              (u'Exempel: matris-vektor', 3, None, '___sec5'),
+              (u'Exempel: Kryssprodukt', 3, None, '___sec6'),
+              (u'Tr\xf6ghetstensorn', 2, None, '___sec7')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<a name="part0000"></a>
+<p>
+<!-- begin top navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end top navigation -->
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>, Institutionen för fundamental fysik, Chalmers, Göteborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>, Institutionen för fundamental fysik, Chalmers, Göteborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 17, 2015</h4></center> <!-- date -->
+<br>
+
+<h1 id="___sec0">12. Tensorer </h1>
+
+<ul>
+<li> Fysikaliska lagar skall inte bero på i vilket koordinatsystem de beskrivs.</li>
+<li> Detta kan vi åstadkomma genom att skriva dessa lagar som en likhet mellan två objekt vilka vi vet transformerar likadant under en koordinattransformation.</li>
+<li> Vi kommer att kalla sådana objekt för <em>tensorer</em>.</li>
+<li> En invarians kan kopplas till en symmetri. Invariansen kan kodas in genom att använda ett "tensorspråk".</li>
+<li> Kan generaliseras till större symmetrier. T.ex. Lorentzinvarians i speciell relativitetsteori vilken involverar rum-tiden (fyra dimensioner); och mer allmänna koordinattransformationer i allmän relativitetsteori.</li>
+</ul>
+
+Mål:
+
+<ul>
+<li> Hur beskriva transformation mellan cartesiska koordinatsystem</li>
+<li> Transformationsegenskaper hos: Skalär, vektor, ... generell tensor</li>
+<li> Visa att diverse objekt verkligen är tensorer</li>
+<li> Fysikaliskt exempel: Tröghetstensorn</li>
+</ul>
+
+<h2 id="___sec1">Koordinattransformationer </h2>
+
+<p>
+När vi byter koordinater från ett Cartesiskt högersystem, med koordinater
+\( x_i \), till ett annat (med origo i samma punkt), med koordinater \( x'_i \), relateras 
+$$
+\begin{equation}
+x'_i=L_{ij}x_j,
+ref{eq:transf}
+\end{equation}
+$$
+
+där \( \mathbf{L} \) är en ortogonal matris som uppfyller \( \mathbf{L}\mathbf{L}^t = \mathbf{I}=\mathbf{L}^t\mathbf{L} \). Från detta följer direkt att \( \det(\mathbf{L}^t\mathbf{L}) =  \det(\mathbf{L})^2 = \det\mathbf{I}=1 \) vilket ger \( \det\mathbf{L}=\pm 1 \).
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 1</b>: Om \( \mathbf{L} \) transformerar ett högersystem till ett högersystem gäller plustecknet, \( \det\mathbf{L}=1 \).)</font>
+<!-- end inline comment -->
+
+<p>
+I indexnotation
+$$
+\begin{equation}
+\left( L^t L \right)_{ij} = \left( L^t \right)_{ik} L_{kj} 
+L_{ki}L_{kj}=\delta_{ij}.
+\end{equation}
+$$
+
+<p>
+Ett allmänt uttryck för determinanten av en \( (3\times3) \)-matris är 
+$$
+\begin{equation}
+\det\mathbf{M}=\varepsilon^{ijk}M_{1i}M_{2j}M_{3k}
+\end{equation}
+$$
+
+<p>
+Notera att vi genom att derivera Ekv. (<div id="eq:transf"></div>) kan skriva matrisen \( \mathbf{L} \) som \( L_{ij}=\frac{\partial x'_i}{\partial x_j} \). Eftersom matrisen är ortogonal gäller den inversa relationen \( x_i=L_{ji}x'_j \), och vi har också \( L_{ij}=frac{\partial x_j}{\partial x'_i} \).
+
+<h2 id="___sec2">Skalärer och vektorer </h2>
+En skalär \( s \) (= enklaste exempel på en tensor) kännetecknas av att den tar samma värde i alla koordinatsystem, dvs. \( s'=s \).
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 2</b>: Det är viktigt att förstå att det är transformationsregeln som är det viktiga. Det räcker inte med att "$s$ är ett tal".)</font>
+<!-- end inline comment -->
+ 
+Sålunda är \( x \)-koordinaten för en punkt i \( \mathbf{R}^3 \) inte en skalär, men t.ex. temperaturen i en punkt är en skalär. (Rita)
+
+<p>
+Det näst enklaste exemplet på en tensor är en \word{vektor}.
+
+<p>
+En vektor \( \vec v \) är en uppsättning tal som beter sig likadant som
+ortvektorns komponenter när vi byter system, dvs.
+$$
+\begin{equation}
+v'_i=L_{ij}v_j\punkt\eqn
+\end{equation}
+$$
+
+Det är denna transformationsregel som definierar vilka uppsättningar av tre (eller \( D \)) tal som får privilegiet att kallas vektor.
+
+<h2 id="___sec3">Tensorer </h2>
+Nu är det rättframt att gå vidare och definiera objekt,  tensorer, som har fler än ett index. En matris kan, som vi redan sett, skrivas som en tensor med två index, \( T_{ij} \). Men inget hindrar att man har ett godtyckligt antal, säg \( p \). En tensor med \( p \) index (en tensor av rank \( p \)) skrivs \( T_{i_1i_2\ldots i_p} \). Transformationsregeln ger t.ex. \( T'_{ij}=L_{ik}L_{jl}T_{kl} \), och allmänt
+$$
+\begin{equation}
+T'_{i_1\ldots i_p}=L_{i_1j_1}\ldots L_{i_pj_p}T_{j_1\ldots j_p}\punkt\eqn.
+\end{equation}
+$$
+
+<p>
+Poängen med detta är att man kan multiplicera samman tensorer och
+vara säker på att resultatet blir en tensor.
+
+<h3 id="___sec4">Exempel: vektor-vektor </h3>
+
+Om vi bildar \( c_{ij}=a_ib_j \) följer det direkt att \( c_{ij} \) är en tensor. Man kan &quot;kontrahera&quot; två index, såsom man bildar skalärprodukten.
+
+<h3 id="___sec5">Exempel: matris-vektor </h3>
+
+\( u_i=M_{ij}v_j \). I det nya systemet har man då
+\( M'_{ij}v'_j=L_{ik}L_{jl}M_{kl}L_{jm}v_m=L_{ik}\delta_{lm}M_{kl}v_m=L_{ik}M_{kl}v_l
+=L_{ik}u_k \) (där vi i första steget har använt att \( \mathbf{L} \) är ortogonal). Om \( M_{ij} \) och \( v_i \) är tensorer är alltså även \( u_i \) det. Det allmänna beviset går likadant (och innefattar förstås det faktum att skalärprodukten av två vektorer är en skalär).
+
+<h3 id="___sec6">Exempel: Kryssprodukt </h3>
+
+\( (\vec a\times\vec b)_i=\varepsilon_{ijk}a_jb_k \). Vi har inte visat att den är en vektor (men i linjär algebrakurserna har ni säkert gjort det). Från räknereglerna ovan följer att om vi kan visa att \( \varepsilon_{ijk} \) är en tensor så ger kryssprodukten av två
+vektorer en vektor. Transformationsreglerna
+säger
+$$
+\begin{equation}
+\e'_{ijk}=L_{il}L_{jm}L_{kn}\varepsilon_{lmn}
+\end{equation}
+$$
+
+Man försäkrar sig enkelt att högerledet är totalt antisymmetriskt (dvs. byter tecken om vilka två som helst av indexen \( ijk \) byter plats). <em>Gör det.</em>
+
+<p>
+Då måste det vara proportionellt mot \( \varepsilon_{ijk} \), och det räcker att kontrollera
+en permutation, t.ex. \( ijk=123 \). Högerledet blir då   \( \varepsilon_{lmn}L_{1l}L_{2m}L_{3m}=\det\mathbf{L}=1=\varepsilon_{123} \). Så \( \varepsilon'_{ijk}=\varepsilon_{ijk} \), \word{Levi--Civita-tensorn} är en <em>invariant tensor</em>. Den enda andra invarianta tensorn är Kroneckers delta. Visa själv att \( \delta'_{ij}=\delta_{ij} \).
+
+<p>
+Vi behöver också kunna derivera. Låt oss visa det litet triviala påståendet att gradienten
+av en skalär är en vektor. Vi har \( (\nabla\phi)'_i=\frac{\partial}{\partial x'_i}\phi'=\frac{\partial \phi}{\partial x_j} \frac{\partial x_j}{\partial x'_i}=
+L_{ij} \frac{\partial \phi}{\partial x_j}=L_{ij}(\nabla\phi)_j \). Detta visar att \( \partial _i \) är en vektoroperator, och man kan sedan använda den för att konstruera andra derivator (divergens, rotation osv.). Samma regler gäller för \( \partial _i \) som för andra tensorer.
+
+<h2 id="___sec7">Tröghetstensorn </h2>
+Ett annat klassiskt exempel är tröghetstensorn,  
+$$
+\begin{equation}
+I_{ij}=\Int_VdV\,\rho(r^2\delta_{ij}-x_ix_j),
+\end{equation}
+$$
+
+som man räknade ut i stelkroppsdynamik. Den relaterar rörelsemängdsmomentet till
+rotationsvektorn enligt \( L_i=I_{ij}\omega_j \). I och med att den innehåller upprepade
+kryssprodukter är det enklare att härleda den i tensorformalism.
+
+<p>
+Ett litet volymelement \( dV \) av en stel kropp har massan \( dm=\rho dV \),
+och om kroppen roterar med en rotationsvektor \( \omega_i \) har
+det hastigheten \( v_i=(\vec\omega\times\vec{r})_i=\varepsilon_{ijk}\omega_jx_k \). 
+Dess rörelsemängd är \( dp_i=dmv_i=dm\varepsilon_{ijk}\omega_jx_k \). Bidraget till rörelsemängdsmomentet från volymelementet är 
+$$
+\begin{align}
+\varepsilon_{ijk}x_jp_k &= dm\varepsilon_{ijk}x_j\varepsilon_{klm}\omega_lx_m
+=dm(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})x_jx_m\omega_l \nonumber \\
+&=dm(r^2\omega_i-x_ix_j\omega_j)=dV\rho(r^2\delta_{ij}-x_ix_j)\omega_j
+\end{align}
+$$
+
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

@@ -1,0 +1,688 @@
+TITLE: FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/tsp/", Institutionen för fysik, Chalmers, Göteborg, Sverige 
+DATE: today
+
+=======  11. Elektromagnetiska fält och Maxwells ekvationer =======
+
+Vi startar med att betrakta *statiska* elektriska och magnetiska (elektrostatik och magnetostatik) för att sedan ta med *tidsberoendet* och se hur det innebär en koppling mellan de två fälten.
+
+===== Maxwells ekvationer (tidsoberoende fält) =====
+
+
+=== Elektrostatik ===
+<linebreak>
+Statiska elektriska fält $\vec{E}(\vec{r})$ uppfyller
+!bt
+\begin{align}
+  \vnabla \cdot \vec{E} &= \frac{\rho}{\epsilon_0} \\
+  \vnabla \times \vec{E} &= 0
+\end{align}
+!et
+* $\rho(\vec{r})$ = elektrisk laddningstäthet.
+* $\epsilon_0$ = dielektricitetskonstant i vakuum
+
+Den andra ekvationen säger att elektrostatiska fält är rotationsfria ($\vnabla \times \vec{E} = 0$) och därmed konservativa. 
+$$
+\vec{E} = -\vnabla \phi,
+$$
+där $\phi$ är den elektrostatiska potentialen. 
+
+Den första är Gauss lag och säger att elektriska fält kan ha elektriska
+laddningar som källor. Den elektrostatiska potentialen uppfyller därmed Poissons ekvation
+$$
+\Delta \phi = - \frac{\rho}{\epsilon_0}
+$$
+
+=== Magnetostatik ===
+<linebreak>
+Statiska magnetiska fält $\vec{B}(\vec{r})$ uppfyller
+!bt
+\begin{align}
+  \vnabla \cdot \vec{B} &= 0 \\
+  \vnabla \times \vec{B} &= \mu_0 \vec{\jmath}
+\end{align}
+!et
+där den första säger att det inte finns några magnetiska laddningar och den andra är Amperes lag.
+* $\vec{\jmath}(\vec{r})$ = elektrisk strömtäthet.
+* $\mu_0$ = magnetisk permeabilitet i vakuum
+
+Den första ekvationen säger att magnetostatiska fält är divergensfria ($\vnabla \cdot \vec{B} = 0$) (eller källfritt) och kan uttryckas med en vektorpotential
+$$
+\vec{B} = \vnabla \times \vec{A},
+$$
+där Gaugeinvarians innebär att vektorpotentialen inte är fullständigt
+bestämd
+$$
+\vec{A}(\vec{r}) \mapsto \vec{A}(\vec{r}) + \vnabla \Lambda(\vec{r}).
+$$
+Detta gör det möjligt att välja Gaugeparameter så att $\vnabla \cdot \vec{A} = 0$ och vektorpotentialen uppfyller Poissons ekvation
+$$
+\Delta \vec{A} = -\mu_0 \vec{\jmath}.
+$$
+
+!bwarning SI enheter
+!bt
+\begin{align}
+\mu_0 &= 4 \pi \cdot 10^{-7} \; \mathrm{T}\mathrm{A}^{-1}\mathrm{m}^{-1} \nonumber \\
+\mu_0 \epsilon_0 &= \frac{1}{c^2} \nonumber \\
+c &= 299\,792\,458 \; \mathrm{m}\mathrm{s}^{-1} \nonumber
+\end{align}
+!et
+!ewarning
+
+!bnotice Exempel: Bestämning av elektriskt fält 
+
+En elektrisk laddning $Q$ är jämnt fördelad i en sfär med radien $a$. Den omges av ett tunt sfäriskt skal med radien 2a och laddningen $-Q$. Bestäm det elektriska fältet $\vec{E}(\vec{r})$ och potentialen $\phi(\vec{r})$ överallt.
+
+=== Lösning: === 
+På grund av att laddningsfördelningen har sfärisk
+symmetri, så blir $E_\varphi = E_\theta = 0$, och $E_r$ beror inte på
+$\theta$ och $\varphi$.  Vi kan då beräkna $E_r$ med hjälp av Gauss
+lag genom att införa en sfärisk volym med radie $r$ och begränsningsyta $S_r$. Ytelementet blir $d\vec{S} = \hat{r} r^2 \sin\theta d\theta d\varphi$. Gauss lag för det elektriska fältet blir
+!bt
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \iint E_r r^2 \sin\theta d\theta d\varphi 
+  = \frac{1}{\epsilon_0} \int_V \rho(r) dV = \frac{Q_r}{\epsilon_0},
+\end{equation}
+!et
+där $\rho(r) = \epsilon_0 \vec\nabla\cdot\vec E$ är laddningstätheten och $Q_r$ alltså är den inneslutna laddningen.
+
+Om vi börjar med fallet att sfären har en radie $r > 2a$, så ser vi 
+att den totala inneslutna laddningen är $Q - Q = 0$.  Alltså har
+vi att 
+!bt
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \iint E_r r^2 \sin\theta d\theta d\varphi 
+  = 0,
+\end{equation}
+!et
+och av detta följer att att $E_r = 0$.
+
+Om sfären har en radie $r$ så att $a < r < 2a$, så är den laddningen,
+som $S$ innesluter, $Q$.  Då ger oss Gauss lag att
+!bt
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \frac{Q}{\epsilon_0}.
+\end{equation}
+!et
+Integralen i vänsterledet har värdet
+!bt
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \iint E_r r^2 \sin\theta d\theta d\varphi = 4\pi r^2 E_r,
+\end{equation}
+!et
+och vi kan lösa ut
+!bt
+\begin{equation}
+  E_r = \frac{1}{4\pi \epsilon_0} \frac{Q}{r^2}.
+\end{equation}
+!et
+
+Slutligen har vi fallet att sfärens radie $r < a$.  Eftersom laddningen $Q$
+är jämt fördelad över volymen, så innebär det att sfären innesluter
+laddningen
+!bt
+\begin{equation}
+  Q \left(\frac{r}{a}\right)^3.
+\end{equation}
+!et
+Gauss lag ger oss allts\aa
+!bt
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \frac{Q}{\epsilon_0}
+\left(\frac{r}{a}\right)^3,
+\end{equation}
+!et
+vilket blir
+!bt
+\begin{equation}
+  4\pi r^2 E_r = \frac{Q}{\epsilon_0}\left(\frac{r}{a}\right)^3.
+\end{equation}
+!et
+Vi kan nu lösa ut 
+!bt
+\begin{equation}
+  E_r = \frac{1}{4\pi \epsilon_0} \frac{Qr}{a^3}.
+\end{equation}
+!et
+
+Om vi nu sammanfattar våra resultat, så har vi för det elektriska
+fältet
+!bt
+\begin{equation}
+  E_r = \left\{\begin{array}{ll}
+\frac{1}{4\pi \epsilon_0} \frac{Qr}{a^3} \quad & r < a\\
+\frac{1}{4\pi \epsilon_0} \frac{Q}{r^2} & a < r < 2a\\
+0 & r > 2a\\
+\end{array}\right.
+\end{equation}
+!et
+
+Vi skall nu utnyttja detta för att bestämma potentialen, för vilken det
+gäller att $\vec{E} = - \vnabla \phi$.  Eftersom enbart den radiella komponenten av E-fältet är nollskild har vi att $E_r = -\partial_r \phi$. I vårt fall kan vi uttrycka 
+potentialen som integralen
+!bt
+\begin{equation}
+  \int_r^\infty E_r \mbox{d}r = -\int_r^\infty \partial_r \phi \mbox{d}r = \phi\left(r\right) - \phi(\infty).
+\end{equation}
+!et
+Vi sätter potentialen till 0 i oändligheten och börjar med att bestämma potentialen för intervallet
+$r > 2a$.  Eftersom $E_r = 0$ här så följer det att också potentialen
+blir 0.  
+
+Potentialen skall överallt vara kontinuerlig, vilket inte behöver vara
+sant för $E$-fältet. När vi går till
+intervallet $a \le r \le 2a$ så kan den övre integrationsgränsen
+sättas till $2a$, eftersom potentialen är 0 utanför.
+!bt
+\begin{equation}
+  \phi\left(r\right) = \int_r^{2a} \frac{1}{4\pi \epsilon_0} \frac{Q}{r^2}
+\mbox{d}r = \frac{Q}{4\pi\epsilon_0}\left[- \frac{1}{r}\right]_r^{2a} =
+\frac{Q}{4\pi\epsilon_0} \left(\frac{1}{r}-\frac{1}{2a}\right).
+\end{equation}
+!et
+Speciellt så lägger vi märke till att potentialen i punkten $r = a$
+blir
+!bt
+\begin{equation}
+  \phi \left(a\right) = \frac{Q}{8\pi \epsilon_0 a}.
+\end{equation}
+!et
+Det enklaste sättet att garantera att $\phi$ blir kontinuerlig vid $r = a$
+är nu att skriva potentialen för $r\le a$ som
+!bt
+\begin{align}
+  \phi \left(r\right) = \int_r^\infty E_r \mbox{d}r = 
+\frac{Q}{8\pi \epsilon_0 a} + \int_r^a \frac{Qr}{4\pi \epsilon_0 a^3} 
+\mbox{d}r = \frac{Q}{8\pi \epsilon_0 a} + 
+\left[\frac{Qr^2}{8\pi \epsilon_0 a^3}\right]_r^a = \nonumber \\
+\frac{Q}{8\pi \epsilon_0 a} 
++  \frac{Q}{8\pi \epsilon_0 a} - \frac{Qr^2}{8\pi \epsilon_0 a^3} = 
+\frac{Q}{4\pi \epsilon_0 a} - \frac{Qr^2}{8\pi \epsilon_0 a^3} =
+\frac{Q}{8\pi \epsilon_0} \frac{2a^2 -r^2}{a^3}.
+\end{align}
+!et
+Vi kan till slut sammanfatta potentialen som
+!bt
+\begin{equation}
+  \phi\left(r\right) = \left\{\begin{array}{lr}
+\frac{Q}{8\pi \epsilon_0} \frac{2a^2 -r^2}{a^3} & r\le a\\
+\frac{Q}{4\pi \epsilon_0} \left(\frac{1}{r} - \frac{1}{2a}\right) & a\le r \le 
+2a\\
+0 & r \ge 2a\\
+\end{array}
+\right.
+\end{equation}
+!et
+!enotice
+
+
+!bnotice Exempel: Bestämning av ett magnetfält 
+
+En oändligt lång rak ledare har ett cirkulärt tvärsnitt med radien
+$a$ och leder en likström med strömstyrkan $I$.  Använd Amperes lag 
+för att härleda magnetfältet i och kring ledaren om materialet i den
+antas homogent och isotropt.
+<linebreak>
+*Lösning:*  Det elektriska fältet är stationärt i detta fall och vi kan då använda Amperes lag utan någon förskjutningsström
+!bt
+\begin{equation}
+  \int_{S_\rho} \vnabla \times \vec{B} \cdot \mbox{d}\vec{S} = \mu_0 \int_{S_\rho} \vec{\jmath} \cdot \mbox{d}\vec{S} = \mu_0 I_\rho,
+\end{equation}
+!et
+där $I_\rho$ är strömmen som passerar genom en tvärsnittsyta $S_\rho$ som är en cirkelskiva med $z$-axeln som centrum och radien $\rho$. Använder vi Stokes sats får vi
+!bt
+\begin{equation}
+  \oint_{\partial S_\rho} \vec{B} \cdot \mbox{d}\vec{r} = \mu_0 I_\rho,
+\end{equation}
+!et
+där vi låter $\partial S_\rho$ vara randen till $S_\rho$, dvs en cirkel som genomlöps moturs. Först 
+tittar vi på fallet att cirkelns radie $\rho > a$.  Strömmen 
+är då $I$, och Amperes lag ger oss
+!bt
+\begin{equation}
+  \oint_{\partial S_\rho} \vec{B} \cdot \mbox{d}\vec{r} = \mu_0 I.
+\end{equation}
+!et
+Vi vet att om den elektriska ledaren sammanfaller med  $z$-axeln så är magnetfältet riktat i $\varphi$-riktningen.
+Integralen blir då
+!bt
+\begin{equation}
+  \oint_{\partial S_\rho} \vec{B} \cdot \mbox{d}\vec{r} = 2\pi \rho B_\varphi.
+\end{equation}
+!et
+Vi kan nu lösa ut
+!bt
+\begin{equation}
+  B_\varphi = \frac{\mu_0 I}{2\pi \rho}.
+\end{equation}
+!et
+
+I fallet att cirkelns radie $\rho < a$ så antar vi att strömmen är 
+jämnt fördelad i tråden, vilket ger oss att den inneslutna strömmen
+blir
+!bt
+\begin{equation}
+  I_\rho = I \left(\frac{\rho}{a}\right)^2.
+\end{equation}
+!et
+Integralen blir nu
+!bt
+\begin{equation}
+  \oint_{\partial S_\rho} \vec{B} \cdot \mbox{d}\vec{r} = 2\pi \rho B_\varphi = \mu_0 I 
+\left(\frac{\rho}{a}\right)^2.
+\end{equation}
+!et
+Vi kan då lösa 
+!bt
+\begin{equation}
+  B_\varphi = \frac{\mu_0 I}{2\pi} \frac{\rho}{a^2}.
+\end{equation}
+!et
+Sammanfattningsvis har vi alltså att $\vec{B} = B_\varphi \hat{e}_\varphi$ med
+!bt
+\begin{equation}
+  B_\varphi = \left\{\begin{array}{lr}
+\frac{\mu_0 I}{2\pi \rho} & \rho > a\\
+\frac{\mu_0 I\rho}{2\pi a^2} & \rho \le a\\
+\end{array}\right.
+\end{equation}
+!et
+
+!enotice
+
+
+!bnotice Exempel: Bestämning av vektorpotentialen 
+
+Betrakta en elektrisk ledare parallell med $z$-axeln.  Genom ledaren flyter en ström $I$.  Då omges ledaren av ett magnetfält
+$$
+\vec{B} = \frac{\mu_0}{2\pi}\frac{I}{\rho}{\hat \varphi}.
+$$
+Bestäm vektorpotentialen $\vec{A}$ och finn den differentialekvation som beskriver detta fält.
+
+[Comment: Notera att magnetfältet uppvisar en singularitet. Känns den igen? Det är fältet från en virveltråd.]
+
+Notera att
+$$
+\vec{B} = \vnabla \times \vec{A} = \frac{1}{\rho}
+\begin{vmatrix}
+\hat{\rho} & \rho \hat{\varphi} & \hat{z} \\
+\partial_\rho & \partial_\varphi & \partial_z \\
+A_\rho & {\rho A_\varphi} & A_z
+\end{vmatrix} 
+$$
+Vi kan därför bestämma vektorpotentialen ur ekvationerna
+!bt
+\begin{equation}
+  \frac{1}{\rho}\frac{\partial A_z}{\partial \varphi} - \frac{\partial A_\varphi}
+{\partial z} = 0
+label{rho}
+\end{equation}
+!et
+!bt
+\begin{equation}
+  \frac{\partial A_\rho}{\partial z} - \frac{\partial A_z}{\partial \rho} =
+\frac{\mu_0}{2\pi}\frac{I}{\rho}
+label{phi}
+\end{equation}
+!et
+och
+!bt
+\begin{equation}
+  \frac{1}{\rho}\left[\frac{\partial}{\partial \rho} \left(\rho A_\varphi\right)
+- \frac{\partial A_\rho}{\partial \varphi}\right] = 0.
+label{z}
+\end{equation}
+!et
+Vi skall finna en vektorpotential så att dessa ekvationer uppfylles. Vi provar med $A_\rho = A_\varphi=0$ och $A_z \neq 0$. Denna ansatz ger
+!bt
+\begin{equation}
+  \vec{A} = - \frac{\mu_0}{2\pi} I \log\frac{\rho}{\rho_0} { \hat z},
+\end{equation}
+!et
+där $\rho_0$ är en godtycklig konstant.
+
+Låt oss nu betrakta Amperes lag i det tidsoberoende fallet
+!bt
+\begin{equation}
+  \mu_0 \vec{\jmath} =  \vnabla \times \vec{B}.
+\end{equation}
+!et
+Om vi nu ersätter $\vec{B}$ med $\vnabla \times \vec{A}$ så har vi
+!bt
+\begin{equation}
+  \vnabla \times \vnabla \times \vec{A} = \mu_0\vec{\jmath}.
+\end{equation}
+!et
+För vänsterledet har vi räknereglen
+!bt
+\begin{equation}
+  \vnabla \times \vnabla \times \vec{A} =
+\vnabla\left(\vnabla\cdot\vec{A}\right) -\vnabla^2\vec{A}
+\end{equation}
+!et
+Den frihet, gauge, som vi har i att bestämma $\vec{A}$ gör det alltid möjligt att garantera att $\vnabla \cdot \vec{A} = 0$, så vi kan reducera ekvationen till
+!bt
+\begin{equation}
+  \vnabla^2 \vec{A} = -\mu_0 \vec{\jmath},
+\end{equation}
+!et
+och vi har på så sätt kommit fram till en Poisson-ekvation för vektorpotentialen. Notera att gauge-valet $\vnabla \cdot \vec{A} = 0$ faktiskt är uppfyllt för den vektorpotential som vi konstruerade ovan.
+!enotice
+
+===== Maxwells ekvationer =====
+
+[Comment: Maxwell satte 1864 upp fyra stycken ekvationer som gav en fullständig beskrivning av ett elektromagnetiskt fält.  Dock, som vi skall se, inskränkte sig hans eget bidrag till en term i en av ekvationerna.]
+
+För *tidsberoende* fält finns det en koppling mellan elektriska och magnetiska fält. 
+
+=== EM koppling 1: Kontinuitetsekvationen (konservering av elektrisk laddning) ===
+
+Låt oss betrakta sambandet mellan elektrisk strömtäthet och (rotationen av) ett magnetfält. Detta samband har konsekvenser för kontinuitetsekvationen för elektrisk laddning
+$$
+  \frac{\partial \rho}{\partial t} = - \vnabla \cdot \vec{\jmath}.
+$$
+från Amperes lag får vi nämligen att HL i kontinuitetsekvationen blir
+$$
+  \vnabla \cdot \vec{\jmath} = \frac{1}{\mu_0} \vnabla \cdot \left(\vnabla \times
+\vec{B}\right) = 0,
+$$
+enligt räknereglerna för vektoroperatorerna. Detta skulle betyda att
+$$
+  \frac{\partial \rho}{\partial t} = 0,
+$$
+vilket är orimligt! 
+För det betyder att det inte går att flytta en elektrisk laddning.  
+
+Maxwells lösning var att lägga till en term (förskjutningsströmmen)
+!bt
+\begin{equation}
+  \vnabla \times \vec{B} = \mu_0 \vec{\jmath} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t}.
+\end{equation}
+!et
+
+=== EM koppling 2: Induktion (Faradays lag) ===
+
+Vi har sedan tidigare funnit att elektriska laddningar kan skapa elektriska fält  och att elektriska strömmar kan skapa magnetfält.
+
+Vi vet dock att elektriska fält också kan skapas genom induktion.  En förändring av det magnetiska flödet, $\Phi$, genom en elektrisk ledare inducerar en spänning, $U$, i ledaren då det magnetiska flödet förändras.
+
+!bt
+\begin{equation}
+  U = - \frac{\mbox{d}\Phi}{\mbox{d}t},
+  label{eq:faraday}
+\end{equation}
+!et
+där $\Phi$ är ett magnetiskt flöde genom ytan $S$
+!bt
+\begin{equation}
+  \Phi = \int_S \vec{B} \cdot \mbox{d} \vec{S}.
+\end{equation}
+!et
+och $U$ är den inducerade spänningen längs randen $\partial S$
+!bt
+\begin{equation}
+  U = \oint_{\partial S} \vec{E} \cdot \mbox{d}\vec{r}.
+  label{eq:indU}
+\end{equation}
+!et
+Vi sätter nu Ekv (ref{eq:indU}) och (ref{eq:faraday}) lika med varandra och får Faradays lag på integralform
+$$
+  \oint_{\partial S} \vec{E} \cdot \mbox{d}\vec{r} = -
+\int_S \frac{\partial \vec{B}}{\partial t} \cdot \mbox{d}\vec{S}.
+$$
+
+Använder vi Stokes sats på VL får vi Faradays lag på differentialform (notera att ytan $S$ är helt godtycklig)
+!bt
+\begin{equation}
+  \vnabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}.
+\end{equation}
+!et
+
+[Comment: Det elektriska fältet är inte längre konservativt vilket ju modifierar en av våra ekvationer.]
+
+Vi får nu alltså att Maxwells ekvationer blir
+
+!bsummary Maxwells ekvationer
+!bt
+\begin{align}
+  \vnabla \cdot \vec{E} &= \frac{\rho}{\epsilon_0}, \\
+  \vnabla \times \vec{E} &= - \frac{\partial B}{\partial t}, \\
+  \vnabla \cdot \vec{B} &= 0, \\
+  \vnabla \times \vec{B} &= \mu_0 \vec{\jmath} + \mu_0 \epsilon_0 
+\frac{\partial E}{\partial t}.
+\end{align}
+!et
+!esummary
+
+* Ett allmänt fält $\vec{E}$ kan vi alltid dela upp i en del som är virvelfri, och en del som är källfri. 
+* För ett elektrisk fält gäller alltså att den virvelfria delen kan skrivas som $-\vnabla \phi$.  Enligt induktionsekvationen är
+$$
+\vnabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t} = -
+\frac{\partial (\vnabla \times \vec{A})}{\partial t} = - \vnabla \times 
+\frac{\partial \vec{A}}{\partial t}.
+$$
+Alltså kan vi skriva den källfria delen av $\vec{E}$ som
+$-\partial \vec{A} / \partial t$, så att vi totalt har
+!bt
+\begin{equation}
+  \vec{E} = - \vnabla \phi - \frac{\partial \vec{A}}{\partial t}.
+\end{equation}
+!et
+
+
+===== Maxwells ekvationer i vakuum och den elektromagnetiska vågekvationen =====
+
+!bwarning OBS! 
+Resten av dessa anteckningar behandlar kap 11.3-11.7 som ej ingår i kursen. Anteckningarna är endast med för bättre koppling till motsvarande material i andra kurser.
+!ewarning
+
+* En mycket viktig konsekvens av Maxwells ekvationer är att det existerar våglösningar.
+
+I vakuum ($\rho=0$ och $\vec{\jmath} = 0$) blir Maxwells ekvationer
+!bt
+\begin{equation}
+  \vnabla \cdot \vec{E} = 0
+\end{equation}
+!et
+!bt
+\begin{equation}
+  \vnabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}
+label{induction}
+\end{equation}
+!et
+!bt
+\begin{equation}
+  \vnabla \cdot \vec{B} = 0
+\end{equation}
+!et
+!bt
+\begin{equation}
+  \vnabla \times \vec{B} = \epsilon \mu_0 \frac{\partial \vec{E}}{\partial t}
+label{amp_max}
+\end{equation}
+!et
+Vi kan nu till exempel beräkna rotationen av induktionsekvationen Ekv. (ref{induction})
+!bt
+\begin{equation}
+  \vnabla \times \vnabla \times \vec{E} = \vnabla \left( \vnabla \cdot \vec{E}
+\right) - \vnabla^2 \vec{E} = - \vnabla \times 
+\frac{\partial \vec{B}}{\partial t} =
+- \frac{\partial (\vnabla \times \vec{B})}{\partial t}.
+\end{equation}
+!et
+Vi kan nu utnyttja att $\vnabla \cdot \vec{E} =0$ och Ekv. (ref{amp_max})
+!bt
+\begin{equation}
+  - \vnabla^2 \vec{E} = - \frac{\partial}{\partial t} \epsilon_0 \mu_0
+\frac{\partial \vec{E}}{\partial t} = 
+- \epsilon_0 \mu_0 \frac{\partial^2 \vec{E}}{\partial t^2}.
+\end{equation}
+!et
+Eftersom $\epsilon_0 \mu_0 = 1/c^2$ kan vi skriva detta
+!bt
+\begin{equation}
+  \left( \vnabla^2 - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \vec{E} = 0,
+label{vaag}
+\end{equation}
+!et
+vilket är en *vågekvation*. 
+
+!bnotice Exempel: Vågekvationen i $D=1$ 
+
+Betrakta fältet $\vec{E} = E(x,t)$ i en dimension och motsvarande vågekvation
+!bt
+\begin{equation}
+  \left( \frac{\partial^2}{\partial x^2} - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) E(x,t) = 0.
+\end{equation}
+!et
+Ekvationen har då lösningar på formerna $E_+ = E_0 \sin(k x - \omega t)$ och $E_- = E_0 \sin(k x + \omega t)$, vilka beskriver vågor och motiverar varför Ekv. (ref{vaag}) kallas för vågekvationen.
+
+Med denna ansatz ($E_+$) ger vågekvationen
+$$
+-k^2 + \frac{\omega^2}{c^2} = 0 \quad \Rightarrow \quad \omega = c |k|,
+$$
+vilket kallas för en dispersionsrelation.
+
+[Rita: funktionen $E(x,t)$ med en $x$-axel och en $t$-axel. Illustrera våglängd och periodtid.]
+
+* Vid given tid $t$: samma fas då $x \mapsto x + \frac{2 \pi}{k}$. 
+* Dvs *våglängden* $\lambda$ relaterar till *vågtalet* $k$ enligt $\lambda = \frac{2\pi}{k}$.
+* Vid givet $x$: samma fas då $t \mapsto t + \frac{2 \pi}{\omega}$. 
+* Våghastigheten finner vi genom att notera att $x-\frac{\omega}{k}t = \mathrm{konstant}$ beskriver punkter med samma fas. Detta ger
+$$
+\mbox{d}x - \frac{\omega}{k} \mbox{d}t = 0 \quad \Rightarrow \quad \frac{\mbox{d}x}{\mbox{d}t} = \frac{\omega}{k}
+$$
+Hastigheten är alltså $v = \omega / k = c$. Ljushastigheten!
+!enotice
+
+I rummet kan vi skriva lösningarna
+$$
+\vec{E} = \vec{E}_0 \exp\left( i (\vec{k} \cdot \vec{r} - \omega t ) \right) = \left\{ \mathrm{välj~} \vec{k} = k \hat{x} \right\} = \vec{E}_0 \exp\left( i (k x - \omega t) \right).
+$$
+Den fysikaliska lösningen är (antingen) real- eller imaginärdelen av ovanstående. Det betyder alltså att lösningen och tolkningen är analog med $D=1$-exemplet ovan.
+
+
+=== Elektriska och magnetiska vågor ===
+En motsvarande vågekvation för magnetfältet kan också härledas. Man finner därför
+!bt
+\begin{align}
+\vec{E}(\vec{r},t) &= \vec{E}_0 \exp\left( i (\vec{k} \cdot \vec{r} - \omega t ) \right)  \nonumber \\
+\vec{B}(\vec{r},t) &= \vec{B}_0 \exp\left( i (\vec{k} \cdot \vec{r} - \omega t ) \right)  \nonumber 
+\end{align}
+!et
+Hur förhåller sig *polarisationsvektorn* $\vec{E}_0$ till $\vec{B}_0$ och till riktningen på $\vec{k}$?
+* Sätt $\vec{k} = \hat{n} k = \hat{n} \frac{\omega}{c}$.
+* Exponenten blir då $(\vec{k} \cdot \vec{r} - \omega t ) = \frac{\omega}{c}(\hat{n} \cdot \vec{r} - c t )$.
+* ME1: $\vnabla \cdot \vec{E} = 0$, vilket ger $\hat{n} \cdot \vec{E}_0 = 0$.
+Visa gärna detta med indexnotation
+!bt
+\begin{align}
+\vnabla \cdot \vec{E} &= \partial_j E_{0,j} \exp \left( i \frac{\omega}{c} (n_l r_l - ct) \right) = E_{0,j} \left( \partial_j \left[i \frac{\omega}{c} n_l r_l \right] \right) \exp \left( i \frac{\omega}{c} (n_m r_m - ct) \right) \nonumber \\
+&= \left\{ \partial_j r_l = \delta_{jl} \right\} = i \frac{\omega}{c} E_{0,j} n_j \exp \left( i \frac{\omega}{c} (n_m r_m - ct) \right) \nonumber \\
+&= i \frac{\omega}{c} \hat{n} \cdot \vec{E}_0 \exp \left( i \frac{\omega}{c} (\hat{n} \cdot \vec{r} - ct) \right) \nonumber
+\end{align}
+!et
+* Pss ME3 ger $\hat{n} \cdot \vec{B}_0 = 0$
+* Fälten är alltså vinkelräta mot vågens rörelseriktning.
+* ME2 säger att $i \frac{\omega}{c} (\hat{n} \times \vec{E}_0 - c \vec{B}_0) = 0$, dvs $\vec{B}_0 = \frac{1}{c} \hat{n} \times \vec{E_0}$.
+* E- och B-fälten är alltså vinkelräta mot varandra. 
+* De två möjliga riktningarna på polarisationsvektorn $\vec{E}_0$ motsvarar de två möjliga polarisationerna hos elektromagnetisk strålning.
+
+Den elektromagnetiska vågen består därför av svängande elektriska och magnetiska fält, vilka genererar varandra
+!bt
+\begin{align}
+\vec{E}(\vec{r},t) &= \vec{E}_0 \exp\left( i \frac{\omega}{c}(\hat{n} \cdot \vec{r} - c t ) \right), \quad \hat{n} \cdot \vec{E}_0 = 0  \\
+\vec{B}(\vec{r},t) &= \frac{1}{c} \hat{n} \times \vec{E}_0 \exp\left( i \frac{\omega}{c}(\hat{n} \cdot \vec{r} - c t ) \right)  
+\end{align}
+!et
+
+===== Vågekvationer för potentialerna =====
+
+* Hur blir Maxwells ekvationer när fälten uttrycks i potentialerna $\phi$ och $\vec A$.
+* De två homogena ekvationerna ($\ldots = 0$) är de som gör att fälten kan uttryckas i termer av potentialer. 
+Sätt in uttrycken
+!bt
+\begin{align}
+\vec{E} &= -\vnabla \phi - \frac{\partial \vec{A}}{\partial t} \nonumber \\
+\vec{B} &= \vnabla \times \vec{A} \nonumber
+\end{align}
+!et
+i de inhomogena ekvationerna:
+!bt
+\begin{align*}
+\Big( \vnabla \cdot \vec{E} &= \Big) \quad \vnabla\cdot(-\vnabla\phi-\frac{\partial \vec A}{\partial t}) = \frac{\rho}{\epsilon_0}, \\
+\Big( \vnabla \times \vec{B} - \epsilon \mu_0 \frac{\partial \vec{E}}{\partial t}
+&= \Big) \quad \vnabla\times(\vnabla\times\vec A) - \frac{1}{c^2} \frac{\partial}{\partial t} (-\vnabla\phi-\frac{\partial \vec A}{\partial t})=\mu_0\vec\jmath .
+\end{align*}
+!et
+* Ett gaugeval för vektorpotentialen förenklar ekvationerna avsevärt 
+* Välj gaugeparameter så att $\vnabla\cdot\vec A = - \frac{1}{c^2} \frac{\partial \phi}{\partial t}$. 
+Den första ekvationen blir
+$$
+\vnabla \cdot \left(-\vnabla \phi - \frac{\partial \vec{A}}{\partial t} \right) = -\Delta \phi - \frac{\partial}{\partial t} (\vnabla \cdot \vec{A}) = \left\{ \mathrm{Gaugeval} \right\} = \left( -\Delta + \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \phi \equiv - \square \phi,
+$$
+där d'Alembert-operatorn $\square \equiv \left( \Delta - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right)$.
+
+För den andra ekvationen utnyttjar vi att
+$$
+\vnabla \times \left( \vnabla \times \vec{A} \right) = \vnabla \left( \vnabla \cdot \vec{A} \right) - \Delta \vec{A} = \left\{ \mathrm{Gaugeval} \right\} = -\vnabla \left( \frac{1}{c^2} \frac{\partial \phi}{\partial t} \right) - \Delta \vec{A}.
+$$
+VL i den andra inhomogena ekvationen blir därför
+$$ 
+-\frac{1}{c^2} \frac{\partial (\vnabla \phi)}{\partial t} - \Delta \vec{A} + \frac{1}{c^2}
+\frac{\partial \vnabla \phi}{\partial t} + \frac{1}{c^2} \frac{\partial^2 \vec{A}}{\partial  t^2} = -\square \vec{A}.
+$$
+
+* Vi får alltså inhomogena vågekvationer för potentialerna
+!bt
+\begin{align*}
+\square\phi&=-\frac{\rho}{\epsilon_0}, \\
+\square\vec A&=-\mu_0\vec\jmath ,
+\end{align*}
+!et
+* Man kan använda Greensfunktionen för vågekvationen för att skriva ned generella lösningar när laddningar och strömmar är givna.
+* Greensfunktionen är lösningen till följande vågekvation
+$$
+\square G(\vec{r},t;\vec{r}{\;}',t') \equiv (\Delta - \frac{1}{c^2} \frac{\partial^2}{\partial t^2}) G(\vec{r},t;\vec{r}{\;}',t') = -\delta^3(\vec{r}-\vec{r}{\;}')\delta(t-t').
+$$
+För enkelhets skull kan vi ta $\vec{r}{\;}'=0$, $t'=0$.
+
+Greensfunktionen är
+$$
+G_+(\vec{r},t;0,0) = \frac{1}{4\pi t} \delta(r-ct).
+$$  
+* Detta är vad som brukar kallas en *retarderad* Greensfunktion. 
+* Termen kommer sig av att en källa bara påverkar fält vid efterföljande tider (ljuskonen $r=ct$).
+
+[Comment: Ekvationen är symmetrisk under $t \to -t$, vilket innebär att det också finns en *avancerad* Greensfunktion $G_- \propto \delta(r+ct)$.]
+
+!bwarning Huygens princip
+Det är värt att notera att det intuitivt ``sunda'' antagandet att Greensfunktionen endast har stöd på ljuskonen faktiskt är mer subtilt än det verkar. Det går under namnet Huygens pricip. Det visar sig vara sant i ett udda antal rumsdimensioner, men falskt i ett jämnt antal. I ett jämnt antal rumsdimensioner har Greensfunktionen stöd *inom* ljuskonen, inte endast *på* den.
+I två dimensioner har man t.ex.
+$$
+G_+^{(2)}(\vec{r},t;0,0)=
+\left\{ 
+\begin{array}{ll}
+\frac{\sigma(t)}{2\pi\sqrt{(ct)^2-r^2}}, & r<ct, \\
+0 & \mathrm{annars.}
+\end{array}
+\right.
+$$
+Tänk på en sten som släpps i en vattenyta. En punkt på ytan påverkas inte bara just då vågfronten passerar, utan även vid alla senare tidpunkter. Tvådimensionell musik är kanske problematisk...
+!ewarning
+
+Man måste förstås kunna bekräfta att man får rätt uttryck för en statisk laddningsfördelning. Om $\rho$ är oberoende av tiden ger Greensfunktionsmetoden
+!bt
+\begin{align*}
+\phi(\vec{r},t) &= 
+\int_{\mathbb{R}^3}dV' \int_{-\infty}^\infty dt'
+\frac{\rho(\vec{r}{\;}')}{\epsilon_0} G_+(\vec{r},t,\vec{r}{\;}',t') \\
+&= \int_{\mathbb{R}^3}dV' \int_{-\infty}^\infty dt'
+\frac{\rho(\vec{r}{\;}')}{4\pi\epsilon_0(t-t')} \delta(|\vec{r}-\vec{r}{\;}'|-c(t-t')) \\
+&= \left\{ c(t-t') \equiv (x-x') \; \Rightarrow c \mathrm{~försvinner} \right\} =\int_{\mathbb{R}^3}dV'
+\frac{\rho(\vec{r}{\;}')}{4\pi\epsilon_0|\vec{r}-\vec{r}{\;}'|},
+\end{align*}
+!et
+vilket är identiskt med vad man får med hjälp av Greensfunktionen för Poissons ekvation.
+

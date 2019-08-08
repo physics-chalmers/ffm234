@@ -1,0 +1,903 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('1. Fält och derivator', 1, None, '___sec0'),
+              ('Skalärfält', 3, None, '___sec1'),
+              ('Vektorfält', 3, None, '___sec2'),
+              ('Rum och koordinatsystem', 2, None, '___sec3'),
+              ('Vektoralgebra', 2, None, '___sec4'),
+              ('Addition', 3, None, '___sec5'),
+              ('Skalärprodukt', 3, None, '___sec6'),
+              ('Vektornorm', 3, None, '___sec7'),
+              ('Kryssprodukt', 3, None, '___sec8'),
+              ('Skalärfält', 2, None, '___sec9'),
+              ('Nivåyta', 3, None, '___sec10'),
+              ('Gradient, fältlinjer', 3, None, '___sec11'),
+              ('Svar:', 3, None, '___sec12'),
+              ('Vektorfält', 2, None, '___sec13'),
+              ('Fältlinjer', 3, None, '___sec14'),
+              ('Divergens och rotation', 3, None, '___sec15'),
+              ('Laplaceoperatorn', 3, None, '___sec16'),
+              ('En första bekantskap med potentialfält', 2, None, '___sec17'),
+              ('Lösning 1', 3, None, '___sec18'),
+              ('Lösning 2', 3, None, '___sec19')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<a name="part0000"></a>
+<p>
+
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 4, 2018</h4></center> <!-- date -->
+<br>
+
+<h1 id="___sec0">1. F&#228;lt och derivator </h1>
+
+<p>
+Ett f&#228;lt &#228;r en fysikalisk storhet som kan beskrivas som en funktion av
+positionen i rummet \( \vec{r} \) och tiden \( t \).  I den h&#228;r kursen kommer vi
+att behandla tv&#229; typer av f&#228;lt, skal&#228;ra f&#228;lt och vektorf&#228;lt.
+
+<h3 id="___sec1">Skal&#228;rf&#228;lt </h3>
+
+$$
+\begin{equation}
+\Phi = \Phi(\vec{r},t), \quad \Phi \in \mathbf{R},\quad \vec{r} \in \mathbf{R}^3
+\tag{1}
+\end{equation}
+$$
+
+<p>
+<table border="1">
+<thead>
+<tr><th align="center">Skal&#228;r</th> <th align="center">  Symbol  </th> <th align="left">                         Enhet                         </th> </tr>
+</thead>
+<tbody>
+<tr><td align="left">   tryck          </td> <td align="center">   \( p \)       </td> <td align="left">   Pascal (Pa), 1 Pa = 1 \( \mathrm{N/m}^2 \)                 </td> </tr>
+<tr><td align="left">   densitet       </td> <td align="center">   \( \rho \)    </td> <td align="left">   \( \mathrm{kg/m}^3 \)                                      </td> </tr>
+<tr><td align="left">   temperatur     </td> <td align="center">   \( T \)       </td> <td align="left">   Kelvin (K), Celsiusgrader (\( ^\mathrm{o}\mathrm{C} \))    </td> </tr>
+</tbody>
+</table>
+
+<h3 id="___sec2">Vektorf&#228;lt </h3>
+
+$$
+\begin{equation}
+\vec{F} = \vec{F}(\vec{r},t), \quad \vec{F} \in \mathbf{R}^3,\quad \vec{r} \in \mathbf{R}^3 \\ 
+\tag{2}
+\end{equation}
+$$
+
+<p>
+<table border="1">
+<thead>
+<tr><th align="center">     Vektor    </th> <th align="center">    Symbol   </th> <th align="left">  Enhet  </th> </tr>
+</thead>
+<tbody>
+<tr><td align="left">   hastighet          </td> <td align="center">   \( \vec{v} \)    </td> <td align="left">   m/s          </td> </tr>
+<tr><td align="left">   kraft              </td> <td align="center">   \( \vec{F} \)    </td> <td align="left">   N            </td> </tr>
+<tr><td align="left">   Magnetf&#228;lt    </td> <td align="center">   \( \vec{B} \)    </td> <td align="left">   Tesla (T)    </td> </tr>
+</tbody>
+</table>
+
+<h2 id="___sec3">Rum och koordinatsystem </h2>
+
+<p>
+En viktig egenskap hos skal&#228;rer och vektorer &#228;r att dessa &#228;r <b>oberoende</b> av koordinatsystem (transformation). Mer om detta senare n&#228;r vi pratar om tensorf&#228;lt.
+
+<p>
+I ett Cartesiskt koordinatsystem p&#229; \( \mathbf{R}^3 \) g&#228;ller att en allm&#228;n vektor \( \vec{A} \) kan skrivas
+$$
+\begin{equation}
+\vec{A} = A_x \hat{x} + A_y \hat{y} + A_z \hat{z}
+\tag{3}
+\end{equation}
+$$
+
+d&#228;r \( \hat{x} \), \( \hat{y} \) och \( \hat{z} \) &#228;r ortonormerade <b>basvektorer</b>.
+
+<p>
+I detta koordinatsystem har vi f&#246;ljande partiella derivator \( \frac{\partial}{\partial x} \), \( \frac{\partial}{\partial y} \), \( \frac{\partial}{\partial z} \). Vi anv&#228;nder ibland kortnotationen \( \partial_x \equiv \frac{\partial}{\partial x} \).
+
+<p>
+Detta ger vektoroperatorn
+$$
+\begin{equation}
+\vnabla = \hat{x} \partial_x + \hat{y} \partial_y + \hat{z} \partial_z,
+\tag{4}
+\end{equation}
+$$
+
+som uttalas <em>nabla</em> eller <em>dell</em>.
+
+<h2 id="___sec4">Vektoralgebra </h2>
+
+<p>
+Repetera detta om ni k&#228;nner er os&#228;kra!
+
+<p>
+Exemplen nedan i Cartesiska koordinater.
+
+<h3 id="___sec5">Addition </h3>
+
+$$
+\begin{equation}
+\vec{A}+\vec{B} = (A_x + B_x) \hat{x} + (A_y + B_y) \hat{y} + (A_z + B_z) \hat{z}
+\tag{5}
+\end{equation}
+$$
+
+och motsvarande f&#246;r subtraktion.
+
+<p>
+Resultatet &#228;r en vektor.
+
+<h3 id="___sec6">Skal&#228;rprodukt </h3>
+
+$$
+\begin{equation}
+\vec{A} \cdot \vec{B} = |\vec{A}| |\vec{B}| \cos\theta,
+\tag{6}
+\end{equation}
+$$
+
+d&#228;r \( |\vec{A}| \) och \( |\vec{B}| \) &#228;r vektornormerna enligt nedan och \( \theta \) &#228;r vinkeln mellan vektorerna.
+
+<p>
+P&#229; komponentform
+$$
+\begin{equation}
+\vec{A} \cdot \vec{B} = A_x B_x + A_y B_y + A_z B_z,
+\tag{7}
+\end{equation}
+$$
+
+eftersom \( \hat{x} \cdot \hat{x} = \hat{y} \cdot \hat{y} = \hat{z} \cdot \hat{z} = 1 \) och \( \hat{x} \cdot \hat{y} = \hat{x} \cdot \hat{z} = \hat{y} \cdot \hat{z} = 0 \).
+
+<p>
+Resultatet &#228;r en skal&#228;r.
+
+<h3 id="___sec7">Vektornorm </h3>
+
+$$
+\begin{equation}
+A = |\vec{A}| = (\vec{A} \cdot \vec{A})^{1/2} = (A_x^2 + A_y^2 + A_z^2)^{1/2}.
+\tag{8}
+\end{equation}
+$$
+
+<h3 id="___sec8">Kryssprodukt </h3>
+
+$$
+\begin{align}
+\vec{A} \times \vec{B} & = \left| 
+\begin{array}{ccc}
+\hat{x} & \hat{y} & \hat{z} \\ 
+A_x & A_y & A_z \\ 
+B_x & B_y & B_z
+\end{array}
+\right|  \tag{9}
+\\ 
+& = (A_y B_z - A_z B_y)\hat{x} + (A_z B_x - A_x B_z)\hat{y} + (A_x B_y - A_y B_x) \hat{z}.
+\tag{10}
+\end{align}$$
+
+<h2 id="___sec9">Skal&#228;rf&#228;lt </h2>
+
+<p>
+Ett skal&#228;rt f&#228;lt representeras av ett tal i varje punkt.  Exempel p&#229; s&#229;dana f&#228;lt &#228;r temperatur, tryck, elektrisk laddningst&#228;thet.
+
+<h3 id="___sec10">Niv&#229;yta </h3>
+
+<p>
+Geometriskt brukar vi beskriva ett skal&#228;rt f&#228;lt \( \Phi(x,y,z,t) \) genom  att rita de ytor p&#229; vilka f&#228;ltet &#228;r konstant.  Vi kallar s&#229;dana ytor f&#246;r <b>niv&#229;ytor</b>, eller i tv&#229; dimensioner <b>niv&#229;kurvor</b>.  Vissa typer av niv&#229;kurvor har f&#229;tt speciella namn, till exempel isotermer f&#246;r kurvor l&#228;ngs vilka temperaturen &#228;r konstant och isobarer l&#228;ngs vilka trycket &#228;r konstant.  Man kan konstruera niv&#229;ytorna genom att st&#228;lla upp  ekvationen \( C = \Phi(x,y,z,t) \), och l&#246;sa den f&#246;r olika C.
+
+<h3 id="___sec11">Gradient, f&#228;ltlinjer </h3>
+
+<p>
+Ett viktigt begrepp n&#228;r vi arbetar med skal&#228;ra f&#228;lt &#228;r <b>gradienten</b>. Betrakta tv&#229; punkter \( (x,y,z) \) och \( (x+\mbox{d}x,y+\mbox{d}y,z+\mbox{d}z) \). Skillnaden i skal&#228;ren \( \Phi \) mellan dessa b&#229;da punkter &#228;r
+$$
+\begin{align}
+  \mbox{d}\Phi &= \Phi\left(x+\mbox{d}x, y+\mbox{d}y,z+\mbox{d}z\right) - \Phi\left(x,y,z\right) \nonumber \\ 
+& \approx \Phi\left(x,y,z\right) + \frac{\partial \Phi}{\partial x}\mbox{d}x
++ \frac{\partial \Phi}{\partial y}\mbox{d}y + \frac{\partial \Phi}{\partial z}
+\mbox{d}z - \Phi\left(x,y,z\right) \nonumber \\ 
+& = \frac{\partial \Phi}{\partial x}\mbox{d}x
++ \frac{\partial \Phi}{\partial y}\mbox{d}y + \frac{\partial \Phi}{\partial z}
+\mbox{d}z.
+\tag{11}
+\end{align}
+$$
+
+Den h&#228;r skillnaden kan vi tolka som skal&#228;rprodukten mellan vektorn 
+$$
+\begin{equation}
+  \mbox{d}\vec{r} = \left(\mbox{d}x,\mbox{d}y,\mbox{d}z\right), 
+\tag{12}
+\end{equation}
+$$
+
+som beskriver separationen mellan de b&#229;da punkterna och vektorn
+$$
+\begin{equation}
+  \vnabla \Phi = \left(\frac{\partial \Phi}{\partial x}, 
+\frac{\partial \Phi}{\partial y}, \frac{\partial \Phi}{\partial z}\right),
+\tag{13}
+\end{equation}
+$$
+
+som vi kallar f&#246;r gradienten av \( \Phi \). Dvs \( \mbox{d}\Phi = \mbox{d}\vec{r} \cdot \vnabla \Phi \).
+
+<p>
+Med en normalvektor \( \hat{n} \) som har l&#228;ngden 1, s&#229; &#228;r \( \hat{n} \cdot \vnabla \Phi \) riktningsderivatan f&#246;r \( \Phi \) i riktningen \( \hat{n} \), det vill s&#228;ga den m&#228;ter hur snabbt \( \Phi \) varierar i denna riktning.
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Riktningsderivata.</b>
+<p>
+Vad blir enheten p&#229; denna riktningsderivata?
+
+<h3 id="___sec12">Svar: </h3>
+
+Enheten &#228;r $[ \Phi ]$/l&#228;ngd. Notera att \( [ \hat{n} ]=1 \).
+</div>
+
+
+<p>
+Gradientoperatorn
+$$
+\begin{equation}
+  \vnabla = \left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y},
+\frac{\partial}{\partial z}\right),
+\tag{14}
+\end{equation}
+$$
+
+&#228;r i sig sj&#228;lv inte en vektor, utan den &#228;r en vektoroperator, som tar ett skal&#228;rf&#228;lt och producerar ett vektorf&#228;lt.  Skillnaden mellan en vektoroperator och en vektor kommer att m&#228;rkas n&#228;r vi bekantar oss med r&#228;knereglerna f&#246;r vektoroperatorer.
+
+<p>
+Det &#228;r enkelt att visa att \( \vnabla \Phi \) &#228;r ortogonal mot niv&#229;ytorna f&#246;r \( \Phi \).  L&#229;t \( \hat{e}_t \) vara en tangentvektor till en niv&#229;yta genom en punkt \( \vec{r}_0 \). Eftersom \( \Phi = \Phi_0 \) (konstant) l&#228;ngs niv&#229;ytan g&#228;ller att 
+$$
+\hat{e}_t \cdot \vnabla \Phi = 0 \quad \Rightarrow \quad \hat{e}_t \perp \vnabla \Phi.
+$$
+
+<p>
+Kurvor som i varje punkt har \( \vnabla \Phi \) som tangentvektor kallas f&#246;r <b>f&#228;ltlinjer</b>.
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: H&#246;jdkurvor och riktningsderivata.</b>
+<p>
+
+<p>
+Betrakta en bergstopp med en h&#246;jdyta som ges av
+$$
+\begin{equation}
+h(\vec{r}) = \frac{h_0}{1+\frac{x^2+y^2}{R^2}},
+\tag{15}
+\end{equation}
+$$
+
+d&#228;r \( h \) ger h&#246;jden &#246;ver havet, \( h_0 \) &#228;r h&#246;jden p&#229; toppen av berget, och \( R \) &#228;r ett m&#229;tt p&#229; bergets utbredning.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">p</span>
+
+<span style="color: #408080; font-style: italic"># Make an x,y grid</span>
+grid <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">-10000</span>,<span style="color: #666666">10000</span>,<span style="color: #666666">500</span>)
+x, y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>meshgrid(grid,grid)
+<span style="color: #408080; font-style: italic"># and the 2D field</span>
+R0<span style="color: #666666">=4000</span>  <span style="color: #408080; font-style: italic"># radius measure</span>
+h0<span style="color: #666666">=</span> <span style="color: #666666">2106</span> <span style="color: #408080; font-style: italic"># peak height</span>
+h <span style="color: #666666">=</span> h0 <span style="color: #666666">/</span> (<span style="color: #666666">1</span> <span style="color: #666666">+</span> (x<span style="color: #666666">**2</span> <span style="color: #666666">+</span> y<span style="color: #666666">**2</span>)<span style="color: #666666">/</span>R0<span style="color: #666666">**2</span>)
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">mpl_toolkits.mplot3d</span> <span style="color: #008000; font-weight: bold">import</span> Axes3D
+fig <span style="color: #666666">=</span> p<span style="color: #666666">.</span>figure()
+ax <span style="color: #666666">=</span> fig<span style="color: #666666">.</span>gca(projection<span style="color: #666666">=</span><span style="color: #BA2121">&#39;3d&#39;</span>)
+surf <span style="color: #666666">=</span> ax<span style="color: #666666">.</span>plot_surface(x<span style="color: #666666">/1000</span>, y<span style="color: #666666">/1000</span>, h)
+<span style="color: #408080; font-style: italic">#ax.set_zlim3d(-1, 1)</span>
+ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">r&#39;$x$ (km)&#39;</span>)
+ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">r&#39;$y$ (km)&#39;</span>)
+ax<span style="color: #666666">.</span>set_zlabel(<span style="color: #BA2121">r&#39;$h$ (m)&#39;</span>)
+</pre></div>
+<p>
+<br /><br /><center><p><img src="fig/hojd_surface.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+Vi kan g&#246;ra en h&#246;jdkarta genom att rita upp n&#229;gra niv&#229;ytor, dvs kurvor som motsvarar konstanta v&#228;rden p&#229; \( h \). Vi ser enkelt att kurvan \( x^2 + y^2 = C^2 \) (konstant) ger \( h_C = \frac{h_0}{1+\frac{C^2}{R^2}} \) (konstant) och att h&#246;jdkurvorna d&#228;rf&#246;r motsvarar cirklar med centrum i origo (\( x=y=0 \)).
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">from</span> <span style="color: #0000FF; font-weight: bold">matplotlib</span> <span style="color: #008000; font-weight: bold">import</span> colors
+p<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">6</span>,<span style="color: #666666">6</span>))
+heights <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">500</span>,<span style="color: #666666">2000</span>,<span style="color: #666666">4</span>)
+CS <span style="color: #666666">=</span> p<span style="color: #666666">.</span>contour(x<span style="color: #666666">/1000</span>,y<span style="color: #666666">/1000</span>,h,heights,colors<span style="color: #666666">=</span><span style="color: #BA2121">&#39;k&#39;</span>)
+p<span style="color: #666666">.</span>clabel(CS, inline<span style="color: #666666">=1</span>, fontsize<span style="color: #666666">=10</span>)
+p<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">r&#39;$x$ (km)&#39;</span>)
+p<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">r&#39;$y$ (km)&#39;</span>)
+</pre></div>
+<p>
+<br /><br /><center><p><img src="fig/hojd_contour.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+Eller kombinerat med h&#246;jdkurvor enligt en kontinuerlig f&#228;rgskala
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>p<span style="color: #666666">.</span>pcolormesh(x<span style="color: #666666">/1000</span>, y<span style="color: #666666">/1000</span>, h, cmap<span style="color: #666666">=</span>p<span style="color: #666666">.</span>get_cmap(<span style="color: #BA2121">&#39;cubehelix_r&#39;</span>))
+</pre></div>
+<p>
+<br /><br /><center><p><img src="fig/hojd_contour_colormesh.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+Gradienten av detta f&#228;lt kommer att motsvara h&#246;jd&#228;ndringen per l&#228;ngdenhet i horisontalplanet. Vi finner denna genom att skriva \( x^2 + y^2 = r^2 \) s&#229; att \( h=h(r) \). Vi f&#229;r
+$$
+\begin{equation}
+\frac{\mbox{d}h}{\mbox{d}r} = - \frac{h_0}{(1+r^2/R^2)^2} \frac{2r}{R^2}
+\tag{16}
+\end{equation}
+$$
+
+Vidare &#228;r 
+$$
+\begin{equation}
+\frac{\partial r}{\partial x} = \frac{1}{2} (x^2 + y^2)^{-1/2} 2 x = \frac{x}{r},
+\tag{17}
+\end{equation}
+$$
+
+och pss \( \partial_y r = y/r \). D&#228;rf&#246;r blir
+$$
+\begin{align}
+\vnabla h &= \hat{x} \partial_x h + \hat{y} \partial_y h 
+= \hat{x} \frac{\partial h}{\partial r} \frac{\partial r}{\partial x}
++ \hat{y} \frac{\partial h}{\partial r} \frac{\partial r}{\partial y} 
+\tag{18}\\ 
+&= - \frac{2h_0}{R^2 (1+r^2/R^2)^2} \left( x \hat{x} + y \hat{y} \right).
+\tag{19}
+\end{align}
+$$
+
+Riktningen p&#229; denna vektor ser vi &#228;r \( x\hat{x} + y\hat{y} = r\hat{r} \), dvs den horisontella h&#246;jdgradienten &#228;r riktad radiellt in&#229;t - mot st&#246;rre v&#228;rden av \( h \).
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>p<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">6</span>,<span style="color: #666666">6</span>))
+grid_course <span style="color: #666666">=</span>  np<span style="color: #666666">.</span>linspace(<span style="color: #666666">-10000</span>,<span style="color: #666666">10000</span>,<span style="color: #666666">11</span>)
+x_c, y_c <span style="color: #666666">=</span> np<span style="color: #666666">.</span>meshgrid(grid_course,grid_course)
+radius <span style="color: #666666">=</span> <span style="color: #666666">2000</span>
+outside <span style="color: #666666">=</span> x_c<span style="color: #666666">**2</span> <span style="color: #666666">+</span> y_c<span style="color: #666666">**2</span> <span style="color: #666666">&gt;</span> radius<span style="color: #666666">**2</span>
+gradh_x <span style="color: #666666">=</span> <span style="color: #666666">-</span> <span style="color: #666666">2*</span>h0 <span style="color: #666666">/</span> (R0<span style="color: #666666">**2</span> <span style="color: #666666">*</span> (<span style="color: #666666">1</span> <span style="color: #666666">+</span> (x_c<span style="color: #666666">**2+</span>y_c<span style="color: #666666">**2</span>)<span style="color: #666666">/</span>R0<span style="color: #666666">**2</span>)<span style="color: #666666">**2</span>) <span style="color: #666666">*</span> x_c
+gradh_y <span style="color: #666666">=</span> <span style="color: #666666">-</span> <span style="color: #666666">2*</span>h0 <span style="color: #666666">/</span> (R0<span style="color: #666666">**2</span> <span style="color: #666666">*</span> (<span style="color: #666666">1</span> <span style="color: #666666">+</span> (x_c<span style="color: #666666">**2+</span>y_c<span style="color: #666666">**2</span>)<span style="color: #666666">/</span>R0<span style="color: #666666">**2</span>)<span style="color: #666666">**2</span>) <span style="color: #666666">*</span> y_c
+p<span style="color: #666666">.</span>quiver(x_c[outside]<span style="color: #666666">/1000</span>,y_c[outside]<span style="color: #666666">/1000</span>,gradh_x[outside],gradh_y[outside],scale<span style="color: #666666">=3</span>)
+p<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">r&#39;$x$ (km)&#39;</span>)
+p<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">r&#39;$y$ (km)&#39;</span>)
+</pre></div>
+<p>
+<br /><br /><center><p><img src="fig/hojd_gradient.png" align="bottom" width=600></p></center><br /><br />
+</div>
+
+
+<h2 id="___sec13">Vektorf&#228;lt </h2>
+
+<p>
+Ett vektorf&#228;lt beskriver p&#229; samma s&#228;tt en fysikalisk kvantitet som i varje punkt i rummet &#228;r en vektor.  Exempel p&#229; s&#229;dana kvantiteter &#228;r hastigheten i en str&#246;mmande fluid, den magnetiska f&#228;ltstyrkan, och den elektriska str&#246;mt&#228;theten.
+
+<h3 id="___sec14">F&#228;ltlinjer </h3>
+
+<p>
+Geometriskt kan vi representera ett vektorf&#228;lt genom att konstruera f&#228;ltlinjer. F&#228;ltlinjerna till ett vektorf&#228;lt \( \vec{F}(\vec{r}) \) &#228;r de kurvor som &#246;verallt har \( \vec{F}(\vec{r}) \) som tangentvektor.
+
+<p>
+F&#246;r att f&#246;rst&#229; begreppet f&#228;ltlinjer kan vi b&#246;rja med att t&#228;nka oss ett vektorf&#228;lt \( \vec{V}(x,y,z) \) som representerar en hastighet i en fluid.  En testpartikel i fluiden f&#246;ljer d&#229; en bana \( \vec{r}(t) \) som ges av
+$$
+\begin{equation}
+  \frac{\mbox{d}\vec{r}}{\mbox{d}t} = \vec{V}\left(\vec{r}\right).
+\tag{20}
+\end{equation}
+$$
+
+Analogt med detta definierar vi en f&#228;ltlinje som den bana vi f&#229;r genom att f&#246;lja med ett godtyckligt vektorf&#228;lt \( \vec{F} \) som om det var ett hastighetsf&#228;lt.  Ekvationen f&#246;r ett s&#229;dant vektorf&#228;lt &#228;r
+$$
+\begin{equation}
+  \frac{\mbox{d}\vec{r}}{\mbox{d}\tau} = C \vec{F}\left(\vec{r}(\tau)\right),
+\tag{21}
+\end{equation}
+$$
+
+d&#228;r \( C \) &#228;r en godtycklig konstant (dvs du kan v&#228;lja den som du sj&#228;lv 
+vill, s&#229; l&#228;nge som du inte s&#228;tter den till noll), och \( \tau \) &#228;r en
+parameter f&#246;r att numrera punkterna l&#228;ngs f&#228;ltlinjen.
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: f&#246;ltlinjer (enkel diff.ekv.).</b>
+<p>
+Vi vill konstruera f&#228;ltlinjerna till 
+$$
+\begin{equation}
+  \vec{F}\left(\vec{r}\right) = F_0\left(\frac{x}{a} \hat{x} + 
+\hat{y}\right).
+\tag{22}
+\end{equation}
+$$
+
+Detta ger oss differentialekvationerna
+$$
+\begin{equation}
+  \frac{\mbox{d}x}{\mbox{d}\tau} = CF_0 \frac{x}{a},
+\tag{23}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  \frac{\mbox{d}y}{\mbox{d}\tau} = C F_0.
+\tag{24}
+\end{equation}
+$$
+
+Vi v&#228;ljer nu \( C = a/F_0 \), s&#229; att ekvationerna blir
+$$
+\begin{equation}
+  \frac{\mbox{d}x}{\mbox{d}\tau} = x,
+\tag{25}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  \frac{\mbox{d}y}{\mbox{d}\tau} = a
+\tag{26}
+\end{equation}
+$$
+
+Dessa har l&#246;sningen
+$$
+\begin{equation}
+  x = x_0 \mbox{e}^\tau,
+\tag{27}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  y = a \tau + y_0
+\tag{28}
+\end{equation}
+$$
+
+d&#228;r \( x_0 \) och \( y_0 \) &#228;r den punkt p&#229; f&#228;ltlinjen d&#228;r \( \tau = 0 \).
+</div>
+
+
+<h3 id="___sec15">Divergens och rotation </h3>
+
+<p>
+Vi kan derivera ett vektorf&#228;lt p&#229; tv&#229; huvudsakliga s&#228;tt. Dels kan vi bilda en skal&#228;r genom <b>divergensen</b> \( \vnabla \cdot \vec{F} \) (eller \( \mathrm{div} \vec{F} \)), eller en vektor genom rotationen \( \vnabla \times \vec{F} \) (eller \( \mathrm{rot} \vec{F} \)). I cartesiska koordinater blir de explicita uttrycken
+$$
+\begin{align}
+\vnabla \cdot \vec{F} &= \partial_x F_x + \partial_y F_y + \partial_z F_z,  \tag{29}
+\\ 
+\vnabla \times \vec{F} & = \left| 
+\begin{array}{ccc}
+\hat{x} & \hat{y} & \hat{z} \\ 
+\partial_{x} & \partial_{y} & \partial_{z} \\ 
+F_x & F_y & F_z
+\end{array}
+\right|
+= (\partial_y F_z - \partial_z F_y)\hat{x} + (\partial_z F_x - \partial_x F_z)\hat{y} + (\partial_x F_y - \partial_y F_x) \hat{z}.
+\tag{30}
+\end{align}$$
+
+<p>
+Divergensen ger ett m&#229;tt p&#229; hur mycket f&#228;ltet <em>"g&#229;r is&#228;r"</em> (divergerar), medan rotationen m&#228;ter hur mycket det <em>"snurrar runt"</em>.
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: divergens.</b>
+<p>
+Vektorf&#228;ltet \( \vec{F} = x\hat{x} + y\hat{y} + z\hat{z} \) har divergensen \( \vnabla \cdot \vec{F} = 3 \) och rotationen \( \vnabla \times \vec{F} = 0 \) (f&#228;ltet &#228;r rotationsfritt). Notera att negativa v&#228;rden p&#229; divergensen betyder att f&#228;ltet <em>"g&#229;r ihop"</em> (konvergerar).
+</div>
+
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: rotatation.</b>
+<p>
+Hastighetsf&#228;ltet f&#246;r en roterande fluid \( \vec{v} = \vec{\omega} \times \vec{r} \). Med \( \vec{\omega} = \omega \hat{z} \) f&#229;s \( \vec{v} = -\omega y\hat{x} + \omega sx\hat{y} \) och rotationen blir \( \vnabla \times \vec{v} = 2 \omega \hat{z} \) medan divergensen \( \vnabla \cdot \vec{v} = 0 \). Detta specifika hastighetsf&#228;lt &#228;r allts&#229; <b>divergensfritt</b>.
+</div>
+
+
+<h3 id="___sec16">Laplaceoperatorn </h3>
+
+<p>
+Vi kommer ocks&#229; att st&#246;ta p&#229; den viktiga <b>Laplaceoperatorn</b>: \( \Delta = \vnabla \cdot \vnabla \). Verkande p&#229; ett skal&#228;rt f&#228;lt i cartesiska koordinater blir detta
+$$
+\begin{equation}
+\Delta \Phi = \vnabla \cdot \vnabla \Phi = \left( \partial_x^2 + \partial_y^2 + \partial_z^2 \right) \Phi.
+\tag{31}
+\end{equation}
+$$
+
+Likas&#229; kan denna verka p&#229; ett vektorf&#228;lt \( \Delta \vec{F} = \vnabla \cdot \vnabla \vec{F} = \left( \partial_x^2 + \partial_y^2 + \partial_z^2 \right) \vec{F} \).
+
+<h2 id="___sec17">En f&#246;rsta bekantskap med potentialf&#228;lt </h2>
+
+<p>
+En potential, \( \Phi \),  &#228;r ett viktigt specialfall av ett skal&#228;rt f&#228;lt.  Ur en  potential kan vi ber&#228;kna ett vektorf&#228;lt \( \vec{F} = - \vnabla \Phi \), som vi ofta kallar f&#246;r en f&#228;ltstyrka.
+
+<p>
+Vi kan d&#229; b&#229;de konstruera niv&#229;ytorna till potentialen, vilka kallas ekvipotentialytor, och f&#228;ltlinjerna till f&#228;ltstyrkan.  L&#228;gg m&#228;rke till att ekvipotentialytorna och f&#228;ltlinjerna &#246;verallt m&#229;ste vara ortogonala mot varandra.
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: F&#228;ltbild (med en sv&#229;rare diff.ekv.).</b>
+<p>
+Best&#228;m f&#228;ltbilden till potentialen
+$$
+\begin{equation}
+  \Phi\left(x,y\right) = \Phi_0 \frac{x^2 + y^2}{ax}.
+\tag{32}
+\end{equation}
+$$
+
+Vi b&#246;rjar med att best&#228;mma ekvipotentialkurvorna genom att s&#228;tta \( \Phi = 2C/\Phi_0 \), s&#229; att vi f&#229;r ekvationen
+$$
+\begin{equation}
+  2C = \frac{x^2+y^2}{ax}.
+\tag{33}
+\end{equation}
+$$
+
+Vi multiplicerar med \( ax \) och s&#228;tter alla termerna p&#229; samma sida om likhetstecknet
+$$
+\begin{equation}
+  0 = x^2 -2aCx +y^2.
+\tag{34}
+\end{equation}
+$$
+
+Efter kvadratkomplettering f&#229;r vi
+$$
+\begin{equation}
+  0 = \left(x - aC\right)^2 -a^2 C^2 + y^2.
+\tag{35}
+\end{equation}
+$$
+
+Denna ekvation kan vi skriva om som
+$$
+\begin{equation}
+  a^2 C^2 = \left(x - aC\right)^2 + y^2,
+\tag{36}
+\end{equation}
+$$
+
+vilket &#228;r ekvationen f&#246;r en cirkel med centrum i \( (aC,0) \) och radien \( |aC| \).  Detta inneb&#228;r att alla ekvipotentialytorna g&#229;r genom origo. Notera att det finns inget som f&#246;rbjuder \( aC \) fr&#229;n att vara ett negativt tal.
+
+<p>
+Nu best&#228;mmer vi f&#228;ltstyrkan
+$$
+\begin{equation}
+  \vec{F} = - \vnabla \Phi = - \frac{\Phi_0}{a} \left(1 - \frac{y^2}{x^2},
+\frac{2y}{x}\right).
+\tag{37}
+\end{equation}
+$$
+
+F&#228;ltlinjerna &#228;r d&#229; l&#246;sningen till 
+$$
+\begin{equation}
+  \frac{\mbox{d}x}{\mbox{d}\tau} = -C \frac{\Phi_0}{a}\left(1 - \frac{y^2}{x^2}
+\right),
+\tag{38}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  \frac{\mbox{d}y}{\mbox{d}\tau} = -C \frac{\Phi_0}{a} \frac{2y}{x}.
+\tag{39}
+\end{equation}
+$$
+
+Vi dividerar nu <a href="#mjx-eqn-39">(39)</a> med <a href="#mjx-eqn-38">(38)</a>
+$$
+\begin{equation}
+\tag{40}
+  \frac{\mbox{d}y}{\mbox{d}x} = \frac{2y/x}{1-y^2/x^2},
+\end{equation}
+$$
+
+<h3 id="___sec18">L&#246;sning 1 </h3>
+
+(Se avsnitt 7.2 i Arfken.)
+
+<p>
+Vi noterar att vi har den allm&#228;nna formen av en f&#246;rsta ordningens differentialekvation
+$$
+\begin{equation}
+\frac{\mbox{d}y}{\mbox{d}x} = - \frac{P(x,y)}{Q(x,y)}.
+\tag{41}
+\end{equation}
+$$
+
+Hade v&#229;r ekvation varit separabel hade vi f&#229;tt en v&#228;ldigt snabb l&#246;sning. F&#246;r en separabel diff.ekv. g&#228;ller att \( P(x,y)=P(x) \) och \( Q(x,y)=Q(y) \) s&#229; att
+$$
+\begin{equation}
+Q(y) \mbox{d}y = -P(x) \mbox{d}x,
+\tag{42}
+\end{equation}
+$$
+
+vilket vi enkelt kan integrera. Men tyv&#228;rr, i v&#229;rt fall kan vi inte skriva ekvationen p&#229; denna form. Ist&#228;llet unders&#246;ker vi om den &#228;r en exakt differential. I s&#229;dana fall existerar det en funktion \( \varphi(x,y) \) s&#229; att
+$$
+\begin{equation}
+\partial_x \varphi(x,y) = P(x,y) \quad \mathrm{och} \quad \partial_y \varphi(x,y) = Q(x,y).
+\tag{43}
+\end{equation}
+$$
+
+Detta &#228;r i sin tur uppfyllt omm
+$$
+\begin{equation}
+\partial_y P(x,y) = \partial_x Q(x,y).
+\tag{44}
+\end{equation}
+$$
+
+<p>
+I v&#229;rt fall &#228;r detta inte omedelbart sant eftersom vi har \( P(x,y) = - 2y/x \) och \( Q(x,y) = 1-y^2/x^2 \). Men strukturen ser &#228;nd&#229; lovande ut; vi skulle dock &#246;nska att kvoterna var de omv&#228;nda, dvs \( x/y \). Vi multiplicerar t&#228;ljare och n&#228;mnare med \( -x^2/y^2 \) vilket ger
+$$
+\begin{align}
+P(x,y) &= \frac{2x}{y},
+\tag{45}\\ 
+Q(x,y) &= 1 - \frac{x^2}{y^2}.
+\tag{46}
+\end{align}
+$$
+
+vilket uppfyller \( \partial_y P(x,y) = \partial_x Q(x,y) \) (kolla g&#228;rna). En s&#229;dan funktion (i v&#229;rt fall \( \alpha(x,y) = -x^2/y^2 \)) kallas f&#246;r en integrerande faktor och g&#229;r alltid att finna. Men tyv&#228;rr existerar det inget systematiskt s&#228;tt att konstruera denna (f&#246;rutom f&#246;r linj&#228;ra, f&#246;rsta ordningens ODE).
+
+<p>
+Under detta villkor har diff.ekvationen l&#246;sningen (om du &#228;r intresserad, se ett bevis av denna ekvation <a href="http://fy.chalmers.se/subatom/cforssen/vektorfalt/download/arfken_7_10.pdf" target="_blank">h&#228;r</a>. Notera ocks&#229; att Arfken &#228;r lite slarvig med att skilja p&#229; integrationsvariabler och integrationsgr&#228;nser.)
+$$
+\begin{equation}
+\int_{x_0}^x P(x',y) \mbox{d}x' + \int_{y_0}^y Q(x_0,y') \mbox{d}y' = \mathrm{konstant}. 
+\tag{47}
+\end{equation}
+$$
+
+Vi f&#229;r att
+$$
+\begin{equation}
+\mathrm{konstant} = \left[ \frac{x'^2}{y} \right]_{x_0}^x + \left[ y' + \frac{x_0^2}{y'} \right]_{y_0}^y. 
+\tag{48}
+\end{equation}
+$$
+
+S&#228;tt in integrationsgr&#228;nserna
+$$
+\begin{equation}
+\mathrm{konstant} = \frac{x^2}{y} - \frac{x_0^2}{y} + y + \frac{x_0^2}{y} - y_0 - \frac{x_0^2}{y_0}.
+\tag{49}
+\end{equation}
+$$
+
+Tv&#229; termer tar ut varandra och vi kan baka ihop alla konstanter till en ny (\( \mathrm{konstant} + y_0 + x_0^2/y_0 \equiv 2D \)). Multiplicera med \( y \) vilket ger
+$$
+\begin{equation}
+x^2 + y^2 - 2 D y = 0.
+\tag{50}
+\end{equation}
+$$
+
+Efter kvadratkomplettering f&#229;r vi
+$$
+\begin{equation}
+  x^2 + \left(y-D\right)^2 = D^2,
+\tag{51}
+\end{equation}
+$$
+
+vilket &#228;r ekvationen f&#246;r en cirkel med centrum i \( (0,D) \) och med radien \( |D| \), det vill s&#228;ga alla f&#228;ltlinjerna g&#229;r genom origo. Notera att det finns inget som f&#246;rbjuder \( D \) fr&#229;n att vara ett negativt tal.
+
+<h3 id="___sec19">L&#246;sning 2 </h3>
+
+Diff.ekvationen ovan kan skrivas om som
+$$
+\begin{equation}
+  \left(1 - \frac{y^2}{x^2}\right) \frac{\mbox{d}y}{\mbox{d}x} = \frac{2y}{x}.
+\tag{52}
+\end{equation}
+$$
+
+Om vi flyttar om termerna s&#229; f&#229;r vi
+$$
+\begin{equation}
+  \left(1 - \frac{y^2}{x^2}\right) \frac{\mbox{d}y}{\mbox{d}x} - \frac{2y}{x} = 
+0.
+\tag{53}
+\end{equation}
+$$
+
+Multiplicera med \( -x^2/y^2 \)
+$$
+\begin{equation}
+  \left(1 - \frac{x^2}{y^2}\right) \frac{\mbox{d}y}{\mbox{d}x} + \frac{2x}{y}
+= 0.
+\tag{54}
+\end{equation}
+$$
+
+Vi noterar nu att 
+$$
+\begin{equation}
+  \frac{\mbox{d}}{\mbox{d}x} \left(\frac{x^2}{y} + y\right) =
+\frac{2x}{y} - \frac{x^2}{y^2} \frac{\mbox{d}y}{\mbox{d}x} + 
+\frac{\mbox{d}y}{\mbox{d}x} = \left(1 - \frac{x^2}{y^2}\right) 
+\frac{\mbox{d}y}{\mbox{d}x} + \frac{2x}{y},
+\tag{55}
+\end{equation}
+$$
+
+det vill s&#228;ga v&#229;r ekvation kan skrivas
+$$
+\begin{equation}
+  \frac{\mbox{d}}{\mbox{d}x} \left(\frac{x^2}{y} + y\right) = 0.
+\tag{56}
+\end{equation}
+$$
+
+Om vi integrerar detta uttryck f&#229;r vi
+$$
+\begin{equation}
+  \frac{x^2}{y} + y = 2D,
+\tag{57}
+\end{equation}
+$$
+
+d&#228;r \( D \) &#228;r en integrationskonstant.  Vi multiplicerar med \( y \)
+$$
+\begin{equation}
+  x^2 + y^2 = 2Dy.
+\tag{58}
+\end{equation}
+$$
+
+Detta &#228;r samma l&#246;sning som ovan.
+</div>
+
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

@@ -1,0 +1,819 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+% Packages for typesetting blocks of computer code
+\usepackage{fancyvrb,framed,moreverb}
+
+% Define colors
+\definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+\definecolor{tucorange}{rgb}{1.0,0.64,0}
+\definecolor{darkorange}{rgb}{.71,0.21,0.01}
+\definecolor{darkgreen}{rgb}{.12,.54,.11}
+\definecolor{myteal}{rgb}{.26, .44, .56}
+\definecolor{gray}{gray}{0.45}
+\definecolor{mediumgray}{gray}{.8}
+\definecolor{lightgray}{gray}{.95}
+\definecolor{brown}{rgb}{0.54,0.27,0.07}
+\definecolor{purple}{rgb}{0.5,0.0,0.5}
+\definecolor{darkgray}{gray}{0.25}
+\definecolor{darkblue}{rgb}{0,0.08,0.45}
+\definecolor{darkblue2}{rgb}{0,0,0.8}
+\definecolor{lightred}{rgb}{1.0,0.39,0.28}
+\definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+\definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+\definecolor{lightblue2}{rgb}{0.3,0.3,1.0}
+\definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+\definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+
+\colorlet{comment_green}{green!50!black}
+\colorlet{string_red}{red!60!black}
+\colorlet{keyword_pink}{magenta!70!black}
+\colorlet{indendifier_green}{green!70!white}
+
+% Backgrounds for code
+\definecolor{cbg_gray}{rgb}{.95, .95, .95}
+\definecolor{bar_gray}{rgb}{.92, .92, .92}
+
+\definecolor{cbg_yellowgray}{rgb}{.95, .95, .85}
+\definecolor{bar_yellowgray}{rgb}{.95, .95, .65}
+
+\colorlet{cbg_yellow2}{yellow!10}
+\colorlet{bar_yellow2}{yellow!20}
+
+\definecolor{cbg_yellow1}{rgb}{.98, .98, 0.8}
+\definecolor{bar_yellow1}{rgb}{.98, .98, 0.4}
+
+\definecolor{cbg_red1}{rgb}{1, 0.85, 0.85}
+\definecolor{bar_red1}{rgb}{1, 0.75, 0.85}
+
+\definecolor{cbg_blue1}{rgb}{0.87843, 0.95686, 1.0}
+\definecolor{bar_blue1}{rgb}{0.7,     0.95686, 1}
+
+\usepackage{listingsutf8}
+
+% Common lstlisting parameters
+
+\usepackage{calc}
+\newlength{\lstboxwidth}  % width of lst box
+\newlength{\framethickness}
+\setlength{\framethickness}{0.5mm}
+% for frame=trbl and a framerule that has significant size, set
+% xleftmargin=5mm and xrightmargin=5mm.
+
+\lstset{
+  basicstyle=\small \ttfamily,
+  breaklines=false,          % break/wrap lines
+  breakatwhitespace=true,    % let linebreaks happen at whitespace
+  breakindent=40pt,
+  tab=,
+  tabsize=4,                 % tab means 4 spaces
+  %belowskip=\smallskipamount,  % space between code and text below
+  xleftmargin=2mm,           % indentation of code frame
+  xrightmargin=0mm,
+  framexleftmargin=2mm,      % add frame space to the left of the code box
+  %numbers=left,             % put line numbers on the left
+  %stepnumber=2,             % stepnumber=1 numbers each line, =n every n lines
+  framerule=\framethickness, % thickness of frame
+  aboveskip=2ex,             % vertical space above code frame
+  showstringspaces=false,    % show spaces in strings with an underscore
+  showspaces=false,          % show spaces with an underscore
+  showtabs=false,
+  keepspaces=true,
+  columns=fullflexible,      % tighter character kerning, like verb
+  escapeinside={(*@}{@*)},   % (*@ \pause @*) in slides and math in code blocks
+  extendedchars=\true,       % allows non-ascii chars, does not work with utf-8
+}
+
+% Internally defined styles for lstlisting
+
+% Use this one without additional background color
+\lstdefinestyle{blue1}{              % blue1 background for code snippets
+backgroundcolor=\color{cbg_blue1},
+}
+
+% Use this one without additional background color
+% (same as blue1, but with bar_blue1 frame)
+\lstdefinestyle{blue1bar}{           % blue1 background for complete programs
+backgroundcolor=\color{cbg_blue1},
+frame=tb,                            % include frame
+rulecolor=\color{bar_blue1},         % frame color
+}
+
+% Use this one without additional background color
+\lstdefinestyle{gray}{
+backgroundcolor=\color{cbg_gray},
+%frame=tb,                            % include frame
+%framerule=0.4pt                      % thickness of frame
+rulecolor=\color{black!40},           % frame color
+}
+
+\lstdefinestyle{simple}{
+commentstyle={},
+}
+
+% end of custom lstdefinestyles
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% Tricks for having figures close to where they are defined:
+% 1. define less restrictive rules for where to put figures
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0}
+\renewcommand{\floatpagefraction}{0.75}
+% floatpagefraction must always be less than topfraction!
+% 2. ensure all figures are flushed before next section
+\usepackage[section]{placeins}
+% 3. enable begin{figure}[H] (often leads to ugly pagebreaks)
+%\usepackage{float}\restylefloat{figure}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+% --- begin definitions of admonition environments ---
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "notice" admon
+\definecolor{mdfbox_notice_background}{rgb}{1,1,1}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_notice_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_notice_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{notice_mdfboxmdframed}
+
+\newenvironment{notice_mdfboxadmon}[1][]{
+\begin{notice_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{notice_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "summary" admon
+\definecolor{mdfbox_summary_background}{rgb}{1,1,1}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_summary_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_summary_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{summary_mdfboxmdframed}
+
+\newenvironment{summary_mdfboxadmon}[1][]{
+\begin{summary_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{summary_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "warning" admon
+\definecolor{mdfbox_warning_background}{rgb}{1,1,1}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_warning_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_warning_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{warning_mdfboxmdframed}
+
+\newenvironment{warning_mdfboxadmon}[1][]{
+\begin{warning_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{warning_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "question" admon
+\definecolor{mdfbox_question_background}{rgb}{1,1,1}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_question_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_question_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{question_mdfboxmdframed}
+
+\newenvironment{question_mdfboxadmon}[1][]{
+\begin{question_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{question_mdfboxmdframed}
+}
+
+% Admonition style "mdfbox" is an oval colored box based on mdframed
+% "block" admon
+\definecolor{mdfbox_block_background}{rgb}{1,1,1}
+\newmdenv[
+  skipabove=15pt,
+  skipbelow=15pt,
+  outerlinewidth=0,
+  backgroundcolor=mdfbox_block_background,
+  linecolor=black,
+  linewidth=2pt,       % frame thickness
+  frametitlebackgroundcolor=mdfbox_block_background,
+  frametitlerule=true,
+  frametitlefont=\normalfont\bfseries,
+  shadow=false,        % frame shadow?
+  shadowsize=11pt,
+  leftmargin=0,
+  rightmargin=0,
+  roundcorner=5,
+  needspace=0pt,
+]{block_mdfboxmdframed}
+
+\newenvironment{block_mdfboxadmon}[1][]{
+\begin{block_mdfboxmdframed}[frametitle=#1]
+}
+{
+\end{block_mdfboxmdframed}
+}
+
+% --- end of definitions of admonition environments ---
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+\usepackage[swedish]{babel}
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+\input{newcommands_keep}
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf \href{{http://fy.chalmers.se/subatom/tsp/}}{Christian Forssén}, Institutionen för fysik, Chalmers, Göteborg, Sverige${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Sep 17, 2018
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+\section{2. Kroklinjiga koordinater}
+
+Allmänt behöver vi tre parametrar $u_1, u_2, u_3$ för att beskriva en godtycklig punkt i rummet. Jämför med \emph{generaliserade koordinater} i analytisk mekanik. Vi kan då skriva ortsvektorn som $\vec{r}(u_1, u_2, u_3)$.  
+
+\paragraph{Koordinatyta.}
+för koordinat $i$: alla lösningar till $u_i = \mathrm{konstant}$.
+
+\paragraph{Koordinatkurva.}
+den kurva som fås om en koordinat tillåts variera och de andra hålls konstanta.
+
+Om vi då håller en av parametrarna, säg $u_1$, fix och låter $u_2$ och $u_3$ variera, så får vi en två-dimensionell yta, vilken vi kallar $u_1$-ytan. På samma sätt kan vi då definiera ytor för de andra koordinaterna. Två koordinatytor, till exempel de för koordinaterna $u_2$ och $u_3$, skär varandra längs en en-dimensionell kurva.  Längs denna kurva kommer då bara koordinaten $u_1$ att variera, så denna kurva är en koordinatkurva för $u_1$.
+
+
+\begin{notice_mdfboxadmon}[Exempel: cylindriska koordinater]
+I de cylindriska koordinaterna $\rho, \phi, z$ kan vi skriva ortsvektorn som $\vec{r} = \rho\cos \phi \hat{x} + \rho\sin \phi \hat{y} + z \hat{z}$. 
+
+
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.8\linewidth]{fig/620px-Coord_system_CY.png}}
+
+\vspace{6mm}
+
+
+
+Koordinatytorna för $\rho, \phi, z$ är då en cylinder med $z$-axeln som symmetriaxel och med radien $\rho$, ett plan som utgår från $z$-axeln och bildar en vinkel $\phi$ med $x$-axeln, samt ett plan parallellt med $xy$-planet och med $z$-koordinaten $z$. 
+
+
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.8\linewidth]{fig/Cylindrical_coordinate_surfaces.png}}
+
+\vspace{6mm}
+
+
+
+Koordinatlinjerna för $\rho, \phi, z$ blir då en stråle som utgår från $z$-axeln och bildar vinkeln $\phi$ med $x$-axeln, en cirkel med radien $\rho$ och en linje parallell med $z$-axeln.
+\end{notice_mdfboxadmon} % title: Exempel: cylindriska koordinater
+
+
+
+\subsection{Enhetsvektorer}
+Om vi nu studerar en liten förskjutning av ortsvektorn, $\mbox{d}\vec{r}$, så kan vi i och med att ortsvektorn är en funktion av $u_1, u_2, u_3$ skriva denna som 
+\begin{equation}
+  \mbox{d}\vec{r} = \frac{\partial \vec{r}}{\partial u_1} \mbox{d}u_1 +
+\frac{\partial \vec{r}}{\partial u_2} \mbox{d}u_2 + 
+\frac{\partial \vec{r}}{\partial u_3} \mbox{d}u_3.
+\label{eq:forskjutningsvektor}
+\end{equation}
+
+Tänk nu på att den partiella derivatan $\partial \vec{r}/\partial u_1$
+är definierad som derivatan då vi håller $u_2$ och $u_3$ fixa.
+Därför måste $\partial \vec{r}/\partial u_1$ vara en tangentvektor
+till koordinatkurvan för $u_1$.  Vi kan då definiera en enhetsvektor 
+för $u_1$ som
+\begin{equation}
+  \hat{e}_1 = \frac{1}{h_1} \frac{\partial \vec{r}}{\partial u_1},
+\end{equation}
+där 
+\begin{equation}
+  h_1 = \left|\frac{\partial \vec{r}}{\partial u_1}\right|
+\end{equation}
+kallas för skalfaktorn.  På samma sätt kan vi bestämma skalfaktorer och enhetsvektorer till $u_2$ och $u_3$. Förskjutningsvektorn $\mbox{d}\vec{r}$ kan vi nu skriva som
+\begin{equation}
+  \mbox{d}\vec{r} = h_1\hat{e}_1 \mbox{d}u_1 + h_2\hat{e}_2\mbox{d}u_2 +
+h_3\hat{e}_3\mbox{d}u_3.
+\label{eq:forskjutningsvektor_skalfaktor}
+\end{equation}
+
+\paragraph{Alternativ definition.}
+Ett alternativ till att använda de normerade tangentvektorerna som enhetsvektorer är att använda normalvektorerna till koordinatytorna. Betrakta t.ex.
+\begin{equation}
+u_1 = u_1(x,y,z) = \mathrm{konstant}.
+\end{equation}
+Detta motsvarar en nivåyta till ett skalärfält. Normalvektorn ges alltså av $\vnabla u_1$.
+Det gäller alltid att 
+\begin{equation}
+\vnabla u_i \cdot \frac{\partial \vec{r}}{\partial u_j} = \delta_{ij}.
+\end{equation}
+När vi inskränker oss till ortogonala system gäller dessutom att $\vnabla u_i \parallel \frac{\partial \vec{r}}{\partial u_i}$. Notera dock att dessa vektorer i allmänhet kan ha \emph{olika} längd. Faktum är att följande samband gäller för ortogonala system
+\begin{equation}
+\hat{e}_i 
+= \frac{1}{h_i} \frac{\partial \vec{r}}{\partial u_i}
+= h_i \vnabla u_i.
+\end{equation}
+
+
+\begin{notice_mdfboxadmon}[Exempel: Enhetsvektorer för cylindriska koordinater]
+I cylindriska koordinater är $\vec{r} = (\rho\cos \phi, \rho\sin \phi, z)$.  Vi kan då beräkna
+\begin{align}
+  \frac{\partial \vec{r}}{\partial \rho} &= \left(\cos \phi, \sin \phi, 0\right), \\ 
+  \frac{\partial \vec{r}}{\partial \phi} &= \left(-\rho \sin\phi, \rho \cos \phi,
+0\right), \\ 
+  \frac{\partial \vec{r}}{\partial z} &= \left(0,0,1\right).
+\end{align}
+Skalfaktorerna blir då
+\begin{align}
+  h_\rho &= \left(\cos^2\phi + \sin^2\phi\right)^{1/2} = 1, \\ 
+  h_\phi &= \left(\rho^2 \cos^2\phi + \rho^2 \sin^2\phi\right)^{1/2} = \rho, \\ 
+  h_z &= 1.
+\end{align}
+Enhetsvektorerna blir
+\begin{align}
+  \hat{\rho} &= \left(\cos\phi, \sin\phi,0\right), \\ 
+  \hat{\phi} &= \left(-\sin\phi, \cos\phi,0\right), \\ 
+  \hat{z} &= \left(0,0,1\right).
+\end{align}
+Förskjutningsvektorn kan då skrivas som
+\begin{equation}
+  \mbox{d}\vec{r} = \hat{\rho} \mbox{d}\rho + \rho \hat{\phi} \mbox{d} \phi + \hat{z} \mbox{d}z.
+\end{equation}
+\end{notice_mdfboxadmon} % title: Exempel: Enhetsvektorer för cylindriska koordinater
+
+
+
+I fortsättningen skall vi begränsa oss till koordinatsystem med ortogonala enhetsvektorer, dvs
+\begin{equation}
+\hat{e}_i \cdot \hat{e}_j = \delta_{ij} = \left\{
+\begin{array}{ll}
+1 & \,\mbox{om}\,\, i = j \\ 
+0 & \,\mbox{annars}\\ 
+\end{array}\right.
+\end{equation}
+där vi passat på att introducera Kroneckers delta, $\delta_{ij}$.
+
+Vi skall också anta att enhetsvektorerna bildar ett högersystem
+\begin{equation}
+\hat{e}_1 \times \hat{e}_2 = \hat{e}_3
+\end{equation}
+
+\emph{Visa att enhetsvektorerna i de cylindriska koordinaterna uppfyller dessa villkor.}
+
+Vi kan nu härleda några användbara samband som båglängden längs en kurva
+\begin{equation}
+\mbox{d}s^2 = \mbox{d}\vec{r}\cdot \mbox{d}\vec{r} = h_1^2\mbox{d}u_1^2 + h_2^2
+\mbox{d}u_2^2 + h_3^2 \mbox{d}u_3^2.
+\end{equation}
+Betrakta ovanstående båglängd för fallet då $du_2=du_3=0$. Det står då klart att vi kan tolka $h_1 du_1$ som båglängden $ds_1$, dvs som en infinitesimal förflyttning i $u_1$-riktningen. Notera därför att $h_i du_i$ alltid måste ha enheten längd.
+
+Ett ytelement $\mbox{d}\vec{S}_1$ på koordinatytan $u_1$ är en rektangel som  genereras av $\mbox{d}u_2$ och $\mbox{d}u_3$. Rektangelns sidor har då längderna $h_2\mbox{d}u_2$ och $h_3\mbox{d}u_3$.  Ytelementet blir
+\begin{equation}
+  \mbox{d}\vec{S}_1 =  \hat{e}_1 h_2 h_3 \mbox{d}u_2 \mbox{d}u_3,
+\end{equation}
+och på samma sätt kan vi beräkna ytelementen på koordinatytorna för $u_2$ och $u_3$.  
+
+Analogt kan vi beräkna volymelementet som genereras av  $\mbox{d}u_1$, $\mbox{d}u_2$ och $\mbox{d}u_3$, vilket blir
+\begin{equation}
+  \mbox{d}V = h_1 h_2 h_3 \mbox{d}u_1 \mbox{d}u_2 \mbox{d}u_3.
+\end{equation}
+
+
+\begin{notice_mdfboxadmon}[Exempel: båg- yt- och volymselement i cylindriska koordinater]
+Bågelementet i cylindriska koordinater blir
+\begin{equation}
+  \mbox{d}s^2 = \mbox{d}\rho^2 + \rho^2\mbox{d}\theta^2 + \mbox{d}z^2.
+\end{equation}
+Ett ytelement på $\rho$-ytan skrives
+\begin{equation}
+  \mbox{d}\vec{S}_\rho = \hat{e}_\rho \rho \mbox{d}\phi\mbox{d}z,
+\end{equation}
+på $\phi$-ytan
+\begin{equation}
+  \mbox{d}\vec{S}_\phi = \hat{e}_\phi \mbox{d}\rho\mbox{z}
+\end{equation}
+och på $z$-ytan
+\begin{equation}
+  \mbox{d}\vec{S}_z = \hat{e}_z \rho\mbox{d}\rho \mbox{d}\phi.
+\end{equation}
+Volymelementet kan vi skriva som
+\begin{equation}
+  \mbox{d}V = \rho\mbox{d}\rho \mbox{d}\phi\mbox{d}z.
+\end{equation}
+\end{notice_mdfboxadmon} % title: Exempel: båg- yt- och volymselement i cylindriska koordinater
+
+
+
+\subsection{Vektoroperatorer i kroklinjiga koordinater}
+
+\paragraph{Gradient.}
+Betrakta ett skalärt fält $\phi$.  Om vi förflyttar oss en sträcka $\mbox{d}\vec{r}$ så förändras $\phi$ 
+\begin{equation}
+  \mbox{d}\phi = \vnabla \phi \cdot \mbox{d}\vec{r}.
+\end{equation}
+Samtidigt, om vi skriver $\phi$ som en funktion av $u_1, u_2$ och $u_3$ får vi
+\begin{align}
+  \mbox{d}\phi &= \frac{\partial \phi}{\partial u_1}\mbox{d}u_1 + 
+\frac{\partial \phi}{\partial u_2}\mbox{d}u_2 +
+\frac{\partial \phi}{\partial u_3}\mbox{d}u_3 =
+\frac{1}{h_1} \frac{\partial \phi}{\partial u_1} h_1 \mbox{d}u_1 +
+\frac{1}{h_2} \frac{\partial \phi}{\partial u_2} h_2 \mbox{d}u_2 +
+\frac{1}{h_3} \frac{\partial \phi}{\partial u_3} h_3 \mbox{d}u_3 \nonumber \\ 
+ &=
+\left(\frac{1}{h_1} \frac{\partial \phi}{\partial u_1} \hat{e}_1 +
+\frac{1}{h_2} \frac{\partial \phi}{\partial u_2} \hat{e}_2 +
+\frac{1}{h_3} \frac{\partial \phi}{\partial u_3} \hat{e}_3\right) \cdot 
+\mbox{d}\vec{r}
+\end{align}
+Förflyttningen $\mbox{d}\vec{r}$ (ovan) kan vi i de nya koordinaterna skriva som [se ekv. (\ref{eq:forskjutningsvektor_skalfaktor})]
+\begin{equation}
+  \mbox{d}\vec{r} = h_1 \hat{e}_1 \mbox{d}u_1 + h_2 \hat{e}_2 \mbox{d}u_2
++ h_3 \hat{e}_3 \mbox{d}u_3.
+\end{equation}
+Då kan vi identifiera uttrycket inom parentesen som gradienten i de nya koordinaterna $u_1, u_2, u_3$
+\begin{equation}
+  \vnabla \phi = \frac{1}{h_1} \frac{\partial \phi}{\partial u_1} \hat{e}_1
++ \frac{1}{h_2}
+\frac{\partial \phi}{\partial u_2} \hat{e}_2 
++ \frac{1}{h_3} \frac{\partial \phi}{\partial u_3} \hat{e}_3.
+\end{equation}
+
+\paragraph{Gradient i cylindriska koordinater:}
+I cylindriska koordinater blir gradienten
+\begin{equation}
+  \vnabla f = \frac{\partial f}{\partial \rho} \hat{\rho} + \frac{1}{\rho}
+\frac{\partial f}{\partial \phi} \hat{\phi} + \frac{\partial f}{\partial z} \hat{z}.
+\end{equation}
+
+
+\begin{notice_mdfboxadmon}[Exempel: skalärfält och dess gradient i olika koordinatsystem]
+Ett skalärfält är givet i Cartesiska koordinater
+\begin{equation}
+\beta = x^2 + y^2.
+\end{equation}
+Motsvarande skalärfält i plana polärkoordinater blir
+\begin{equation}
+\beta = r^2\cos^2\theta + r^2 \sin^2\theta = r^2.
+\end{equation}
+Gradienten i Cartesiska koordinater blir
+\begin{equation}
+\vnabla \beta = \hat{x} \partial_x \beta + \hat{y} \partial_y \beta = 2 (x \hat{x} + y \hat{y}).
+\end{equation}
+Medan i plana polärkoordinater blir den
+\begin{equation}
+\vnabla \beta = \hat{e}_r \partial_r + \hat{e}_\theta \frac{1}{r} \partial_\theta \beta = 2 r \hat{e}_r.
+\end{equation}
+Eftersom $x \hat{x} + y \hat{y} = r \hat{e}_r$ är det uppenbart att detta är samma vektor!
+\end{notice_mdfboxadmon} % title: Exempel: skalärfält och dess gradient i olika koordinatsystem
+
+
+
+
+\begin{notice_mdfboxadmon}[Exempel: Tentauppgift 2010-08-26: 1b]
+För vilka värden på $\alpha,\beta,\gamma$ har det tvådimensionella koordinatsystemet med koordinater $\xi$ och $\eta$, givna av
+\begin{align}
+\xi &= x^2 - y^2 \\ 
+\eta &= \alpha x^2 + \beta x y + \gamma y^2
+\end{align}
+ortogonala basvektorer?
+
+\paragraph{Lösning.}
+Vi kan konstruera basvektorer på två sätt:
+\begin{itemize}
+\item $\hat{e}_i \propto \frac{\partial \vec{r}}{\partial u_i}$
+
+\item $\hat{e}_i \propto \vnabla u_i$
+\end{itemize}
+
+\noindent
+Det första sättet innebär att vi behöver räkna ut storheterna $\frac{\partial x}{\partial u_i}$ och $\frac{\partial y}{\partial u_i}$, dvs vi behöver veta $x=x(\xi,\eta),\; y=y(\xi,\eta)$. Vi skulle behöva invertera det givna koordinatsambandet.
+
+Det andra sättet kräver istället $\frac{\partial \xi}{\partial x}$ och $\frac{\partial \xi}{\partial y}$ (samt motsvarande för $\eta$) och detta blir enkelt med de givna koordinattransformationerna. Vi får
+\begin{align}
+\vnabla \xi &= 2x \hat{x} - 2y \hat{y} \\ 
+\vnabla \eta &= (2 \alpha x + \beta y)\hat{x} + (\beta x + 2 \gamma y) \hat{y}
+\end{align}
+För att koordinatsystemet skall vara ortogonalt behöver vi
+\begin{equation}
+\hat{e}_\xi \cdot \hat{e}_\eta = 0 \qquad \Rightarrow \qquad \vnabla \xi \cdot \vnabla \eta=0.
+\end{equation}
+Från uttrycken för dessa gradienter ovan får vi
+\begin{equation}
+\vnabla \xi \cdot \vnabla \eta = 2x (2 \alpha x + \beta y) - 2 y (\beta x + 2 \gamma y) 
+= 4 \alpha x^2 - 4 \gamma y^2.
+\end{equation}
+För att få $\vnabla \xi \cdot \vnabla \eta=0$ måste vi ha $\alpha = \gamma = 0$, medan $\beta$ är godtyckligt.
+
+
+
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.8\linewidth]{fig/koordinatytor.png}}
+
+\vspace{6mm}
+\end{notice_mdfboxadmon} % title: Exempel: Tentauppgift 2010-08-26: 1b
+
+
+
+
+\begin{notice_mdfboxadmon}[Exempel: Fältlinjer i kroklinjiga koordinater]
+Låt oss konstruera och rita fältlinjerna till en så kallad virveltråd
+\begin{equation}
+\vec F = \frac{J}{2\pi\rho} \hat{\varphi}, 
+\end{equation}
+som alltså är uttryckt i cylindriska koordinater. Notera att detta fält är singulärt längs hela $z$-axeln vid $\rho=0$, men vi kommer här enbart att betrakta $\rho > 0$.
+
+\paragraph{Lösning.}
+Vi kan rita fältlinjerna på två sätt:
+\begin{itemize}
+\item Det första alternativet är förstås att finna ett explicit uttryck för fältlinjerna genom att formulera och lösa differentialekvationerna. Sedan kan vi definiera dessa kurvor som en funktion i Matlab (eller Python) och rita upp dem explicit för några olika startpunkter.
+
+\item Det andra alternativt är att utnyttja funktionen 'streamline' i Matlab ('streamplot i Python) och mata in vektorfältet på ett rutnät av olika koordinatpunkter. Notera dock att detta alternativ bygger på att vi transformerar till ett Cartesiskt koordinatsystem.
+\end{itemize}
+
+\noindent
+Vi börjar med att konstruera fältlinjerna i cylindriska koordinater. Här noterar vi att förskjutningsvektorn ges av $d\vec{r} = d\rho \hat\rho + \rho d\varphi\hat\varphi + dz\hat z$. Vi tecknar nu ekvationen $\frac{d\vec{r}}{d \tau} = C \vec{F}$, med $C=2\pi/J$, på komponentform
+\begin{align*}
+\frac{d\rho}{d\tau} &= 0 \qquad \Rightarrow \quad \rho(\tau) = \rho_0, \\ 
+\rho \frac{d\varphi}{d\tau} &= \frac{1}{\rho} \qquad \Rightarrow \quad \varphi(\tau) = \frac{\tau}{\rho_0^2} + \varphi_0, \\ 
+\frac{d z}{d\tau} &= 0 \qquad \Rightarrow \quad z(\tau) = z_0.
+\end{align*}
+Ur detta ser man att fältlinjerna blir cirklar i $xy$-planet vid $z=z_0$ och med radie $\rho_0$. De genomlöps moturs eftersom vinkeln $\varphi$ ökar med ökande $\tau$.
+
+Vi kan teckna ekvationen för fältlinjerna i Cartesiska koordinater som sambandet $x^2+y^2 = \rho_0^2$ och rita upp dessa för några olika val av $\rho_0$. I figuren nedan är fältlinjerna ritade som funktioner $y = \pm \sqrt{\rho_0^2 - x^2}$ för $\rho_0 = 1,1.5,2,2.5,3$.
+
+
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.8\linewidth]{fig/streamlines-vortex-curves.png}}
+
+\vspace{6mm}
+
+
+
+Nu tittar vi på det andra alternativet och använder tillgänglig funktionalitet i Matlab (eller Python). Här krävs dock att vektorfältets Cartesiska komponenter räknas ut. Från transformationen mellan cylindriska och Cartesiska koordinater ser vi direkt att
+\begin{equation*}
+\frac{2\pi}{J} \vec{F} = \frac{1}{\rho} \hat\varphi = \frac{1}{\rho} \left( -\sin\varphi \hat{x} + \cos\varphi \hat y \right).
+\end{equation*}
+Koordinaterna är relaterade enligt $\rho^2 = x^2+y^2$ och $\cos\varphi = x/\rho$, $\sin\varphi = y/\rho$, vilket ger
+\begin{equation*}
+\frac{2\pi}{J} \vec{F} = \frac{1}{x^2+y^2} \left( -y \hat{x} + x \hat y \right).
+\end{equation*}
+
+I både Matlab och Python kan vi skapa ett rutnät av $x,y$-koordinater och tillhörande $F_x,F_y$ komponenter som vi sedan ritar med 'streamline' ('streamplot' i Python). Se nedan för kod och figur med Matlab:
+
+
+\begin{lstlisting}[language=Matlab,style=blue1]
+% Make an x,y grid
+[X,Y] = ndgrid(linspace(-2.5,2.5,100),linspace(-2.5,2.5,100));
+R=sqrt(X.^2+Y.^2);
+
+% Plot streamlines for corresponding vector field
+v_x = - Y ./ R.^2; % Note that -Y/R = -sin(phi)
+v_y = X ./ R.^2;   % Note that X/R = cos(phi)
+
+% In Matlab we have to provide start points for streamlines.
+start1_y=-2.0:0.5:-0.5;
+start_y=[start1_y, -start1_y];
+start_x=[zeros(size(start_y))];
+
+% Fine tuning might be needed to get a nice set of streamlines.
+strm=streamline(X', Y', v_x', v_y', start_x, start_y,[0.01]);
+set(strm,'LineWidth',2,'Color','k')
+
+hold on
+
+% Matlab streamlines have no arrows. Combine with quiver.
+% Use fewer grid points to avoid too many arrows in the plot.
+[Xc,Yc] = ndgrid(linspace(-3,3,10),linspace(-3,3,10));
+Rc=sqrt(Xc.^2+Yc.^2);
+v_xc = - Yc ./ Rc.^2; % Note that -Y/R = -sin(phi)
+v_yc = Xc ./ Rc.^2;   % Note that X/R = cos(phi)
+qvr=quiver(Xc', Yc', v_xc', v_yc','Color','k');
+
+xlabel('x')
+ylabel('y')
+xlim([-2.5,2.5])
+ylim([-2.5,2.5])
+\end{lstlisting}
+
+
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.8\linewidth]{fig/streamlines-vortex-matlab.png}}
+
+\vspace{6mm}
+
+
+
+Och samma exempel med Python:
+
+\begin{lstlisting}[language=Python,style=blue1]
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+\end{lstlisting}
+\begin{lstlisting}[language=Python,style=blue1]
+w = 3
+Y, X = np.mgrid[-w:w:100j, -w:w:100j]
+R = np.sqrt(X**2+Y**2)
+U = -Y / R**2 # Note that -Y/R = -sin(phi)
+V = X / R**2  # Note that X/R = cos(phi)
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+
+strm = ax.streamplot(X, Y, U, V, linewidth=2)
+
+ax.set_title(r'Streamplot, vortex field ' +\ 
+        r'$\vec{F} = \frac{J}{2\pi\rho}\hat\varphi$')
+ax.set_xlabel('$x$')
+ax.set_ylabel('$y$')
+
+ax.set_aspect('equal')
+
+plt.savefig('streamlines-vortex.png')
+\end{lstlisting}
+
+
+
+\vspace{6mm}
+
+% inline figure
+\centerline{\includegraphics[width=0.8\linewidth]{fig/streamlines-vortex.png}}
+
+\vspace{6mm}
+\end{notice_mdfboxadmon} % title: Exempel: Fältlinjer i kroklinjiga koordinater
+
+
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+

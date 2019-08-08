@@ -1,0 +1,764 @@
+TITLE: FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/tsp/", Institutionen för fysik, Chalmers, Göteborg, Sverige 
+DATE: today
+
+=======  4. Integralsatser =======
+
+Minnesregel för strukturen på alla integralsatser
+!bt
+\begin{equation}
+  \int_{V_D} (\mathrm{derivata~av~fält}) = \int_{(\partial V)_{D-1}} (\mathrm{fält})
+\end{equation}
+!et
+Enkelt exempel: integration av funktion av en variabel:
+!bt
+\begin{equation}
+\int_a^b \frac{\mbox{d}f}{\mbox{d}x} \mbox{d}x = \left[ f(x) \right]_a^b = f(b)-f(a)
+\end{equation}
+!et
+Randen av den endimensionella volymen $[a,b]$ är de två punkterna $a$ och $b$, så tolkningen av högerledet i det schematiska uttrycket ovan blir en summa över dessa två punkter.
+  
+===== Gauss sats =====
+
+Man kan alltid beräkna integraler enligt metoderna på förra föreläsningen, men i vissa fall kan man tillämpa integralsatser som förenklar beräkningarna.
+
+Ett viktigt exempel på en sådan sats är Gauss sats.  
+
+!bsummary Sats:  
+Antag att $\vec{F}$ är ett kontinuerligt deriverbart vektorfält definierat i en volym $V$. $\partial V = S$ är den slutna ytan som bildar randen till $V$ och $\mbox{d}\vec{S} = \hat{n} \mbox{d}S$ där $\hat{n}$ är den utåtriktade enhetsnormalen. Då gäller att
+!bt
+\begin{equation}
+  \int_V \vnabla \cdot \vec{F} \mbox{d}V = \oint_{\partial V} \vec{F} \cdot \mbox{d} \vec{S}.
+\end{equation}
+!et
+!esummary
+
+Kvantiteten
+!bt
+\begin{equation}
+\vnabla  \cdot \vec{F} = \frac{\partial F_x}{\partial x} +
+\frac{\partial F_y}{\partial y} + \frac{\partial F_z}{\partial z}
+\end{equation}
+!et
+kallar vi för divergensen av $\vec{F}$. Om man tänker sig att $\vec{F}$ är hastigheten för en vätska, så kan man se divergensen av $\vec{F}$ i en punkt som ett mått på hur mycket vätska som strömmar ut från den punkten.
+
+Lägg märke till att volymen $V$ i Gauss sats måste vara sammanhängande, men att det inte är nödvändigt att $S$ är sammanhängande.  $S$ kan mycket väl bestå av ett ändligt antal var för sig glatta ytsegment, så länge som de bara tillsammans bildar en sluten yta. Vidare kommer vi tills vidare att begränsa oss till "hyfsat snälla" fält. Mer om detta längre fram i kursen.
+
+En fysikalisk tolkning av Gauss sats är att högerledet representerar flödet ut genom en yta $S$ och att vänsterledet representerar närvaror av källor till detta flöde innanför ytan. Integranden $\vnabla \cdot \vec{F}$ kallas också för källtäthet.
+
+!bnotice Exempel: Gauss sats (tentamen 2011-08-25 variant) 
+
+Beräkna normalytintegralen
+!bt
+\begin{equation}
+\int_S \vec{F} \cdot \mbox{d}\vec{S},
+\end{equation}
+!et
+där $\vec{F} = -F_0 z \hat{z} / a$ och $S$ är ytan $x^2 + y^2 = (z-4a)^2$ och $0\le z \le 4a$ med normalen snett uppåt (alltså positiv z-komponent).
+
+=== Lösning: ===
+* Bestäm utseendet på ytan $S$ och rita en tydlig figur.
+* Undersök fältet $\vec{F}$. Singulariteter? Beräkna $\vnabla \cdot \vec{F}$.
+* Slut ytan $S$. Undvik singulariteter inuti den inneslutna volymen.
+* Teckna Gauss sats och beräkna integralen.
+* Har normalen rätt riktning?
+
+Vår ytan är en kon med spetsen i $z=4a$ och en öppning nedåt. Den är alltså inte sluten! Fältet är utan singulariteter och divergensen är $\vnabla \cdot \vec{F} = -F_0 / a$.
+
+Vi kan sluta ytan genom att lägga till en bottenplatta, $S_{z=0}$, i $xy$-planet. Detta blir en cirkelskiva med $z=0$ och radie $4a$. Normalvektorn blir $-\hat{z}$ för at peka ut från den inneslutna volymen. På den slutna ytan $S+S_{z=0}$ kan vi sedan tillämpa Gauss sats
+!bt
+\begin{equation}
+  \oint_{S+S_{z=0}} \vec{F} \cdot \mbox{d}\vec{S} = \int_V \vnabla \cdot \vec{F}
+\mbox{d}V = -\frac{F_0}{a}\int_V\mbox{d}V = -\frac{F_0}{a} \frac{1}{3} \pi (4a)^2 4a.
+\end{equation}
+!et
+Vi kan nu separat beräkna
+!bt
+\begin{equation}
+  \int_{S_{z=0}} \vec{F} \cdot \mbox{d}\vec{S} = 0,
+\end{equation}
+!et
+eftersom $\vec{F}=0$ då $z=0$.  Slutligen har vi alltså 
+!bt
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} = -\frac{64\pi}{3} F_0 a^2.
+\end{equation}
+!et
+!enotice
+
+===== Kontinuitetsekvationen =====
+
+Tänk oss ett fall med en strömmande fluid där vi antar att den totala massan är bevarad.
+* Densitetsfält $\rho(\vec{r},t)$
+* Hastighetsfält $\vec{v}(\vec{r},t)$
+* Massflödestäthet $\vec{j}(\vec{r},t) = \rho(\vec{r},t) \vec{v}(\vec{r},t)$
+Definiera en yta $\mbox{d}\vec{S}$ med normalriktning $\hat{n}$. Då blir $\vec{j} \cdot \hat{n} = \mathrm{massa}/\mathrm{tidsenhet} \cdot \mathrm{areaenhet}$ genom ytan.
+
+Inne i en volym $V$ finns massan $m_V = \int_V \rho \mbox{d}V$. Vi kan räkna ut $\frac{\mbox{d}m_V}{\mbox{d}t}$ på två sätt:
+* Från integralen ovan: $\frac{\mbox{d}m_V}{\mbox{d}t} = \int_V \frac{\partial \rho}{\partial t} \mbox{d}V$.
+* Hur mycket massa flödar in i volymen per tidsenhet 
+!bt
+\begin{align}
+\frac{\mbox{d}m_V}{\mbox{d}t} &=
+-\left\{ \mathrm{det~som~flödar~ut} \right\}
+= -\int_{\partial V} \vec{j} \cdot \mbox{d}\vec{S} \nonumber \\
+&= \left\{ \mathrm{Gauss~sats} \right\} = -\int_V \vnabla \cdot \vec{j} \mbox{d} V 
+\end{align}
+!et
+Sammantaget så innebär det att $\int_V \left( \frac{\partial \rho}{\partial t} + \vnabla \cdot \vec{j} \right) \mbox{d}V = 0$ för alla volymer $V$. Därför får vi kontinuitetsekvationen (som uttrycker en storhets bevarande)
+!bt
+\begin{equation}
+\frac{\partial \rho}{\partial t} + \vnabla \cdot \vec{j} = 0.
+\end{equation}
+!et
+
+===== Stokes sats =====
+
+Först given på skrivningen för Smith's priset i februari 1854 i Cambridge.  (Bästa student J. C. Maxwell).
+
+!bsummary Sats:  
+Den slutna kurvan $C$ är randen till ytan $S$. Då gäller för ett kontinuerligt deriverbart vektorfält $\vec{F}$ på $S$ att
+!bt
+\begin{equation}
+  \int_S \left( \vnabla \times \vec{F}\right) \cdot \mbox{d}\vec{S} = \oint_{\partial S} \vec{F}\cdot
+\mbox{d}\vec{r},
+\end{equation}
+!et
+där $\partial S = C$ är randen till $S$ och $\mbox{d}\vec{S} = \hat{n} \mbox{d} S$. Normalriktningen ($\hat{n}$) och randens riktning ($C$) är orienterade enligt högerhandsregeln.
+!esummary
+
+En viktig observation är att man kan välja olika ytor $S$ som alla
+har samma rand. Integralen i vänsterledet är alltså oberoende
+av vilken man väljer. Tag två ytor $S_1$ och $S_2$ med samma
+rand. Genom att sätta samman dem, och vända riktning på
+normalen till den ena får vi en sluten yta $S$ med
+$\partial S=\emptyset$. Vi har alltså 
+!bt
+\begin{equation}
+\oint_S(\vnabla\times\vec{F})\cdot \mbox{d}\vec{S} = \left(\int_{S_1}-\int_{S_2}\right)(\vnabla\times\vec{F})\cdot
+\mbox{d}\vec{S}=0. 
+\end{equation}
+!et
+Eftersom ytan är sluten kan vi använda Gauss sats, som säger att detta skall vara lika med
+$\int_V\vnabla\cdot(\vnabla\times\vec{F})\mbox{d}V$ där $\partial V=S$. Integranden här är identiskt noll. Så vänsterledets i Stokes sats oberoende av vilken yta man väljer kan via Gauss sats ses som en konsekvens av identiteten 
+!bt
+\begin{equation}
+\vnabla\cdot(\vnabla\times\vec F)=0.
+\end{equation}
+!et
+
+
+===== Inifinitesimala volymer och ytor: uttryck för divergens och rotation =====
+
+Vi kan använda Gauss och Stokes satser på inifinitesimala volymer och ytor för att finna koordinatoberoende definition av divergens och rotation på ett fält.
+
+=== Divergens i kroklinjiga koordinater ===
+
+Med hjälp av ytintegralen kan vi konstruera en koordinatoberoende definition av divergensen i punkten $P$ ($u_1u_2u_3$). Betrakta en volym $\delta V$ runt $P$, som är så liten att $\vnabla \cdot \vec{F}$ kan betraktas som konstant, och använd Gauss sats
+!bt
+\begin{align}
+  \vnabla \cdot \vec{F} &=\lim_{\delta V \to 0} \frac{1}{\delta V} \int_{\delta V} \vnabla \cdot \vec{F} \mbox{d} V \quad \Rightarrow \nonumber \\
+  &= \lim_{\delta V \to 0} \frac{1}{\delta V} \oint_{\partial (\delta
+V)} \vec{F} \cdot \mbox{d}\vec{S},
+\end{align}
+!et
+* $\partial (\delta V)$ är den infinitesimala volymens begränsningsyta. 
+* Dessa  begränsningsytor väljs som koordinatytor för $u_1,u_2,u_3$ 
+* Vi skriver $\vec{F} = F_1 \hat{e}_1 + F_2 \hat{e}_2 + F_3 \hat{e}_3$. 
+
+Betrakta först integralen över $u_1$-ytorna. Storleken på ytelementet blir $h_2 h_3 \mbox{d}u_2 \mbox{d}u_3$ och riktningen blir $+\hat{e}_1$ och $-\hat{e}_1$ på de två sidorna. Produkten $\vec{F} \cdot \mbox{d} \vec{S}$ kommer därmed ha storleken $(F_1 h_2 h_3) \mbox{d}u_2 \mbox{d}u_3$ och vi får inte glömma att storheterna inom parantesen kan ha ett $u_1$-beroende
+!bt
+\begin{align}
+\int_{u_1-\mathrm{ytorna}} \vec{F} \cdot \mbox{d} \vec{S} &= \Big( (F_1 h_2 h_3)_{u_1 + \mathrm{d} u_1/2} - (F_1 h_2 h_3)_{u_1-\mathrm{d} u_1/2} \Big)  \mbox{d}u_2 \mbox{d}u_3 \nonumber \\
+&= \frac{\partial (F_1 h_2 h_3)}{\partial u_1} \mbox{d}u_1 \mbox{d}u_2 \mbox{d}u_3.
+\end{align}
+!et
+Eftersom volymen $\delta V = h_1 h_2 h_3 \mbox{d}u_1 \mbox{d}u_2 \mbox{d}u_3$ blir det totalt
+!bt
+\begin{align}
+\vnabla \cdot \vec{F} &= \lim_{\delta V \to 0}  \frac{\mbox{d}u_1 \mbox{d}u_2 \mbox{d}u_3}{h_1 h_2 h_3 \mbox{d}u_1 \mbox{d}u_2 \mbox{d}u_3} \left( \frac{\partial}{\partial u_1} (F_1 h_2 h_3) + \frac{\partial}{\partial u_2} (F_2 h_1 h_3) + \frac{\partial}{\partial u_3} (F_3 h_1 h_2) \right) \nonumber \\
+&= \frac{1}{h_1 h_2 h_3} \sum_{i=1}^3 \frac{\partial}{\partial u_i} \left[ \frac{h_1 h_2 h_3}{h_i} F_i \right].
+\end{align}
+!et
+
+!bnotice Exempel: sfäriska koordinater
+* skalfaktorer $h_r=1$, $h_\theta=r$, $h_\varphi = r \sin\theta$
+* Ett vektorfält $\vec{F} = F_r \hat{e}_r + F_\theta \hat{e}_\theta + F_\varphi \hat{e}_\varphi$
+Divergensen blir
+!bt
+\begin{align}
+\vnabla \cdot \vec{F} &= \frac{1}{r^2 \sin\theta} \left( \frac{\partial}{\partial r} \left( r^2 \sin\theta F_r \right) + \frac{\partial}{\partial \theta} \left( r \sin\theta F_\theta \right) + \frac{\partial}{\partial \varphi} \left( r F_\varphi \right) \right) \nonumber \\
+&= \frac{1}{r^2} \frac{\partial}{\partial r} \left( r^2 F_r \right) + \frac{1}{r \sin\theta} \frac{\partial}{\partial \theta} \left( \sin\theta F_\theta \right) + \frac{1}{r \sin\theta} \frac{\partial F_\varphi}{\partial \varphi}.
+\end{align}
+!et
+!enotice
+
+=== Rotation i kroklinjiga koordinater ===
+Med hjälp av en kurvintegral kan vi konstruera en koordinatoberoende definition av rotationen. För ett infinitesimalt litet ytelement $d\vec{S} = \hat{n} dS$ har vi
+!bt
+\begin{align}
+  \hat{n} \cdot \left( \vnabla \times \vec{F} \right) &=  \lim_{\delta S \to 0} \frac{1}{\delta S} \int_{\delta S} \vnabla \times \vec{F} \cdot \mbox{d} \vec{S} \quad \Rightarrow \nonumber \\
+  &= \lim_{\delta S \to 0} 
+\frac{1}{\delta S} \oint_{\partial (\delta S)} \vec{F} \cdot \mbox{d}\vec{r},
+\end{align}
+!et
+där $\delta S$ är ett litet ytelement med normalen $\hat{n}$ och uttrycket ovan alltså ger komponenten av $\vnabla \times \vec{F}$ längs enhetsvektorn $\hat{n}$.
+* Vi får (exempelvis) $u_1$-komponenten av $\vnabla \times \vec{F}$ genom att låta $\delta S$ vara en $u_1$-yta.
+* Randen $\partial(\delta S)$ utgörs då av koordinatlinjerna för $u_2$ och $u_3$.
+* Lägg ihop de fyra bidragen och dela med $\delta S = h_2 h_3 \mbox{d}u_2 \mbox{d}u_3$.
+* Upprepa detta för $u_2$ och $u_3$ komponenterna.
+Slutresultatet blir
+!bt
+\begin{equation}
+\vnabla \times \vec{F} = = \frac{1}{h_1 h_2 h_3} \left|
+\begin{matrix}
+h_1 \hat{e}_1 & h_2\hat{e}_2 & h_3\hat{e}_3\cr
+\frac{\partial }{\partial u_1} & \frac{\partial }{\partial u_2} & \frac{\partial }{\partial u_3}\cr
+h_1F_1 & h_2F_2 & h_3F_3 \cr
+\end{matrix} \right| .
+\end{equation}
+!et
+
+=== Laplaceoperatorn i kroklinjiga koordinater ===
+Slutligen kan kan man använda uttrycken för gradient och divergens för att få  Laplaceoperatorn på en skalär i kroklinjiga koordinater:
+!bt
+\begin{equation}
+\Delta\phi=\vnabla \cdot (\vnabla\phi)
+=\frac{1}{h_1h_2h_3}\sum_{i=1}^3
+\frac{\partial}{\partial u_i} \left( \frac{h_1h_2h_3}{h_i^2} \frac{\partial\phi}{\partial u_i} \right).
+\end{equation}
+!et
+
+!bnotice Exempel (Gauss sats): Tentamen 2003-08-18 
+
+Beräkna integralen
+!bt
+\begin{equation}
+  \int_S \vec{F}\cdot \mbox{d}\vec{S},
+\end{equation}
+!et
+där $S$ är ytan
+!bt
+\begin{equation}
+  x^2 + y^2 + z^2 = a^2,  \quad z> 0,
+\end{equation}
+!et
+och fältet $\vec{F}$ ges av
+!bt
+\begin{equation}
+  \vec{F} = \frac{F_0}{a^2} \left(ax, ay, x^2+y^2\right).
+\end{equation}
+!et
+$a$ och $F_0$ är konstanter.<linebreak>
+
+*Lösning:* <linebreak>
+Vi konstaterar först att ytan
+!bt
+\begin{equation}
+  x^2 + y^2 + z^2 = a^2, \quad z>0
+\end{equation}
+!et
+är en halvsfär med radien $a$.  
+
+Fältet $\vec{F}$ är reguljärt överallt, och det har divergensen
+!bt
+\begin{equation}
+  \vnabla \cdot \vec{F} = \frac{F_0}{a^2}\left(\frac{\partial}{\partial x}
+\left(ax\right) + \frac{\partial}{\partial y} \left(ay\right) +
+\frac{\partial}{\partial z} \left(x^2 + y^2\right)\right) = \frac{F_0}{a^2}
+\left(a+a\right) = 2 \frac{F_0}{a}.
+\end{equation}
+!et
+
+Allt vi behöver göra för att kunna tillämpa Gauss sats är därför att sluta ytan genom att lägga till en bottenyta $S_1$ med normalen $-\hat{z}$, samtidigt som vi sätter normalen till $S$ till $\hat{e}_r$.  Gauss sats ger oss nu att
+!bt
+\begin{align}
+  \oint_{S+S_1} \vec{F}\cdot \mbox{d}\vec{S} &= \int_S \vec{F}\cdot \mbox{d}\vec{S} +
+\int_{S_1} \vec{F}\cdot \mbox{d}\vec{S} = \int_V \vnabla \cdot \vec{F} \mbox{d}V =
+\int_V 2 \frac{F_0}{a} \mbox{d}V \nonumber \\
+& = 2\frac{F_0}{a} \frac{2\pi a^3}{3} =
+\frac{4\pi F_0 a^2}{3}.
+\end{align}
+!et
+Vi övergår nu till att beräkna integralen över $S_1$:
+!bt
+\begin{equation}
+  \int_{S_1} \vec{F}\cdot \mbox{d}\vec{S} = \int_{S_1} \vec{F} \cdot \left(-
+\hat{z} \right) \mbox{d}S = \int_{S_1} - \frac{F_0}{a^2} \left(x^2 + y^2
+\right) \mbox{d}S.
+\end{equation}
+!et
+Det är nu praktiskt att skriva om integralen på cylinderkoordinater
+!bt
+\begin{equation}
+  \int_{S_1} \vec{F}\cdot \mbox{d}\vec{S} = - \frac{F_0}{a^2} \int_0^a
+\int_0^{2\pi} \rho^2 \rho \mbox{d}\varphi \mbox{d}\rho = -2\pi 
+\frac{F_0}{a^2} \left[\frac{\rho^4}{4}\right]_0^a = - \frac{\pi F_0 a^2}{2}.
+\end{equation}
+!et
+Vi kan nu få fram ett värde på vår sökta integral
+!bt
+\begin{equation}
+  \int_S \vec{F}\cdot \mbox{d}\vec{S} = \oint_{S+S_1} \vec{F}\cdot \mbox{d}\vec{S}
+-\int_{S_1} \vec{F}\cdot \mbox{d}\vec{S} = \frac{4\pi F_0 a^2}{3} + 
+\frac{\pi F_0 a^2}{2} = \frac{11\pi F_0 a^2}{6}.
+\end{equation}
+!et
+!enotice
+
+!bnotice Exempel (Stokes sats): Tentamen 2003-08-18
+
+Beräkna integralen
+!bt
+\begin{equation}
+  \oint_C \vec{F}\cdot \mbox{d}\vec{r},
+\end{equation}
+!et
+där kurvan $C$ ges av skärningen mellan ytorna
+!bt
+\begin{equation}
+  r^2\sin^2 \theta \left(4 \cos^2 \varphi + \sin^2 \varphi\right) = 4 a^2,
+\end{equation}
+!et
+och
+!bt
+\begin{equation}
+  z = 0.
+\end{equation}
+!et
+Kurvan omsluts i moturs riktning sett ovanifrån (dvs högerorienterad relativt $z$-axeln). 
+Vidare ges fältet $\vec{F}$ av
+!bt
+\begin{equation}
+  \vec{F} = F_0 \left[\left(\frac{a}{r} + \frac{r}{2a}\sin^2 \theta \sin 2\varphi
+\right) \hat{r} + \left(\frac{a}{r} \cot \theta + \frac{r}{4a} 
+\sin 2 \theta \sin 2 \varphi\right) \hat{e}_\theta -
+\frac{r}{a} \sin \theta \sin^2 \varphi \hat{e}_\varphi \right].
+\end{equation}
+!et
+$F_0$ och $a$ är konstanter. 
+
+=== Lösning: ===
+Strategi:
+* Bestäm kurvan $C$ och rita en tydlig figur
+* Undersök fältet $\vec{F}$, singulariteter? Räkna ut $\vnabla \times \vec{F}$, singulariteter?
+* Slut kurvan $C$ och bestäm ytan $S$ (ofta flera möjligheter). Undvik singulariteter på ytan.
+* Teckna Stokes sats och beräkna de integraler som uppträder
+* Kontrollera en gång till att delkurvorna och ytan $S$ har konsistenta riktningar.
+
+Vi följer lösningsstrategin
+* Bestäm kurvan $C$ och rita en tydlig figur
+Formen på denna kurva tolkas kanske enklast i kartesiska koordinater
+!bt
+\begin{equation}
+\left\{
+\begin{array}{ll}
+x = r \sin\theta \cos\varphi & \\
+y = r \sin\theta \sin\varphi & \\
+z = r\cos\theta
+\end{array}
+\right.
+\end{equation}
+!et
+Vi börjar alltså med att skriva om 
+!bt
+\begin{equation}
+  r^2 \sin^2 \theta \left(4 \cos^2 \varphi + \sin^2 \varphi\right) = 4 a^2
+\end{equation}
+i kartesiska koordinater
+\begin{equation}
+  4x^2 + y^2 = 4a^2,
+\end{equation}
+!et
+vilket är mantelytan till en elliptisk cylinder med halvaxlarna $a$ och $2a$. Skärningen med $z=0$ planet blir då en ellips i $xy$-planet med mittpunkt i origo och med halvaxlarna $a$ och $2a$.
+* Undersök fältet $\vec{F}$, singulariteter? Räkna ut $\vnabla \times \vec{F}$, singulariteter?
+
+Vi skriver om fältet genom att gruppera termerna enligt gemensam pre-faktor. Sedan noterar vi att de två termerna blir väldigt enkla om de uttrycks i varsitt koordinatsystem
+!bt
+\begin{align}
+  \vec{F} &= F_0 \left[\left(\frac{a}{r} + \frac{r}{2a} \sin^2 \theta 
+\sin 2\varphi\right) \hat{e}_r + \left(\frac{a}{r} \cot \theta + 
+\frac{r}{4a} \sin 2\theta \sin 2\varphi\right) \hat{e}_\theta -
+\frac{r}{a} \sin \theta \sin^2 \varphi \hat{e}_\varphi \right]
+\nonumber \\
+&= F_0 \left[\frac{a}{r\sin \theta} \left(\sin \theta \hat{e}_r + 
+\cos \theta \hat{e}_\theta \right) + \frac{r}{a} \sin \theta \sin \varphi
+\left( \sin \theta \cos \varphi \hat{e}_r + \cos \theta \cos \varphi 
+\hat{e}_\theta - \sin \varphi \hat{e}_\varphi \right) \right]
+\nonumber \\
+&= F_0 \left(\frac{a}{\rho} \hat{e}_\rho + \frac{y}{a} \hat{x} \right).
+\end{align}
+!et
+Där vi alltså har använt att projektionen i $xy$-planet är $\rho = r \sin\theta$ och att $\hat{e}_\rho = \sin\theta \hat{e}_r + \cos\theta \hat{e}_\theta$ och $\hat{x} = \cos\varphi \hat{e}_\rho - \sin\varphi \hat{e}_\varphi$.
+
+Notera att vi har skrivit $\vec{F} = \vec{F}_1 + \vec{F}_2$ där vi uttryckt de två termerna i olika koordinatsystem. Den första termen är uttryckt i ett cylindriskt koordinatsystem och den andra i ett kartesiskt.
+
+Vi konstaterar nu att $\vec{F}$ är singulär för $\rho = 0$ (genom $\vec{F}_1$-termen).
+
+Sedan beräknar vi rotationen. Det är inget problem att vi har skrivit vektorn som summan av två termer eftersom $\vnabla \times (\vec{F}_1 + \vec{F}_2) = \vnabla \times \vec{F}_1 + \vnabla \times \vec{F}_2$. Kom bara ihåg att använda rätt uttryck för rotationsoperatorn fär de olika koordinatsystemen.
+!bt
+\begin{equation}
+  \vnabla \times \vec{F} = \vnabla \times \left( F_\rho \hat{e}_\rho + F_x \hat{x} \right) = 0 + \vnabla \times F_x \hat{x} = - \frac{\partial}{\partial y}\left(F_0\frac{y}{a}\right) 
+\hat{z} = - \frac{F_0}{a} \hat{z}.
+\end{equation}
+!et
+Vi noterar att denna ej beror på $\rho$ och ej är singulär. Faktum är att det var ganska uppenbart att den första termen skulle ha noll rotation (skissa gärna fältlinjerna).
+
+* Slut kurvan $C$ och bestäm ytan $S$ (ofta flera möjligheter). Undvik singulariteter på ytan.
+Kurvan $C$ omsluter redan en yta, men singulariteten gör det svårt att applicera Stokes sats. Notera att det faktum att singulariteten sitter längs hela $z$-axeln (en sk linjesingularitet) gör det omöjligt att konstruera en yta utan singularitet med bara $C$ som rand.
+
+Istället inför vi en inre rand för att kunna använda Stokes sats. Omge $z$-axeln med en liten cirkel, $C_\epsilon$ med radien $\epsilon$. Lägg märke till att medan vi följer $C$ i moturs riktning, så måste  vi följa $C_\epsilon$ i medurs riktning. <linebreak>
+[Comment: Högerhandsregeln. Stå på ytan med tummen upp i normalens riktning och titta på randen. Fingrarna ger riktningen.] 
+* Teckna Stokes sats och beräkna de integraler som uppträder
+Stokes sats ger oss att
+!bt
+\begin{equation}
+  \oint_C \vec{F}\cdot \mbox{d}\vec{r} + \oint_{C_\epsilon} \vec{F}\cdot \mbox{d}\vec{r}
+= \int_{S_\epsilon} \vnabla \times \vec{F} \cdot \mbox{d}\vec{S},
+\end{equation}
+!et
+där $S_\epsilon$ är en yta som har $C$ och $C_\epsilon$ till rand.  Denna yta har 
+normalvektorn $\hat{z}$. I gränsen $\epsilon \to 0$ kommer $S_\epsilon \to S$.
+
+Ytintegralen, i gränsen $\epsilon \to 0$, blir då
+!bt
+\begin{equation}
+  \lim_{\epsilon \to 0} \int_{S_\epsilon} \vnabla \times \vec{F} \cdot \mbox{d}\vec{S} = -\frac{F_0}{a} \int_S \mbox{d}S
+= - \frac{F_0}{a} \pi (a) (2a) = -2\pi F_0 a.
+\end{equation}
+!et
+För att räkna ut integralen över $C_\epsilon$ parametriserar vi kurvan med vinkeln $\varphi$. Eftersom vi skall gå moturs längs en cirkel med radien $\epsilon$ inser vi att $\mbox{d}\vec{r} = - \epsilon \hat{e}_\varphi \mbox{d}\varphi$ så att integralen blir
+!bt
+\begin{align}
+  \int_{C_\epsilon} \vec{F}\cdot \mbox{d}\vec{r} &= \int_0^{2\pi} F_0 
+\left(\frac{a}{\rho} \hat{e}_\rho + \frac{y}{a} \hat{x} \right) \cdot
+\left(-\hat{e}_\varphi \right) \epsilon \mbox{d}\varphi \nonumber \\
+&= F_0 \int_0^{2\pi} \frac{\epsilon \sin \varphi}{a} \sin
+\varphi \mbox{d} \varphi \to 0 \quad \mbox{då} \quad \epsilon \to 0.
+\end{align}
+!et
+Alltså följer det att 
+!bt
+\begin{equation}
+\int_C \vec{F} \cdot \mbox{d}\vec{r} = \int_{C+C_\epsilon} \vec{F}\cdot \mbox{d}\vec{r} =
+-2\pi F_0 a.
+\end{equation}
+!et
+* Kontrollera en gång till att delkurvorna och ytan $S$ har konsistenta riktningar. Det är även en god idé att kontrollera enheten som skall vara enheten på $F_0$ gånger längd (eftersom vi utfört en kurvintegral).
+!enotice
+
+===== Ytterligare räkneproblem =====
+
+!bnotice Exempel: Ytintegral med öppning
+
+Beräkna integralen
+!bt
+\begin{equation}
+\int_S \vec{F} \cdot \mbox{d}\vec{S},
+\end{equation}
+!et
+där $\vec{F} = F_0/a \left( x\hat{x} + y\hat{y} \right)$ och $S$ är ytan $2a -\sqrt{x^2 - y^2} = z$ och $0\le z \le 2a$ med normalen snett uppåt (alltså positiv z-komponent).
+
+Vi kan då börja med att beräkna $\vnabla \cdot \vec{F} = 2F_0/a$. Eftersom divergensen har ett så enkelt uttryck är det lockande att  använda Gauss sats, men ytan $S$ är en kon med spetsen i $z = 2a$ och öppningen nedåt; den är alltså inte en sluten yta.  Vi kan dock sluta den genom att lägga till en cirkelskiva, $S_\epsilon$ i $xy$-planet med radien $2a$ och normalvektorn $-\hat{z}$. På den slutna ytan $S+S_\epsilon$ kan vi sedan tillämpa Gauss sats
+!bt
+\begin{equation}
+  \oint_{S+S_\epsilon} \vec{F} \cdot \mbox{d}\vec{S} = \int_V \vnabla \cdot \vec{F}
+\mbox{d}V = \frac{2F_0}{a}\int_V\mbox{d}V.
+\end{equation}
+!et
+Volymen av konen är
+!bt
+\begin{equation}
+  \int_V\mbox{d}V = \frac{1}{3} \pi \left(2a\right)^2 2a = \frac{8\pi a^3}{3},
+\end{equation}
+!et
+och alltså blir integralen
+!bt
+\begin{equation}
+  \oint_{S+S_\epsilon} \vec{F} \cdot \mbox{d}\vec{S} = \frac{2F_0}{a} 
+\frac{8\pi a^3}{3} = \frac{16\pi F_0 a^2}{3}.
+\end{equation}
+!et
+Vi kan nu separat beräkna
+!bt
+\begin{equation}
+  \int_{S_\epsilon} \vec{F} \cdot \mbox{d}\vec{S},
+\end{equation}
+!et
+men här lägger vi märke till att $\vec{F}$ saknar en $z$-komponent,  så $\vec{F} \cdot \hat{z} = 0$, och integralen över $S_\epsilon$ blir också noll.  Slutligen har vi alltså 
+!bt
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} = \frac{16\pi F_0 a^2}{3}.
+\end{equation}
+!et
+!enotice
+
+!bnotice Exempel: kurvintegral längs komplicerad ellips 
+
+[Comment: PLK Kap. 2.5 Uppg. 3:]  Beräkna integralen
+!bt
+\begin{equation}
+  \oint_\Gamma \vec{F} \cdot \mbox{d}\vec{r},
+\end{equation}
+!et
+där 
+!bt
+\begin{equation}
+  \vec{F} = \left[x^2-a\left(y+z\right)\right]\hat{x} + \left(y^2-az\right)
+\hat{y} + \left[z^2-a\left(x+y\right)\right] \hat{z},
+\end{equation}
+!et
+och $\Gamma$ är den kurva som utgör skärningen mellan cylindern
+!bt
+\begin{equation}
+ \left(x-a\right)^2 +y^2 = a^2,\quad z \ge 0,
+\end{equation}
+!et
+och sfären
+!bt
+\begin{equation}
+  x^2 + y^2 + z^2 = R^2, \quad R> 2a,
+\end{equation}
+!et
+där $a$ är en konstant med dimensionen längd.
+
+=== Lösning: ===  
+Vi kan först konstatera att skärningen mellan cylinder och sfär är en ellips vars exakta form är något komplicerad att fastställa.  Eftersom kurvan $\Gamma$ är en sluten kurva är det lockande att använda Stokes sats, så vi beräknar rotationen
+!bt
+\begin{align}
+  \vnabla \times \vec{F} &= 
+  \left|\begin{array}{ccc}
+\hat{x} & \hat{y} & \hat{z} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & 
+\frac{\partial}{\partial z} \\
+x^2-a\left(y+z\right) & y^2-az & z^2-a\left(x+y\right) \\
+\end{array} 
+\right| \nonumber \\
+&= \left(-a+a\right) \hat{x} + \left(-a+a\right) \hat{y} + a\hat{z}
+= a\hat{z}.
+\end{align}
+!et
+Alltså är rotationen av $\vec{F}$ en rent vertikal vektor.  
+
+Vi kan nu använda Stokes sats
+!bt
+\begin{equation}
+  \oint_\Gamma \vec{F} \cdot \mbox{d}\vec{r} = \int_S \vnabla \times \vec{F} \cdot
+\mbox{d}\vec{S}.
+\end{equation}
+!et
+Lägg märke till att ytan skall orienteras så att den följer högerhandsregeln.  Detta betyder att om vi följer kurvan $\Gamma$ moturs så skall normalen $\hat{n}$ till $S$ peka uppåt.  
+!bt
+\begin{equation}
+  \int_S \vnabla \times \vec{F} \cdot \mbox{d}\vec{S} = \int_S a \hat{z} \cdot 
+\hat{n} \mbox{d}S = a \int_S \hat{z} \cdot \hat{n} \mbox{d}S.
+\end{equation}
+!et
+Skalärprodukten i den sista integralen betyder att vi projicerar ner arean $S$ på ett plan vinkelrät mot $\hat{z}$, det vill säga på $xy$-planet.  I detta planet är skärningen cylinderns tvärsnittsyta, en cirkel med radien $a$, och integralen blir cirkelarean $\pi a^2$. Alltså blir integralen till slut
+!bt
+\begin{equation}
+  \oint_\Gamma \vec{F} \cdot \mbox{d}\vec{r} = a \pi a^2 = \pi a^3.
+\end{equation}
+!et
+!enotice
+
+!bnotice Exempel: kurvintegral för ett kraftfält 
+
+[Comment: PLK Kap. 2.5, Uppg. 2:]  En partikel påverkas av kraftfältet
+!bt
+\begin{equation}
+  \vec{F} = F_0 \left[\left(\frac{\pi y}{a} + \sin \frac{\pi z}{a}\right)
+\hat{x} + \frac{x}{a} \hat{y} + \frac{\pi x}{a} \cos \frac{\pi z}{a}
+\hat{z}\right].
+\end{equation}
+!et
+Vilket arbete uträttar fältet då partikeln rör sig i positiv riktning kring den cirkel som ges av skärningen mellan
+!bt
+\begin{equation}
+  x^2 + y^2 + z^2 = a^2
+\end{equation}
+!et
+och
+!bt
+\begin{equation}
+  x = z?
+\end{equation}
+!et
+
+=== Lösning: ===  
+För att få ut arbetet behöver vi beräkna integralen
+!bt
+\begin{equation}
+  \oint_C \vec{F} \cdot \mbox{d}\vec{S}.
+\end{equation}
+!et
+
+Vi börjar med att bestämma skärningskurvan $C$.  $x^2 + y^2 + z^2 = a^2$ är en sfär med radien $a$ och centrum i origo, medan $x = z$ är ett plan med normalvektorn
+!bt
+\begin{equation}
+  \hat{n} = \frac{1}{\sqrt{2}} \left(-1,0,1\right).
+\end{equation}
+!et
+Skärningen mellan de båda ytorna blir en cirkel med radien $a$.  Den motsvarande cirkelskivan har också normalvektorn $\hat{n}$.  Med det val som vi har gjort av normalvektorn, så gäller Stokes sats om partikeln rör sig moturs längs cirkeln.
+
+Vi beräknar nu rotationen 
+!bt
+\begin{align}
+  \vnabla \times \vec{F} &= F_0 \left|\begin{array}{ccc}
+\hat{x} & \hat{y} & \hat{z} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} &
+\frac{\partial}{\partial z} \\
+\frac{\pi y}{a} + \sin \frac{\pi z}{a} & \frac{x}{a} & \frac{\pi x}{a}
+\cos \frac{\pi z}{a} \\
+\end{array} 
+\right|  \nonumber \\
+&= 0 \hat{x} + F_0 \left(\frac{\pi}{a} \cos\frac{\pi z}{a} - \frac{\pi}{a}
+\cos\frac{\pi z}{a}\right) \hat{y} + F_0\left(\frac{1}{a} - \frac{\pi}{a}
+\right) \hat{z} = F_0 \frac{1 - \pi}{a} \hat{z}.
+\end{align}
+!et
+Stokes sats ger oss sedan
+!bt
+\begin{align}
+  \oint_C \vec{F} \cdot \mbox{d}\vec{r} &= \int_S \vnabla \times \vec{F} \cdot \mbox{d}
+\vec{S} = \int_S F_0 \frac{1 - \pi}{a} \hat{z} \cdot \frac{1}{\sqrt{2}} 
+\left(-1,0,1\right) \mbox{d}S = \frac{1 - \pi}{\sqrt{2}a} F_0
+\int_S \mbox{d}S \nonumber \\ 
+&= \frac{1 - \pi}{\sqrt{2}a} \pi a^2 F_0 =  \frac{\pi \left(1-\pi\right)a}{\sqrt{2}} F_0,
+\end{align}
+!et
+vilket är svaret.
+!enotice
+
+!bnotice Exempel: Ytintegral halvcylinder 
+
+[Comment: PLK Kap. 2.4, Uppg. 7:]  Låt $S$ vara ytan $y^2 + z^2 = 1, -1 \le x \le 1, z \ge 0$ med normalvektor riktad uppåt.  Beräkna 
+!bt
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S},
+\end{equation}
+!et
+där $\vec{F} = \left( x, x^2yz^2, x^2 y^2 z\right)$.
+
+*Lösning:*  
+Ytan $S$ är en den övre halvan av en cylinder med $x$-axeln som symmetriaxel.  För att tillämpa Gauss sats behöver vi sluta denna yta, vilket vi kan göra genom att lägga till  två halvcirklar, $S_1$ och $S_3$ vid $x = 1$ och $x = -1$, samt en bottenyta, $S_2$.  Normalvektorn till dessa ytor skall väljas som en kontinuerlig fortsättning av normalvektorn på $S$.  Detta innebär att $S_1$ och $S_3$ får normalvektorerna $\hat{x}$ och $-\hat{x}$, samt att normalvektorn till $S_2$ blir $-\hat{z}$.  Vi ser nu att  normalvektorn överallt pekar ut från den volym som innesluts av $S$, $S_1$, $S_2$ och $S_3$, vilket är vad som krävs för att vi skall kunna använda Gauss sats.
+
+Vi kan nu beräkna divergensen
+!bt
+\begin{equation}
+  \vnabla \cdot \vec{F} = \frac{\partial x}{\partial x} + 
+\frac{\partial}{\partial y}\left(x^2yz^2\right) + \frac{\partial}{\partial z}
+\left(x^2y^2z\right) = 1 + x^2z^2 + x^2 y^2 = 1 + x^2\rho^2,
+\end{equation}
+!et
+där vi har infört $\rho^2 = y^2 + z^2$.  Vi inför alltså en form av cylindriska koordinater som utgår från $x$-axeln istället för som vanligt från $z$-axeln.  Vi kan nu beräkna volymsintegralen
+!bt
+\begin{equation}
+  \int_V \vnabla \cdot \vec{F} \mbox{d}V = \int_V \mbox{d}V + 
+\int_{-1}^1\int_0^1\int_0^\pi x^2 \rho^2 \mbox{d}\varphi \rho \mbox{d}\rho
+\mbox{d}x.
+\end{equation}
+!et
+Tänk här på att vi bara integrerar över en halvcylinder, så att integrationsintervallet för $\varphi$ går från 0 till $\pi$.  Den första integralen är bara halvcylindersn volym, så nu får vi
+!bt
+\begin{equation}
+  \int_V \vnabla \cdot \vec{F} \mbox{d}V = \frac{1}{2} 2 \pi + \pi  \left[\frac{x^3}{3}\right]_{-1}^1 \left[\frac{\rho^4}{4}\right]_0^1 =
+\pi + \pi\left(\frac{1}{3} + \frac{1}{3}\right) \frac{1}{4} = \frac{7\pi}{6}.
+\end{equation}
+!et
+
+Vi får nu ta hand om de enskilda begränsningsytorna.
+!bt
+\begin{equation}
+\int_{S_1} \vec{F} \cdot \mbox{d}\vec{S} = \int_{S_1} x\mbox{d}S = 
+\int_{S_1} \mbox{d}S =
+\frac{\pi}{2},
+\end{equation}
+!et
+eftersom $x = 1$ på $S_1$.  På samma sätt får vi på $S_3$
+!bt
+\begin{equation}
+  \int_{S_3} \vec{F} \cdot \mbox{d}\vec{S} = \int_{S_3} -x \mbox{d}S = \frac{\pi}{2},
+\end{equation}
+!et
+då $x = -1$ på $S_3$. Slutligen så finner vi att på $S_2$ så är
+!bt
+\begin{equation}
+  \int_{S_2} \vec{F} \cdot \mbox{d}\vec{S} = \int_{S_2} -x^2y^2z \mbox{d}S = 0,
+\end{equation}
+!et
+ty $z = 0$ på $S_2$.
+
+Om vi ställer samman dessa uträkningar har vi
+!bt
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} + \int_{S_1} \vec{F} \cdot \mbox{d}\vec{S} + 
+\int_{S_2} \vec{F} \cdot \mbox{d}\vec{S} + \int_{S_3} \vec{F} \cdot \mbox{d}\vec{S} =
+\int_V \vnabla \cdot \vec{F} \mbox{d}V,
+\end{equation}
+!et
+och om vi här löser ut integralen över $S$ samt sätter in värdena för de enskilda integralerna får vi
+!bt
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} = \frac{7\pi}{6} - \frac{\pi}{2} -
+\frac{\pi}{2} = \frac{\pi}{6}.
+\end{equation}
+!et
+
+*Kommentar:*  
+För att ytintegralen skall vara definierad måste en yta vara orienterbar, det vill säga de skall gå att kontinuerligt transportera normalvektorn från en del av ytan till en annan.  Det finns exempel på ytor som inte är orienterbara, till exempel Möbius-band, och för sådana ytor kan man inte definiera en ytintegral.
+!enotice
+
+!bnotice Exempel: Ytintegral med koordinatbyte 
+
+Beräkna ytintegralen
+!bt
+\begin{equation}
+  \oint_S \left(a^2\hat{x} +ay\hat{y} + z^2\hat{z}\right) 
+\cdot \mbox{d}\vec{S}
+\end{equation}
+!et
+över den slutna ytan $S:\quad x^2 + y^2 + z^2 = 2az$.
+
+*Lösning:*  
+Vi börjar med att studera ytan $S$. Den kan skrivas om som
+!bt
+\begin{equation}
+  x^2 + y^2 + z^2 - 2az = 0.
+\end{equation}
+!et
+Efter kvadratkomplettering har vi
+!bt
+\begin{equation}
+  x^2 + y^2 + \left(z -a\right)^2 = a^2.
+\end{equation}
+!et
+Detta är en sfär med radien $a$ och centrum i $(0,0,a)$.  Lägg märke till att eftersom ytan redan är sluten, så råder det inte någon tvekan om hur normalvektorn är riktad.  Konventionen säger oss att normalvektorn för en sluten yta alltid pekar ut från den inneslutna volymen.
+
+I och med att vi redan har en sluten yta, så är det lockande att använda Gauss sats, och därför beräknar vi divergensen
+!bt
+\begin{equation}
+  \vnabla \cdot \left(a^2 \hat{x} + ay \hat{y} + z^2 \hat{z}
+\right) = a + 2z.
+\end{equation}
+!et
+Innan vi tar itu med volymsintegralen byter vi $z$-koordinaten till $z' = z -a$, så att sfären i de nya koordinaterna får sitt centrum i origo.  I dessa koordinater blir divergensen $3a +2z'$.  Enligt Gauss sats blir vår ytintegral nu
+!bt
+\begin{equation}
+  \oint_S \left(a^2\hat{x} + ay \hat{y} + z^2 \hat{z}\right)
+\cdot \mbox{d}\vec{S} = \int_{V'} \left(3a + 2z'\right) \mbox{d}V.
+\end{equation}
+!et
+Vi byter nu till sfäriska koordinater
+!bt
+\begin{align}
+  \int_0^{2\pi} \int_0^\pi \int_0^a \left(3a + 2r\cos \theta\right) r^2
+\sin \theta \mbox{d}r \mbox{d}\theta \mbox{d}\varphi &= 2\pi \int_0^a
+\left[-3ar^2 \cos \theta + r^3 \sin^2 \theta \right]_0^\pi \mbox{d}r
+\nonumber \\
+&= 2\pi \int_0^a 6ar^2 \mbox{d}r = 2 \pi \left[2ar^3\right]_0^a = 4\pi a^4,
+\end{align}
+!et
+vilket är värdet på vår ursprungliga ytintegral.
+!enotice
+

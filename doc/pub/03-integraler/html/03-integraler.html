@@ -1,0 +1,825 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('3. Integraler', 1, None, '___sec0'),
+              ('Linje- (kurv-) integraler', 3, None, '___sec1'),
+              ('Ytintegraler', 3, None, '___sec2'),
+              ('Volymintegraler', 3, None, '___sec3'),
+              ('Parametrisering', 2, None, '___sec4'),
+              ('Parametrisering av kurvintegraler:', 3, None, '___sec5'),
+              ('Studera räkneexempel:', 2, None, '___sec6'),
+              ('Konservativa fält', 2, None, '___sec7'),
+              ('Parametrisering av ytintegraler:', 3, None, '___sec8'),
+              ('Studera räkneexempel:', 2, None, '___sec9'),
+              ('Parametrisering av volymintegraler', 3, None, '___sec10'),
+              ('Integration med ortogonala kroklinjiga koordinater',
+               2,
+               None,
+               '___sec11'),
+              ('Räkneexempel: Linjeintegraler', 2, None, '___sec12'),
+              ('Lösning 1:', 3, None, '___sec13'),
+              ('Lösning 2:', 3, None, '___sec14'),
+              ('Räkneexempel: Ytintegraler', 2, None, '___sec15'),
+              ('Alternativ', 3, None, '___sec16')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<a name="part0000"></a>
+<p>
+<!-- begin top navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end top navigation -->
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 7, 2018</h4></center> <!-- date -->
+<br>
+
+<h1 id="___sec0">3. Integraler </h1>
+Det mesta av detta material f&#246;ruts&#228;tts vara k&#228;nt fr&#229;n kursen i flervariabelanalys. Vi kommer att repetera
+
+<h3 id="___sec1">Linje- (kurv-) integraler </h3>
+
+<ul>
+<li> t.ex. \( \int_C \vec{F} \cdot d\vec{r} \)</li>
+<li> eller \( \int_C \phi \cdot ds \)</li>
+<li> eller ...</li>
+<li> (integral &#246;ver en sluten kurva betecknas \( \oint_C \vec{F} \cdot d\vec{r} \))</li>
+</ul>
+
+<h3 id="___sec2">Ytintegraler </h3>
+
+<ul>
+<li> t.ex. \( \int_S \vec{F} \cdot d\vec{S} \)</li>
+<li> eller ...</li>
+<li> (integral &#246;ver en sluten yta betecknas \( \oint_C \vec{F} \cdot d\vec{S} \))</li>
+</ul>
+
+<br /><br /><center><p><img src="fig/yta.png" align="bottom" width=400></p></center><br /><br />
+
+<h3 id="___sec3">Volymintegraler </h3>
+
+<ul>
+<li> \( \int_V \vec{F} dV \)</li>
+<li> eller \( \int_V \phi dV \)</li>
+</ul>
+
+<h2 id="___sec4">Parametrisering </h2>
+Integralerna kan i allm&#228;nhet l&#246;sas genom parametrisering.
+
+<h3 id="___sec5">Parametrisering av kurvintegraler: </h3>
+
+<p>
+T.ex. ges en kurva \( C \) av \( \vec{r}(\tau) \) med \( \tau \in [\tau_1,\tau_2] \). D&#229; blir
+$$
+\begin{equation}
+  \int_C \vec{F}\cdot \mbox{d}\vec{r} = \int_{\tau_1}^{\tau_2} \vec{F}
+\cdot \frac{\mbox{d}\vec{r}}{\mbox{d}\tau} \mbox{d}\tau,
+\tag{1}
+\end{equation}
+$$
+
+och efter att ha ber&#228;knat skal&#228;rprodukten har vi en helt vanlig endimensionell integral.
+
+<p>
+<br /><br /><center><p><img src="fig/kurva.png" align="bottom" width=400></p></center><br /><br />
+
+<p>
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Kommentar.</b>
+<p>
+L&#228;gg h&#228;r m&#228;rke till att \( d\vec{r}/d\tau \) &#228;r en tangentvektor till kurvan \( C \).  I princip finns det o&#228;ndligt m&#229;nga parametriseringar till kurvan \( C \), och rent matematiskt spelar det ingen roll vilken man v&#228;ljer, fast vissa parametriseringar ger sn&#228;llare r&#228;kningar &#228;n andra!
+</div>
+
+
+<p>
+Ibland &#228;r kurvan \( C \) sluten, det vill s&#228;ga kurvans start- och slutpunkt sammanfaller.
+
+<p>
+<br /><br /><center><p><img src="fig/slutenkurva.png" align="bottom" width=400></p></center><br /><br />
+
+<p>
+Man skriver d&#229; integralen som
+$$
+\begin{equation}
+  \oint_C \vec{F} \cdot \mbox{d}\vec{r}.
+\tag{2}
+\end{equation}
+$$
+
+<p>
+Det finns andra typer av linjeintegraler, till exempel
+$$
+\begin{equation}
+  \int \phi \mbox{d}\vec{r}, \quad \int \phi \mbox{d}s
+\tag{3}
+\end{equation}
+$$
+
+d&#228;r \( \phi \) &#228;r ett skal&#228;rt f&#228;lt och \( \mbox{d}s = | \mbox{d}\vec{r} |  \). Samt
+$$
+\begin{equation}
+  \int \vec{F} \times \mbox{d}\vec{r}, \quad \int \vec{F} \mbox{d}s.
+\tag{4}
+\end{equation}
+$$
+
+<h2 id="___sec6">Studera r&#228;kneexempel: </h2>
+
+<ul>
+<li> Kurvintegral, cirkel 1</li>
+<li> Kurvintegral, cirkel 2</li>
+</ul>
+
+<h2 id="___sec7">Konservativa f&#228;lt </h2>
+Om 
+$$
+\begin{equation}
+  \oint_C \vec{F} \cdot\mbox{d}\vec{r} = 0
+\tag{5}
+\end{equation}
+$$
+
+f&#246;r varje sluten kurva \( C \), s&#229; s&#228;ges f&#228;ltet \( \vec{F} \) vara konservativt.  F&#246;r ett konservativt f&#228;lt \( \vec{F} \) g&#228;ller att givet en fix startpunkt A och en fix slutpunkt B, s&#229; beror integralen
+$$
+\begin{equation}
+  \int_C \vec{F} \cdot\mbox{d}\vec{r}
+\tag{6}
+\end{equation}
+$$
+
+inte p&#229; valet av kurvan \( C \) mellan dessa punkter.
+
+<p>
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Bevis.</b>
+<p>
+Betrakta tv&#229; kurvor \( C_1 \) och \( C_2 \) mellan A och B.  D&#229; kan vi skapa en sluten kurva \( C_0 \) genom att f&#246;rst f&#246;lja kurvan \( C_1 \) fr&#229;n A till B, och sedan kurvan \( C_2 \) bakl&#228;nges, det vill s&#228;ga i negativ riktning, tillbaka till A. Integralen &#246;ver \( C_0 \) m&#229;ste d&#229; vara 0, fast den integralen kan vi ocks&#229; skriva som
+$$
+\begin{equation}
+  \oint_{C_0} \vec{F} \cdot\mbox{d}\vec{r} = \int_{C_1} 
+\vec{F} \cdot\mbox{d}\vec{r} - \int_{C_2} \vec{F} \cdot\mbox{d}\vec{r} = 0,
+\tag{7}
+\end{equation}
+$$
+
+ty integralen byter tecken om vi f&#246;ljer kurvan i <em>fel</em> riktning. Nu f&#246;ljer det att 
+$$
+\begin{equation}
+  \int_{C_1} \vec{F} \cdot\mbox{d}\vec{r} = \int_{C_2} \vec{F} \cdot\mbox{d}
+\vec{r}.
+\tag{8}
+\end{equation}
+$$
+</div>
+
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Kurvintegral f&#228;ltstyrka.</b>
+<p>
+
+<p>
+Betrakta kurvintegralen \( \int_C \vec{A} \cdot d\vec{r} \) d&#228;r \( \vec{A} = -\vnabla \phi \), dvs en f&#228;ltstyrka.
+
+<ul>
+<li> Det betyder att \( \int_C \vec{A} \cdot d\vec{r} = -\int_C \vnabla{\phi} \cdot d\vec{r} \).</li>
+<li> Kom ih&#229;g att \( \vnabla\phi \cdot d\vec{r} = d\phi \).</li>
+<li> Allts&#229; \( \int_C \vec{A} \cdot d\vec{r} = -\int_{\phi_1}^{\phi_2} d{\phi} = \phi_1 - \phi_2 \).</li>
+</ul>
+
+Dvs kurvintegralen av en f&#228;ltstyrka &#228;r oberoende av v&#228;gen \( C \) utan beror bara p&#229; potentialens v&#228;rden i start- och slutpunkterna.
+</div>
+
+
+<h3 id="___sec8">Parametrisering av ytintegraler: </h3>
+
+<p>
+Precis som man kan ber&#228;kna linjeintegralerna genom att parametrisera linjen l&#228;ngs vilken man integrerar kan man ber&#228;kna ytintegralerna genom att parametrisera ytan l&#228;ngs med vilken man integrerar.  Skillnaden &#228;r att genom att ytan &#228;r tv&#229;-dimensionell s&#229; beh&#246;ver man tv&#229; parametrar. Antag att ortsvektorerna f&#246;r punkterna p&#229; ytan kan skrivas som \( \vec{r}(v,w) \) d&#228;r \( v \) och \( w \) &#228;r v&#229;ra parametrar.  Vi kan d&#229; bilda tv&#229; tangentvektorer till ytan
+$$
+\begin{equation}
+  \frac{\partial \vec{r}}{\partial v} \quad \mathrm{och} \quad
+\frac{\partial \vec{r}}{\partial w}.
+\tag{9}
+\end{equation}
+$$
+
+F&#246;rutsatt att dessa tangentvektorer inte &#228;r parallella, annars m&#229;ste vi finna en ny parametrisering, kan vi bilda en normalvektor till ytan
+$$
+\begin{equation}
+  \frac{\partial \vec{r}}{\partial v} \times \frac{\partial \vec{r}}{\partial w}.
+\tag{10}
+\end{equation}
+$$
+
+<p>
+<br /><br /><center><p><img src="fig/ytparametrisering.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+Analogt med hur vi tidigare uttryckte linjeintegralen med hj&#228;lp av v&#229;r parameter kan vi nu skriva ytintegralen som
+$$
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} = \int_S \vec{F} \cdot 
+\frac{\partial \vec{r}}{\partial v} \times \frac{\partial \vec{r}}{\partial w}
+\mbox{d}v \mbox{d}w,
+\tag{11}
+\end{equation}
+$$
+
+d&#228;r \( \mbox{d}\vec{S} = \hat{n} \mbox{d}S = \frac{\partial \vec{r}}{\partial v} \times \frac{\partial \vec{r}}{\partial w} \mbox{d}v \mbox{d}w \) &#228;r ytan p&#229; det parallellogram som sp&#228;nns upp av de tv&#229; tangentvektorerna. Normalvektorn uppfyller \( |\hat{n}|=1 \).
+
+<p>
+J&#228;mf&#246;r g&#228;rna denna parametrisering med v&#229;ra tidigare uttryck f&#246;r ytelement i kroklinjiga koordinater. Kan vi v&#228;lja ett koordinatsystem s&#229; att det s&#246;kta ytelementet ligger p&#229; \( u_1 \)-ytan s&#229; blir \( d\vec{S} = d\vec{S}_1 = \hat{e}_1 h_2 h_3 du_2 du_3 \), vilket man t.ex. ser fr&#229;n \( d\vec{S}_1 = \frac{\partial \vec{r}}{\partial u_2} \times \frac{\partial \vec{r}}{\partial u_3} du_2 du_3 = \hat{e}_1 h_2 h_3 du_2 du_3 \)
+
+<p>
+Allm&#228;nt skriver man ytintegraler &#246;ver en yta \( S \) (ofta anv&#228;nder man i de h&#228;r sammanhangen \( S \) f&#246;r att beteckna en yta) som
+$$
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S}.
+\tag{12}
+\end{equation}
+$$
+
+F&#246;r att skilja dessa integraler fr&#229;n andra ytintegraler, som emellan&#229;t f&#246;rekommer, kallar man dem f&#246;r normalytintegraler.
+
+<h2 id="___sec9">Studera r&#228;kneexempel: </h2>
+
+<ul>
+<li> Cylinderyta</li>
+</ul>
+
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Kommentar.</b>
+<p>
+F&#246;r resten av den h&#228;r kursen kommer det ofta att vara l&#228;mpligt att p&#229; detta s&#228;tt beskriva arean av ett ytelement som en vektor.  En komplikation &#228;r f&#246;rst&#229;s att en yta i allm&#228;nhet har tv&#229; motsatta normalvektorer, och man m&#229;ste d&#228;rf&#246;r ange vilken riktning som &#228;r positiv. Ytterligare en komplikation &#228;r att det finns ytor f&#246;r vilka man inte kan definiera normalvektorn p&#229; ett kontinuerligt s&#228;tt &#246;ver hela ytan, till exempel M&#246;bius-bandet.  Vi skall inte befatta oss med s&#229;dana ytor h&#228;r, utan begr&#228;nsa oss till orienterbara ytor, ytor som har en insida och en utsida.
+</div>
+
+
+<p>
+Om ytan \( S \) &#228;r sluten s&#229; skriver man
+$$
+\begin{equation}
+  \oint_S \vec{F} \cdot \mbox{d}\vec{S}.
+\tag{13}
+\end{equation}
+$$
+
+F&#246;r slutna ytor definierar man den positiva riktningen som den som ges av en vektor som pekar ut fr&#229;n den inneslutna volymen.
+
+<p>
+Det finns ocks&#229; andra former av ytintegraler, vilka emellan&#229;t anv&#228;nds:
+$$
+\begin{equation}
+  \int_S \phi dS,
+\tag{14}
+\end{equation}
+$$
+
+d&#228;r \( \phi \) &#228;r en skal&#228;r, och vi i detta fall inte betraktar \( S \) som en 
+vektor.
+$$
+\begin{equation}
+  \int_S \phi d\vec{S}
+\tag{15}
+\end{equation}
+$$
+
+Skillnaden mot det f&#246;rsta fallet &#228;r att \( S \) h&#228;r behandlas som en vektor.
+$$
+\begin{equation}
+  \int_S \vec{v} \times d\vec{S}
+\tag{16}
+\end{equation}
+$$
+
+d&#228;r \( \vec{v} \) &#228;r en vektorv&#228;rd funktion.
+
+<h3 id="___sec10">Parametrisering av volymintegraler </h3>
+
+<p>
+Det finns bara tv&#229; m&#246;jliga s&#228;tt att volymintegrera ett f&#228;lt. Med (det skal&#228;ra) volymelementet \( \mbox{d}V \)
+$$
+\begin{equation}
+\int_V \phi \mbox{d}V,\quad \int_V \vec{F} \mbox{d}V.
+\tag{17}
+\end{equation}
+$$
+
+En parametrisering med \( (u,v,w) \) ger att volymselementet blir volymen av parallellepipeden med sidorna \( \frac{\partial \vec{r}}{\partial u} \mbox{d}u \), \( \frac{\partial \vec{r}}{\partial v} \mbox{d}v \), \( \frac{\partial \vec{r}}{\partial w} \mbox{d}w \) (som d&#229; m&#229;ste vara linj&#228;rt oberoende). Denna volym &#228;r
+$$
+\begin{equation}
+\mbox{d}V = \left| \frac{\partial \vec{r}}{\partial u} \cdot \left( \frac{\partial \vec{r}}{\partial v} \times \frac{\partial \vec{r}}{\partial w} \right) \right| \mbox{d}u \mbox{d}v \mbox{d}w.
+\tag{18}
+\end{equation}
+$$
+
+<h2 id="___sec11">Integration med ortogonala kroklinjiga koordinater </h2>
+
+<p>
+Fr&#229;n tidigare kapitel har vi 
+$$
+\begin{equation}
+d\vec{r} = \hat{e}_1 h_1 du_1 + \hat{e}_2 h_2 du_2 + \hat{e}_3 h_3 du_3
+\tag{19}
+\end{equation}
+$$
+
+<p>
+Vidare ytelementet, t.ex. f&#246;r en \( u_1 \)-yta (dvs i \( u_2 u_3 \)-planet):
+$$
+\begin{align}
+\mbox{d} S_1 &= h_2 h_3 \mbox{d}u_2 \mbox{d}u_3 
+\tag{20}\\
+\mbox{d} \vec{S}_1 &= \pm \hat{e}_1 h_2 h_3 \mbox{d}u_2 \mbox{d}u_3 
+\tag{21}
+\end{align}
+$$
+
+vilket man t.ex. ser fr&#229;n 
+$$
+\begin{equation}
+\mbox{d} \vec{S}_1 = \frac{d\vec{r}}{du_2} \times \frac{d\vec{r}}{du_3} du_2 du_3
+= \hat{e}_1 h_2 h_3 \mbox{d}u_2 \mbox{d}u_3 
+\tag{22}
+\end{equation}
+$$
+
+<p>
+Volymelement:
+$$
+\begin{equation}
+\mbox{d} V = h_1 h_2 h_3 \mbox{d}u_1 \mbox{d}u_2 \mbox{d}u_3.
+\tag{23}
+\end{equation}
+$$
+
+<p>
+Med ett vektorf&#228;lt \( \vec{F} \) som tecknas i det kroklinjiga koordinatsystemet \( \vec{F} = F_1 \hat{e}_1 + F_2 \hat{e}_2 + F_3 \hat{e}_3 \) f&#229;r vi t.ex.
+$$
+\begin{align}
+\int_{C_1} \vec{F} \cdot d\vec{r} &= \int_{C_1} F_1 h_1 du_1 
+\tag{24}\\
+\int_{S_1} \vec{F} \cdot d\vec{S}_1 &= \int_{S_1} F_1 h_2 h_3 du_2 du_3 
+\tag{25}\\
+\int_V \vec{F} dV &= \int_V \vec{F} h_1 h_2 h_3 du_a du_2 du_3,
+\tag{26}
+\end{align}
+$$
+
+d&#228;r \( C_1 \) &#228;r en kurva l&#228;ngs \( u_1 \)-riktningen och \( S_1 \) &#228;r en \( u_1 \)-yta.
+
+<h2 id="___sec12">R&#228;kneexempel: Linjeintegraler </h2>
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Kurvintegral cirkel 1.</b>
+<p>
+
+<p>
+Ber&#228;kna integralen \( \oint_C \phi d\vec{r} \) d&#228;r \( \phi = \phi_0 \) (konstant) och kurvan \( C \) beskriver en cirkel i xy-planet med radie \( a \) och centrum i origo som genoml&#246;ps medurs.
+
+<ul>
+<li> Notera att svaret kommer att bli en vektor.</li>
+<li> Parametrisera kurvan (notera riktningen): \( \vec{r}(\tau) = x(\tau)\hat{x} + y(\tau)\hat{y} = a \sin\omega\tau \hat{x} + a \cos\omega\tau \hat{y} \) med \( \tau \in [0,2\pi/\omega] \).</li>
+<li> Vi inkluderar konstanten \( \omega \) f&#246;r att illustrera att det finns ett o&#228;ndligt antal parametriseringar och att svaret inte kan bero p&#229; detta.</li>
+<li> F&#246;rskjutningsvektorn \( d\vec{r} = \hat{x} \frac{dx}{d\tau}d\tau + \hat{y} \frac{dy}{d\tau}d\tau \).</li>
+</ul>
+
+Den parametriserade kurvintegralen blir
+$$
+\begin{equation}
+\oint_C \phi d\vec{r} = \phi_0 \oint_0^{2\pi/\omega} \left[
+\hat{x} a \omega\cos\omega\tau - \hat{y} a \omega\sin\omega\tau \right] d\tau = 0
+\tag{27}
+\end{equation}
+$$
+</div>
+
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Kurvintegral cirkel 2.</b>
+<p>
+
+<p>
+Ber&#228;kna integralen \( \oint_C \phi dr \) d&#228;r \( \phi = \phi_0 \) (konstant) och kurvan \( C \) beskriver en cirkel i xy-planet med radie \( a \) och centrum i origo som genoml&#246;ps medurs.
+
+<ul>
+<li> Notera att svaret kommer att bli en skal&#228;r.</li>
+<li> Lite eftertanke ger att svaret borde bli \( \phi_0 2 \pi a \), dvs den konstanta potentialen g&#229;nger omkretsen p&#229; cirkeln.</li>
+<li> B&#229;gelementet blir \( dr = |d\vec{r}| = \sqrt{\left( \frac{dx}{d\tau} \right)^2 d\tau^2 + \left( \frac{dy}{d\tau} \right)^2 d\tau^2 } = a \omega d\tau \)</li>
+</ul>
+
+Den parametriserade kurvintegralen blir
+$$
+\begin{equation}
+\oint_C \phi ds = \phi_0 a \omega \oint_0^{2\pi/\omega}  d\tau = \phi_0 2 \pi a 
+\tag{28}
+\end{equation}
+$$
+</div>
+
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Kraft och arbete.</b>
+<p>
+
+<p>
+En partikel r&#246;r sig l&#228;ngs en bana C, som ges av \( \vec{r}(t) \), under inverkan av en kraft \( \vec{F}(\vec{r}) \).  Vi vill d&#229; ber&#228;kna arbetet som kraften ut&#246;var p&#229; partikeln.  Mellan punkterna \( \vec{r} \) och \( \vec{r}+\mbox{d}\vec{r} \) s&#229; &#228;r arbetet
+$$
+\begin{equation}
+  \mbox{d}W = \vec{F}\cdot \mbox{d}\vec{r}.
+\tag{29}
+\end{equation}
+$$
+
+Vi kan d&#229; ber&#228;kna arbetet l&#228;ngs hela kurvan genom att ber&#228;kna integralen
+$$
+\begin{equation}
+  W = \int_C \vec{F}\cdot \mbox{d}\vec{r}.
+\tag{30}
+\end{equation}
+$$
+
+Denna integral &#228;r ett exempel p&#229; en linjeintegral (kurvintegral). Vi kan skriva
+$$
+\begin{equation}
+  W = \int_C \vec{F} \cdot \frac{\mbox{d}\vec{r}}{\mbox{d}t} \mbox{d}t = \int P \mbox{d}t,
+\tag{31}
+\end{equation}
+$$
+
+d&#228;r \( P \) &#228;r effekten.
+</div>
+
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Konservativ kraft och arbete.</b>
+<p>
+
+<p>
+En elektron r&#246;r sig l&#228;ngs banan \( y = \frac{x^2}{H} \) fr&#229;n \( (0,0) \) till \( (L,L^2/H) \) under inverkan av en elektrostatisk kraft \( \vec{F} = e E_0\hat{y} \).  Ber&#228;kna det arbete som kraften utf&#246;r p&#229; elektronen.
+
+<h3 id="___sec13">L&#246;sning 1: </h3>
+
+Arbetet ges av integralen
+$$
+\begin{equation}
+  \int_C eE_0 \hat{y} \cdot \mbox{d}\vec{r},
+\tag{32}
+\end{equation}
+$$
+
+d&#228;r \( C \) &#228;r den kurva som elektronen f&#246;ljer.  Vi kan nu anv&#228;nda koordinaten \( x \) f&#246;r att parametrisera v&#229;r kurva och skriver kurvan som \( \vec{r}(x) = (x, x^2/H) \).  D&#229; g&#228;ller att
+$$
+\begin{equation}
+  \frac{\mbox{d}\vec{r}}{\mbox{d}x} = \left(1,\frac{2x}{H}\right).
+\tag{33}
+\end{equation}
+$$
+
+Vi kan nu ber&#228;kna arbetet ur
+$$
+\begin{equation}
+  \int_C eE_0 \hat{y} \cdot \mbox{d}\vec{r} = \int_0^LeE_0 \hat{y} \cdot
+\frac{\mbox{d}\vec{r}}{\mbox{d}x} \mbox{d}x = \int_0^LeE_0 \frac{2x}{H} 
+\mbox{d}x = \frac{eE_0}{H} \left[x^2\right]_0^L = \frac{e E_0 L^2}{H}.
+\tag{34}
+\end{equation}
+$$
+
+<h3 id="___sec14">L&#246;sning 2: </h3>
+
+Elektrostatiska krafter &#228;r konservativa, s&#229; vi kan ers&#228;tta kurvan med tv&#229; r&#228;ta linjer, en \( C_1 \) som g&#229;r fr&#229;n \( (0,0) \) till \( (L,0) \) och &#228;r parallell med \( x \)-axeln, och en kurva \( C_2 \) som g&#229;r fr&#229;n \( (L,0) \) till \( (L,L^2/H) \) och &#228;r parallell med \( y \)-axeln. Arbetet kan nu skrivas som
+$$
+\begin{equation}
+   \int_C eE_0 \hat{y} \cdot \mbox{d}r = \int_{C_1} eE_0 
+\hat{y} \cdot \mbox{d}r + \int_{C_2} eE_0 \hat{y} \cdot \mbox{d}r.
+\tag{35}
+\end{equation}
+$$
+
+Eftersom kraften &#246;verallt &#228;r ortogonal mot kurvan \( C_1 \) f&#246;ljer att 
+integralen l&#228;ngs med \( C_1 \) m&#229;ste vara noll, s&#229; det &#229;terst&#229;r bara att ber&#228;kna
+$$
+\begin{equation}
+\int_{C_2} eE_0 \hat{y} \cdot \mbox{d} \vec{r} = \int_{C_2} 
+e E_0 \hat{y} \cdot \hat{y} \mbox{d}r = e E_0 \int_{C_2} \mbox{d}r.
+\tag{36}
+\end{equation}
+$$
+
+Den sista integralen ger nu l&#228;ngden p&#229; kurvan \( C_2 \), vilken &#228;r \( L^2/H \),
+s&#229; arbetet blir till slut
+$$
+\begin{equation}
+  \frac{e E_0 L^2}{H}.
+\tag{37}
+\end{equation}
+$$
+</div>
+
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Parametriserad 3d-kurva.</b>
+<p>
+
+<p>
+Ber&#228;kna integralen av \( \vec{u} = (xy/a^2, z^2/a^2, x/a) \) l&#228;ngs med kurvan 
+$$
+\begin{equation}
+\left\{\begin{array}{lcl}
+x & = & (1+t) a\\
+y & = & 0\\
+z & = & t^2 a\\
+\end{array}\right. 
+\tag{38}
+\end{equation}
+$$
+
+d&#228;r \( 0 \le t \le 3 \).
+
+<p>
+Vi ber&#228;knar d&#229; f&#246;rst 
+$$
+\begin{equation}
+  \frac{\mbox{d}\vec{r}}{\mbox{d}t} = a (1, 0, 2t).
+\tag{39}
+\end{equation}
+$$
+
+Vektorf&#228;ltet uttryckt i \( t \) &#228;r
+$$
+\begin{equation}
+  \vec{u} = \left(\left(1+t\right) \cdot 0, t^4, 1+t\right) = 
+\left(0,t^4,1+t\right).
+\tag{40}
+\end{equation}
+$$
+
+Skal&#228;rprodukten mellan vektorerna &#228;r
+$$
+\begin{equation}
+  \left(0,t^4,1+t\right) \cdot a \left(1,0,2t\right) = a(2t + 2t^2).
+\tag{41}
+\end{equation}
+$$
+
+Integralen blir
+$$
+\begin{equation}
+  a \int_0^3 \left(2t+2t^2\right)\mbox{d}t = 
+a \left[t^2 + \frac{2t^3}{3}\right]_0^3 = a(9 + 18) = 27a.
+\tag{42}
+\end{equation}
+$$
+</div>
+
+
+<h2 id="___sec15">R&#228;kneexempel: Ytintegraler </h2>
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Fl&#246;de genom yta.</b>
+<p>
+
+<p>
+En v&#228;tska med densiteten \( \rho \) och hastigheten \( \vec{u} \) str&#246;mmar parallellt genom ett r&#246;r med tv&#228;rsnittsarean \( A \).  Fl&#246;det av v&#228;tska genom r&#246;ret (det vill s&#228;ga kg v&#228;tska som per sekund str&#246;mmar genom r&#246;ret &#228;r d&#229; \( \rho u A \).
+
+<p>
+Vad h&#228;nder d&#229; om v&#228;tskans  hastighet \( \vec{u} \) beror p&#229; avst&#229;ndet \( r \) fr&#229;n r&#246;rets symmetriaxel?  I s&#229; fall f&#229;r vi definiera en fl&#246;dest&#228;thet \( \rho u(r) \) s&#229; att fl&#246;det genom ett ytelement \( dS \) blir \( \rho u(r)dS \). Om vi tar \( dS \) som en ring med centrum i symmetriaxeln och med en tjocklek d$r$ s&#229; &#228;r d$A = 2\pi r$d$r$ och det totala fl&#246;det genom r&#246;ret blir
+$$
+\begin{equation}
+  \int \rho u( r ) dS = \int_0^R \rho u ( r ) 2 \pi r
+dr,
+\tag{43}
+\end{equation}
+$$
+
+d&#228;r \( R \) &#228;r r&#246;rets radie.
+
+<p>
+F&#246;r att nu ytterligare komplicera det hela och verkligen blanda in vektorerna s&#229; antar vi att v&#228;tskan str&#246;mmar genom en tv&#228;rsnittsarea \( dS \), vilken inte &#228;r vinkelr&#228;t mot v&#228;tskans str&#246;mningshastighet \( \vec{u} \).  Vi antar att vinkeln mellan normalvektorn \( \vec{n} \) till ytan \( dS \) och v&#228;tskans hastighet \( \vec{u} \) &#228;r \( \theta \).  D&#229; blir fl&#246;det genom ytan \( dS \)
+$$
+\begin{equation}
+  \rho u dS \cos \theta.
+\tag{44}
+\end{equation}
+$$
+
+Om vi nu v&#228;ljer att definiera en vektor \( d\vec{S} \) f&#246;r ett ytelement med storleken \( dS \) och riktningen \( \vec{n} \), s&#229; ser vi att vi kan skriva fl&#246;det som
+$$
+\begin{equation}
+  \rho \vec{u} \cdot d\vec{S},
+\tag{45}
+\end{equation}
+$$
+
+d&#228;r \( \rho \vec{u} \) kan kallas f&#246;r en massfl&#246;dest&#228;thet (j&#228;mf&#246;r med en str&#246;mt&#228;thet f&#246;r fl&#246;de av elektrisk laddning).
+
+<p>
+Vi kan nu skriva v&#228;tskefl&#246;det genom en godtycklig yta \( A \) som
+$$
+\begin{equation}
+  \int_A \rho \vec{u} \cdot d\vec{S},
+\tag{46}
+\end{equation}
+$$
+
+vilket &#228;r ett typiskt exempel p&#229; en ytintegral.
+</div>
+
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Cylinderyta.</b>
+<p>
+
+<p>
+Ber&#228;kna ytintegralen av f&#228;ltet \( \vec{u} = (x,z,-y) \) &#246;ver cylinderytan \( x^2 + y^2 = 1 \) mellan \( z = 0 \) och \( z = 1 \) med normalen pekandes bort fr&#229;n \( z \)-axeln.  Vi kan d&#229; beskriva punkterna p&#229; ytan genom deras \( z \)-koordinat och vinkeln \( \varphi \) som ortsvektorn bildar med \( \hat{x} \)-vektorn.  Det vill s&#228;ga \( \vec{r} = (\cos\varphi , \sin\varphi , z) \), och tangentvektorerna blir
+$$
+\begin{equation}
+  \frac{\partial \vec{r}}{\partial  \varphi} = \left(-\sin\varphi , \cos \varphi ,
+0\right)
+\tag{47}
+\end{equation}
+$$
+
+och
+$$
+\begin{equation}
+  \frac{\partial \vec{r}}{\partial z} = \left(0,0,1\right).
+\tag{48}
+\end{equation}
+$$
+
+Ytelementet blir
+$$
+\begin{equation}
+  \mbox{d} \vec{S} = \frac{\partial \vec{r}}{\partial  \varphi} \times 
+\frac{\partial \vec{r}}{\partial z} \mbox{d}\varphi \mbox{d}z = \left(\cos\varphi , \sin \varphi, 0\right) \mbox{d}\varphi \mbox{d}z.
+\tag{49}
+\end{equation}
+$$
+
+Vi kan sedan ber&#228;kna integralen som
+$$
+\begin{align}
+  \int_S \vec{u} \cdot \mbox{d}\vec{S} &= \int_0^1\int_0^{2\pi} \left(\cos\varphi,
+z, -\sin\varphi\right) \cdot \left(\cos\varphi, \sin \varphi, 0\right)
+\mbox{d}\varphi \mbox{d}z \nonumber \\
+&= \int_0^1\int_0^{2\pi} \left(\cos^2\varphi + z
+\sin\varphi\right) \mbox{d}\varphi\mbox{d}z \nonumber \\
+&= \int_0^1 \int_0^{2\pi} \left(
+\frac{1}{2} + \frac{1}{2}\cos 2\varphi + z\sin\varphi\right) \mbox{d}\varphi
+\mbox{d}z \nonumber \\
+&= \int_0^1 \left[\frac{1}{2}\varphi + \frac{1}{4}\sin2\varphi - z
+\cos\varphi\right]_0^{2\pi} \mbox{d}z = \int_0^1 \pi \mbox{d}z = \pi.
+\tag{50}
+\end{align}
+$$
+
+<h3 id="___sec16">Alternativ </h3>
+
+Integrationsytan motsvarar en \( \rho \)-yta i cylindriska koordinater. Detta ger direkt att 
+$$
+\begin{equation}
+  \mbox{d} \vec{S} = \hat{\rho} h_\varphi h_z \mbox{d}\varphi \mbox{d}z = \left\{ h_z=1, h_\varphi = \rho = 1 \right\} = \hat{\rho} \mbox{d}\varphi \mbox{d}z.
+\tag{51}
+\end{equation}
+$$
+
+Skal&#228;rprodukten \( \vec{u} \cdot \mbox{d}\vec{S} = (x\hat{x}\cdot\hat{\rho} + z \hat{y}\cdot\hat{\rho} - y \hat{z} \cdot \hat{\rho} ) \mbox{d}\varphi \mbox{d}z = (\cos^2\varphi + z \sin\varphi) \mbox{d}\varphi \mbox{d}z \), vilket leder till samma integral som ovan.
+
+
+</div>
+
+
+<p>
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

@@ -1,0 +1,326 @@
+TITLE: FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/tsp/", Institutionen för fysik, Chalmers, Göteborg, Sverige 
+DATE: today
+
+=======  10. Värmeledning, diffusionsekvation =======
+
+Betrakta ett temperaturfält $T(\vec{r},t)$
+* På ett område $V$.
+* Med randvillkor längs $\partial V$.
+* I närvaro av eventuella värmekällor.
+* Med ett explicit tidsberoende.
+
+Vi söker nu en differentialekvation för detta fält.
+
+===== Värmeledning (diffusion) =====
+
+Vi vet att värme strömmar från varmare till kallare.  Det innebär att
+vi har ett flöde av värmeenergi i en riktning som är motsatt $\vnabla T$.
+
+!bsummary Antagande 1
+Värmeströmmen kan skrivas
+!bt
+\begin{equation}
+  \vec{q} = -\lambda\vnabla T,
+\end{equation}
+!et
+där $\lambda$ är värmekonduktiviteten (värmeledningsförmågan), och $\vec{q}$ är själva 
+värmeflödet med enheten J\,s$^{-1}$\,m$^{-2}$.
+!esummary
+
+!bsummary Antagande 2
+Värmetätheten $\varepsilon$ är proportionell mot temperaturen
+$$
+\varepsilon = c \rho T,
+$$
+där $c$ är värmekapacitiviteten och $\rho$ är densiteten.
+* $[\varepsilon] = \mathrm{J}/\mathrm{m}^3$
+* $[c] = \mathrm{J} \mathrm{kg}^{-1} \mathrm{K}^{-1}$
+* $[\rho] = \mathrm{kg} \mathrm{m}^{-3}$
+!esummary
+
+Betrakta nu en volym $V$, vilken begränsas av en sluten yta $S = \partial V$.  
+* Värmeenergin i denna volym är
+!bt
+\begin{equation}
+  H = \int_{V} Tc\rho \mbox{d}V
+  label{eq:H}
+\end{equation}
+!et
+* Utflödet av värme från denna volym är 
+!bt
+\begin{equation}
+  \oint_{\partial  V} \vec{q}\cdot \mbox{d}\vec{S}.
+\end{equation}
+!et
+Förutsatt att det inte finns några värmekällor i $V$  måste 
+utflödet motsvara förändringen per tidsenhet av värmen
+i $V$
+!bt
+\begin{equation}
+  \frac{\partial H}{\partial t} = - \oint_{\partial  V} {\vec{q}\cdot \mbox{d}S}.
+\end{equation}
+!et
+Med insättning av ekv. (ref{eq:H}) i VL och användande av Gauss sats i HL fås
+!bt
+\begin{equation}
+  \int_{V}
+\frac{\partial}{\partial t} \left( Tc\rho \right) \mbox{d}V = -\int_{V} \vnabla \cdot \vec{q}\mbox{d}V.
+label{energi}
+\end{equation}
+!et
+Volymen $V$ är helt godtyckligt vald, så likheten måste gälla för alla volymer $V$. I så fall kan vi sätta integranderna lika med varandra
+!bt
+\begin{equation}
+  \frac{\partial}{\partial t}\left(T c\rho\right) = - \vnabla \cdot \vec{q}
+= \vnabla \cdot \lambda \vnabla T = \lambda \\Delta T.
+\end{equation}
+!et
+
+Om vi nu antar att $c$, $\rho$ och $\lambda$  är konstanter, så kan vi skriva ekvationen som
+!bt
+\begin{equation}
+  \frac{\partial T}{\partial t} = k \Delta  T,
+\end{equation}
+!et
+där 
+!bt
+\begin{equation}
+  k \equiv \frac{\lambda}{c\rho}.
+\end{equation}
+!et
+Den här ekvationen kallas för värmeledningsekvationen. 
+
+!bwarning Kommentar
+Värmeledningsekvationen är en kontinuitetsekvation för värmeenergin. Ni känner antagligen igen härledningen från det liknande bevis som gjordes i kap. 4 i kurskompendiet.
+!ewarning
+
+=== Stationär lösning ===
+För en tidsoberoende värmefördelning gäller $\partial T / \partial t = 0$ och därmed
+!bt
+\begin{equation}
+  \Delta  T = 0
+\end{equation}
+!et
+som vi kallar för Laplace-ekvation.
+
+=== Värmekälla ===
+Vad händer nu om vi har en värmekälla i volymen $V$?  Antag att värme
+produceras av en källa med tätheten $s = s(\vec{r},t)$ med enheten W\,m$^{-3}$.
+Då måste vi komplettera ekv. (ref{energi}) med en term för denna
+uppvärmning
+!bt
+\begin{equation}
+  \int_{V} \frac{\partial}{\partial t} \left( Tc\rho \right) \mbox{d}V = \int_{V} \lambda 
+\Delta  T
+\mbox{d}V + \int_{V} s \mbox{d}V.
+\end{equation}
+!et
+Värmeledningsekvationen (med konstant $c,\rho$) blir då
+!bt
+\begin{equation}
+  \frac{\partial T}{\partial t} = k \Delta T + \frac{s}{c\rho}.
+\end{equation}
+!et
+[Comment: Vi använder ibland beteckningen $u = s/(c\rho)$, som också kallas för *värmekälltäthet*.]
+
+Om temperaturfördelningen är tidsoberoende kan vi skriva ekvationen som
+!bt
+\begin{equation}
+  \Delta  T = -\frac{s}{\lambda}
+\end{equation}
+!et
+som är ett exempel på Poissons ekvation.
+Högerledet kallar vi då för en källterm.
+
+!bnotice Exempel: En-dimensionell värmeledning 
+
+Betrakta ett område $x \in [0,L]$ i en dimension med följande villkor på temperaturfördelningen $T = T(x,t)$
+* Begynnelsevillkor: $T(x,0) = T_0 \sin \frac{\pi x}{L}$.
+* Randvillkor: $T(0,t) = T(L,t) = 0$ (dvs Dirichlets homogena RV).
+
+[Comment: Teckna $T(x,0)$ och jämför gärna med Neumanns homogena randvillkor som hade stoppat värmetransport genom ändarna eftersom $\partial T / \partial x = 0$ (vid $x=0$ och $x=L$).]
+
+Finn temperaturfördelningen för $t > 0$ i avsaknad av någon värmekälla.
+
+=== Lösning: ===
+Värmeledningsekvationen är
+$$
+\frac{\partial T(x,t)}{\partial t} - k \frac{\partial^2 T(x,t)}{\partial x^2} = 0.
+$$
+Notera att 
+$$
+\frac{\partial^2}{\partial x^2} \sin \frac{\pi x}{L} = - \frac{\pi^2}{L^2} \sin \frac{\pi x}{L},
+$$
+vilket gör det naturligt att ansätta lösningen $T(x,t) = f(t) \sin \frac{\pi x}{L}$.
+
+Denna ansats uppfyller randvillkoren och begynnelsevillkoret om $f(0) = T_0$. Insättning i värmeledningsekvationen ger
+$$
+f'(t) \sin \frac{\pi x}{L} + k f(t) \frac{\pi^2}{L^2} \sin \frac{\pi x}{L} = 0,
+$$
+vilket har lösningen
+$$
+f(t) = A e^{-\pi^2 k t / L^2},
+$$
+där $A = T_0$ bestäms av begynnelsevillkoret. Lösningen 
+$$
+T(x,t) = T_0 e^{-\pi^2 k t / L^2} \sin \frac{\pi x}{L}
+$$
+innebär att temperaturen minskar kontinuerligt (flödar ut genom ändarna) och att en stationär lösning, $T=0$, erhålls för stora $t$.
+!enotice
+
+!bnotice Exempel: Värmeledning med källterm 
+
+Granitberggrunden i Sverige innehåller en viss mängd
+radium, vars radioaktiva sönderfall ger en uppvärming som av en rymdkälla
+för värme med konstant källtäthet $\rho_\mathrm{T}$.  Granitens 
+värmeledningsförmåga är $\lambda$ (i W\,m$^{-1}$\,K$^{-1}$).  Låt
+oss göra det orealistiska antagandet att Jorden alltigenom bestod av granit
+med dessa egenskaper.  Hur skulle i så fall den stationära 
+temperaturfördelningen i Jordens inre se ut?  Vad blir temperaturen i 
+centrum?
+
+=== Lösning: ===  
+Vi kan ställa upp differentialekvationen
+!bt
+\begin{equation}
+  \Delta T = - \frac{\rho_{\rm T}}{\lambda}
+\end{equation}
+!et
+I sfäriska koordinater under antagande om sfärisk symmetri blir ekvationen
+!bt
+\begin{equation}
+  \frac{1}{r^2} \frac{\partial}{\partial r}\left(r^2 \frac{\partial T}
+{\partial r}\right) = -Q,
+\end{equation}
+!et
+där $Q = \rho_{\rm T}/\lambda$.  Vi kan skriva detta som
+!bt
+\begin{equation}
+  \frac{\partial}{\partial r}\left(r^2 \frac{\partial T}
+{\partial r}\right) = -Q r^2,
+\end{equation}
+!et
+och sedan integrera en gång.
+!bt
+\begin{equation}
+  r^2 \frac{\partial T}{\partial r} = -\frac{1}{3}Qr^3 + A,
+\end{equation}
+!et
+där $A$ är en integrationsvariabel.  Om vi dividerar med $r^2$ får vi
+!bt
+\begin{equation}
+  \frac{\partial T}{\partial r} = -\frac{1}{3}Qr + \frac{A}{r^2}.
+\end{equation}
+!et
+Integrerar vi än en gång får vi
+!bt
+\begin{equation}
+  T\left(r\right) = - \frac{1}{6} Q r^2 - \frac{A}{r} + B,
+\end{equation}
+!et
+där $B$ är ännu en integrationsvariabel.  Vi måste nu bestämma
+värden på de båda integrationsvariablerna.  Först kan vi notera
+att det inte finns någon värmepunktkälla, så temperaturen inte bör bli oändlig i Jordens inre, dvs $A = 0$.
+
+För det andra noterar vi att temperaturen vid jordytan, $r = R$, är 
+praktiskt taget 0 jämfört med temperaturen i Jordens centrum, så vi
+får ekvationen
+!bt
+\begin{equation}
+  0 = -\frac{1}{6} Q R^2 + B.
+\end{equation}
+!et 
+vilket ger $B = QR^2/6$. Fysikaliskt så är $B$ temperaturen i Jordens centrum.  Om vi sätter in realistiska värden på $\rho_{\rm T} = 5\times
+10^{-8}$ W\,m$^{-3}$, $\lambda = 3,5$ W\,m$^{-1}$\,K$^{-1}$ och $R = 6,4\times
+10^6$ m, så får vi $B = 6\times 10^5$ K, vilket är en grov
+överskattning av den verkliga temperaturen.
+!enotice
+
+===== Greensfunktioner för värmeledningsekvationen =====
+
+* Kan vi använda Greensfunktioner för att teckna lösningar till allmänna källfördelningar?
+* Notera att fälten (temperatur, värmekälla) är både rums- och tidsberoende.
+* Ja, det kan man - Greensfunktionen är då lösningen (med givna randvillkor) till värmeledningsekvationen för en punktkälla i både tid och rum.
+
+[Comment: En punktlik energikälla som bara existerar under ett ögonblick, men är precis så stark att den tillförda energimängden är ändlig. Fundera på hur temperaturfältet borde se ut.]
+
+Vi söker alltså lösningen till Greensfunktionsekvationen svarande mot värmeledningsekvationen:
+$$   
+\left( \frac{\partial}{\partial t}-k\Delta\right)G(\vec{r},t;\vec{r}{\;}',t')
+=\delta^D(\vec{r}-\vec{r}{\;}')\delta(t-t')
+$$
+på hela $D$-dimensionella rummet $\mathbb{R}^D$. 
+Finner vi lösningen till denna ekvation, kan lösningen till värmeledningsekvationen för godtycklig källfördelning $u$ skrivas
+$$
+T(\vec{r},t)=\int_{-\infty}^\infty dt'\int d^Dx'\, G(\vec{r},t;\vec{r}{\;}',t')u(\vec{r}{\;}',t')
+$$
+vilket ses genom direkt insättning
+!bt
+\begin{align}
+\left( \frac{\partial}{\partial t}-k\Delta\right)T(\vec{r},t)
+&=\int_{-\infty}^\infty dt'\int d^Dx'\,
+\left( \frac{\partial}{\partial t}-k\Delta\right)G(\vec{r},t;\vec{r}{\;}',t')u(\vec{r}{\;}',t')
+\nonumber \\
+&=\int_{-\infty}^\infty dt'\int d^Dx'\,
+\delta^D(\vec{r}-\vec{r}{\;}')\delta(t-t')u(\vec{r}{\;}',t')
+=u(\vec{r},t).
+\end{align}
+!et
+som alltså visar att värmeledningsekvationen uppfylls för detta $T$.
+
+* Vi studerar lösningen på ett oändligt, $D$-dimensionellt rum. 
+* För det första kan vi använda translationsinvarians i rum och tid för att skriva $G(\vec{r},t;\vec{r}{\;}',t') = \tilde G(\vec{r}-\vec{r}{\;}',t-t')$.
+* Följande lösning uppfyller ekvationen
+$$
+\tilde G(\vec{r}-\vec{r}\,',t-t')=\frac{\sigma(t-t')}{(4\pi k (t-t'))^{D/2}}
+e^{-\frac{|\vec{r}-\vec{r}\,'|^2}{4k(t-t')}},
+$$
+där $\sigma(t)$ är stegfunktionen som tar värdet $0$ för $t<0$
+och $1$ för $t>0$.
+
+Faktorn $\sigma(t-t')$ gör att en källa vid tidpunkten $t'$ bara kan påverka vad som händer vid senare tidpunkter $t\geq t'$, så vi har kausalitet.
+
+Skissa Greensfunktionens utseende för olika $t$:
+* den börjar som en deltafunktion vid $t-t'=0^+$ 
+* för att när tiden går bli bredare och lägre, hela tiden med Gaussisk form. 
+
+% if FORMAT in ("ipynb","html"):
+@@@CODE fig/figs-ch10.py from-to: Start initialization@End plot
+% endif
+
+FIGURE:[fig/greens_function_1dim_wtime.png, width=600 frac=0.95]
+
+!bwarning Kommentar
+Det faktum att rumsintegralen av $G$ är konstant i tiden för $t-t'>0$,
+$$
+\int_{\mathbb{R}^D}d^Dx\,G(\vec{r},\vec{r}\,',t,t')=1,
+$$
+är ett uttryck för energins bevarande, och naturlig om vi minns att vi kan se värmeledningsekvationen som en kontinuitetsekvation.
+!ewarning
+
+Värmeledningsekvationen heter på engelska ``the heat equation''. Dess Greensfunktion kallas ``heat kernel'', på svenska ibland ``värmekärna''.
+
+===== Värmeledning (konvektion) =====
+
+* Ovan har vi enbart behandlat värmeledning via diffusion.
+* Konvektion erbjuder betydligt effektivare värmetransport för fluider (vätskor och gaser) genom att varm materia strömmar.
+* Vi beskriver detta med en värmeström
+$$
+\vec{q}_\mathrm{konv} = \rho c T \vec{v}
+$$
+som skall adderas till diffusionsströmmen från tidigare
+$$
+\vec{q}_\mathrm{diff} = - \lambda \vnabla T.
+$$
+Kontinuitetsekvationen för värmeenergin säger att 
+$$
+\frac{\partial  T}{\partial t} (T c \rho) = -\vnabla \cdot \vec{q} = -\vnabla \cdot (\vec{q}_\mathrm{diff} + \vec{q}_\mathrm{konv}).
+$$
+Antar vi återigen att $c$, $\rho$ och $\lambda$ är konstanter (notera att detta innebär att $\vnabla \cdot \vec{v} \propto \partial \rho / \partial t = 0$) får vi
+!bt
+\begin{equation}
+  \frac{\partial T}{\partial t} + \vec{v} \cdot \vnabla T = k \Delta  T + \frac{u}{c\rho},
+\end{equation}
+!et
+där vi också inkluderat möjligheten att det finns värmekällor.

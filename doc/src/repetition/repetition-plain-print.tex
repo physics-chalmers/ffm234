@@ -1,0 +1,186 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+
+
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               % print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % number chapter, section, subsection
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% endif for #ifdef PREAMBLE
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf \href{{http://fy.chalmers.se/subatom/tsp/}}{Christian Forssén}, Institutionen för fysik, Chalmers, Göteborg, Sverige${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Oct 21, 2016
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+\section*{Repetition}
+\begin{description}
+ \item[Kapitel 1 Fält och derivator:] 
+   Introducerande kapitel. 
+\end{description}
+
+\noindent
+Nivåytor och fältlinjer för att visualisera fält.
+\begin{description}
+ \item[Kapitel 2,3,4 Koordinater, integraler, integralsatser:] 
+   Matematiska verktyg 
+\end{description}
+
+\noindent
+\emph{MEN} vi vill betona fysiken
+\begin{itemize}
+   \item derivatan av ett fält har en fysikalisk betydelse
+
+   \item integralen av ett fält har en fysikalisk betydelse
+\end{itemize}
+
+\noindent
+Kurv-, yt-, rymdintegraler: Kan vi använda oss av en integralsats (se lösningsstrategi från kap. 4).
+\begin{description}
+ \item[Kapitel 5, 12 Indexnotation, tensorer:] 
+   Fundament
+\end{description}
+
+\noindent
+ Dessa kapitel ger fundamentet för vad som definierar en skalär, 
+ en vektor (tensorer). Viktigt för framtida kurser. Men indexnotation 
+ erbjuder också ett kraftfullt verktyg att härleda vektoridentiteter.
+\begin{description}
+ \item[Kapitel 6, 7 Singulära fält, deltafunktioer:] 
+\end{description}
+
+\noindent
+ Introducerar singulära fält (källor, virvlar) och ger verktyg för 
+ att hantera dessa matematiskt.
+\begin{description}
+ \item[Kapitel 8, 9 Potentialteori, Laplaces och Poissons ekvationer:] 
+   Kronjuvelerna
+\end{description}
+
+\noindent
+ Vi kommer fram till de generella differentialekvationerna som styr fysikaliska 
+ fält och diskuterar hur vi skall lösa dem (se nedan). Dessa avsnitt är något 
+ av kronjuvelerna i denna kurs.
+\begin{description}
+ \item[Kapitel 10, 11 Värmeledning,elektromagnetism:] 
+   Tillämpningar
+\end{description}
+
+\noindent
+ Ger en tydligare fysikalisk tolkning av det vi har lärt oss genom ganska konkreta exempel.
+
+\subsection*{Något mer om lösningar av differentialekvationer}
+Olika lösningsstrategier lämpar sig olika väl för olika problem. Här listas några problemtyper:
+
+\begin{itemize}
+  \item Symmetrier: Kan man inse att fältet bara beror på en koordinat? Då blir differentialekvationen mycket enklare och den går oftast att integrera direkt. Notera att detta ger integrationskonstanter vilka måste bestämmas (från randvillkor, existens av singulära källor, etc). Ett alternativ kan vara att använda Gauss sats för att få ett uttryck för vektorfältet.
+
+  \item Vinkelberoende randvillkor: Gör en lösningsansats som kan uppfylla randvillkoret och som samtidigt är en egenfunktion till Laplacianen ($\cos\theta$, $\sin\theta$, konstant). Detta gör att differentialekvationen separeras i två delar som kan lösas var för sig. Metoden kallas för variabelseparation.
+
+  \item Helt allmän metod: Greensfunktioner. Gör differentialekvationen till en integralekvation. Problemet blir att finna Greensfunktionen (och eventuellt att lösa integralen).
+\begin{itemize}
+
+    \item För vissa speciella geometrier (halvrymd, sfär, cirkel) och randvillkor kan man använda sig av spegelladdningar (utanför det fysikaliska området) för att konstruera en Greensfunktion. 
+\end{itemize}
+
+\noindent
+\end{itemize}
+
+\noindent
+
+% ------------------- end of main content ---------------
+
+
+\printindex
+
+\end{document}
+

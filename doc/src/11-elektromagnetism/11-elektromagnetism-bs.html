@@ -1,0 +1,1098 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('11. Elektromagnetiska fält och Maxwells ekvationer',
+               1,
+               None,
+               '___sec0'),
+              ('Maxwells ekvationer (tidsoberoende fält)', 2, None, '___sec1'),
+              ('Elektrostatik', 3, None, '___sec2'),
+              ('Magnetostatik', 3, None, '___sec3'),
+              ('Lösning:', 3, None, '___sec4'),
+              ('Maxwells ekvationer', 2, None, '___sec5'),
+              ('EM koppling 1: Kontinuitetsekvationen (konservering av '
+               'elektrisk laddning)',
+               3,
+               None,
+               '___sec6'),
+              ('EM koppling 2: Induktion (Faradays lag)', 3, None, '___sec7'),
+              ('Maxwells ekvationer i vakuum och den elektromagnetiska '
+               'vågekvationen',
+               2,
+               None,
+               '___sec8'),
+              ('Elektriska och magnetiska vågor', 3, None, '___sec9'),
+              ('Vågekvationer för potentialerna', 2, None, '___sec10')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="11-elektromagnetism-bs.html">FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>11. Elektromagnetiska fält och Maxwells ekvationer</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Maxwells ekvationer (tidsoberoende fält)</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elektrostatik</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Magnetostatik</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lösning:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Maxwells ekvationer</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EM koppling 1: Kontinuitetsekvationen (konservering av elektrisk laddning)</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EM koppling 2: Induktion (Faradays lag)</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Maxwells ekvationer i vakuum och den elektromagnetiska vågekvationen</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Elektriska och magnetiska vågor</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Vågekvationer för potentialerna</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 16, 2018</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h1 id="___sec0" class="anchor">11. Elektromagnetiska f&#228;lt och Maxwells ekvationer </h1>
+
+<p>
+Vi startar med att betrakta <em>statiska</em> elektriska och magnetiska (elektrostatik och magnetostatik) f&#246;r att sedan ta med <em>tidsberoendet</em> och se hur det inneb&#228;r en koppling mellan de tv&#229; f&#228;lten.
+
+<h2 id="___sec1" class="anchor">Maxwells ekvationer (tidsoberoende f&#228;lt) </h2>
+
+<h3 id="___sec2" class="anchor">Elektrostatik </h3>
+
+<br />
+Statiska elektriska f&#228;lt \( \vec{E}(\vec{r}) \) uppfyller
+$$
+\begin{align}
+  \vnabla \cdot \vec{E} &= \frac{\rho}{\epsilon_0} 
+\label{_auto1}\\
+  \vnabla \times \vec{E} &= 0
+\label{_auto2}
+\end{align}
+$$
+
+
+<ul>
+<li> \( \rho(\vec{r}) \) = elektrisk laddningst&#228;thet.</li>
+<li> \( \epsilon_0 \) = dielektricitetskonstant i vakuum</li>
+</ul>
+
+Den andra ekvationen s&#228;ger att elektrostatiska f&#228;lt &#228;r rotationsfria (\( \vnabla \times \vec{E} = 0 \)) och d&#228;rmed konservativa. 
+$$
+\vec{E} = -\vnabla \phi,
+$$
+d&#228;r \( \phi \) &#228;r den elektrostatiska potentialen.
+
+<p>
+Den f&#246;rsta &#228;r Gauss lag och s&#228;ger att elektriska f&#228;lt kan ha elektriska
+laddningar som k&#228;llor. Den elektrostatiska potentialen uppfyller d&#228;rmed Poissons ekvation
+$$
+\Delta \phi = - \frac{\rho}{\epsilon_0}
+$$
+
+<h3 id="___sec3" class="anchor">Magnetostatik </h3>
+
+<br />
+Statiska magnetiska f&#228;lt \( \vec{B}(\vec{r}) \) uppfyller
+$$
+\begin{align}
+  \vnabla \cdot \vec{B} &= 0 
+\label{_auto3}\\
+  \vnabla \times \vec{B} &= \mu_0 \vec{\jmath}
+\label{_auto4}
+\end{align}
+$$
+
+d&#228;r den f&#246;rsta s&#228;ger att det inte finns n&#229;gra magnetiska laddningar och den andra &#228;r Amperes lag.
+
+<ul>
+<li> \( \vec{\jmath}(\vec{r}) \) = elektrisk str&#246;mt&#228;thet.</li>
+<li> \( \mu_0 \) = magnetisk permeabilitet i vakuum</li>
+</ul>
+
+Den f&#246;rsta ekvationen s&#228;ger att magnetostatiska f&#228;lt &#228;r divergensfria (\( \vnabla \cdot \vec{B} = 0 \)) (eller k&#228;llfritt) och kan uttryckas med en vektorpotential
+$$
+\vec{B} = \vnabla \times \vec{A},
+$$
+d&#228;r Gaugeinvarians inneb&#228;r att vektorpotentialen inte &#228;r fullst&#228;ndigt
+best&#228;md
+$$
+\vec{A}(\vec{r}) \mapsto \vec{A}(\vec{r}) + \vnabla \Lambda(\vec{r}).
+$$
+Detta g&#246;r det m&#246;jligt att v&#228;lja Gaugeparameter s&#229; att \( \vnabla \cdot \vec{A} = 0 \) och vektorpotentialen uppfyller Poissons ekvation
+$$
+\Delta \vec{A} = -\mu_0 \vec{\jmath}.
+$$
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">SI enheter</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+$$
+\begin{align}
+\mu_0 &= 4 \pi \cdot 10^{-7} \; \mathrm{T}\mathrm{A}^{-1}\mathrm{m}^{-1} \nonumber \\
+\mu_0 \epsilon_0 &= \frac{1}{c^2} \nonumber \\
+c &= 299\,792\,458 \; \mathrm{m}\mathrm{s}^{-1} \nonumber
+\end{align}
+$$
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: Best&#228;mning av elektriskt f&#228;lt</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+En elektrisk laddning \( Q \) &#228;r j&#228;mnt f&#246;rdelad i en sf&#228;r med radien \( a \). Den omges av ett tunt sf&#228;riskt skal med radien 2a och laddningen \( -Q \). Best&#228;m det elektriska f&#228;ltet \( \vec{E}(\vec{r}) \) och potentialen \( \phi(\vec{r}) \) &#246;verallt.
+
+<h3 id="___sec4" class="anchor">L&#246;sning: </h3>
+
+P&#229; grund av att laddningsf&#246;rdelningen har sf&#228;risk
+symmetri, s&#229; blir \( E_\varphi = E_\theta = 0 \), och \( E_r \) beror inte p&#229;
+\( \theta \) och \( \varphi \).  Vi kan d&#229; ber&#228;kna \( E_r \) med hj&#228;lp av Gauss
+lag genom att inf&#246;ra en sf&#228;risk volym med radie \( r \) och begr&#228;nsningsyta \( S_r \). Ytelementet blir \( d\vec{S} = \hat{r} r^2 \sin\theta d\theta d\varphi \). Gauss lag f&#246;r det elektriska f&#228;ltet blir
+$$
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \iint E_r r^2 \sin\theta d\theta d\varphi 
+  = \frac{1}{\epsilon_0} \int_V \rho(r) dV = \frac{Q_r}{\epsilon_0},
+\label{_auto5}
+\end{equation}
+$$
+
+d&#228;r \( \rho(r) = \epsilon_0 \vec\nabla\cdot\vec E \) &#228;r laddningst&#228;theten och \( Q_r \) allts&#229; &#228;r den inneslutna laddningen.
+
+<p>
+Om vi b&#246;rjar med fallet att sf&#228;ren har en radie \( r > 2a \), s&#229; ser vi 
+att den totala inneslutna laddningen &#228;r \( Q - Q = 0 \).  Allts&#229; har
+vi att 
+$$
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \iint E_r r^2 \sin\theta d\theta d\varphi 
+  = 0,
+\label{_auto6}
+\end{equation}
+$$
+
+och av detta f&#246;ljer att att \( E_r = 0 \).
+
+<p>
+Om sf&#228;ren har en radie \( r \) s&#229; att \( a < r < 2a \), s&#229; &#228;r den laddningen,
+som \( S \) innesluter, \( Q \).  D&#229; ger oss Gauss lag att
+$$
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \frac{Q}{\epsilon_0}.
+\label{_auto7}
+\end{equation}
+$$
+
+Integralen i v&#228;nsterledet har v&#228;rdet
+$$
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \iint E_r r^2 \sin\theta d\theta d\varphi = 4\pi r^2 E_r,
+\label{_auto8}
+\end{equation}
+$$
+
+och vi kan l&#246;sa ut
+$$
+\begin{equation}
+  E_r = \frac{1}{4\pi \epsilon_0} \frac{Q}{r^2}.
+\label{_auto9}
+\end{equation}
+$$
+
+<p>
+Slutligen har vi fallet att sf&#228;rens radie \( r < a \).  Eftersom laddningen \( Q \)
+&#228;r j&#228;mt f&#246;rdelad &#246;ver volymen, s&#229; inneb&#228;r det att sf&#228;ren innesluter
+laddningen
+$$
+\begin{equation}
+  Q \left(\frac{r}{a}\right)^3.
+\label{_auto10}
+\end{equation}
+$$
+
+Gauss lag ger oss allts\aa
+$$
+\begin{equation}
+  \oint_{S_r} \vec{E} \cdot \mbox{d}\vec{S} = \frac{Q}{\epsilon_0}
+\left(\frac{r}{a}\right)^3,
+\label{_auto11}
+\end{equation}
+$$
+
+vilket blir
+$$
+\begin{equation}
+  4\pi r^2 E_r = \frac{Q}{\epsilon_0}\left(\frac{r}{a}\right)^3.
+\label{_auto12}
+\end{equation}
+$$
+
+Vi kan nu l&#246;sa ut 
+$$
+\begin{equation}
+  E_r = \frac{1}{4\pi \epsilon_0} \frac{Qr}{a^3}.
+\label{_auto13}
+\end{equation}
+$$
+
+<p>
+Om vi nu sammanfattar v&#229;ra resultat, s&#229; har vi f&#246;r det elektriska
+f&#228;ltet
+$$
+\begin{equation}
+  E_r = \left\{\begin{array}{ll}
+\frac{1}{4\pi \epsilon_0} \frac{Qr}{a^3} \quad & r < a\\
+\frac{1}{4\pi \epsilon_0} \frac{Q}{r^2} & a < r < 2a\\
+0 & r > 2a\\
+\end{array}\right.
+\label{_auto14}
+\end{equation}
+$$
+
+<p>
+Vi skall nu utnyttja detta f&#246;r att best&#228;mma potentialen, f&#246;r vilken det
+g&#228;ller att \( \vec{E} = - \vnabla \phi \).  Eftersom enbart den radiella komponenten av E-f&#228;ltet &#228;r nollskild har vi att \( E_r = -\partial_r \phi \). I v&#229;rt fall kan vi uttrycka 
+potentialen som integralen
+$$
+\begin{equation}
+  \int_r^\infty E_r \mbox{d}r = -\int_r^\infty \partial_r \phi \mbox{d}r = \phi\left(r\right) - \phi(\infty).
+\label{_auto15}
+\end{equation}
+$$
+
+Vi s&#228;tter potentialen till 0 i o&#228;ndligheten och b&#246;rjar med att best&#228;mma potentialen f&#246;r intervallet
+\( r > 2a \).  Eftersom \( E_r = 0 \) h&#228;r s&#229; f&#246;ljer det att ocks&#229; potentialen
+blir 0.
+
+<p>
+Potentialen skall &#246;verallt vara kontinuerlig, vilket inte beh&#246;ver vara
+sant f&#246;r \( E \)-f&#228;ltet. N&#228;r vi g&#229;r till
+intervallet \( a \le r \le 2a \) s&#229; kan den &#246;vre integrationsgr&#228;nsen
+s&#228;ttas till \( 2a \), eftersom potentialen &#228;r 0 utanf&#246;r.
+$$
+\begin{equation}
+  \phi\left(r\right) = \int_r^{2a} \frac{1}{4\pi \epsilon_0} \frac{Q}{r^2}
+\mbox{d}r = \frac{Q}{4\pi\epsilon_0}\left[- \frac{1}{r}\right]_r^{2a} =
+\frac{Q}{4\pi\epsilon_0} \left(\frac{1}{r}-\frac{1}{2a}\right).
+\label{_auto16}
+\end{equation}
+$$
+
+Speciellt s&#229; l&#228;gger vi m&#228;rke till att potentialen i punkten \( r = a \)
+blir
+$$
+\begin{equation}
+  \phi \left(a\right) = \frac{Q}{8\pi \epsilon_0 a}.
+\label{_auto17}
+\end{equation}
+$$
+
+Det enklaste s&#228;ttet att garantera att \( \phi \) blir kontinuerlig vid \( r = a \)
+&#228;r nu att skriva potentialen f&#246;r \( r\le a \) som
+$$
+\begin{align}
+  \phi \left(r\right) = \int_r^\infty E_r \mbox{d}r = 
+\frac{Q}{8\pi \epsilon_0 a} + \int_r^a \frac{Qr}{4\pi \epsilon_0 a^3} 
+\mbox{d}r = \frac{Q}{8\pi \epsilon_0 a} + 
+\left[\frac{Qr^2}{8\pi \epsilon_0 a^3}\right]_r^a = \nonumber \\
+\frac{Q}{8\pi \epsilon_0 a} 
++  \frac{Q}{8\pi \epsilon_0 a} - \frac{Qr^2}{8\pi \epsilon_0 a^3} = 
+\frac{Q}{4\pi \epsilon_0 a} - \frac{Qr^2}{8\pi \epsilon_0 a^3} =
+\frac{Q}{8\pi \epsilon_0} \frac{2a^2 -r^2}{a^3}.
+\label{_auto18}
+\end{align}
+$$
+
+Vi kan till slut sammanfatta potentialen som
+$$
+\begin{equation}
+  \phi\left(r\right) = \left\{\begin{array}{lr}
+\frac{Q}{8\pi \epsilon_0} \frac{2a^2 -r^2}{a^3} & r\le a\\
+\frac{Q}{4\pi \epsilon_0} \left(\frac{1}{r} - \frac{1}{2a}\right) & a\le r \le 
+2a\\
+0 & r \ge 2a\\
+\end{array}
+\right.
+\label{_auto19}
+\end{equation}
+$$
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: Best&#228;mning av ett magnetf&#228;lt</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+En o&#228;ndligt l&#229;ng rak ledare har ett cirkul&#228;rt tv&#228;rsnitt med radien
+\( a \) och leder en likstr&#246;m med str&#246;mstyrkan \( I \).  Anv&#228;nd Amperes lag 
+f&#246;r att h&#228;rleda magnetf&#228;ltet i och kring ledaren om materialet i den
+antas homogent och isotropt.
+<br />
+<em>L&#246;sning:</em>  Det elektriska f&#228;ltet &#228;r station&#228;rt i detta fall och vi kan d&#229; anv&#228;nda Amperes lag utan n&#229;gon f&#246;rskjutningsstr&#246;m
+$$
+\begin{equation}
+  \int_{S_\rho} \vnabla \times \vec{B} \cdot \mbox{d}\vec{S} = \mu_0 \int_{S_\rho} \vec{\jmath} \cdot \mbox{d}\vec{S} = \mu_0 I_\rho,
+\label{_auto20}
+\end{equation}
+$$
+
+d&#228;r \( I_\rho \) &#228;r str&#246;mmen som passerar genom en tv&#228;rsnittsyta \( S_\rho \) som &#228;r en cirkelskiva med \( z \)-axeln som centrum och radien \( \rho \). Anv&#228;nder vi Stokes sats f&#229;r vi
+$$
+\begin{equation}
+  \oint_{\partial S_\rho} \vec{B} \cdot \mbox{d}\vec{r} = \mu_0 I_\rho,
+\label{_auto21}
+\end{equation}
+$$
+
+d&#228;r vi l&#229;ter \( \partial S_\rho \) vara randen till \( S_\rho \), dvs en cirkel som genoml&#246;ps moturs. F&#246;rst 
+tittar vi p&#229; fallet att cirkelns radie \( \rho > a \).  Str&#246;mmen 
+&#228;r d&#229; \( I \), och Amperes lag ger oss
+$$
+\begin{equation}
+  \oint_{\partial S_\rho} \vec{B} \cdot \mbox{d}\vec{r} = \mu_0 I.
+\label{_auto22}
+\end{equation}
+$$
+
+Vi vet att om den elektriska ledaren sammanfaller med  \( z \)-axeln s&#229; &#228;r magnetf&#228;ltet riktat i \( \varphi \)-riktningen.
+Integralen blir d&#229;
+$$
+\begin{equation}
+  \oint_{\partial S_\rho} \vec{B} \cdot \mbox{d}\vec{r} = 2\pi \rho B_\varphi.
+\label{_auto23}
+\end{equation}
+$$
+
+Vi kan nu l&#246;sa ut
+$$
+\begin{equation}
+  B_\varphi = \frac{\mu_0 I}{2\pi \rho}.
+\label{_auto24}
+\end{equation}
+$$
+
+<p>
+I fallet att cirkelns radie \( \rho < a \) s&#229; antar vi att str&#246;mmen &#228;r 
+j&#228;mnt f&#246;rdelad i tr&#229;den, vilket ger oss att den inneslutna str&#246;mmen
+blir
+$$
+\begin{equation}
+  I_\rho = I \left(\frac{\rho}{a}\right)^2.
+\label{_auto25}
+\end{equation}
+$$
+
+Integralen blir nu
+$$
+\begin{equation}
+  \oint_{\partial S_\rho} \vec{B} \cdot \mbox{d}\vec{r} = 2\pi \rho B_\varphi = \mu_0 I 
+\left(\frac{\rho}{a}\right)^2.
+\label{_auto26}
+\end{equation}
+$$
+
+Vi kan d&#229; l&#246;sa 
+$$
+\begin{equation}
+  B_\varphi = \frac{\mu_0 I}{2\pi} \frac{\rho}{a^2}.
+\label{_auto27}
+\end{equation}
+$$
+
+Sammanfattningsvis har vi allts&#229; att \( \vec{B} = B_\varphi \hat{e}_\varphi \) med
+$$
+\begin{equation}
+  B_\varphi = \left\{\begin{array}{lr}
+\frac{\mu_0 I}{2\pi \rho} & \rho > a\\
+\frac{\mu_0 I\rho}{2\pi a^2} & \rho \le a\\
+\end{array}\right.
+\label{_auto28}
+\end{equation}
+$$
+
+<p>
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: Best&#228;mning av vektorpotentialen</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+Betrakta en elektrisk ledare parallell med \( z \)-axeln.  Genom ledaren flyter en str&#246;m \( I \).  D&#229; omges ledaren av ett magnetf&#228;lt
+$$
+\vec{B} = \frac{\mu_0}{2\pi}\frac{I}{\rho}{\hat \varphi}.
+$$
+Best&#228;m vektorpotentialen \( \vec{A} \) och finn den differentialekvation som beskriver detta f&#228;lt.
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 1</b>: Notera att magnetf&#228;ltet uppvisar en singularitet. K&#228;nns den igen? Det &#228;r f&#228;ltet fr&#229;n en virveltr&#229;d.)</font>
+<!-- end inline comment -->
+
+<p>
+Notera att
+$$
+\vec{B} = \vnabla \times \vec{A} = \frac{1}{\rho}
+\begin{vmatrix}
+\hat{\rho} & \rho \hat{\varphi} & \hat{z} \\
+\partial_\rho & \partial_\varphi & \partial_z \\
+A_\rho & {\rho A_\varphi} & A_z
+\end{vmatrix} 
+$$
+Vi kan d&#228;rf&#246;r best&#228;mma vektorpotentialen ur ekvationerna
+$$
+\begin{equation}
+  \frac{1}{\rho}\frac{\partial A_z}{\partial \varphi} - \frac{\partial A_\varphi}
+{\partial z} = 0
+\label{rho}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  \frac{\partial A_\rho}{\partial z} - \frac{\partial A_z}{\partial \rho} =
+\frac{\mu_0}{2\pi}\frac{I}{\rho}
+\label{phi}
+\end{equation}
+$$
+
+och
+$$
+\begin{equation}
+  \frac{1}{\rho}\left[\frac{\partial}{\partial \rho} \left(\rho A_\varphi\right)
+- \frac{\partial A_\rho}{\partial \varphi}\right] = 0.
+\label{z}
+\end{equation}
+$$
+
+Vi skall finna en vektorpotential s&#229; att dessa ekvationer uppfylles. Vi provar med \( A_\rho = A_\varphi=0 \) och \( A_z \neq 0 \). Denna ansatz ger
+$$
+\begin{equation}
+  \vec{A} = - \frac{\mu_0}{2\pi} I \log\frac{\rho}{\rho_0} { \hat z},
+\label{_auto29}
+\end{equation}
+$$
+
+d&#228;r \( \rho_0 \) &#228;r en godtycklig konstant.
+
+<p>
+L&#229;t oss nu betrakta Amperes lag i det tidsoberoende fallet
+$$
+\begin{equation}
+  \mu_0 \vec{\jmath} =  \vnabla \times \vec{B}.
+\label{_auto30}
+\end{equation}
+$$
+
+Om vi nu ers&#228;tter \( \vec{B} \) med \( \vnabla \times \vec{A} \) s&#229; har vi
+$$
+\begin{equation}
+  \vnabla \times \vnabla \times \vec{A} = \mu_0\vec{\jmath}.
+\label{_auto31}
+\end{equation}
+$$
+
+F&#246;r v&#228;nsterledet har vi r&#228;knereglen
+$$
+\begin{equation}
+  \vnabla \times \vnabla \times \vec{A} =
+\vnabla\left(\vnabla\cdot\vec{A}\right) -\vnabla^2\vec{A}
+\label{_auto32}
+\end{equation}
+$$
+
+Den frihet, gauge, som vi har i att best&#228;mma \( \vec{A} \) g&#246;r det alltid m&#246;jligt att garantera att \( \vnabla \cdot \vec{A} = 0 \), s&#229; vi kan reducera ekvationen till
+$$
+\begin{equation}
+  \vnabla^2 \vec{A} = -\mu_0 \vec{\jmath},
+\label{_auto33}
+\end{equation}
+$$
+
+och vi har p&#229; s&#229; s&#228;tt kommit fram till en Poisson-ekvation f&#246;r vektorpotentialen. Notera att gauge-valet \( \vnabla \cdot \vec{A} = 0 \) faktiskt &#228;r uppfyllt f&#246;r den vektorpotential som vi konstruerade ovan.
+</div>
+</div>
+
+
+<h2 id="___sec5" class="anchor">Maxwells ekvationer </h2>
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 2</b>: Maxwell satte 1864 upp fyra stycken ekvationer som gav en fullst&#228;ndig beskrivning av ett elektromagnetiskt f&#228;lt.  Dock, som vi skall se, inskr&#228;nkte sig hans eget bidrag till en term i en av ekvationerna.)</font>
+<!-- end inline comment -->
+
+<p>
+F&#246;r <em>tidsberoende</em> f&#228;lt finns det en koppling mellan elektriska och magnetiska f&#228;lt.
+
+<h3 id="___sec6" class="anchor">EM koppling 1: Kontinuitetsekvationen (konservering av elektrisk laddning) </h3>
+
+<p>
+L&#229;t oss betrakta sambandet mellan elektrisk str&#246;mt&#228;thet och (rotationen av) ett magnetf&#228;lt. Detta samband har konsekvenser f&#246;r kontinuitetsekvationen f&#246;r elektrisk laddning
+$$
+  \frac{\partial \rho}{\partial t} = - \vnabla \cdot \vec{\jmath}.
+$$
+fr&#229;n Amperes lag f&#229;r vi n&#228;mligen att HL i kontinuitetsekvationen blir
+$$
+  \vnabla \cdot \vec{\jmath} = \frac{1}{\mu_0} \vnabla \cdot \left(\vnabla \times
+\vec{B}\right) = 0,
+$$
+enligt r&#228;knereglerna f&#246;r vektoroperatorerna. Detta skulle betyda att
+$$
+  \frac{\partial \rho}{\partial t} = 0,
+$$
+vilket &#228;r orimligt! 
+F&#246;r det betyder att det inte g&#229;r att flytta en elektrisk laddning.
+
+<p>
+Maxwells l&#246;sning var att l&#228;gga till en term (f&#246;rskjutningsstr&#246;mmen)
+$$
+\begin{equation}
+  \vnabla \times \vec{B} = \mu_0 \vec{\jmath} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t}.
+\label{_auto34}
+\end{equation}
+$$
+
+<h3 id="___sec7" class="anchor">EM koppling 2: Induktion (Faradays lag) </h3>
+
+<p>
+Vi har sedan tidigare funnit att elektriska laddningar kan skapa elektriska f&#228;lt  och att elektriska str&#246;mmar kan skapa magnetf&#228;lt.
+
+<p>
+Vi vet dock att elektriska f&#228;lt ocks&#229; kan skapas genom induktion.  En f&#246;r&#228;ndring av det magnetiska fl&#246;det, \( \Phi \), genom en elektrisk ledare inducerar en sp&#228;nning, \( U \), i ledaren d&#229; det magnetiska fl&#246;det f&#246;r&#228;ndras.
+
+$$
+\begin{equation}
+  U = - \frac{\mbox{d}\Phi}{\mbox{d}t},
+\label{eq:faraday}
+\end{equation}
+$$
+
+d&#228;r \( \Phi \) &#228;r ett magnetiskt fl&#246;de genom ytan \( S \)
+$$
+\begin{equation}
+  \Phi = \int_S \vec{B} \cdot \mbox{d} \vec{S}.
+\label{_auto35}
+\end{equation}
+$$
+
+och \( U \) &#228;r den inducerade sp&#228;nningen l&#228;ngs randen \( \partial S \)
+$$
+\begin{equation}
+  U = \oint_{\partial S} \vec{E} \cdot \mbox{d}\vec{r}.
+\label{eq:indU}
+\end{equation}
+$$
+
+Vi s&#228;tter nu Ekv \eqref{eq:indU} och \eqref{eq:faraday} lika med varandra och f&#229;r Faradays lag p&#229; integralform
+$$
+  \oint_{\partial S} \vec{E} \cdot \mbox{d}\vec{r} = -
+\int_S \frac{\partial \vec{B}}{\partial t} \cdot \mbox{d}\vec{S}.
+$$
+
+<p>
+Anv&#228;nder vi Stokes sats p&#229; VL f&#229;r vi Faradays lag p&#229; differentialform (notera att ytan \( S \) &#228;r helt godtycklig)
+$$
+\begin{equation}
+  \vnabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}.
+\label{_auto36}
+\end{equation}
+$$
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 3</b>: Det elektriska f&#228;ltet &#228;r inte l&#228;ngre konservativt vilket ju modifierar en av v&#229;ra ekvationer.)</font>
+<!-- end inline comment -->
+
+<p>
+Vi f&#229;r nu allts&#229; att Maxwells ekvationer blir
+
+<p>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+  <h3 class="panel-title">Maxwells ekvationer</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+$$
+\begin{align}
+  \vnabla \cdot \vec{E} &= \frac{\rho}{\epsilon_0}, 
+\label{_auto37}\\
+  \vnabla \times \vec{E} &= - \frac{\partial B}{\partial t}, 
+\label{_auto38}\\
+  \vnabla \cdot \vec{B} &= 0, 
+\label{_auto39}\\
+  \vnabla \times \vec{B} &= \mu_0 \vec{\jmath} + \mu_0 \epsilon_0 
+\frac{\partial E}{\partial t}.
+\label{_auto40}
+\end{align}
+$$
+</div>
+</div>
+
+
+<ul>
+<li> Ett allm&#228;nt f&#228;lt \( \vec{E} \) kan vi alltid dela upp i en del som &#228;r virvelfri, och en del som &#228;r k&#228;llfri.</li> 
+<li> F&#246;r ett elektrisk f&#228;lt g&#228;ller allts&#229; att den virvelfria delen kan skrivas som \( -\vnabla \phi \).  Enligt induktionsekvationen &#228;r</li>
+</ul>
+
+$$
+\vnabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t} = -
+\frac{\partial (\vnabla \times \vec{A})}{\partial t} = - \vnabla \times 
+\frac{\partial \vec{A}}{\partial t}.
+$$
+Allts&#229; kan vi skriva den k&#228;llfria delen av \( \vec{E} \) som
+\( -\partial \vec{A} / \partial t \), s&#229; att vi totalt har
+$$
+\begin{equation}
+  \vec{E} = - \vnabla \phi - \frac{\partial \vec{A}}{\partial t}.
+\label{_auto41}
+\end{equation}
+$$
+
+<h2 id="___sec8" class="anchor">Maxwells ekvationer i vakuum och den elektromagnetiska v&#229;gekvationen </h2>
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">OBS!</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Resten av dessa anteckningar behandlar kap 11.3-11.7 som ej ing&#229;r i kursen. Anteckningarna &#228;r endast med f&#246;r b&#228;ttre koppling till motsvarande material i andra kurser.
+</div>
+</div>
+
+
+<ul>
+<li> En mycket viktig konsekvens av Maxwells ekvationer &#228;r att det existerar v&#229;gl&#246;sningar.</li>
+</ul>
+
+I vakuum (\( \rho=0 \) och \( \vec{\jmath} = 0 \)) blir Maxwells ekvationer
+$$
+\begin{equation}
+  \vnabla \cdot \vec{E} = 0
+\label{_auto42}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  \vnabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}
+\label{induction}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  \vnabla \cdot \vec{B} = 0
+\label{_auto43}
+\end{equation}
+$$
+
+$$
+\begin{equation}
+  \vnabla \times \vec{B} = \epsilon \mu_0 \frac{\partial \vec{E}}{\partial t}
+\label{amp_max}
+\end{equation}
+$$
+
+Vi kan nu till exempel ber&#228;kna rotationen av induktionsekvationen Ekv. \eqref{induction}
+$$
+\begin{equation}
+  \vnabla \times \vnabla \times \vec{E} = \vnabla \left( \vnabla \cdot \vec{E}
+\right) - \vnabla^2 \vec{E} = - \vnabla \times 
+\frac{\partial \vec{B}}{\partial t} =
+- \frac{\partial (\vnabla \times \vec{B})}{\partial t}.
+\label{_auto44}
+\end{equation}
+$$
+
+Vi kan nu utnyttja att \( \vnabla \cdot \vec{E} =0 \) och Ekv. \eqref{amp_max}
+$$
+\begin{equation}
+  - \vnabla^2 \vec{E} = - \frac{\partial}{\partial t} \epsilon_0 \mu_0
+\frac{\partial \vec{E}}{\partial t} = 
+- \epsilon_0 \mu_0 \frac{\partial^2 \vec{E}}{\partial t^2}.
+\label{_auto45}
+\end{equation}
+$$
+
+Eftersom \( \epsilon_0 \mu_0 = 1/c^2 \) kan vi skriva detta
+$$
+\begin{equation}
+  \left( \vnabla^2 - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \vec{E} = 0,
+\label{vaag}
+\end{equation}
+$$
+
+vilket &#228;r en <em>v&#229;gekvation</em>.
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: V&#229;gekvationen i \( D=1 \)</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+Betrakta f&#228;ltet \( \vec{E} = E(x,t) \) i en dimension och motsvarande v&#229;gekvation
+$$
+\begin{equation}
+  \left( \frac{\partial^2}{\partial x^2} - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) E(x,t) = 0.
+\label{_auto46}
+\end{equation}
+$$
+
+Ekvationen har d&#229; l&#246;sningar p&#229; formerna \( E_+ = E_0 \sin(k x - \omega t) \) och \( E_- = E_0 \sin(k x + \omega t) \), vilka beskriver v&#229;gor och motiverar varf&#246;r Ekv. \eqref{vaag} kallas f&#246;r v&#229;gekvationen.
+
+<p>
+Med denna ansatz (\( E_+ \)) ger v&#229;gekvationen
+$$
+-k^2 + \frac{\omega^2}{c^2} = 0 \quad \Rightarrow \quad \omega = c |k|,
+$$
+vilket kallas f&#246;r en dispersionsrelation.
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Rita 4</b>: funktionen \( E(x,t) \) med en \( x \)-axel och en \( t \)-axel. Illustrera v&#229;gl&#228;ngd och periodtid.)</font>
+<!-- end inline comment -->
+
+
+<ul>
+<li> Vid given tid \( t \): samma fas d&#229; \( x \mapsto x + \frac{2 \pi}{k} \).</li> 
+<li> Dvs <em>v&#229;gl&#228;ngden</em> \( \lambda \) relaterar till <em>v&#229;gtalet</em> \( k \) enligt \( \lambda = \frac{2\pi}{k} \).</li>
+<li> Vid givet \( x \): samma fas d&#229; \( t \mapsto t + \frac{2 \pi}{\omega} \).</li> 
+<li> V&#229;ghastigheten finner vi genom att notera att \( x-\frac{\omega}{k}t = \mathrm{konstant} \) beskriver punkter med samma fas. Detta ger</li>
+</ul>
+
+$$
+\mbox{d}x - \frac{\omega}{k} \mbox{d}t = 0 \quad \Rightarrow \quad \frac{\mbox{d}x}{\mbox{d}t} = \frac{\omega}{k}
+$$
+Hastigheten &#228;r allts&#229; \( v = \omega / k = c \). Ljushastigheten!
+</div>
+</div>
+
+
+<p>
+I rummet kan vi skriva l&#246;sningarna
+$$
+\vec{E} = \vec{E}_0 \exp\left( i (\vec{k} \cdot \vec{r} - \omega t ) \right) = \left\{ \mathrm{v&#228;lj~} \vec{k} = k \hat{x} \right\} = \vec{E}_0 \exp\left( i (k x - \omega t) \right).
+$$
+Den fysikaliska l&#246;sningen &#228;r (antingen) real- eller imagin&#228;rdelen av ovanst&#229;ende. Det betyder allts&#229; att l&#246;sningen och tolkningen &#228;r analog med \( D=1 \)-exemplet ovan.
+
+<h3 id="___sec9" class="anchor">Elektriska och magnetiska v&#229;gor </h3>
+
+En motsvarande v&#229;gekvation f&#246;r magnetf&#228;ltet kan ocks&#229; h&#228;rledas. Man finner d&#228;rf&#246;r
+$$
+\begin{align}
+\vec{E}(\vec{r},t) &= \vec{E}_0 \exp\left( i (\vec{k} \cdot \vec{r} - \omega t ) \right)  \nonumber \\
+\vec{B}(\vec{r},t) &= \vec{B}_0 \exp\left( i (\vec{k} \cdot \vec{r} - \omega t ) \right)  \nonumber 
+\end{align}
+$$
+
+Hur f&#246;rh&#229;ller sig <em>polarisationsvektorn</em> \( \vec{E}_0 \) till \( \vec{B}_0 \) och till riktningen p&#229; \( \vec{k} \)?
+
+<ul>
+<li> S&#228;tt \( \vec{k} = \hat{n} k = \hat{n} \frac{\omega}{c} \).</li>
+<li> Exponenten blir d&#229; \( (\vec{k} \cdot \vec{r} - \omega t ) = \frac{\omega}{c}(\hat{n} \cdot \vec{r} - c t ) \).</li>
+<li> ME1: \( \vnabla \cdot \vec{E} = 0 \), vilket ger \( \hat{n} \cdot \vec{E}_0 = 0 \).</li>
+</ul>
+
+Visa g&#228;rna detta med indexnotation
+$$
+\begin{align}
+\vnabla \cdot \vec{E} &= \partial_j E_{0,j} \exp \left( i \frac{\omega}{c} (n_l r_l - ct) \right) = E_{0,j} \left( \partial_j \left[i \frac{\omega}{c} n_l r_l \right] \right) \exp \left( i \frac{\omega}{c} (n_m r_m - ct) \right) \nonumber \\
+&= \left\{ \partial_j r_l = \delta_{jl} \right\} = i \frac{\omega}{c} E_{0,j} n_j \exp \left( i \frac{\omega}{c} (n_m r_m - ct) \right) \nonumber \\
+&= i \frac{\omega}{c} \hat{n} \cdot \vec{E}_0 \exp \left( i \frac{\omega}{c} (\hat{n} \cdot \vec{r} - ct) \right) \nonumber
+\end{align}
+$$
+
+
+<ul>
+<li> Pss ME3 ger \( \hat{n} \cdot \vec{B}_0 = 0 \)</li>
+<li> F&#228;lten &#228;r allts&#229; vinkelr&#228;ta mot v&#229;gens r&#246;relseriktning.</li>
+<li> ME2 s&#228;ger att \( i \frac{\omega}{c} (\hat{n} \times \vec{E}_0 - c \vec{B}_0) = 0 \), dvs \( \vec{B}_0 = \frac{1}{c} \hat{n} \times \vec{E_0} \).</li>
+<li> E- och B-f&#228;lten &#228;r allts&#229; vinkelr&#228;ta mot varandra.</li> 
+<li> De tv&#229; m&#246;jliga riktningarna p&#229; polarisationsvektorn \( \vec{E}_0 \) motsvarar de tv&#229; m&#246;jliga polarisationerna hos elektromagnetisk str&#229;lning.</li>
+</ul>
+
+Den elektromagnetiska v&#229;gen best&#229;r d&#228;rf&#246;r av sv&#228;ngande elektriska och magnetiska f&#228;lt, vilka genererar varandra
+$$
+\begin{align}
+\vec{E}(\vec{r},t) &= \vec{E}_0 \exp\left( i \frac{\omega}{c}(\hat{n} \cdot \vec{r} - c t ) \right), \quad \hat{n} \cdot \vec{E}_0 = 0  
+\label{_auto47}\\
+\vec{B}(\vec{r},t) &= \frac{1}{c} \hat{n} \times \vec{E}_0 \exp\left( i \frac{\omega}{c}(\hat{n} \cdot \vec{r} - c t ) \right)  
+\label{_auto48}
+\end{align}
+$$
+
+<h2 id="___sec10" class="anchor">V&#229;gekvationer f&#246;r potentialerna </h2>
+
+<ul>
+<li> Hur blir Maxwells ekvationer n&#228;r f&#228;lten uttrycks i potentialerna \( \phi \) och \( \vec A \).</li>
+<li> De tv&#229; homogena ekvationerna (\( \ldots = 0 \)) &#228;r de som g&#246;r att f&#228;lten kan uttryckas i termer av potentialer.</li> 
+</ul>
+
+S&#228;tt in uttrycken
+$$
+\begin{align}
+\vec{E} &= -\vnabla \phi - \frac{\partial \vec{A}}{\partial t} \nonumber \\
+\vec{B} &= \vnabla \times \vec{A} \nonumber
+\end{align}
+$$
+
+i de inhomogena ekvationerna:
+$$
+\begin{align*}
+\Big( \vnabla \cdot \vec{E} &= \Big) \quad \vnabla\cdot(-\vnabla\phi-\frac{\partial \vec A}{\partial t}) = \frac{\rho}{\epsilon_0}, \\
+\Big( \vnabla \times \vec{B} - \epsilon \mu_0 \frac{\partial \vec{E}}{\partial t}
+&= \Big) \quad \vnabla\times(\vnabla\times\vec A) - \frac{1}{c^2} \frac{\partial}{\partial t} (-\vnabla\phi-\frac{\partial \vec A}{\partial t})=\mu_0\vec\jmath .
+\end{align*}
+$$
+
+
+<ul>
+<li> Ett gaugeval f&#246;r vektorpotentialen f&#246;renklar ekvationerna avsev&#228;rt</li> 
+<li> V&#228;lj gaugeparameter s&#229; att \( \vnabla\cdot\vec A = - \frac{1}{c^2} \frac{\partial \phi}{\partial t} \).</li> 
+</ul>
+
+Den f&#246;rsta ekvationen blir
+$$
+\vnabla \cdot \left(-\vnabla \phi - \frac{\partial \vec{A}}{\partial t} \right) = -\Delta \phi - \frac{\partial}{\partial t} (\vnabla \cdot \vec{A}) = \left\{ \mathrm{Gaugeval} \right\} = \left( -\Delta + \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \phi \equiv - \square \phi,
+$$
+d&#228;r d'Alembert-operatorn \( \square \equiv \left( \Delta - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \).
+
+<p>
+F&#246;r den andra ekvationen utnyttjar vi att
+$$
+\vnabla \times \left( \vnabla \times \vec{A} \right) = \vnabla \left( \vnabla \cdot \vec{A} \right) - \Delta \vec{A} = \left\{ \mathrm{Gaugeval} \right\} = -\vnabla \left( \frac{1}{c^2} \frac{\partial \phi}{\partial t} \right) - \Delta \vec{A}.
+$$
+VL i den andra inhomogena ekvationen blir d&#228;rf&#246;r
+$$ 
+-\frac{1}{c^2} \frac{\partial (\vnabla \phi)}{\partial t} - \Delta \vec{A} + \frac{1}{c^2}
+\frac{\partial \vnabla \phi}{\partial t} + \frac{1}{c^2} \frac{\partial^2 \vec{A}}{\partial  t^2} = -\square \vec{A}.
+$$
+
+<ul>
+<li> Vi f&#229;r allts&#229; inhomogena v&#229;gekvationer f&#246;r potentialerna</li>
+</ul>
+
+$$
+\begin{align*}
+\square\phi&=-\frac{\rho}{\epsilon_0}, \\
+\square\vec A&=-\mu_0\vec\jmath ,
+\end{align*}
+$$
+
+
+<ul>
+<li> Man kan anv&#228;nda Greensfunktionen f&#246;r v&#229;gekvationen f&#246;r att skriva ned generella l&#246;sningar n&#228;r laddningar och str&#246;mmar &#228;r givna.</li>
+<li> Greensfunktionen &#228;r l&#246;sningen till f&#246;ljande v&#229;gekvation</li>
+</ul>
+
+$$
+\square G(\vec{r},t;\vec{r}{\;}',t') \equiv (\Delta - \frac{1}{c^2} \frac{\partial^2}{\partial t^2}) G(\vec{r},t;\vec{r}{\;}',t') = -\delta^3(\vec{r}-\vec{r}{\;}')\delta(t-t').
+$$
+F&#246;r enkelhets skull kan vi ta \( \vec{r}{\;}'=0 \), \( t'=0 \).
+
+<p>
+Greensfunktionen &#228;r
+$$
+G_+(\vec{r},t;0,0) = \frac{1}{4\pi t} \delta(r-ct).
+$$  
+
+<ul>
+<li> Detta &#228;r vad som brukar kallas en <em>retarderad</em> Greensfunktion.</li> 
+<li> Termen kommer sig av att en k&#228;lla bara p&#229;verkar f&#228;lt vid efterf&#246;ljande tider (ljuskonen \( r=ct \)).</li>
+</ul>
+
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 5</b>: Ekvationen &#228;r symmetrisk under \( t \to -t \), vilket inneb&#228;r att det ocks&#229; finns en <em>avancerad</em> Greensfunktion \( G_- \propto \delta(r+ct) \).)</font>
+<!-- end inline comment -->
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Huygens princip</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Det &#228;r v&#228;rt att notera att det intuitivt &quot;sunda&quot; antagandet att Greensfunktionen endast har st&#246;d p&#229; ljuskonen faktiskt &#228;r mer subtilt &#228;n det verkar. Det g&#229;r under namnet Huygens pricip. Det visar sig vara sant i ett udda antal rumsdimensioner, men falskt i ett j&#228;mnt antal. I ett j&#228;mnt antal rumsdimensioner har Greensfunktionen st&#246;d <em>inom</em> ljuskonen, inte endast <em>p&#229;</em> den.
+I tv&#229; dimensioner har man t.ex.
+$$
+G_+^{(2)}(\vec{r},t;0,0)=
+\left\{ 
+\begin{array}{ll}
+\frac{\sigma(t)}{2\pi\sqrt{(ct)^2-r^2}}, & r<ct, \\
+0 & \mathrm{annars.}
+\end{array}
+\right.
+$$
+T&#228;nk p&#229; en sten som sl&#228;pps i en vattenyta. En punkt p&#229; ytan p&#229;verkas inte bara just d&#229; v&#229;gfronten passerar, utan &#228;ven vid alla senare tidpunkter. Tv&#229;dimensionell musik &#228;r kanske problematisk...
+</div>
+</div>
+
+
+<p>
+Man m&#229;ste f&#246;rst&#229;s kunna bekr&#228;fta att man f&#229;r r&#228;tt uttryck f&#246;r en statisk laddningsf&#246;rdelning. Om \( \rho \) &#228;r oberoende av tiden ger Greensfunktionsmetoden
+$$
+\begin{align*}
+\phi(\vec{r},t) &= 
+\int_{\mathbb{R}^3}dV' \int_{-\infty}^\infty dt'
+\frac{\rho(\vec{r}{\;}')}{\epsilon_0} G_+(\vec{r},t,\vec{r}{\;}',t') \\
+&= \int_{\mathbb{R}^3}dV' \int_{-\infty}^\infty dt'
+\frac{\rho(\vec{r}{\;}')}{4\pi\epsilon_0(t-t')} \delta(|\vec{r}-\vec{r}{\;}'|-c(t-t')) \\
+&= \left\{ c(t-t') \equiv (x-x') \; \Rightarrow c \mathrm{~försvinner} \right\} =\int_{\mathbb{R}^3}dV'
+\frac{\rho(\vec{r}{\;}')}{4\pi\epsilon_0|\vec{r}-\vec{r}{\;}'|},
+\end{align*}
+$$
+
+vilket &#228;r identiskt med vad man f&#229;r med hj&#228;lp av Greensfunktionen f&#246;r Poissons ekvation.
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

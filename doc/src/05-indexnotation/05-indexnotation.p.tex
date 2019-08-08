@@ -1,0 +1,371 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: http://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: http://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               % print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % number chapter, section, subsection
+
+% newcommands for typesetting inline (doconce) comments
+\newcommand{\shortinlinecomment}[3]{{\color{red}{\bf #1}: #2}}
+\newcommand{\longinlinecomment}[3]{{\color{red}{\bf #1}: #2}}
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% endif for #ifdef PREAMBLE
+% #endif
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf \href{{http://fy.chalmers.se/subatom/tsp/}}{Christian Forssén}, Institutionen för fysik, Chalmers, Göteborg, Sverige${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Sep 9, 2016
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+\section{5. Indexnotation}
+
+Precis som vi har räkneregler för derivatorer, så kan vi härleda räkneregler för våra differentialoperatorer. Det är då viktigt att komma ihåg att fälten på de båda sidorna av likhetstecknet skall vara av samma typ, det vill säga om vi har ett skalärt fält till vänster om likhetstecknet skall vi ha ett skalärt fält till höger om likhetstecknet, och om vi har ett vektorfält till vänster om likhetstecknet skall också fältet till höger vara ett vektorfält.  På så sätt kan man resonera sig fram till några av räknereglerna.
+
+\subsection{Gradient, divergens och rotation av en produkt av fält}
+
+För vanliga funktioner $f$ och $g$ gäller att
+\begin{equation}
+  \frac{\mbox{d}}{\mbox{d}x}\left(fg\right) = \frac{\mbox{d}f}{\mbox{d}x}g
++ f\frac{\mbox{d}g}{\mbox{d}x}.
+\end{equation}
+
+Om vi istället betraktar $\nabla (fg)$, där $f$ och $g$ är skalära fält, ser vi att det resulterande fältet skall vara ett vektorfält, och att vi måste derivera ett av fälten åt gången. Om vi tar gradienten av ett skalärt fält, så får vi ett vektorfält och om vi sedan multiplicerar med ytterligare ett skalärt fält, så har vi fortfarande ett vektorfält, alltså bör räknereglen
+\begin{equation}
+  \nabla \left(fg\right) = f \nabla g + g\nabla f
+\end{equation}
+gälla. På liknande sätt kan vi resonera oss fram till
+\begin{equation}
+  \nabla \cdot \left(f\vec{u}\right) = \nabla f \cdot \vec{u} + f \nabla \cdot \vec{u},
+\end{equation}
+och
+\begin{equation}
+  \nabla \times \left(f\vec{u}\right) = \nabla f\times \vec{u} + f \nabla \times \vec{u}.
+\end{equation}
+
+Mer komplexa samband är dock svårare att härleda. Detta gäller även kombinationer av flera vektoroperatorer. I princip kan man visa dem genom att skriva ut ekvationerna komponentvis, men en effektivare metod är att använda indexnotation. Indexnotationen är ett effektivt verktyg i stora delar av den teoretiska fysiken.
+
+\subsection{Indexnotation}
+
+Vektorn $\vec{A}$ är densamma i alla koordinatsystem, Cartesiska såväl som kroklinjiga. I någon given bas kan dess komponenter skrivas ut: $\vec{A}=\sum_{i=1}^3A_i\vec{e}_i$. 
+
+Så när vi talar om vektorn $\vec{A}$ skall vi skriva $A_i$ vilket vi kan tolka som en lista över komponenterna, alltså $\{A_i\}_{i=1}^3$. Indexet $i$ kallas ett \emph{fritt index}, eftersom det kan ta värdena $i=1,2,3$ 
+
+\paragraph{Produkter av vektorer.}
+Skalärprodukten av två vektorer $\vec{A}$ och $\vec{B}$ är $\vec{A}\cdot\vec{B}=\sum_{i=1}^3A_iB_i$. För att göra notationen mer kompakt inför vi nu \emph{Einsteins summationskonvention}, som säger att summation är underförstådd så snart ett index förekommer två gånger. Med dessa skrivregler har vi då
+\begin{equation}
+\vec{A}\cdot\vec{B}=A_iB_i
+\end{equation}
+\longinlinecomment{Comment 1}{ Att vi skriver lägre index har ingen betydelse, om man vill kan man t.ex. skriva $A_iB^i$. Först när man sysslar med vektorer/tensorer i icke-Cartesiska system behöver man göra åtskillnad på index uppe och nere. Detta gäller t.ex. i speciell relativitetsteori. }{ Att vi skriver lägre }
+
+Det här uttrycket för skalärprodukten gäller i godtyckligt antal dimensioner. Resultatet av skalärprodukten är förstås en skalär. Indexen $i$ ovan är \emph{inte} fria index, utan summationsindex, eller kontraherade index. 
+
+\paragraph{Exempel: matris-vektor-multiplikation.}
+En matris representeras av sina matriselement (precis som enhetsmatrisen ovan). Det första indexet är rad- och det andra kolumnindex. Matris-vektor-multiplikationen $\mathbf{M} \vec{v}$ kan skrivas med indexnotation
+\begin{equation}
+\left[ \mathbf{M} \vec{v} \right]_i = M_{ij} v_j
+\end{equation}
+
+\paragraph{Enhetsmatrisen.}
+Vi har redan sett Kroneckers delta, $\delta_{ij}$, som definieras av
+\begin{equation}
+\delta_{ij}=\left\{
+\begin{matrix}
+1,&i=j\cr
+0,&i\neq j\cr
+\end{matrix}
+\right.
+\end{equation}
+(notera att detta helt enkelt är matriselementen av enhetsmatrisen).
+
+Betrakta uttrycket $\delta_{ij}A_j$. Här är indexet $j$ repeterat och därför ett summationsindex, och uttrycket skall utläsas $\sum_{j=1}^3\delta_{ij}A_j=A_i$, dvs.~helt enkelt multiplikation av vektorn $\vec{A}$ med enhetsmatrisen.
+
+\paragraph{Exempel: matris-matris-multiplikation.}
+Matrismultiplikation $\mathbf{M}\mathbf{N}=\mathbf{P}$ skrivs som $M_{ik}N_{kj}=P_{ij}$. Spåret av en matris, dvs.~summan av diagonalelementen är $\mathrm{tr}\mathbf{M}=M_{ii}$.
+
+\paragraph{Kryssprodukt.}
+Låt $\vec{A}\times\vec{B}=\vec{C}$. Komponentvis gäller $C_1=A_2B_3-A_3B_2$, och de andra komponenterna ges av cykliska permutationer av indexen. Vi inför nu objektet $\varepsilon_{ijk}$, som definieras av
+\begin{equation}
+\varepsilon_{ijk}=\left\{
+\begin{matrix}
+\phantom{-}1,\quad\hfill&ijk\hbox{ jämn permutation av 123,}\hfill\cr
+-1,\quad\hfill&ijk\hbox{ udda permutation av 123,}\hfill\cr
+\phantom{-}0,\hfill&\hbox{annars, dvs. om minst två index tar samma
+värde.}
+\end{matrix}
+\right.
+\end{equation}
+$\varepsilon_{ijk}$ kallas ``$\varepsilon$-tensorn'', eller \emph{Levi-Civita-tensorn}. 
+
+\longinlinecomment{Comment 2}{ Vi har inte riktigt definierat vad en tensor är ännu. Det kommer senare, och är inte speciellt dramatiskt. För tillfället kan vi bara tänka på det som ett objekt som har ett antal index, alltså en naturlig generalisering av vektor- och matrisbegreppen. }{ Vi har inte riktigt }
+
+Definitionen gör att $\varepsilon_{ijk}$ har egenskapen att den byter tecken om man byter plats på två index, vilka som helst. Man säger att den är fullständigt antisymmetrisk.
+
+Eftersom $\varepsilon_{ijk}$ har tre index, kan vi kontrahera två av dem med index på vektorer, och alltså bilda $C_i=\varepsilon_{ijk}A_jB_k$. Med hjälp av definitionen kan vi räkna ut t.ex. $C_1$, och får resultatet $C_1=A_2B_3-A_3B_2$, dvs.~samma som första komponenten av $\vec{A}\times\vec{B}$. Detsamma gäller de andra komponenterna. Kryssprodukten skrivs alltså
+\begin{equation}
+[\vec{A}\times\vec{B}]_i=\varepsilon_{ijk}A_jB_k .
+\end{equation}
+Kryssprodukten är specifik för tre dimensioner, just för att $\varepsilon$-tensorn har tre index i tre dimensioner. Motsvarande objekt i $D$ dimensioner har $D$ index: $\varepsilon_{i_1i_2\ldots i_D}$.
+
+\subsection{Produkter av flera vektorer}
+
+Låt oss studera följande vektorprodukt
+\begin{equation}
+  \vec{A} \times \left( \vec{B} \times \vec{C} \right)
+\end{equation}
+vilket med indexnotation kan skrivas
+\begin{equation}
+  \label{eq:ABC}
+  \left[ \vec{A} \times \left( \vec{B} \times \vec{C} \right) \right]_i =
+  \varepsilon_{ijk} A_j \varepsilon_{klm} B_l C_m = \varepsilon_{ijk} \varepsilon_{klm} A_j B_l C_m.
+\end{equation}
+Låt oss först poängtera att vi kan byta plats på faktorerna som vi gjorde ovan. Eftersom dessa är reella tal gäller t.ex. att $A_j B_l = B_l A_j$ och motsvarande för $\varepsilon$-tensorerna.
+
+Här dyker en produkt av två Levi-Cevita-tensorer upp. Låt oss se om sådana produkter kan förenklas
+
+\paragraph{Produkter av två $\varepsilon_{ijk}$.}
+Först produkten med enbart två fria index
+\begin{equation}
+  \varepsilon_{ikl} \varepsilon_{jkl} = 2 \delta_{ij}.
+\end{equation}
+Detta inses ganska enkelt eftersom 
+\begin{itemize}
+\item Produkten måste bli noll då $i \neq j$. T.ex. $i=1$ innebär att $kl$ måste vara 23 eller 32, och då måste även $j=1$ för att den andra tensorn skall vara nollskild.
+
+\item Med $i=j$ måste summan över $kl$ bli 2. Studera t.ex. $i=j=1$; de nollskilda termerna i summan blir $ikl=jkl \in [123,132]$, dvs
+\end{itemize}
+
+\noindent
+\begin{equation}
+	\sum_{k,l=1}^3 \varepsilon_{1kl} \varepsilon_{1kl} = \varepsilon_{123} \varepsilon_{123} + \varepsilon_{132} \varepsilon_{132} = 1 \cdot 1 + (-1) \cdot (-1) = 2
+\end{equation}
+
+
+\vspace{3mm}
+
+
+------------\\
+Nu produkten med enbart ett kontraherat index
+\begin{equation}
+  \label{eq:ijkklm}
+  \varepsilon_{ijk} \varepsilon_{klm} = \left\{ \mathrm{Cyklisk~perm.} \right\} = \varepsilon_{ijk} \varepsilon_{lmk} = \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}.
+\end{equation}
+Det inses lätt att $i \neq j$ och $l \neq m$. Vidare inses att paret $ij$ måste vara lika med $lm$ eller $ml$. Betrakta t.ex. $i,j \in [1,2]$. Då kommer enbart $k=3$ termen från summan att bidra och vi har följande möjligheter
+\begin{equation}
+  \begin{array}{lll}
+  	ijk & lmk & \mathrm{Resultat} \\
+  	123 & 123 & = 1 \\
+  	123 & 213 & = -1 \\
+  	213 & 123 & = -1 \\
+  	213 & 213 & = 1,
+  \end{array}
+\end{equation}
+vilket motsvarar exakt kombinationen av deltafunktioner i Ekv (\ref{eq:ijkklm}) ovan.\\
+------------\\
+Detta var precis den produkt som dök upp i Ekv (\ref{eq:ABC}) ovan. Vi fortsätter
+\begin{align}
+  \left[ \vec{A} \times \left( \vec{B} \times \vec{C} \right) \right]_i 
+  &= \left( \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl} \right) A_j B_l C_m \nonumber \\
+  &= B_i A_m C_m - A_j B_j C_i = B_i \vec{A}\cdot\vec{C} - \vec{A}\cdot\vec{B} C_i 
+\end{align}
+Här har vi bytt plats på $A_m B_i = B_i A_m$. Notera vidare att vi lika gärna kunde ha bytt t.ex. $m \to j$ i den första termen. Dessa blir ändå ett summationsindex och det spelar ingen roll om det heter $m$ eller $j$. 
+
+Till slut finner vi alltså likheten
+\begin{equation}
+  \label{eq:ABCresultat}
+  \vec{A} \times \left( \vec{B} \times \vec{C} \right) = \vec{B} (\vec{A}\cdot\vec{C}) - (\vec{A}\cdot\vec{B}) \vec{C}.
+\end{equation}
+
+\subsection{Kombinationer med två vektoroperatorer}
+
+En viktig konsekvens av Ekv (\ref{eq:ABCresultat}) är
+\begin{equation}
+  \nabla \times \left( \nabla \times \vec{F} \right) = \nabla \left( \nabla \cdot \vec{F} \right) - \nabla \cdot \nabla \vec{F},
+\end{equation}
+vilket ger oss följande uttryck för Laplacianen
+\begin{equation}
+  \Delta \vec{F} = \nabla \cdot \nabla \vec{F} = \nabla \left( \nabla \cdot \vec{F} \right) - \nabla \times \left( \nabla \times \vec{F} \right),
+\end{equation}
+eller Laplace = grad div - rot rot.
+
+Två viktiga samband, vilka dessutom är enkla att härleda, är 
+\begin{equation}
+\label{eq:ddf}
+  \nabla \times \nabla f = 0
+\end{equation}
+och
+\begin{equation}
+\label{eq:ddf2}
+  \nabla \cdot \left( \nabla \times \vec{F}\right) = 0.
+\end{equation}
+Visa gärna dessa
+
+\paragraph{Bevis, Ekv (\ref{eq:ddf}).}
+\begin{equation}
+  \left[ \nabla \times \nabla f \right]_i = \varepsilon_{ijk} \partial_j \partial_k f
+\end{equation}
+Till exempel för $i=1$
+\begin{equation}
+  \begin{array}{llll}
+  	ijk & \partial_j & \partial_k & \mathrm{faktor} \\
+  	123 & 2 & 3 & +1 \\
+  	132 & 3 & 2 & -1 \\
+  \end{array}
+\end{equation}
+vilket betyder att $\left[ \nabla \times \nabla f \right]_1 = \left( \partial_2\partial_3 - \partial_3\partial_2 \right) f = 0$. 
+
+\paragraph{Bevis, Ekv (\ref{eq:ddf2}).}
+\begin{equation}
+  \left[ \nabla \cdot \left( \nabla \times \vec{F} \right) \right] = \partial_i \varepsilon_{ijk} \partial_j F_k = \varepsilon_{ijk} \partial_i \partial_j F_k
+\end{equation}
+\begin{itemize}
+\item En viktig poäng är att de sista två faktorerna \emph{inte} får byta plats eftersom $\partial_j F_k \neq F_k \partial_j$.
+
+\item Däremot har vi att $\partial_i \partial_j F_k = \partial_j \partial_i F_k$, vilket betyder att dessa två faktorer kan byta plats.
+\end{itemize}
+
+\noindent
+Summan ovan har 27 termer, men enbart sex nollskilda
+
+\begin{quote}
+\begin{tabular}{cr}
+\hline
+\multicolumn{1}{c}{ $ijk$ } & \multicolumn{1}{c}{ term } \\
+\hline
+123   & $\partial_1 \partial_2 F_3$  \\
+231   & $\partial_2 \partial_3 F_1$  \\
+312   & $\partial_3 \partial_1 F_2$  \\
+132   & $-\partial_1 \partial_3 F_2$ \\
+213   & $-\partial_2 \partial_1 F_3$ \\
+321   & $-\partial_3 \partial_2 F_1$ \\
+\hline
+\end{tabular}
+\end{quote}
+
+\noindent
+och eftersom dessa tar ut varandra parvis blir summan noll.
+
+
+% ------------------- end of main content ---------------
+
+
+% #ifdef PREAMBLE
+\printindex
+
+\end{document}
+% #endif
+

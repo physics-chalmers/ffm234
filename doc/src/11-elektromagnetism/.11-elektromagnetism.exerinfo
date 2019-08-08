@@ -1,0 +1,26 @@
+
+# Information about all exercises in the file 11-elektromagnetism.do.txt.
+# The information can be loaded into a Python list of dicts by
+#
+# f = open('.11-elektromagnetism.exerinfo', 'r')
+# exer = eval(f.read())
+#
+[{'answer': u'!bt\n\\begin{equation}\n  B_\\varphi = \\left\\{\\begin{array}{lr}\n\\frac{\\mu_0 I}{2\\pi \\rho} & \\rho < a\\\\\n\\frac{\\mu_0 I\\rho}{2\\pi a^2} & \\rho > a\\\\\n\\end{array}\\right.\n\\end{equation}\n\n!et',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': u'=====',
+  'hints': [],
+  'keywords': None,
+  'label': None,
+  'no': 1,
+  'solution': u'Vi vet att om den elektriska ledaren sammanfaller med  $z$-axeln s\xe5 \xe4r magnetf\xe4ltet riktat i $\\varphi$-riktningen.  Vi kan d\xe5 anv\xe4nda Amperes lag\n!bt\n\\begin{equation}\n  \\oint_{\\partial S_\\rho} \\vec{B} \\cdot \\mbox{d}\\vec{r} = \\mu_0 I_\\rho,\n\\end{equation}\n\n!et\nd\xe4r vi l\xe5ter $\\partial S_\\rho$ vara en cirkel kring $z$-axeln med radien $\\rho$, och $I_\\rho$ \xe4r \nstr\xf6mmen som passerar genom den yta som har $\\partial S_\\rho$ som rand.  F\xf6rst \ntittar vi p\xe5 fallet att cirkelns radie $\\rho > a$.  Str\xf6mmen \n\xe4r d\xe5 $I$, och Amperes lag ger oss\n!bt\n\\begin{equation}\n  \\oint_{\\partial S_\\rho} \\vec{B} \\cdot \\mbox{d}\\vec{r} = \\mu_0 I.\n\\end{equation}\n\n!et\nIntegralen blir d\xe5\n!bt\n\\begin{equation}\n  \\oint_{\\partial S_\\rho} \\vec{B} \\cdot \\mbox{d}\\vec{r} = 2\\pi \\rho B_\\varphi.\n\\end{equation}\n\n!et\nVi kan nu l\xf6sa ut\n!bt\n\\begin{equation}\n  B_\\varphi = \\frac{\\mu_0 I}{2\\pi \\rho}.\n\\end{equation}\n\n!et\n\nI fallet att cirkelns radie $\\rho < a$ s\xe5 antar vi att str\xf6mmen \xe4r \nj\xe4mnt f\xf6rdelad i tr\xe5den, vilket ger oss att den inneslutna str\xf6mmen\nblir\n!bt\n\\begin{equation}\n  I_\\rho = I \\left(\\frac{\\rho}{a}\\right)^2.\n\\end{equation}\n\n!et\nIntegralen blir nu\n!bt\n\\begin{equation}\n  \\oint_{\\partial S_\\rho} \\vec{B} \\cdot \\mbox{d}\\vec{r} = 2\\pi \\rho B_\\varphi = \\mu_0 I \n\\left(\\frac{\\rho}{a}\\right)^2.\n\\end{equation}\n\n!et\nVi kan d\xe5 l\xf6sa \n!bt\n\\begin{equation}\n  B_\\varphi = \\frac{\\mu_0 I}{2\\pi} \\frac{\\rho}{a^2}.\n\\end{equation}\n\n!et\nSammanfattningsvis har vi allts\xe5\n!bt\n\\begin{equation}\n  B_\\varphi = \\left\\{\\begin{array}{lr}\n\\frac{\\mu_0 I}{2\\pi \\rho} & \\rho < a\\\\\n\\frac{\\mu_0 I\\rho}{2\\pi a^2} & \\rho > a\\\\\n\\end{array}\\right.\n\\end{equation}\n\n!et',
+  'solution_file': None,
+  'subex': [],
+  'text': u'En o\xe4ndligt l\xe5ng rak ledare har ett cirkul\xe4rt tv\xe4rsnitt med radien\n$a$ och leder en likstr\xf6m med str\xf6mstyrkan $I$.  Anv\xe4nd Amperes lag \nf\xf6r att h\xe4rleda magnetf\xe4ltet i och kring ledaren om materialet i den\nantas homogent och isotropt.',
+  'title': u'Exempel: Best\xe4mning av ett magnetf\xe4lt',
+  'type': u'Exercise',
+  'type_visible': False}]

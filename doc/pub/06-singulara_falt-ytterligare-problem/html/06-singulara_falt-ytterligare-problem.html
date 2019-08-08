@@ -1,0 +1,459 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [(u'Ytterligare r\xe4kneproblem', 2, None, '___sec0'),
+              (u'Exempel: Punktk\xe4lla', 3, None, '___sec1'),
+              (u'L\xf6sning', 3, None, '___sec2'),
+              (u'Exempel: Linjek\xe4lla', 3, None, '___sec3'),
+              (u'L\xf6sning', 3, None, '___sec4'),
+              (u'Exempel: Virveltr\xe5d', 3, None, '___sec5'),
+              (u'L\xf6sning', 3, None, '___sec6')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<a name="part0000"></a>
+<p>
+<!-- begin top navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end top navigation -->
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>, Institutionen för fundamental fysik, Chalmers, Göteborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>, Institutionen för fundamental fysik, Chalmers, Göteborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 30, 2015</h4></center> <!-- date -->
+<br>
+
+<h2 id="___sec0">Ytterligare räkneproblem </h2>
+
+<p>
+Här ges några exempel hur vi kan använda Gauss och Stokes satser på vektorfält med singulariteter.
+
+<p>
+Här hanterar vi singulariteten genom att lägga in 
+
+<ul>
+<li> en liten sfär med radien \( \epsilon \) kring en punktkälla.</li>
+<li> en cylinder kring \( z \)-axeln för en linjekälla.</li>
+<li> en cirkel med radien \( \epsilon \) runt \( z \)-axeln för en virveltråd.</li>
+</ul>
+
+<hr>
+
+<h3 id="___sec1">Exempel: Punktkälla </h3>
+
+<br />
+Beräkna integralen
+$$
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} 
+\end{equation}
+$$
+
+där \( S \) är ytan
+$$
+\begin{equation}
+  \rho = a - z, \,\,\,0 \le z \le a
+\end{equation}
+$$
+
+med en normal som pekar uppåt, och fältet ges av
+$$
+\begin{equation}
+  \vec{F} = F_0 \left[\left(\frac{a^2}{r^2} + \frac{r^2 \cos^3 \theta}{a^2}
+\right) \hat{e}_{r} - \frac{r^2 \cos^2 \theta \sin \theta}{a^2} \hat{z}
+\right].
+\end{equation}
+$$
+
+\( F_0 \) och \( a \) är konstanter.
+
+<h3 id="___sec2">Lösning </h3>
+
+Vi börjar med att studera ytan \( S \) som är en kon med  spetsen i \( z = a \).  Konen har sin öppna bottenyta vid \( z = 0 \).
+
+<p>
+Om vi tittar på fältet, så ser vi genast att det har en punktkälla i origo.  För att tolka de övriga termerna så skriver vi om fältet som
+$$
+\begin{equation}
+  \vec{F} = F_0 \frac{a^2}{r^2}\hat{e}_{r} + F_0 \frac{r^2\cos^2 \theta}{a^2}
+\left(\cos \theta \hat{e}_{r} - \sin \theta \hat{e}_{\theta}\right).
+\end{equation}
+$$
+
+Uttrycket inom parentesen är basvektorn \( \hat{z} \), och \( r\cos \theta = z \).  Vi kan därför dela upp fältet i två delar, en del som vi skriver i sfäriska koordinater, och som är singulär, och en andra del som vi skriver i kartesiska koordinater:
+$$
+\begin{equation}
+  \vec{F} = F_0 \left(\frac{a^2}{r^2} \hat{e}_{r} + \frac{z^2}{a^2} 
+\hat{e}_{z}\right)
+\end{equation}
+$$
+
+Divergensen av \( \vec{F} \) blir
+$$
+\begin{equation}
+  \nabla \cdot \vec{F} = \frac{2 F_0 z}{a^2}.
+\end{equation}
+$$
+
+<p>
+För att använda Gauss sats behöver vi dels isolera singulariteten i origo genom att lägga in en halvsfär, \( S_\epsilon \), med radien \( \epsilon \) runt origo för \( z >0 \) och med en normalvektor som pekar mot origo.  
+Dessutom måste vi sluta konen, vilket vi gör genom att lägga till en cirkelskiva, \( S_1 \),
+med ytterradien \( a \) och normalvektorn \( -\hat{e}_{z} \) i \( xy \)-planet.
+
+<p>
+Gauss sats ger oss nu
+$$
+\begin{equation}
+  \int_S {\bf F\cdot \mbox{d}S} + \int_{S_\epsilon} \vec{F} \cdot \mbox{d}\vec{S}
++ \int_{S_1} \vec{F} \cdot \mbox{d}\vec{S} = \int_V {\bf \nabla \cdot F} \mbox{d}V.
+\end{equation}
+$$
+
+Vi börjar med att beräkna volymsintegralen
+$$
+\begin{equation}
+  \int_V \nabla \cdot \vec{F} \mbox{d}V = \int_V \frac{2\pi F_0 z}{a^2}
+\mbox{d}V.
+\end{equation}
+$$
+
+Vi noterar här att vad vi gör är att integrera över cirkelskivor med radien \( a -z \), så vår integral kan skrivas
+$$
+\begin{equation}
+  \int_0^a \frac{2 F_0 z}{a^2} \pi \left(a-z\right)^2 \mbox{d}z = 
+\frac{2\pi F_0}{a^2}\left[\frac{z^4}{4} -\frac{2}{3} a z^3 + \frac{a^2 z^2}{2}
+\right]_0^a = \frac{2\pi F_0}{a^2} \frac{a^4}{12} = \frac{\pi F_0 a^2}{6}.
+\end{equation}
+$$
+
+Sedan betraktar vi integralen över \( S_\epsilon \) (lägg märke till att 
+\( r = \epsilon \) på \( S_\epsilon \)).
+$$
+\begin{align}
+  \int_{S_\epsilon} \vec{F} \cdot \mbox{d}\vec{S} &= \int_{S_\epsilon} 
+F_0 \left(\frac{a^2}{\epsilon^2} \hat{e}_{r} + 
+\frac{\epsilon^2 \cos^2 \theta}{a^2} \hat{e}_{z}\right) \cdot \left(-
+\hat{e}_{r}\right) \mbox{d}S = - F_0 \left(\int_S \frac{a^2}{\epsilon^2}
+\mbox{d}S + \int_S \frac{\epsilon^2 \cos^3 \theta}{a^2}\mbox{d}S\right) =
+\nonumber \\
+&- F_0 \left( \frac{a^2}{\epsilon^2} 2\pi \epsilon^2 + \frac{\epsilon^2}{a^2}
+\int_S \cos^3 \theta \mbox{d}S\right) \to - 2\pi a^2 F_0 \,\,\,\,\mathrm{då }
+\epsilon \to 0.
+\end{align}
+$$
+
+Slutligen har vi integralen över \( S_1 \)
+$$
+\begin{equation}
+  \int_{S_1} \vec{F} \cdot \mbox{d}\vec{S} = \int_{S_1} F_0 \left(\frac{a^2}{r^2}
+\hat{e}_{r} + \frac{z^2}{a^2} \hat{e}_{z}\right)\cdot\left(-\hat{e}_{z}
+\right)\mbox{d}S.
+\end{equation}
+$$
+
+Tänk nu på att \( \hat{e}_{r} \cdot \hat{z} = 0 \) i \( xy \)-planet, och att \( z = 0 \) därstädes.  Därav följer att integralen är 0. Det följer nu att vår eftersökta integral blir
+$$
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} = \frac{\pi F_0 a^2}{6} + 2\pi F_0 a^2
+= \frac{13\pi F_0 a^2}{6}.
+\end{equation}
+$$
+
+<p>
+<hr>
+
+<h3 id="___sec3">Exempel: Linjekälla </h3>
+
+<br />
+Beräkna integralen
+$$
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S},
+\end{equation}
+$$
+
+där ytan \( S \) ges av \( r = 2a \), \( 0 \le \varphi < 2\pi \) och \( \frac{\pi}{4} \le \theta \le \frac{3\pi}{4} \) och har normalen \( \hat{e}_{r} \), och fältet ges av
+$$
+\begin{equation}
+  \vec{F} = F_0 \left[\left(\frac{a}{\rho} + \frac{\rho}{a}\right) 
+\hat{e}_{\rho} + \frac{z}{a} \hat{e}_{z}\right].
+\end{equation}
+$$
+
+\( F_0 \) och \( a \) är här konstanter.
+
+<h3 id="___sec4">Lösning </h3>
+
+Ytan \( S \) är den mittersta delen av en sfär. Den avgränsas vid \( z = \pm \sqrt{2} a \).
+
+<p>
+Fältet \( \vec{F} \) är singulärt för \( \rho = 0 \), det vill säga längs \( z \)-axeln.  Fältets divergens är
+$$
+\begin{equation}
+  \nabla \cdot \vec{F} = F_0 \left[\frac{1}{\rho} \frac{\partial}{\partial \rho}
+\left(a+ \frac{\rho^2}{a}\right) + \frac{\partial}{\partial z} \left(\frac{z}{a}
+\right)\right] = F_0 \left(\frac{1}{\rho}\frac{2\rho}{a} + \frac{1}{a}\right) =
+\frac{3 F_0}{a}.
+\end{equation}
+$$
+
+<p>
+Vi sluter volymen genom att lägga till en cylinder, \( S_\epsilon \) kring \( z \)-axeln mellan \( -\sqrt{2}a \le z \le \sqrt{2}a \) och med radien \( \epsilon \).  Normalen för \( S_\epsilon \) är \( -\hat{e}_{\rho} \).  Dessutom lägger vi till cirkulära skivor, \( S_+ \) och \( S_- \), vid \( z = \pm \sqrt{2} \) med normaler \( \pm \hat{e}_{z} \).
+
+<p>
+Vi kan nu skriva Gauss sats som
+$$
+\begin{equation}
+\int_S \vec{F} \cdot \mbox{d}\vec{S} + \int_{S_\epsilon} \vec{F} \cdot \mbox{d}\vec{S} +
+\int_{S_+} \vec{F} \cdot \mbox{d}\vec{S} + \int_{S_-} \vec{F} \cdot \mbox{d}\vec{S} =
+\int_V \nabla \cdot \vec{F} \mbox{d}S.
+\end{equation}
+$$
+
+Vi börjar med volymsintegralen
+$$
+\begin{equation}
+  \int_V \nabla \cdot \vec{F} \mbox{d}S = \int_S \frac{3 F_0}{a} \mbox{d}V.
+\end{equation}
+$$
+
+Vi kan se den här integralen som om vi integrerar över cirkelskivor med radien \( \sqrt{4 a^2 -z^2} \) för \( -\sqrt{2}a \le z \le \sqrt{2}a \)
+$$
+\begin{align}
+  \int_{-\sqrt{2}a}^{\sqrt{2}a} \frac{3F_0}{a} \pi \left(4a^2 - z^2\right)
+\mbox{d}z &= \frac{3F_0}{a} 
+\left[4a^2z - \frac{z^3}{3}\right]_{-\sqrt{2}a}^{\sqrt{2}a}
+\nonumber \\
+&= \frac{3F_0}{a} \left(4\sqrt{2}a^3 - \frac{2}{3}\sqrt{2}a^3 +
+4\sqrt{2}a^3 - \frac{2}{3}\sqrt{2}a^3\right) \nonumber \\
+&= 20 \sqrt{2} F_0 a^2.
+\end{align}
+$$
+
+<p>
+Vi tar nu hand om ytintegralerna.  Först \( S_\epsilon \), där \( \rho = \epsilon \) på \( S_\epsilon \)
+$$
+\begin{align}
+  \int_{S_\epsilon} \vec{F} \cdot \mbox{d}\vec{S} &= \int_{S_\epsilon}  F_0 \left[
+\left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right) \hat{e}_{\rho} + 
+\frac{z}{a}\hat{e}_{z}\right) \cdot \left(-\hat{e}_{\rho}\right) \mbox{d}S \nonumber \\
+& = \int_{S_\epsilon} F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
+\mbox{d}S = F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
+\int_{S_\epsilon} \mbox{d}S \nonumber \\
+&= F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right) 2\pi \epsilon 2\sqrt{2}
+a \to 4\sqrt{2} \pi F_0 a^2 \,\,\,\,\mbox{då }\,\,\,\,\epsilon \to 0
+\end{align}
+$$
+
+På ytan \( S_+ \)  har vi
+$$
+\begin{equation}
+  \int_{S_+} \vec{F} \cdot \mbox{d}\vec{S} = \int_{S_+} F_0 \left[\left(\frac{a}{\rho}
++ \frac{\rho}{a} \right) \hat{e}_{\rho} + \frac{z}{a}\hat{e}_{z}\right]
+\cdot \hat{e}_{z} \mbox{d}S = \int_{S_+} F_0 \frac{z}{a} \mbox{d}S.
+\end{equation}
+$$
+
+På \( S_+ \) är \( z = \sqrt{2}a \), vilket också är skivans ytterradie
+$$
+\begin{equation}
+  \int_{S_+} \vec{F} \cdot \mbox{d}\vec{S} = F_0 \sqrt{2} \pi 2a^2 = 2\sqrt{2} a^2F_0.\end{equation}
+$$
+
+Vi inser att av symmetriskäl får integralen över \( S_- \) samma värde.
+
+<p>
+Summerar vi nu ihop integralerna får vi
+$$
+\begin{equation}
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} = 20 \sqrt{2} F_0 a^2 - 4 \sqrt{2} F_0 a^2
+- 2 \times 2 \sqrt{2} F_0 a^2 = 12\sqrt{2} F_0 a^2.
+\end{equation}
+$$
+
+<p>
+<hr>
+
+<h3 id="___sec5">Exempel: Virveltråd </h3>
+
+<br />
+Beräkna integralen
+$$
+\begin{equation}
+  \oint_C \vec{F} \cdot \mbox{d}\vec{r},
+\end{equation}
+$$
+
+där kurvan \( C \) ges av 
+$$
+\begin{equation}
+  x^2 + \frac{y^2}{4} = a^2,\,\,\,\mbox{och}\,\,\,z = 0,
+\end{equation}
+$$
+
+som genomlöps i positiv riktning, och fältet ges av
+$$
+\begin{equation}
+  \vec{F} = F_0 \left[\frac{\rho \sin 2\varphi}{2a} \hat{e}_{\rho}
++ \left(\frac{a}{\rho} - \frac{\rho \sin^2 \varphi}{a}\right)\hat{e}_{\varphi}
+\right].
+\end{equation}
+$$
+
+\( F_0 \) och \( a \) är konstanter.
+
+<h3 id="___sec6">Lösning </h3>
+
+Kurvan \( C \) är en ellips med centrum i origo och halvaxlarna \( a \) och \( 2a \). Enligt högerhandsregeln så väljer vi \( \hat{e}_{z} \) som normalen till ellipsskivan.
+
+<p>
+Fältet \( \vec{F} \) är singulärt på \( z \)-axeln.  Fältets rotation blir
+$$
+\begin{equation}
+  \nabla \times \vec{F} = \frac{F_0}{\rho} \left|
+  \begin{array}{ccc}
+\hat{e}_{\rho} & \rho \hat{e}_{\varphi} & \hat{e}_{z} \\
+\frac{\partial}{\partial \rho} & \frac{\partial}{\partial \varphi} &
+\frac{\partial}{\partial z} \\
+\frac{\rho \sin 2\varphi}{2a} & a- 
+\frac{\rho^2\sin 2 \varphi}{a} & 0\\
+\end{array}
+\right| = \frac{F_0}{\rho} \left(-\frac{2\rho \sin^2\varphi}{a} -
+\frac{\rho\cos 2\varphi}{a}\right) \hat{e}_{z} =
+- \frac{F_0}{a}\hat{e}_{z}.
+\end{equation}
+$$
+
+<p>
+För att använda Stokes sats lägger in en cirkel, \( C_\epsilon \) med radien \( \epsilon \) runt origo.  Vi orienterar \( C_\epsilon \) så att vi följer den medurs, det vill säga dess tangentvektor blir \( -\hat{e}_{\varphi} \). Stokes sats ger oss sedan
+$$
+\begin{equation}
+  \oint_C \vec{F} \cdot \mbox{d}\vec{r} + \oint_{C_\epsilon} \vec{F} \cdot \mbox{d}\vec{r}
+= \int_S {\bf \nabla \times F \cdot \mbox{d}S}.
+\end{equation}
+$$
+
+Först beräknar vi ytintegralen
+$$
+\begin{equation}
+  \int_S \nabla \times \vec{F} \cdot \mbox{d}\vec{S} = \int_S -\frac{F_0}{a} \hat{z} \cdot \hat{z} \mbox{d}S = - \frac{F_0}{a} \pi a\times 2a = -2\pi F_0 a,
+\end{equation}
+$$
+
+där vi har utnyttjat att ellipsens area är \( 2\pi a^2 \).  Sedan beräknar vi integralen längs kurvan \( C_\epsilon \) där \( \rho = \epsilon \)
+$$
+\begin{align}
+  \oint_{C_\epsilon} \vec{F} \cdot \mbox{d}\vec{r} &= \oint_{C_\epsilon} F_0 
+\left[\frac{\rho \sin 2\varphi}{2a} \hat{e}_{\rho} + \left(\frac{a}{\rho}-
+\frac{\rho \sin^2\varphi}{a}\right) \hat{e}_{\varphi}\right] \cdot 
+\left(-\hat{e}_{\varphi}\right) \mbox{d}r \nonumber \\
+&= -F_0\left( 
+\oint_{C_\epsilon}\frac{a}{\epsilon} \mbox{d}r - \oint_{C_\epsilon}
+\frac{\epsilon \sin^2 \varphi}{a} \mbox{d}r\right) \nonumber \\ 
+&= -F_0 
+\left(\frac{a}{\epsilon} 2\pi \epsilon - \frac{\epsilon}{a} \oint_{C_\epsilon}
+\sin^2 \varphi \mbox{d}r\right) \to -2\pi F_0 a \,\,\,\,\mbox{då } \,\,\,\,
+\epsilon \to 0.
+\end{align}
+$$
+
+Det följer att integralen blir
+$$
+\begin{equation}
+  \int_C \vec{F} \cdot \mbox{d}\vec{r} = 0.
+\end{equation}
+$$
+
+<p>
+<hr>
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

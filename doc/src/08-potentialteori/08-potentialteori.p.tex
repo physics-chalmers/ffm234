@@ -1,0 +1,573 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: http://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: http://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               % print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % number chapter, section, subsection
+
+% Tricks for having figures close to where they are defined:
+% 1. define less restrictive rules for where to put figures
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.95}
+\renewcommand{\textfraction}{0}
+\renewcommand{\floatpagefraction}{0.75}
+% floatpagefraction must always be less than topfraction!
+% 2. ensure all figures are flushed before next section
+\usepackage[section]{placeins}
+% 3. enable begin{figure}[H] (often leads to ugly pagebreaks)
+%\usepackage{float}\restylefloat{figure}
+
+% newcommands for typesetting inline (doconce) comments
+\newcommand{\shortinlinecomment}[3]{{\color{red}{\bf #1}: #2}}
+\newcommand{\longinlinecomment}[3]{{\color{red}{\bf #1}: #2}}
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% endif for #ifdef PREAMBLE
+% #endif
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf \href{{http://fy.chalmers.se/subatom/tsp/}}{Christian Forssén}, Institutionen för fysik, Chalmers, Göteborg, Sverige${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Oct 3, 2016
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+\section{8. Potentialteori}
+
+\subsection{Konservativa fält och potentialer}
+
+Vi har definierat ett konservativt fält som ett fält $\vec{F}$ sådant att
+\begin{equation}
+  \oint_C \vec{F}\cdot \mbox{d}\vec{r} = 0
+\end{equation}
+för varje sluten kurva $C$.  Enligt Stokes sats följer det nu att ett fält som har $\nabla \times \vec{F} = 0$ överallt i ett enkelt sammanhängande område är konservativt. Vi har sedan antagit att vi kan skriva
+\begin{equation}
+\vec{F} = - \nabla \phi,
+\end{equation}
+där $\phi$ kallas för det konservativa fältets potential. Gäller då 
+$$
+\nabla \times \vec{F} = 0 \, \Longleftrightarrow \, \vec{F} = - \nabla \phi \, ??
+$$
+Nej, det har vi ännu inte visat! Vi har att $\vec{F} = - \nabla \phi \, \Rightarrow \, \nabla \times \vec{F} = 0 $ eftersom $\nabla \times ( \nabla \phi) = 0$ (se nedan), men det omvända gäller inte per automatik. Vi har ännu inte visat att konservativa fält alltid kan skrivas som $-\nabla \phi$.
+
+\paragraph{Bevis av $\nabla \times ( \nabla \phi) = 0$ mha indexnotation.}
+-----------------------
+
+Vi kan visa att $\nabla \times ( \nabla \phi) = 0$ mha indexnotation: Vektorn $\left[ \nabla \times ( \nabla \phi) \right]_i = \epsilon_{ijk} \partial_j \partial_k \phi = 0$ eftersom den resulterande summan med nio termer $\sum_{j,k=1}^3$ har två nollskilda som tar ut varandra. T.ex. för $i=1$ fås $\partial_2\partial_3 \phi - \partial_3\partial_2 \phi = 0$.
+
+----------------------------------------------
+
+Definitionen av ett konservativt fält gör dock att vi kan definiera en potential från
+\begin{equation}
+  \int_{\vec{r}_1}^{\vec{r}_2} \vec{F} \cdot \mbox{d} \vec{r} = \phi\left( \vec{r}_1 \right) - \phi\left( \vec{r}_2 \right).
+\end{equation}
+Notera tecknet på potentialskillnaden i HL. Det hade gått lika bra med det omvända, men just denna konvention stämmer överens med energitolkningen i klassisk mekanik.
+
+Vi ser nu att förändringen av potentialen mellan punkterna $\vec{r}$ och $\vec{r} + \mbox{d}\vec{r}$ är
+\begin{equation}
+  \mbox{d}\phi = -\vec{F}\cdot \mbox{d}\vec{r},
+\end{equation}
+men denna förändring kan också skrivas som
+\begin{equation}
+  \mbox{d}\phi = \nabla \phi \cdot \mbox{d}\vec{r}.
+\end{equation}
+Det följer därmed att det finns en potential $\phi$ så att det konservativa fältet $\vec{F}$ kan skrivas
+\begin{equation}
+  \vec{F} = -\nabla \phi.
+\end{equation}
+Faktum är att $\phi$ inte är entydigt bestämd.  Man kan skapa en ny potential genom att addera en konstant till en potential: $\phi \mapsto \phi + \phi_0$.
+
+\paragraph{Exempel: Arbete i klassisk mekanik.}
+-----------------------
+
+För ett konservativt kraftfält $\vec{F}$ gäller att det uträttade arbetet längs en rörelsebana motsvarar en \emph{ökning} av den kinetiska energin åtföljt av en motsvarade \emph{minskning} av en potentiell energi så att den totala mekaniska energin $E = T + V$ är \emph{konserverad}.
+
+\longinlinecomment{Comment 1}{ Notera att uträttat arbete kan vara negativt vilket isf innebär en minskning av den kinetiska energin och en ökning av den potentiella. }{ Notera att uträttat arbete }
+
+Arbetet som uträttas längs en kurva $C$ motsvaras av kurvintegralen
+\begin{align}
+\int_C \vec{F} \cdot \mbox{d}\vec{r} &= \left\{ \begin{array}{l}
+\vec{F} = m \vec{a} = m \frac{\mbox{d}\vec{v}}{\mbox{d}t} \\
+\mbox{d}\vec{r} = \vec{v} \mbox{d}t
+\end{array} 
+, \quad \frac{\mbox{d}\vec{v}}{\mbox{d}t} \cdot \vec{v} = \frac{1}{2}\frac{\mbox{d}}{\mbox{d}t} (\vec{v} \cdot \vec{v})
+\right\} \\
+&= \frac{m}{2} \int_{t_A}^{t_B} \frac{\mbox{d}}{\mbox{d}t} (\vec{v} \cdot \vec{v}) \mbox{d}t = \frac{m v_2^2}{2} - \frac{m v_1^2}{2} = \delta T.
+\end{align}
+Här har vi använt NII. Tidpunkterna $t_A$ och $t_B$ motsvarar start- respektive sluttiden för rörelsen.
+
+Ett exempel på ett sådant konservativt kraftfält är gravitationskraften nära jordytan: $\vec{F} = - m g \hat{z}$.
+
+Med vår nuvarande kunskap skulle vi uttrycka detta som $\vec{F} = -\nabla \phi$, där vi alltså använder beteckningen $\phi$ istället för $V$. För vårt exempel finner vi att potentialen $\phi(\vec{r}) = m g z$ uppfyller denna likhet.
+
+Vidare uppfyller kraftfältet $\nabla \times \vec{F} = 0$. Vi kontrollerar detta för vårt exempel: 
+$$
+\begin{vmatrix}
+\hat{x} & \hat{y} & \hat{z} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+\mbox{0}  &  \mbox{0}  & -mg \\
+\end{vmatrix}
+= 0
+$$
+
+Kurvintegralen
+$$
+\int_C \vec{F} \cdot \mbox{d}\vec{r} = \phi\left( \vec{r}_A \right) - \phi\left( \vec{r}_B \right),
+$$
+där $A$ och $B$ är kurvans start- respektive slutpunkt. Här finner vi att potentialskillnaden $-\delta \phi = \phi(z_A) - \phi(z_B) = mg (z_A-z_B)$. Detta är alltså den negativa skillnaden i potentiell energi och vi får
+$$
+\delta T = - \delta \phi \quad \Rightarrow \quad \delta(T+V) = 0.
+$$
+
+--------------------------------------------
+
+\subsection{Poissons och Laplaces ekvationer}
+
+Konservativa vektorfält är alltså rotationsfria, men de kan fortfarande ha nollskild divergens. Denna kallas ofta för \emph{källtäthet}
+\begin{equation}
+\rho(\vec{r}) = \nabla \cdot \vec{F},
+\end{equation}
+och vi har stött på exempel där denna har tolkats i termer av elektrostatik och massflöde. Med $\vec{F} = -\nabla \phi$ får vi \emph{Poissons ekvation}
+\begin{equation}
+\nabla \cdot \nabla \phi(\vec{r}) = \Delta \phi(\vec{r}) = -\rho(\vec{r}),
+\end{equation}
+Specialfallet av denna ekvation utan källa, dvs divergensfritt, ger \emph{Laplaces ekvation}
+\begin{equation}
+\Delta \phi(\vec{r}) = 0.
+\end{equation}
+Kom ihåg att $\Delta$ är Laplacianen vilken kan skrivas
+\begin{equation}
+\Delta \phi = \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) \phi,
+\end{equation}
+i cartesiska koordinater. Den ser annorlunda ut i kroklinjiga koordinatsystem.
+
+\longinlinecomment{Comment 2}{ Notera att $\vec{F} = -m g \hat{z}$ är divergensfritt och att potentialen $\phi = m g z$ uppfyller Laplaces ekvation $\Delta \phi = 0$. }{ Notera att $\vec{F} = }
+
+\longinlinecomment{Rita 3}{ Skissa gärna hur ett fält som uppfyller Laplaces ekvation beter sig. Titta på ett fält $\phi(x,y)$ och använd Taylorexpansion för att teckna beteendet nära en punkt $\vec{r}_0$. Villkoret $\frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0$ ger en andragradskurva  $$ \phi(\vec{r}) =  c_0 + c_x (x-x_0) + c_y (y-y_0) + c_{xy} (x-x_0)(y-y_0)+ \frac{c_{ii}}{2}(x-x_0)^2 - \frac{c_{ii}}{2}(y-y_0)^2, $$ där t.ex. $c_0 = \phi(\vec{r}_0)$, $c_x = d\phi/dx(\vec{r}_0)$, etc. Det viktiga är alltså att expansionen slutar med den kvadratiska termen och att dessa är lika, men motriktade, i $x$- och $y$-led. }{ Skissa gärna hur ett }
+
+Notera att Poissons och Laplaces ekvationer är exempel på \emph{differentialekvationer}. För att lösa dessa i ett område behöver man också veta randvillkor för fältet $\phi$. 
+
+\paragraph{Exempel: Lösningar till Laplaces ekvation.}
+------------------------
+
+
+\begin{figure}[h]  % fig:xy
+  \centerline{\includegraphics[width=0.8\linewidth]{fig/xy.png}}
+  \caption{
+  Lösningen ($\phi = xy$) till Laplaces ekvation i två dimensioner på ett kvadratiskt område med randvillkor enligt figuren. \label{fig:xy}
+  }
+\end{figure}
+%\clearpage % flush figures fig:xy
+
+
+
+\begin{figure}[h]  % fig:x2y2
+  \centerline{\includegraphics[width=0.8\linewidth]{fig/x2y2.png}}
+  \caption{
+  Lösningen ($\phi = x^2 - y^2$) till Laplaces ekvation i två dimensioner på ett cirkulärt område med vinkelberoende randvillkor enligt figuren. \label{fig:x2y2}
+  }
+\end{figure}
+%\clearpage % flush figures fig:x2y2
+
+
+Två exempel på lösningar till Laplaces ekvation i ett område med givna randvillkor visas i figurerna~\ref{fig:xy} och~\ref{fig:x2y2}.
+
+------------------------------------------------
+
+
+Vi kommer t.ex. se att (ett stationärt) temperaturfält uppfyller någon av dessa ekvationer (Laplaces ekvation om det inte finns en värmekälla). För att t.ex. räkna ut temperaturfältet inuti ett värmeisolerande fönster behöver vi veta randvillkor för fältet på glasets in- och utsida.
+
+Olika tekniker för lösning av dessa ekvationer presenteras i kapitel 9.
+
+\subsection{Divergensfria fält}
+
+Kan man erhålla \emph{divergensfria} fält från någon potential på liknande sätt som vi just gjorde för rotationsfria fält?
+
+Vi betraktar ett divergensfritt fält $\vec{G}$
+$$
+\nabla \cdot \vec{G} = 0,
+$$
+och nöjer oss med att konstatera att divergensfriheten uppenbarligen uppfylls om fältet kan skrivas
+\begin{equation}
+\vec{G} = \nabla \times \vec{A}.
+\end{equation}
+
+\longinlinecomment{Kommentar 4}{ Visa detta om ni är osäkra. Gärna med indexnotation. $$ \nabla \cdot (\nabla \times \vec{A}) = \partial_i \epsilon_{ijk} \partial_j A_k, $$ Vilket är en summa med 27 termer, vara sex är nollskilda och dessa tar ut varandra parvis. }{ Visa detta om ni }
+
+Vektorfältet $\vec{A}$ kallas då för en \emph{vektorpotential}.
+
+\paragraph{Standardexempel: Statiskt magnetfält.}
+------------------------
+
+Ett statiskt magnetfält $\vec{B}(\vec{r})$ är divergensfritt och uppfyller $\vec{B}(\vec{r}) = \nabla \times \vec{A}(\vec{r})$ där $\vec{A}$ kallas för den elektromagnetiska vektorpotentialen.
+
+---------------------------------------------
+
+Vi fann tidigare att skalära potentialer hade en invarians genom att vi kunde addera en konstant term $\phi \mapsto \phi + \phi_0$ utan att ändra fältstyrkan.
+
+På samma sätt har vektorpotentialen en invarians
+\begin{equation}
+\vec{A}(\vec{r}) \mapsto \vec{A}(\vec{r}) + \nabla \Lambda(\vec{r}),
+\end{equation}
+där $\Lambda$ kallas för en Gaugeparameter och invariansen kallas för \emph{Gaugeinvarians}. 
+
+\longinlinecomment{Kommentar 5}{ Detta må verka som en kuriositet, men just Gaugeinvarians är av fundamental betydelse för vår teoretiska förståelse av elektromagnetiska, svaga och starka krafter. }{ Detta må verka som }
+
+\longinlinecomment{Kommentar 6}{ Ofta använder man Gaugeinvariansen till att skapa en vektorpotential som är divergensfri. Dvs man väljer $\Lambda$ så att $\Delta \Lambda = -\nabla \cdot \vec{A}$. }{ Ofta använder man Gaugeinvariansen }
+
+Rotationen kallas ofta för virveltäthet
+$$
+\nabla \times \vec{G} = \vec{j} \quad \Rightarrow \nabla \times (\nabla \times \vec{A}) = \vec{j}.
+$$
+Vi använder sambandet $\nabla \times \left( \nabla \times \vec{A} \right) = \nabla \left( \nabla \cdot \vec{A} \right) - \Delta \vec{A}$ vilket alltså ger
+$$
+\Delta \vec{A} - \nabla \left( \nabla \cdot \vec{A} \right) = -\vec{j}.
+$$
+Genom att välja Gaugeparametern så att $\nabla \cdot \vec{A} = 0$ får vi Poissons ekvation för vektorpotentialen
+\begin{equation}
+\Delta \vec{A} = -\vec{j}.
+\end{equation}
+
+\subsection{Potentialer för godtyckliga vektorfält}
+
+\begin{itemize}
+\item Betrakta ett fält med både källor och virvlar, dvs $\nabla \cdot \vec{H} = \rho \neq 0$ och $\nabla \times \vec{H} = \vec{j} \neq 0$.
+
+\item Detta allmänna vektorfält kan vi dela upp i två delar $\vec{H} = \vec{F} + \vec{G}$ där
+\end{itemize}
+
+\noindent
+\begin{align}
+\nabla \cdot \vec{F} &= \rho \quad  &\nabla \cdot \vec{G} &= 0 \\
+\nabla \times \vec{F} &= 0 \quad  &\nabla \times \vec{G} &= \vec{j}
+\end{align}
+
+\begin{itemize}
+\item Dvs, fältet $\vec{H}$ kan skrivas som summan av ett rotationsfritt fält $\vec{F}$ och ett divergensfritt fält $\vec{G}$ som representeras av potentialerna $\phi$ och $\vec{A}$.
+\end{itemize}
+
+\noindent
+$$
+\vec{H} = \vec{F} + \vec{G} = -\nabla \phi + \nabla \times \vec{A}.
+$$
+
+\paragraph{Exempel: Stagnationsström, konservativt hastighetsfält.}
+---------------
+
+Betrakta (det rotationsfria) hastighetsfältet som ges av potentialen
+$$
+\phi(x,y) = \frac{A}{2}(x^2 - y^2),
+$$
+där $A$ är en positiv konstant. Hastighetsfältet blir
+$$
+\vec{v} = -\nabla \phi \quad \Rightarrow 
+\left\{
+\begin{array}{l}
+v_x = -A x \\
+v_y = A y
+\end{array}
+\right.
+$$
+Vi noterar att detta fält också är divergensfritt. 
+
+En fältbild (potential och fältlinjer) visas nedan. Notera att det finns områden där hastigheten är noll. Dessa kallas stagnationspunkter. Vi noterar också att fältlinjerna blir parallella med $x$- och $y$-axlarna när vi kommer tillräckligt nära. Vi kan därför tänka oss dessa som fasta väggar och att vårt hastighetsfält beskriver strömmen vid ett hörn.
+
+
+
+% inline figure
+\centerline{\includegraphics[width=0.8\linewidth]{fig/stagnation_fieldplot.png}}
+
+
+
+I verkligheten kommer dock friktionen nära väggen att skapa virvlar, och vår rotationsfria approximation ger en sämre beskrivning.
+
+------------------------------------
+
+\subsection{Standardexempel på käll- och virvelfördelningar}
+
+\paragraph{Punktkälla med styrkan $q$ i origo.}
+\begin{itemize}
+\item vektorfält 
+\end{itemize}
+
+\noindent
+$$
+\vec F=\frac{q}{4\pi r^2}\hat r.
+$$
+\begin{itemize}
+\item rotationsfritt, men med en källa $\rho=q\delta^3(\vec{r})$. Fältet har en potential
+\end{itemize}
+
+\noindent
+$$
+\phi=\frac{q}{4\pi r},
+$$
+som uppfyller Poissons ekvation med källan $\rho=q\delta^3(\vec{r})$, 
+$$
+\Delta\phi=-q\delta^3(\vec{r}).
+$$
+
+\paragraph{Linjekälla på $z$-axeln med konstant styrka $k$.}
+\begin{itemize}
+\item vektorfält
+\end{itemize}
+
+\noindent
+$$
+\vec F=\frac{k}{2\pi\varrho}\hat\varrho
+$$
+\begin{itemize}
+\item Motsvarande potential är 
+\end{itemize}
+
+\noindent
+$$
+\phi=-\frac{k}{2\pi}\log\frac{\varrho}{\varrho_0},
+$$
+\begin{itemize}
+\item Potentialen uppfyller Poissons ekvation:
+\end{itemize}
+
+\noindent
+$$
+\Delta\phi=-k\delta^2(\vec{\varrho}).
+$$
+
+\paragraph{Virveltråd på $z$-axeln med styrka $J$.}
+\begin{itemize}
+\item fältet 
+\end{itemize}
+
+\noindent
+$$
+\vec G=\frac{J}{2\pi\varrho}\hat\varphi.
+$$
+\begin{itemize}
+\item Vektorpotentialen är (t.ex., med tanke på gaugeinvarians)
+\end{itemize}
+
+\noindent
+$$
+\vec A=-\frac{J\hat z}{2\pi}\log\frac{\varrho}{\varrho_0},
+$$
+(kontrollera; $\nabla\times\vec A$ i cylindriska koordinater)
+$$
+\nabla\times\vec A=\frac{1}{\varrho}
+	\begin{vmatrix}
+        \hat\varrho & \varrho\hat\varphi & \hat z \\ \frac{\partial}{\partial \varrho} & 
+\frac{\partial}{\partial \varphi} &
+        \frac{\partial}{\partial z} \\ 0\mbox{} & 0\mbox{} & -\frac{J}{2\pi}\log\varrho \\
+        \end{vmatrix}
+           =\frac{J}{2\pi\varrho}\hat\varphi.
+$$
+\begin{itemize}
+\item Notera att denna vektorpotential uppfyller $\nabla\cdot\vec A=0$, och därför ges virvelfördelningen av 
+\end{itemize}
+
+\noindent
+$$
+\nabla \times \vec{G} = \vec{\jmath} = -\Delta\vec A.
+$$ 
+\begin{itemize}
+\item Poissons ekvation, 
+\end{itemize}
+
+\noindent
+$$
+\Delta\vec A=-J\hat z\delta^2(\vec{\varrho}).
+$$
+
+
+\subsection{Randvärdesproblem}
+
+\longinlinecomment{Comment 7}{ Att ta reda på precis ``hur mycket'' villkor, och av vilket slag, man bör lägga på fältet på randen $\partial V$ är ju ett matematiskt problem, men det matematiska svaret på frågan bör också vara ett svar inom fysik, så att en given fysikalisk förutsättning ger en unik lösning (fältkonfiguration). }{ Att ta reda på }
+
+\begin{itemize}
+\item Vårt randvärdesproblem består av den partiella differentialekvationen $\Delta\phi=-\rho$ samt några randvillkor 
+
+\item Vilka randvillkor ger en \emph{unik} lösning? Eller hur skall ``bra'' randvillkor formuleras? 
+
+\item Antag att $\phi_1$ och $\phi_2$ båda är lösningar. 
+
+\item $\psi=\phi_1-\phi_2$, uppfyller Laplaces ekvation, $\Delta\psi=0$. 
+
+\item En trivial lösning, $\psi=\mathrm{konstant}$, innebär att lösningen till Poissons ekvation är unik 
+\end{itemize}
+
+\noindent
+\shortinlinecomment{Comment 8}{ Eftersom $\phi_1$ och $\phi_2$ ger samma vektorfält om de enbart skiljer på en konstant. }{ Eftersom $\phi_1$ och $\phi_2$ }
+
+Betrakta nu identiteten
+$$
+\nabla\cdot(\psi\nabla\psi)=\nabla\psi\cdot\nabla\psi+\psi\Delta\psi
+=\nabla\psi\cdot\nabla\psi=|\nabla\psi|^2,
+$$
+som gäller när $\Delta\psi=0$. Tillämpa nu Gauss sats på vektorfältet $\psi\nabla\psi$. 
+$$
+\int_V|\nabla\psi|^2dV=\int_{\partial V}\psi\nabla\psi\cdot d\vec S.
+$$
+\begin{itemize}
+\item VL är positivt semidefinit, och noll endast om $\psi = \mathrm{konstant}$. 
+
+\item Randvillkor som gör HL till noll innebär därför det vi vill.
+\end{itemize}
+
+\noindent
+Ytintegralen i högerledet är 
+$$
+\int_{\partial V}\psi(\nabla\psi\cdot\vec n)dS.
+$$ 
+Två faktorer i integranden: $\psi$ och $\nabla\psi\cdot\vec n$. 
+
+\shortinlinecomment{Comment 9}{ Den andra faktorn är ``normalderivatan'' vid randen, alltså riktningsderivatan i normalens riktning. }{ Den andra faktorn är }
+
+\shortinlinecomment{Comment 10}{ Lösningen till Laplaces ekvation är trivial (konstant) om den ena eller den andra är noll på randen. }{ Lösningen till Laplaces ekvation }
+
+\paragraph{Dirichlets randvillkor:}
+$$
+\psi = 0 \mathrm{~på~} \partial V \quad \Rightarrow \quad \psi = 0 \mathrm{~i~} V
+$$
+Detta ger att
+$$
+\phi|_{\partial V}=f,
+$$
+där $f$ är en funktion på randen
+
+\paragraph{Neumanns randvillkor:}
+$$
+(\nabla\psi) \cdot \vec n=0 \mathrm{~på~} \partial V \quad \Rightarrow \quad \psi = \mathrm{konstant} \mathrm{~i~} V
+$$
+Detta ger att
+$$
+(\nabla\phi)|_{\partial V}\cdot\vec n=g,
+$$
+där $g$ är en funktion på randen. 
+
+\paragraph{Sammanfattning:}
+Poissons ekvation i volymen $V$ med någon källfördelning $\rho$ har en unik lösning (sånär
+som på en ointressant konstant) för dessa två typer av randvillkor.
+
+% ------------------- end of main content ---------------
+
+
+% #ifdef PREAMBLE
+\printindex
+
+\end{document}
+% #endif
+

@@ -1,0 +1,522 @@
+TITLE: FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/tsp/", Institutionen för fysik, Chalmers, Göteborg, Sverige 
+DATE: today
+
+!bsummary Repetition: Integralsatser
+* Gauss sats
+!bt
+\begin{equation}
+  \int_V \vnabla \cdot \vec{F} \mbox{d}V = \oint_{\partial V} \vec{F} \cdot \mbox{d} \vec{S}.
+\end{equation}
+!et
+* Stokes sats
+!bt
+\begin{equation}
+  \int_S \left( \vnabla \times \vec{F}\right) \cdot \mbox{d}\vec{S} = \oint_{\partial S} \vec{F}\cdot
+\mbox{d}\vec{r},
+\end{equation}
+!et
+Gäller för kontinuerligt deriverbara vektorfält. 
+!esummary
+
+=======  6. Singulära fält =======
+
+!bwarning Fråga
+Vad händer om fältet har en singularitet?
+!ewarning
+
+Det finns tre viktiga typer av singulariteter, vilka dyker upp för speciella vektorfält:
+
+* Punktkälla 
+* Linjeälla 
+* Virveltråd
+
+===== Punktkällor =====
+
+Ett fält av formen 
+!bt
+\begin{equation}
+  \vec{F} = \frac{q}{4 \pi r^2}\hat{e}_{r}
+\end{equation}
+!et
+motsvarar fältet från en punktkälla med styrkan $q$ (motiveras nedan). Med lämplig tolkning av konstanten $q$ kan detta t.ex. föreställa det elektriska fältet från en laddning i origo, eller gravitationsfältet från en massa i origo.  
+
+!bwarning Kommentar
+Notera att detta fält är singulärt i origo. Skissa gärna fältlinjerna.
+!ewarning
+
+Detta fält är rotationsfritt (åtminstone för $r>0$)
+!bt
+\begin{equation}
+\vnabla\times\vec F = \frac{1}{r^2\sin\theta}
+\begin{vmatrix}
+\hat{e}_r&r\hat{e}_\theta&r\sin\theta\hat{e}_\varphi \\
+\frac{\partial}{\partial r}& \frac{\partial}{\partial \theta}& \frac{\partial}{\partial \varphi} \\
+F_r(r)&0&0
+\end{vmatrix}=0
+\end{equation}
+!et
+Rotationsfriheten är också en direkt följd av att $\vec F = - \vnabla \phi$ med den skalära potentialen 
+!bt
+\begin{equation}
+\phi=\frac{q}{4\pi r}
+\end{equation}
+!et
+
+Vektorfältet $\vec F$ är också divergensfritt (för $r>0$)
+!bt
+\begin{equation}
+\vnabla\cdot\vec F=\frac{1}{r^2} \frac{\partial}{\partial r}\left(r^2 \frac{q}{4\pi
+r^2}\right)=0, \quad r>0
+\end{equation}
+!et
+
+!bwarning Kommentar
+Trots frånvaron av divergens får vi ett resultat skilt från
+noll om vi beräknar normalytintegralen av $\vec F$ över en yta som
+omsluter origo. Detta görs enklast genom att utföra
+integralen över en sfär med radien $a$.
+!ewarning
+
+Normalytintegralen för en yta (sfäriskt skal, radie $a$) som omsluter origo:
+!bt
+\begin{equation}
+label{eq:punktkalla}
+\int_S\vec F\cdot d\vec S= \frac{q}{4\pi a^2} 4\pi a^2=q
+\end{equation}
+!et
+medan Gauss sats skulle ge $\int_V \vnabla \cdot \vec{F} \mbox{d}V = 0 $!
+
+!bwarning Kommentar
+En viktig slutsats är att det vore fel att naivt tillämpa Gauss sats på en volym innehållande origo, trots att fältet ser divergensfritt ut. Det beror på att det är singulärt där. Med vår nuvarande kunskap får vi acceptera att vi måste undvika
+punkter där fält är singulära när vi använder integralsatser.
+!ewarning
+
+Mer allmänt:
+!bt
+\begin{equation}
+\oint_S \vec F\cdot d\vec S= \left\{
+\begin{array}{ll}
+0 & \mathrm{om~ytan~inte~omsluter~origo.} \\
+q & \mathrm{om~ytan~omsluter~origo.}
+\end{array}
+\right.
+\end{equation}
+!et
+
+Anledningen till att vi inte kan använda Gauss sats är
+!bt
+\begin{equation}
+\vnabla \cdot \vec{F} = \left\{
+\begin{array}{ll}
+0 & r \neq 0 \\
+\infty & r=0 \mathrm{~(bättre~definition~kommer~senare)}
+\end{array}
+\right.
+\end{equation}
+!et
+
+=== Flöde från punktkälla genom allmän yta ===
+En mer förfinad version av ekv. (ref{eq:punktkalla}) för normalytintegralen av fältet från en punktkälla över en godtycklig yta $S$ kan fås genom att projicera normalytelementet på $r$-, $\theta$- och $\varphi$-ytor. Den relevanta projektionen är den på $r$-ytan eftersom fältet har den riktningen
+!bt
+\begin{equation}
+\mbox{d}\vec{S}_r = \pm \hat{e}_r h_\theta h_\varphi \mbox{d}\theta \mbox{d}\varphi 
+\end{equation}
+!et
+där tecknet beror på om normalen för $S$ är utåtriktad (positiv) eller inåtriktad (negativ). Detta ger 
+!bt
+\begin{equation}
+\frac{q}{4\pi} \int_S \frac{\hat{e}_r\cdot d\vec S}{r^2} = \pm \frac{q}{4\pi} \iint \sin\theta \mbox{d}\theta \mbox{d}\varphi = q \frac{\Omega}{4\pi} 
+\end{equation}
+!et
+där $\Omega$ är den rymdvinkel ytan $S$ tar upp sedd från origo. Läs mer om begreppet rymdvinkel: URL: "http://mathworld.wolfram.com/SolidAngle.html"
+
+T.ex. blir rymdvinkeln för en yta som helt omsluter origo
+!bt
+\begin{equation}
+\int_{\theta=0}^\pi \int_{\varphi=0}^{2\pi} \sin\theta \mbox{d}\theta \mbox{d}\varphi = 4\pi.
+\end{equation}
+!et
+
+===== Linjekällor =====
+
+Ett fält av typen
+!bt
+\begin{equation}
+  \vec{F} = \frac{k}{2 \pi \rho} \hat{e}_{\rho}
+\end{equation}
+!et
+svarar fysikaliskt till exempel emot en laddning som är jämnt fördelad längs med en linje (i det här fallet $z$-axeln). Storheten $k$ motsvarar då laddning/längdenhet. Linjekällan är då källan till ett fält som överallt pekar radiellt ut från $z$-axeln 
+
+!bwarning Rita
+Fält för linjekälla genom $z$-axeln.
+!ewarning.
+
+Fältet är divergensfritt $\vnabla \cdot \vec{F} = 0$, förutom för $\varrho=0$.
+
+Det kan erhållas från potentialen 
+!bt
+\begin{equation}
+	\phi=-\frac{k}{2\pi}\log\frac{\varrho}{\varrho_0}
+\end{equation}
+!et
+Med konstant källtäthet fås normalytintegralen för en cylinder med längden $L$ som omsluter linjekällan längs $z$-axeln
+!bt
+\begin{equation}
+	\int_S \vec{F} \cdot \mbox{d}\vec{S} = k L
+\end{equation}
+!et
+
+!bwarning Kommentar
+Mer generellt blir normalytintegralen av fältstyrkan över en smal tub nära en godtycklig kurva lika med den inneslutna källan $q(C)=\int_C k(\vec{r}) ds$, där $C$ är den del av kurvan som innesluts av tuben.
+!ewarning
+
+===== Ytkälla =====
+
+På motsvarande sätt kan vi tala om ytkällor i tre dimensioner. Fältet 
+!bt
+\begin{equation} 
+\vec F=\frac{\sigma}{2}\mathrm{sign}(z)\hat{z}
+\end{equation}
+!et
+motsvar en ytkälla i $xy$-planet (vid $z=0$), där $\sigma$, i det elektrostatiska fallet, skulle kallas för en ytladdningstäthet.
+
+Närvaron av en ytkälla på ytan $S$ med styrkan $\sigma$ är liktydigt med att
+normalkomponenten av $\vec F$ har en diskontinuitet enligt $\hat n\cdot(\vec F_+-\vec F_-)=\sigma$, där $\vec F_+$ är fältets värde på den sida dit normalen pekar, och $\vec F_-$ dess värde på motsatta sidan.
+
+!bwarning Beräkna
+Beräkna gärna flödet genom begränsningsytan til en kub som genomskärs av ytkällan och som har topp- och bottenytor (vardera med area $A$) som är parallella med densamma. Man borde finna att det totala flödet blir $\sigma A$, dvs lika med den totala inneslutna laddningen.
+!ewarning
+
+
+!bwarning Kommentar: Källtäthet
+Vi har nu sett hur olika singulariteter kan vara källor till ett fält $\vec{F}$.  Analogt med detta kan vi tolka $\vnabla \cdot \vec{F}$ som en utbredd källa till $\vec{F}$.  Därför kallar man ibland $\vnabla \cdot \vec{F} = \rho$ för källtäthet.
+
+* Singulära källor: $\vnabla \cdot \vec{F} = 0$ utom på vissa ställen där källtätheten blir oändlig.
+!ewarning
+
+=== Repetition: Punktkälla i origo ===
+Fältet i punkten $\vec{r}$
+!bt
+\begin{equation}
+  \vec{F}(\vec{r}) = \frac{q}{4 \pi r^2} \hat{e}_r,
+\end{equation}
+!et
+vilket fås av potentialen
+!bt
+\begin{equation}
+  \phi(\vec{r}) = \frac{q}{4 \pi r},
+\end{equation}
+!et
+eftersom
+!bt
+\begin{equation}
+  \vec{F}(\vec{r}) = -\vnabla \phi(\vec{r}) = - \hat{e}_r \partial_r \frac{q}{4 \pi r} = \frac{q}{4 \pi r^2} \hat{e}_r.
+\end{equation}
+!et
+
+=== Punktkälla i punkten $\vec{r}\,'$ ===
+Givet att vi har en punktkälla med laddning $q$ belägen i punkten $\vec{r}\,'$. Potentialen i punkten $\vec{r}$ blir uppenbart lika med
+!bt
+\begin{equation}
+  \phi(\vec{r}) = \frac{q}{4 \pi \left| \vec{r} - \vec{r}\,' \right|}.
+\end{equation}
+!et
+Detta ger fältet
+!bt
+\begin{align}
+  \vec{F}(\vec{r}) &= -\vnabla \phi(\vec{r}) = - \left( \hat{x}\partial_x + \hat{y}\partial_y + \hat{z}\partial_z \right) \frac{q}{4 \pi \sqrt{(x-x')^2 + (y-y')^2 + (z-z')^2}} \nonumber \\
+  &= - \frac{q}{4 \pi} \left( -\frac{1}{2} \right) \frac{ 2(x-x')\hat{x} + 2(y-y')\hat{y} + 2(z-z')\hat{z}}{ \left[ (x-x')^2 + (y-y')^2 + (z-z')^2 \right]^{3/2}} \nonumber \\
+  &= \frac{q (\vec{r} - \vec{r}\,' )}{4 \pi \left| \vec{r} - \vec{r}\,' \right|^3}.
+\end{align}
+!et
+
+===== Virveltråd =====
+
+Fältlinjerna till det singulära fältet
+!bt
+\begin{equation}
+  \vec{F} = \frac{J}{2 \pi \rho} \hat{e}_{\varphi}
+\end{equation}
+!et
+bildar koncentriska cirklar kring $z$-axeln.  Därför säger vi att det finns en virveltråd med styrkan $J$ på $z$-axeln.  
+
+Divergensfritt: $\vnabla \cdot \vec{F} = 0$.
+
+Rotationen av fältet:
+!bt
+\begin{equation}
+\vnabla\times\vec F=\frac{1}{\varrho}
+	\begin{vmatrix}
+        \hat{e}_\varrho&\varrho\hat{e}_\varphi&\hat z \\
+        \frac{\partial}{\partial \varrho} & \frac{\partial}{\partial \varphi}
+        & \frac{\partial}{\partial z} \\
+        0 & \varrho \frac{J}{2\pi\varrho} & 0
+    \end{vmatrix} = 0, \quad \mathrm{för~} \varrho > 0.
+\end{equation}
+!et
+
+Stokes sats skulle ge
+!bt
+\begin{equation}
+	\oint_{\partial S} \vec{F} \cdot \mbox{d} \vec{r} = \int_S \left( \vnabla \times \vec{F} \right) \cdot \mbox{d} \vec{S} = 0,
+\end{equation}
+!et
+men vad skulle ske om ytan $S$ gick genom singulariteten?
+
+!bwarning Rita
+en cirkel med radien $a$ runt $z$-axeln, $\mbox{d}\vec{r} = a \hat{e}_\varphi \mbox{d} \varphi$
+!ewarning
+
+Linjeintegralen blir
+!bt
+\begin{equation}
+\int_C\vec F\cdot \mbox{d}\vec r = \int_{\varphi=0}^{2\pi} \frac{J}{2 \pi a} a \mbox{d} \varphi = J.
+\end{equation}
+!et
+Generellt gäller detta resultat för en kurva $C$ som omsluter $z$-axeln ett varv i positiv led, medan integralen blir noll för kurvor som inte omsluter $z$-axeln. 
+
+Det vanligaste exemplet är det statiska magnetiska fältet från en ström. Dvs fältet är $\vec{B}$ och $J$ motsvarar den elektriska strömmen.
+
+=== Virveltäthet ===
+
+Vi har nu sett hur en virveltråd kan alstra en virvel i ett vektorfält. Det kan också uppstå virvlar i fält som saknar singulariteter, och för att få ett mått på omfattningen av sådana virvlar inför man virveltätheten $\vnabla \times \vec{F}$.
+
+* Singulära virvlar: $\vnabla \times \vec{F} = 0$ utom på vissa ställen 
+
+!bnotice Exempel: 6.3
+
+Beräkna integralen $\oint_C \vec F \cdot d\vec{r}$, $C$: $x^2 + \frac{y^2}{4} = a^2$ och $z = 0$ (som genomlöps i positiv riktning) och 
+!bt
+\begin{equation}
+  \vec F = F_0 \left[\frac{\varrho \sin 2\varphi}{2a} \hat{e}_\varrho
++ \left(\frac{a}{\varrho} - \frac{\varrho \sin^2 \varphi}{a}\right)\hat{e}_\varphi
+\right]
+\end{equation}
+!et
+$F_0$ och $a$ är konstanter.
+
+*Lösning*:  
+
+!bwarning Kommentar
+Kurvan $C$ är en ellips med centrum i origo och halvaxlarna
+$a$ och $2a$. Enligt högerhandsregeln väljer vi $\hat z$ som
+normal till ellipsskivan.
+!ewarning
+
+$C$ kan parametriseras $(x,y) = (a\cos\varphi,2a\sin\varphi)$.
+
+Dela upp $\vec{F} = \vec{F}_1 + \vec{F}_2$ där $\vec F_1=F_0 \frac{a}{\varrho}\hat{e}_\varphi$ innehåller fältets singularitet
+(motsvarar en virveltråd på $z$-axeln med styrkan $2\pi F_0a$). 
+
+Kurvan $C$ omsluter virveltråden en gång i positiv led så att $\oint_C \vec{F}_1 \cdot d\vec{r} = 1 \cdot 2\pi F_0a$
+
+Bidraget från $\vec F_2$ fås enklast med hjälp av Stokes sats. Rotationen blir
+!bt
+\begin{equation}
+  \vnabla \times\vec{F}_2 = \frac{F_0}{\rho} 
+  	\begin{vmatrix}
+	\hat{e}_\varrho & \varrho \hat{e}_\varphi & \hat z \\
+	\frac{\partial}{\partial \varrho} & \frac{\partial}{\partial \varphi} &
+                       \frac{\partial}{\partial z} \\
+	\frac{\varrho \sin 2\varphi}{2a} & -\frac{\varrho^2\sin^2 \varphi}{a} & 0
+	\end{vmatrix} =- \frac{F_0}{a}\hat z
+\end{equation}
+!et
+
+Detta ger 
+!bt
+\begin{equation}
+\oint_C \vec{F}_2 \cdot \mbox{d}\vec{r} = \int_S \left( - \frac{F_0}{a}\hat z \right) \cdot \hat{z} \mbox{d}S = - \frac{F_0}{a} \pi \cdot a \cdot 2a = - 2 \pi F_0 a
+\end{equation}
+!et
+Värdet på den totala integralen blir alltså $\oint_C (\vec{F}_1 + \vec{F}_2) \cdot \mbox{d}\vec{r} = 0$.
+!enotice
+
+===== Superposition: beräkning av fält från allmänna källfördelningar =====
+
+=== Totalt fält från en ändlig uppsättning med punktkällor ===
+Vi kan nu beräkna fältet i punkten $\vec{r}$ från en ändlig uppsättning med $N$ st punktkällor med laddningar $q_1, q_2, \ldots, q_N$ belägna i punkterna $\vec{r}_1, \vec{r}_2, \ldots, \vec{r}_N$ som en superposition
+!bt
+\begin{equation}
+\vec{F}(\vec{r}) = \frac{1}{4\pi} \sum_{i=1}^N \frac{q_i \left( \vec{r} - \vec{r}_i \right)}{\left| \vec{r} - \vec{r}_i \right|^3}.
+\end{equation}
+!et
+Alternativt kan vi räkna ut potenitalen i punkten $\vec{r}$
+!bt
+\begin{equation}
+\phi(\vec{r}) = \frac{1}{4\pi} \sum_{i=1}^N \frac{q_i}{\left| \vec{r} - \vec{r}_i \right|},
+\end{equation}
+!et
+från vilken vi förstås får $\vec{F}(\vec{r}) = -\vec{\nabla}\phi(\vec{r})$. 
+
+För en kontinuerlig fördelning av laddningar så övergår summorna i ovanstående uttryck förstås till integraler. Sådana situationer betraktar vi härnäst.
+
+=== Allmän (kontinuerlig) linjekälla ===
+
+Betrakta en linjekälla längs kurvan $C$, vilken ges av $\vec{r} = \vec{r}(\tau)$. Linjekällan har linjekälltätheten $k(\tau)$, som alltså inte nödvändigtvis är konstant.
+
+Vi kan dela upp linjen i infinitesimala linjeelement $\mbox{d}s$, vardera med laddningen $\mbox{d}q = k\left(\vec{r}(\tau)\right) \mbox{d}s$ (som alltså blir en funktion av $\tau$). Vi kan betrakta dessa linjelement som punktkällor. Bidraget från en sådan källa till potentialen i en (godtycklig) punkt $\vec{r}$ är
+!bt
+\begin{equation}
+\mbox{d}\phi(\vec{r}) = \frac{k\left(\vec{r}\,'(\tau)\right) \mbox{d}s'}{4 \pi \left| \vec{r} - \vec{r}\,' \right|}
+\end{equation}
+!et
+Genom att summera alla dessa bidrag, dvs integrera längs linjen $C$, får vi den totala potentialen i punkten $\vec{r}$
+!bt
+\begin{equation}
+\phi(\vec{r}) = \int_C \frac{k\left(\vec{r}\,'\right) \mbox{d}s'}{4 \pi \left| \vec{r} - \vec{r}\,' \right|}.
+\end{equation}
+!et
+Notera att $\vec{r}\,' = \vec{r}\,'(\tau)$ och att $\mbox{d}s' = \left| \frac{\mbox{d}\vec{r}\,'}{\mbox{d}\tau} \right| \mbox{d}\tau$
+
+=== Allmän (kontinuerlig) ytkälla ===
+
+Betrakta en ytkälla längs ytan $S$, vilken ges av $\vec{r} = \vec{r}(s,t)$. Ytkällan har ytkälltätheten $\sigma\left( \vec{r}(s,t) \right)$.
+
+Genom att summera alla bidrag från infinitesimala ytelement, $\sigma(\vec{r})dS$, får vi den totala potentialen i punkten $\vec{r}$
+!bt
+\begin{equation}
+\phi(\vec{r}) = \int_S \frac{\sigma\left(\vec{r}\,'\right) \mbox{d}S'}{4 \pi \left| \vec{r} - \vec{r}\,' \right|}.
+\end{equation}
+!et
+
+=== Allmän (kontinuerlig) rymdkälla ===
+
+En allmän rymdkälla har en rymdkälltätheten som ges av $\rho\left( \vec{r} \right) = \vnabla \cdot \vec{F} \left( \vec{r} \right)$. Återigen kan vi använda superposition för att få den totala potentialen i punkten $\vec{r}$
+!bt
+\begin{equation}
+\phi(\vec{r}) = \int_V \frac{\rho\left(\vec{r}\,'\right) \mbox{d}V'}{4 \pi \left| \vec{r} - \vec{r}\,' \right|}.
+\end{equation}
+!et
+
+===== Greensfunktion =====
+
+Funktionen
+!bt
+\begin{equation}
+G\left( \vec{r},\vec{r}\,' \right) = \frac{1}{4 \pi \left| \vec{r} - \vec{r}\,' \right|},
+\end{equation}
+!et
+kallas *Greensfunktionen* och kan sägas motsvara bidraget till potentialen i punkten $\vec{r}$ från en punktkälla med styrkan 1 belägen i punkten $\vec{r}\,'$. Dessa funktioner dyker upp igen i kapitel 9. Vi kan alltså skriva fältet från en allmän rymdkälla
+!bt
+\begin{equation}
+\phi(\vec{r}) = \int_V \rho\left(\vec{r}\,'\right) G\left( \vec{r},\vec{r}\,' \right) \mbox{d}V'.
+\end{equation}
+!et
+
+!bnotice Exempel: Cirkekälla
+
+Vad är potentialen från en linjekälla med konstant täthet $k$ (laddning per längdenhet),  på cirkeln med radie $a$ i $(x,y)$-planet med $z$-axeln som symmetriaxel? Speciellt, vad är potentialen på $z$-axeln?
+
+*Lösning*:
+Beteckna ortvektorn för en punkt på källan med $\vec{r}\,'$  och ortvektorn för punkten vi vill veta potentialen i med $\vec{r}$. 
+
+Problemets symmetri gör det lämpligt att använda cylindriska koordinater. Vi får lägesvektorn $\vec{r} = \rho \hat{\rho} + z \hat{z}$. Punkter på källan kan beskrivas med lägesvektorn $\vec{r}\,' = a \hat{\rho}' = a\cos(\varphi') \hat{x} + a \sin(\varphi') \hat{y}$ (notera att $z'=0$ eftersom linjekällan ligger i $xy$-planet).
+
+Ett litet element på linjekällan har laddningen $dq' = k ds' = k a d\varphi'$. Vi vill först beräkna bidraget från laddningen på det lilla elementet till potentialen i punkten $\vec{r}$ för att sedan summera upp (integrera) den totala potentialen.
+
+FIGURE:[fig/ex6_cirkelkalla.pdf, width=800 frac=0.8]
+
+Vi får avståndet mellan de två punkterna som
+!bt
+\begin{equation}
+|\vec{r}-\vec{r}\,'|
+= \sqrt{d^2 + z^2}
+=\sqrt{\varrho^2+a^2-2\varrho a \cos(\varphi-\varphi')+z^2}
+\end{equation}
+!et
+med hjälp av cosinusteoremet.
+
+Med superposition kan vi teckna ett explicit uttryck för potentialen:
+!bt
+\begin{equation}
+\phi(\vec{r})=\int_0^{2\pi}d\varphi'\,
+a \frac{k}{4\pi \sqrt{\varrho^2+a^2-2\varrho a \cos(\varphi-\varphi')+z^2}}
+\end{equation}
+!et
+
+Vi kan konstatera att potentialen är symmetrisk runt $z=0$.
+
+Specifikt, om $\vec{r}$ ligger på $z$-axeln ($\rho = 0$) förenklas uttrycket till
+!bt
+\begin{equation}
+\phi(0,0,z) = \int_0^{2\pi}\mbox{d}\varphi'\,
+a \frac{k}{4\pi \sqrt{a^2+z^2}} 
+=\frac{a k}{2 \left(\sqrt{z^2+a^2} \right)}.
+\end{equation}
+!et
+
+Vi kan kontrollera vad som händer för stora värden på $|z|$, dvs då $|z| \gg a$. Då är 
+!bt
+\begin{equation}
+\frac{1}{|z| \left( 1+\frac{a^2}{z^2} \right)} \approx |frac{1}{|z|} + \mathcal{O}\left(\frac{a^2}{z^2}\right),
+\end{equation}
+!et
+så $\phi(0,0,z)\approx \frac{a k}{2|z|} = \frac{2 \pi a k}{4\pi|z|}$, vilket är fältet från en punktkälla med styrka $2\pi a k$. Befinner vi oss långt bort från linjekällan (dvs $z \gg a$) så ser fältet ut som fältet från en punktkälla med laddning lika med den totala laddningen på cirkeln. Det verkar rimligt!
+!enotice
+
+===== Multipoler =====
+
+Fältet
+!bt
+\begin{equation}
+  \vec{F} = \frac{q}{4 \pi r^2} \hat{e}_{r}
+\end{equation}
+!et
+kallas för ett monopolfält.  Det kan finnas fält vars styrka avtar snabbare med $r$, men sådana fält innehåller praktiskt taget alltid ett vinkelberoende. Ett exempel på ett sådant fält är dipolfältet, dvs. två lika och motsatta laddningar nära varandra. 
+
+Lägg en laddning $q = \frac{\mu}{\varepsilon}$ på $(x,y,z)=(0,0,\varepsilon)$ och en laddning
+$-q = -\frac{\mu}{\varepsilon}$ i origo. Potentialen från de båda laddningarna tillsammans blir
+!bt
+\begin{equation}
+\phi(\vec{r})=\frac{\mu/\varepsilon}{4\pi|\vec{r}-\varepsilon\hat z|}-\frac{\mu/\varepsilon}{4\pi r}
+\end{equation}
+!et 
+Vi kan skriva $|\vec{r}-\varepsilon \hat z|=\sqrt{\varrho^2+(z-\varepsilon)^2}$, och om
+$\varepsilon$ är litet ($\varepsilon/\varrho,\varepsilon/z \ll 1$) blir detta $\sqrt{\varrho^2+z^2-2\varepsilon
+z}=\sqrt{r^2-2\varepsilon z}\approx r(1-\frac{\varepsilon z}{r^2})$. Så $\frac{1}{|\vec{r}-\varepsilon\hat z|}\approx \frac{1}{r}(1+\frac{\varepsilon z}{r^2})$.
+
+!bwarning Kommentar
+Här har vi använt Taylorutvecklingarna $\sqrt{1-x} = 1 - \frac{x}{2} + \mathcal{O}(x^2)$ samt $\frac{1}{1-x} = 1 + x + \mathcal{O}(x^2)$.
+!ewarning
+
+Potentialen blir
+!bt
+\begin{equation}
+\phi(\vec{r})\approx\frac{\mu}{4\pi\varepsilon}\left[\frac{1}{r}\left(1+\frac{\varepsilon z}{r^2}\right)-\frac{1}{r}\right]=\frac{\mu z}{4\pi r^3}=\frac{\mu\cos\theta}{4 \pi r^2}
+\end{equation}
+!et
+Mer generellt kan man skriva $\phi=\frac{\vec\mu\cdot\vec{r}}{4 \pi r^3}$. I vårt fall var alltså $\vec\mu=\mu\hat z$ dipolmomentet (som alltså ges av produkten av laddningen $\frac{\mu}{\varepsilon}$ och separationsvektorn $\varepsilon\hat z$).
+
+Fältet blir
+!bt
+\begin{equation}
+  \vec{F} = \frac{\mu}{4 \pi r^3} \left(\cos \theta \hat{e}_{r} + \sin \theta
+\hat{e}_{\theta}\right).
+label{eq:dipolfalt}
+\end{equation}
+!et
+Notera att fältlinjerna är vinkelräta mot nivåkurvorna (eftersom $\vec{F} = -\vnabla \phi$). I detta fall kommer de alltså att vara cirklar med centrum längs $x$-axeln.
+
+Om man integrerar dipolfältet över en sfär ser man att integralen blir 0. Detta beror på att man kan se fältet som sammansatt av en positiv och en negativ laddning på ett litet avstånd från varandra. 
+
+!bnotice Normalytintegral av ett dipolfält
+Vi integrerar fältet (ref{eq:dipolfalt}) över ytan $S$ som är en sfär med radie $a$
+!bt
+\begin{align*}
+&\int_S \frac{\mu}{4 \pi a^3} \left(\cos \theta \hat{e}_{r} + \sin \theta
+\hat{e}_{\theta}\right) \cdot \hat{e}_r a^2 \sin\theta d\theta d\varphi =
+\frac{\mu}{4 \pi a} 2\pi \int_0^\pi \frac{2 \cos\theta\sin\theta}{2} d\theta \\
+& \quad = \frac{\mu}{2 a} \left[ \frac{-\cos 2\theta}{4} \right]_0^\pi = 0
+\end{align*}
+!et
+!enotice
+
+% if FORMAT in ("ipynb","html"):
+@@@CODE fig/dipole.py from-to: Start initialization@End fieldline plot
+% endif
+
+FIGURE:[fig/dipole_fieldplot.png, width=600 frac=0.8]
+
+Det går också att definiera kvadrupolfält, oktopolfält och så vidare.

@@ -1,0 +1,595 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('2. Kroklinjiga koordinater', 1, None, '___sec0'),
+              ('Koordinatyta', 3, None, '___sec1'),
+              ('Koordinatkurva', 3, None, '___sec2'),
+              ('Exempel:', 3, None, '___sec3'),
+              ('Enhetsvektorer', 2, None, '___sec4'),
+              ('Alternativ definition', 3, None, '___sec5'),
+              ('Exempel:', 3, None, '___sec6'),
+              ('Exempel:', 3, None, '___sec7'),
+              ('Vektoroperatorer i kroklinjiga koordinater',
+               2,
+               None,
+               '___sec8'),
+              ('Gradient', 3, None, '___sec9'),
+              ('Gradient i cylindriska koordinater:', 3, None, '___sec10'),
+              ('Exempel', 3, None, '___sec11'),
+              ('Tentauppgift 2010-08-26: 1b', 2, None, '___sec12'),
+              ('Lösning', 3, None, '___sec13')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="02-kroklinjiga_koordinater.do.txt-bs.html">FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>2. Kroklinjiga koordinater</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Koordinatyta</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Koordinatkurva</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exempel:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Enhetsvektorer</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alternativ definition</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exempel:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exempel:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Vektoroperatorer i kroklinjiga koordinater</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gradient</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gradient i cylindriska koordinater:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec11" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exempel</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec12" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Tentauppgift 2010-08-26: 1b</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec13" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lösning</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Aug 31, 2017</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h1 id="___sec0" class="anchor">2. Kroklinjiga koordinater </h1>
+
+<p>
+Allm&#228;nt beh&#246;ver vi tre parametrar \( u_1, u_2, u_3 \) f&#246;r att beskriva en godtycklig punkt i rummet. J&#228;mf&#246;r med <em>generaliserade koordinater</em> i analytisk mekanik. Vi kan d&#229; skriva ortsvektorn som \( \vec{r}(u_1, u_2, u_3) \).
+
+<h3 id="___sec1" class="anchor">Koordinatyta </h3>
+
+f&#246;r koordinat \( i \): alla l&#246;sningar till \( u_i = \mathrm{konstant} \).
+
+<h3 id="___sec2" class="anchor">Koordinatkurva </h3>
+
+den kurva som f&#229;s om en koordinat till&#229;ts variera och de andra h&#229;lls konstanta.
+
+<p>
+Om vi d&#229; h&#229;ller en av parametrarna, s&#228;g \( u_1 \), fix och l&#229;ter \( u_2 \) och \( u_3 \) variera, s&#229; f&#229;r vi en tv&#229;-dimensionell yta, vilken vi kallar \( u_1 \)-ytan. P&#229; samma s&#228;tt kan vi d&#229; definiera ytor f&#246;r de andra koordinaterna. Tv&#229; koordinatytor, till exempel de f&#246;r koordinaterna \( u_2 \) och \( u_3 \), sk&#228;r varandra l&#228;ngs en en-dimensionell kurva.  L&#228;ngs denna kurva kommer d&#229; bara koordinaten \( u_1 \) att variera, s&#229; denna kurva &#228;r en koordinatkurva f&#246;r \( u_1 \).
+
+<h3 id="___sec3" class="anchor">Exempel: </h3>
+
+I de cylindriska koordinaterna \( \rho, \phi, z \) kan vi skriva ortsvektorn som \( \vec{r} = \rho\cos \phi \hat{x} + \rho\sin \phi \hat{y} + z \hat{z} \).
+
+<p>
+<br /><br /><center><p><img src="fig/620px-Coord_system_CY.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+Koordinatytorna f&#246;r \( \rho, \phi, z \) &#228;r d&#229; en cylinder med \( z \)-axeln som symmetriaxel och med radien \( \rho \), ett plan som utg&#229;r fr&#229;n \( z \)-axeln och bildar en vinkel \( \phi \) med \( x \)-axeln, samt ett plan parallellt med \( xy \)-planet och med \( z \)-koordinaten \( z \).
+
+<p>
+<br /><br /><center><p><img src="fig/Cylindrical_coordinate_surfaces.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+Koordinatlinjerna f&#246;r \( \rho, \phi, z \) blir d&#229; en str&#229;le som utg&#229;r fr&#229;n \( z \)-axeln och bildar vinkeln \( \phi \) med \( x \)-axeln, en cirkel med radien \( \rho \) och en linje parallell med \( z \)-axeln.
+
+<h2 id="___sec4" class="anchor">Enhetsvektorer </h2>
+Om vi nu studerar en liten f&#246;rskjutning av ortsvektorn, \( \mbox{d}\vec{r} \), s&#229; kan vi i och med att ortsvektorn &#228;r en funktion av \( u_1, u_2, u_3 \) skriva denna som 
+$$
+\begin{equation}
+  \mbox{d}\vec{r} = \frac{\partial \vec{r}}{\partial u_1} \mbox{d}u_1 +
+\frac{\partial \vec{r}}{\partial u_2} \mbox{d}u_2 + 
+\frac{\partial \vec{r}}{\partial u_3} \mbox{d}u_3.
+\tag{1}
+\end{equation}
+$$
+
+<p>
+T&#228;nk nu p&#229; att den partiella derivatan \( \partial \vec{r}/\partial u_1 \)
+&#228;r definierad som derivatan d&#229; vi h&#229;ller \( u_2 \) och \( u_3 \) fixa.
+D&#228;rf&#246;r m&#229;ste \( \partial \vec{r}/\partial u_1 \) vara en tangentvektor
+till koordinatkurvan f&#246;r \( u_1 \).  Vi kan d&#229; definiera en enhetsvektor 
+f&#246;r \( u_1 \) som
+$$
+\begin{equation}
+  \hat{e}_1 = \frac{1}{h_1} \frac{\partial \vec{r}}{\partial u_1},
+\tag{2}
+\end{equation}
+$$
+
+d&#228;r 
+$$
+\begin{equation}
+  h_1 = \left|\frac{\partial \vec{r}}{\partial u_1}\right|
+\tag{3}
+\end{equation}
+$$
+
+kallas f&#246;r skalfaktorn.  P&#229; samma s&#228;tt kan vi best&#228;mma skalfaktorer och enhetsvektorer till \( u_2 \) och \( u_3 \). F&#246;rskjutningsvektorn \( \mbox{d}\vec{r} \) kan vi nu skriva som
+$$
+\begin{equation}
+  \mbox{d}\vec{r} = h_1\hat{e}_1 \mbox{d}u_1 + h_2\hat{e}_2\mbox{d}u_2 +
+h_3\hat{e}_3\mbox{d}u_3.
+\tag{4}
+\end{equation}
+$$
+
+<h3 id="___sec5" class="anchor">Alternativ definition </h3>
+
+Ett alternativ till att anv&#228;nda de normerade tangentvektorerna som enhetsvektorer &#228;r att anv&#228;nda normalvektorerna till koordinatytorna. Betrakta t.ex.
+$$
+\begin{equation}
+u_1 = u_1(x,y,z) = \mathrm{konstant}.
+\tag{5}
+\end{equation}
+$$
+
+Detta motsvarar en niv&#229;yta till ett skal&#228;rf&#228;lt. Normalvektorn ges allts&#229; av \( \nabla u_1 \).
+Det g&#228;ller alltid att 
+$$
+\begin{equation}
+\nabla u_i \cdot \frac{\partial \vec{r}}{\partial u_j} = \delta_{ij}.
+\tag{6}
+\end{equation}
+$$
+
+N&#228;r vi inskr&#228;nker oss till ortogonala system g&#228;ller dessutom att \( \nabla u_i \parallel \frac{\partial \vec{r}}{\partial u_i} \). Notera dock att dessa vektorer i allm&#228;nhet kan ha <em>olika</em> l&#228;ngd. Faktum &#228;r att f&#246;ljande samband g&#228;ller f&#246;r ortogonala system
+$$
+\begin{equation}
+\hat{e}_i 
+= \frac{1}{h_i} \frac{\partial \vec{r}}{\partial u_i}
+= h_i \nabla u_i.
+\tag{7}
+\end{equation}
+$$
+
+<h3 id="___sec6" class="anchor">Exempel: </h3>
+
+I cylindriska koordinater &#228;r \( \vec{r} = (\rho\cos \phi, \rho\sin \phi, z) \).  Vi kan d&#229; ber&#228;kna
+$$
+\begin{align}
+  \frac{\partial \vec{r}}{\partial \rho} &= \left(\cos \phi, \sin \phi, 0\right), 
+\tag{8}\\ 
+  \frac{\partial \vec{r}}{\partial \phi} &= \left(-\rho \sin\phi, \rho \cos \phi,
+0\right), 
+\tag{9}\\ 
+  \frac{\partial \vec{r}}{\partial z} &= \left(0,0,1\right).
+\tag{10}
+\end{align}
+$$
+
+Skalfaktorerna blir d&#229;
+$$
+\begin{align}
+  h_\rho &= \left(\cos^2\phi + \sin^2\phi\right)^{1/2} = 1, 
+\tag{11}\\ 
+  h_\phi &= \left(\rho^2 \cos^2\phi + \rho^2 \sin^2\phi\right)^{1/2} = \rho, 
+\tag{12}\\ 
+  h_z &= 1.
+\tag{13}
+\end{align}
+$$
+
+Enhetsvektorerna blir
+$$
+\begin{align}
+  \hat{\rho} &= \left(\cos\phi, \sin\phi,0\right), 
+\tag{14}\\ 
+  \hat{\phi} &= \left(-\sin\phi, \cos\phi,0\right), 
+\tag{15}\\ 
+  \hat{z} &= \left(0,0,1\right).
+\tag{16}
+\end{align}
+$$
+
+F&#246;rskjutningsvektorn kan d&#229; skrivas som
+$$
+\begin{equation}
+  \mbox{d}\vec{r} = \hat{\rho} \mbox{d}\rho + \rho \hat{\phi} \mbox{d} \phi + \hat{z} \mbox{d}z.
+\tag{17}
+\end{equation}
+$$
+
+<p>
+I forts&#228;ttningen skall vi begr&#228;nsa oss till koordinatsystem med ortogonala enhetsvektorer, dvs
+$$
+\begin{equation}
+\hat{e}_i \cdot \hat{e}_j = \delta_{ij} = \left\{
+\begin{array}{ll}
+1 & \,\mbox{om}\,\, i = j \\ 
+0 & \,\mbox{annars}\\ 
+\end{array}\right.
+\tag{18}
+\end{equation}
+$$
+
+d&#228;r vi passat p&#229; att introducera Kroneckers delta, \( \delta_{ij} \).
+
+<p>
+Vi skall ocks&#229; anta att enhetsvektorerna bildar ett h&#246;gersystem
+$$
+\begin{equation}
+\hat{e}_1 \times \hat{e}_2 = \hat{e}_3
+\tag{19}
+\end{equation}
+$$
+
+<p>
+<em>Visa att enhetsvektorerna i de cylindriska koordinaterna uppfyller dessa villkor.</em>
+
+<p>
+Vi kan nu h&#228;rleda n&#229;gra anv&#228;ndbara samband som b&#229;gl&#228;ngden l&#228;ngs en kurva
+$$
+\begin{equation}
+\mbox{d}s^2 = \mbox{d}\vec{r}\cdot \mbox{d}\vec{r} = h_1^2\mbox{d}u_1^2 + h_2^2
+\mbox{d}u_2^2 + h_3^2 \mbox{d}u_3^2.
+\tag{20}
+\end{equation}
+$$
+
+Betrakta ovanst&#229;ende b&#229;gl&#228;ngd f&#246;r fallet d&#229; \( du_2=du_3=0 \). Det st&#229;r d&#229; klart att vi kan tolka \( h_1 du_1 \) som b&#229;gl&#228;ngden \( ds_1 \), dvs som en infinitesimal f&#246;rflyttning i \( u_1 \)-riktningen. Notera d&#228;rf&#246;r att \( h_i du_i \) alltid m&#229;ste ha enheten l&#228;ngd.
+
+<p>
+Ett ytelement \( \mbox{d}\vec{S}_1 \) p&#229; koordinatytan \( u_1 \) &#228;r en rektangel som  genereras av \( \mbox{d}u_2 \) och \( \mbox{d}u_3 \). Rektangelns sidor har d&#229; l&#228;ngderna \( h_2\mbox{d}u_2 \) och \( h_3\mbox{d}u_3 \).  Ytelementet blir
+$$
+\begin{equation}
+  \mbox{d}\vec{S}_1 =  \hat{e}_1 h_2 h_3 \mbox{d}u_2 \mbox{d}u_3,
+\tag{21}
+\end{equation}
+$$
+
+och p&#229; samma s&#228;tt kan vi ber&#228;kna ytelementen p&#229; koordinatytorna f&#246;r \( u_2 \) och \( u_3 \).
+
+<p>
+Analogt kan vi ber&#228;kna volymelementet som genereras av  \( \mbox{d}u_1 \), \( \mbox{d}u_2 \) och \( \mbox{d}u_3 \), vilket blir
+$$
+\begin{equation}
+  \mbox{d}V = h_1 h_2 h_3 \mbox{d}u_1 \mbox{d}u_2 \mbox{d}u_3.
+\tag{22}
+\end{equation}
+$$
+
+<h3 id="___sec7" class="anchor">Exempel: </h3>
+
+B&#229;gelementet i cylindriska koordinater blir
+$$
+\begin{equation}
+  \mbox{d}s^2 = \mbox{d}\rho^2 + \rho^2\mbox{d}\theta^2 + \mbox{d}z^2.
+\tag{23}
+\end{equation}
+$$
+
+Ett ytelement p&#229; \( \rho \)-ytan skrives
+$$
+\begin{equation}
+  \mbox{d}\vec{S}_\rho = \hat{e}_\rho \rho \mbox{d}\phi\mbox{d}z,
+\tag{24}
+\end{equation}
+$$
+
+p&#229; \( \phi \)-ytan
+$$
+\begin{equation}
+  \mbox{d}\vec{S}_\phi = \hat{e}_\phi \mbox{d}\rho\mbox{z}
+\tag{25}
+\end{equation}
+$$
+
+och p&#229; \( z \)-ytan
+$$
+\begin{equation}
+  \mbox{d}\vec{S}_z = \hat{e}_z \rho\mbox{d}\rho \mbox{d}\phi.
+\tag{26}
+\end{equation}
+$$
+
+Volymelementet kan vi skriva som
+$$
+\begin{equation}
+  \mbox{d}V = \rho\mbox{d}\rho \mbox{d}\phi\mbox{d}z.
+\tag{27}
+\end{equation}
+$$
+
+<h2 id="___sec8" class="anchor">Vektoroperatorer i kroklinjiga koordinater </h2>
+
+<h3 id="___sec9" class="anchor">Gradient </h3>
+
+<p>
+Betrakta ett skal&#228;rt f&#228;lt \( \phi \).  Om vi f&#246;rflyttar oss en str&#228;cka \( \mbox{d}\vec{r} \) s&#229; f&#246;r&#228;ndras \( \phi \) 
+$$
+\begin{equation}
+  \mbox{d}\phi = \nabla \phi \cdot \mbox{d}\vec{r}.
+\tag{28}
+\end{equation}
+$$
+
+F&#246;rflyttningen kan vi i de nya koordinaterna skriva som
+$$
+\begin{equation}
+  \mbox{d}\vec{r} = h_1 \hat{e}_1 \mbox{d}u_1 + h_2 \hat{e}_2 \mbox{d}u_2
++ h_3 \hat{e}_3 \mbox{d}u_3.
+\tag{29}
+\end{equation}
+$$
+
+Om vi skriver \( \phi \) som en funktion av \( u_1, u_2 \) och \( u_3 \) f&#229;r vi
+$$
+\begin{align}
+  \mbox{d}\phi &= \frac{\partial \phi}{\partial u_1}\mbox{d}u_1 + 
+\frac{\partial \phi}{\partial u_2}\mbox{d}u_2 +
+\frac{\partial \phi}{\partial u_3}\mbox{d}u_3 =
+\frac{1}{h_1} \frac{\partial \phi}{\partial u_1} h_1 \mbox{d}u_1 +
+\frac{1}{h_2} \frac{\partial \phi}{\partial u_2} h_2 \mbox{d}u_2 +
+\frac{1}{h_3} \frac{\partial \phi}{\partial u_3} h_3 \mbox{d}u_3 \nonumber \\ 
+ &=
+\left(\frac{1}{h_1} \frac{\partial \phi}{\partial u_1} \hat{e}_1 +
+\frac{1}{h_2} \frac{\partial \phi}{\partial u_2} \hat{e}_2 +
+\frac{1}{h_3} \frac{\partial \phi}{\partial u_3} \hat{e}_3\right) \cdot 
+\mbox{d}\vec{r}
+\tag{30}
+\end{align}
+$$
+
+D&#229; kan vi identifiera uttrycket inom parentesen som gradienten i de nya koordinaterna \( u_1, u_2, u_3 \)
+$$
+\begin{equation}
+  \nabla \phi = \frac{1}{h_1} \frac{\partial \phi}{\partial u_1} \hat{e}_1
++ \frac{1}{h_2}
+\frac{\partial \phi}{\partial u_2} \hat{e}_2 
++ \frac{1}{h_3} \frac{\partial \phi}{\partial u_3} \hat{e}_3.
+\tag{31}
+\end{equation}
+$$
+
+<h3 id="___sec10" class="anchor">Gradient i cylindriska koordinater: </h3>
+
+I cylindriska koordinater blir gradienten
+$$
+\begin{equation}
+  \nabla f = \frac{\partial f}{\partial \rho} + \frac{1}{\rho}
+\frac{\partial f}{\partial \phi} + \frac{\partial f}{\partial z}.
+\tag{32}
+\end{equation}
+$$
+
+<h3 id="___sec11" class="anchor">Exempel </h3>
+
+Ett skal&#228;rf&#228;lt &#228;r givet i Cartesiska koordinater
+$$
+\begin{equation}
+\beta = x^2 + y^2.
+\tag{33}
+\end{equation}
+$$
+
+Motsvarande skal&#228;rf&#228;lt i plana pol&#228;rkoordinater blir
+$$
+\begin{equation}
+\beta = r^2\cos^2\theta + r^2 \sin^2\theta = r^2.
+\tag{34}
+\end{equation}
+$$
+
+Gradienten i Cartesiska koordinater blir
+$$
+\begin{equation}
+\nabla \beta = \hat{x} \partial_x \beta + \hat{y} \partial_y \beta = 2 (x \hat{x} + y \hat{y}).
+\tag{35}
+\end{equation}
+$$
+
+Medan i plana pol&#228;rkoordinater blir den
+$$
+\begin{equation}
+\nabla \beta = \hat{e}_r \partial_r + \hat{e}_\theta \frac{1}{r} \partial_\theta \beta = 2 r \hat{e}_r.
+\tag{36}
+\end{equation}
+$$
+
+Eftersom \( x \hat{x} + y \hat{y} = r \hat{e}_r \) &#228;r det uppenbart att detta &#228;r samma vektor!
+
+<h2 id="___sec12" class="anchor">Tentauppgift 2010-08-26: 1b </h2>
+
+<p>
+ F&#246;r vilka v&#228;rden p&#229; \( \alpha,\beta,\gamma \) har det tv&#229;dimensionella koordinatsystemet med koordinater \( \xi \) och \( \eta \), givna av
+$$
+\begin{align}
+\xi &= x^2 - y^2 
+\tag{37}\\ 
+\eta &= \alpha x^2 + \beta x y + \gamma y^2
+\tag{38}
+\end{align}
+$$
+
+ortogonala basvektorer?
+
+<h3 id="___sec13" class="anchor">L&#246;sning </h3>
+
+Vi kan konstruera basvektorer p&#229; tv&#229; s&#228;tt:
+
+<ul>
+<li> \( \hat{e}_i \propto \frac{\partial \vec{r}}{\partial u_i} \)</li>
+<li> \( \hat{e}_i \propto \nabla u_i \)</li>
+</ul>
+
+Det f&#246;rsta s&#228;ttet inneb&#228;r att vi beh&#246;ver r&#228;kna ut storheterna \( \frac{\partial x}{\partial u_i} \) och \( \frac{\partial y}{\partial u_i} \), dvs vi beh&#246;ver veta \( x=x(\xi,\eta),\; y=y(\xi,\eta) \). Vi skulle beh&#246;va invertera det givna koordinatsambandet.
+
+<p>
+Det andra s&#228;ttet kr&#228;ver ist&#228;llet \( \frac{\partial \xi}{\partial x} \) och \( \frac{\partial \xi}{\partial y} \) (samt motsvarande f&#246;r \( \eta \)) och detta blir enkelt med de givna koordinattransformationerna. Vi f&#229;r
+$$
+\begin{align}
+\nabla \xi &= 2x \hat{x} - 2y \hat{y} 
+\tag{39}\\ 
+\nabla \eta &= (2 \alpha x + \beta y)\hat{x} + (\beta x + 2 \gamma y) \hat{y}
+\tag{40}
+\end{align}
+$$
+
+vilket ger
+$$
+\begin{equation}
+\nabla \xi \cdot \nabla \eta = 2x (2 \alpha x + \beta y) - 2 y (\beta x + 2 \gamma y) 
+= 4 \alpha x^2 - 4 \gamma y^2 = 0.
+\tag{41}
+\end{equation}
+$$
+
+Detta inneb&#228;r att vi m&#229;ste ha \( \alpha = \gamma = 0 \), medan \( \beta \) &#228;r godtyckligt.
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">p</span>
+
+<span style="color: #408080; font-style: italic"># Make an x,y grid</span>
+grid <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">-4</span>,<span style="color: #666666">4</span>,<span style="color: #666666">100</span>)
+x, y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>meshgrid(grid,grid)
+<span style="color: #408080; font-style: italic"># and the 2D fields</span>
+xi <span style="color: #666666">=</span> x<span style="color: #666666">**2</span> <span style="color: #666666">-</span> y<span style="color: #666666">**2</span>
+eta <span style="color: #666666">=</span> x <span style="color: #666666">*</span> y
+</pre></div>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>p<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">6</span>,<span style="color: #666666">6</span>))
+CS <span style="color: #666666">=</span> p<span style="color: #666666">.</span>contour(x,y,xi,<span style="color: #666666">5</span>,colors<span style="color: #666666">=</span><span style="color: #BA2121">&#39;k&#39;</span>)
+p<span style="color: #666666">.</span>clabel(CS, inline<span style="color: #666666">=1</span>, fontsize<span style="color: #666666">=10</span>)
+p<span style="color: #666666">.</span>text(<span style="color: #666666">0.5</span>,<span style="color: #666666">1.3</span>,<span style="color: #BA2121">r&#39;$\xi$-yta&#39;</span>,color<span style="color: #666666">=</span><span style="color: #BA2121">&#39;k&#39;</span>,rotation<span style="color: #666666">=45</span>)
+CS <span style="color: #666666">=</span> p<span style="color: #666666">.</span>contour(x,y,eta,<span style="color: #666666">5</span>,colors<span style="color: #666666">=</span><span style="color: #BA2121">&#39;r&#39;</span>)
+p<span style="color: #666666">.</span>clabel(CS, inline<span style="color: #666666">=1</span>, fontsize<span style="color: #666666">=10</span>)
+p<span style="color: #666666">.</span>text(<span style="color: #666666">1</span>,<span style="color: #666666">0.05</span>,<span style="color: #BA2121">r&#39;$\eta$-yta&#39;</span>,color<span style="color: #666666">=</span><span style="color: #BA2121">&#39;r&#39;</span>)
+p<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">r&#39;$x$&#39;</span>)
+p<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">r&#39;$y$&#39;</span>)
+</pre></div>
+<p>
+<br /><br /><center><p><img src="fig/koordinatytor.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._02-kroklinjiga_koordinater.do.txt-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

@@ -1,0 +1,196 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [(u'Repetition', 1, None, '___sec0'),
+              (u'N\xe5got mer om l\xf6sningar av differentialekvationer',
+               2,
+               None,
+               '___sec1')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="repetition-bs.html">FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Repetition</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Något mer om lösningar av differentialekvationer</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forssén</a>, Institutionen för fysik, Chalmers, Göteborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forssén</a>, Institutionen för fysik, Chalmers, Göteborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 21, 2016</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h1 id="___sec0">Repetition </h1>
+
+<dl>
+ <dt>Kapitel 1 Fält och derivator:<dd> 
+   Introducerande kapitel. 
+</dl>
+
+Nivåytor och fältlinjer för att visualisera fält.
+
+<dl>
+ <dt>Kapitel 2,3,4 Koordinater, integraler, integralsatser:<dd> 
+   Matematiska verktyg 
+</dl>
+
+<em>MEN</em> vi vill betona fysiken
+
+<ul>
+   <li> derivatan av ett fält har en fysikalisk betydelse</li>
+   <li> integralen av ett fält har en fysikalisk betydelse</li>
+</ul>
+
+Kurv-, yt-, rymdintegraler: Kan vi använda oss av en integralsats (se lösningsstrategi från kap. 4).
+
+<dl>
+ <dt>Kapitel 5, 12 Indexnotation, tensorer:<dd> 
+   Fundament
+</dl>
+
+ Dessa kapitel ger fundamentet för vad som definierar en skalär, 
+ en vektor (tensorer). Viktigt för framtida kurser. Men indexnotation 
+ erbjuder också ett kraftfullt verktyg att härleda vektoridentiteter.
+
+<dl>
+ <dt>Kapitel 6, 7 Singulära fält, deltafunktioer:<dd> 
+</dl>
+
+ Introducerar singulära fält (källor, virvlar) och ger verktyg för 
+ att hantera dessa matematiskt.
+
+<dl>
+ <dt>Kapitel 8, 9 Potentialteori, Laplaces och Poissons ekvationer:<dd> 
+   Kronjuvelerna
+</dl>
+
+ Vi kommer fram till de generella differentialekvationerna som styr fysikaliska 
+ fält och diskuterar hur vi skall lösa dem (se nedan). Dessa avsnitt är något 
+ av kronjuvelerna i denna kurs.
+
+<dl>
+ <dt>Kapitel 10, 11 Värmeledning,elektromagnetism:<dd> 
+   Tillämpningar
+</dl>
+
+ Ger en tydligare fysikalisk tolkning av det vi har lärt oss genom ganska konkreta exempel.
+
+<h2 id="___sec1">Något mer om lösningar av differentialekvationer </h2>
+Olika lösningsstrategier lämpar sig olika väl för olika problem. Här listas några problemtyper:
+
+<ul>
+  <li> Symmetrier: Kan man inse att fältet bara beror på en koordinat? Då blir differentialekvationen mycket enklare och den går oftast att integrera direkt. Notera att detta ger integrationskonstanter vilka måste bestämmas (från randvillkor, existens av singulära källor, etc). Ett alternativ kan vara att använda Gauss sats för att få ett uttryck för vektorfältet.</li>
+  <li> Vinkelberoende randvillkor: Gör en lösningsansats som kan uppfylla randvillkoret och som samtidigt är en egenfunktion till Laplacianen (\( \cos\theta \), \( \sin\theta \), konstant). Detta gör att differentialekvationen separeras i två delar som kan lösas var för sig. Metoden kallas för variabelseparation.</li>
+  <li> Helt allmän metod: Greensfunktioner. Gör differentialekvationen till en integralekvation. Problemet blir att finna Greensfunktionen (och eventuellt att lösa integralen).</li>
+
+<ul>
+    <li> För vissa speciella geometrier (halvrymd, sfär, cirkel) och randvillkor kan man använda sig av spegelladdningar (utanför det fysikaliska området) för att konstruera en Greensfunktion.</li> 
+</ul>
+
+</ul>
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._repetition-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

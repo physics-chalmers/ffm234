@@ -1,0 +1,33 @@
+TITLE: FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/tsp/", Institutionen för fysik, Chalmers, Göteborg, Sverige 
+DATE: today
+
+=======  Repetition =======
+ - Kapitel 1 Fält och derivator: Introducerande kapitel. 
+Nivåytor och fältlinjer för att visualisera fält.
+ - Kapitel 2,3,4 Koordinater, integraler, integralsatser: Matematiska verktyg 
+*MEN* vi vill betona fysiken
+   * derivatan av ett fält har en fysikalisk betydelse
+   * integralen av ett fält har en fysikalisk betydelse
+Kurv-, yt-, rymdintegraler: Kan vi använda oss av en integralsats (se lösningsstrategi från kap. 4).
+ - Kapitel 5, 12 Indexnotation, tensorer: Fundament
+ Dessa kapitel ger fundamentet för vad som definierar en skalär, 
+ en vektor (tensorer). Viktigt för framtida kurser. Men indexnotation 
+ erbjuder också ett kraftfullt verktyg att härleda vektoridentiteter.
+ - Kapitel 6, 7 Singulära fält, deltafunktioer:
+ Introducerar singulära fält (källor, virvlar) och ger verktyg för 
+ att hantera dessa matematiskt.
+ - Kapitel 8, 9 Potentialteori, Laplaces och Poissons ekvationer: Kronjuvelerna
+ Vi kommer fram till de generella differentialekvationerna som styr fysikaliska 
+ fält och diskuterar hur vi skall lösa dem (se nedan). Dessa avsnitt är något 
+ av kronjuvelerna i denna kurs.
+ - Kapitel 10, 11 Värmeledning,elektromagnetism: Tillämpningar
+ Ger en tydligare fysikalisk tolkning av det vi har lärt oss genom ganska konkreta exempel.
+ 
+===== Något mer om lösningar av differentialekvationer =====
+Olika lösningsstrategier lämpar sig olika väl för olika problem. Här listas några problemtyper:
+ 
+  * Symmetrier: Kan man inse att fältet bara beror på en koordinat? Då blir differentialekvationen mycket enklare och den går oftast att integrera direkt. Notera att detta ger integrationskonstanter vilka måste bestämmas (från randvillkor, existens av singulära källor, etc). Ett alternativ kan vara att använda Gauss sats för att få ett uttryck för vektorfältet.
+  * Vinkelberoende randvillkor: Gör en lösningsansats som kan uppfylla randvillkoret och som samtidigt är en egenfunktion till Laplacianen ($\cos\theta$, $\sin\theta$, konstant). Detta gör att differentialekvationen separeras i två delar som kan lösas var för sig. Metoden kallas för variabelseparation.
+  * Helt allmän metod: Greensfunktioner. Gör differentialekvationen till en integralekvation. Problemet blir att finna Greensfunktionen (och eventuellt att lösa integralen).
+    * För vissa speciella geometrier (halvrymd, sfär, cirkel) och randvillkor kan man använda sig av spegelladdningar (utanför det fysikaliska området) för att konstruera en Greensfunktion. 

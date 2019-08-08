@@ -1,0 +1,66 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Start initialization}
+\PYG{k+kn}{import} \PYG{n+nn}{sys}
+\PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k+kn}{as} \PYG{n+nn}{plt}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{} End initialization}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Start Alt. 2: Streamlines with streamplot \PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{n}{w} \PYG{o}{=} \PYG{l+m+mi}{3}
+\PYG{n}{Y}\PYG{p}{,} \PYG{n}{X} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{mgrid}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{n}{w}\PYG{p}{:}\PYG{n}{w}\PYG{p}{:}\PYG{l+m+mi}{100j}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{w}\PYG{p}{:}\PYG{n}{w}\PYG{p}{:}\PYG{l+m+mi}{100j}\PYG{p}{]}
+\PYG{n}{R} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{X}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{o}{+}\PYG{n}{Y}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{U} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{Y} \PYG{o}{/} \PYG{n}{R}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{c+c1}{\PYGZsh{} Note that \PYGZhy{}Y/R = \PYGZhy{}sin(phi)}
+\PYG{n}{V} \PYG{o}{=} \PYG{n}{X} \PYG{o}{/} \PYG{n}{R}\PYG{o}{**}\PYG{l+m+mi}{2}  \PYG{c+c1}{\PYGZsh{} Note that X/R = cos(phi)}
+
+\PYG{n}{fig} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{()}
+\PYG{n}{ax} \PYG{o}{=} \PYG{n}{fig}\PYG{o}{.}\PYG{n}{add\PYGZus{}subplot}\PYG{p}{(}\PYG{l+m+mi}{111}\PYG{p}{)}
+
+\PYG{n}{strm} \PYG{o}{=} \PYG{n}{ax}\PYG{o}{.}\PYG{n}{streamplot}\PYG{p}{(}\PYG{n}{X}\PYG{p}{,} \PYG{n}{Y}\PYG{p}{,} \PYG{n}{U}\PYG{p}{,} \PYG{n}{V}\PYG{p}{,} \PYG{n}{linewidth}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}Streamplot, vortex field \PYGZdl{}\PYGZbs{}vec\PYGZob{}F\PYGZcb{} = \PYGZbs{}frac\PYGZob{}J\PYGZcb{}\PYGZob{}2\PYGZbs{}pi\PYGZbs{}rho\PYGZcb{}\PYGZbs{}hat\PYGZbs{}varphi\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}y\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}aspect}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}equal\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}streamlines\PYGZhy{}vortex.png\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{} End Alt. 2}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{} Start Alt. 1: Streamlines as 2d curves \PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{k}{def} \PYG{n+nf}{curve}\PYG{p}{(}\PYG{n}{rho0}\PYG{p}{,}\PYG{n}{x}\PYG{p}{):}
+    \PYG{l+s+sd}{\PYGZdq{}\PYGZdq{}\PYGZdq{}Fieldline for vortex streamlines in Cartesian coordinates.}
+\PYG{l+s+sd}{    Assume z=0 =\PYGZgt{} Fieldline in xy\PYGZhy{}plane.}
+\PYG{l+s+sd}{    We also avoid the singularity at x=y=0.\PYGZdq{}\PYGZdq{}\PYGZdq{}}
+    \PYG{k}{if} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{x}\PYG{p}{))} \PYG{o}{\PYGZgt{}} \PYG{n}{rho0}\PYG{p}{:}
+        \PYG{k}{print}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}Fieldline for rho\PYGZus{}0=}\PYG{l+s+si}{\PYGZpc{}3.1f}\PYG{l+s+s1}{ is only defined for |x| \PYGZlt{}= }\PYG{l+s+si}{\PYGZpc{}3.1f}\PYG{l+s+s1}{\PYGZsq{}} \PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{rho0}\PYG{p}{,}\PYG{n}{rho0}\PYG{p}{))}
+        \PYG{k}{return} \PYG{n+nb+bp}{None}
+    \PYG{k}{return} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{rho0}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+
+\PYG{n}{fig} \PYG{o}{=} \PYG{n}{plt}\PYG{o}{.}\PYG{n}{figure}\PYG{p}{()}
+\PYG{n}{ax} \PYG{o}{=} \PYG{n}{fig}\PYG{o}{.}\PYG{n}{add\PYGZus{}subplot}\PYG{p}{(}\PYG{l+m+mi}{111}\PYG{p}{)}
+
+\PYG{c+c1}{\PYGZsh{} Grid of x points}
+\PYG{n}{nx} \PYG{o}{=} \PYG{l+m+mi}{64}
+
+\PYG{c+c1}{\PYGZsh{} Streamline constant}
+\PYG{k}{for} \PYG{n}{rho0} \PYG{o+ow}{in} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{):}
+
+    \PYG{c+c1}{\PYGZsh{} Grid of x points}
+    \PYG{n}{x} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{linspace}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{n}{rho0}\PYG{p}{,}\PYG{n}{rho0}\PYG{p}{,} \PYG{n}{nx}\PYG{p}{)}
+
+    \PYG{n}{yp} \PYG{o}{=} \PYG{n}{curve}\PYG{p}{(}\PYG{n}{rho0}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
+    \PYG{n}{ym} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{curve}\PYG{p}{(}\PYG{n}{rho0}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
+
+    \PYG{c+c1}{\PYGZsh{} Plot the streamlines with an appropriate colormap and arrow style}
+    \PYG{n}{ax}\PYG{o}{.}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{yp}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{ym}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}b\PYGZhy{}\PYGZsq{}}\PYG{p}{,} \PYG{n}{linewidth}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{)}
+    \PYG{n}{ax}\PYG{o}{.}\PYG{n}{annotate}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}\PYGZdq{}}\PYG{p}{,} \PYG{n}{xy}\PYG{o}{=}\PYG{p}{(}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),} \PYG{l+m+mf}{0.1}\PYG{p}{),} \PYG{n}{xytext}\PYG{o}{=}\PYG{p}{(}\PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{x}\PYG{p}{),} \PYG{l+m+mi}{0}\PYG{p}{),} \PYG{n}{arrowprops}\PYG{o}{=}\PYG{n+nb}{dict}\PYG{p}{(}\PYG{n}{arrowstyle}\PYG{o}{=}\PYG{l+s+s2}{\PYGZdq{}\PYGZhy{}\PYGZgt{}\PYGZdq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}b\PYGZsq{}}\PYG{p}{))}
+
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}title}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}Streamplot, vortex field \PYGZdl{}\PYGZbs{}vec\PYGZob{}F\PYGZcb{} = \PYGZbs{}frac\PYGZob{}J\PYGZcb{}\PYGZob{}2\PYGZbs{}pi\PYGZbs{}rho\PYGZcb{}\PYGZbs{}hat\PYGZbs{}varphi\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}xlabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}x\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}ylabel}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}\PYGZdl{}y\PYGZdl{}\PYGZsq{}}\PYG{p}{)}
+
+\PYG{n}{ax}\PYG{o}{.}\PYG{n}{set\PYGZus{}aspect}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}equal\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{} End Alt. 1}
+
+\PYG{c+c1}{\PYGZsh{}plt.show()}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}streamlines\PYGZhy{}vortex\PYGZhy{}curves.png\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}

@@ -1,0 +1,228 @@
+TITLE: FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/tsp/", Institutionen för fysik, Chalmers, Göteborg, Sverige 
+DATE: today
+
+=======  12. Tensorer =======
+!bsummary Introduktion till tensorbegreppet
+* Fysikaliska lagar skall inte bero på i vilket koordinatsystem de beskrivs.
+* Detta kan vi åstadkomma genom att skriva dessa lagar som en likhet mellan två objekt vilka vi vet transformerar likadant under en koordinattransformation.
+* Vi kommer att kalla sådana objekt för *tensorer*. 
+* T.ex. är en skalär en tensor av rank-0, en vektor är en tensor av rank-1.
+* En invarians hos sådana fysikaliska lagar kan kopplas till en symmetri (t.ex. rotationssymmetri). Invariansen kan kodas in genom att använda ``tensorspråket''.
+* Vi kommer att betrakta transformationer i rummet mellan Cartesiska system. Formalismen kan dock generaliseras till större symmetrier. T.ex. Lorentzinvarians i speciell relativitetsteori vilken involverar rum-tiden (fyra dimensioner); och mer allmänna koordinattransformationer i rum-tiden i allmän relativitetsteori.
+!esummary
+
+Plan:
+* Hur beskriva transformation mellan Cartesiska koordinatsystem
+* Transformationsegenskaper hos: Skalär, vektor, ... generell tensor
+* Visa att diverse objekt verkligen är tensorer
+* Fysikaliskt exempel: Tröghetstensorn
+
+===== Koordinattransformationer =====
+
+När vi byter koordinater från ett Cartesiskt högersystem, med koordinater
+$x_i$, till ett annat (med origo i samma punkt), med koordinater $x'_i$, relateras 
+!bt
+\begin{equation}
+x'_i=L_{ij}x_j,
+label{eq:transformation}
+\end{equation}
+!et
+där $\mathbf{L}$ är en ortogonal matris som uppfyller $\mathbf{L}\mathbf{L}^t = \mathbf{I}=\mathbf{L}^t\mathbf{L}$. Från detta följer direkt att $\det(\mathbf{L}^t\mathbf{L}) =  \det(\mathbf{L})^2 = \det\mathbf{I}=1$ vilket ger $\det\mathbf{L}=\pm 1$. 
+
+Ett allmänt uttryck för determinanten av en $(3\times3)$-matris är 
+!bt
+\begin{equation}
+\det\mathbf{M}=\varepsilon^{ijk}M_{1i}M_{2j}M_{3k}
+\end{equation}
+!et
+!bwarning Kommentar
+Kontrollera gärna. Detta uttryck ger en summa med sex nollskilda termer (3 positiva och 3 negativa) vilket alltså motsvarar determinanten.
+!ewarning
+
+!bwarning Rita
+$x'y'z'$-system som är roterat en vinkel $\alpha$ i $xy$-planet relativt ett $xyz$-system.
+!bt
+\begin{equation}
+\begin{pmatrix}
+x' \\ y' \\z'
+\end{pmatrix}
+= 
+\begin{pmatrix}
+\cos\alpha & \sin\alpha & 0\\
+-\sin\alpha & \cos\alpha & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y \\ z
+\end{pmatrix}
+\end{equation}
+!et
+!ewarning
+
+!bwarning Kommentar
+Om $\mathbf{L}$ transformerar ett högersystem till ett högersystem gäller plustecknet, $\det\mathbf{L}=1$. Kolla exemplet ovan att $\mathbf{L}^t \mathbf{L} = \mathbf{I}$.
+!ewarning
+
+I indexnotation blir villkoret på transformationsmatrisen
+!bt
+\begin{equation}
+\delta_{ij} = \left( L^t L \right)_{ij} = \left( L^t \right)_{ik} L_{kj} 
+= L_{ki}L_{kj}.
+\end{equation}
+!et
+
+Notera att vi genom att derivera Ekv. (ref{eq:transformation}) kan skriva matrisen $\mathbf{L}$ som $L_{ij}=\frac{\partial x'_i}{\partial x_j}$. Eftersom matrisen är ortogonal gäller den inversa relationen $x_i=L_{ji}x'_j$, och vi har därför också $L_{ji}=\frac{\partial x_i}{\partial x'_j}$.
+
+!bnotice Bevis av invers relation
+Starta från transformationen $x'_i=L_{ij}x_j$ och multiplicera med inversa transformationen $\mathbf{L}^t$
+!bt
+\begin{equation}
+(L^t)_{ki} x'_i=(L^t)_{ki} L_{ij}x_j = \delta_{kj} x_j = x_k,
+\end{equation}
+!et
+Vi noterar att $(L^t)_{ki} = L_{ik}$ i vänsterledet så att vi får den inversa relationen $L_{ik} x'_i = x_k$. Från detta uttryck byter vi bara namn på indexen: $i \mapsto j$, $k \mapsto i$ så att
+!bt
+\begin{equation}
+x_i=L_{ji} x'_j.
+label{eq:inverstransformation}
+\end{equation}
+!et
+!enotice
+
+===== Skalärer och vektorer =====
+En skalär $s$ (= enklaste exempel på en tensor) kännetecknas av att den tar samma värde i alla koordinatsystem, dvs. $s'=s$. 
+
+!bwarning Kommentar
+Det är viktigt att förstå att det är transformationsregeln som är det viktiga. Det räcker inte med att ``$s$ är ett tal''.
+!ewarning
+
+!bwarning Rita
+En punkt P i ovanstående två koordinatsystem och illustrera dess $x'$- och $x$-koordinat.
+!ewarning
+
+Sålunda är $x$-koordinaten för en punkt i $\mathbf{R}^3$ inte en skalär, medan t.ex. temperaturen i en punkt är en skalär. 
+
+En vektor $\vec v$ är en uppsättning tal som beter sig likadant som ortvektorns komponenter när vi byter system, dvs.
+!bt
+\begin{equation}
+v'_i=L_{ij}v_j
+\end{equation}
+!et
+!bwarning Kommentar
+Det är denna transformationsregel som definierar vilka uppsättningar av tre (eller $D$) tal som får privilegiet att kallas vektor.
+!ewarning
+
+===== Tensorer =====
+!bwarning Kommentar
+Nu är det rättframt att gå vidare och definiera objekt,  tensorer, som har fler än ett index. En matris kan, som vi redan sett, skrivas som en tensor med två index, $T_{ij}$. Men inget hindrar att man har ett godtyckligt antal, säg $p$.
+!ewarning
+
+Transformationsregeln för en tensor med två index (tänk matris) är
+!bt
+\begin{equation} 
+T'_{ij} = L_{ik} L_{jl} T_{kl} \left( = L_{ik} T_{kl} \left( L^t \right)_{lj} \right),
+\end{equation}
+!et
+vilket ju motsvarar $\mathbf{T}' = \mathbf{L} \mathbf{T} \mathbf{L}^t$.
+
+En tensor med $p$ index (en tensor av rank $p$) skrivs $T_{i_1i_2\ldots i_p}$.  och allmänt
+!bt
+\begin{equation}
+T'_{i_1\ldots i_p}=L_{i_1j_1}\ldots L_{i_pj_p}T_{j_1\ldots j_p}.
+\end{equation}
+!et
+
+Poängen med detta är att man kan multiplicera samman tensorer och
+vara säker på att resultatet blir en tensor. 
+
+!bnotice Skalärprodukt
+Är $\vec{u} \cdot \vec{v}$ en skalär? Hur beter den sig vid ett koordinatbyte?
+!bt
+\begin{equation}
+u_i' v_i' = L_{ij} u_j L_{ik} v_k = \delta_{jk} u_j v_k = u_k v_k
+\end{equation}
+!et
+Resultatet är alltså oberoende av koordinatsystem, dvs det är en skalär. Ovanstående visar att summan av produkterna av två vektorers komponenter blir densamma när vektorerna uttrycks i det primmade respektive det oprimmade koordinatsystemet.
+!enotice
+
+=== Produkt av tensorer ===
+Produkten av två tensorer är också en tensor.
+* $c_{ij}=a_i b_j$ är också en tensor. 
+* $u_i=M_{ij}v_j$ är också en tensor. 
+
+!bwarning Kommentar
+För det andra fallet har vi $M'_{ij}v'_j=L_{ik}L_{jl}M_{kl}L_{jm}v_m=L_{ik}\delta_{lm}M_{kl}v_m=L_{ik}M_{kl}v_l
+=L_{ik}u_k$ (där vi i första steget har använt att $\mathbf{L}$ är ortogonal). Om $M_{ij}$ och $v_i$ är tensorer är alltså även $u_i$ det. Det allmänna beviset går likadant (och innefattar förstås det faktum att skalärprodukten av två vektorer är en skalär).
+!ewarning
+
+!bnotice Exempel: Kryssprodukt
+Är $(\vec a\times\vec b)_i = \varepsilon_{ijk}a_jb_k$ en tensor? Dvs är resultatet en vektor? 
+
+!bwarning Kommentar
+I linjär algebrakurserna har ni säkert visat att detta är en vektor.
+!ewarning
+
+Räknereglerna ovan ger att vi bara måste visa att $\varepsilon_{ijk}$ är en tensor. Transformationsreglerna säger:
+!bt
+\begin{equation}
+\varepsilon'_{ijk}=L_{il}L_{jm}L_{kn}\varepsilon_{lmn}
+\end{equation}
+!et
+Vi kommer att visa att $\varepsilon$ är helt invariant under koordinattransformationer. Men låt oss först visa att $\varepsilon'_{ijk}$ är antisymmetriskt. Byt plats på två index
+!bt
+\begin{equation}
+\varepsilon'_{jik}=L_{jl}L_{im}L_{kn}\varepsilon_{lmn} = L_{jm}L_{il}L_{kn}\varepsilon_{mln} = - L_{il} L_{jm}L_{kn}\varepsilon_{lmn} = - \varepsilon'_{ijk},
+\end{equation}
+!et
+där vi först bytte namn på två summationsindex, och sedan bytte plats på dem i $\varepsilon$-tensorn och utnyttjade att den är antisymmetrisk. 
+
+Den bevisade antisymmetrin betyder ju också att element med två lika index måste vara noll. T.ex. $\varepsilon'_{iik} = -\varepsilon'_{iik}$.
+
+$\varepsilon'_{ijk}$ är alltså proportionell mot $\varepsilon_{ijk}$. Visa därför en permutation, t.ex. $ijk=123$. 
+!bt
+\begin{equation}
+\varepsilon'_{123}=L_{1l}L_{2m}L_{3n}\varepsilon_{lmn} = \det \mathbf{L} = +1,
+\end{equation}
+!et
+för en högertransformation.
+
+Så $\varepsilon'_{ijk}=\varepsilon_{ijk}$, Levi--Civita-tensorn är en *invariant tensor*. Den enda andra invarianta tensorn är Kroneckers delta. Visa själv att $\delta'_{ij}=\delta_{ij}$. 
+!enotice
+
+=== Vektoroperatorn ===
+Vi behöver också kunna derivera. Låt oss visa det litet triviala påståendet att gradienten
+av en skalär är en vektor. Vi utgår från skalärfältet $\phi$ och har alltså att $\phi' = \phi$. Vi har $(\vnabla\phi)'_i=\frac{\partial}{\partial x'_i}\phi'=\frac{\partial \phi}{\partial x_j} \frac{\partial x_j}{\partial x'_i}=
+L_{ij} \frac{\partial \phi}{\partial x_j}=L_{ij}(\vnabla\phi)_j$. Detta visar att $\partial _i$ är en vektoroperator, och man kan sedan använda den för att konstruera andra derivator (divergens, rotation osv.). Samma regler gäller för $\partial _i$ som för andra tensorer.
+
+!bnotice Tröghetstensorn
+Ett annat klassiskt exempel är tröghetstensorn,  
+!bt
+\begin{equation}
+I_{ij}=\int_VdV\,\rho(r^2\delta_{ij}-x_ix_j),
+\end{equation}
+!et
+som man räknade ut i stelkroppsdynamik. Den relaterar rörelsemängdsmomentet till
+rotationsvektorn enligt $L_i=I_{ij}\omega_j$. I och med att den innehåller upprepade
+kryssprodukter är det enklare att härleda den i tensorformalism. 
+
+Ett litet volymelement $dV$ av en stel kropp har massan $dm=\rho dV$,
+och om kroppen roterar med en rotationsvektor $\omega_i$ har
+det hastigheten $v_i=(\vec\omega\times\vec{r})_i=\varepsilon_{ijk}\omega_jx_k$. 
+Dess rörelsemängd är $\mbox{d}p_i=\mbox{d}mv_i=\mbox{d}m\varepsilon_{ijk}\omega_jx_k$. Bidraget till rörelsemängdsmomentet från volymelementet är 
+!bt
+\begin{align}
+\mbox{d}L_i = \varepsilon_{ijk}x_j \mbox{d}p_k &= \mbox{d}m\varepsilon_{ijk}x_j\varepsilon_{klm}\omega_lx_m
+=\mbox{d}m(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})x_jx_m\omega_l \nonumber \\
+&=\mbox{d}m(r^2\omega_i-x_ix_j\omega_j)=\mbox{d}V\rho(r^2\delta_{ij}-x_ix_j)\omega_j
+\end{align}
+!et
+och totalt blir detta
+!bt
+\begin{equation}
+L_i = \int_V \mbox{d}V\,\rho(r^2\delta_{ij}-x_ix_j) \omega_j \equiv I_{ij} \omega_j,
+\end{equation}
+!et
+där vi alltså definierar tröghetstensorn i det sista steget.
+!enotice
+

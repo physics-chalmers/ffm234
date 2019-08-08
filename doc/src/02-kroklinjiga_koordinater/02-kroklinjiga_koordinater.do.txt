@@ -1,0 +1,381 @@
+TITLE: FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/tsp/", Institutionen för fysik, Chalmers, Göteborg, Sverige 
+DATE: today
+
+=======  2. Kroklinjiga koordinater =======
+
+Allmänt behöver vi tre parametrar $u_1, u_2, u_3$ för att beskriva en godtycklig punkt i rummet. Jämför med *generaliserade koordinater* i analytisk mekanik. Vi kan då skriva ortsvektorn som $\vec{r}(u_1, u_2, u_3)$.  
+
+=== Koordinatyta ===
+för koordinat $i$: alla lösningar till $u_i = \mathrm{konstant}$.
+
+=== Koordinatkurva ===
+den kurva som fås om en koordinat tillåts variera och de andra hålls konstanta.
+
+Om vi då håller en av parametrarna, säg $u_1$, fix och låter $u_2$ och $u_3$ variera, så får vi en två-dimensionell yta, vilken vi kallar $u_1$-ytan. På samma sätt kan vi då definiera ytor för de andra koordinaterna. Två koordinatytor, till exempel de för koordinaterna $u_2$ och $u_3$, skär varandra längs en en-dimensionell kurva.  Längs denna kurva kommer då bara koordinaten $u_1$ att variera, så denna kurva är en koordinatkurva för $u_1$.
+
+!bnotice Exempel: cylindriska koordinater 
+I de cylindriska koordinaterna $\rho, \phi, z$ kan vi skriva ortsvektorn som $\vec{r} = \rho\cos \phi \hat{x} + \rho\sin \phi \hat{y} + z \hat{z}$. 
+
+FIGURE:[fig/620px-Coord_system_CY.png, width=600 frac=0.8] 
+
+Koordinatytorna för $\rho, \phi, z$ är då en cylinder med $z$-axeln som symmetriaxel och med radien $\rho$, ett plan som utgår från $z$-axeln och bildar en vinkel $\phi$ med $x$-axeln, samt ett plan parallellt med $xy$-planet och med $z$-koordinaten $z$. 
+
+FIGURE:[fig/Cylindrical_coordinate_surfaces.png, width=600 frac=0.8] 
+
+Koordinatlinjerna för $\rho, \phi, z$ blir då en stråle som utgår från $z$-axeln och bildar vinkeln $\phi$ med $x$-axeln, en cirkel med radien $\rho$ och en linje parallell med $z$-axeln.
+!enotice
+
+===== Enhetsvektorer =====
+Om vi nu studerar en liten förskjutning av ortsvektorn, $\mbox{d}\vec{r}$, så kan vi i och med att ortsvektorn är en funktion av $u_1, u_2, u_3$ skriva denna som 
+!bt
+\begin{equation}
+  \mbox{d}\vec{r} = \frac{\partial \vec{r}}{\partial u_1} \mbox{d}u_1 +
+\frac{\partial \vec{r}}{\partial u_2} \mbox{d}u_2 + 
+\frac{\partial \vec{r}}{\partial u_3} \mbox{d}u_3.
+label{eq:forskjutningsvektor}
+\end{equation}
+!et
+
+Tänk nu på att den partiella derivatan $\partial \vec{r}/\partial u_1$
+är definierad som derivatan då vi håller $u_2$ och $u_3$ fixa.
+Därför måste $\partial \vec{r}/\partial u_1$ vara en tangentvektor
+till koordinatkurvan för $u_1$.  Vi kan då definiera en enhetsvektor 
+för $u_1$ som
+!bt
+\begin{equation}
+  \hat{e}_1 = \frac{1}{h_1} \frac{\partial \vec{r}}{\partial u_1},
+\end{equation}
+!et
+där 
+!bt
+\begin{equation}
+  h_1 = \left|\frac{\partial \vec{r}}{\partial u_1}\right|
+\end{equation}
+!et
+kallas för skalfaktorn.  På samma sätt kan vi bestämma skalfaktorer och enhetsvektorer till $u_2$ och $u_3$. Förskjutningsvektorn $\mbox{d}\vec{r}$ kan vi nu skriva som
+!bt
+\begin{equation}
+  \mbox{d}\vec{r} = h_1\hat{e}_1 \mbox{d}u_1 + h_2\hat{e}_2\mbox{d}u_2 +
+h_3\hat{e}_3\mbox{d}u_3.
+label{eq:forskjutningsvektor_skalfaktor}
+\end{equation}
+!et
+
+=== Alternativ definition ===
+Ett alternativ till att använda de normerade tangentvektorerna som enhetsvektorer är att använda normalvektorerna till koordinatytorna. Betrakta t.ex.
+!bt
+\begin{equation}
+u_1 = u_1(x,y,z) = \mathrm{konstant}.
+\end{equation}
+!et
+Detta motsvarar en nivåyta till ett skalärfält. Normalvektorn ges alltså av $\vnabla u_1$.
+Det gäller alltid att 
+!bt
+\begin{equation}
+\vnabla u_i \cdot \frac{\partial \vec{r}}{\partial u_j} = \delta_{ij}.
+\end{equation}
+!et
+När vi inskränker oss till ortogonala system gäller dessutom att $\vnabla u_i \parallel \frac{\partial \vec{r}}{\partial u_i}$. Notera dock att dessa vektorer i allmänhet kan ha *olika* längd. Faktum är att följande samband gäller för ortogonala system
+!bt
+\begin{equation}
+\hat{e}_i 
+= \frac{1}{h_i} \frac{\partial \vec{r}}{\partial u_i}
+= h_i \vnabla u_i.
+\end{equation}
+!et
+
+!bnotice Exempel: Enhetsvektorer för cylindriska koordinater  
+I cylindriska koordinater är $\vec{r} = (\rho\cos \phi, \rho\sin \phi, z)$.  Vi kan då beräkna
+!bt
+\begin{align}
+  \frac{\partial \vec{r}}{\partial \rho} &= \left(\cos \phi, \sin \phi, 0\right), \\
+  \frac{\partial \vec{r}}{\partial \phi} &= \left(-\rho \sin\phi, \rho \cos \phi,
+0\right), \\
+  \frac{\partial \vec{r}}{\partial z} &= \left(0,0,1\right).
+\end{align}
+!et
+Skalfaktorerna blir då
+!bt
+\begin{align}
+  h_\rho &= \left(\cos^2\phi + \sin^2\phi\right)^{1/2} = 1, \\
+  h_\phi &= \left(\rho^2 \cos^2\phi + \rho^2 \sin^2\phi\right)^{1/2} = \rho, \\
+  h_z &= 1.
+\end{align}
+!et
+Enhetsvektorerna blir
+!bt
+\begin{align}
+  \hat{\rho} &= \left(\cos\phi, \sin\phi,0\right), \\
+  \hat{\phi} &= \left(-\sin\phi, \cos\phi,0\right), \\
+  \hat{z} &= \left(0,0,1\right).
+\end{align}
+!et
+Förskjutningsvektorn kan då skrivas som
+!bt
+\begin{equation}
+  \mbox{d}\vec{r} = \hat{\rho} \mbox{d}\rho + \rho \hat{\phi} \mbox{d} \phi + \hat{z} \mbox{d}z.
+\end{equation}
+!et
+!enotice
+
+I fortsättningen skall vi begränsa oss till koordinatsystem med ortogonala enhetsvektorer, dvs
+!bt
+\begin{equation}
+\hat{e}_i \cdot \hat{e}_j = \delta_{ij} = \left\{
+\begin{array}{ll}
+1 & \,\mbox{om}\,\, i = j \\
+0 & \,\mbox{annars}\\
+\end{array}\right.
+\end{equation}
+!et
+där vi passat på att introducera Kroneckers delta, $\delta_{ij}$.
+
+Vi skall också anta att enhetsvektorerna bildar ett högersystem
+!bt
+\begin{equation}
+\hat{e}_1 \times \hat{e}_2 = \hat{e}_3
+\end{equation}
+!et
+
+*Visa att enhetsvektorerna i de cylindriska koordinaterna uppfyller dessa villkor.*
+
+Vi kan nu härleda några användbara samband som båglängden längs en kurva
+!bt
+\begin{equation}
+\mbox{d}s^2 = \mbox{d}\vec{r}\cdot \mbox{d}\vec{r} = h_1^2\mbox{d}u_1^2 + h_2^2
+\mbox{d}u_2^2 + h_3^2 \mbox{d}u_3^2.
+\end{equation}
+!et
+Betrakta ovanstående båglängd för fallet då $du_2=du_3=0$. Det står då klart att vi kan tolka $h_1 du_1$ som båglängden $ds_1$, dvs som en infinitesimal förflyttning i $u_1$-riktningen. Notera därför att $h_i du_i$ alltid måste ha enheten längd.
+
+Ett ytelement $\mbox{d}\vec{S}_1$ på koordinatytan $u_1$ är en rektangel som  genereras av $\mbox{d}u_2$ och $\mbox{d}u_3$. Rektangelns sidor har då längderna $h_2\mbox{d}u_2$ och $h_3\mbox{d}u_3$.  Ytelementet blir
+!bt
+\begin{equation}
+  \mbox{d}\vec{S}_1 =  \hat{e}_1 h_2 h_3 \mbox{d}u_2 \mbox{d}u_3,
+\end{equation}
+!et
+och på samma sätt kan vi beräkna ytelementen på koordinatytorna för $u_2$ och $u_3$.  
+
+Analogt kan vi beräkna volymelementet som genereras av  $\mbox{d}u_1$, $\mbox{d}u_2$ och $\mbox{d}u_3$, vilket blir
+!bt
+\begin{equation}
+  \mbox{d}V = h_1 h_2 h_3 \mbox{d}u_1 \mbox{d}u_2 \mbox{d}u_3.
+\end{equation}
+!et
+
+!bnotice Exempel: båg- yt- och volymselement i cylindriska koordinater 
+Bågelementet i cylindriska koordinater blir
+!bt
+\begin{equation}
+  \mbox{d}s^2 = \mbox{d}\rho^2 + \rho^2\mbox{d}\theta^2 + \mbox{d}z^2.
+\end{equation}
+!et
+Ett ytelement på $\rho$-ytan skrives
+!bt
+\begin{equation}
+  \mbox{d}\vec{S}_\rho = \hat{e}_\rho \rho \mbox{d}\phi\mbox{d}z,
+\end{equation}
+!et
+på $\phi$-ytan
+!bt
+\begin{equation}
+  \mbox{d}\vec{S}_\phi = \hat{e}_\phi \mbox{d}\rho\mbox{z}
+\end{equation}
+!et
+och på $z$-ytan
+!bt
+\begin{equation}
+  \mbox{d}\vec{S}_z = \hat{e}_z \rho\mbox{d}\rho \mbox{d}\phi.
+\end{equation}
+!et
+Volymelementet kan vi skriva som
+!bt
+\begin{equation}
+  \mbox{d}V = \rho\mbox{d}\rho \mbox{d}\phi\mbox{d}z.
+\end{equation}
+!et
+!enotice
+
+===== Vektoroperatorer i kroklinjiga koordinater =====
+
+=== Gradient ===
+
+Betrakta ett skalärt fält $\phi$.  Om vi förflyttar oss en sträcka $\mbox{d}\vec{r}$ så förändras $\phi$ 
+!bt
+\begin{equation}
+  \mbox{d}\phi = \vnabla \phi \cdot \mbox{d}\vec{r}.
+\end{equation}
+!et
+Samtidigt, om vi skriver $\phi$ som en funktion av $u_1, u_2$ och $u_3$ får vi
+!bt
+\begin{align}
+  \mbox{d}\phi &= \frac{\partial \phi}{\partial u_1}\mbox{d}u_1 + 
+\frac{\partial \phi}{\partial u_2}\mbox{d}u_2 +
+\frac{\partial \phi}{\partial u_3}\mbox{d}u_3 =
+\frac{1}{h_1} \frac{\partial \phi}{\partial u_1} h_1 \mbox{d}u_1 +
+\frac{1}{h_2} \frac{\partial \phi}{\partial u_2} h_2 \mbox{d}u_2 +
+\frac{1}{h_3} \frac{\partial \phi}{\partial u_3} h_3 \mbox{d}u_3 \nonumber \\
+ &=
+\left(\frac{1}{h_1} \frac{\partial \phi}{\partial u_1} \hat{e}_1 +
+\frac{1}{h_2} \frac{\partial \phi}{\partial u_2} \hat{e}_2 +
+\frac{1}{h_3} \frac{\partial \phi}{\partial u_3} \hat{e}_3\right) \cdot 
+\mbox{d}\vec{r}
+\end{align}
+!et
+Förflyttningen $\mbox{d}\vec{r}$ (ovan) kan vi i de nya koordinaterna skriva som [se ekv. (ref{eq:forskjutningsvektor_skalfaktor})]
+!bt
+\begin{equation}
+  \mbox{d}\vec{r} = h_1 \hat{e}_1 \mbox{d}u_1 + h_2 \hat{e}_2 \mbox{d}u_2
++ h_3 \hat{e}_3 \mbox{d}u_3.
+\end{equation}
+!et
+Då kan vi identifiera uttrycket inom parentesen som gradienten i de nya koordinaterna $u_1, u_2, u_3$
+!bt
+\begin{equation}
+  \vnabla \phi = \frac{1}{h_1} \frac{\partial \phi}{\partial u_1} \hat{e}_1
++ \frac{1}{h_2}
+\frac{\partial \phi}{\partial u_2} \hat{e}_2 
++ \frac{1}{h_3} \frac{\partial \phi}{\partial u_3} \hat{e}_3.
+\end{equation}
+!et
+
+=== Gradient i cylindriska koordinater: === 
+I cylindriska koordinater blir gradienten
+!bt
+\begin{equation}
+  \vnabla f = \frac{\partial f}{\partial \rho} \hat{\rho} + \frac{1}{\rho}
+\frac{\partial f}{\partial \phi} \hat{\phi} + \frac{\partial f}{\partial z} \hat{z}.
+\end{equation}
+!et
+
+!bnotice Exempel: skalärfält och dess gradient i olika koordinatsystem 
+Ett skalärfält är givet i Cartesiska koordinater
+!bt
+\begin{equation}
+\beta = x^2 + y^2.
+\end{equation}
+!et
+Motsvarande skalärfält i plana polärkoordinater blir
+!bt
+\begin{equation}
+\beta = r^2\cos^2\theta + r^2 \sin^2\theta = r^2.
+\end{equation}
+!et
+Gradienten i Cartesiska koordinater blir
+!bt
+\begin{equation}
+\vnabla \beta = \hat{x} \partial_x \beta + \hat{y} \partial_y \beta = 2 (x \hat{x} + y \hat{y}).
+\end{equation}
+!et
+Medan i plana polärkoordinater blir den
+!bt
+\begin{equation}
+\vnabla \beta = \hat{e}_r \partial_r + \hat{e}_\theta \frac{1}{r} \partial_\theta \beta = 2 r \hat{e}_r.
+\end{equation}
+!et
+Eftersom $x \hat{x} + y \hat{y} = r \hat{e}_r$ är det uppenbart att detta är samma vektor!
+!enotice
+
+!bnotice Exempel: Tentauppgift 2010-08-26: 1b
+För vilka värden på $\alpha,\beta,\gamma$ har det tvådimensionella koordinatsystemet med koordinater $\xi$ och $\eta$, givna av
+!bt
+\begin{align}
+\xi &= x^2 - y^2 \\
+\eta &= \alpha x^2 + \beta x y + \gamma y^2
+\end{align}
+!et
+ortogonala basvektorer?
+ 
+=== Lösning ===
+Vi kan konstruera basvektorer på två sätt:
+* $\hat{e}_i \propto \frac{\partial \vec{r}}{\partial u_i}$
+* $\hat{e}_i \propto \vnabla u_i$
+Det första sättet innebär att vi behöver räkna ut storheterna $\frac{\partial x}{\partial u_i}$ och $\frac{\partial y}{\partial u_i}$, dvs vi behöver veta $x=x(\xi,\eta),\; y=y(\xi,\eta)$. Vi skulle behöva invertera det givna koordinatsambandet.
+
+Det andra sättet kräver istället $\frac{\partial \xi}{\partial x}$ och $\frac{\partial \xi}{\partial y}$ (samt motsvarande för $\eta$) och detta blir enkelt med de givna koordinattransformationerna. Vi får
+!bt
+\begin{align}
+\vnabla \xi &= 2x \hat{x} - 2y \hat{y} \\
+\vnabla \eta &= (2 \alpha x + \beta y)\hat{x} + (\beta x + 2 \gamma y) \hat{y}
+\end{align}
+!et
+För att koordinatsystemet skall vara ortogonalt behöver vi
+!bt
+\begin{equation}
+\hat{e}_\xi \cdot \hat{e}_\eta = 0 \qquad \Rightarrow \qquad \vnabla \xi \cdot \vnabla \eta=0.
+\end{equation}
+!et
+Från uttrycken för dessa gradienter ovan får vi
+!bt
+\begin{equation}
+\vnabla \xi \cdot \vnabla \eta = 2x (2 \alpha x + \beta y) - 2 y (\beta x + 2 \gamma y) 
+= 4 \alpha x^2 - 4 \gamma y^2.
+\end{equation}
+!et
+För att få $\vnabla \xi \cdot \vnabla \eta=0$ måste vi ha $\alpha = \gamma = 0$, medan $\beta$ är godtyckligt.
+
+% if FORMAT in ("ipynb","html"):
+@@@CODE fig/tenta-20100826-1b.py from-to: Start initialization@End initialization
+@@@CODE fig/tenta-20100826-1b.py from-to: Start contour plot@End contour plot
+% endif
+
+FIGURE:[fig/koordinatytor.png, width=600 frac=0.8] 
+!enotice
+
+!bnotice Exempel: Fältlinjer i kroklinjiga koordinater
+Låt oss konstruera och rita fältlinjerna till en så kallad virveltråd
+!bt
+\begin{equation}
+\vec F = \frac{J}{2\pi\rho} \hat{\varphi}, 
+\end{equation}
+!et
+som alltså är uttryckt i cylindriska koordinater. Notera att detta fält är singulärt längs hela $z$-axeln vid $\rho=0$, men vi kommer här enbart att betrakta $\rho > 0$.
+ 
+=== Lösning ===
+Vi kan rita fältlinjerna på två sätt:
+* Det första alternativet är förstås att finna ett explicit uttryck för fältlinjerna genom att formulera och lösa differentialekvationerna. Sedan kan vi definiera dessa kurvor som en funktion i Matlab (eller Python) och rita upp dem explicit för några olika startpunkter.
+* Det andra alternativt är att utnyttja funktionen 'streamline' i Matlab ('streamplot i Python) och mata in vektorfältet på ett rutnät av olika koordinatpunkter. Notera dock att detta alternativ bygger på att vi transformerar till ett Cartesiskt koordinatsystem.
+
+Vi börjar med att konstruera fältlinjerna i cylindriska koordinater. Här noterar vi att förskjutningsvektorn ges av $d\vec{r} = d\rho \hat\rho + \rho d\varphi\hat\varphi + dz\hat z$. Vi tecknar nu ekvationen $\frac{d\vec{r}}{d \tau} = C \vec{F}$, med $C=2\pi/J$, på komponentform
+!bt
+\begin{align*}
+\frac{d\rho}{d\tau} &= 0 \qquad \Rightarrow \quad \rho(\tau) = \rho_0, \\
+\rho \frac{d\varphi}{d\tau} &= \frac{1}{\rho} \qquad \Rightarrow \quad \varphi(\tau) = \frac{\tau}{\rho_0^2} + \varphi_0, \\
+\frac{d z}{d\tau} &= 0 \qquad \Rightarrow \quad z(\tau) = z_0.
+\end{align*}
+!et
+Ur detta ser man att fältlinjerna blir cirklar i $xy$-planet vid $z=z_0$ och med radie $\rho_0$. De genomlöps moturs eftersom vinkeln $\varphi$ ökar med ökande $\tau$.
+
+Vi kan teckna ekvationen för fältlinjerna i Cartesiska koordinater som sambandet $x^2+y^2 = \rho_0^2$ och rita upp dessa för några olika val av $\rho_0$. I figuren nedan är fältlinjerna ritade som funktioner $y = \pm \sqrt{\rho_0^2 - x^2}$ för $\rho_0 = 1,1.5,2,2.5,3$.
+
+FIGURE:[fig/streamlines-vortex-curves.png, width=600 frac=0.8] 
+
+Nu tittar vi på det andra alternativet och använder tillgänglig funktionalitet i Matlab (eller Python). Här krävs dock att vektorfältets Cartesiska komponenter räknas ut. Från transformationen mellan cylindriska och Cartesiska koordinater ser vi direkt att
+!bt
+\begin{equation*}
+\frac{2\pi}{J} \vec{F} = \frac{1}{\rho} \hat\varphi = \frac{1}{\rho} \left( -\sin\varphi \hat{x} + \cos\varphi \hat y \right).
+\end{equation*}
+!et
+Koordinaterna är relaterade enligt $\rho^2 = x^2+y^2$ och $\cos\varphi = x/\rho$, $\sin\varphi = y/\rho$, vilket ger
+!bt
+\begin{equation*}
+\frac{2\pi}{J} \vec{F} = \frac{1}{x^2+y^2} \left( -y \hat{x} + x \hat y \right).
+\end{equation*}
+!et
+
+I både Matlab och Python kan vi skapa ett rutnät av $x,y$-koordinater och tillhörande $F_x,F_y$ komponenter som vi sedan ritar med 'streamline' ('streamplot' i Python). Se nedan för kod och figur med Matlab:
+
+
+@@@CODE fig/streamlines-vortex.m 
+
+FIGURE:[fig/streamlines-vortex-matlab.png, width=600 frac=0.8] 
+
+Och samma exempel med Python:
+
+@@@CODE fig/streamlines-vortex.py from-to: Start initialization@End initialization
+@@@CODE fig/streamlines-vortex.py from-to: Start Alt2@End Alt2
+
+FIGURE:[fig/streamlines-vortex.png, width=600 frac=0.8] 
+!enotice
+
