@@ -1,0 +1,149 @@
+translating doconce text in 09-diffekv-9-10.do.txt to html
+*** error: reference to equation label "z-" is without parentheses
+    the equation reference should be typeset as (ref{z-})
+...  i~\eqref{z+} och~\e qref{z-} är konstanter; de ändrar allts ...
+translating doconce text in 09-diffekv-9-10.do.txt to html
+*** error: reference to equation label "z-" is without parentheses
+    the equation reference should be typeset as (ref{z-})
+...  i~\eqref{z+} och~\e qref{z-} är konstanter; de ändrar allts ...
+translating doconce text in 09-diffekv-9-10.do.txt to pdflatex
+open file with encoding utf-8
+*** error: reference to equation label "z-" is without parentheses
+    the equation reference should be typeset as (ref{z-})
+...  i~\eqref{z+} och~\e qref{z-} är konstanter; de ändrar allts ...
+translating doconce text in 09-diffekv-9-10.do.txt to pdflatex
+open file with encoding utf-8
+*** error: reference ref{phi} to non-defined label
+    run the generated script tmp_missing_labels.sh
+    to search for these missing labels!
+
+Causes of missing labels:
+1: label is defined in another document. Use generalized references
+   ref[][][], or use --allow_refs_to_external_docs (to ignore this error)
+   (if generalized reference and this error occur: syntax of generalized
+   reference is wrong!)
+2: preprocessor if-else has left the label out
+3: forgotten to define the label
+
+translating doconce text in 09-diffekv-9-10.do.txt to pdflatex
+open file with encoding utf-8
+*** error: reference ref{phi} to non-defined label
+    run the generated script tmp_missing_labels.sh
+    to search for these missing labels!
+
+Causes of missing labels:
+1: label is defined in another document. Use generalized references
+   ref[][][], or use --allow_refs_to_external_docs (to ignore this error)
+   (if generalized reference and this error occur: syntax of generalized
+   reference is wrong!)
+2: preprocessor if-else has left the label out
+3: forgotten to define the label
+
+translating doconce text in 09-diffekv-9-10.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 9.4.10: Vektorfält från Greensfunktion
+Eftersom att punkten $\vec r$ befinner sig på ytkällans symmetriaxel, kan vi definiera ett kartesiskt koordinatsystem så att denna symmetriaxel sammanfaller med $z$-axeln. Då blir $\theta$ samma vinkel som den vi normalt kallar $\theta$ i sfäriska koordinater, och $\vec r=z\hat z$.
+
+Vektorfältet $\vec F(\vec r)=-\nabla\phi(\vec r)$, där potentialen $\phi(\vec r)$ ges av
+1 <<<!!MATH_BLOCK
+Eftersom att vi är i tre dimensioner är Greensfunktionen $G(\vec r,\vec r')=[4\pi|\vec r-\vec r'|]^{-1}$. Den angivna laddningstätheten är en ytkälla, så $\rho(\vec r\,')=\delta(r'-a)\sigma_0\cos\theta'$. Vi betraktar $\vec{r} = z\hat{z}$ och får alltså 
+2 <<<!!MATH_BLOCK
+Vi gör nu variabelsubstitutionen 
+3 <<<!!MATH_BLOCK
+Nämnaren i integranden blir nu $\sqrt t$, och $\sin\theta'$ i täljaren blir en del av $\mathrm dt$. Det kvarvarande $\cos\theta'$ i täljaren får vi genom att lösa ut $\cos\theta'$ ur definitionen av $t$. 
+
+Integralen är nu
+4 <<<!!MATH_BLOCK
+Kom ihåg att för alla reella tal $x$ så är $\sqrt{x^2}=|x|$. Vi får alltså fyra fall -- $|z|>a$ och $|z|<a$ kombinerat med $z>0$ och $z<0$ -- som måste behandlas var för sig. 
+
+=== Inuti sfären ===
+Eftersom att $a>z$ så är $|z+a|=z+a$ och $|z-a|=a-z$, oavsett om $z$ är positiv eller negativ. Två av de fyra fallen kan alltså studeras samtidigt. 
+
+Insättning av absolutbeloppen ovan i ekvation~(ref{phi}) ger, efter en smula algebra, att $\phi(\vec r)=\sigma_0 z/3$. Vektorfältet blir då
+5 <<<!!MATH_BLOCK
+
+=== Utanför sfären ===
+Här måste positiva och negativa $z$ studeras var för sig.
+
+När $z>a>0$ är $|z+a|=z+a$ och $|r-a|=r-a$. Substitution i~(ref{phi}) och förenkling av resultatet ger att $\phi(\vec r)=\sigma_0a^3/3z^2$. Vektorfältet blir 
+6 <<<!!MATH_BLOCK
+
+När $|z|>a$ men $z<0$ så blir $|z+a|=-(z+a)$ och $|z-a|=-(z-a)$. Den här gången blir $\phi(\vec r)=-\sigma_0a^3/3z^2$ och 
+7 <<<!!MATH_BLOCK
+
+Notera att alla kvantiteter utom $z$ i~(ref{z+}) och~(ref{z-}) är konstanter; de ändrar alltså aldrig tecken. Därför kan vi kombinera dessa två ekvationer, och uttrycka fältet överallt utanför sfären som
+8 <<<!!MATH_BLOCK
+
+=== Kontroll: ytladdning ===
+Notera att vårt fält, betraktat längs symmetriaxeln, har en diskontinuitet vid $z=\pm a$. Denna motsvarar ytladdningen. T.ex., vid $\theta = 0$ (dvs $z=+a$) har vi enligt uppgiftsformuleringen en ytladdning med styrkan $\sigma_0$. Detta kan vi verifiera genom att räkna ut
+9 <<<!!MATH_BLOCK
+
+*** Exercise: Uppgift 9.4.10: Vektorfält från Greensfunktion
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 09-diffekv-9-10.p.tex
+translating doconce text in 09-diffekv-9-10.do.txt to ipynb
+open file with encoding utf-8
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 9.4.10: Vektorfält från Greensfunktion
+Eftersom att punkten $\vec r$ befinner sig på ytkällans symmetriaxel, kan vi definiera ett kartesiskt koordinatsystem så att denna symmetriaxel sammanfaller med $z$-axeln. Då blir $\theta$ samma vinkel som den vi normalt kallar $\theta$ i sfäriska koordinater, och $\vec r=z\hat z$.
+
+Vektorfältet $\vec F(\vec r)=-\nabla\phi(\vec r)$, där potentialen $\phi(\vec r)$ ges av
+1 <<<!!MATH_BLOCK
+Eftersom att vi är i tre dimensioner är Greensfunktionen $G(\vec r,\vec r')=[4\pi|\vec r-\vec r'|]^{-1}$. Den angivna laddningstätheten är en ytkälla, så $\rho(\vec r\,')=\delta(r'-a)\sigma_0\cos\theta'$. Vi betraktar $\vec{r} = z\hat{z}$ och får alltså 
+2 <<<!!MATH_BLOCK
+
+3 <<<!!MATH_BLOCK
+Vi gör nu variabelsubstitutionen 
+4 <<<!!MATH_BLOCK
+Nämnaren i integranden blir nu $\sqrt t$, och $\sin\theta'$ i täljaren blir en del av $\mathrm dt$. Det kvarvarande $\cos\theta'$ i täljaren får vi genom att lösa ut $\cos\theta'$ ur definitionen av $t$. 
+
+Integralen är nu
+5 <<<!!MATH_BLOCK
+
+6 <<<!!MATH_BLOCK
+
+7 <<<!!MATH_BLOCK
+
+8 <<<!!MATH_BLOCK
+Kom ihåg att för alla reella tal $x$ så är $\sqrt{x^2}=|x|$. Vi får alltså fyra fall -- $|z|>a$ och $|z|<a$ kombinerat med $z>0$ och $z<0$ -- som måste behandlas var för sig. 
+
+=== Inuti sfären ===
+Eftersom att $a>z$ så är $|z+a|=z+a$ och $|z-a|=a-z$, oavsett om $z$ är positiv eller negativ. Två av de fyra fallen kan alltså studeras samtidigt. 
+
+Insättning av absolutbeloppen ovan i ekvation~(ref{phi}) ger, efter en smula algebra, att $\phi(\vec r)=\sigma_0 z/3$. Vektorfältet blir då
+9 <<<!!MATH_BLOCK
+
+=== Utanför sfären ===
+Här måste positiva och negativa $z$ studeras var för sig.
+
+När $z>a>0$ är $|z+a|=z+a$ och $|r-a|=r-a$. Substitution i~(ref{phi}) och förenkling av resultatet ger att $\phi(\vec r)=\sigma_0a^3/3z^2$. Vektorfältet blir 
+10 <<<!!MATH_BLOCK
+
+När $|z|>a$ men $z<0$ så blir $|z+a|=-(z+a)$ och $|z-a|=-(z-a)$. Den här gången blir $\phi(\vec r)=-\sigma_0a^3/3z^2$ och 
+11 <<<!!MATH_BLOCK
+
+Notera att alla kvantiteter utom $z$ i~(ref{z+}) och~(ref{z-}) är konstanter; de ändrar alltså aldrig tecken. Därför kan vi kombinera dessa två ekvationer, och uttrycka fältet överallt utanför sfären som
+12 <<<!!MATH_BLOCK
+
+=== Kontroll: ytladdning ===
+Notera att vårt fält, betraktat längs symmetriaxeln, har en diskontinuitet vid $z=\pm a$. Denna motsvarar ytladdningen. T.ex., vid $\theta = 0$ (dvs $z=+a$) har vi enligt uppgiftsformuleringen en ytladdning med styrkan $\sigma_0$. Detta kan vi verifiera genom att räkna ut
+13 <<<!!MATH_BLOCK
+
+*** Exercise: Uppgift 9.4.10: Vektorfält från Greensfunktion
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+*** warning: latex envir \begin{gather} does not work well in Markdown.
+    Stick to \[ ... \], equation, equation*, align, or align*
+    environments in math environments.
+
+output in 09-diffekv-9-10.ipynb

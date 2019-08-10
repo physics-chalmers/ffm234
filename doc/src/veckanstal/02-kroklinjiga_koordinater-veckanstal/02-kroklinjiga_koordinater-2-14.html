@@ -1,0 +1,289 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Klassisk fysik och vektorfält - Veckans tal">
+
+<title>FFM232, Klassisk fysik och vektorfält - Veckans tal</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [(u'Uppgift 2.14 (Cederwalls kompendium)', 2, None, '___sec0'),
+              (u'Enhetsvektorer', 3, None, '___sec1'),
+              (u'Ortogonalitet', 3, None, '___sec2'),
+              (u'Skalfaktorer och enhetsvektorer', 3, None, '___sec3'),
+              (u'Gradientoperator', 3, None, '___sec4'),
+              (u'Ortsvektor', 3, None, '___sec5')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<a name="part0000"></a>
+<p>
+<!-- begin top navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end top navigation -->
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM232, Klassisk fysik och vektorfält - Veckans tal</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Christin Rhen och Christian Forssén, Institutionen för  fysik, Chalmers, Göteborg, Sverige -->
+
+<center>
+<b>Christin Rhen och Christian Forssén, Institutionen för  fysik, Chalmers, Göteborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 16, 2016</h4></center> <!-- date -->
+<br>
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec0">Uppgift 2.14 (Cederwalls kompendium) </h2>
+
+<p>
+Ett kroklinjigt koordinatsystem \( u,v,w \) ges av sambanden 
+$$
+\begin{align}
+    u&=r(1-\cos\theta),\nonumber\\
+    v&=r(1+\cos\theta),\tag{1}\\
+    w&=\varphi,\nonumber
+\end{align}
+$$
+
+d\"ar \( r,\theta,\varphi \) \"ar sf\"ariska koordinater. Visa att systemet är ortogonalt och ber\"akna dess skalfaktorer. Hur ser gradientoperatorn \( \nabla \) och ortvektorn \( \vec r \) ut i \( u,v,w \)-systemet?
+
+<p>
+<!-- --- begin answer of exercise --- -->
+<b>Answer.</b>
+Skalfaktorer:
+$$
+\begin{align*}
+h_u  &=  \frac{1}{2} \sqrt{\frac{u+v}{u}} \\
+h_v  &=  \frac{1}{2} \sqrt{\frac{u+v}{v}} \\
+h_w  &=  \sqrt{uv}
+\end{align*}
+$$
+
+Gradient: 
+$$
+\begin{equation*}
+\nabla = \frac{2}{\sqrt{u+v}}\left(\sqrt{u} \hat u
+\frac{\partial}{\partial u} + \sqrt{v} \hat v
+\frac{\partial}{\partial v}\right) + \frac{1}{\sqrt{uv}} \hat w
+\frac{\partial}{\partial w}
+\end{equation*}
+$$
+
+Ortsvektor: 
+$$
+\begin{equation*}
+\vec{r} = \frac{\sqrt{u+v}}{2}(\sqrt{u} \hat u + \sqrt{v} \hat v)
+\end{equation*}
+$$
+
+<p>
+<!-- --- end answer of exercise --- -->
+
+<p>
+<!-- --- begin solution of exercise --- -->
+<b>Solution.</b>
+
+<h3 id="___sec1">Enhetsvektorer </h3>
+
+<p>
+Enhetsvektorer ges av (långt upp på sida 12 i Cederwall)
+$$
+\begin{equation}
+    \vec e_i=h_i\nabla u_i. 
+    \tag{2}
+\end{equation}
+$$
+
+H\"ar \"ar \( u,v,w \) en funktion av sf\"ariska koordinater, så vi använder den sf\"ariska gradienten (Cederwall ekvation 2.14):
+$$
+\begin{align}
+    \hat u\propto\nabla u&= \left(\hat r\frac{\partial}{\partial r}+\hat\theta\frac 1r\frac{\partial}{\partial \theta}+\hat\varphi\frac1{r\sin\theta}\frac{\partial}{\partial \varphi}\right)u\nonumber\\
+    &=(1-\cos\theta)\hat r+\sin\theta\hat\theta,\\
+    \hat v\propto\nabla v&=(1+\cos\theta)\hat r-\sin\theta\hat\theta,\\
+    \hat w\propto\nabla w&=\hat\varphi\frac1{r\sin\theta}.
+\end{align}
+$$
+
+<h3 id="___sec2">Ortogonalitet </h3>
+
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här \( \hat u, \hat v,\hat w \) fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att \( \hat u\cdot \hat w=\hat v\cdot\hat w=0 \). För \( \hat u \) och \( \hat v \):
+$$
+\begin{align}
+    \hat u\cdot\hat v&\propto(1-\cos\theta)(1+\cos\theta)-\sin^2\theta\nonumber\\
+    &=1-\cos^2\theta-\sin^2\theta=0.
+\end{align}
+$$
+
+Alltså är \( u,v,w \)-systemet ortogonalt.
+
+<h3 id="___sec3">Skalfaktorer och enhetsvektorer </h3>
+
+Från ekvation <a href="#mjx-eqn-2">(2)</a> inser vi att skalfaktorerna \( h_i \) är inversen av \( |\nabla u_i| \). För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till \( u,v,w \) i slutet. Notera att \( u+v=2r \). Vi får
+$$
+\begin{align}
+    h_u&=\left((1-\cos\theta)^2+\sin^2\theta\right)^{-1/2}=\left(2-2\cos\theta\right)^{-1/2}\nonumber\\
+    &=\sqrt{\frac{u+v}{4u}},\\
+    h_v&=\left((1+\cos\theta)^2+\sin^2\theta\right)^{-1/2}=\left(2+2\cos\theta\right)^{-1/2}\nonumber\\
+    &=\sqrt{\frac{u+v}{4v}},\\
+    h_w&=\sqrt{r^2\sin^2\theta}=\sqrt{r^2(1-\cos^2\theta)}=\sqrt{uv}. 
+\end{align}
+$$
+
+<p>
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+$$
+\begin{align}
+    \hat u&= \frac{1-\cos\theta}{\sqrt{2-2\cos\theta}}\hat r+\frac{\sin\theta}{\sqrt{2-2\cos\theta}}\hat\theta,\\
+    \hat v&= \frac{1+\cos\theta}{\sqrt{2+2\cos\theta}}\hat r-\frac{\sin\theta}{\sqrt{2+2\cos\theta}}\hat\theta,\\
+    \hat w&=\hat\varphi.
+    \tag{3}
+\end{align}
+$$
+
+<h3 id="___sec4">Gradientoperator </h3>
+
+För ortogonala koordinatsystem gäller att (Cederwall ekvation 2.13)
+$$
+\begin{equation}
+    \nabla\phi=\sum_i\vec e_i\frac 1{h_i}\frac{\partial\phi}{\partial u_i},
+\end{equation}
+$$
+
+där \( \phi \) är ett godtyckligt skalärfält. I vårt \( u,v,w \)-system blir detta
+$$
+\begin{equation}
+    \nabla\phi=\hat u\frac 1{h_u}\frac{\partial\phi}{\partial u}+\hat v\frac 1{h_v}\frac{\partial\phi}{\partial v}+\hat w\frac 1{h_w}\frac{\partial\phi}{\partial w}.
+\end{equation}
+$$
+
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+$$
+\begin{equation}
+    \nabla = \hat u\sqrt{\frac{4u}{u+v}}\frac{\partial}{\partial u}+\hat v\sqrt{\frac{4v}{u+v}}\frac{\partial}{\partial v}+\hat w\frac 1{\sqrt{uv}}\frac{\partial}{\partial w}.
+\end{equation}
+$$
+
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+<h3 id="___sec5">Ortsvektor </h3>
+
+I sfäriska koordinater är ortsvektorn 
+$$
+\begin{equation}
+    \vec r=r\hat r.
+\end{equation}
+$$
+
+Vi har redan noterat att \( r=(u+v)/2 \); vi behöver nu också uttrycka \( \hat r \) som en funktion av \( \hat u,\hat v, \hat w \).
+
+<p>
+En smart linjärkombination av enhetsvektorerna <a href="#mjx-eqn-3">(3)</a>:
+$$
+\begin{equation}
+    \sqrt{2-2\cos\theta}\hat u+\sqrt{2+2\cos\theta}\hat v=2\hat r,
+\end{equation}
+$$
+
+som översatt till nya koordinater betyder att
+$$
+\begin{equation}
+    \hat r=\frac12\left(\frac1{h_u}\hat u+\frac1{h_v}\hat v\right)=\sqrt{\frac u{u+v}}\hat u+\sqrt{\frac v{u+v}}\hat v.
+\end{equation}
+$$
+
+Vi får alltså ortsvektorn
+$$
+\begin{align}
+    \vec r&=r\hat r\nonumber\\
+    &=\frac{u+v}2\left(\sqrt{\frac u{u+v}}\hat u+\sqrt{\frac v{u+v}}\hat v\right)\nonumber\\
+    &=\tfrac12\sqrt{u+v} \left( \sqrt u\hat u + \sqrt v\hat v \right).
+\end{align}
+$$
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

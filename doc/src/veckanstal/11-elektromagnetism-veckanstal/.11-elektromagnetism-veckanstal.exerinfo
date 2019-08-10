@@ -1,0 +1,67 @@
+
+# Information about all exercises in the file 11-elektromagnetism-veckanstal.do.txt.
+# The information can be loaded into a Python list of dicts by
+#
+# f = open('.11-elektromagnetism-veckanstal.exerinfo', 'r')
+# exer = eval(f.read())
+#
+[{'answer': '!bt\n'
+            '\\begin{equation}\n'
+            'E\\left(r\\right) = \\frac{\\rho_0}{3 \\epsilon_0} r \\quad  '
+            '\\mathrm{för~} r < \\frac{a}{2} \n'
+            'label{_auto1}\n'
+            '\\end{equation}\n'
+            '\n'
+            '!et\n'
+            '\n'
+            '!bt\n'
+            '\\begin{equation} \n'
+            'E\\left(r\\right) =\\frac{\\rho_0}{24\\epsilon_0} '
+            '\\frac{a^3}{r^2} \\quad  \\mathrm{för~} \\frac{a}{2} < r < a \n'
+            'label{_auto2}\n'
+            '\\end{equation}\n'
+            '\n'
+            '!et\n'
+            '\n'
+            '!bt\n'
+            '\\begin{equation} \n'
+            'E\\left(r\\right) = 0 \\quad  \\mathrm{för~} r > a\n'
+            'label{_auto3}\n'
+            '\\end{equation}\n'
+            '\n'
+            '!et',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': 'Uppgiften illustrerar användandet av Maxwells ekvationer '
+                     'och hur vi kan utnyttja en integralsats.',
+  'file': None,
+  'heading': '=====',
+  'hints': ['* Utnyttja den sfäriska symmetrin i problemet som gör att '
+            '$\\vec{E} = E_r \\hat{r}$.\n'
+            '* Använd Maxwells första ekvation som säger att $\\nabla \\cdot '
+            '\\vec{E} = \\rho / \\epsilon_0$, där $\\rho$ är '
+            'laddningstätheten.\n'
+            '* En volymsintegral av laddningstätheten (t.ex. över en sfär med '
+            'radien $r$) ger den inneslutna laddningen.\n'
+            '* Motsvarande volymsintegral över VL av Maxwells första ekv (dvs '
+            'över divergensen av $\\vec{E}$-fältet) kan skrivas om med Gauss '
+            'sats.\n'
+            '* En ytladdning har enheten laddning/area. Dvs den totala '
+            'laddningen på det yttre skalet fås genom att integrera över '
+            'ytan.'],
+  'keywords': None,
+  'label': None,
+  'no': 1,
+  'solution': 'Att göra',
+  'solution_file': None,
+  'subex': [],
+  'text': 'Bestäm $\\vec{E}$-fältet överallt i rummet från en sfäriskt '
+          'symmetrisk laddningsfördelning bestående av två delar, nämligen en '
+          'rymdladdning $\\rho(r) = \\rho_0$ för $r< a/2$ och $\\rho = 0$ för '
+          '$r > a/2$ och en ytladdning $\\sigma = -\\rho_0 a/24$ på sfären $r '
+          '= a$.',
+  'title': 'Uppgift 11.8.8',
+  'type': 'Exercise',
+  'type_visible': False}]

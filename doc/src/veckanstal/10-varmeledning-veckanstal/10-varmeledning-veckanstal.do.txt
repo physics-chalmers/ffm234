@@ -1,0 +1,30 @@
+TITLE: FFM234, Klassisk fysik och vektorfält - Veckans tal
+AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/nt/", Institutionen för fysik, Chalmers
+DATE: today
+
+===== {Exercise}: Uppgift 10.3.3 =====
+
+Ett sfäriskt skal tillförs en konstant värmeeffekt $W_0$ genom den inre  ytan $r= a$ och avkyls enligt Newtons avkylningslag
+$\hat r\cdot \vec J = \alpha\left(T-T_0\right)$.
+genom den yttre ytan $r = b$, där $\alpha$ och $T_0$ är givna konstanter. Skalet antas homogent med konstant värmeledningsförmåga $\lambda$ och problemställningen sfäriskt symmetrisk. Bestäm temperaturen överallt i skalet.
+
+
+!bans
+$T\left(r\right) = T_0 + \frac{W_0}{4\pi \alpha b^2} + \frac{W_0}{4\pi \lambda}
+\left(\frac{1}{r} - \frac{1}{b}\right)$
+!eans
+
+!bhint
+* Inget tidsberoende, dvs man är ute efter en stationär lösning $\partial T / \partial t = 0$. Det finns dessutom ingen värmekälla inuti skalet och värmeledningsekvationen blir alltså ganska enkel.
+* Värmeeffekten $W_0$ har enheten W=J/s. Från detta kan man räkna ut vad värmeströmtätheten genom den inre ytan skall vara. Vi har alltså ett Neumann randvillkor. Värmeströmtätheten (som är proportionell mot negativa temperaturgradienten) är radiellt riktad och konstant (men inte noll!).
+* Newtons avkylningslag säger att flödet av värmeenergi är $\alpha(T-T_0)$, där $\alpha$ och $T_0$ är konstanter (den sista representerar temperaturen utanför ytan) och $T$ är temperaturen på randen. Enheten för detta är $\mathrm{W}/\mathrm{m}^2$.
+* Slutligen kan ni notera att energin skall vara bevarad. Strömmar det kontinuerligt in värmeenergi i området så måste samma mängd strömma ut.
+!ehint
+
+!bremarks
+Uppgiften illustrerar lösningen av värmeledningsekvationen. Svårigheten är att förstå sig på randvillkoren och att utnyttja energins bevarande.
+!eremarks
+
+!bsol
+Att göra
+!esol

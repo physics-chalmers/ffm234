@@ -1,0 +1,182 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+
+
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+\newenvironment{doconceexercise}{}{}
+\newcounter{doconceexercisecounter}
+
+
+% ------ header in subexercises ------
+%\newcommand{\subex}[1]{\paragraph{#1}}
+%\newcommand{\subex}[1]{\par\vspace{1.7mm}\noindent{\bf #1}\ \ }
+\makeatletter
+% 1.5ex is the spacing above the header, 0.5em the spacing after subex title
+\newcommand\subex{\@startsection*{paragraph}{4}{\z@}%
+                  {1.5ex\@plus1ex \@minus.2ex}%
+                  {-0.5em}%
+                  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM234, Klassisk fysik och vektorfält - Veckans tal
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf \href{{http://fy.chalmers.se/subatom/nt/}}{Christian Forssén}, Institutionen för fysik, Chalmers${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Aug 10, 2019
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+% --- begin exercise ---
+\begin{doconceexercise}
+\refstepcounter{doconceexercisecounter}
+
+\subsection*{Uppgift 11.8.8}
+
+Bestäm $\vec{E}$-fältet överallt i rummet från en sfäriskt symmetrisk laddningsfördelning bestående av två delar, nämligen en rymdladdning $\rho(r) = \rho_0$ för $r< a/2$ och $\rho = 0$ för $r > a/2$ och en ytladdning $\sigma = -\rho_0 a/24$ på sfären $r = a$.
+
+% --- begin hint in exercise ---
+
+\paragraph{Hint.}
+\begin{itemize}
+\item Utnyttja den sfäriska symmetrin i problemet som gör att $\vec{E} = E_r \hat{r}$.
+
+\item Använd Maxwells första ekvation som säger att $\nabla \cdot \vec{E} = \rho / \epsilon_0$, där $\rho$ är laddningstätheten.
+
+\item En volymsintegral av laddningstätheten (t.ex. över en sfär med radien $r$) ger den inneslutna laddningen.
+
+\item Motsvarande volymsintegral över VL av Maxwells första ekv (dvs över divergensen av $\vec{E}$-fältet) kan skrivas om med Gauss sats.
+
+\item En ytladdning har enheten laddning/area. Dvs den totala laddningen på det yttre skalet fås genom att integrera över ytan.
+\end{itemize}
+
+\noindent
+% --- end hint in exercise ---
+
+
+% --- begin answer of exercise ---
+\paragraph{Answer.}
+\begin{align}
+E\left(r\right) &= \frac{\rho_0}{3 \epsilon_0} r \quad & \mathrm{för~} r < \frac{a}{2} \\
+E\left(r\right) &=\frac{\rho_0}{24\epsilon_0} \frac{a^3}{r^2} \quad & \mathrm{för~} \frac{a}{2} < r < a \\
+E\left(r\right) &= 0 \quad & \mathrm{för~} r > a
+\end{align}
+
+% --- end answer of exercise ---
+
+
+% --- begin solution of exercise ---
+\paragraph{Solution.}
+Att göra
+
+% --- end solution of exercise ---
+
+% Closing remarks for this Exercise
+
+\paragraph{Remarks.}
+Uppgiften illustrerar användandet av Maxwells ekvationer och hur vi kan utnyttja en integralsats.
+
+
+\end{doconceexercise}
+% --- end exercise ---
+
+
+% ------------------- end of main content ---------------
+
+\end{document}
+

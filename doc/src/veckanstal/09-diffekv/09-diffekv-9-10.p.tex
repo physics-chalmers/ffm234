@@ -1,0 +1,268 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: http://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: http://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+\newenvironment{doconceexercise}{}{}
+\newcounter{doconceexercisecounter}
+
+
+% ------ header in subexercises ------
+%\newcommand{\subex}[1]{\paragraph{#1}}
+%\newcommand{\subex}[1]{\par\vspace{1.7mm}\noindent{\bf #1}\ \ }
+\makeatletter
+% 1.5ex is the spacing above the header, 0.5em the spacing after subex title
+\newcommand\subex{\@startsection{paragraph}{4}{\z@}%
+                  {1.5ex\@plus1ex \@minus.2ex}%
+                  {-0.5em}%
+                  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+\input{newcommands_keep}
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM234, Klassisk fysik och vektorfält - Veckans tal
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf Christin Rhen, Chalmers${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Aug 10, 2019
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+% --- begin exercise ---
+\begin{doconceexercise}
+\refstepcounter{doconceexercisecounter}
+
+\subsection{Uppgift 9.4.10: Vektorfält från Greensfunktion}
+
+På en sfär med radien $a$ befinner sig en ytkälla med tätheten $\sigma(\vec r)=\sigma_0\cos\theta$, där $\theta$ är vinkeln från en punkt på sfären. Bestäm vektorfältet för en punkt på symmetriaxeln.
+
+% --- begin hint in exercise ---
+
+\paragraph{Hint.}
+\begin{itemize}
+\item Betrakta punkter $\vec{r} = z\hat{z}$, dvs längs symmetriaxeln.
+
+\item Teckna Greensfunktionen $G(\vec{r},\vec{r}\,') = (4\pi|\vec{r}-\vec{r}\,'|)^{-1}$ och fundera på hur avståndet kan uttryckas när $\vec{r}=z\hat{z}$.
+
+\item Ytkällan motsvarar en laddningsfördelning $\rho(\vec{r}) = \sigma_0 \cos\theta \delta(r-a)$.
+
+\item Resultatet blir en ganska krånglig integral där variablsubstitutionen $t = z^2 +a^2−2za\cos\theta'$ kan komma väl till pass.
+
+\item Notera sedan att man får olika fall beroende på tecknen på $(z+a)$ och $(z-a)$.
+\end{itemize}
+
+\noindent
+% --- end hint in exercise ---
+
+
+% --- begin answer of exercise ---
+\paragraph{Answer.}
+\begin{equation}
+\vec F = \left\{
+\begin{array}{ll}
+-\frac{\sigma_0}3\hat z, & |z| < a \\
+\frac{2\sigma_0a^3}{3|z|^3}\hat z, & |z|>a
+\end{array}
+\right.
+\end{equation}
+
+% --- end answer of exercise ---
+
+
+% --- begin solution of exercise ---
+\paragraph{Solution.}
+Eftersom att punkten $\vec r$ befinner sig på ytkällans symmetriaxel, kan vi definiera ett kartesiskt koordinatsystem så att denna symmetriaxel sammanfaller med $z$-axeln. Då blir $\theta$ samma vinkel som den vi normalt kallar $\theta$ i sfäriska koordinater, och $\vec r=z\hat z$.
+
+Vektorfältet $\vec F(\vec r)=-\nabla\phi(\vec r)$, där potentialen $\phi(\vec r)$ ges av
+\begin{equation}
+    \phi(\vec r)=\int_{\mathrm R^3}G(\vec r,\vec r')\rho(\vec r')\mathrm dV'.
+\end{equation}
+Eftersom att vi är i tre dimensioner är Greensfunktionen $G(\vec r,\vec r')=[4\pi|\vec r-\vec r'|]^{-1}$. Den angivna laddningstätheten är en ytkälla, så $\rho(\vec r\,')=\delta(r'-a)\sigma_0\cos\theta'$. Vi betraktar $\vec{r} = z\hat{z}$ och får alltså 
+\begin{align}
+    \phi(z\hat z)&=\int_{\mathbb R^3}\frac{\delta(r'-a)\sigma_0\cos\theta'}{4\pi\sqrt{z^2+r'^2-2zr'\cos\theta'}}r'^2\sin\theta'\mathrm dr'\mathrm d\theta'\mathrm d\varphi'\\
+    &=\frac{\sigma_0a^2}2\int_0^\pi \frac{\cos\theta'\sin\theta'}{\sqrt{z^2+a^2-2za\cos\theta'}}\mathrm d\theta'.
+\end{align}
+Vi gör nu variabelsubstitutionen 
+\begin{gather}
+t=z^2+a^2-2za\cos\theta',\nonumber\\
+\mathrm dt=2za\sin\theta'\mathrm d\theta',\nonumber\\
+\theta'=0\to t=(z-a)^2,\nonumber\\
+\theta'=\pi\to t=(z+a)^2.
+\end{gather}
+Nämnaren i integranden blir nu $\sqrt t$, och $\sin\theta'$ i täljaren blir en del av $\mathrm dt$. Det kvarvarande $\cos\theta'$ i täljaren får vi genom att lösa ut $\cos\theta'$ ur definitionen av $t$. 
+
+Integralen är nu
+\begin{align}
+    \phi(\vec r)&=\frac{\sigma_0}{4z^2}\int_{(z-a)^2}^{(z+a)^2} \frac{z^2+a^2-t}{2\sqrt t}\mathrm dt\\
+    &=\frac{\sigma_0}{4z^2}\left[(z^2+a^2)\int_{(z-a)^2}^{(z+a)^2} \frac1{2\sqrt t}\mathrm dt-\int_{(z-a)^2}^{(z+a)^2} \frac{\sqrt t}2\mathrm dt\right]\\
+    &=\frac{\sigma_0}{4z^2}\left[(z^2+a^2)\Big[\sqrt t\Big]_{(z-a)^2}^{(z+a)^2} -\frac13\Big[t^{3/2}\Big]_{(z-a)^2}^{(z+a)^2}\right]\\
+    &=\frac{\sigma_0}{4z^2}\left[(z^2+a^2)\Big[|z+a|-|z-a|\Big]-\frac13\Big[|z+a|^3-|z-a|^3)\Big]\right].
+\label{phi}
+\end{align}
+Kom ihåg att för alla reella tal $x$ så är $\sqrt{x^2}=|x|$. Vi får alltså fyra fall -- $|z|>a$ och $|z|<a$ kombinerat med $z>0$ och $z<0$ -- som måste behandlas var för sig. 
+
+\paragraph{Inuti sfären.}
+Eftersom att $a>z$ så är $|z+a|=z+a$ och $|z-a|=a-z$, oavsett om $z$ är positiv eller negativ. Två av de fyra fallen kan alltså studeras samtidigt. 
+
+Insättning av absolutbeloppen ovan i ekvation~(\ref{phi}) ger, efter en smula algebra, att $\phi(\vec r)=\sigma_0 z/3$. Vektorfältet blir då
+\begin{equation}
+    \vec F =-\hat z\frac{\partial\phi}{\partial z}=-\frac{\sigma_0}3\hat z.
+\end{equation}
+
+\paragraph{Utanför sfären.}
+Här måste positiva och negativa $z$ studeras var för sig.
+
+När $z>a>0$ är $|z+a|=z+a$ och $|r-a|=r-a$. Substitution i~(\ref{phi}) och förenkling av resultatet ger att $\phi(\vec r)=\sigma_0a^3/3z^2$. Vektorfältet blir 
+\begin{equation}
+    \vec F =-\hat z\frac{\partial\phi}{\partial r}=\frac{2\sigma_0a^3}{3z^3}\hat z,\quad z>0. \label{z+}
+\end{equation}
+
+När $|z|>a$ men $z<0$ så blir $|z+a|=-(z+a)$ och $|z-a|=-(z-a)$. Den här gången blir $\phi(\vec r)=-\sigma_0a^3/3z^2$ och 
+\begin{equation}
+    \vec F =-\hat z\frac{\partial\phi}{\partial r}=-\frac{2\sigma_0a^3}{3z^3}\hat z,\quad z<0.\label{z-}
+\end{equation}
+
+Notera att alla kvantiteter utom $z$ i~(\ref{z+}) och~(\ref{z-}) är konstanter; de ändrar alltså aldrig tecken. Därför kan vi kombinera dessa två ekvationer, och uttrycka fältet överallt utanför sfären som
+\begin{equation}
+    \vec F =-\hat z\frac{\partial\phi}{\partial r}=-\frac{2\sigma_0a^3}{3|z|^3}\hat z.
+\end{equation}
+
+\paragraph{Kontroll: ytladdning.}
+Notera att vårt fält, betraktat längs symmetriaxeln, har en diskontinuitet vid $z=\pm a$. Denna motsvarar ytladdningen. T.ex., vid $\theta = 0$ (dvs $z=+a$) har vi enligt uppgiftsformuleringen en ytladdning med styrkan $\sigma_0$. Detta kan vi verifiera genom att räkna ut
+\begin{equation}
+\hat{z} \cdot \left( \vec{F}_+ - \vec{F}_- \right)_{z=a} = \frac{2\sigma_0}{3} - \frac{-\sigma_0}{3} = \sigma_0.
+\end{equation}
+
+% --- end solution of exercise ---
+
+\end{doconceexercise}
+% --- end exercise ---
+
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+

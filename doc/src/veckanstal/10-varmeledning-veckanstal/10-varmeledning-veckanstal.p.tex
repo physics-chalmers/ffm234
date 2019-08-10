@@ -1,0 +1,207 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: http://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: http://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+\newenvironment{doconceexercise}{}{}
+\newcounter{doconceexercisecounter}
+
+
+% ------ header in subexercises ------
+%\newcommand{\subex}[1]{\paragraph{#1}}
+%\newcommand{\subex}[1]{\par\vspace{1.7mm}\noindent{\bf #1}\ \ }
+\makeatletter
+% 1.5ex is the spacing above the header, 0.5em the spacing after subex title
+\newcommand\subex{\@startsection{paragraph}{4}{\z@}%
+                  {1.5ex\@plus1ex \@minus.2ex}%
+                  {-0.5em}%
+                  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM234, Klassisk fysik och vektorfält - Veckans tal
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf \href{{http://fy.chalmers.se/subatom/nt/}}{Christian Forssén}, Institutionen för fysik, Chalmers${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Aug 10, 2019
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+% --- begin exercise ---
+\begin{doconceexercise}
+\refstepcounter{doconceexercisecounter}
+
+\subsection{Uppgift 10.3.3}
+
+Ett sfäriskt skal tillförs en konstant värmeeffekt $W_0$ genom den inre  ytan $r= a$ och avkyls enligt Newtons avkylningslag
+$\hat r\cdot \vec J = \alpha\left(T-T_0\right)$.
+genom den yttre ytan $r = b$, där $\alpha$ och $T_0$ är givna konstanter. Skalet antas homogent med konstant värmeledningsförmåga $\lambda$ och problemställningen sfäriskt symmetrisk. Bestäm temperaturen överallt i skalet.
+
+% --- begin hint in exercise ---
+
+\paragraph{Hint.}
+\begin{itemize}
+\item Inget tidsberoende, dvs man är ute efter en stationär lösning $\partial T / \partial t = 0$. Det finns dessutom ingen värmekälla inuti skalet och värmeledningsekvationen blir alltså ganska enkel.
+
+\item Värmeeffekten $W_0$ har enheten W=J/s. Från detta kan man räkna ut vad värmeströmtätheten genom den inre ytan skall vara. Vi har alltså ett Neumann randvillkor. Värmeströmtätheten (som är proportionell mot negativa temperaturgradienten) är radiellt riktad och konstant (men inte noll!).
+
+\item Newtons avkylningslag säger att flödet av värmeenergi är $\alpha(T-T_0)$, där $\alpha$ och $T_0$ är konstanter (den sista representerar temperaturen utanför ytan) och $T$ är temperaturen på randen. Enheten för detta är $\mathrm{W}/\mathrm{m}^2$.
+
+\item Slutligen kan ni notera att energin skall vara bevarad. Strömmar det kontinuerligt in värmeenergi i området så måste samma mängd strömma ut.
+\end{itemize}
+
+\noindent
+% --- end hint in exercise ---
+
+
+% --- begin answer of exercise ---
+\paragraph{Answer.}
+$T\left(r\right) = T_0 + \frac{W_0}{4\pi \alpha b^2} + \frac{W_0}{4\pi \lambda}
+\left(\frac{1}{r} - \frac{1}{b}\right)$
+
+% --- end answer of exercise ---
+
+
+% --- begin solution of exercise ---
+\paragraph{Solution.}
+Att göra
+
+% --- end solution of exercise ---
+
+% Closing remarks for this Exercise
+
+\paragraph{Remarks.}
+Uppgiften illustrerar lösningen av värmeledningsekvationen. Svårigheten är att förstå sig på randvillkoren och att utnyttja energins bevarande.
+
+
+\end{doconceexercise}
+% --- end exercise ---
+
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+

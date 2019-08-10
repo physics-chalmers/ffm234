@@ -1,0 +1,233 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Klassisk fysik och vektorfält - Veckans tal">
+
+<title>FFM232, Klassisk fysik och vektorfält - Veckans tal</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [(u'Tentatal 2015-08-17: 3', 2, None, '___sec0'),
+              (u'Alternativ', 3, None, '___sec1'),
+              (u'Remarks', 3, None, '___sec2')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<a name="part0000"></a>
+<p>
+
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM232, Klassisk fysik och vektorfält - Veckans tal</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>, Institutionen för fundamental fysik, Chalmers, Göteborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>, Institutionen för fundamental fysik, Chalmers, Göteborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 2, 2015</h4></center> <!-- date -->
+<br>
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec0">Tentatal 2015-08-17: 3 </h2>
+
+<p>
+Vektorfältet \( \vec{F} \) ges av 
+$$
+\vec{F} = \left\{
+\begin{array}{ll}
+  A \frac{(\vec{r} - a\hat{z})}{| \vec{r} - a \hat{z}|^3} + B \hat{x}, & z>0, \\
+  C z \hat{z}, & z \le 0,
+\end{array}
+\right.
+$$
+där \( A \), \( B \), \( C \) och \( a \) är konstanter. Beräkna normalytintegralen av
+\( \vec{F} \) över en sfär med radien \( 2a \) och centrum i origo.
+
+<p>
+<!-- --- begin hint in exercise --- -->
+
+<p>
+<b>Hint.</b>
+
+<ul>
+<li> \( C \)-termen motsvarar en rymdkälla med källtätheten \( \nabla \cdot \vec{F}_C = C \) i nedre halvplanet.</li>
+<li> \( B \) termen ger inget bidrag då den har \( \nabla \cdot \vec{F}_B = 0 \)</li>
+<li> \( A \)-termen motsvarar en punktkälla med styrkan \( 4 \pi A \) i punkten \( a \hat{z} \) innanför ytan. Fältet från punktkällan existerar dock bara i övre halvplanet. Bidraget kan beräknas på två sätt:</li>
+
+<ul>
+  <li> Genom att räkna ut rymdvinkeln som den övre delen av sfären upptar sett från punktkällan.</li>
+  <li> Genom att behandla den som en punktkälla i hela rummet plus en diskontinuitet i \( xy \)-planet, dvs en ytkälla.</li>
+</ul>
+
+</ul>
+
+<!-- --- end hint in exercise --- -->
+
+<p>
+<!-- --- begin answer of exercise --- -->
+<b>Answer.</b>
+\( \int_S \vec{F} \cdot \mbox{d}\vec{S} = 2
+\pi A \left(1 + \frac{1}{\sqrt{5}} \right) + \frac{16}{3} \pi a^3 C \)
+
+<p>
+<!-- --- end answer of exercise --- -->
+
+<p>
+<!-- --- begin solution of exercise --- -->
+<b>Solution.</b>
+
+<ul>
+<li> \( C \)-termen, \( \vec{F}_C = C z \hat{z} \) (för \( z \le 0 \)), motsvarar en rymdkälla med konstant källtäthet \( \nabla \cdot \vec{F}_C = C \) i nedre halvplanet. Här kan vi enkelt använda Gauss sats</li>
+</ul>
+
+$$
+\int_S \vec{F}_C \cdot \mbox{d}\vec{S} = \int_V \nabla \cdot \vec{F}_C \mbox{d}V
+$$
+Källtätheten är ju noll i den övre halvan av sfären så bidraget blir lika med den konstanta källtätheten gånger volymen av en halv sfär med radien \( 2a \).
+$$
+\int_S \vec{F}_C \cdot \mbox{d}\vec{S} = C \frac{1}{2} \frac{4 \pi (2a)^3}{3} = C \frac{16 \pi a^3}{3}.
+$$
+
+<ul>
+<li> \( B \)-termen, \( \vec{F}_B = B \hat{x} \) (för \( z > 0 \)), ger inget bidrag eftersom den inte uppvisar någon singularitet och har \( \nabla \cdot \vec{F}_B = 0 \).</li>
+<li> \( A \)-termen, \( A \frac{(\vec{r} - a\hat{z})}{| \vec{r} - a \hat{z}|^3} \) (för \( z > 0 \)), motsvarar en punktkälla med styrkan \( 4 \pi A \) i \( a \hat{z} \) innanför ytan. Men fältet från punktkällan existerar bara i övre halvplanet. Normalytintegralen kan därför räknas ut genom att beräkna vilken rymdvinkel den övre delen av sfären upptar sett från punktkällan. Genom att rita en figur inser man att en sfär med centrum i punktkällan och med radien \( \sqrt{5}a \) kommer att skära \( xy \)-planet i samma cirkel som den ursprungliga sfären. Cirkeln i \( xy \)-planet träffas alltså vid en vinkel \( \theta_0 \) som ges av \( \cos\theta_0 = -1/\sqrt{5} \). Den sökta rymdvinkeln är därför</li>
+</ul>
+
+$$
+\Omega_0 = \int_0^{2\pi}\mbox{d}\varphi \int_0^{\theta_0} \sin\theta \mbox{d}\theta = 2\pi \int_0^{\theta_0} \sin\theta \mbox{d}\theta = 2\pi \left( 1 + \frac{1}{\sqrt{5}} \right).
+$$
+Alltså blir bidraget från \( A \)-termen
+$$
+\int_S \vec{F}_A \cdot \mbox{d}\vec{S} = 4 \pi A \frac{\Omega_0}{4\pi} = 2 \pi A \left( 1 + \frac{1}{\sqrt{5}} \right).
+$$
+
+<p>
+Totalt får vi alltså normalytintegralen som summan av ovanstående bidrag 
+$$
+\int_S \vec{F} \cdot \mbox{d}\vec{S} = 2 \pi A \left(1 + \frac{1}{\sqrt{5}} \right) + \frac{16}{3} \pi a^3 C,
+$$
+vilket alltså är svaret.
+
+<h3 id="___sec1">Alternativ </h3>
+
+<ul>
+<li> Alternativt kan vi betrakta \( A \)-termen som en punktkälla i hela rummet plus en diskontinuitet i \( xy \)-planet vid \( z=0 \), dvs en ytkälla som har effekten att <em>släcka</em> fältet i det nedre halvplanet. Styrkan på denna ytkälla fås från fältets diskontinuitet vid \( z=0 \), dvs vid punkter som ligger längs \( \vec{r} = \rho \hat{e}_\rho + 0 \hat{z} \),</li>
+</ul>
+
+$$
+\hat{z} \cdot \left( \vec{F}_A^+ - \vec{F}_A^- \right) = 
+A \frac{-a}{(\rho^2 + a^2)^{3/2}}.
+$$ 
+Bidraget från denna ytkälla skall integreras över den inneslutna ytan, dvs över en cirkelskiva \( 0 \leq \rho \leq 2a \). Detta blir
+$$
+2 \pi \int_0^{2a} A \frac{- a}{(\rho^2 + a^2)^{3/2}} \rho \mbox{d}\rho = -2 \pi A \left( 1 -\frac{1}{\sqrt{5}} \right).
+$$
+Tillsammans med bidraget från punktkällan, dvs \( 4 \pi A \), blir detta
+$$
+\int_S \vec{F}_A \cdot \mbox{d}\vec{S} = 4 \pi A  -  2 \pi A \left( 1 -\frac{1}{\sqrt{5}} \right) = 2 \pi A \left( 1 + \frac{1}{\sqrt{5}} \right).
+$$
+vilket ju ger samma som räkningen ovanför.
+
+<ul>
+<li> Notera gärna att varken \( B \)- eller \( C \)-termerna motsvarar någon ytkälla trots att de är definierade enbart ovanför, respektive nedanför, \( z=0 \). \( C \) fältet är inte diskontinuerligt eftersom det faktiskt är noll då \( z=0 \). \( B \)-fältet har iof en diskontinuitet, men den är vinkelrät mot planet och skalärprodukten \( \hat{z} \cdot \left( \vec{F}_B^+ - \vec{F}_B^- \right) = 0 \).</li> 
+</ul>
+
+Dessutom finns det en ytkälla vid \( z=0 \)-planet som bestäms av
+diskontinuiteten. Man finner ytkällans styrka \( \sigma = -A a / (\rho^2
++ a^2)^{3/2} \).
+Tillsammans blir integralen \( \int_S \vec{F} \cdot \mbox{d}\vec{S} = 2
+\pi A \left(1 + \frac{1}{\sqrt{5}} \right) + \frac{16}{3} \pi a^3 C \).
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- Closing remarks for this Exercise -->
+
+<h3 id="___sec2">Remarks </h3>
+
+<p>
+Uppgiften illustrerar hur det ofta är fördelaktigt att behandla komplicerade fält som en summa av olika bidrag. Diskontinuiteten vid \( z=0 \) är en speciell svårighet med denna uppgift.
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

@@ -1,0 +1,237 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Veckans tal">
+
+<title>FFM234, Klassisk fysik och vektorfält - Veckans tal</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('5.5.10', 2, None, '___sec0'), ('5.5.11', 2, None, '___sec1')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="05-indexnotation-veckanstal-bs.html">FFM234, Klassisk fysik och vektorfält - Veckans tal</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">5.5.10</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">5.5.11</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - Veckans tal</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r  fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r  fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 15, 2017</h4></center> <!-- date -->
+<br>
+<p>
+H&#228;r f&#246;ljer ledtr&#229;dar till tv&#229; roliga, men kluriga, uppgifter fr&#229;n kapitel 5: Indexnotation.
+
+<p>
+<!-- --- begin exercise --- -->
+
+<p>
+</div> <!-- end jumbotron -->
+
+<h2 id="___sec0" class="anchor">5.5.10 </h2>
+
+<p>
+Bevisa den Stokes-analoga satsen 
+$$
+\begin{equation*}
+\oint\limits_{\partial S}d\vec{r}\times\vec v
+       =\int_S(d\vec S\times\vec{\nabla})\times\vec v.
+\end{equation*}
+$$
+
+Visa att ett val
+av ytan \( S \) i \( xy \)-planet reproducerar Greens formel.
+
+<p>
+<!-- --- begin hint in exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_1_1" style="font-size: 80%;"></a>
+<b>Hint.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_1_1">
+
+<ul>
+<li> Bilda ett vektorf&#228;lt \( \vec{F} = \vec{a} \times \vec{v} \), d&#228;r \( \vec{a} \) &#228;r ett godtyckligt, men konstant vektorf&#228;lt.</li> 
+<li> Teckna Stokes sats f&#246;r detta nya vektorf&#228;lt \( \vec{F} \). M&#229;let &#228;r sedan att skriva b&#229;de VL och HL av Stokes sats som \( \vec{a} \) g&#229;nger en integral. F&#246;r att n&#229; dit f&#229;r man skriva om n&#229;gra kryssprodukter f&#246;r vilket man med f&#246;rdel kan anv&#228;nda indexformalism.</li>
+<li> M&#229;let &#228;r allts&#229; att komma fram till att</li>
+</ul>
+
+$$
+-\vec{a} \cdot \oint\limits_{\partial S}d\vec{r}\times\vec v = -\vec{a} \cdot \int_S(d\vec S\times\vec{\nabla})\times\vec v.
+$$
+
+<ul>
+<li> Eftersom det sambandet skall g&#228;lla f&#246;r godtyckligt f&#228;lt \( \vec{a} \) s&#229; m&#229;ste integralerna vara lika.</li>
+</ul>
+
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end hint in exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec1" class="anchor">5.5.11 </h2>
+
+<p>
+Visa att arean av en plan yta omsluten av en kurva \( C \) &#228;r
+$$
+\begin{equation*}
+A=\frac{1}{2} \left| \,\oint\limits_C\vec{r}\times d\vec{r}\, \right|.
+\end{equation*}
+$$
+
+<p>
+<!-- --- begin hint in exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_2_1" style="font-size: 80%;"></a>
+<b>Hint.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_2_1">
+
+<ul>
+<li> L&#228;gg ett koordinatsystem s&#229; att den plana ytan ligger i \( xy \)-planet.</li>
+<li> Notera sedan att \( \vec{r}\times d\vec{r} \) &#228;r en vektor som pekar i \( z \)-riktningen. Eftersom vi skall ha absolutv&#228;rdet av integralen kan vi f&#229; fram vektorns enda komponent genom att skal&#228;rmultiplicera med \( \hat{z} \).</li>
+<li> Notera att \( \vec{z} \cdot (\vec{r}\times d\vec{r}) = d\vec{r} \cdot (\hat{z} \times \vec{r}) \).</li>
+<li> D&#229; kommer man till en punkt d&#228;r man kan utnyttja Stokes sats.</li> 
+<li> Sedan f&#229;r man utnyttja indexformalism f&#246;r att skriva om den dubbla kryssprodukten. Notera att vektorn \( \hat{z} \) kan skrivas som \( \delta_{3l} \) med indexformalism (detta skall ju tolkas som tre komponenter, \( l=1,2,3 \), d&#228;r bara den tredje &#228;r nollskild och lika med 1).</li>
+</ul>
+
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end hint in exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._05-indexnotation-veckanstal-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

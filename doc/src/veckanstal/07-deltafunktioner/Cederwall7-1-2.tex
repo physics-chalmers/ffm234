@@ -1,0 +1,130 @@
+
+\documentclass[reprint,
+ amsmath,amssymb,
+ aps,prl
+]{revtex4-1}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage[utf8]{inputenc}
+
+\DeclareMathOperator{\erf}{erf}
+
+\begin{document}
+
+\preprint{APS/123-QED}
+
+\author{Christin Rh\'en}
+\email{christin.rhen@chalmers.se}
+\title{Cederwall 7.1-2 - Stegfunktioner och deltafunktioner}
+\date{\today}
+
+
+\maketitle
+
+\section{Stegfunktioner}
+\textbf{Konstruera approximationerna till stegfunktionen svarande mot approximationerna i ekvation (7.6), (7.7), och (7.8).}
+
+\phantom{o}
+
+Stegfunktionen kan definieras som (ekvation (7.10) i Cederwall)
+\begin{equation}
+    H(x) =\int_{-\infty}^x\mathrm dt\ \delta(t)=\left\{\begin{array}{cc}
+        0 & x < 0 \\
+        1 & x > 0
+    \end{array} \right..
+    \label{step}
+\end{equation}
+Exakt vilket värde $H(0)$ antar varierar i litteraturen. Vanligt är att $H(0)$ är odefinierat eller lika med $1/2$. 
+
+Varje given deltafunktions-approximation kan alltså integreras enligt ekvation~\eqref{step} och ger då en motsvarande stegfunktions-approximation. Till exempel kan
+\begin{equation}
+    \delta(x)=\lim_{\epsilon\rightarrow 0}h_\epsilon(x) =\lim_{\epsilon\rightarrow 0}\left\{\begin{array}{cc}
+        1/\epsilon & |x| < \epsilon/2 \\
+        0 & |x| > \epsilon/2
+    \end{array} \right.
+\end{equation}
+integreras trivialt till 
+\begin{equation}
+    H(x)=\lim_{\epsilon\rightarrow 0}\left\{\begin{array}{cc}
+        0 & x < -\epsilon/2 \\
+        \tfrac x\epsilon+\tfrac12 & -\epsilon/2<x<\epsilon/2 \\
+        1 & x > \epsilon/2
+    \end{array} \right..
+\end{equation}
+
+För den Gaussiska deltafunktions-approximationen \mbox{$h_\epsilon(x) =\exp\left[-x^2/\epsilon^2\right]/\epsilon\sqrt\pi$} får vi stegfunktionen \mbox{$H(x)=\lim_{\epsilon\rightarrow 0}\tfrac12\left[1+\erf\left(\tfrac x\epsilon\right)\right]$}. Här är felfunktionen
+\begin{equation}
+    \erf(x)=\frac2{\sqrt\pi}\int_0^x\mathrm dt\ e^{-t^2}.
+\end{equation}
+
+Slutligen har vi den Lorentzianska approximationen $h_\epsilon(x)=\epsilon\pi^{-1}(x^2+\epsilon^2)^{-1}$, som även den är rättfram att integrera. Resultatet är \mbox{$H(x)=\lim_{\epsilon\rightarrow 0}\left[\tfrac12+\tfrac1\pi\tanh\left(\tfrac x\epsilon\right)\right]$}.
+
+Prova gärna att skissa dessa funktioner för några olika värden på $\epsilon$.
+
+\section{Deltafunktionens derivator}
+\textbf{Konstruera approximationerna till de första tre derivatorna av en deltafunktion svarande mot approximationerna (7.7) och (7.8) av deltafunktionen. Skissera funktionernas beteende och reflektera över varför deras integraler mot en funktion $\boldsymbol{f(x)}$ ger de resultat de gör i gränsen $\boldsymbol{\epsilon\rightarrow 0}$.}
+
+\phantom{o}
+
+Rättfram derivering ger
+\begin{align}
+    h_\epsilon(x)&=\frac1{\epsilon\sqrt\pi}e^{-x^2/\epsilon^2},\\
+    h_\epsilon'(x)&=-\frac{2x}{\epsilon^2}h_\epsilon(x),\\
+    h_\epsilon''(x)&=\frac{4x^2-2\epsilon^2}{\epsilon^4}h_\epsilon(x),\\
+    h_\epsilon'''(x)&=-\frac{8x^3-12x\epsilon^2}{\epsilon^6}h_\epsilon(x),
+\end{align}
+och
+\begin{align}
+    h_\epsilon(x)&= \frac\epsilon{\pi\left(x^2+\epsilon^2\right)},\\
+    h_\epsilon'(x)&= -\frac{2 x}{x^2+\epsilon^2}h_\epsilon(x) ,\\
+    h_\epsilon''(x)&= \frac{6x^2-2\epsilon^2}{\left(x^2+\epsilon^2\right)^2}h_\epsilon(x) ,\\
+    h_\epsilon'''(x)&= -\frac{24 x^3 -24x\epsilon^2}{\left(x^2+\epsilon^2\right)^3}h_\epsilon(x) .
+\end{align}
+Dessa funktioner och derivator är skisserade för $\epsilon = 0.02,0.04,0.06$.
+
+Deltafunktionens derivator ska gå att partialintegrera (se diskussionen av ekvation (7.9) i Cederwall). Det vill säga (alla integraler går över hela $\mathbb R$, så alla randtermer är lika med noll):
+\begin{align}
+    \int \mathrm dx\ \delta'(x)f(x)&=-\int \mathrm dx\ \delta(x)f'(x)=-f'(0),\\
+    \int \mathrm dx\ \delta''(x)f(x)&=\int \mathrm dx\ \delta(x)f''(x)=f''(0),\\
+    \int \mathrm dx\ \delta'''(x)f(x)&=-\int \mathrm dx\ \delta(x)f'''(x)=-f'''(0).\label{tredje}
+\end{align}
+För en godtycklig slät funktion $f(x)$ och $x=\rightarrow 0$:
+\begin{equation}
+    f(\epsilon)\approx f(0)+f'(0)x+\frac12f''(0)x^2+\frac16f'''(0)x^3+\ldots.
+\end{equation}
+I båda fallen ovan är $h_\epsilon(x)$ en jämn funktion, så alla termer av typen $x^{2n+1}h_\epsilon(x)$, $n\in\mathbb Z$ integreras till noll. 
+
+Vi börjar titta på den Gaussiska approximationen. För förstaderivatan får vi ($f^{(n)}(0)\equiv f^{(n)}_0$), genom att partialintegrera upprepade gånger,
+\begin{align}
+    \int\mathrm dx\ f(x)h'_\epsilon(x)&\approx-\frac{2}{\epsilon^2}\int\mathrm dx\ xh_\epsilon(x)\left[f'_0x+\frac16f'''_0x^3+\ldots\right] \nonumber\\
+    &=-f'_0-\frac14f'''_0\epsilon^2+\ldots.
+\end{align}
+Det är lätt att inse att alla termer som innehåller högre ordningens derivator  av $f(x)$ kommer vara proportionella mot $\epsilon$, och gå mot noll. Kvar finns bara den väntade $-f'(0)$.
+
+På samma sätt studerar vi integralen över andraderivatan:
+\begin{align}
+    \int\mathrm dx\ f(x)h''_\epsilon(x)&\approx\int\mathrm dx\ \frac{4x^2-2\epsilon^2}{\epsilon^4}h_\epsilon(x)\left[f_0+\frac12f''_0x^2+\ldots\right] \nonumber\\
+    &=\frac{2-2}{\epsilon^2}f(0)+\frac{3-1}2f'''_0\epsilon^2+\ldots.
+\end{align}
+De högre ordningens termer kommer återigen vara proprotionella mot $\epsilon$, och försvinner när gränsvärdet tas, vilket resulterar i att bara $f''(0)$ finns kvar.
+
+Vi övergår nu till att studera den Lorentzianska approximationen. På samma sätt som ovan får vi för förstaderivatan
+\begin{gather}
+    \int\mathrm dx\ f(x)h'_\epsilon(x)\approx-\int\mathrm dx\ \frac{2 x}{x^2+\epsilon^2}h_\epsilon(x)\left[f'_0x+\frac16f'''_0x^3+\ldots\right] \nonumber\\
+    =-f'_0-\frac\epsilon{3\pi}\left[x+\frac{\epsilon^2x}{2\epsilon^2+2x^2}-\frac{3\epsilon}2\tan^{-1}\frac x\epsilon\right]_{-\infty}^\infty+\ldots.
+\end{gather}
+Eftersom att $x$ här är en integrationsvariabel har den inget konstigt för sig, utan går linjärt mot oändligheten. I gränsen $+epsilon\rightarrow 0$ går därför de högre ordningens termer mot noll, och vi får igen det väntade resultatet. 
+
+För andraderivatan får vi
+\begin{gather}
+    \int\mathrm dx\ f(x)h''_\epsilon(x)\approx\int\mathrm dx\ \frac{6x^2-2\epsilon^2}{\left(x^2+\epsilon^2\right)^2}h_\epsilon(x)\left[f_0+\frac12f''_0x^2+\ldots\right] \nonumber\\
+    =\frac{3-3}{4\epsilon^2}f(0)+\frac{9-1}8f'''_0\epsilon^2+\ldots
+\end{gather}
+och högre ordningens termer är proportionella mot $\epsilon$.
+
+Att bevisa ekvation $\eqref{tredje}$ för de båda fallen av $h_\epsilon(x)$ lämnas som en övning.
+
+
+\end{document}

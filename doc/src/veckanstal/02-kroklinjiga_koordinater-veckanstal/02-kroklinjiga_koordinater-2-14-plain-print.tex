@@ -1,0 +1,253 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+
+
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+\newenvironment{doconceexercise}{}{}
+\newcounter{doconceexercisecounter}
+
+
+% ------ header in subexercises ------
+%\newcommand{\subex}[1]{\paragraph{#1}}
+%\newcommand{\subex}[1]{\par\vspace{1.7mm}\noindent{\bf #1}\ \ }
+\makeatletter
+% 1.5ex is the spacing above the header, 0.5em the spacing after subex title
+\newcommand\subex{\@startsection*{paragraph}{4}{\z@}%
+                  {1.5ex\@plus1ex \@minus.2ex}%
+                  {-0.5em}%
+                  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+\input{newcommands_keep}
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM234, Klassisk fysik och vektorfält - Veckans tal
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf Christin Rhen och Christian Forssén, Institutionen för  fysik, Chalmers${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Aug 10, 2019
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+% --- begin exercise ---
+\begin{doconceexercise}
+\refstepcounter{doconceexercisecounter}
+
+\subsection*{Uppgift 2.4.14}
+\label{problem:2.14}
+
+Ett kroklinjigt koordinatsystem $u,v,w$ ges av sambanden 
+\begin{align}
+    u&=r(1-\cos\theta),\nonumber\\
+    v&=r(1+\cos\theta),\label{uvw}\\
+    w&=\varphi,\nonumber
+\end{align}
+där $r,\theta,\varphi$ är sfäriska koordinater. Visa att systemet är ortogonalt och beräkna dess skalfaktorer. Hur ser gradientoperatorn $\nabla$ och ortvektorn $\vec r$ ut i $u,v,w$-systemet?
+
+
+% --- begin answer of exercise ---
+\paragraph{Answer.}
+Skalfaktorer:
+\begin{align*}
+h_u  &=  \frac{1}{2} \sqrt{\frac{u+v}{u}} \\
+h_v  &=  \frac{1}{2} \sqrt{\frac{u+v}{v}} \\
+h_w  &=  \sqrt{uv}
+\end{align*}
+Gradient: 
+\begin{equation*}
+\nabla = \frac{2}{\sqrt{u+v}}\left(\sqrt{u} \hat u
+\frac{\partial}{\partial u} + \sqrt{v} \hat v
+\frac{\partial}{\partial v}\right) + \frac{1}{\sqrt{uv}} \hat w
+\frac{\partial}{\partial w}
+\end{equation*}
+Ortsvektor: 
+\begin{equation*}
+\vec{r} = \frac{\sqrt{u+v}}{2}(\sqrt{u} \hat u + \sqrt{v} \hat v)
+\end{equation*}
+
+% --- end answer of exercise ---
+
+
+% --- begin solution of exercise ---
+\paragraph{Solution.}
+\paragraph{Enhetsvektorer}
+Enhetsvektorer ges av (långt upp på sida 12 i kurskompendiet)
+\begin{equation}
+    \vec e_i=h_i\nabla u_i. 
+    \label{eq:ehat}
+\end{equation}
+Här är $u,v,w$ en funktion av sfäriska koordinater, så vi använder den sfäriska gradienten (kurskompendium ekvation 2.14):
+\begin{align}
+    \hat u\propto\nabla u&= \left(\hat r\frac{\partial}{\partial r}+\hat\theta\frac 1r\frac{\partial}{\partial \theta}+\hat\varphi\frac1{r\sin\theta}\frac{\partial}{\partial \varphi}\right)u\nonumber\\
+    &=(1-\cos\theta)\hat r+\sin\theta\hat\theta,\\
+    \hat v\propto\nabla v&=(1+\cos\theta)\hat r-\sin\theta\hat\theta,\\
+    \hat w\propto\nabla w&=\hat\varphi\frac1{r\sin\theta}.
+\end{align}
+
+\paragraph{Ortogonalitet}
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här $\hat u, \hat v,\hat w$ fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att $\hat u\cdot \hat w=\hat v\cdot\hat w=0$. För $\hat u$ och $\hat v$:
+\begin{align}
+    \hat u\cdot\hat v&\propto(1-\cos\theta)(1+\cos\theta)-\sin^2\theta\nonumber\\
+    &=1-\cos^2\theta-\sin^2\theta=0.
+\end{align}
+Alltså är $u,v,w$-systemet ortogonalt.
+
+\paragraph{Skalfaktorer och enhetsvektorer}
+Från ekvation (\ref{eq:ehat}) inser vi att skalfaktorerna $h_i$ är inversen av $|\nabla u_i|$. För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till $u,v,w$ i slutet. Notera att $u+v=2r$. Vi får
+\begin{align}
+    h_u&=\left((1-\cos\theta)^2+\sin^2\theta\right)^{-1/2}=\left(2-2\cos\theta\right)^{-1/2}\nonumber\\
+    &=\sqrt{\frac{u+v}{4u}},\\
+    h_v&=\left((1+\cos\theta)^2+\sin^2\theta\right)^{-1/2}=\left(2+2\cos\theta\right)^{-1/2}\nonumber\\
+    &=\sqrt{\frac{u+v}{4v}},\\
+    h_w&=\sqrt{r^2\sin^2\theta}=\sqrt{r^2(1-\cos^2\theta)}=\sqrt{uv}. 
+\end{align}
+
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+\begin{align}
+    \hat u&= \frac{1-\cos\theta}{\sqrt{2-2\cos\theta}}\hat r+\frac{\sin\theta}{\sqrt{2-2\cos\theta}}\hat\theta,\\
+    \hat v&= \frac{1+\cos\theta}{\sqrt{2+2\cos\theta}}\hat r-\frac{\sin\theta}{\sqrt{2+2\cos\theta}}\hat\theta,\\
+    \hat w&=\hat\varphi.
+    \label{eq:enhetsvektorer}
+\end{align}
+
+\paragraph{Gradientoperator}
+För ortogonala koordinatsystem gäller att (kurskompendium ekvation 2.13)
+\begin{equation}
+    \nabla\phi=\sum_i\vec e_i\frac 1{h_i}\frac{\partial\phi}{\partial u_i},
+\end{equation}
+där $\phi$ är ett godtyckligt skalärfält. I vårt $u,v,w$-system blir detta
+\begin{equation}
+    \nabla\phi=\hat u\frac 1{h_u}\frac{\partial\phi}{\partial u}+\hat v\frac 1{h_v}\frac{\partial\phi}{\partial v}+\hat w\frac 1{h_w}\frac{\partial\phi}{\partial w}.
+\end{equation}
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+\begin{equation}
+    \nabla = \hat u\sqrt{\frac{4u}{u+v}}\frac{\partial}{\partial u}+\hat v\sqrt{\frac{4v}{u+v}}\frac{\partial}{\partial v}+\hat w\frac 1{\sqrt{uv}}\frac{\partial}{\partial w}.
+\end{equation}
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+\paragraph{Ortsvektor}
+I sfäriska koordinater är ortsvektorn 
+\begin{equation}
+    \vec r=r\hat r.
+\end{equation}
+Vi har redan noterat att $r=(u+v)/2$; vi behöver nu också uttrycka $\hat r$ som en funktion av $\hat u,\hat v, \hat w$. 
+
+En smart linjärkombination av enhetsvektorerna (\ref{eq:enhetsvektorer}):
+\begin{equation}
+    \sqrt{2-2\cos\theta}\hat u+\sqrt{2+2\cos\theta}\hat v=2\hat r,
+\end{equation}
+som översatt till nya koordinater betyder att
+\begin{equation}
+    \hat r=\frac12\left(\frac1{h_u}\hat u+\frac1{h_v}\hat v\right)=\sqrt{\frac u{u+v}}\hat u+\sqrt{\frac v{u+v}}\hat v.
+\end{equation}
+Vi får alltså ortsvektorn
+\begin{align}
+    \vec r&=r\hat r\nonumber\\
+    &=\frac{u+v}2\left(\sqrt{\frac u{u+v}}\hat u+\sqrt{\frac v{u+v}}\hat v\right)\nonumber\\
+    &=\tfrac12\sqrt{u+v} \left( \sqrt u\hat u + \sqrt v\hat v \right).
+\end{align}
+
+% --- end solution of exercise ---
+
+\end{doconceexercise}
+% --- end exercise ---
+
+
+% ------------------- end of main content ---------------
+
+\end{document}
+

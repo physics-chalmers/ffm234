@@ -1,0 +1,88 @@
+
+# Information about all exercises in the file 05-indexnotation-veckanstal.do.txt.
+# The information can be loaded into a Python list of dicts by
+#
+# f = open('.05-indexnotation-veckanstal.exerinfo', 'r')
+# exer = eval(f.read())
+#
+[{'answer': '',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': '=====',
+  'hints': ['* Bilda ett vektorfält $\\vec{F} = \\vec{a} \\times \\vec{v}$, '
+            'där $\\vec{a}$ är ett godtyckligt, men konstant vektorfält. \n'
+            '* Teckna Stokes sats för detta nya vektorfält $\\vec{F}$. Målet '
+            'är sedan att skriva både VL och HL av Stokes sats som $\\vec{a}$ '
+            'gånger en integral. För att nå dit får man skriva om några '
+            'kryssprodukter för vilket man med fördel kan använda '
+            'indexformalism.\n'
+            '* Målet är alltså att komma fram till att\n'
+            '$$\n'
+            '-\\vec{a} \\cdot \\oint\\limits_{\\partial '
+            'S}d\\vec{r}\\times\\vec v = -\\vec{a} \\cdot \\int_S(d\\vec '
+            'S\\times\\vec{\\nabla})\\times\\vec v.\n'
+            '$$\n'
+            '* Eftersom det sambandet skall gälla för godtyckligt fält '
+            '$\\vec{a}$ så måste integralerna vara lika.'],
+  'keywords': None,
+  'label': None,
+  'no': 1,
+  'solution': '',
+  'solution_file': None,
+  'subex': [],
+  'text': 'Bevisa den Stokes-analoga satsen \n'
+          '!bt\n'
+          '\\begin{equation*}\n'
+          '\\oint\\limits_{\\partial S}d\\vec{r}\\times\\vec v\n'
+          '       =\\int_S(d\\vec S\\times\\vec{\\nabla})\\times\\vec v.\n'
+          '\\end{equation*}\n'
+          '\n'
+          '!et\n'
+          'Visa att ett val\n'
+          'av ytan $S$ i $xy$-planet reproducerar Greens formel.',
+  'title': '5.5.10',
+  'type': 'Exercise',
+  'type_visible': False},
+ {'answer': '',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': '=====',
+  'hints': ['* Lägg ett koordinatsystem så att den plana ytan ligger i '
+            '$xy$-planet.\n'
+            '* Notera sedan att $\\vec{r}\\times d\\vec{r}$ är en vektor som '
+            'pekar i $z$-riktningen. Eftersom vi skall ha absolutvärdet av '
+            'integralen kan vi få fram vektorns enda komponent genom att '
+            'skalärmultiplicera med $\\hat{z}$.\n'
+            '* Notera att $\\vec{z} \\cdot (\\vec{r}\\times d\\vec{r}) = '
+            'd\\vec{r} \\cdot (\\hat{z} \\times \\vec{r})$.\n'
+            '* Då kommer man till en punkt där man kan utnyttja Stokes sats. \n'
+            '* Sedan får man utnyttja indexformalism för att skriva om den '
+            'dubbla kryssprodukten. Notera att vektorn $\\hat{z}$ kan skrivas '
+            'som $\\delta_{3l}$ med indexformalism (detta skall ju tolkas som '
+            'tre komponenter, $l=1,2,3$, där bara den tredje är nollskild och '
+            'lika med 1).'],
+  'keywords': None,
+  'label': None,
+  'no': 2,
+  'solution': '',
+  'solution_file': None,
+  'subex': [],
+  'text': 'Visa att arean av en plan yta omsluten av en kurva $C$ är\n'
+          '!bt\n'
+          '\\begin{equation*}\n'
+          'A=\\frac{1}{2} \\left| \\,\\oint\\limits_C\\vec{r}\\times '
+          'd\\vec{r}\\, \\right|.\n'
+          '\\end{equation*}\n'
+          '\n'
+          '!et',
+  'title': '5.5.11',
+  'type': 'Exercise',
+  'type_visible': False}]

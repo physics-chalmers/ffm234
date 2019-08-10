@@ -1,0 +1,257 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Klassisk fysik och vektorfält - Veckans tal">
+
+<title>FFM232, Klassisk fysik och vektorfält - Veckans tal</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [(u'Uppgift 9.10 (Cederwalls kompendium): Vektorf\xe4lt fr\xe5n Greensfunktion',
+               2,
+               None,
+               '___sec0'),
+              (u'Inuti sf\xe4ren', 3, None, '___sec1'),
+              (u'Utanf\xf6r sf\xe4ren', 3, None, '___sec2'),
+              (u'Kontroll: ytladdning', 3, None, '___sec3')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<a name="part0000"></a>
+<p>
+<!-- begin top navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end top navigation -->
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM232, Klassisk fysik och vektorfält - Veckans tal</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Christin Rhen, Chalmers, Göteborg, Sverige -->
+
+<center>
+<b>Christin Rhen, Chalmers, Göteborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 21, 2016</h4></center> <!-- date -->
+<br>
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec0">Uppgift 9.10 (Cederwalls kompendium): Vektorfält från Greensfunktion </h2>
+
+<p>
+På en sfär med radien \( a \) befinner sig en ytkälla med tätheten \( \sigma(\vec r)=\sigma_0\cos\theta \), där \( \theta \) är vinkeln från en punkt på sfären. Bestäm vektorfältet för en punkt på symmetriaxeln.
+
+<p>
+<!-- --- begin hint in exercise --- -->
+
+<p>
+<b>Hint.</b>
+
+<ul>
+<li> Betrakta punkter \( \vec{r} = z\hat{z} \), dvs längs symmetriaxeln.</li>
+<li> Teckna Greensfunktionen \( G(\vec{r},\vec{r}\,') = (4\pi|\vec{r}-\vec{r}\,'|)^{-1} \) och fundera på hur avståndet kan uttryckas när \( \vec{r}=z\hat{z} \).</li>
+<li> Ytkällan motsvarar en laddningsfördelning \( \rho(\vec{r}) = \sigma_0 \cos\theta \delta(r-a) \).</li>
+<li> Resultatet blir en ganska krånglig integral där variablsubstitutionen \( t = z^2 +a^2−2za\cos\theta' \) kan komma väl till pass.</li>
+<li> Notera sedan att man får olika fall beroende på tecknen på \( (z+a) \) och \( (z-a) \).</li>
+</ul>
+
+<!-- --- end hint in exercise --- -->
+
+<p>
+<!-- --- begin answer of exercise --- -->
+<b>Answer.</b>
+$$
+\begin{equation}
+\vec F = \left\{
+\begin{array}{ll}
+-\frac{\sigma_0}3\hat z, & |z| < a \\
+\frac{2\sigma_0a^3}{3|z|^3}\hat z, & |z|>a
+\end{array}
+\right.
+\end{equation}
+$$
+
+<p>
+<!-- --- end answer of exercise --- -->
+
+<p>
+<!-- --- begin solution of exercise --- -->
+<b>Solution.</b>
+Eftersom att punkten \( \vec r \) befinner sig på ytkällans symmetriaxel, kan vi definiera ett kartesiskt koordinatsystem så att denna symmetriaxel sammanfaller med \( z \)-axeln. Då blir \( \theta \) samma vinkel som den vi normalt kallar \( \theta \) i sfäriska koordinater, och \( \vec r=z\hat z \).
+
+<p>
+Vektorfältet \( \vec F(\vec r)=-\nabla\phi(\vec r) \), där potentialen \( \phi(\vec r) \) ges av
+$$
+\begin{equation}
+    \phi(\vec r)=\int_{\mathrm R^3}G(\vec r,\vec r')\rho(\vec r')\mathrm dV'.
+\end{equation}
+$$
+
+Eftersom att vi är i tre dimensioner är Greensfunktionen \( G(\vec r,\vec r')=[4\pi|\vec r-\vec r'|]^{-1} \). Den angivna laddningstätheten är en ytkälla, så \( \rho(\vec r\,')=\delta(r'-a)\sigma_0\cos\theta' \). Vi betraktar \( \vec{r} = z\hat{z} \) och får alltså 
+$$
+\begin{align}
+    \phi(z\hat z)&=\int_{\mathbb R^3}\frac{\delta(r'-a)\sigma_0\cos\theta'}{4\pi\sqrt{z^2+r'^2-2zr'\cos\theta'}}r'^2\sin\theta'\mathrm dr'\mathrm d\theta'\mathrm d\varphi'\\
+    &=\frac{\sigma_0a^2}2\int_0^\pi \frac{\cos\theta'\sin\theta'}{\sqrt{z^2+a^2-2za\cos\theta'}}\mathrm d\theta'.
+\end{align}
+$$
+
+Vi gör nu variabelsubstitutionen 
+$$
+\begin{gather}
+t=z^2+a^2-2za\cos\theta',\nonumber\\
+\mathrm dt=2za\sin\theta'\mathrm d\theta',\nonumber\\
+\theta'=0\to t=(z-a)^2,\nonumber\\
+\theta'=\pi\to t=(z+a)^2.
+\end{gather}
+$$
+
+Nämnaren i integranden blir nu \( \sqrt t \), och \( \sin\theta' \) i täljaren blir en del av \( \mathrm dt \). Det kvarvarande \( \cos\theta' \) i täljaren får vi genom att lösa ut \( \cos\theta' \) ur definitionen av \( t \).
+
+<p>
+Integralen är nu
+$$
+\begin{align}
+    \phi(\vec r)&=\frac{\sigma_0}{4z^2}\int_{(z-a)^2}^{(z+a)^2} \frac{z^2+a^2-t}{2\sqrt t}\mathrm dt\\
+    &=\frac{\sigma_0}{4z^2}\left[(z^2+a^2)\int_{(z-a)^2}^{(z+a)^2} \frac1{2\sqrt t}\mathrm dt-\int_{(z-a)^2}^{(z+a)^2} \frac{\sqrt t}2\mathrm dt\right]\\
+    &=\frac{\sigma_0}{4z^2}\left[(z^2+a^2)\Big[\sqrt t\Big]_{(z-a)^2}^{(z+a)^2} -\frac13\Big[t^{3/2}\Big]_{(z-a)^2}^{(z+a)^2}\right]\\
+    &=\frac{\sigma_0}{4z^2}\left[(z^2+a^2)\Big[|z+a|-|z-a|\Big]-\frac13\Big[|z+a|^3-|z-a|^3)\Big]\right].
+\tag{1}
+\end{align}
+$$
+
+Kom ihåg att för alla reella tal \( x \) så är \( \sqrt{x^2}=|x| \). Vi får alltså fyra fall -- \( |z|>a \) och \( |z| < a \) kombinerat med \( z>0 \) och \( z < 0 \) -- som måste behandlas var för sig.
+
+<h3 id="___sec1">Inuti sfären </h3>
+
+Eftersom att \( a>z \) så är \( |z+a|=z+a \) och \( |z-a|=a-z \), oavsett om \( z \) är positiv eller negativ. Två av de fyra fallen kan alltså studeras samtidigt.
+
+<p>
+Insättning av absolutbeloppen ovan i ekvation&nbsp;<a href="#mjx-eqn-1">(1)</a> ger, efter en smula algebra, att \( \phi(\vec r)=\sigma_0 z/3 \). Vektorfältet blir då
+$$
+\begin{equation}
+    \vec F =-\hat z\frac{\partial\phi}{\partial z}=-\frac{\sigma_0}3\hat z.
+\end{equation}
+$$
+
+<h3 id="___sec2">Utanför sfären </h3>
+
+Här måste positiva och negativa \( z \) studeras var för sig.
+
+<p>
+När \( z>a>0 \) är \( |z+a|=z+a \) och \( |r-a|=r-a \). Substitution i&nbsp;\eqref{phi} och förenkling av resultatet ger att \( \phi(\vec r)=\sigma_0a^3/3z^2 \). Vektorfältet blir 
+$$
+\begin{equation}
+    \vec F =-\hat z\frac{\partial\phi}{\partial r}=\frac{2\sigma_0a^3}{3z^3}\hat z,\quad z>0. \tag{2}
+\end{equation}
+$$
+
+<p>
+När \( |z|>a \) men \( z < 0 \) så blir \( |z+a|=-(z+a) \) och \( |z-a|=-(z-a) \). Den här gången blir \( \phi(\vec r)=-\sigma_0a^3/3z^2 \) och 
+$$
+\begin{equation}
+    \vec F =-\hat z\frac{\partial\phi}{\partial r}=-\frac{2\sigma_0a^3}{3z^3}\hat z,\quad z < 0.\tag{3}
+\end{equation}
+$$
+
+<p>
+Notera att alla kvantiteter utom \( z \) i&nbsp;<a href="#mjx-eqn-2">(2)</a> och&nbsp;<a href="#mjx-eqn-3">(3)</a> är konstanter; de ändrar alltså aldrig tecken. Därför kan vi kombinera dessa två ekvationer, och uttrycka fältet överallt utanför sfären som
+$$
+\begin{equation}
+    \vec F =-\hat z\frac{\partial\phi}{\partial r}=-\frac{2\sigma_0a^3}{3|z|^3}\hat z.
+\end{equation}
+$$
+
+<h3 id="___sec3">Kontroll: ytladdning </h3>
+
+Notera att vårt fält, betraktat längs symmetriaxeln, har en diskontinuitet vid \( z=\pm a \). Denna motsvarar ytladdningen. T.ex., vid \( \theta = 0 \) (dvs \( z=+a \)) har vi enligt uppgiftsformuleringen en ytladdning med styrkan \( \sigma_0 \). Detta kan vi verifiera genom att räkna ut
+$$
+\begin{equation}
+\hat{z} \cdot \left( \vec{F}_+ - \vec{F}_- \right)_{z=a} = \frac{2\sigma_0}{3} - \frac{-\sigma_0}{3} = \sigma_0.
+\end{equation}
+$$
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

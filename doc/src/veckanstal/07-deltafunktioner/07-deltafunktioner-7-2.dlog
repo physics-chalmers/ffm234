@@ -1,0 +1,177 @@
+translating doconce text in 07-deltafunktioner-7-2.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:71}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:71}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:71})?)
+*** warning: found reference "och ref{fig:72}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:72}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:72})?)
+*** warning: found reference "figurerna ref{fig:71}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:71}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:71})?)
+*** warning: found reference "och ref{fig:71}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:71}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:71})?)
+*** warning: found reference "figur ref{fig:71}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:71}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:71})?)
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 7.5.2: Derivator av deltafunktioner
+Rättfram derivering ger
+0 <<<!!MATH_BLOCK
+och
+1 <<<!!MATH_BLOCK
+Dessa funktioner och derivator är skisserade för $\epsilon = 0.02,0.04,0.06$ i figur ref{fig:71} och ref{fig:72}.
+
+FIGURE:[fig/fig721.pdf, width=900 frac=0.9] Två distributioner och deras förstaderivator i gränsen $\epsilon \to 0$. label{fig:71}
+
+FIGURE:[fig/fig722.pdf, width=900 frac=0.9] Andra- och tredjederivator av två distributioner i gränsen $\epsilon \to 0$. label{fig:72}
+
+Deltafunktionens derivator ska gå att partialintegrera (se diskussionen av ekvation (7.9) i kurskompendiet). Det vill säga (alla integraler går över hela $\mathbb R$, så alla randtermer är lika med noll):
+2 <<<!!MATH_BLOCK
+
+=== Explicit integrering ===
+
+Låt oss visa detta explicit för de två distributionerna som betraktas här. För en godtycklig slät funktion $f(x)$ kan vi Taylorutveckla:
+3 <<<!!MATH_BLOCK
+I båda fallen ovan är $h_\epsilon(x)$ en jämn funktion, så alla termer av typen $x^{2n+1}h_\epsilon(x)$, $n\in\mathbb Z$ integreras till noll. 
+
+Vi börjar titta på den Gaussiska approximationen. Inför notationen $f^{(n)}(0)\equiv f^{(n)}_0$. För förstaderivatan får vi följande genom att utföra integralerna (se formelsamling) eller genom att partialintegrera upprepade gånger,
+4 <<<!!MATH_BLOCK
+Det är lätt att inse att alla termer som innehåller högre ordningens derivator  av $f(x)$ kommer vara proportionella mot $\epsilon$, och gå mot noll. Kvar finns bara den väntade $-f'(0)$.
+
+På samma sätt studerar vi integralen över andraderivatan:
+5 <<<!!MATH_BLOCK
+De högre ordningens termer kommer återigen vara proprotionella mot $\epsilon$, och försvinner när gränsvärdet tas, vilket resulterar i att bara $f''(0)$ finns kvar.
+
+Vi övergår nu till att studera den Lorentzianska approximationen. På samma sätt som ovan får vi för förstaderivatan
+6 <<<!!MATH_BLOCK
+Eftersom att $x$ här är en integrationsvariabel har den inget konstigt för sig, utan går linjärt mot oändligheten. I gränsen $\epsilon\rightarrow 0$ går därför de högre ordningens termer mot noll, och vi får igen det väntade resultatet. 
+
+För andraderivatan får vi
+7 <<<!!MATH_BLOCK
+där alltså högre ordningens termer är proportionella mot $\epsilon$.
+
+Att bevisa ekvation (ref{eq:tredje}) för de båda fallen av $h_\epsilon(x)$ lämnas som en övning.
+
+=== Resonemang utgående från funktionernas form ===
+
+Vi kan också resonera utgående från figurerna ref{fig:71} och ref{fig:71} varför vi får dessa resultat. För att göra detta drar vi oss först till minnes uttrycken för olika ordningars derivator i termer av finita differenser:
+8 <<<!!MATH_BLOCK
+Det är inte svårt att föreställa sig att förstaderivatorna som ritats upp i den andra raden av figur ref{fig:71} kommer att plocka upp $-f(0+\epsilon/2)$ och $+f(0-\epsilon/2)$. Notera också att amplituden på de två topparna är lika stor och växer som $1/\epsilon$. Resultatet motsvarar alltså den finita differensen som definierar förstaderivatan av en funktion $f(x)$ i punkten $x=0$, fast med motsatt tecken.
+
+På liknande sätt kan vi resonera kring de högre ordningarnas derivator och jämföra figurerna med uttrycken från finita differenser. Notera speciellt den relativa storleken på de olika topparna och att amplituderna blir högre för andraderivatorna ($\sim 1/\epsilon^2$) och ännu högre för tredjederivatorna ($\sim 1/\epsilon^3$).
+
+*** Exercise: Uppgift 7.5.2: Derivator av deltafunktioner
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 07-deltafunktioner-7-2.p.tex
+translating doconce text in 07-deltafunktioner-7-2.do.txt to ipynb
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:71}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:71}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:71})?)
+*** warning: found reference "och ref{fig:72}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:72}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:72})?)
+*** warning: found reference "figurerna ref{fig:71}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:71}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:71})?)
+*** warning: found reference "och ref{fig:71}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:71}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:71})?)
+*** warning: found reference "figur ref{fig:71}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:71}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:71})?)
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 7.5.2: Derivator av deltafunktioner
+Rättfram derivering ger
+0 <<<!!MATH_BLOCK
+
+1 <<<!!MATH_BLOCK
+
+2 <<<!!MATH_BLOCK
+
+3 <<<!!MATH_BLOCK
+och
+4 <<<!!MATH_BLOCK
+
+5 <<<!!MATH_BLOCK
+
+6 <<<!!MATH_BLOCK
+
+7 <<<!!MATH_BLOCK
+Dessa funktioner och derivator är skisserade för $\epsilon = 0.02,0.04,0.06$ i figur ref{fig:71} och ref{fig:72}.
+
+FIGURE:[fig/fig721.pdf, width=900 frac=0.9] Två distributioner och deras förstaderivator i gränsen $\epsilon \to 0$. label{fig:71}
+
+FIGURE:[fig/fig722.pdf, width=900 frac=0.9] Andra- och tredjederivator av två distributioner i gränsen $\epsilon \to 0$. label{fig:72}
+
+Deltafunktionens derivator ska gå att partialintegrera (se diskussionen av ekvation (7.9) i kurskompendiet). Det vill säga (alla integraler går över hela $\mathbb R$, så alla randtermer är lika med noll):
+8 <<<!!MATH_BLOCK
+
+9 <<<!!MATH_BLOCK
+
+10 <<<!!MATH_BLOCK
+
+=== Explicit integrering ===
+
+Låt oss visa detta explicit för de två distributionerna som betraktas här. För en godtycklig slät funktion $f(x)$ kan vi Taylorutveckla:
+11 <<<!!MATH_BLOCK
+I båda fallen ovan är $h_\epsilon(x)$ en jämn funktion, så alla termer av typen $x^{2n+1}h_\epsilon(x)$, $n\in\mathbb Z$ integreras till noll. 
+
+Vi börjar titta på den Gaussiska approximationen. Inför notationen $f^{(n)}(0)\equiv f^{(n)}_0$. För förstaderivatan får vi följande genom att utföra integralerna (se formelsamling) eller genom att partialintegrera upprepade gånger,
+12 <<<!!MATH_BLOCK
+
+13 <<<!!MATH_BLOCK
+Det är lätt att inse att alla termer som innehåller högre ordningens derivator  av $f(x)$ kommer vara proportionella mot $\epsilon$, och gå mot noll. Kvar finns bara den väntade $-f'(0)$.
+
+På samma sätt studerar vi integralen över andraderivatan:
+14 <<<!!MATH_BLOCK
+
+15 <<<!!MATH_BLOCK
+De högre ordningens termer kommer återigen vara proprotionella mot $\epsilon$, och försvinner när gränsvärdet tas, vilket resulterar i att bara $f''(0)$ finns kvar.
+
+Vi övergår nu till att studera den Lorentzianska approximationen. På samma sätt som ovan får vi för förstaderivatan
+16 <<<!!MATH_BLOCK
+Eftersom att $x$ här är en integrationsvariabel har den inget konstigt för sig, utan går linjärt mot oändligheten. I gränsen $\epsilon\rightarrow 0$ går därför de högre ordningens termer mot noll, och vi får igen det väntade resultatet. 
+
+För andraderivatan får vi
+17 <<<!!MATH_BLOCK
+där alltså högre ordningens termer är proportionella mot $\epsilon$.
+
+Att bevisa ekvation (ref{eq:tredje}) för de båda fallen av $h_\epsilon(x)$ lämnas som en övning.
+
+=== Resonemang utgående från funktionernas form ===
+
+Vi kan också resonera utgående från figurerna ref{fig:71} och ref{fig:71} varför vi får dessa resultat. För att göra detta drar vi oss först till minnes uttrycken för olika ordningars derivator i termer av finita differenser:
+18 <<<!!MATH_BLOCK
+
+19 <<<!!MATH_BLOCK
+
+20 <<<!!MATH_BLOCK
+Det är inte svårt att föreställa sig att förstaderivatorna som ritats upp i den andra raden av figur ref{fig:71} kommer att plocka upp $-f(0+\epsilon/2)$ och $+f(0-\epsilon/2)$. Notera också att amplituden på de två topparna är lika stor och växer som $1/\epsilon$. Resultatet motsvarar alltså den finita differensen som definierar förstaderivatan av en funktion $f(x)$ i punkten $x=0$, fast med motsatt tecken.
+
+På liknande sätt kan vi resonera kring de högre ordningarnas derivator och jämföra figurerna med uttrycken från finita differenser. Notera speciellt den relativa storleken på de olika topparna och att amplituderna blir högre för andraderivatorna ($\sim 1/\epsilon^2$) och ännu högre för tredjederivatorna ($\sim 1/\epsilon^3$).
+
+*** Exercise: Uppgift 7.5.2: Derivator av deltafunktioner
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+collected all required additional files in ipynb-07-deltafunktioner-7-2-src.tar.gz which must be distributed with the notebook
+*** warning: latex envir \begin{gather} does not work well in Markdown.
+    Stick to \[ ... \], equation, equation*, align, or align*
+    environments in math environments.
+
+*** warning: latex envir \begin{gather} does not work well in Markdown.
+    Stick to \[ ... \], equation, equation*, align, or align*
+    environments in math environments.
+
+output in 07-deltafunktioner-7-2.ipynb

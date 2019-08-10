@@ -1,0 +1,647 @@
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 2.14 (Cederwalls kompendium)
+=== Enhetsvektorer ===
+
+Enhetsvektorer ges av (långt upp på sida 12 i Cederwall)
+4 <<<!!MATH_BLOCK
+H\"ar \"ar $u,v,w$ en funktion av sf\"ariska koordinater, så vi använder den sf\"ariska gradienten (Cederwall ekvation 2.14):
+5 <<<!!MATH_BLOCK
+
+=== Ortogonalitet ===
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här $\hat u, \hat v,\hat w$ fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att $\hat u\cdot \hat w=\hat v\cdot\hat w=0$. För $\hat u$ och $\hat v$:
+6 <<<!!MATH_BLOCK
+Alltså är $u,v,w$-systemet ortogonalt.
+
+=== Skalfaktorer och enhetsvektorer ===
+Från ekvation (ref{eq:ehat}) inser vi att skalfaktorerna $h_i$ är inversen av $|\nabla u_i|$. För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till $u,v,w$ i slutet. Notera att $u+v=2r$. Vi får
+7 <<<!!MATH_BLOCK
+
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+8 <<<!!MATH_BLOCK
+
+=== Gradientoperator ===
+För ortogonala koordinatsystem gäller att (Cederwall ekvation 2.13)
+9 <<<!!MATH_BLOCK
+där $\phi$ är ett godtyckligt skalärfält. I vårt $u,v,w$-system blir detta
+10 <<<!!MATH_BLOCK
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+11 <<<!!MATH_BLOCK
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+=== Ortsvektor ===
+I sfäriska koordinater är ortsvektorn 
+12 <<<!!MATH_BLOCK
+Vi har redan noterat att $r=(u+v)/2$; vi behöver nu också uttrycka $\hat r$ som en funktion av $\hat u,\hat v, \hat w$. 
+
+En smart linjärkombination av enhetsvektorerna (ref{eq:enhetsvektorer}):
+13 <<<!!MATH_BLOCK
+som översatt till nya koordinater betyder att
+14 <<<!!MATH_BLOCK
+Vi får alltså ortsvektorn
+15 <<<!!MATH_BLOCK
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 2.4.14
+=== Enhetsvektorer ===
+
+Enhetsvektorer ges av (långt upp på sida 12 i kurskompendiet)
+4 <<<!!MATH_BLOCK
+H\"ar \"ar $u,v,w$ en funktion av sf\"ariska koordinater, så vi använder den sf\"ariska gradienten (kurskompendium ekvation 2.14):
+5 <<<!!MATH_BLOCK
+
+=== Ortogonalitet ===
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här $\hat u, \hat v,\hat w$ fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att $\hat u\cdot \hat w=\hat v\cdot\hat w=0$. För $\hat u$ och $\hat v$:
+6 <<<!!MATH_BLOCK
+Alltså är $u,v,w$-systemet ortogonalt.
+
+=== Skalfaktorer och enhetsvektorer ===
+Från ekvation (ref{eq:ehat}) inser vi att skalfaktorerna $h_i$ är inversen av $|\nabla u_i|$. För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till $u,v,w$ i slutet. Notera att $u+v=2r$. Vi får
+7 <<<!!MATH_BLOCK
+
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+8 <<<!!MATH_BLOCK
+
+=== Gradientoperator ===
+För ortogonala koordinatsystem gäller att (kurskompendium ekvation 2.13)
+9 <<<!!MATH_BLOCK
+där $\phi$ är ett godtyckligt skalärfält. I vårt $u,v,w$-system blir detta
+10 <<<!!MATH_BLOCK
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+11 <<<!!MATH_BLOCK
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+=== Ortsvektor ===
+I sfäriska koordinater är ortsvektorn 
+12 <<<!!MATH_BLOCK
+Vi har redan noterat att $r=(u+v)/2$; vi behöver nu också uttrycka $\hat r$ som en funktion av $\hat u,\hat v, \hat w$. 
+
+En smart linjärkombination av enhetsvektorerna (ref{eq:enhetsvektorer}):
+13 <<<!!MATH_BLOCK
+som översatt till nya koordinater betyder att
+14 <<<!!MATH_BLOCK
+Vi får alltså ortsvektorn
+15 <<<!!MATH_BLOCK
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 2.4.14
+*Enhetsvektorer*
+
+Enhetsvektorer ges av (långt upp på sida 12 i kurskompendiet)
+4 <<<!!MATH_BLOCK
+H\"ar \"ar $u,v,w$ en funktion av sf\"ariska koordinater, så vi använder den sf\"ariska gradienten (kurskompendium ekvation 2.14):
+5 <<<!!MATH_BLOCK
+
+=== Ortogonalitet ===
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här $\hat u, \hat v,\hat w$ fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att $\hat u\cdot \hat w=\hat v\cdot\hat w=0$. För $\hat u$ och $\hat v$:
+6 <<<!!MATH_BLOCK
+Alltså är $u,v,w$-systemet ortogonalt.
+
+=== Skalfaktorer och enhetsvektorer ===
+Från ekvation (ref{eq:ehat}) inser vi att skalfaktorerna $h_i$ är inversen av $|\nabla u_i|$. För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till $u,v,w$ i slutet. Notera att $u+v=2r$. Vi får
+7 <<<!!MATH_BLOCK
+
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+8 <<<!!MATH_BLOCK
+
+=== Gradientoperator ===
+För ortogonala koordinatsystem gäller att (kurskompendium ekvation 2.13)
+9 <<<!!MATH_BLOCK
+där $\phi$ är ett godtyckligt skalärfält. I vårt $u,v,w$-system blir detta
+10 <<<!!MATH_BLOCK
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+11 <<<!!MATH_BLOCK
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+=== Ortsvektor ===
+I sfäriska koordinater är ortsvektorn 
+12 <<<!!MATH_BLOCK
+Vi har redan noterat att $r=(u+v)/2$; vi behöver nu också uttrycka $\hat r$ som en funktion av $\hat u,\hat v, \hat w$. 
+
+En smart linjärkombination av enhetsvektorerna (ref{eq:enhetsvektorer}):
+13 <<<!!MATH_BLOCK
+som översatt till nya koordinater betyder att
+14 <<<!!MATH_BLOCK
+Vi får alltså ortsvektorn
+15 <<<!!MATH_BLOCK
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 2.4.14
+*Enhetsvektorer*
+
+Enhetsvektorer ges av (långt upp på sida 12 i kurskompendiet)
+4 <<<!!MATH_BLOCK
+H\"ar \"ar $u,v,w$ en funktion av sf\"ariska koordinater, så vi använder den sf\"ariska gradienten (kurskompendium ekvation 2.14):
+5 <<<!!MATH_BLOCK
+
+=== Ortogonalitet ===
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här $\hat u, \hat v,\hat w$ fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att $\hat u\cdot \hat w=\hat v\cdot\hat w=0$. För $\hat u$ och $\hat v$:
+6 <<<!!MATH_BLOCK
+Alltså är $u,v,w$-systemet ortogonalt.
+
+=== Skalfaktorer och enhetsvektorer ===
+Från ekvation (ref{eq:ehat}) inser vi att skalfaktorerna $h_i$ är inversen av $|\nabla u_i|$. För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till $u,v,w$ i slutet. Notera att $u+v=2r$. Vi får
+7 <<<!!MATH_BLOCK
+
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+8 <<<!!MATH_BLOCK
+
+=== Gradientoperator ===
+För ortogonala koordinatsystem gäller att (kurskompendium ekvation 2.13)
+9 <<<!!MATH_BLOCK
+där $\phi$ är ett godtyckligt skalärfält. I vårt $u,v,w$-system blir detta
+10 <<<!!MATH_BLOCK
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+11 <<<!!MATH_BLOCK
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+=== Ortsvektor ===
+I sfäriska koordinater är ortsvektorn 
+12 <<<!!MATH_BLOCK
+Vi har redan noterat att $r=(u+v)/2$; vi behöver nu också uttrycka $\hat r$ som en funktion av $\hat u,\hat v, \hat w$. 
+
+En smart linjärkombination av enhetsvektorerna (ref{eq:enhetsvektorer}):
+13 <<<!!MATH_BLOCK
+som översatt till nya koordinater betyder att
+14 <<<!!MATH_BLOCK
+Vi får alltså ortsvektorn
+15 <<<!!MATH_BLOCK
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 2.4.14
+*Enhetsvektorer*
+
+Enhetsvektorer ges av (långt upp på sida 12 i kurskompendiet)
+4 <<<!!MATH_BLOCK
+H\"ar \"ar $u,v,w$ en funktion av sf\"ariska koordinater, så vi använder den sf\"ariska gradienten (kurskompendium ekvation 2.14):
+5 <<<!!MATH_BLOCK
+
+=== Ortogonalitet ===
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här $\hat u, \hat v,\hat w$ fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att $\hat u\cdot \hat w=\hat v\cdot\hat w=0$. För $\hat u$ och $\hat v$:
+6 <<<!!MATH_BLOCK
+Alltså är $u,v,w$-systemet ortogonalt.
+
+=== Skalfaktorer och enhetsvektorer ===
+Från ekvation (ref{eq:ehat}) inser vi att skalfaktorerna $h_i$ är inversen av $|\nabla u_i|$. För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till $u,v,w$ i slutet. Notera att $u+v=2r$. Vi får
+7 <<<!!MATH_BLOCK
+
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+8 <<<!!MATH_BLOCK
+
+=== Gradientoperator ===
+För ortogonala koordinatsystem gäller att (kurskompendium ekvation 2.13)
+9 <<<!!MATH_BLOCK
+där $\phi$ är ett godtyckligt skalärfält. I vårt $u,v,w$-system blir detta
+10 <<<!!MATH_BLOCK
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+11 <<<!!MATH_BLOCK
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+=== Ortsvektor ===
+I sfäriska koordinater är ortsvektorn 
+12 <<<!!MATH_BLOCK
+Vi har redan noterat att $r=(u+v)/2$; vi behöver nu också uttrycka $\hat r$ som en funktion av $\hat u,\hat v, \hat w$. 
+
+En smart linjärkombination av enhetsvektorerna (ref{eq:enhetsvektorer}):
+13 <<<!!MATH_BLOCK
+som översatt till nya koordinater betyder att
+14 <<<!!MATH_BLOCK
+Vi får alltså ortsvektorn
+15 <<<!!MATH_BLOCK
+
+*** Exercise: Uppgift 2.4.14
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.p.tex
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to ipynb
+open file with encoding utf-8
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 2.4.14
+*Enhetsvektorer*
+
+Enhetsvektorer ges av (långt upp på sida 12 i kurskompendiet)
+6 <<<!!MATH_BLOCK
+H\"ar \"ar $u,v,w$ en funktion av sf\"ariska koordinater, så vi använder den sf\"ariska gradienten (kurskompendium ekvation 2.14):
+7 <<<!!MATH_BLOCK
+
+8 <<<!!MATH_BLOCK
+
+9 <<<!!MATH_BLOCK
+
+10 <<<!!MATH_BLOCK
+
+=== Ortogonalitet ===
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här $\hat u, \hat v,\hat w$ fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att $\hat u\cdot \hat w=\hat v\cdot\hat w=0$. För $\hat u$ och $\hat v$:
+11 <<<!!MATH_BLOCK
+
+12 <<<!!MATH_BLOCK
+Alltså är $u,v,w$-systemet ortogonalt.
+
+=== Skalfaktorer och enhetsvektorer ===
+Från ekvation (ref{eq:ehat}) inser vi att skalfaktorerna $h_i$ är inversen av $|\nabla u_i|$. För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till $u,v,w$ i slutet. Notera att $u+v=2r$. Vi får
+13 <<<!!MATH_BLOCK
+
+14 <<<!!MATH_BLOCK
+
+15 <<<!!MATH_BLOCK
+
+16 <<<!!MATH_BLOCK
+
+17 <<<!!MATH_BLOCK
+
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+18 <<<!!MATH_BLOCK
+
+19 <<<!!MATH_BLOCK
+
+20 <<<!!MATH_BLOCK
+
+=== Gradientoperator ===
+För ortogonala koordinatsystem gäller att (kurskompendium ekvation 2.13)
+21 <<<!!MATH_BLOCK
+där $\phi$ är ett godtyckligt skalärfält. I vårt $u,v,w$-system blir detta
+22 <<<!!MATH_BLOCK
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+23 <<<!!MATH_BLOCK
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+=== Ortsvektor ===
+I sfäriska koordinater är ortsvektorn 
+24 <<<!!MATH_BLOCK
+Vi har redan noterat att $r=(u+v)/2$; vi behöver nu också uttrycka $\hat r$ som en funktion av $\hat u,\hat v, \hat w$. 
+
+En smart linjärkombination av enhetsvektorerna (ref{eq:enhetsvektorer}):
+25 <<<!!MATH_BLOCK
+som översatt till nya koordinater betyder att
+26 <<<!!MATH_BLOCK
+Vi får alltså ortsvektorn
+27 <<<!!MATH_BLOCK
+
+28 <<<!!MATH_BLOCK
+
+29 <<<!!MATH_BLOCK
+
+*** Exercise: Uppgift 2.4.14
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.ipynb
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 2.4.14
+=== Enhetsvektorer ===
+
+Enhetsvektorer ges av (långt upp på sida 12 i kurskompendiet)
+4 <<<!!MATH_BLOCK
+H\"ar \"ar $u,v,w$ en funktion av sf\"ariska koordinater, så vi använder den sf\"ariska gradienten (kurskompendium ekvation 2.14):
+5 <<<!!MATH_BLOCK
+
+=== Ortogonalitet ===
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här $\hat u, \hat v,\hat w$ fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att $\hat u\cdot \hat w=\hat v\cdot\hat w=0$. För $\hat u$ och $\hat v$:
+6 <<<!!MATH_BLOCK
+Alltså är $u,v,w$-systemet ortogonalt.
+
+=== Skalfaktorer och enhetsvektorer ===
+Från ekvation (ref{eq:ehat}) inser vi att skalfaktorerna $h_i$ är inversen av $|\nabla u_i|$. För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till $u,v,w$ i slutet. Notera att $u+v=2r$. Vi får
+7 <<<!!MATH_BLOCK
+
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+8 <<<!!MATH_BLOCK
+
+=== Gradientoperator ===
+För ortogonala koordinatsystem gäller att (kurskompendium ekvation 2.13)
+9 <<<!!MATH_BLOCK
+där $\phi$ är ett godtyckligt skalärfält. I vårt $u,v,w$-system blir detta
+10 <<<!!MATH_BLOCK
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+11 <<<!!MATH_BLOCK
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+=== Ortsvektor ===
+I sfäriska koordinater är ortsvektorn 
+12 <<<!!MATH_BLOCK
+Vi har redan noterat att $r=(u+v)/2$; vi behöver nu också uttrycka $\hat r$ som en funktion av $\hat u,\hat v, \hat w$. 
+
+En smart linjärkombination av enhetsvektorerna (ref{eq:enhetsvektorer}):
+13 <<<!!MATH_BLOCK
+som översatt till nya koordinater betyder att
+14 <<<!!MATH_BLOCK
+Vi får alltså ortsvektorn
+15 <<<!!MATH_BLOCK
+
+*** Exercise: Uppgift 2.4.14
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.p.tex
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to ipynb
+open file with encoding utf-8
+*** warning: heading in solution to exercise is not recommended!
+    (will cause problems in table of contents if solutions
+    are left out of the document). Just use paragraph headings!
+
+Uppgift 2.4.14
+=== Enhetsvektorer ===
+
+Enhetsvektorer ges av (långt upp på sida 12 i kurskompendiet)
+6 <<<!!MATH_BLOCK
+H\"ar \"ar $u,v,w$ en funktion av sf\"ariska koordinater, så vi använder den sf\"ariska gradienten (kurskompendium ekvation 2.14):
+7 <<<!!MATH_BLOCK
+
+8 <<<!!MATH_BLOCK
+
+9 <<<!!MATH_BLOCK
+
+10 <<<!!MATH_BLOCK
+
+=== Ortogonalitet ===
+Det är lättast att kontrollera om ett nytt system är ortogonalt om vi har dess basvektorer uttryckta i ett annat, mer välkänt, system. Därför låter vi här $\hat u, \hat v,\hat w$ fortsätta vara en funktion av sfäriska koordinater och basvektorer, och räknar ut skalärprodukterna mellan dem. Vi ser direkt att $\hat u\cdot \hat w=\hat v\cdot\hat w=0$. För $\hat u$ och $\hat v$:
+11 <<<!!MATH_BLOCK
+
+12 <<<!!MATH_BLOCK
+Alltså är $u,v,w$-systemet ortogonalt.
+
+=== Skalfaktorer och enhetsvektorer ===
+Från ekvation (ref{eq:ehat}) inser vi att skalfaktorerna $h_i$ är inversen av $|\nabla u_i|$. För enkelhetens skull fortsätter vi räkna i termer av sfäriska koordinater, och översätter till $u,v,w$ i slutet. Notera att $u+v=2r$. Vi får
+13 <<<!!MATH_BLOCK
+
+14 <<<!!MATH_BLOCK
+
+15 <<<!!MATH_BLOCK
+
+16 <<<!!MATH_BLOCK
+
+17 <<<!!MATH_BLOCK
+
+Kombinerar vi skalfaktorerna (i sfäriska koordinater) och de onormerade enhetvektorerna uträknade ovan så får vi 
+18 <<<!!MATH_BLOCK
+
+19 <<<!!MATH_BLOCK
+
+20 <<<!!MATH_BLOCK
+
+=== Gradientoperator ===
+För ortogonala koordinatsystem gäller att (kurskompendium ekvation 2.13)
+21 <<<!!MATH_BLOCK
+där $\phi$ är ett godtyckligt skalärfält. I vårt $u,v,w$-system blir detta
+22 <<<!!MATH_BLOCK
+Sätter vi in skalfaktorerna vi beräknat ovan är det lätt att identifiera gradientoperatorn
+23 <<<!!MATH_BLOCK
+Notera att den inversa skalfaktorn alltid kommer före partialderivatan! Skriver man dem i fel ordning ska plötsligt även skalfaktorn deriveras, och det blir fel.
+
+=== Ortsvektor ===
+I sfäriska koordinater är ortsvektorn 
+24 <<<!!MATH_BLOCK
+Vi har redan noterat att $r=(u+v)/2$; vi behöver nu också uttrycka $\hat r$ som en funktion av $\hat u,\hat v, \hat w$. 
+
+En smart linjärkombination av enhetsvektorerna (ref{eq:enhetsvektorer}):
+25 <<<!!MATH_BLOCK
+som översatt till nya koordinater betyder att
+26 <<<!!MATH_BLOCK
+Vi får alltså ortsvektorn
+27 <<<!!MATH_BLOCK
+
+28 <<<!!MATH_BLOCK
+
+29 <<<!!MATH_BLOCK
+
+*** Exercise: Uppgift 2.4.14
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.ipynb
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: missing . , : ) or ? after paragraph heading:
+__Enhetsvektorer__
+__Ortogonalitet__
+__Skalfaktorer och enhetsvektorer__
+__Gradientoperator__
+__Ortsvektor__
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.p.tex
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to ipynb
+open file with encoding utf-8
+*** warning: missing . , : ) or ? after paragraph heading:
+__Enhetsvektorer__
+__Ortogonalitet__
+__Skalfaktorer och enhetsvektorer__
+__Gradientoperator__
+__Ortsvektor__
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.ipynb
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+*** warning: missing . , : ) or ? after paragraph heading:
+__Enhetsvektorer__
+__Ortogonalitet__
+__Skalfaktorer och enhetsvektorer__
+__Gradientoperator__
+__Ortsvektor__
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+*** warning: missing . , : ) or ? after paragraph heading:
+__Enhetsvektorer__
+__Ortogonalitet__
+__Skalfaktorer och enhetsvektorer__
+__Gradientoperator__
+__Ortsvektor__
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to pdflatex
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.p.tex
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to ipynb
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.ipynb
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to pdflatex
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.p.tex
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to ipynb
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.ipynb
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to html
+open file with encoding utf-8
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14-bs.html
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: missing . , : ) or ? after paragraph heading:
+__Enhetsvektorer__
+__Ortogonalitet__
+__Skalfaktorer och enhetsvektorer__
+__Gradientoperator__
+__Ortsvektor__
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.p.tex
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to ipynb
+open file with encoding utf-8
+*** warning: missing . , : ) or ? after paragraph heading:
+__Enhetsvektorer__
+__Ortogonalitet__
+__Skalfaktorer och enhetsvektorer__
+__Gradientoperator__
+__Ortsvektor__
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.ipynb
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: missing . , : ) or ? after paragraph heading:
+__Enhetsvektorer__
+__Ortogonalitet__
+__Skalfaktorer och enhetsvektorer__
+__Gradientoperator__
+__Ortsvektor__
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.p.tex
+translating doconce text in 02-kroklinjiga_koordinater-2-14.do.txt to ipynb
+open file with encoding utf-8
+*** warning: missing . , : ) or ? after paragraph heading:
+__Enhetsvektorer__
+__Ortogonalitet__
+__Skalfaktorer och enhetsvektorer__
+__Gradientoperator__
+__Ortsvektor__
+
+*** Exercise: Uppgift 2.4.14
+    label{problem:2.14}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 02-kroklinjiga_koordinater-2-14.ipynb

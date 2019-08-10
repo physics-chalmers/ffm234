@@ -1,0 +1,283 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Klassisk fysik och vektorfält - Veckans tal">
+
+<title>FFM232, Klassisk fysik och vektorfält - Veckans tal</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [(u'Uppgift 7.1 (Cederwalls kompendium): Stegfunktioner och deltafunktioner',
+               2,
+               None,
+               '___sec0'),
+              (u'Remarks', 3, None, '___sec1')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="07-deltafunktioner-7-1-bs.html">FFM232, Klassisk fysik och vektorfält - Veckans tal</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Uppgift 7.1 (Cederwalls kompendium): Stegfunktioner och deltafunktioner</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Remarks</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM232, Klassisk fysik och vektorfält - Veckans tal</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Christin Rhen, Chalmers, Göteborg, Sverige -->
+
+<center>
+<b>Christin Rhen, Chalmers, Göteborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 6, 2016</h4></center> <!-- date -->
+<br>
+<p>
+<!-- --- begin exercise --- -->
+
+<p>
+</div> <!-- end jumbotron -->
+
+<h2 id="___sec0">Uppgift 7.1 (Cederwalls kompendium): Stegfunktioner och deltafunktioner </h2>
+
+<p>
+Konstruera approximationerna till stegfunktionen svarande mot approximationerna av deltafunktionen i ekv. (7.6), (7.7) och (7.8)!
+
+<p>
+<!-- --- begin hint in exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_1_1" style="font-size: 80%;"></a>
+<b>Hint.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_1_1">
+
+<ul>
+<li> Varje given deltafunktions-approximation kan integreras och ger då en motsvarande stegfunktions-approximation.</li> 
+<li> Utför integralen först och låt sedan \( \epsilon \to 0 \). Glöm inte att skissa funktionerna.</li>
+<li> I fallet med den Gaussiska deltafunktions-approximationen får man en primitiv funktion som innehåller den s.k. felfunktionen \( \mathrm{erf}(x) \).</li>
+</ul>
+
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end hint in exercise --- -->
+
+<p>
+<!-- --- begin answer of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_1_2" style="font-size: 80%;"></a>
+<b>Answer.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_1_2">
+
+<p>
+I samtliga fall har man \( \sigma_\epsilon (x)=\int_{-\infty}^x h_\epsilon (y)dy \), där \( h_\epsilon(x) \) är approximationen av \( \delta(x) \). Svarande mot (7.6) har man en styckvis linjär och kontinuerlig funktion som är 0 för \( x < -\frac{\epsilon}{2} \), 1 för \( x>\frac{\epsilon}{2} \) och växer linjärt däremellan. Svarande mot (7.7) har man \( \sigma_\epsilon(x)=\frac{1}{2}\left(1+\mathrm{erf}(\frac{x}{\epsilon})\right) \) och mot (7.8) har man \( \sigma_\epsilon(x)=\frac{1}{2}+\frac{1}{\pi}\tanh(\frac{x}{\epsilon}) \).
+
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end answer of exercise --- -->
+
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_1_4" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_1_4">
+
+<p>
+Stegfunktionen kan definieras som (ekvation (7.10) i Cederwall)
+$$
+\begin{equation}
+    H(x) =\int_{-\infty}^x\mathrm dt\ \delta(t)=\left\{\begin{array}{cc}
+        0 & x < 0 \\
+        1 & x > 0
+    \end{array} \right..
+    \tag{1}
+\end{equation}
+$$
+
+Exakt vilket värde \( H(0) \) antar varierar i litteraturen. Vanligt är att \( H(0) \) är odefinierat eller lika med \( 1/2 \).
+
+<p>
+Varje given deltafunktions-approximation kan alltså integreras enligt ekvation&nbsp;<a href="#mjx-eqn-1">(1)</a> och ger då en motsvarande stegfunktions-approximation. Till exempel kan
+$$
+\begin{equation}
+    \delta(x)=\lim_{\epsilon\rightarrow 0}h_\epsilon(x) =\lim_{\epsilon\rightarrow 0}\left\{\begin{array}{cc}
+        1/\epsilon & |x| < \epsilon/2 \\
+        0 & |x| > \epsilon/2
+    \end{array} \right.
+\end{equation}
+$$
+
+integreras trivialt till (med eget val av integrationskonstant)
+$$
+\begin{equation}
+    H(x)=\lim_{\epsilon\rightarrow 0}\left\{\begin{array}{cc}
+        0 & x < -\epsilon/2 \\
+        \frac{x}{\epsilon}+\frac{1}{2} & -\epsilon/2 < x < \epsilon/2 \\
+        1 & x > \epsilon/2
+    \end{array} \right..
+\end{equation}
+$$
+
+<p>
+För den Gaussiska deltafunktions-approximationen \( h_\epsilon(x) =\exp\left[-x^2/\epsilon^2\right]/\epsilon\sqrt\pi \) får vi stegfunktionen (med eget val av integrationskonstant)
+$$
+\begin{equation}
+H(x)=\lim_{\epsilon\rightarrow 0}\frac{1}{2}\left[1+\mathrm{erf}\left(\frac{ x}{\epsilon}\right)\right].
+\end{equation}
+$$
+
+Här är felfunktionen
+$$
+\begin{equation}
+    \mathrm{erf}(x)=\frac2{\sqrt\pi}\int_0^x\mathrm dt\ e^{-t^2}.
+\end{equation}
+$$
+
+<p>
+Slutligen har vi den Lorentzianska approximationen \( h_\epsilon(x)=\epsilon\pi^{-1}(x^2+\epsilon^2)^{-1} \), som även den är rättfram att integrera. Resultatet är (med eget val av integrationskonstant)
+$$
+\begin{equation}
+H(x)=\lim_{\epsilon\rightarrow 0}\left[\tfrac12+\tfrac12\tanh\left(\tfrac x\epsilon\right)\right].
+\end{equation}
+$$
+
+<p>
+Utseendet på dessa funktioner skissas i figurerna <a href="#fig:711">1</a> och <a href="#fig:712">2</a> för några olika värden på \( \epsilon \).
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 1:  Primitiva funktionen till den Gaussiska approximationen av deltafunktionen i gränsen \( \epsilon \to 0 \). <div id="fig:711"></div> </p></center>
+<p><img src="fig/fig711.png" align="bottom" width=600></p>
+</center>
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 2:  Primitiva funktionen till den Lorentziska approximationen av deltafunktionen i gränsen \( \epsilon \to 0 \). <div id="fig:712"></div> </p></center>
+<p><img src="fig/fig712.png" align="bottom" width=600></p>
+</center>
+
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- Closing remarks for this Exercise -->
+
+<h3 id="___sec1">Remarks </h3>
+
+<p>
+Uppgiften illustrerar hur en stegfunktion resulterar som en primitiv funktion till en deltafunktion. Vi undersöker olika distributioner för vilka integralen kan utföras analytiskt och studerar sedan gränsen då \( \epsilon \to 0 \).
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._07-deltafunktioner-7-1-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

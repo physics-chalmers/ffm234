@@ -1,0 +1,25 @@
+translating doconce text in 09-diffekv-veckanstal-spegling.do.txt to pdflatex
+open file with encoding utf-8
+
+*** Exercise: Tentatal 2012-10-23: 6
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+*** error: figure file "fig-09-diffekv-veckanstal-spegling/spegling.pdf" does not exist!
+translating doconce text in 09-diffekv-veckanstal-spegling.do.txt to pdflatex
+open file with encoding utf-8
+
+*** Exercise: Tentatal 2012-10-23: 6
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 09-diffekv-veckanstal-spegling.p.tex
+translating doconce text in 09-diffekv-veckanstal-spegling.do.txt to ipynb
+open file with encoding utf-8
+
+*** Exercise: Tentatal 2012-10-23: 6
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+collected all required additional files in ipynb-09-diffekv-veckanstal-spegling-src.tar.gz which must be distributed with the notebook
+output in 09-diffekv-veckanstal-spegling.ipynb

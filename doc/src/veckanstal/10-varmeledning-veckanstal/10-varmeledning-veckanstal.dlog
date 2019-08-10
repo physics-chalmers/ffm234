@@ -1,0 +1,16 @@
+translating doconce text in 10-varmeledning-veckanstal.do.txt to pdflatex
+open file with encoding utf-8
+
+*** Exercise: Uppgift 10.3.3
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 10-varmeledning-veckanstal.p.tex
+translating doconce text in 10-varmeledning-veckanstal.do.txt to ipynb
+open file with encoding utf-8
+
+*** Exercise: Uppgift 10.3.3
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 10-varmeledning-veckanstal.ipynb

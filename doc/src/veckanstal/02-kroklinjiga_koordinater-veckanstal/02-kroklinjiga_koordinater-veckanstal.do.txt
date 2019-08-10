@@ -1,0 +1,52 @@
+TITLE: FFM234, Klassisk fysik och vektorfält - Veckans tal
+AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/tsp/", Institutionen för  fysik, Chalmers
+DATE: today
+
+===== {Exercise}: Uppgift 2.4.8 =====
+
+Betrakta vektorfältet
+$$
+\vec E(\vec{r}) = \frac{m}{4\pi r^3} (2\cos \theta \hat{r} + \sin\theta \hat{\theta}),
+$$
+där $m$ är en konstant. (Detta är fältet från en elektrisk dipol.)
+
+Bestäm ekvationen för den fältlinje till $\vec E(\vec{r})$ som går genom punkten $(r, \theta, \varphi) = (2, \pi /4, \pi /6)$.
+
+!bans
+$r = 4 \sin^2 \theta$, $\varphi = \pi/6$.
+!eans
+
+!bhint
+Fältlinjer är de kurvor som följer ett vektorfält på så sätt att de i varje punkt har vektorfältet som sin tangentvektor. Fältlinjer kan parametriseras $\vec{r} = \vec{r}(\tau)$ och differentialekvationerna för att bestämma dem är
+$$
+\frac{\mbox{d}\vec{r}}{\mbox{d}\tau} = C \vec{E},
+$$
+där $C$ är en godtycklig konstant vilken ju inte påverkar tangentriktningen.
+
+Med cartesiska koordinater gäller ju att förskjutningsvektorn $\mbox{d}\vec{r}$ kan skrivas $\mbox{d}\vec{r} = \hat{x} \mbox{d}x + \hat{y} \mbox{d}y + \hat{z} \mbox{d}z$ och vektorekvationen ovan ger tre differentialekvationer (en för varje riktning $\hat{x}$, $\hat{y}$, $\hat{z}$):
+$$
+\left\{
+\begin{array}{ll}
+x: &
+\frac{\mbox{d}x}{\mbox{d}\tau} = C E_x \\
+y: &
+\frac{\mbox{d}y}{\mbox{d}\tau} = C E_y \\
+z: &
+\frac{\mbox{d}z}{\mbox{d}\tau} = C E_z.
+\end{array}
+\right.
+$$
+Men om fältet är mycket enklare att uttrycka i kroklinjiga koordinater är det fördelaktigt att teckna differentialekvationerna i dessa riktningarna istället. Men då får man komma ihåg att förskjutningsvektorn blir
+$$
+\mbox{d}\vec{r} = \sum_{i=1}^3 h_i \hat{u}_i \mbox{d}u_i,
+$$
+där $h_i$ är koordinatsystemets skalfaktorer.
+!ehint
+
+!bremarks
+Uppgiften illustrerar hur man ställer upp differentialekvationerna för fältlinjer i fallet då vektorfältet enklast beskrivs i ett kroklinjigt koordinatsystem. Den illustrerar också hur en specifik fältlinje kan identifieras från ett randvillkor.
+!eremarks
+
+!bsol
+Att göra
+!esol

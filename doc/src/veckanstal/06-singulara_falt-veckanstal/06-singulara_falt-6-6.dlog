@@ -1,0 +1,176 @@
+translating doconce text in 06-singulara_falt-6-6.do.txt to html
+*** error: found multiple labels:
+    eq:GaussTot
+translating doconce text in 06-singulara_falt-6-6.do.txt to html
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6-solarized.html
+translating doconce text in 06-singulara_falt-6-6.do.txt to html
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6.html
+translating doconce text in 06-singulara_falt-6-6.do.txt to html
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6-bs.html
+translating doconce text in 06-singulara_falt-6-6.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6.tex
+translating doconce text in 06-singulara_falt-6-6.do.txt to ipynb
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+collected all required additional files in ipynb-06-singulara_falt-6-6-src.tar.gz which must be distributed with the notebook
+output in 06-singulara_falt-6-6.ipynb
+translating doconce text in 06-singulara_falt-6-6.do.txt to html
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6-solarized.html
+translating doconce text in 06-singulara_falt-6-6.do.txt to html
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6.html
+translating doconce text in 06-singulara_falt-6-6.do.txt to html
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6-bs.html
+translating doconce text in 06-singulara_falt-6-6.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6.tex
+translating doconce text in 06-singulara_falt-6-6.do.txt to ipynb
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+collected all required additional files in ipynb-06-singulara_falt-6-6-src.tar.gz which must be distributed with the notebook
+output in 06-singulara_falt-6-6.ipynb
+translating doconce text in 06-singulara_falt-6-6.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6.p.tex
+translating doconce text in 06-singulara_falt-6-6.do.txt to ipynb
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6 (Cederwalls kompendium)
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+collected all required additional files in ipynb-06-singulara_falt-6-6-src.tar.gz which must be distributed with the notebook
+output in 06-singulara_falt-6-6.ipynb
+translating doconce text in 06-singulara_falt-6-6.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6.6
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6.p.tex
+translating doconce text in 06-singulara_falt-6-6.do.txt to ipynb
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6.6
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+collected all required additional files in ipynb-06-singulara_falt-6-6-src.tar.gz which must be distributed with the notebook
+output in 06-singulara_falt-6-6.ipynb
+translating doconce text in 06-singulara_falt-6-6.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6.6
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 06-singulara_falt-6-6.p.tex
+translating doconce text in 06-singulara_falt-6-6.do.txt to ipynb
+open file with encoding utf-8
+*** warning: found reference "figur ref{fig:cone}" with unexpected word "figur" in front
+
+    (expected Section/Chapter/Figure ref{fig:cone}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:cone})?)
+
+*** Exercise: Uppgift 6.6.6
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+collected all required additional files in ipynb-06-singulara_falt-6-6-src.tar.gz which must be distributed with the notebook
+output in 06-singulara_falt-6-6.ipynb

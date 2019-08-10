@@ -1,0 +1,203 @@
+TITLE: FFM234, Klassisk fysik och vektorfält - Veckans tal
+AUTHOR: Tobias Wenger och Christian Forssén, Chalmers
+DATE: today
+
+===== {Exercise}: Uppgift 6.6.6 =====
+
+Beräkna normalytintegralen av
+!bt
+\begin{equation}
+\vec{F}= F_0 \frac{a^2}{(x^2+y^2+z^2)^{3/2}} \left[ x \hat{x}  + y \hat{y} 
++ \left( z + \frac{z}{a} \frac{(x^2+y^2+z^2)^{3/2}}{a^2} \right) \hat{z} \right ]
+\end{equation}
+!et
+över ytan $S_1:\ x^2+y^2=(z-3a)^2$, $0\leq z\leq 3a$. $F_0$ och $a$ är konstanter.
+
+!bans
+$\int_{S_1} \vec{F} \cdot \mbox{d}\vec{S} = 11 \pi F_0 a^2$
+!eans
+
+!bhint
+* Ytan motsvarar en kon utan bottenplatta.
+* Skriv om fältet i sfäriska koordinater. 
+* Den första termen av $\vec{F}$ motsvarar en punktkälla belägen i origo.
+  * Ytintegralen för denna term kan räknas ut genom att beräkna vilken rymdvinkel som konen upptar sedd från punktkällan.
+  * Alternativt kan man sluta ytan genom en halvsfär som inkluderar punktkällan inne i volymen.
+  * ... eller en yta som gör att punktkällan hamnar utanför.
+* Den andra termen av $\vec{F}$ termen är en rymdkälla med en källtäthet, $\nabla \cdot \vec{F}_2$ som är enkel att räkna ut.
+  * Här blir det enkelt att använda Gauss sats. Men kom ihåg att sluta ytan på lämpligt sätt.
+!ehint
+
+
+!bsol
+Det vi ska räkna ut är normalytintegralen över $S_1$, dvs 
+!bt
+\begin{equation}
+\int_{S_1}\ d\vec{S}\cdot \vec{F}
+\end{equation}
+!et
+Detta kan så klart lösas genom att hitta en normalvektor till ytan, sedan hitta en parametrisering till konen och utföra den resulterande integralen. Man ska dock ha i ryggraden att man kan använda Gauss sats istället, det finns ingen garanti att det blir enklare men det är ofta värt att tänka på det.
+
+Vi använder oss därför av den generella lösningsstrategin för Gauss sats:
+
+o Bestäm utseendet på ytan $S$ och rita en tydlig figur.
+o Undersök fältet $\vec{F}$. Singulariteter? Beräkna $\nabla \cdot \vec{F}$.
+o Slut ytan $S$. Undvik singulariteter inuti den inneslutna volymen.
+o Teckna Gauss sats och beräkna integralen.
+o Har normalen rätt riktning?
+
+Vi känner igen ytan $S_1$ som en kon. Här kan man tänka på konen som sammansatt av många cirklar vars radie bestäms av var i $z-$led man befinner sig. I $z=3a$ ser man att radien på cirkeln blir noll, detta är således spetsen av konen. I $z=0$ ser vi att cirkeln har radien $3a$. Vi börjar med att rita upp ytan $S_1$, den visas i figur ref{fig:cone}. 
+
+FIGURE:[cone.png, width=600 frac=0.8] Ytan $S_1$ uppritad. label{fig:cone}
+
+* Undersök fältet $\vec{F}$. Singulariteter? Beräkna $\nabla \cdot \vec{F}$.
+Ska man använda Gauss sats så är det viktigt att man behandlar singulära delar av fältet korrekt, dvs identifiera *källtermer* som är inneslutna innanför ytan. När man separerat de singulära delarna av fältet så kan man sen beräkna divergensen och utföra volymsintegralen. Vi skriver fältet $\vec{F}$ som två olika fält 
+!bt
+\begin{equation}
+\vec{F}=\vec{F_1}+\vec{F_2}
+\end{equation}
+!et
+där 
+!bt
+\begin{align}
+\vec{F_1}&= F_0 \frac{a^2}{(x^2+y^2+z^2)^{3/2}} \left( x,y,z \right ) = F_0 a^2 \frac{\hat{r}}{r^2}\\
+\vec{F_2}&= F_0 \frac{z}{a}\hat{z}
+\end{align}
+!et
+För att skriva om fältet $\vec{F}_1$ till sfäriska kordinater har vi använt oss av att
+!bt
+\begin{align}
+x\hat{x}+y\hat{y}+z\hat{z} = r\hat{r}\\
+\sqrt{x^2+y^2+z^2}=r
+\end{align}
+!et
+Vi känner nu igen fältet $\vec{F}_1$ som fältet från en punktkälla i origo. Styrkan hos punktkällan är $4\pi F_0 a^2$. 
+
+Fältet $\vec{F}_2$ motsvarar en rymdkälla med konstant källtäthet
+!bt
+\begin{equation}
+\nabla \cdot \vec{F_2} = F_0 \partial_z \frac{z}{a} = \frac{F_0}{a}.
+\end{equation}
+!et
+
+* Slut ytan $S$. Undvik singulariteter inuti den inneslutna volymen.
+Gauss sats lyder 
+!bt
+\begin{equation}
+\int_{S}\ \vec{F} \cdot d\vec{S} = \int_{V}\ \nabla \cdot \vec{F} dV
+\end{equation} 
+!et
+och det är viktigt att tänka på att $S=\partial V$, dvs ytan $S$ är randen till volymen $V$. Det betyder att $S$ måste vara en sluten yta (hur kan den annars vara randen till en volym?). Det betyder att för att kunna använda Gauss sats för denna uppgiften måste vi sluta konen. Det mest uppenbara sättet att sluta ytan är att lägga till en bottenplatta till konen. \footnote{Vi kan såklart sluta yan med något annat än en bottenplatta om vi vill. Tex kunde vi ta en halsvsfär och Gauss sats fungerar. Men för att det ska vara lönt att använda Gauss sats är det viktigt att den ytan vi lägger till är enklare att integrera över än originalytan.}
+
+Bottenplattan motsvarar alltså cirkeln som konen ligger på i $x,y$ planet. Vi kallar denna ytan $S_2$ och skriver den som $S_2:\ x^2+y^2\leq (3a)^2$. 
+
+Vi har dock ett litet problem nu: Punktkällan ligger mitt i bottenplattan, dvs på ytan. Hur ska man tänka nu? Vi kommer att illustrera *tre* olika sätt att hantera denna punktkälla. 
+o Slut istället ytan på ett annat sätt så att punktkällan hamnar helt utanför.
+o Slut istället ytan på ett annat sätt så att punktkällan hamnar helt innanför.
+o Beräkna bidraget från punktkällan genom att räkna ut rymdvinkeln som konen upptar.
+Alla tre metoderna kommer givetvis att ge samma svar. 
+
+För att följa alt. 1 inför vi en halvsfär upp i det övre halvplanet med centrum i origo. Halvsfärens radie kallar vi $\epsilon$ och låter denna vara liten så att halvsfärens yta inte skär konens mantelyta. Denna nya yta kallar vi $S^+_\epsilon$. Tillsammans med $S_1$ och den modifierade bottenplattan $S_{2-\epsilon}$ bildas en sluten yta som *inte* kommer att innesluta punktkällan i volymen. 
+
+För att följa alt. 2 så sluter vi t.ex. ytan med en halvsfär ned i det nedre halvplanet med centrum i origo. Här kan vi låta radien vara lika med $3a$ så att vi direkt får en sluten yta av $S_1 + S^-_{3a}$ som omsluter punktkällan, där $S^-_{3a}$ är den införda halvsfärens yta.
+
+För att följa alt. 3 handlar det bara om att beräkna hur stor rymdvinkel som konen upptar sedd från punktkällan. Se mer nedan.
+
+* Teckna Gauss sats och beräkna integralen.
+
+Vi börjar med det oproblematiska bidraget från $\vec{F}_2$ med den sökta ytintegralen
+!bt
+\begin{equation}
+I_2 \equiv \int_{S_1} \vec{F}_2 \cdot d\vec{S}
+\end{equation}
+!et
+
+Vi använder den slutna ytan $S_1+S_2$ som vi kan använda i Gauss sats
+!bt
+\begin{equation}
+\int_{S_1+S_2} \vec{F}_2 \cdot d\vec{S} = \int_V \nabla \cdot \vec{F}_2 dV 
+\end{equation}
+!et
+
+Vi bollar över integralen över $S_2$ till andra sidan av likheten och får
+!bt
+\begin{equation}
+label{eq:GaussTot}
+\int_{S_1} \vec{F}_2 \cdot d\vec{S} = \int_V \nabla \cdot \vec{F}_2 dV - \int_{S_2} \vec{F}_2 \cdot d\vec{S}
+\end{equation}
+!et
+där den ytintgral som uppgiften ber oss beräkna nu står i vänsterledet. Vi ser att det var viktigt att sluta ytan då vi nu har en extra term att dra bort från värdet av volymsintegralen. Nyttan med Gauss sats är som störst när divergensen är simpel och normalytintegralen över bottenplattan (eller vilken annan del man slutit sin yta med) är simpel.
+
+Divergensen för $\vec{F}_2$ räknade vi ut ovan och vi får
+!bt
+\begin{equation}
+\int_V \nabla \cdot \vec{F_2} dV = \frac{F_0}{a} \int_V dV = F_0 \pi (3a)^2
+\end{equation}
+!et
+där vi i det sista steget använt att volymen av en kon är $V=\pi r^2 h/3$ där $r$ är basradien och $h$ är höjden. 
+
+Vi behöver nu ytintegralen över bottenlattan kvar enligt ekv. (ref{eq:GaussTot}). Det är viktigt att notera att bottenplattans normalvektor pekar ut från den inneslutna volymen, dvs nedåt. Vi ska alltså beräkna 
+!bt
+\begin{equation}
+\int_{S_2} \vec{F_2} \cdot d\vec{S} = -\int_{S_2} \vec{F_2} \cdot \hat{z} dS= -\int_{S_2} F_0\frac{z}{a}\hat{z} \cdot \hat{z} dS
+\end{equation}
+!et
+eftersom $z=0$ på $S_2$ så integralen över $\vec{F}_2$ på bottenplattan är noll. Vi har alltså att
+!bt
+\begin{equation}
+I_2 = F_0 \pi (3a)^2
+\end{equation}
+!et
+
+Återstår integralen över $\vec{F}_1$. Enligt alt. 1 blir
+!bt
+\begin{equation}
+label{eq:GaussTot2}
+I_1 = \int_{S_1} \vec{F}_1 \cdot d\vec{S} = \int_{V_1} \nabla \cdot \vec{F}_1 dV - \int_{S_{2-\epsilon}} \vec{F}_1 \cdot d\vec{S} - \int_{S^+_{\epsilon}} \vec{F}_1 \cdot d\vec{S}.
+\end{equation}
+!et
+Volymsintegralen görs här över en volym som inte inkluderar punktkällan. Den blir därför noll (divergensen $\nabla \cdot \vec{F}_1=0$ i hela denna volym). Ytintegralen över bottenplattan $S_{2-\epsilon}$ blir också noll eftersom fältets riktning $\hat{r}$ är vinkelrät mot ytans normalriktning. På denna yta ligger ju $\hat{r}$ alltid i $xy$ planet. Slutligen har vi integralen över halvsfären. Normalen måste här vara riktad i negativ $\hat{r}$-led för att peka ut från volymen
+!bt
+\begin{equation}
+\int_{S^+_{\epsilon}} \vec{F_1} \cdot d\vec{S} = \int_{S^+_{\epsilon}} F_0 a^2 \frac{\hat{r}}{\epsilon^2} \cdot (-\hat{r}) \epsilon^2 \sin\theta \mbox{d}\theta \mbox{d}\phi= -F_0 a^2 2\pi 
+\end{equation}
+!et
+Slutligen får vi alltså $I_1 = 0 - 0 - (-F_0 a^2 2\pi ) = F_0 a^2 2\pi$.
+
+Med alt. 2 har vi att
+!bt
+\begin{equation}
+label{eq:GaussTot3}
+I_1 = \int_{S_1} \vec{F}_1 \cdot d\vec{S} = \int_{V_2} \nabla \cdot \vec{F}_1 dV - \int_{S^-_{3a}} \vec{F}_1 \cdot d\vec{S}.
+\end{equation}
+!et
+Nu kommer volymen $V_2$ att innesluta punktkällan och bidraget från denna term blir lika med punktkällans styrka: $F_0 a^2 4\pi$. Ytintegralen över $S^-_{3a}$ göra på precis samma sätt som ovan, men vi skall nu notera att normalriktningen pekar i positiv $\hat{r}$-led för att peka ut från volymen. Bidraget blir $F_0 a^2 2\pi$. Slutligen ger alltså denna metod att $I_1 = F_0 a^2 4\pi - F_0 a^2 2\pi = F_0 a^2 2\pi$, precis som alt. 1 ovan.
+
+Enligt alt. 3 hade vi direkt kunnat räkna ut ytintegralen över konens mantelyta med Cederwall ekv. 6.7. Sett från punktkällan i origo upptar konens mantelyta en rymdvinkel $2\pi$. Det totala bidraget blir därför $(2\pi)/(4\pi) = 1/2$ av punktkällans styrka. Dvs vi får $I_1 = (F_0 a^2 4\pi)/2 = F_0 a^2 2\pi$. Givetvis samma resultat som med alt. 1 och 2.
+
+Nu kombinerar vi ihop våra delresultat
+!bt
+\begin{equation}
+\int_{S_1} \vec{F} \cdot d\vec{S} = I_1 + I_2 = F_0 a^2 2\pi + F_0 \pi (3a)^2 = F_0 \pi 11 a^2
+\end{equation}
+!et
+
+* Har normalen rätt riktning?
+Kontrollera gärna en gång till att ytnormalerna i de ytintegraler som ger nollskilda bidrag har rätt bidrag. Detta gäller i synnerhet de två halvsfärer som vi införde för att räkna ut $I_1$ enligt alt. 1 och alt. 2.
+
+Svaret på uppgiften är alltså $11\pi F_0 a^2$.
+
+Kontrollera också dimensionen på svaret. Vårt fält har dimensionen $[F_0]$ och ytintegralen skall därför ha dimensionen $[F_0]$*area, vilket verkar stämma.
+!esol
+
+!bremarks
+Uppgiften illustrerar olika sätt att hantera en singularitet som hamnar på randen till en volym.
+
+Det är värt att notera att den här uppgiften innehåller ett icke-standard moment som utgörs av att punktkällan ligger på den bottenyta som är naturlig att sluta ytan med. 
+
+Notera att vi i slutändan fick precis halva styrkan 
+av punktkällan som bidrag oavsett vilken metod vi använde för att hantera den. Det betyder att det kanske enklaste sättet att se detta på är att punktkällan strålar 
+halva sitt bidrag in mot konen $S_1$ i detta fallet, dvs man tänker som i 
+metod 3.
+!eremarks
+

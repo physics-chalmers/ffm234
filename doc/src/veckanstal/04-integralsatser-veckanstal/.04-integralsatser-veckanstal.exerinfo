@@ -1,0 +1,129 @@
+
+# Information about all exercises in the file 04-integralsatser-veckanstal.do.txt.
+# The information can be loaded into a Python list of dicts by
+#
+# f = open('.04-integralsatser-veckanstal.exerinfo', 'r')
+# exer = eval(f.read())
+#
+[{'answer': '$\\pi a^3$.',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': '=====',
+  'hints': [],
+  'keywords': None,
+  'label': None,
+  'no': 1,
+  'solution': 'Vi kan först konstatera att skärningen mellan cylinder och sfär '
+              'är en ellips vars exakta form är något komplicerad att '
+              'fastställa.  Eftersom kurvan $\\Gamma$ är en sluten kurva är '
+              'det lockande att använda Stokes sats, så vi beräknar '
+              'rotationen\n'
+              '!bt\n'
+              '\\begin{equation*}\n'
+              '  \\vec{\\nabla} \\times \\vec{F} = \n'
+              '  \\left|\\begin{array}{ccc}\n'
+              '\\hat{x} & \\hat{y} & \\hat{z} \\\\\n'
+              '\\frac{\\partial}{\\partial x} & \\frac{\\partial}{\\partial y} '
+              '& \n'
+              '\\frac{\\partial}{\\partial z} \\\\\n'
+              'x^2-a\\left(y+z\\right) & y^2-az & z^2-a\\left(x+y\\right) '
+              '\\\\\n'
+              '\\end{array} \n'
+              '\\right| \\nonumber \n'
+              '\\end{equation*}\n'
+              '\n'
+              '!et\n'
+              '\n'
+              '!bt\n'
+              '\\begin{equation} \n'
+              '= \\left(-a+a\\right) \\hat{x} + \\left(-a+a\\right) \\hat{y} + '
+              'a\\hat{z}\n'
+              '= a\\hat{z}.\n'
+              'label{_auto5}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              'Alltså är rotationen av $\\vec{F}$ en rent vertikal vektor.  \n'
+              '\n'
+              'Vi kan nu använda Stokes sats\n'
+              '!bt\n'
+              '\\begin{equation}\n'
+              '  \\oint_\\Gamma \\vec{F} \\cdot \\mbox{d}\\vec{r} = \\int_S '
+              '\\vec{\\nabla} \\times \\vec{F} \\cdot\n'
+              '\\mbox{d}\\vec{S}.\n'
+              'label{_auto6}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              'Lägg märke till att ytan skall orienteras så att den följer '
+              'högerhandsregeln.  Detta betyder att om vi följer kurvan '
+              '$\\Gamma$ moturs så skall normalen $\\hat{n}$ till $S$ peka '
+              'uppåt.  \n'
+              '!bt\n'
+              '\\begin{equation}\n'
+              '  \\int_S \\vec{\\nabla} \\times \\vec{F} \\cdot '
+              '\\mbox{d}\\vec{S} = \\int_S a \\hat{z} \\cdot \n'
+              '\\hat{n} \\mbox{d}S = a \\int_S \\hat{z} \\cdot \\hat{n} '
+              '\\mbox{d}S.\n'
+              'label{_auto7}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              'Skalärprodukten i den sista integralen betyder att vi '
+              'projicerar ner arean $S$ på ett plan vinkelrät mot $\\hat{z}$, '
+              'det vill säga på $xy$-planet.  I detta planet är skärningen '
+              'cylinderns tvärsnittsyta, en cirkel med radien $a$, och '
+              'integralen blir cirkelarean $\\pi a^2$. Alltså blir integralen '
+              'till slut\n'
+              '!bt\n'
+              '\\begin{equation}\n'
+              '  \\oint_\\Gamma \\vec{F} \\cdot \\mbox{d}\\vec{r} = a \\pi a^2 '
+              '= \\pi a^3.\n'
+              'label{_auto8}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et',
+  'solution_file': None,
+  'subex': [],
+  'text': 'Beräkna integralen\n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          '  \\oint_\\Gamma \\vec{F} \\cdot \\mbox{d}\\vec{r},\n'
+          'label{_auto1}\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'där \n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          '  \\vec{F} = \\left[x^2-a\\left(y+z\\right)\\right]\\hat{x} + '
+          '\\left(y^2-az\\right)\n'
+          '\\hat{y} + \\left[z^2-a\\left(x+y\\right)\\right] \\hat{z},\n'
+          'label{_auto2}\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'och $\\Gamma$ är den kurva som utgör skärningen mellan cylindern\n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          ' \\left(x-a\\right)^2 +y^2 = a^2,\\quad z \\ge 0,\n'
+          'label{_auto3}\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'och sfären\n'
+          '!bt\n'
+          '\\begin{equation}\n'
+          '  x^2 + y^2 + z^2 = R^2, \\quad R> 2a,\n'
+          'label{_auto4}\n'
+          '\\end{equation}\n'
+          '\n'
+          '!et\n'
+          'där $a$ är en konstant med dimensionen längd.',
+  'title': 'Kurvintegral längs komplicerad ellips',
+  'type': 'Exercise',
+  'type_visible': False}]

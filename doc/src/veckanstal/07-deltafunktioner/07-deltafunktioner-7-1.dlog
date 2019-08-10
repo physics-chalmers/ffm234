@@ -1,0 +1,49 @@
+translating doconce text in 07-deltafunktioner-7-1.do.txt to pdflatex
+open file with encoding utf-8
+*** error: reference to equation label "step" is without parentheses
+    the equation reference should be typeset as (ref{step})
+... s enligt ekvation~\e qref{step} och ger då en motsvarande steg ...
+translating doconce text in 07-deltafunktioner-7-1.do.txt to pdflatex
+open file with encoding utf-8
+*** error: reference to equation label "step" is without parentheses
+    the equation reference should be typeset as (ref{step})
+... s enligt ekvation~\e qref{step} och ger då en motsvarande steg ...
+translating doconce text in 07-deltafunktioner-7-1.do.txt to pdflatex
+open file with encoding utf-8
+*** error: reference to equation label "step" is without parentheses
+    the equation reference should be typeset as (ref{step})
+... as enligt ekvation~( \ref{step}) och ger då en motsvarande ste ...
+translating doconce text in 07-deltafunktioner-7-1.do.txt to pdflatex
+open file with encoding utf-8
+*** error: reference to equation label "step" is without parentheses
+    the equation reference should be typeset as (ref{step})
+... as enligt ekvation~( \ref{step}) och ger då en motsvarande ste ...
+translating doconce text in 07-deltafunktioner-7-1.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: found reference "figurerna ref{fig:711}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:711}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:711})?)
+*** warning: found reference "och ref{fig:712}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:712}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:712})?)
+
+*** Exercise: Uppgift 7.5.1: Stegfunktioner och deltafunktioner
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+output in 07-deltafunktioner-7-1.p.tex
+translating doconce text in 07-deltafunktioner-7-1.do.txt to ipynb
+open file with encoding utf-8
+*** warning: found reference "figurerna ref{fig:711}" with unexpected word "figurerna" in front
+
+    (expected Section/Chapter/Figure ref{fig:711}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:711})?)
+*** warning: found reference "och ref{fig:712}" with unexpected word "och" in front
+
+    (expected Section/Chapter/Figure ref{fig:712}, or could it be a reference to an equation, but missing parenthesis in (ref{fig:712})?)
+
+*** Exercise: Uppgift 7.5.1: Stegfunktioner och deltafunktioner
+    label{None}
+    could be Problem (no refs beyond the exercise itself)
+found info about 1 exercises
+collected all required additional files in ipynb-07-deltafunktioner-7-1-src.tar.gz which must be distributed with the notebook
+output in 07-deltafunktioner-7-1.ipynb

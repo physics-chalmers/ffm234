@@ -1,0 +1,365 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: http://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: http://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+\newenvironment{doconceexercise}{}{}
+\newcounter{doconceexercisecounter}
+
+
+% ------ header in subexercises ------
+%\newcommand{\subex}[1]{\paragraph{#1}}
+%\newcommand{\subex}[1]{\par\vspace{1.7mm}\noindent{\bf #1}\ \ }
+\makeatletter
+% 1.5ex is the spacing above the header, 0.5em the spacing after subex title
+\newcommand\subex{\@startsection{paragraph}{4}{\z@}%
+                  {1.5ex\@plus1ex \@minus.2ex}%
+                  {-0.5em}%
+                  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+\input{newcommands_keep}
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM234, Klassisk fysik och vektorfält - Veckans tal
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf \href{{http://fy.chalmers.se/subatom/nt/}}{Christian Forssén}, Institutionen för fysik, Chalmers${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Aug 10, 2019
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+% --- begin exercise ---
+\begin{doconceexercise}
+\refstepcounter{doconceexercisecounter}
+
+\subsection{Variabelseparation - Elektriskt fält inuti sfär}
+
+% Exempel: PLK Kap. 6.1, Uppg. 10
+I sfären med radien $r = a$ finns en 
+rymdladdning med tätheten 
+\begin{equation}
+  \rho\left(r, \theta, \varphi\right) = \rho_0 \frac{r}{a} \sin \theta \cos
+\varphi,
+\end{equation}
+och på sfären gäller att $\Phi\left(a,\theta,\varphi\right) = \Phi_0$.
+Bestäm den elektrostatiska potentialen $\Phi$ och det elektriska fältet
+$\vec{E}$ inuti sfären.
+
+% --- begin hint in exercise ---
+
+\paragraph{Hint.}
+\begin{itemize}
+\item Randvillkoret är sfäriskt symmetriskt, medan källan har ett vinkelberoende av formen $\sin \theta \cos \varphi$. Ansätt därför en lösning som består av två delar, vilka var och en har en av dessa egenskaper: $\Phi = f\left(r\right) + g\left(r\right) \sin \theta \cos \varphi$. Notera att randvillkoret ger att $g(a) = 0$.
+
+\item En svårighet är att finna de separerade ekvationerna. Notera att Poissons ekvation skall gälla för alla värden på $r$, $\theta$ och $\varphi$. 
+
+\item Undvik singulära lösningar.
+
+\item Ekvationen för $g$ har både en partikulär- och en homogenlösning.
+\end{itemize}
+
+\noindent
+% --- end hint in exercise ---
+
+
+% --- begin answer of exercise ---
+\paragraph{Answer.}
+\begin{align}
+  \vec{E} &= - \nabla \Phi = - \left(\frac{\partial \Phi}{\partial r} 
+{\bf \hat r} + \frac{1}{r} \frac{\partial \Phi}{\partial \theta} 
+{\bf \hat \theta} + \frac{1}{r \sin \theta} 
+\frac{\partial \Phi}{\partial \varphi} {\bf \hat \varphi}\right)
+\nonumber \\
+&= - \frac{1}{10}\frac{\rho_0}{\epsilon_0} a \left[-3 \frac{r^2}{a^2} \sin \theta
+\cos \varphi {\bf \hat r} + \left(\frac{a}{r} - \frac{r^2}{a^2}\right) \left(
+\cos \theta \cos \varphi {\bf \hat \theta} - \sin \varphi {\bf \hat \varphi}
+\right) \right]
+\end{align}
+
+% --- end answer of exercise ---
+
+
+% --- begin solution of exercise ---
+\paragraph{Solution.}
+Poissons ekvation för det elektriska fältet $\nabla \vec{E} = \rho / \epsilon_0$ ger oss att
+\begin{equation}
+  \nabla^2 \Phi = - \frac{\rho_0}{\epsilon_0} \frac{r}{a} \sin \theta \cos
+\varphi
+\end{equation}
+med randvillkoret att $\Phi\left(a,\theta,\varphi\right) = \Phi_0$.
+Vi ser här att randvillkoret är sfäriskt symmetriskt, men att 
+källan har ett vinkelberoende av formen $\sin \theta \cos \varphi$.  Vi
+ansätter därför en lösning som består av två delar, vilka
+var och en har en av dessa egenskaper
+\begin{equation}
+  \Phi = f\left(r\right) + g\left(r\right) \sin \theta \cos \varphi.
+\end{equation}
+Om vi applicerar Laplace-operatorn på $\Phi$ så får vi
+\begin{align}
+  \frac{1}{r^2} & \frac{\partial}{\partial r}\left(r^2
+\frac{\partial \Phi}{\partial r}\right) + \frac{1}{r^2\sin \theta} 
+\frac{\partial}{\partial \theta}\left(\sin \theta 
+\frac{\partial \Phi}{\partial \theta}\right) + \frac{1}{r^2 \sin^2 \theta}
+\frac{\partial^2 \Phi}{\partial \varphi^2} \nonumber \\
+&= \frac{1}{r^2} 
+\frac{\partial}{\partial r}\left[r^2\left(f' + g' \sin\theta \cos \varphi\right)
+\right] \nonumber \\
+& \quad + \frac{1}{r^2 \sin \theta} \frac{\partial}{\partial \theta} \left[
+\sin \theta\left( g \cos \theta \cos\varphi\right)\right]
++ \frac{1}{r^2 \sin^2 \theta} \left(-g \sin \theta \cos \varphi\right)
+\nonumber \\
+&=
+\frac{1}{r^2}\left[2r\left(f' + g' \sin \theta \cos \varphi\right) + r^2
+\left(f'' + g'' \sin \theta \cos \varphi\right)\right] \nonumber \\
+& \quad + \frac{1}{r^2 \sin \theta} \left[g \cos \varphi \left(\cos^2 \theta - \sin^2
+\theta\right)\right]- \frac{g}{r^2} \frac{\cos \varphi}{\sin \theta}
+\nonumber \\
+&= 2 \frac{f'}{r} + f'' + \left(2 \frac{g'}{r} + g''\right) \sin \theta
+\cos \varphi + \frac{g}{r^2}\cos \varphi \left( 
+\frac{\cos^2 \theta}{\sin \theta} - \sin \theta - \frac{1}{\sin \theta}\right).
+\end{align}
+Vi beräknar uttrycket i den sista parentesen
+\begin{equation}
+  \frac{\cos^2 \theta}{\sin \theta} - \sin \theta - \frac{1}{\sin \theta} =
+\frac{\cos^2 \theta - \sin^2 \theta - \cos^2 \theta - \sin^2 \theta}
+{\sin \theta} = -2 \sin \theta.
+\end{equation}
+Alltså kan vi skriva Poissons ekvation som
+\begin{equation}
+  \nabla^2 \Phi = 2 \frac{f'}{r} + f'' + \left(g'' + 2 \frac{g'}{r} - 
+2\frac{g}{r^2}\right) \sin \theta \cos \varphi = - \frac{\rho_0}{\epsilon_0}
+\frac{r}{a} \sin \theta \cos \varphi.
+\end{equation}
+Eftersom den här ekvationen skall gälla för alla värden på $r$, $\theta$
+och $\varphi$ så ger oss detta ekvationerna
+\begin{equation}
+  \left\{ \begin{array}{lcl}
+f'' + 2\frac{f'}{r} & = & 0\\
+g'' + 2 \frac{g'}{r} - 2\frac{g}{r^2} & = & - \frac{\rho_0}{\epsilon_0} 
+\frac{r}{a}\\
+\end{array}\right.
+\end{equation}
+
+Vi börjar med att lösa ekvationen för $f$ genom att ansätta en 
+lösning på formen $f =A r^\nu$, men konstanten $A$ kan vi utelämna
+för tillfället, så att $f' = \nu r^{\nu-1}$ och
+$f'' = \nu (\nu-1) r^{\nu-2}$.  Detta ger oss ekvationen
+\begin{equation}
+  \nu \left(\nu-1\right) r^{\nu-2}+2\nu r^{\nu-2} = 0,
+\end{equation}
+som förenklas till
+\begin{equation}
+  \nu^2 + \nu = 0,
+\end{equation}
+som har lösningarna $\nu = 0$ och $\nu = -1$.  Därför får vi
+\begin{equation}
+  f\left(r\right) = A + \frac{B}{r}.
+\end{equation}
+Här måste vi sätta $B = 0$, för att undvika att potentialen blir
+oändlig för $r = 0$, och $A = \Phi_0$ för att vi ska uppfylla 
+randvillkoret $\Phi(a,\theta,\varphi) = \Phi_0$.
+
+Vi går nu över till ekvationen för $g$ och börjar med att bestämma
+en partikulärlösning på formen $g = Cr^3$.  För denna lösning
+har vi $g' = 3Cr^2$ och $g'' = 6Cr$, vilket ger oss
+\begin{equation}
+  6Cr + 6Cr -2Cr = - \frac{\rho_0}{\epsilon_0} \frac{r}{a},
+\end{equation}
+som har lösningen
+\begin{equation}
+  C = - \frac{1}{10} \frac{\rho_0}{\epsilon_0 a},
+\end{equation}
+och partikulärlösningen är alltså
+\begin{equation}
+  g\left(r\right) = - \frac{1}{10} \frac{\rho_0}{\epsilon_0} \frac{r^3}{a}.
+\end{equation}
+Vi behöver också bestämma lösningen till den homogena ekvationen,
+och därför ansätter vi $g(r) = Dr^\nu$, men för ögonblicket 
+utelämnar vi konstanten $D$.  Eftersom $g' = \nu r^{\nu-1}$ och $g'' = \nu
+(\nu-1) r^{\nu-2}$, så får vi
+\begin{equation}
+  \nu \left(\nu-1\right) r^{\nu-2} + 2\nu r^{\nu-2} -2r^{\nu-2} = 0,
+\end{equation}
+vilket ger oss andragradsekvationen
+\begin{equation}
+  \nu^2 + \nu -2 = 0.
+\end{equation}
+Denna har lösningarna
+\begin{equation}
+  \nu = - \frac{1}{2} \pm \sqrt{\left(\frac{1}{2}\right)^2+2} = -\frac{1}{2}
+\pm \frac{3}{2}.
+\end{equation}
+Alltså har vi $\nu = -2$ och $\nu = 1$, så den allmänna lösningen 
+för $g$ blir
+\begin{equation}
+  g\left(r\right) = \frac{D}{r^2} + Er - \frac{1}{10} \frac{\rho_0}{\epsilon_0}
+\frac{r^3}{a}.
+\end{equation}
+Vi sätter $D = 0$ eftersom potentialen inte kan bli singulär i $r = 0$.
+Vårt randvillkor vid $r = a$ säger oss å andra sidan att $g(a) = 0$,
+vilket ger oss
+\begin{equation}
+  0 = Ea - \frac{1}{10} \frac{\rho_0}{\epsilon_0}a^2,
+\end{equation}
+så att
+\begin{equation}
+  E = \frac{1}{10} \frac{\rho_0}{\epsilon_0} a
+\end{equation}
+Alltså är potentialen
+\begin{equation}
+  \Phi\left(r,\theta,\varphi\right) = \Phi_0 + \frac{1}{10} 
+\frac{\rho_0}{\epsilon_0} a \left(a - \frac{r^3}{a^2}\right) \sin \theta
+\cos \varphi.
+\end{equation}
+Vi kan nu beräkna det elektriska fältet ur
+\begin{align}
+  \vec{E} &= - \nabla \Phi = - \left(\frac{\partial \Phi}{\partial r} 
+{\bf \hat r} + \frac{1}{r} \frac{\partial \Phi}{\partial \theta} 
+{\bf \hat \theta} + \frac{1}{r \sin \theta} 
+\frac{\partial \Phi}{\partial \varphi} {\bf \hat \varphi}\right)
+\nonumber \\
+&= - \frac{1}{10}\frac{\rho_0}{\epsilon_0} a \left[-3 \frac{r^2}{a^2} \sin \theta
+\cos \varphi {\bf \hat r} + \left(\frac{a}{r} - \frac{r^2}{a^2}\right) \left(
+\cos \theta \cos \varphi {\bf \hat \theta} - \sin \varphi {\bf \hat \varphi}
+\right) \right]
+\end{align}
+
+% --- end solution of exercise ---
+
+% Closing remarks for this Exercise
+
+\paragraph{Remarks.}
+Uppgiften illustrerar variabelseparation i tre dimensioner och styrkan med en bra lösningsansats. Lösningen innehåller ganska många steg och uppgiften kan därför klassificeras som svår. Ta gärna en titt på lösningen om du kör fast.
+
+
+\end{doconceexercise}
+% --- end exercise ---
+
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+

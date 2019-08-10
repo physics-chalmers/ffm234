@@ -1,0 +1,210 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Veckans tal">
+
+<title>FFM234, Klassisk fysik och vektorfält - Veckans tal</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Kurvintegral längs komplicerad ellips', 2, None, '___sec0')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<a name="part0000"></a>
+<p>
+
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - Veckans tal</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r  fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r  fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 15, 2017</h4></center> <!-- date -->
+<br>
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec0">Kurvintegral l&#228;ngs komplicerad ellips </h2>
+
+<p>
+Ber&#228;kna integralen
+$$
+\begin{equation}
+  \oint_\Gamma \vec{F} \cdot \mbox{d}\vec{r},
+\tag{1}
+\end{equation}
+$$
+
+d&#228;r 
+$$
+\begin{equation}
+  \vec{F} = \left[x^2-a\left(y+z\right)\right]\hat{x} + \left(y^2-az\right)
+\hat{y} + \left[z^2-a\left(x+y\right)\right] \hat{z},
+\tag{2}
+\end{equation}
+$$
+
+och \( \Gamma \) &#228;r den kurva som utg&#246;r sk&#228;rningen mellan cylindern
+$$
+\begin{equation}
+ \left(x-a\right)^2 +y^2 = a^2,\quad z \ge 0,
+\tag{3}
+\end{equation}
+$$
+
+och sf&#228;ren
+$$
+\begin{equation}
+  x^2 + y^2 + z^2 = R^2, \quad R> 2a,
+\tag{4}
+\end{equation}
+$$
+
+d&#228;r \( a \) &#228;r en konstant med dimensionen l&#228;ngd.
+
+<p>
+<!-- --- begin answer of exercise --- -->
+<b>Answer.</b>
+\( \pi a^3 \).
+
+<p>
+<!-- --- end answer of exercise --- -->
+
+<p>
+<!-- --- begin solution of exercise --- -->
+<b>Solution.</b>
+Vi kan f&#246;rst konstatera att sk&#228;rningen mellan cylinder och sf&#228;r &#228;r en ellips vars exakta form &#228;r n&#229;got komplicerad att fastst&#228;lla.  Eftersom kurvan \( \Gamma \) &#228;r en sluten kurva &#228;r det lockande att anv&#228;nda Stokes sats, s&#229; vi ber&#228;knar rotationen
+$$
+\begin{align}
+  \vec{
+abla} \times \vec{F} &= 
+  \left|\begin{array}{ccc}
+\hat{x} & \hat{y} & \hat{z} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & 
+\frac{\partial}{\partial z} \\
+x^2-a\left(y+z\right) & y^2-az & z^2-a\left(x+y\right) \\
+\end{array} 
+\right| \nonumber \\
+&= \left(-a+a\right) \hat{x} + \left(-a+a\right) \hat{y} + a\hat{z}
+= a\hat{z}.
+\tag{5}
+\end{align}$$
+
+Allts&#229; &#228;r rotationen av \( \vec{F} \) en rent vertikal vektor.
+
+<p>
+Vi kan nu anv&#228;nda Stokes sats
+$$
+\begin{equation}
+  \oint_\Gamma \vec{F} \cdot \mbox{d}\vec{r} = \int_S \vec{
+abla} \times \vec{F} \cdot
+\mbox{d}\vec{S}.
+\tag{6}
+\end{equation}
+$$
+
+L&#228;gg m&#228;rke till att ytan skall orienteras s&#229; att den f&#246;ljer h&#246;gerhandsregeln.  Detta betyder att om vi f&#246;ljer kurvan \( \Gamma \) moturs s&#229; skall normalen \( \hat{n} \) till \( S \) peka upp&#229;t.  
+$$
+\begin{equation}
+  \int_S \vec{
+abla} \times \vec{F} \cdot \mbox{d}\vec{S} = \int_S a \hat{z} \cdot 
+\hat{n} \mbox{d}S = a \int_S \hat{z} \cdot \hat{n} \mbox{d}S.
+\tag{7}
+\end{equation}
+$$
+
+Skal&#228;rprodukten i den sista integralen betyder att vi projicerar ner arean \( S \) p&#229; ett plan vinkelr&#228;t mot \( \hat{z} \), det vill s&#228;ga p&#229; \( xy \)-planet.  I detta planet &#228;r sk&#228;rningen cylinderns tv&#228;rsnittsyta, en cirkel med radien \( a \), och integralen blir cirkelarean \( \pi a^2 \). Allts&#229; blir integralen till slut
+$$
+\begin{equation}
+  \oint_\Gamma \vec{F} \cdot \mbox{d}\vec{r} = a \pi a^2 = \pi a^3.
+\tag{8}
+\end{equation}
+$$
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

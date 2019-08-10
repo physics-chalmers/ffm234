@@ -1,0 +1,285 @@
+%%
+%% Automatically generated file from DocOnce source
+%% (https://github.com/hplgit/doconce/)
+%%
+%%
+% #ifdef PTEX2TEX_EXPLANATION
+%%
+%% The file follows the ptex2tex extended LaTeX format, see
+%% ptex2tex: http://code.google.com/p/ptex2tex/
+%%
+%% Run
+%%      ptex2tex myfile
+%% or
+%%      doconce ptex2tex myfile
+%%
+%% to turn myfile.p.tex into an ordinary LaTeX file myfile.tex.
+%% (The ptex2tex program: http://code.google.com/p/ptex2tex)
+%% Many preprocess options can be added to ptex2tex or doconce ptex2tex
+%%
+%%      ptex2tex -DMINTED myfile
+%%      doconce ptex2tex myfile envir=minted
+%%
+%% ptex2tex will typeset code environments according to a global or local
+%% .ptex2tex.cfg configure file. doconce ptex2tex will typeset code
+%% according to options on the command line (just type doconce ptex2tex to
+%% see examples). If doconce ptex2tex has envir=minted, it enables the
+%% minted style without needing -DMINTED.
+% #endif
+
+% #define PREAMBLE
+
+% #ifdef PREAMBLE
+%-------------------- begin preamble ----------------------
+
+\documentclass[%
+oneside,                 % oneside: electronic viewing, twoside: printing
+final,                   % draft: marks overfull hboxes, figures with paths
+10pt]{article}
+
+\listfiles               %  print all files needed to compile this document
+
+\usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
+\usepackage[table]{xcolor}
+\usepackage{bm,ltablex,microtype}
+
+\usepackage[pdftex]{graphicx}
+
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{lmodern}         % Latin Modern fonts derived from Computer Modern
+
+% Hyperlinks in PDF:
+\definecolor{linkcolor}{rgb}{0,0,0.4}
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,
+    colorlinks=true,
+    linkcolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=black,
+    filecolor=black,
+    %filecolor=blue,
+    pdfmenubar=true,
+    pdftoolbar=true,
+    bookmarksdepth=3   % Uncomment (and tweak) for PDF bookmarks with more levels than the TOC
+    }
+%\hyperbaseurl{}   % hyperlinks are relative to this root
+
+\setcounter{tocdepth}{2}  % levels in table of contents
+
+% prevent orhpans and widows
+\clubpenalty = 10000
+\widowpenalty = 10000
+
+\newenvironment{doconceexercise}{}{}
+\newcounter{doconceexercisecounter}
+
+
+% ------ header in subexercises ------
+%\newcommand{\subex}[1]{\paragraph{#1}}
+%\newcommand{\subex}[1]{\par\vspace{1.7mm}\noindent{\bf #1}\ \ }
+\makeatletter
+% 1.5ex is the spacing above the header, 0.5em the spacing after subex title
+\newcommand\subex{\@startsection{paragraph}{4}{\z@}%
+                  {1.5ex\@plus1ex \@minus.2ex}%
+                  {-0.5em}%
+                  {\normalfont\normalsize\bfseries}}
+\makeatother
+
+
+% --- end of standard preamble for documents ---
+
+
+% insert custom LaTeX commands...
+
+\raggedbottom
+\makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
+
+%-------------------- end preamble ----------------------
+
+\begin{document}
+
+% matching end for #ifdef PREAMBLE
+% #endif
+
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+\input{newcommands_keep}
+
+% ------------------- main content ----------------------
+
+
+
+% ----------------- title -------------------------
+
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bf
+\begin{spacing}{1.25}
+FFM234, Klassisk fysik och vektorfält - Veckans tal
+\end{spacing}
+}
+\end{center}
+
+% ----------------- author(s) -------------------------
+
+\begin{center}
+{\bf Tobias Wenger och Christian Forssén, Chalmers${}^{}$} \\ [0mm]
+\end{center}
+
+\begin{center}
+% List of all institutions:
+\end{center}
+    
+% ----------------- end author(s) -------------------------
+
+% --- begin date ---
+\begin{center}
+Aug 10, 2019
+\end{center}
+% --- end date ---
+
+\vspace{1cm}
+
+
+% --- begin exercise ---
+\begin{doconceexercise}
+\refstepcounter{doconceexercisecounter}
+
+\subsection{Tenta 2015-08-17 Uppgift 3}
+
+Vektorfältet $\vec{F}$ ges av 
+$$
+\vec{F} = \left\{
+\begin{array}{ll}
+  A \frac{(\vec{r} - a\hat{z})}{| \vec{r} - a \hat{z}|^3} + B \hat{x}, & z>0, \\
+  C z \hat{z}, & z \le 0,
+\end{array}
+\right.
+$$
+där $A$, $B$, $C$ och $a$ är konstanter. Beräkna normalytintegralen av
+$\vec{F}$ över en sfär med radien $2a$ och centrum i origo.
+
+% --- begin hint in exercise ---
+
+\paragraph{Hint.}
+\begin{itemize}
+\item $C$-termen motsvarar en rymdkälla med källtätheten $\nabla \cdot \vec{F}_C = C$ i nedre halvplanet.
+
+\item $B$ termen ger inget bidrag då den har $\nabla \cdot \vec{F}_B = 0$
+
+\item $A$-termen motsvarar en punktkälla med styrkan $4 \pi A$ i punkten $a \hat{z}$ innanför ytan. Fältet från punktkällan existerar dock bara i övre halvplanet. Bidraget kan beräknas på två sätt:
+\begin{itemize}
+
+  \item Genom att räkna ut rymdvinkeln som den övre delen av sfären upptar sett från punktkällan.
+
+  \item Genom att behandla den som en punktkälla i hela rummet plus en diskontinuitet i $xy$-planet, dvs en ytkälla.
+\end{itemize}
+
+\noindent
+\end{itemize}
+
+\noindent
+% --- end hint in exercise ---
+
+
+% --- begin answer of exercise ---
+\paragraph{Answer.}
+$\int_S \vec{F} \cdot \mbox{d}\vec{S} = 2
+\pi A \left(1 + \frac{1}{\sqrt{5}} \right) + \frac{16}{3} \pi a^3 C$
+
+% --- end answer of exercise ---
+
+
+% --- begin solution of exercise ---
+\paragraph{Solution.}
+\begin{itemize}
+\item $C$-termen, $\vec{F}_C = C z \hat{z}$ (för $z \le 0$), motsvarar en rymdkälla med konstant källtäthet $\nabla \cdot \vec{F}_C = C$ i nedre halvplanet. Här kan vi enkelt använda Gauss sats
+\end{itemize}
+
+\noindent
+$$
+\int_S \vec{F}_C \cdot \mbox{d}\vec{S} = \int_V \nabla \cdot \vec{F}_C \mbox{d}V
+$$
+Källtätheten är ju noll i den övre halvan av sfären så bidraget blir lika med den konstanta källtätheten gånger volymen av en halv sfär med radien $2a$.
+$$
+\int_S \vec{F}_C \cdot \mbox{d}\vec{S} = C \frac{1}{2} \frac{4 \pi (2a)^3}{3} = C \frac{16 \pi a^3}{3}.
+$$
+
+\begin{itemize}
+\item $B$-termen, $\vec{F}_B = B \hat{x}$ (för $z > 0$), ger inget bidrag eftersom den inte uppvisar någon singularitet och har $\nabla \cdot \vec{F}_B = 0$.
+
+\item $A$-termen, $A \frac{(\vec{r} - a\hat{z})}{| \vec{r} - a \hat{z}|^3}$ (för $z > 0$), motsvarar en punktkälla med styrkan $4 \pi A$ i $a \hat{z}$ innanför ytan. Men fältet från punktkällan existerar bara i övre halvplanet. Normalytintegralen kan därför räknas ut genom att beräkna vilken rymdvinkel den övre delen av sfären upptar sett från punktkällan. Genom att rita en figur inser man att en sfär med centrum i punktkällan och med radien $\sqrt{5}a$ kommer att skära $xy$-planet i samma cirkel som den ursprungliga sfären. Cirkeln i $xy$-planet träffas alltså vid en vinkel $\theta_0$ som ges av $\cos\theta_0 = -1/\sqrt{5}$. Den sökta rymdvinkeln är därför
+\end{itemize}
+
+\noindent
+$$
+\Omega_0 = \int_0^{2\pi}\mbox{d}\varphi \int_0^{\theta_0} \sin\theta \mbox{d}\theta = 2\pi \int_0^{\theta_0} \sin\theta \mbox{d}\theta = 2\pi \left( 1 + \frac{1}{\sqrt{5}} \right).
+$$
+Alltså blir bidraget från $A$-termen
+$$
+\int_S \vec{F}_A \cdot \mbox{d}\vec{S} = 4 \pi A \frac{\Omega_0}{4\pi} = 2 \pi A \left( 1 + \frac{1}{\sqrt{5}} \right).
+$$
+
+Totalt får vi alltså normalytintegralen som summan av ovanstående bidrag 
+$$
+\int_S \vec{F} \cdot \mbox{d}\vec{S} = 2 \pi A \left(1 + \frac{1}{\sqrt{5}} \right) + \frac{16}{3} \pi a^3 C,
+$$
+vilket alltså är svaret.
+
+\paragraph{Alternativ.}
+\begin{itemize}
+\item Alternativt kan vi betrakta $A$-termen som en punktkälla i hela rummet plus en diskontinuitet i $xy$-planet vid $z=0$, dvs en ytkälla som har effekten att \emph{släcka} fältet i det nedre halvplanet. Styrkan på denna ytkälla fås från fältets diskontinuitet vid $z=0$, dvs vid punkter som ligger längs $\vec{r} = \rho \hat{e}_\rho + 0 \hat{z}$,
+\end{itemize}
+
+\noindent
+$$
+\hat{z} \cdot \left( \vec{F}_A^+ - \vec{F}_A^- \right) = 
+A \frac{-a}{(\rho^2 + a^2)^{3/2}}.
+$$ 
+Bidraget från denna ytkälla skall integreras över den inneslutna ytan, dvs över en cirkelskiva $0 \leq \rho \leq 2a$. Detta blir
+$$
+2 \pi \int_0^{2a} A \frac{- a}{(\rho^2 + a^2)^{3/2}} \rho \mbox{d}\rho = -2 \pi A \left( 1 -\frac{1}{\sqrt{5}} \right).
+$$
+Tillsammans med bidraget från punktkällan, dvs $4 \pi A$, blir detta
+$$
+\int_S \vec{F}_A \cdot \mbox{d}\vec{S} = 4 \pi A  -  2 \pi A \left( 1 -\frac{1}{\sqrt{5}} \right) = 2 \pi A \left( 1 + \frac{1}{\sqrt{5}} \right).
+$$
+vilket ju ger samma som räkningen ovanför.
+
+\begin{itemize}
+\item Notera gärna att varken $B$- eller $C$-termerna motsvarar någon ytkälla trots att de är definierade enbart ovanför, respektive nedanför, $z=0$. $C$ fältet är inte diskontinuerligt eftersom det faktiskt är noll då $z=0$. $B$-fältet har iof en diskontinuitet, men den är vinkelrät mot planet och skalärprodukten $\hat{z} \cdot \left( \vec{F}_B^+ - \vec{F}_B^- \right) = 0$. 
+\end{itemize}
+
+\noindent
+Dessutom finns det en ytkälla vid $z=0$-planet som bestäms av
+diskontinuiteten. Man finner ytkällans styrka $\sigma = -A a / (\rho^2
++ a^2)^{3/2}$.
+Tillsammans blir integralen $\int_S \vec{F} \cdot \mbox{d}\vec{S} = 2
+\pi A \left(1 + \frac{1}{\sqrt{5}} \right) + \frac{16}{3} \pi a^3 C$.
+
+% --- end solution of exercise ---
+
+% Closing remarks for this Exercise
+
+\paragraph{Remarks.}
+Uppgiften illustrerar hur det ofta är fördelaktigt att behandla komplicerade fält som en summa av olika bidrag. Diskontinuiteten vid $z=0$ är en speciell svårighet med denna uppgift.
+
+
+\end{doconceexercise}
+% --- end exercise ---
+
+
+% ------------------- end of main content ---------------
+
+% #ifdef PREAMBLE
+\end{document}
+% #endif
+

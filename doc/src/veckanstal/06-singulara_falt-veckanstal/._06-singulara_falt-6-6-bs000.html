@@ -1,0 +1,482 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Veckans tal">
+
+<title>FFM234, Klassisk fysik och vektorfält - Veckans tal</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Uppgift 6.6 (Cederwalls kompendium)', 2, None, '___sec0'),
+              ('Remarks', 3, None, '___sec1')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="06-singulara_falt-6-6-bs.html">FFM234, Klassisk fysik och vektorfält - Veckans tal</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Uppgift 6.6 (Cederwalls kompendium)</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Remarks</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - Veckans tal</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Tobias Wenger och Christian Forss&#233;n, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b>Tobias Wenger och Christian Forss&#233;n, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 15, 2017</h4></center> <!-- date -->
+<br>
+<p>
+<!-- --- begin exercise --- -->
+
+<p>
+</div> <!-- end jumbotron -->
+
+<h2 id="___sec0" class="anchor">Uppgift 6.6 (Cederwalls kompendium) </h2>
+
+<p>
+Ber&#228;kna normalytintegralen av
+$$
+\begin{equation}
+\vec{F}= F_0 \frac{a^2}{(x^2+y^2+z^2)^{3/2}} \left[ x \hat{x}  + y \hat{y} 
++ \left( z + \frac{z}{a} \frac{(x^2+y^2+z^2)^{3/2}}{a^2} \right) \hat{z} \right ]
+\tag{1}
+\end{equation}
+$$
+
+&#246;ver ytan \( S_1:\ x^2+y^2=(z-3a)^2 \), \( 0\leq z\leq 3a \). \( F_0 \) och \( a \) &#228;r konstanter.
+
+<p>
+<!-- --- begin hint in exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_1_1" style="font-size: 80%;"></a>
+<b>Hint.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_1_1">
+
+<ul>
+<li> Ytan motsvarar en kon utan bottenplatta.</li>
+<li> Skriv om f&#228;ltet i sf&#228;riska koordinater.</li> 
+<li> Den f&#246;rsta termen av \( \vec{F} \) motsvarar en punktk&#228;lla bel&#228;gen i origo.</li>
+
+<ul>
+  <li> Ytintegralen f&#246;r denna term kan r&#228;knas ut genom att ber&#228;kna vilken rymdvinkel som konen upptar sedd fr&#229;n punktk&#228;llan.</li>
+  <li> Alternativt kan man sluta ytan genom en halvsf&#228;r som inkluderar punktk&#228;llan inne i volymen.</li>
+  <li> ... eller en yta som g&#246;r att punktk&#228;llan hamnar utanf&#246;r.</li>
+</ul>
+
+<li> Den andra termen av \( \vec{F} \) termen &#228;r en rymdk&#228;lla med en k&#228;llt&#228;thet, \( \nabla \cdot \vec{F}_2 \) som &#228;r enkel att r&#228;kna ut.</li>
+
+<ul>
+  <li> H&#228;r blir det enkelt att anv&#228;nda Gauss sats. Men kom ih&#229;g att sluta ytan p&#229; l&#228;mpligt s&#228;tt.</li>
+</ul>
+
+</ul>
+
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end hint in exercise --- -->
+
+<p>
+<!-- --- begin answer of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_1_2" style="font-size: 80%;"></a>
+<b>Answer.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_1_2">
+
+<p>
+\( \int_{S_1} \vec{F} \cdot \mbox{d}\vec{S} = 11 \pi F_0 a^2 \)
+
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end answer of exercise --- -->
+
+<p>
+<!-- --- begin solution of exercise --- -->
+
+<p>
+<a class="glyphicon glyphicon-hand-right showdetails" data-toggle="collapse"
+ data-target="#exer_1_4" style="font-size: 80%;"></a>
+<b>Solution.</b>
+<div class="collapse-group">
+<p><div class="collapse" id="exer_1_4">
+
+<p>
+Det vi ska r&#228;kna ut &#228;r normalytintegralen &#246;ver \( S_1 \), dvs 
+$$
+\begin{equation}
+\int_{S_1}\ d\vec{S}\cdot \vec{F}
+\tag{2}
+\end{equation}
+$$
+
+Detta kan s&#229; klart l&#246;sas genom att hitta en normalvektor till ytan, sedan hitta en parametrisering till konen och utf&#246;ra den resulterande integralen. Man ska dock ha i ryggraden att man kan anv&#228;nda Gauss sats ist&#228;llet, det finns ingen garanti att det blir enklare men det &#228;r ofta v&#228;rt att t&#228;nka p&#229; det.
+
+<p>
+Vi anv&#228;nder oss d&#228;rf&#246;r av den generella l&#246;sningsstrategin f&#246;r Gauss sats:
+
+<ol>
+<li> Best&#228;m utseendet p&#229; ytan \( S \) och rita en tydlig figur.</li>
+<li> Unders&#246;k f&#228;ltet \( \vec{F} \). Singulariteter? Ber&#228;kna \( \nabla \cdot \vec{F} \).</li>
+<li> Slut ytan \( S \). Undvik singulariteter inuti den inneslutna volymen.</li>
+<li> Teckna Gauss sats och ber&#228;kna integralen.</li>
+<li> Har normalen r&#228;tt riktning?</li>
+</ol>
+
+Vi k&#228;nner igen ytan \( S_1 \) som en kon. H&#228;r kan man t&#228;nka p&#229; konen som sammansatt av m&#229;nga cirklar vars radie best&#228;ms av var i $z-$led man befinner sig. I \( z=3a \) ser man att radien p&#229; cirkeln blir noll, detta &#228;r s&#229;ledes spetsen av konen. I \( z=0 \) ser vi att cirkeln har radien \( 3a \). Vi b&#246;rjar med att rita upp ytan \( S_1 \), den visas i figur <a href="#fig:cone">1</a>.
+
+<p>
+<center> <!-- figure label: --> <div id="fig:cone"></div> <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 1:  Ytan \( S_1 \) uppritad.  <!-- caption label: fig:cone --> </p></center>
+<p><img src="cone.png" align="bottom" width=600></p>
+</center>
+
+<ul>
+<li> Unders&#246;k f&#228;ltet \( \vec{F} \). Singulariteter? Ber&#228;kna \( \nabla \cdot \vec{F} \).</li>
+</ul>
+
+Ska man anv&#228;nda Gauss sats s&#229; &#228;r det viktigt att man behandlar singul&#228;ra delar av f&#228;ltet korrekt, dvs identifiera <em>k&#228;lltermer</em> som &#228;r inneslutna innanf&#246;r ytan. N&#228;r man separerat de singul&#228;ra delarna av f&#228;ltet s&#229; kan man sen ber&#228;kna divergensen och utf&#246;ra volymsintegralen. Vi skriver f&#228;ltet \( \vec{F} \) som tv&#229; olika f&#228;lt 
+$$
+\begin{equation}
+\vec{F}=\vec{F_1}+\vec{F_2}
+\tag{3}
+\end{equation}
+$$
+
+d&#228;r 
+$$
+\begin{align}
+\vec{F_1}&= F_0 \frac{a^2}{(x^2+y^2+z^2)^{3/2}} \left( x,y,z \right ) = F_0 a^2 \frac{\hat{r}}{r^2}
+\tag{4}\\
+\vec{F_2}&= F_0 \frac{z}{a}\hat{z}
+\tag{5}
+\end{align}
+$$
+
+F&#246;r att skriva om f&#228;ltet \( \vec{F}_1 \) till sf&#228;riska kordinater har vi anv&#228;nt oss av att
+$$
+\begin{align}
+x\hat{x}+y\hat{y}+z\hat{z} = r\hat{r}
+\tag{6}\\
+\sqrt{x^2+y^2+z^2}=r
+\tag{7}
+\end{align}
+$$
+
+Vi k&#228;nner nu igen f&#228;ltet \( \vec{F}_1 \) som f&#228;ltet fr&#229;n en punktk&#228;lla i origo. Styrkan hos punktk&#228;llan &#228;r \( 4\pi F_0 a^2 \).
+
+<p>
+F&#228;ltet \( \vec{F}_2 \) motsvarar en rymdk&#228;lla med konstant k&#228;llt&#228;thet
+$$
+\begin{equation}
+\nabla \cdot \vec{F_2} = F_0 \partial_z \frac{z}{a} = \frac{F_0}{a}.
+\tag{8}
+\end{equation}
+$$
+
+
+<ul>
+<li> Slut ytan \( S \). Undvik singulariteter inuti den inneslutna volymen.</li>
+</ul>
+
+Gauss sats lyder 
+$$
+\begin{equation}
+\int_{S}\ \vec{F} \cdot d\vec{S} = \int_{V}\ \nabla \cdot \vec{F} dV
+\tag{9}
+\end{equation} 
+$$
+
+och det &#228;r viktigt att t&#228;nka p&#229; att \( S=\partial V \), dvs ytan \( S \) &#228;r randen till volymen \( V \). Det betyder att \( S \) m&#229;ste vara en sluten yta (hur kan den annars vara randen till en volym?). Det betyder att f&#246;r att kunna anv&#228;nda Gauss sats f&#246;r denna uppgiften m&#229;ste vi sluta konen. Det mest uppenbara s&#228;ttet att sluta ytan &#228;r att l&#228;gga till en bottenplatta till konen. \footnote{Vi kan s&#229;klart sluta yan med n&#229;got annat &#228;n en bottenplatta om vi vill. Tex kunde vi ta en halsvsf&#228;r och Gauss sats fungerar. Men f&#246;r att det ska vara l&#246;nt att anv&#228;nda Gauss sats &#228;r det viktigt att den ytan vi l&#228;gger till &#228;r enklare att integrera &#246;ver &#228;n originalytan.}
+
+<p>
+Bottenplattan motsvarar allts&#229; cirkeln som konen ligger p&#229; i \( x,y \) planet. Vi kallar denna ytan \( S_2 \) och skriver den som \( S_2:\ x^2+y^2\leq (3a)^2 \).
+
+<p>
+Vi har dock ett litet problem nu: Punktk&#228;llan ligger mitt i bottenplattan, dvs p&#229; ytan. Hur ska man t&#228;nka nu? Vi kommer att illustrera <em>tre</em> olika s&#228;tt att hantera denna punktk&#228;lla. 
+
+<ol>
+<li> Slut ist&#228;llet ytan p&#229; ett annat s&#228;tt s&#229; att punktk&#228;llan hamnar helt utanf&#246;r.</li>
+<li> Slut ist&#228;llet ytan p&#229; ett annat s&#228;tt s&#229; att punktk&#228;llan hamnar helt innanf&#246;r.</li>
+<li> Ber&#228;kna bidraget fr&#229;n punktk&#228;llan genom att r&#228;kna ut rymdvinkeln som konen upptar.</li>
+</ol>
+
+Alla tre metoderna kommer givetvis att ge samma svar.
+
+<p>
+F&#246;r att f&#246;lja alt. 1 inf&#246;r vi en halvsf&#228;r upp i det &#246;vre halvplanet med centrum i origo. Halvsf&#228;rens radie kallar vi \( \epsilon \) och l&#229;ter denna vara liten s&#229; att halvsf&#228;rens yta inte sk&#228;r konens mantelyta. Denna nya yta kallar vi \( S^+_\epsilon \). Tillsammans med \( S_1 \) och den modifierade bottenplattan \( S_{2-\epsilon} \) bildas en sluten yta som <em>inte</em> kommer att innesluta punktk&#228;llan i volymen.
+
+<p>
+F&#246;r att f&#246;lja alt. 2 s&#229; sluter vi t.ex. ytan med en halvsf&#228;r ned i det nedre halvplanet med centrum i origo. H&#228;r kan vi l&#229;ta radien vara lika med \( 3a \) s&#229; att vi direkt f&#229;r en sluten yta av \( S_1 + S^-_{3a} \) som omsluter punktk&#228;llan, d&#228;r \( S^-_{3a} \) &#228;r den inf&#246;rda halvsf&#228;rens yta.
+
+<p>
+F&#246;r att f&#246;lja alt. 3 handlar det bara om att ber&#228;kna hur stor rymdvinkel som konen upptar sedd fr&#229;n punktk&#228;llan. Se mer nedan.
+
+<ul>
+<li> Teckna Gauss sats och ber&#228;kna integralen.</li>
+</ul>
+
+Vi b&#246;rjar med det oproblematiska bidraget fr&#229;n \( \vec{F}_2 \) med den s&#246;kta ytintegralen
+$$
+\begin{equation}
+I_2 \equiv \int_{S_1} \vec{F}_2 \cdot d\vec{S}
+\tag{10}
+\end{equation}
+$$
+
+<p>
+Vi anv&#228;nder den slutna ytan \( S_1+S_2 \) som vi kan anv&#228;nda i Gauss sats
+$$
+\begin{equation}
+\int_{S_1+S_2} \vec{F}_2 \cdot d\vec{S} = \int_V \nabla \cdot \vec{F}_2 dV 
+\tag{11}
+\end{equation}
+$$
+
+<p>
+Vi bollar &#246;ver integralen &#246;ver \( S_2 \) till andra sidan av likheten och f&#229;r
+$$
+\begin{equation}
+\tag{12}
+\int_{S_1} \vec{F}_2 \cdot d\vec{S} = \int_V \nabla \cdot \vec{F}_2 dV - \int_{S_2} \vec{F}_2 \cdot d\vec{S}
+\end{equation}
+$$
+
+d&#228;r den ytintgral som uppgiften ber oss ber&#228;kna nu st&#229;r i v&#228;nsterledet. Vi ser att det var viktigt att sluta ytan d&#229; vi nu har en extra term att dra bort fr&#229;n v&#228;rdet av volymsintegralen. Nyttan med Gauss sats &#228;r som st&#246;rst n&#228;r divergensen &#228;r simpel och normalytintegralen &#246;ver bottenplattan (eller vilken annan del man slutit sin yta med) &#228;r simpel.
+
+<p>
+Divergensen f&#246;r \( \vec{F}_2 \) r&#228;knade vi ut ovan och vi f&#229;r
+$$
+\begin{equation}
+\int_V \nabla \cdot \vec{F_2} dV = \frac{F_0}{a} \int_V dV = F_0 \pi (3a)^2
+\tag{13}
+\end{equation}
+$$
+
+d&#228;r vi i det sista steget anv&#228;nt att volymen av en kon &#228;r \( V=\pi r^2 h/3 \) d&#228;r \( r \) &#228;r basradien och \( h \) &#228;r h&#246;jden.
+
+<p>
+Vi beh&#246;ver nu ytintegralen &#246;ver bottenlattan kvar enligt ekv. <a href="#mjx-eqn-12">(12)</a>. Det &#228;r viktigt att notera att bottenplattans normalvektor pekar ut fr&#229;n den inneslutna volymen, dvs ned&#229;t. Vi ska allts&#229; ber&#228;kna 
+$$
+\begin{equation}
+\int_{S_2} \vec{F_2} \cdot d\vec{S} = -\int_{S_2} \vec{F_2} \cdot \hat{z} dS= -\int_{S_2} F_0\frac{z}{a}\hat{z} \cdot \hat{z} dS
+\tag{14}
+\end{equation}
+$$
+
+eftersom \( z=0 \) p&#229; \( S_2 \) s&#229; integralen &#246;ver \( \vec{F}_2 \) p&#229; bottenplattan &#228;r noll. Vi har allts&#229; att
+$$
+\begin{equation}
+I_2 = F_0 \pi (3a)^2
+\tag{15}
+\end{equation}
+$$
+
+<p>
+&#197;terst&#229;r integralen &#246;ver \( \vec{F}_1 \). Enligt alt. 1 blir
+$$
+\begin{equation}
+\tag{16}
+I_1 = \int_{S_1} \vec{F}_1 \cdot d\vec{S} = \int_{V_1} \nabla \cdot \vec{F}_1 dV - \int_{S_{2-\epsilon}} \vec{F}_1 \cdot d\vec{S} - \int_{S^+_{\epsilon}} \vec{F}_1 \cdot d\vec{S}.
+\end{equation}
+$$
+
+Volymsintegralen g&#246;rs h&#228;r &#246;ver en volym som inte inkluderar punktk&#228;llan. Den blir d&#228;rf&#246;r noll (divergensen \( \nabla \cdot \vec{F}_1=0 \) i hela denna volym). Ytintegralen &#246;ver bottenplattan \( S_{2-\epsilon} \) blir ocks&#229; noll eftersom f&#228;ltets riktning \( \hat{r} \) &#228;r vinkelr&#228;t mot ytans normalriktning. P&#229; denna yta ligger ju \( \hat{r} \) alltid i \( xy \) planet. Slutligen har vi integralen &#246;ver halvsf&#228;ren. Normalen m&#229;ste h&#228;r vara riktad i negativ \( \hat{r} \)-led f&#246;r att peka ut fr&#229;n volymen
+$$
+\begin{equation}
+\int_{S^+_{\epsilon}} \vec{F_1} \cdot d\vec{S} = \int_{S^+_{\epsilon}} F_0 a^2 \frac{\hat{r}}{\epsilon^2} \cdot (-\hat{r}) \epsilon^2 \sin\theta \mbox{d}\theta \mbox{d}\phi= -F_0 a^2 2\pi 
+\tag{17}
+\end{equation}
+$$
+
+Slutligen f&#229;r vi allts&#229; \( I_1 = 0 - 0 - (-F_0 a^2 2\pi ) = F_0 a^2 2\pi \).
+
+<p>
+Med alt. 2 har vi att
+$$
+\begin{equation}
+\tag{18}
+I_1 = \int_{S_1} \vec{F}_1 \cdot d\vec{S} = \int_{V_2} \nabla \cdot \vec{F}_1 dV - \int_{S^-_{3a}} \vec{F}_1 \cdot d\vec{S}.
+\end{equation}
+$$
+
+Nu kommer volymen \( V_2 \) att innesluta punktk&#228;llan och bidraget fr&#229;n denna term blir lika med punktk&#228;llans styrka: \( F_0 a^2 4\pi \). Ytintegralen &#246;ver \( S^-_{3a} \) g&#246;ra p&#229; precis samma s&#228;tt som ovan, men vi skall nu notera att normalriktningen pekar i positiv \( \hat{r} \)-led f&#246;r att peka ut fr&#229;n volymen. Bidraget blir \( F_0 a^2 2\pi \). Slutligen ger allts&#229; denna metod att \( I_1 = F_0 a^2 4\pi - F_0 a^2 2\pi = F_0 a^2 2\pi \), precis som alt. 1 ovan.
+
+<p>
+Enligt alt. 3 hade vi direkt kunnat r&#228;kna ut ytintegralen &#246;ver konens mantelyta med Cederwall ekv. 6.7. Sett fr&#229;n punktk&#228;llan i origo upptar konens mantelyta en rymdvinkel \( 2\pi \). Det totala bidraget blir d&#228;rf&#246;r \( (2\pi)/(4\pi) = 1/2 \) av punktk&#228;llans styrka. Dvs vi f&#229;r \( I_1 = (F_0 a^2 4\pi)/2 = F_0 a^2 2\pi \). Givetvis samma resultat som med alt. 1 och 2.
+
+<p>
+Nu kombinerar vi ihop v&#229;ra delresultat
+$$
+\begin{equation}
+\int_{S_1} \vec{F} \cdot d\vec{S} = I_1 + I_2 = F_0 a^2 2\pi + F_0 \pi (3a)^2 = F_0 \pi 11 a^2
+\tag{19}
+\end{equation}
+$$
+
+
+<ul>
+<li> Har normalen r&#228;tt riktning?</li>
+</ul>
+
+Kontrollera g&#228;rna en g&#229;ng till att ytnormalerna i de ytintegraler som ger nollskilda bidrag har r&#228;tt bidrag. Detta g&#228;ller i synnerhet de tv&#229; halvsf&#228;rer som vi inf&#246;rde f&#246;r att r&#228;kna ut \( I_1 \) enligt alt. 1 och alt. 2.
+
+<p>
+Svaret p&#229; uppgiften &#228;r allts&#229; \( 11\pi F_0 a^2 \).
+
+<p>
+Kontrollera ocks&#229; dimensionen p&#229; svaret. V&#229;rt f&#228;lt har dimensionen \( [F_0] \) och ytintegralen skall d&#228;rf&#246;r ha dimensionen $[F_0]$*area, vilket verkar st&#228;mma.
+
+<p>
+</div></p>
+</div>
+</p>
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- Closing remarks for this Exercise -->
+
+<h3 id="___sec1" class="anchor">Remarks </h3>
+
+<p>
+Uppgiften illustrerar olika s&#228;tt att hantera en singularitet som hamnar p&#229; randen till en volym.
+
+<p>
+Det &#228;r v&#228;rt att notera att den h&#228;r uppgiften inneh&#229;ller ett icke-standard moment som utg&#246;rs av att punktk&#228;llan ligger p&#229; den bottenyta som &#228;r naturlig att sluta ytan med.
+
+<p>
+Notera att vi i slut&#228;ndan fick precis halva styrkan 
+av punktk&#228;llan som bidrag oavsett vilken metod vi anv&#228;nde f&#246;r att hantera den. Det betyder att det kanske enklaste s&#228;ttet att se detta p&#229; &#228;r att punktk&#228;llan str&#229;lar 
+halva sitt bidrag in mot konen \( S_1 \) i detta fallet, dvs man t&#228;nker som i 
+metod 3.
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._06-singulara_falt-6-6-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

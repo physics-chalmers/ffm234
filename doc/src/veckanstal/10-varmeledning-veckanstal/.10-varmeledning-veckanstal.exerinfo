@@ -1,0 +1,52 @@
+
+# Information about all exercises in the file 10-varmeledning-veckanstal.do.txt.
+# The information can be loaded into a Python list of dicts by
+#
+# f = open('.10-varmeledning-veckanstal.exerinfo', 'r')
+# exer = eval(f.read())
+#
+[{'answer': '$T\\left(r\\right) = T_0 + \\frac{W_0}{4\\pi \\alpha b^2} + '
+            '\\frac{W_0}{4\\pi \\lambda}\n'
+            '\\left(\\frac{1}{r} - \\frac{1}{b}\\right)$',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': 'Uppgiften illustrerar lösningen av '
+                     'värmeledningsekvationen. Svårigheten är att förstå sig '
+                     'på randvillkoren och att utnyttja energins bevarande.',
+  'file': None,
+  'heading': '=====',
+  'hints': ['* Inget tidsberoende, dvs man är ute efter en stationär lösning '
+            '$\\partial T / \\partial t = 0$. Det finns dessutom ingen '
+            'värmekälla inuti skalet och värmeledningsekvationen blir alltså '
+            'ganska enkel.\n'
+            '* Värmeeffekten $W_0$ har enheten W=J/s. Från detta kan man räkna '
+            'ut vad värmeströmtätheten genom den inre ytan skall vara. Vi har '
+            'alltså ett Neumann randvillkor. Värmeströmtätheten (som är '
+            'proportionell mot negativa temperaturgradienten) är radiellt '
+            'riktad och konstant (men inte noll!).\n'
+            '* Newtons avkylningslag säger att flödet av värmeenergi är '
+            '$\\alpha(T-T_0)$, där $\\alpha$ och $T_0$ är konstanter (den '
+            'sista representerar temperaturen utanför ytan) och $T$ är '
+            'temperaturen på randen. Enheten för detta är '
+            '$\\mathrm{W}/\\mathrm{m}^2$.\n'
+            '* Slutligen kan ni notera att energin skall vara bevarad. '
+            'Strömmar det kontinuerligt in värmeenergi i området så måste '
+            'samma mängd strömma ut.'],
+  'keywords': None,
+  'label': None,
+  'no': 1,
+  'solution': 'Att göra',
+  'solution_file': None,
+  'subex': [],
+  'text': 'Ett sfäriskt skal tillförs en konstant värmeeffekt $W_0$ genom den '
+          'inre  ytan $r= a$ och avkyls enligt Newtons avkylningslag\n'
+          '$\\hat r\\cdot \\vec J = \\alpha\\left(T-T_0\\right)$.\n'
+          'genom den yttre ytan $r = b$, där $\\alpha$ och $T_0$ är givna '
+          'konstanter. Skalet antas homogent med konstant värmeledningsförmåga '
+          '$\\lambda$ och problemställningen sfäriskt symmetrisk. Bestäm '
+          'temperaturen överallt i skalet.',
+  'title': 'Uppgift 10.3.3',
+  'type': 'Exercise',
+  'type_visible': False}]

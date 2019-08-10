@@ -1,0 +1,221 @@
+
+# Information about all exercises in the file 09-diffekv-9-10.do.txt.
+# The information can be loaded into a Python list of dicts by
+#
+# f = open('.09-diffekv-9-10.exerinfo', 'r')
+# exer = eval(f.read())
+#
+[{'answer': '!bt\n'
+            '\\begin{equation}\n'
+            '\\vec F = \\left\\{\n'
+            '\\begin{array}{ll}\n'
+            '-\\frac{\\sigma_0}3\\hat z, & |z| < a \\\\\n'
+            '\\frac{2\\sigma_0a^3}{3|z|^3}\\hat z, & |z|>a\n'
+            '\\end{array}\n'
+            '\\right.\n'
+            'label{_auto1}\n'
+            '\\end{equation}\n'
+            '\n'
+            '!et',
+  'chapter_exercise': None,
+  'chapter_no': None,
+  'chapter_title': None,
+  'chapter_type': None,
+  'closing_remarks': '',
+  'file': None,
+  'heading': '=====',
+  'hints': ['* Betrakta punkter $\\vec{r} = z\\hat{z}$, dvs längs '
+            'symmetriaxeln.\n'
+            "* Teckna Greensfunktionen $G(\\vec{r},\\vec{r}\\,') = "
+            "(4\\pi|\\vec{r}-\\vec{r}\\,'|)^{-1}$ och fundera på hur avståndet "
+            'kan uttryckas när $\\vec{r}=z\\hat{z}$.\n'
+            '* Ytkällan motsvarar en laddningsfördelning $\\rho(\\vec{r}) = '
+            '\\sigma_0 \\cos\\theta \\delta(r-a)$.\n'
+            '* Resultatet blir en ganska krånglig integral där '
+            "variablsubstitutionen $t = z^2 +a^2−2za\\cos\\theta'$ kan komma "
+            'väl till pass.\n'
+            '* Notera sedan att man får olika fall beroende på tecknen på '
+            '$(z+a)$ och $(z-a)$.'],
+  'keywords': None,
+  'label': None,
+  'no': 1,
+  'solution': 'Eftersom att punkten $\\vec r$ befinner sig på ytkällans '
+              'symmetriaxel, kan vi definiera ett kartesiskt koordinatsystem '
+              'så att denna symmetriaxel sammanfaller med $z$-axeln. Då blir '
+              '$\\theta$ samma vinkel som den vi normalt kallar $\\theta$ i '
+              'sfäriska koordinater, och $\\vec r=z\\hat z$.\n'
+              '\n'
+              'Vektorfältet $\\vec F(\\vec r)=-\\nabla\\phi(\\vec r)$, där '
+              'potentialen $\\phi(\\vec r)$ ges av\n'
+              '!bt\n'
+              '\\begin{equation}\n'
+              '    \\phi(\\vec r)=\\int_{\\mathrm R^3}G(\\vec r,\\vec '
+              "r')\\rho(\\vec r')\\mathrm dV'.\n"
+              'label{_auto2}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              'Eftersom att vi är i tre dimensioner är Greensfunktionen '
+              "$G(\\vec r,\\vec r')=[4\\pi|\\vec r-\\vec r'|]^{-1}$. Den "
+              'angivna laddningstätheten är en ytkälla, så $\\rho(\\vec '
+              "r\\,')=\\delta(r'-a)\\sigma_0\\cos\\theta'$. Vi betraktar "
+              '$\\vec{r} = z\\hat{z}$ och får alltså \n'
+              '!bt\n'
+              '\\begin{equation}\n'
+              '    \\phi(z\\hat z)=\\int_{\\mathbb '
+              "R^3}\\frac{\\delta(r'-a)\\sigma_0\\cos\\theta'}{4\\pi\\sqrt{z^2+r'^2-2zr'\\cos\\theta'}}r'^2\\sin\\theta'\\mathrm "
+              "dr'\\mathrm d\\theta'\\mathrm d\\varphi'\n"
+              'label{_auto3}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              '\n'
+              '!bt\n'
+              '\\begin{equation} \n'
+              '    =\\frac{\\sigma_0a^2}2\\int_0^\\pi '
+              "\\frac{\\cos\\theta'\\sin\\theta'}{\\sqrt{z^2+a^2-2za\\cos\\theta'}}\\mathrm "
+              "d\\theta'.\n"
+              'label{_auto4}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              'Vi gör nu variabelsubstitutionen \n'
+              '!bt\n'
+              '\\begin{gather}\n'
+              "t=z^2+a^2-2za\\cos\\theta',\\nonumber\\\\\n"
+              "\\mathrm dt=2za\\sin\\theta'\\mathrm d\\theta',\\nonumber\\\\\n"
+              "\\theta'=0\\to t=(z-a)^2,\\nonumber\\\\\n"
+              "\\theta'=\\pi\\to t=(z+a)^2.\n"
+              '\\end{gather}\n'
+              '\n'
+              '!et\n'
+              "Nämnaren i integranden blir nu $\\sqrt t$, och $\\sin\\theta'$ "
+              'i täljaren blir en del av $\\mathrm dt$. Det kvarvarande '
+              "$\\cos\\theta'$ i täljaren får vi genom att lösa ut "
+              "$\\cos\\theta'$ ur definitionen av $t$. \n"
+              '\n'
+              'Integralen är nu\n'
+              '!bt\n'
+              '\\begin{equation}\n'
+              '    \\phi(\\vec '
+              'r)=\\frac{\\sigma_0}{4z^2}\\int_{(z-a)^2}^{(z+a)^2} '
+              '\\frac{z^2+a^2-t}{2\\sqrt t}\\mathrm dt\n'
+              'label{_auto5}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              '\n'
+              '!bt\n'
+              '\\begin{equation} \n'
+              '    '
+              '=\\frac{\\sigma_0}{4z^2}\\left[(z^2+a^2)\\int_{(z-a)^2}^{(z+a)^2} '
+              '\\frac1{2\\sqrt t}\\mathrm dt-\\int_{(z-a)^2}^{(z+a)^2} '
+              '\\frac{\\sqrt t}2\\mathrm dt\\right]\n'
+              'label{_auto6}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              '\n'
+              '!bt\n'
+              '\\begin{equation} \n'
+              '    =\\frac{\\sigma_0}{4z^2}\\left[(z^2+a^2)\\Big[\\sqrt '
+              't\\Big]_{(z-a)^2}^{(z+a)^2} '
+              '-\\frac13\\Big[t^{3/2}\\Big]_{(z-a)^2}^{(z+a)^2}\\right]\n'
+              'label{_auto7}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              '\n'
+              '!bt\n'
+              '\\begin{equation} \n'
+              '    '
+              '=\\frac{\\sigma_0}{4z^2}\\left[(z^2+a^2)\\Big[|z+a|-|z-a|\\Big]-\\frac13\\Big[|z+a|^3-|z-a|^3)\\Big]\\right].\n'
+              '\\label{phi}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              'Kom ihåg att för alla reella tal $x$ så är $\\sqrt{x^2}=|x|$. '
+              'Vi får alltså fyra fall -- $|z|>a$ och $|z|<a$ kombinerat med '
+              '$z>0$ och $z<0$ -- som måste behandlas var för sig. \n'
+              '\n'
+              '=== Inuti sfären ===\n'
+              'Eftersom att $a>z$ så är $|z+a|=z+a$ och $|z-a|=a-z$, oavsett '
+              'om $z$ är positiv eller negativ. Två av de fyra fallen kan '
+              'alltså studeras samtidigt. \n'
+              '\n'
+              'Insättning av absolutbeloppen ovan i ekvation~(ref{phi}) ger, '
+              'efter en smula algebra, att $\\phi(\\vec r)=\\sigma_0 z/3$. '
+              'Vektorfältet blir då\n'
+              '!bt\n'
+              '\\begin{equation}\n'
+              '    \\vec F =-\\hat z\\frac{\\partial\\phi}{\\partial '
+              'z}=-\\frac{\\sigma_0}3\\hat z.\n'
+              'label{_auto8}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              '\n'
+              '=== Utanför sfären ===\n'
+              'Här måste positiva och negativa $z$ studeras var för sig.\n'
+              '\n'
+              'När $z>a>0$ är $|z+a|=z+a$ och $|r-a|=r-a$. Substitution '
+              'i~(ref{phi}) och förenkling av resultatet ger att $\\phi(\\vec '
+              'r)=\\sigma_0a^3/3z^2$. Vektorfältet blir \n'
+              '!bt\n'
+              '\\begin{equation}\n'
+              '    \\vec F =-\\hat z\\frac{\\partial\\phi}{\\partial '
+              'r}=\\frac{2\\sigma_0a^3}{3z^3}\\hat z,\\quad z>0. \\label{z+}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              '\n'
+              'När $|z|>a$ men $z<0$ så blir $|z+a|=-(z+a)$ och '
+              '$|z-a|=-(z-a)$. Den här gången blir $\\phi(\\vec '
+              'r)=-\\sigma_0a^3/3z^2$ och \n'
+              '1!bt\n'
+              '\\begin{equation}\n'
+              '    \\phi(\\vec r)=\\int_{\\mathrm R^3}G(\\vec r,\\vec '
+              "r')\\rho(\\vec r')\\mathrm dV'.\n"
+              'label{_auto2}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              '\n'
+              'Notera att alla kvantiteter utom $z$ i~(ref{z+}) och~(ref{z-}) '
+              'är konstanter; de ändrar alltså aldrig tecken. Därför kan vi '
+              'kombinera dessa två ekvationer, och uttrycka fältet överallt '
+              'utanför sfären som\n'
+              '1!bt\n'
+              '\\begin{equation}\n'
+              '    \\phi(z\\hat z)=\\int_{\\mathbb '
+              "R^3}\\frac{\\delta(r'-a)\\sigma_0\\cos\\theta'}{4\\pi\\sqrt{z^2+r'^2-2zr'\\cos\\theta'}}r'^2\\sin\\theta'\\mathrm "
+              "dr'\\mathrm d\\theta'\\mathrm d\\varphi'\n"
+              'label{_auto3}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et\n'
+              '\n'
+              '=== Kontroll: ytladdning ===\n'
+              'Notera att vårt fält, betraktat längs symmetriaxeln, har en '
+              'diskontinuitet vid $z=\\pm a$. Denna motsvarar ytladdningen. '
+              'T.ex., vid $\\theta = 0$ (dvs $z=+a$) har vi enligt '
+              'uppgiftsformuleringen en ytladdning med styrkan $\\sigma_0$. '
+              'Detta kan vi verifiera genom att räkna ut\n'
+              '1!bt\n'
+              '\\begin{equation} \n'
+              '    =\\frac{\\sigma_0a^2}2\\int_0^\\pi '
+              "\\frac{\\cos\\theta'\\sin\\theta'}{\\sqrt{z^2+a^2-2za\\cos\\theta'}}\\mathrm "
+              "d\\theta'.\n"
+              'label{_auto4}\n'
+              '\\end{equation}\n'
+              '\n'
+              '!et',
+  'solution_file': None,
+  'subex': [],
+  'text': 'På en sfär med radien $a$ befinner sig en ytkälla med tätheten '
+          '$\\sigma(\\vec r)=\\sigma_0\\cos\\theta$, där $\\theta$ är vinkeln '
+          'från en punkt på sfären. Bestäm vektorfältet för en punkt på '
+          'symmetriaxeln.',
+  'title': 'Uppgift 9.4.10: Vektorfält från Greensfunktion',
+  'type': 'Exercise',
+  'type_visible': False}]

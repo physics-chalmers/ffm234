@@ -1,0 +1,287 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Klassisk fysik och vektorfält - Veckans tal">
+
+<title>FFM232, Klassisk fysik och vektorfält - Veckans tal</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [(u'Uppgift 7.2 (Cederwalls kompendium): Derivator av deltafunktioner',
+               2,
+               None,
+               '___sec0'),
+              (u'Explicit integrering', 3, None, '___sec1'),
+              (u'Resonemang utg\xe5ende fr\xe5n funktionernas form',
+               3,
+               None,
+               '___sec2')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<a name="part0000"></a>
+<p>
+
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM232, Klassisk fysik och vektorfält - Veckans tal</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): Christin Rhen och Christian Forssén, Chalmers, Göteborg, Sverige -->
+
+<center>
+<b>Christin Rhen och Christian Forssén, Chalmers, Göteborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 6, 2016</h4></center> <!-- date -->
+<br>
+<p>
+<!-- --- begin exercise --- -->
+
+<h2 id="___sec0">Uppgift 7.2 (Cederwalls kompendium): Derivator av deltafunktioner </h2>
+
+<p>
+Konstruera approximationerna till de första tre derivatorna av en deltafunktion svarande mot approximationerna (7.7) och (7.8) av deltafunktionen! Skissera funktionernas beteende (m.h.a. dator om du vill) och reflektera över varför deras integraler 
+mot en funktion \( f(x) \) ger de resultat de gör i gränsen \( \epsilon \rightarrow 0 \).
+
+<p>
+<!-- --- begin hint in exercise --- -->
+
+<p>
+<b>Hint.</b>
+Det är instruktivt att lösa uppgiften på två sätt:
+
+<ol>
+<li> Att använda de explicita uttrycken för olika ordningars derivator av de givna distributionerna och utföra integralerna.</li> 
+
+<ul>
+  <li> Gör först en Taylorexpansion av funktionen \( f(x) \) runt \( x=0 \).</li>
+  <li> Notera att distributionerna är jämna funktioner så att integraler över dessa gånger udda funktioner måste bli noll för ett symmetriskt intervall.</li>
+  <li> Se formelsamling för analytiska uttryck för de relevanta integralerna.</li>
+</ul>
+
+<li> Studera även de skissade funktionerna och deras derivator. Vad får man om man multiplicerar dessa med en funktion f(x) och utför integralen i gränsen \( \epsilon \to 0 \)?</li>
+
+<ul>
+  <li> Jämför med uttrycken för olika ordningars derivator av en funktion \( f(x) \) i termer av finita differenser.</li>
+</ul>
+
+</ol>
+
+<!-- --- end hint in exercise --- -->
+
+<p>
+<!-- --- begin answer of exercise --- -->
+<b>Answer.</b>
+Integralerna skall plocka ut funktionens första tre derivator i punkten \( x=0 \) med tecken \( (-1)^n \) för derivata av ordningen \( n \).
+
+<p>
+<!-- --- end answer of exercise --- -->
+
+<p>
+<!-- --- begin solution of exercise --- -->
+<b>Solution.</b>
+Rättfram derivering ger
+$$
+\begin{align}
+    h_\epsilon(x)&=\frac1{\epsilon\sqrt\pi}e^{-x^2/\epsilon^2},\\
+    h_\epsilon'(x)&=-\frac{2x}{\epsilon^2}h_\epsilon(x),\\
+    h_\epsilon''(x)&=\frac{4x^2-2\epsilon^2}{\epsilon^4}h_\epsilon(x),\\
+    h_\epsilon'''(x)&=-\frac{8x^3-12x\epsilon^2}{\epsilon^6}h_\epsilon(x),
+\end{align}
+$$
+
+och
+$$
+\begin{align}
+    h_\epsilon(x)&= \frac\epsilon{\pi\left(x^2+\epsilon^2\right)},\\
+    h_\epsilon'(x)&= -\frac{2 x}{x^2+\epsilon^2}h_\epsilon(x) ,\\
+    h_\epsilon''(x)&= \frac{6x^2-2\epsilon^2}{\left(x^2+\epsilon^2\right)^2}h_\epsilon(x) ,\\
+    h_\epsilon'''(x)&= -\frac{24 x^3 -24x\epsilon^2}{\left(x^2+\epsilon^2\right)^3}h_\epsilon(x) .
+\end{align}
+$$
+
+Dessa funktioner och derivator är skisserade för \( \epsilon = 0.02,0.04,0.06 \) i figur <a href="#fig:71">1</a> och <a href="#fig:72">2</a>.
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 1:  Två distributioner och deras förstaderivator i gränsen \( \epsilon \to 0 \). <div id="fig:71"></div> </p></center>
+<p><img src="fig/fig721.png" align="bottom" width=900></p>
+</center>
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 2:  Andra- och tredjederivator av två distributioner i gränsen \( \epsilon \to 0 \). <div id="fig:72"></div> </p></center>
+<p><img src="fig/fig722.png" align="bottom" width=900></p>
+</center>
+
+<p>
+Deltafunktionens derivator ska gå att partialintegrera (se diskussionen av ekvation (7.9) i Cederwall). Det vill säga (alla integraler går över hela \( \mathbb R \), så alla randtermer är lika med noll):
+$$
+\begin{align}
+    \int \mathrm dx\ \delta'(x)f(x)&=-\int \mathrm dx\ \delta(x)f'(x)=-f'(0),\\
+    \int \mathrm dx\ \delta''(x)f(x)&=\int \mathrm dx\ \delta(x)f''(x)=f''(0),\\
+    \int \mathrm dx\ \delta'''(x)f(x)&=-\int \mathrm dx\ \delta(x)f'''(x)=-f'''(0).
+    \tag{1}
+\end{align}
+$$
+
+<h3 id="___sec1">Explicit integrering </h3>
+
+<p>
+Låt oss visa detta explicit för de två distributionerna som betraktas här. För en godtycklig slät funktion \( f(x) \) kan vi Taylorutveckla:
+$$
+\begin{equation}
+    f(\epsilon)\approx f(0)+f'(0)x+\frac12f''(0)x^2+\frac16f'''(0)x^3+\ldots.
+\end{equation}
+$$
+
+I båda fallen ovan är \( h_\epsilon(x) \) en jämn funktion, så alla termer av typen \( x^{2n+1}h_\epsilon(x) \), \( n\in\mathbb Z \) integreras till noll.
+
+<p>
+Vi börjar titta på den Gaussiska approximationen. Inför notationen \( f^{(n)}(0)\equiv f^{(n)}_0 \). För förstaderivatan får vi följande genom att utföra integralerna (se formelsamling) eller genom att partialintegrera upprepade gånger,
+$$
+\begin{align}
+    \int\mathrm dx\ f(x)h'_\epsilon(x)&\approx-\frac{2}{\epsilon^2}\int\mathrm dx\ xh_\epsilon(x)\left[f'_0x+\frac16f'''_0x^3+\ldots\right] \nonumber\\
+    &=-f'_0-\frac14f'''_0\epsilon^2+\ldots.
+\end{align}
+$$
+
+Det är lätt att inse att alla termer som innehåller högre ordningens derivator  av \( f(x) \) kommer vara proportionella mot \( \epsilon \), och gå mot noll. Kvar finns bara den väntade \( -f'(0) \).
+
+<p>
+På samma sätt studerar vi integralen över andraderivatan:
+$$
+\begin{align}
+    \int\mathrm dx\ f(x)h''_\epsilon(x)&\approx\int\mathrm dx\ \frac{4x^2-2\epsilon^2}{\epsilon^4}h_\epsilon(x)\left[f_0+\frac12f''_0x^2+\ldots\right] \nonumber\\
+    &=\frac{2-2}{\epsilon^2}f(0)+\frac{3-1}2f''_0 + \epsilon^2 [\ldots].
+\end{align}
+$$
+
+De högre ordningens termer kommer återigen vara proprotionella mot \( \epsilon \), och försvinner när gränsvärdet tas, vilket resulterar i att bara \( f''(0) \) finns kvar.
+
+<p>
+Vi övergår nu till att studera den Lorentzianska approximationen. På samma sätt som ovan får vi för förstaderivatan
+$$
+\begin{gather}
+    \int\mathrm dx\ f(x)h'_\epsilon(x)\approx-\int\mathrm dx\ \frac{2 x}{x^2+\epsilon^2}h_\epsilon(x)\left[f'_0x+\frac16f'''_0x^3+\ldots\right] \nonumber\\
+    =-f'_0-\frac\epsilon{3\pi}\left[x+\frac{\epsilon^2x}{2\epsilon^2+2x^2}-\frac{3\epsilon}2\tan^{-1}\frac x\epsilon\right]_{-\infty}^\infty+\ldots.
+\end{gather}
+$$
+
+Eftersom att \( x \) här är en integrationsvariabel har den inget konstigt för sig, utan går linjärt mot oändligheten. I gränsen \( \epsilon\rightarrow 0 \) går därför de högre ordningens termer mot noll, och vi får igen det väntade resultatet.
+
+<p>
+För andraderivatan får vi
+$$
+\begin{gather}
+    \int\mathrm dx\ f(x)h''_\epsilon(x)\approx\int\mathrm dx\ \frac{6x^2-2\epsilon^2}{\left(x^2+\epsilon^2\right)^2}h_\epsilon(x)\left[f_0+\frac12f''_0x^2+\ldots\right] \nonumber\\
+    =\frac{3-3}{4\epsilon^2}f(0)+\frac{9-1}8f''_0 + \epsilon [\ldots]
+\end{gather}
+$$
+
+där alltså högre ordningens termer är proportionella mot \( \epsilon \).
+
+<p>
+Att bevisa ekvation <a href="#mjx-eqn-1">(1)</a> för de båda fallen av \( h_\epsilon(x) \) lämnas som en övning.
+
+<h3 id="___sec2">Resonemang utgående från funktionernas form </h3>
+
+<p>
+Vi kan också resonera utgående från figurerna <a href="#fig:71">1</a> och <a href="#fig:71">1</a> varför vi får dessa resultat. För att göra detta drar vi oss först till minnes uttrycken för olika ordningars derivator i termer av finita differenser:
+$$
+\begin{align}
+f'(x) &= \lim_{\epsilon \to 0} \frac{f(x+\epsilon/2)-f(x-\epsilon/2)}{\epsilon} \\
+f''(x) &= \lim_{\epsilon \to 0} \frac{f(x+\epsilon)-2f(x)+f(x-\epsilon)}{\epsilon^2} \\
+f'''(x) &= \lim_{\epsilon \to 0} \frac{f(x+3\epsilon/2)-3f(x+\epsilon/2)+3f(x-\epsilon/2)-f(x-3\epsilon/2)}{\epsilon^3}.
+\end{align}
+$$
+
+Det är inte svårt att föreställa sig att förstaderivatorna som ritats upp i den andra raden av figur <a href="#fig:71">1</a> kommer att plocka upp \( -f(0+\epsilon/2) \) och \( +f(0-\epsilon/2) \). Notera också att amplituden på de två topparna är lika stor och växer som \( 1/\epsilon \). Resultatet motsvarar alltså den finita differensen som definierar förstaderivatan av en funktion \( f(x) \) i punkten \( x=0 \), fast med motsatt tecken.
+
+<p>
+På liknande sätt kan vi resonera kring de högre ordningarnas derivator och jämföra figurerna med uttrycken från finita differenser. Notera speciellt den relativa storleken på de olika topparna och att amplituderna blir högre för andraderivatorna (\( \sim 1/\epsilon^2 \)) och ännu högre för tredjederivatorna (\( \sim 1/\epsilon^3 \)).
+
+<p>
+<!-- --- end solution of exercise --- -->
+
+<p>
+<!-- --- end exercise --- -->
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+
