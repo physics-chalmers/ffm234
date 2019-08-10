@@ -36,18 +36,6 @@ color: #fff;
 cursor: default;
 }
 
-h2 {
-width: 519px;
-height: 60px;
-background-color: #333;
-float: left;
-font: bold 18px/30px 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
-padding-left: 10px;
-color: #fff;
-margin-top: 1px;
-cursor: default;
-}
-
 #nav {
 list-style: none;
 z-index: 2;
@@ -104,10 +92,6 @@ margin: 0 0 10px 20px;
 
 p {
 margin-bottom: 20px;
-}
-
-p:first-line {
-font-weight: bold;
 }
 
 .main_box{
