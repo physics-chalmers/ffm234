@@ -1,0 +1,235 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Datoruppgift: Visualisering av fält">
+
+<title>Datoruppgift: Visualisering av fält</title>
+
+
+<link href="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/css/solarized_light_code.css" rel="stylesheet" type="text/css" title="light"/>
+<script src="https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_styles/style_solarized_box/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<link href="http://thomasf.github.io/solarized-css/solarized-light.min.css" rel="stylesheet">
+<style type="text/css">
+h1 {color: #b58900;}  /* yellow */
+/* h1 {color: #cb4b16;}  orange */
+/* h1 {color: #d33682;}  magenta, the original choice of thomasf */
+code { padding: 0px; background-color: inherit; }
+pre {
+  border: 0pt solid #93a1a1;
+  box-shadow: none;
+}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [(u'Introduktion', 1, None, '___sec0'),
+              (u'Meteorologi', 1, None, '___sec1'),
+              (u'Uppgift', 1, None, '___sec2'),
+              (u'Inl\xe4sning av data', 2, None, '___sec3'),
+              (u'Uppgift 1: isobarer', 2, None, '___sec4'),
+              (u'Om rapporten', 1, None, '___sec5')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>Datoruppgift: Visualisering av fält</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>, -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>,</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+Institutionen för fundamental fysik, Chalmers, Göteborg, Sverige 
+<p>
+<center><h4>Aug 29, 2015</h4></center> <!-- date -->
+<br>
+
+<h1 id="___sec0">Introduktion </h1>
+Ett viktigt vetenskapligt användningsområde för datorer är att visualisera
+olika fysikaliska förlopp. Detta består ofta i att skapa bilder av
+två- eller tre-dimensionella fält. Det finns många sofistikerade sätt
+att göra detta på , särskilt om man vill titta på tidsutvecklingen av
+tre-dimensionella fält. Speciella programpaket och, i vissa fall,
+datorer har utvecklats för detta ändamål. Vi skall dock begränsa oss
+till enklare fält i två dimensioner för vilka vi kan använda ett
+enkelt matematikprogram såsom Matlab eller Python (så kallade
+interpreterande programspråk).
+
+<p>
+Vi kan särskilja två huvudtyper av fält inom den här kursen, skalära
+fält och vektorfält. Ett enkelt exempel på ett skalärt fält är trycket
+i en gas. Skalära fält illustrerar man ofta genom att rita nivåkurvor,
+det vill säga kurvor längs med vilka fältet antar ett konstant
+värde. På väderkartor ritar man till exempel ut isobarer för att visa
+hur trycket varierar. En annan möjlighet är att ge varje punkt en
+färg, som anger ungefär hur starkt fältet är i just den
+punkten. Ibland kan man välja att illustrera ett fält med en färgskala
+och ett annat fält med nivåkurvor.
+
+<p>
+Vektorfält är något krångligare att illustrera eftersom de skall ha
+både en storlek och en riktning. Det enklaste sättet att göra detta på
+med en modern dator är att rita ut pilar. Långa pilar där fältet är
+starkt och korta pilar där det är svagt. Ett annat sätt är att
+konstruera fältlinjer. Tangenten till en fältlinje ger då fältets
+riktning i en punkt, och tätheten av fältlinjerna ger fältets styrka.
+
+<p>
+En speciell typ av skalärt fält är en potential. Potentialen kan
+visualiseras genom att plotta nivåkurvor, vilka vi i detta fall kallar
+ekvipotentialkurvor (eller ekvipotentialytor om vi arbetar i tre
+dimensioner). Ur en potential \( \phi \) kan vi beräkna en fältstyrka
+\( \vec{F} = - \vec{\nabla}\phi \). Till \( \vec{F} \) kan vi sedan konstruera
+fältlinjer. En figur där vi plottar både ekvipotentialytorna till
+\( \phi \) och fältlinjerna till \( \vec{F} \) kallar vi en fältbild.
+
+<h1 id="___sec1">Meteorologi </h1>
+
+<p>
+Meteorologi är ett vetenskapligt område där fältteori ofta tillämpas. För att göra prognoser följer meteorologer utvecklingen av lufttryck, temperatur och vind med hjälp av väderkartor. Vi vill här visa hur \( \nabla \) operatörer som divergens och rotation kan vara användbara i analysen av väderdata. Förhoppningsvis kommer detta exempel också att bidra till att fördjupa den fysiska förståelsen av divergens och virvlar.
+
+<p>
+Den meteorologiska data vi kommer att analysera är från ett område i Nordatlanten, Norska havet och Nordsjön som omfattar Norges västkust, norra England, Skottland, Nordirland och Island (se Figur <a href="#karta">1</a>). Ett stort antal manuella och automatiska väderstationer är verksamma i området och genomför regelbundna observationer flera gånger om dagen.
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 1:  Den väderdata som vi kommer att analysera är från det markerade området i kartan. <div id="karta"></div> </p></center>
+<p><img src="fig-meteorologi/karta-vaderdata.png" align="bottom" width=600></p>
+</center>
+
+<p>
+Väderstationer är inte jämnt fördelade och är, av naturliga orsaker, mer frekventa över land än över hav. Mätningar från ett världsomspännande nätverk av mätstationer ger data som analyseras med prognosmodeller. Dessa modeller kan bedöma tillståndet i atmosfären också i områden där observationer saknas. Med sådana modeller kan man till exempel beräkna lufttryck, vindhastighet och vindriktning i en uppsättning punkter som bildar ett regelbundet gittersystem längs markytan (Figur XX).
+
+<p>
+De uppgifter som vi kommer att använda kommer från Meteorologisk institutt, Blindern, Oslo. Det är lufttryck vid havsnivån och vindvektorer i isobarytan 850 hektopascal, som i sin tur ligger ca 1000- 1500 meter över havsnivån. Dessa data beräknas i ett rutsystem med \( \Delta x = \Delta y = 55 \) km, tisdagen den 19:e februari, 2002 kl 18 UTC (standardtid) och representerar den bästa möjliga uppskattningen av tillståndet i atmosfären vid det här tillfället.
+
+<p>
+En satellitbild (Figur <a href="#satellit">2</a>) tas samma dag, men vid ett något tidigare tillfälle (16:13 UTC). Bilden visar att ett stort sammanhängande regnsystem täcker Irland, en del av England och Skottland och sträcker sig som ett ljusgrått band nordväst bort över Island. Nordost om detta regnsystem, dvs över Nordsjön och Norska havet, är det nästan klar himmel med lätta skurar i de norra delarna av Norska havet. På västra sidan av regnsystemet, dvs söder om Island, är det nästan helt klar himmel. Ni kommer att kunna få ett mått på hur bra er dataanalys är genom att jämföra era resultat med denna satellitbild.
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 2:  Satellitbild från den 19:e februari, 2002. Ljusgrå färgton motsvarar regnväder, medan mörka toner är hav eller land. <div id="satellit"></div> </p></center>
+<p><img src="fig-meteorologi/satellitbild-vaderdata.png" align="bottom" width=600></p>
+</center>
+
+<h1 id="___sec2">Uppgift </h1>
+
+<h2 id="___sec3">Inläsning av data </h2>
+
+<p>
+Innanför det utmärkta området i Figur <a href="#karta">1</a> definierar vi ett rutsystem med 30 x 31 punkter (se Figur <a href="#gridsystem">3</a>). Det är 30 punkter i syd-nordlig riktning och 31 punkter i öst-västlig riktning.
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 3:  Väderdata för området i Figur \<a href="#karta">1</a> är givet på ett rutsystem med 30 x 31 punkter. Avstånden mellan två närliggande gitterpunkter är \( \Delta x = \Delta y = 55 \mathrm{km} \). <div id="gridsystem"></div> </p></center>
+<p><img src="fig-meteorologi/grid-vaderdata.png" align="bottom" width=600></p>
+</center>
+
+<p>
+Väderdatan är alltså sparad som matriser
+$$
+D(x_i,y_j) = D_{ij}, \quad i=1,2,\ldots,30, \quad j=1,2,\ldots,31
+$$
+
+<p>
+Det finns tre filer:
+
+<ul>
+<li> <code>tryckfalt.dat</code> innehåller lufttrycket (givet i hPa) vid havsnivån.</li>
+<li> <code>vindfalt_u.dat</code> innehåller vindfältets komponent i öst-västlig riktning (dvs \( x \)-riktningen) vid isobarytan 850 hPa given i m/s.</li>
+<li> <code>vindfalt_v.dat</code> innehåller vindfältets komponent i syd-nordlig riktning (dvs \( y \)-riktningen) vid isobarytan 850 hPa given i m/s.</li>
+</ul>
+
+<h2 id="___sec4">Uppgift 1: isobarer </h2>
+
+<p>
+Läs in lufttrycksdata och rita konturlinjer för tryckfältet (isobarar) eftersom detta är ett skalärfält. Det kan krävas lite experimenterande för att finna ett bra antal konturlinjer så att figuren blir tydlig. Kom ihåg att väderdata är sparad som en matris och att rutsystemet motsvarar en fix steglängd på 55 km.
+
+<p>
+Försök att identifiera ett lågtrycksområde och beskriv var det ligger.
+
+<h1 id="___sec5">Om rapporten </h1>
+
+<ul>
+<li> Rapporten skall skrivas i TeX/LaTeX. Arbetar man i par lämnas en</li>
+</ul>
+
+gemensam rapport in.  
+
+<ul>
+<li> Rapporten skall inte omfatta mer än fyra sidor inklusive era figurer.</li>
+<li> Beskriv i rapporten hur ni går tillväga och vilka ekvationer ni</li>
+</ul>
+
+använder, men ni behöver inte redovisa era program. 
+
+<ul>
+<li> Tänk på att ge så mycket detaljer så att någon annan kan upprepa era</li>
+</ul>
+
+beräkningar. Glöm inte enheter. 
+
+<ul>
+<li> Redovisa era resultat i grafisk form när det är lämpligt.</li> 
+<li> Diskutera och tolka era resultat.</li>
+</ul>
+
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+
