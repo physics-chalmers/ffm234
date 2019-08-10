@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml/>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>Vektorfält och klassisk fysik [FFM234]</title>
+<link href="vektorfalt.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<div id="content">
+
+<div class='main_box'>
+  <h3><a name="schema">Schema</a></h3>
+
+  Den lärarledda undervisningen sker i form av:
+  <ul>
+    <li><b>Föreläsningar med demonstrationsövning</b>: teorigenomgång
+      med exempel, diskussionsuppgifter, demonstration av problemlösning i helklass;</li> 
+    <li><b>Övningar</b>: demonstrationsövning samt självverksamhet med
+    handledning. OBS: försök lösa de listade demonstrationsuppgifterna
+    själv i förhand så blir demonstrationen mycket mer givande</li>
+  </ul>
+
+    Men en stor del av inlärningen förväntas äga rum genom eget arbete
+  med de rekommenderade uppgifterna och datoruppgifterna samt vid
+  genomläsning av kursmaterial inför föreläsningarna.
+  <br/>
+  <br/>
+    Generellt gäller att föreläsningarna äger rum på tisdagar (kl 13-15 i
+  HB2), onsdagar (kl 8-10 i HA4) och fredagar (kl 10-12 i
+  HA4). Räkneövningarna är på tisdagar (kl 15-16 storgrupp i FB och kl
+  16-17
+  räknestuga i FL61,71).
+  <ul>
+    <li><a href="https://cloud.timeedit.net/chalmers/web/public/riqvZQY75ZXZ07Qy6Y7Q66606QZ346Q5q000255Q0Yo7og6.html">
+    Aktuellt schema</a> i TimeEdit med lokaler. </li>
+    <li>Prenumerera på
+<a href="https://cloud.timeedit.net/chalmers/web/public/ri627Q7QYn7ZQ0Q530653676yZZQ5603.ics">iCal-schema</a>. 
+    </li>
+  </ul>
+
+</div>
+
+<div class='main_box'>
+  <h3><a name="planering">Veckoplanering</a></h3>
+
+  Tema per läsvecka:
+  <ul>
+    <li><a href="#lv1">Läsvecka 1 - Fält, koordinater och
+    derivator</a></li>
+	<li><a href="#lv2">Läsvecka 2 - Integraler och integralsatser</a></li>
+	<li><a href="#lv3">Läsvecka 3 - Tensorer</a></li>
+	<li><a href="#lv4">Läsvecka 4 - Singulära fält</a></li>
+	<li><a href="#lv5">Läsvecka 5 - Singulära fält och
+	deltafunktioner</a></li> 
+	<li><a href="#lv6">Läsvecka 6 - Potentialer, lösning av PDE</a></li>
+	<li><a href="#lv7">Läsvecka 7 - Tillämpningar</a></li>
+	<li><a href="#lv8">Läsvecka 8 - Repetition</a></li>
+  </ul>
+
+Kommentarer:
+
+  <ul>
+    <li>Den exakta fördelningen av innehållet kan modifieras efter hand.
+    </li>
+    <li>De rekommenderade uppgifterna gäller både
+      övningstillfällena och självverksamhet utanför dessa.
+    </li>
+    <li>Titta gärna på de kortfattade instuderingsfrågorna i samband med
+      genomläsning av relevanta kursboksavsnitt.
+    </li>
+    <li>Demonstrationsuppgifterna demonstreras på räkneövningen; försök lösa
+ dessa själv i förhand så blir demonstrationen mycket mer givande.</li>
+  </ul>
+
+  <!-- ================ Läsvecka 1 ================ -->
+  <hr/>
+  <h4><a name="lv1">Läsvecka 1 - Tema: Fält, koordinater och derivator</a></h4>
+
+    <ul>
+    <li>Fält och derivator (Kapitel 1 i kompendiet)</li>
+    <li>Kroklinjiga koordinater (Kapitel 2 i kompendiet)</li>
+    <li>Kompletteras med avsnitt 3.5, 3.6, 3.10 i Arfken<br/>
+    (Avsnitt 3.6 och 3.10 är mer omfattande än vad vi behöver
+    här. Notera speciellt att härledningen av divergens  och rotation
+    i avsnitt 3.10 bygger på användandet av integralsatser vilket vi
+    kommer till senare.)</li>
+  </ul>
+ 
+  Demonstrationsuppgifter (demonstreras på räkneövningen nästa vecka; försök lösa
+  uppgifterna själv i förhand så blir demonstrationen mycket mer givande): 
+  <ul>
+    <li>2.4.6, 2.4.23</li>
+  </ul>
+
+  Rekommenderade uppgifter för självverksamhet: 
+  <ul>
+    <li>datoruppgift 1;</li> 
+    <li>alla uppgifter i kap. 1.5;</li>
+    <li>2.4.1, 2.4.2, 2.4.5, 2.4.6-7, 2.4.11<sup>1</sup>, 2.4.12, 2.4.14, 2.4.21,
+      2.4.22, 2.4.27<br/>
+        <sup>1</sup>Fältlinjerna blir: x(t) = (x0+a) exp(-t) - a; y(t) = y0 exp(-t); z(t) = z0 exp(t). 
+      </li>
+  </ul>
+  
+
+<h4>Instuderingsfrågor</h4>
+<ul>
+  <li>Det mesta i kap. 1 är repetition från
+flervariabelanalysen. Bedöm själv hur mycket du behöver öva på
+detta. Det är viktigt för fortsättningen att kunskapen är
+aktuell.</li>
+  <li>Vad är ett fält? - leta exempel i olika situationer du känner
+    till och försök även hitta exempel på nivåytor och
+    fältlinjer. Vilka koordinatsystem används i dina exempel?</li> 
+  <li>Hur kan vi grafiskt representera ett skalärt fält? Ett
+  vektorfält?</li>
+  <li>Vad innebär det matematiskt och fysikaliskt att derivera ett
+  vektorfält? Ett skalärt fält? På hur många sätt kan vi derivera ett
+  fält?</li> 
+  <li>Repetera sfäriska och cylindriska (polära) koordinater. - Hur
+  förhåller sig olika koordinater till varandra? - Vad är ortsvektorn i
+  de olika systemen? - Hur ser koordinatlinjer och koordinatytor ut i
+  dessa system?</li> 
+</ul>
+
+  <!-- ================ Läsvecka 2 ================ -->
+<hr/>
+<h4><a name="lv2">Läsvecka 2 - Tema: Integraler och integralsatser</a></h4>
+
+  <ul>
+    <li>Integraler (Kapitel 3 i kompendiet)</li>
+    <li>Integralsatser (Kapitel 4 i kompendiet)</li>
+    <li>Kompletteras med avsnitt 3.7, 3.8, 3.10 i Arfken.<br/>
+    (Avsnitt 3.8 innehåller en mer allmän diskussion av Greens formel
+    än vad vi behöver.)</li>
+  </ul>
+
+ Demonstrationsuppgifter (demonstreras på räkneövningen nästa vecka; försök lösa
+  uppgifterna själv i förhand så blir demonstrationen mycket mer givande): 
+  <ul>
+    <li>3.6.9, 4.5.23</li>
+  </ul>
+
+Rekommenderade uppgifter för självverksamhet:  
+  <ul>
+    <li>3.6.1-4, 3.6.7, 3.6.8, 3.6.11, 3.6.12.  Övriga uppgifter i kap. 3.6 vid
+behov.</li>
+    <li>4.5.1, 4.5.2, 4.5.4, 4.5.5, 4.5.7, 4.5.13, 4.5.14, 4.5.17-22, *4.5.31</li>
+  </ul>
+
+<h4>Instuderingsfrågor</h4>
+<ul>
+  <li>Hur parametriserar jag en kurva? En yta? En volym?</li>
+  <li>Repetera multipelintegraler från den matematiska analysen.</li> 
+  <li>Fundera på några fysikaliska exempel där man utför en
+  linjeintegral av ett vektorfält. Hur avgör man om ett fält
+  är konservativt? </li>
+  <li>Vad är den fysikaliska betydelsen av ytintegralen av ett
+  vektorfält över en sluten yta?</li> 
+  <li>Vad menas med en integralsats? Specifikt när det gäller
+  vektoranalys.</li>
+  <li>Vad är den fysikaliska tolkningen av
+  kontinuitetsekvationen?</li> 
+  <li>Försök förstå principiellt hur Gauss och Stokes satser kan
+  användas för att finna uttryck för divergens och rotation i
+  kroklinjiga koordinater.</li>
+</ul>
+
+  <!-- ================ Läsvecka 3 ================ -->
+<hr/>
+<h4><a name="lv3">Läsvecka 3 - Tema: Tensorer</a></h4>
+
+  <ul>
+    <li>Indexnotation, identiteter för derivator (Kapitel 5 i kompendiet)</li>
+    <li>Tensorer (Kapitel 12 i kompendiet)</li>
+    <li>Repetera avsnitt 3.1, 3.2 (vektoranalys) och 3.3, 3.4
+    (koordinattransformationer) i Arfken. Studera också resten av
+    avsnitt 3.6 (vektorlaplacian). <br/>
+      För den intresserade: Kapitel 4 i Arfken innehåller en
+    mycket djupare diskussion om tensorer än vad vi behöver här
+    (rekommenderas inte nu, men i framtiden vid behov).</li>
+  </ul>
+
+ Demonstrationsuppgifter (demonstreras på räkneövningen nästa vecka; försök lösa
+  uppgifterna själv i förhand så blir demonstrationen mycket mer givande): 
+  <ul>
+    <li>5.5.9, 12.6.5</li>
+  </ul>
+
+Rekommenderade uppgifter för självverksamhet:  
+  <ul>
+    <li>5.5.1-4, 5.5.6, 5.5.7, 5.5.10, 5.5.11, 5.5.14; <br/> 
+    </li>
+    <li>12.6.1-5, 12.6.8</li>
+  </ul>
+
+<b><u>Deadline för inlämningsuppgift 1 är på fredag den 21 september kl 17.00.</u></b>
+
+<h4>Instuderingsfrågor</h4>
+<ul>
+  <li>Hur skriver man skalärprodukten respektive kryssprodukten av två
+  vektorer med indexnotation? Vad innebär Einsteins
+  summationskonvention?</li>
+  <li>Hur kan vi använda indexnotation för att finna olika identiteter
+  för uttryck med flera derivator?</li>
+  <li>Försök förstå varför begreppet tensorer är så intimt förknippat
+  med koordinattransformationer.</li>
+  <li>Varför gör transformationsegenskaperna att fysikaliska lagar
+  ofta formuleras som en likhet mellan tensorer?</li>
+</ul>
+
+  <!-- ================ Läsvecka 4 ================ -->
+<hr/>
+<h4><a name="lv4">Läsvecka 4 - Tema: Singulära fält</a></h4>
+
+  <ul>
+    <li>Singulära fält (Kapitel 6 i kompendiet)</li>
+    <li>För den intresserade: Kapitel 10 i Arfken innehåller en
+    mycket djupare diskussion om Greensfunktioner än vad vi behöver här
+    (rekommenderas inte nu, men i framtiden vid behov).</li>
+  </ul>
+
+ Demonstrationsuppgifter (demonstreras på räkneövningen nästa vecka; försök lösa
+  uppgifterna själv i förhand så blir demonstrationen mycket mer givande): 
+  <ul>
+    <li>6.6.28</li>
+    <li>Vad blir potentialen från en elektrisk dipol (dvs. två lika men motsatta laddningar nära varandra)?</li>
+  </ul>
+
+Rekommenderade uppgifter för självverksamhet:  
+  <ul>
+    <li>6.6.3-9, 6.6.1, 6.6.12-14, 6.6.16, 6.6.27, 6.6.29; </li> 
+  </ul>
+
+<h4>Instuderingsfrågor</h4>
+<ul>
+  <li>Vad finns det för samband mellan källor och singulariteter?</li>
+  <li>Ge ett fysikaliskt exempel på en virveltråd.</li>
+  <li>Beskriv hur potentialen från en allmän källfördelning kan
+  skrivas som en integral med en Greensfunktion. Ge en fysikalisk
+  tokning av Greensfunktionen.</li>
+</ul>
+
+  <!-- ================ Läsvecka 5 ================ -->
+<hr/>
+<h4><a name="lv5">Läsvecka 5 - Tema: Singulära fält och
+    deltafunktioner</a></h4> 
+
+  <ul>
+    <li>Deltafunktioner, integraler av singulära fält (Kapitel 7 i
+    kompendiet)</li> 
+    <li>Kompletteras med avsnitt 1.11 i Arfken</li>
+  </ul>
+
+ Demonstrationsuppgifter (demonstreras på räkneövningen nästa vecka; försök lösa
+  uppgifterna själv i förhand så blir demonstrationen mycket mer givande): 
+  <ul>
+    <li>7.5.12, 7.5.14</li>
+  </ul>
+
+Rekommenderade uppgifter för självverksamhet:  
+  <ul>
+    <li>7.5.3, 7.5.5, 7.5.8, 7.5.13, (delar av) 7.5.1<sup>1</sup> och 7.5.2,
+      *7.5.15<br/>
+      <sup>1</sup>Den sista stegfunktionsapproximationen skall innehålla arctan istället för tanh.
+      </li>
+  </ul>
+  
+
+<h4>Instuderingsfrågor</h4>
+<ul>
+  <li>Ge något exempel på en funktion som blir till en deltafunktion i en
+  viss gräns.</li>
+  <li>Vilken dimension (enhet) har en deltafunktion i D dimensioner?</li>
+  <li>För vilken typ av fält blir deltafunktioner oumbärliga när vi
+  skall använda integralsatser?</li>
+</ul>
+
+  <!-- ================ Läsvecka 6 ================ -->
+<hr/>
+<h4><a name="lv6">Läsvecka 6 - Tema: Potentialer, lösning av PDE</a></h4>
+
+  <ul>
+    <li>Potentialteori, Laplaces och Poissons ekvationer (Kapitel 8 i kompendiet)</li>
+    <li>Lösningsmetoder för (bl.a.) Poissons ekvation (Kapitel 9 i kompendiet)</li>
+    <li>Kompletteras med avsnitt 3.9, 9.1, 9.3, 9.4, 9.5 i Arfken.<br/>
+    (Helmholtz ekvation i avsnitt 3.9 behöver inte
+    studeras. Diskussionen om variabelseparation i avsnitt 9.4 är mer
+    utförlig än vi behöver här).</li>
+  </ul>
+
+ Demonstrationsuppgifter (demonstreras på räkneövningen nästa vecka; försök lösa
+  uppgifterna själv i förhand så blir demonstrationen mycket mer givande): 
+  <ul>
+    <li>8.7.6, 9.4.5</li>
+  </ul>
+
+Rekommenderade uppgifter för självverksamhet:   
+  <ul>
+    <li>8.7.1-3, 8.7.5-7; </li>
+    <li>9.4.1-3, 9.4.7, *9.4.8, 9.4.10, 9.4.13, *9.4.17</li>
+  </ul>
+
+<h4>Instuderingsfrågor</h4>
+<ul>
+  <li>Vilken egenskap skall ett vektorfält ha för att det skall kunna
+  skrivas i termer av en skalär potential? Går det att finna mer än en
+  potential som återskapar samma fält?</li>
+  <li>Vad är en vektorpotential och vilka fält kan skrivas i termer av
+  en sådan?</li>
+  <li>Poissons och Laplaces ekvationer är exempel på
+  differentialekvationer. Hur många randvärden behöver en ordinär
+  differentialekvation för att problemet skall vara specificerat?</li>
+  <li>Försök förklara principerna för olika lösningsmetoder för
+  ordinära differentialekvationer.</li>
+ </ul>
+
+  <!-- ================ Läsvecka 7 ================ -->
+<hr/>
+<h4><a name="lv7">Läsvecka 7 - Tema: Tillämpningar</a></h4>
+
+  <ul>
+    <li>Diffusion, värmeledning (Avsnitt 10.1 i kompendiet)</li>
+    <li>Läs gärna avsnitt 10.2 i kompendiet: Greensfunktioner för värmeledningsekvationen. Kommer dock inte att testas på tentamen.</li>
+    <li>Elektromagnetism, vågekvationen (Avsnitt 11.1 och 11.2 i kompendiet)</li>
+    <li>Kompletteras med avsnitt 9.6, 9.7 i Arfken.</li>
+  </ul>
+
+ Demonstrationsuppgifter (demonstreras på räkneövningen nästa vecka; försök lösa
+  uppgifterna själv i förhand så blir demonstrationen mycket mer givande): 
+  <ul>
+    <li>11.8.9</li>
+  </ul>
+
+Rekommenderade uppgifter för självverksamhet:   
+  <ul>
+    <li>10.3.1-4; </li>
+    <li>11.8.2, 11.8.7, 11.8.14, 11.8.19</li>
+  </ul>
+
+<h4>Instuderingsfrågor</h4>
+<ul>
+  <li>Hur fortplantar sig värme? Vilken typ av värmetransport är det
+  som beskrivs av den värmeledningsekvation som diskuteras i
+  kompendiet?</li>
+  <li>Vad måste jag veta i förväg för att kunna beräkna en
+  temperaturfördelning i ett givet objekt?</li>
+  <li>Värmeledningsekvationen kan motiveras med utgångspunkt i en
+  kontinuitetsekvation. Vad är det för storhet som är "bevarad" i denna
+  ekvation?</li> 
+  <li>Hur kan vi skriva lösningen T(<b>r</b>,t) för en godtycklig
+  källfördelning i termer av en Greensfunktion? Och vad är den
+  fysikaliska tolkningen av Greensfunktionen?</li>
+  <li>För vilka lösningar till Maxwells ekvationer är det elektriska
+  och magnetiska fältet oberoende av varandra?</li>
+  <li>Ge ett exempel på en fysikalisk situation där det finns en
+  koppling mellan elektriska och magnetiska fält.</li>
+  <li>Hur kan de elektriska och magnetiska fälten skrivas i termer av
+  potentialer?</li>
+  <li>Varför blir det naturligt att tala om
+  elektromagnetiska <i>vågor</i> som lösningar till Maxwells
+  ekvationer utan laddningar och strömmar?</li>
+</ul>
+
+  <!-- ================ Läsvecka 8 ================ -->
+<hr/>
+<h4><a name="lv8">Läsvecka 8 - Tema: Repetition</a></h4>
+
+Demonstrationsuppgifter (tentauppgifter demonstreras på föreläsning; vid önskemål ägnas även sista räkneövningen delvis åt tentauppgifter.): 
+  <ul>
+    <li>Tentauppgift (gärna önskemål i förhand).</li>
+  </ul>
+
+Rekommenderade uppgifter för självverksamhet:   
+  <ul>
+    <li>Tidigare tentamensuppgifter.</li>
+  </ul>
+
+<b><u>Deadline för inlämningsuppgift 2 på tisdag den 23 oktober kl 12.00.</u></b>
+
+</div>
+
+</div>
+
+
+</body>
+</html>
