@@ -10,10 +10,13 @@
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700&amp;subset=latin-ext&amp;display=swap" rel="stylesheet">
 <link href="vektorfalt.css" rel="stylesheet" type="text/css" />
 
+<script src="courseURLs.js"></script>
+
 <base target="_parent">
 </head>
 
 <body>
+
 
 <div id="content">
 
@@ -58,7 +61,11 @@ samt Karim Hasseli, hasseli[at]student.chalmers.se -->
 <div class='main_box'>
 <h3>Schema</h3>
 <ul>
-<li>Se detaljerad veckoplanering under huvudmeny > Veckoplanering.</li>
+<li>Se detaljerad veckoplanering under 
+    <script>
+	document.write('<a href="' + veckoplanering + '">Veckoplanering</a>');
+	</script>
+	.</li>
 <li>Generellt gäller att föreläsningarna äger rum på tisdagar (kl 13-15 i
   HB2), onsdagar (kl 8-10 i HA4) och fredagar (kl 10-12 i
   HA4). Räkneövningarna är på fredagar (kl 15-17 i FL71,72).</li>
@@ -75,14 +82,25 @@ samt Karim Hasseli, hasseli[at]student.chalmers.se -->
       Cederwall och Christian Forssén, <i>"En
 	första kurs i matematisk fysik"</i>
     Kurskompendiet säljs på Store men är även fritt tillgängligt elektroniskt. 
-    Se huvudmeny > Material
-    </li> 
-    <li>Formelsamling. Se huvudmeny > Material</li>
+    Se 
+    <script>
+	document.write('<a href="' + kursmaterial + '">Kursmaterial</a>');
+	</script>
+    .</li> 
+    <li>Formelsamling. Se 
+    <script>
+	document.write('<a href="' + kursmaterial + '">Kursmaterial</a>');
+	</script>
+	.</li>
     <li>Referenslitteratur: <i>"Mathematical methods for physicists"</i> (7th ed), av
     Arfken, Weber och Harris, 2013. 
       <br/>
       Vi använder huvudsakligen kapitel 1,3,9 samt delar av kapitel 4,10. Boken finns
-    att köpas på Store men är även tillgänglig elektroniskt via Chalmers bibliotek (inloggning krävs). Se huvudmeny > Material
+    att köpas på Store men är även tillgänglig elektroniskt via Chalmers bibliotek (inloggning krävs). Se
+    <script>
+	document.write('<a href="' + kursmaterial + '">Kursmaterial</a>');
+	</script>
+	.    
     <br/>Notera att man kan läsa kursen med enbart kurskompendiet, 
     men att boken utgör bra
     referenslitteratur inom flera delar av matematisk fysik och att
@@ -94,7 +112,10 @@ samt Karim Hasseli, hasseli[at]student.chalmers.se -->
 <div class='main_box'>
 <h3>Kursens upplägg</h3>
   <p> 
-  Se detaljerad veckoplanering i huvudmeny > Veckoplanering
+  Se detaljerad 
+    <script>
+	document.write('<a href="' + veckoplanering + '">Veckoplanering</a>');
+	</script>
   (med referenser till motsvarande avsnitt i kursboken och
   kompendiet).
   </p>
@@ -313,7 +334,11 @@ Branders formelsamling.</p>
   </ul>
   <h5>Deadline, inlämning</h5> 
   <ul>
-    <li>Datorlaboration 1: Inlämning senast fredag i läsvecka 3.
+    <li>
+    <script>
+	document.write('<a href="' + datorlab1 + '">Datorlaboration 1</a>');
+	</script>
+    : Inlämning senast fredag i läsvecka 3.
     </li> 
     <li>Datorlaboration 2: Inlämning senast tisdag i läsvecka 8 (med mindre omfattning på den skriftliga redovisningen).
     </li>
@@ -321,7 +346,11 @@ Branders formelsamling.</p>
   <li>Eventuella inlämningar efter deadline rättas först i samband med omtentamina. Detta gäller även för eventuella returer som lämnas in efter angiven deadline.</li>
   </ul>
   <p>
-    För uppgiftsformuleringar, se huvudmeny > Material.
+    För uppgiftsformuleringar, se 
+    <script>
+	document.write('<a href="' + kursmaterial + '">Kursmaterial</a>');
+	</script>
+    .
   </p>
 </div>
 
