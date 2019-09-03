@@ -190,15 +190,19 @@ h(\vec{r}) = \frac{h_0}{1+\frac{x^2+y^2}{R^2}},
 !et
 där $h$ ger höjden över havet, $h_0$ är höjden på toppen av berget, och $R$ är ett mått på bergets utbredning.
 
+@@@CODE fig/hojdkurva.py from-to: Start initialization@End initialization
 
+@@@CODE fig/hojdkurva.py from-to: Start surface plot@End surface plot
 FIGURE:[fig/hojd_surface.png, width=600 frac=0.8]
 
 Vi kan göra en höjdkarta genom att rita upp några nivåytor, dvs kurvor som motsvarar konstanta värden på $h$. Vi ser enkelt att kurvan $x^2 + y^2 = C^2$ (konstant) ger $h_C = \frac{h_0}{1+\frac{C^2}{R^2}}$ (konstant) och att höjdkurvorna därför motsvarar cirklar med centrum i origo ($x=y=0$).
 
+@@@CODE fig/hojdkurva.py from-to: Start contour plot@End contour plot
 
 FIGURE:[fig/hojd_contour.png, width=600 frac=0.8]
 
 Eller kombinerat med höjdkurvor enligt en kontinuerlig färgskala
+@@@CODE fig/hojdkurva.py from-to: Start colormesh plot@End colormesh plot
 
 FIGURE:[fig/hojd_contour_colormesh.png, width=600 frac=0.8]
 
@@ -225,6 +229,7 @@ och pss $\partial_y r = y/r$. Därför blir
 !et
 Riktningen på denna vektor ser vi är $-\left( x\hat{x} + y\hat{y} \right) = -r\hat{r}$, dvs den horisontella höjdgradienten är riktad radiellt inåt - mot större värden av $h$.
 
+@@@CODE fig/hojdkurva.py from-to: Start gradient plot@End gradient plot
 
 FIGURE:[fig/hojd_gradient.png, width=600 frac=0.8]
 !enotice

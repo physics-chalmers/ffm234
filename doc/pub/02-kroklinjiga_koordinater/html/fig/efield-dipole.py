@@ -20,5 +20,5 @@ ax.set_ylabel('$z$')
 
 ax.set_aspect('equal')
 
-#plt.show()
-plt.savefig('efield-dipole.png')
+plt.show()
+#plt.savefig('efield-dipole.png')

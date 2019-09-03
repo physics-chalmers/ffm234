@@ -832,3 +832,21 @@ running mako on 01-falt_och_derivator.do.txt to make tmp_mako__01-falt_och_deriv
 translating doconce text in tmp_mako__01-falt_och_derivator.do.txt to pdflatex
 open file with encoding utf-8
 output in 01-falt_och_derivator.tex
+running mako on 01-falt_och_derivator.do.txt to make tmp_mako__01-falt_och_derivator.do.txt
+mako variables: {'FORMAT': 'pdflatex', 'DEVICE': 'screen', 'Terminal}},framesep': '2.5mm,framerule=0.7pt]'}
+translating doconce text in tmp_mako__01-falt_och_derivator.do.txt to pdflatex
+open file with encoding utf-8
+output in 01-falt_och_derivator.tex
+running mako on 01-falt_och_derivator.do.txt to make tmp_mako__01-falt_och_derivator.do.txt
+translating doconce text in tmp_mako__01-falt_och_derivator.do.txt to html
+copying after regex "Start initialization" until "End initialization"
+     file: fig/hojdkurva.py, lines 2-12 (format: pycod)
+copying after regex "Start surface plot" until "End surface plot"
+     file: fig/hojdkurva.py, lines 15-23 (format: pycod)
+copying after regex "Start contour plot" until "End contour plot"
+     file: fig/hojdkurva.py, lines 27-34 (format: pycod)
+copying after regex "Start colormesh plot" until "End colormesh plot"
+     file: fig/hojdkurva.py, lines 37-38 (format: pycod)
+copying after regex "Start gradient plot" until "End gradient plot"
+     file: fig/hojdkurva.py, lines 42-52 (format: pycod)
+output in 01-falt_och_derivator-bs.html
