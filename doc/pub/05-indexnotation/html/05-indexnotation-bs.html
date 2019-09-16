@@ -6,6 +6,7 @@ Automatically generated HTML file from DocOnce source
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
 
 <title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
@@ -61,7 +62,7 @@ end of tocinfo -->
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
   TeX: {
-     equationNumbers: {  autoNumber: "none"  },
+     equationNumbers: {  autoNumber: "AMS"  },
      extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
   }
 });
@@ -116,7 +117,6 @@ $$
 
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
 
-<a name="part0000"></a>
 <!-- ------------------- main content ---------------------- -->
 
 
@@ -136,7 +136,7 @@ $$
 
 <br>
 <p>
-<center><h4>Sep 14, 2018</h4></center> <!-- date -->
+<center><h4>Sep 16, 2019</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -154,7 +154,7 @@ $$
 \begin{equation}
   \frac{\mbox{d}}{\mbox{d}x}\left(fg\right) = \frac{\mbox{d}f}{\mbox{d}x}g
 + f\frac{\mbox{d}g}{\mbox{d}x}.
-\tag{1}
+\label{_auto1}
 \end{equation}
 $$
 
@@ -163,7 +163,7 @@ Om vi ist&#228;llet betraktar \( \vnabla (fg) \), d&#228;r \( f \) och \( g \) &
 $$
 \begin{equation}
   \vnabla \left(fg\right) = f \vnabla g + g\vnabla f
-\tag{2}
+\label{_auto2}
 \end{equation}
 $$
 
@@ -171,7 +171,7 @@ g&#228;lla. P&#229; liknande s&#228;tt kan vi resonera oss fram till
 $$
 \begin{equation}
   \vnabla \cdot \left(f\vec{u}\right) = \vnabla f \cdot \vec{u} + f \vnabla \cdot \vec{u},
-\tag{3}
+\label{_auto3}
 \end{equation}
 $$
 
@@ -179,7 +179,7 @@ och
 $$
 \begin{equation}
   \vnabla \times \left(f\vec{u}\right) = \vnabla f\times \vec{u} + f \vnabla \times \vec{u}.
-\tag{4}
+\label{_auto4}
 \end{equation}
 $$
 
@@ -205,7 +205,7 @@ Skal&#228;rprodukten av tv&#229; vektorer \( \vec{A} \) och \( \vec{B} \) &#228;
 $$
 \begin{equation}
 \vec{A}\cdot\vec{B}=A_iB_i
-\tag{5}
+\label{_auto5}
 \end{equation}
 $$
 
@@ -234,7 +234,7 @@ En matris representeras av sina matriselement (precis som enhetsmatrisen ovan). 
 $$
 \begin{equation}
 \left[ \mathbf{M} \vec{v} \right]_i = M_{ij} v_j
-\tag{6}
+\label{_auto6}
 \end{equation}
 $$
 </div>
@@ -252,7 +252,7 @@ $$
 0,&i\neq j\cr
 \end{matrix}
 \right.
-\tag{7}
+\label{_auto7}
 \end{equation}
 $$
 
@@ -296,7 +296,7 @@ $$
 värde.}
 \end{matrix}
 \right.
-\tag{8}
+\label{_auto8}
 \end{equation}
 $$
 
@@ -327,7 +327,7 @@ $$
   	1 & 3 & 2 & -1 & -A_3 B_2 \\
   	1 & \multicolumn{2}{c}{\mathrm{alla~andra}} & 0 & 0
   \end{array}
-\tag{9}
+\label{_auto9}
 \end{equation}
 $$
 
@@ -335,7 +335,7 @@ och vi f&#229;r resultatet \( C_1=A_2B_3-A_3B_2 \), dvs. samma som f&#246;rsta k
 $$
 \begin{equation}
 [\vec{A}\times\vec{B}]_i=\varepsilon_{ijk}A_jB_k .
-\tag{10}
+\label{_auto10}
 \end{equation}
 $$
 
@@ -348,14 +348,14 @@ L&#229;t oss studera f&#246;ljande vektorprodukt
 $$
 \begin{equation}
   \vec{A} \times \left( \vec{B} \times \vec{C} \right)
-\tag{11}
+\label{_auto11}
 \end{equation}
 $$
 
 vilket blir en vektor. Denna skrivs med indexnotation
 $$
 \begin{equation}
-\tag{12}
+\label{eq:ABC}
   \left[ \vec{A} \times \left( \vec{B} \times \vec{C} \right) \right]_i =
   \varepsilon_{ijk} A_j \varepsilon_{klm} B_l C_m = \varepsilon_{ijk} \varepsilon_{klm} A_j B_l C_m.
 \end{equation}
@@ -377,7 +377,7 @@ F&#246;rst produkten med enbart tv&#229; fria index
 $$
 \begin{equation}
   \varepsilon_{ikl} \varepsilon_{jkl} = 2 \delta_{ij}.
-\tag{13}
+\label{_auto12}
 \end{equation}
 $$
 
@@ -391,7 +391,7 @@ Detta inses ganska enkelt eftersom
 $$
 \begin{equation}
 	\sum_{k,l=1}^3 \varepsilon_{1kl} \varepsilon_{1kl} = \varepsilon_{123} \varepsilon_{123} + \varepsilon_{132} \varepsilon_{132} = 1 \cdot 1 + (-1) \cdot (-1) = 2
-\tag{14}
+\label{_auto13}
 \end{equation}
 $$
 
@@ -400,7 +400,7 @@ $$
 Nu produkten med enbart ett kontraherat index. Vi kommer att visa att
 $$
 \begin{equation}
-\tag{15}
+\label{eq:ijkklm}
   \varepsilon_{ijk} \varepsilon_{klm} = \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}.
 \end{equation}
 $$
@@ -409,7 +409,7 @@ F&#246;rst, genom cyklisk permutation,
 $$
 \begin{equation}
   \varepsilon_{ijk} \varepsilon_{klm} = \varepsilon_{ijk} \varepsilon_{lmk} .
-\tag{16}
+\label{_auto14}
 \end{equation}
 $$
 
@@ -425,23 +425,23 @@ $$
   	21 & 12 & 213 & 123 & = -1 & =0-1\\
   	21 & 21 & 213 & 213 & = 1 & =1-0,
   \end{array}
-\tag{17}
+\label{_auto15}
 \end{equation}
 $$
 
-dvs, resultaten motsvarar exakt kombinationen av deltafunktioner i Ekv <a href="#mjx-eqn-15">(15)</a> ovan.<br />
+dvs, resultaten motsvarar exakt kombinationen av deltafunktioner i Ekv \eqref{eq:ijkklm} ovan.<br />
 </div>
 </div>
 
 
 <p>
-Ekv <a href="#mjx-eqn-15">(15)</a> motsvarar precis den produkt som d&#246;k upp i Ekv <a href="#mjx-eqn-12">(12)</a> ovan. Vi forts&#228;tter
+Ekv \eqref{eq:ijkklm} motsvarar precis den produkt som d&#246;k upp i Ekv \eqref{eq:ABC} ovan. Vi forts&#228;tter
 $$
 \begin{align}
   \left[ \vec{A} \times \left( \vec{B} \times \vec{C} \right) \right]_i 
   &= \left( \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl} \right) A_j B_l C_m \nonumber \\
   &= B_i A_m C_m - A_j B_j C_i = B_i \vec{A}\cdot\vec{C} - \vec{A}\cdot\vec{B} C_i 
-\tag{18}
+\label{_auto16}
 \end{align}
 $$
 
@@ -451,7 +451,7 @@ H&#228;r har vi bytt plats p&#229; \( A_m B_i = B_i A_m \). Notera vidare att vi
 Till slut finner vi allts&#229; likheten
 $$
 \begin{equation}
-\tag{19}
+\label{eq:ABCresultat}
   \vec{A} \times \left( \vec{B} \times \vec{C} \right) = \vec{B} (\vec{A}\cdot\vec{C}) - (\vec{A}\cdot\vec{B}) \vec{C}.
 \end{equation}
 $$
@@ -459,11 +459,11 @@ $$
 <h2 id="___sec7" class="anchor">Kombinationer med tv&#229; vektoroperatorer </h2>
 
 <p>
-En viktig konsekvens av Ekv <a href="#mjx-eqn-19">(19)</a> &#228;r
+En viktig konsekvens av Ekv \eqref{eq:ABCresultat} &#228;r
 $$
 \begin{equation}
   \vnabla \times \left( \vnabla \times \vec{F} \right) = \vnabla \left( \vnabla \cdot \vec{F} \right) - \vnabla \cdot \vnabla \vec{F},
-\tag{20}
+\label{_auto17}
 \end{equation}
 $$
 
@@ -471,7 +471,7 @@ vilket ger oss f&#246;ljande uttryck f&#246;r Laplacianen
 $$
 \begin{equation}
   \Delta \vec{F} = \vnabla \cdot \vnabla \vec{F} = \vnabla \left( \vnabla \cdot \vec{F} \right) - \vnabla \times \left( \vnabla \times \vec{F} \right),
-\tag{21}
+\label{_auto18}
 \end{equation}
 $$
 
@@ -481,7 +481,7 @@ eller <em>VektorLaplace = grad div - rot rot</em>.
 Slutligen, tv&#229; viktiga samband, vilka dessutom &#228;r enkla att h&#228;rleda, &#228;r 
 $$
 \begin{equation}
-\tag{22}
+\label{eq:ddf}
   \vnabla \times \vnabla f = 0
 \end{equation}
 $$
@@ -489,7 +489,7 @@ $$
 och
 $$
 \begin{equation}
-\tag{23}
+\label{eq:ddf2}
   \vnabla \cdot \left( \vnabla \times \vec{F}\right) = 0.
 \end{equation}
 $$
@@ -499,14 +499,14 @@ Visa g&#228;rna dessa sj&#228;lv (eller se bevis nedan)
 <p>
 <div class="panel panel-primary">
   <div class="panel-heading">
-  <h3 class="panel-title">Bevis av Ekv <a href="#mjx-eqn-22">(22)</a></h3>
+  <h3 class="panel-title">Bevis av Ekv \eqref{eq:ddf}</h3>
   </div>
 <div class="panel-body">
 <p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
 $$
 \begin{equation}
   \left[ \vnabla \times \vnabla f \right]_i = \varepsilon_{ijk} \partial_j \partial_k f
-\tag{24}
+\label{_auto19}
 \end{equation}
 $$
 
@@ -518,7 +518,7 @@ $$
   	123 & 2 & 3 & +1 \\
   	132 & 3 & 2 & -1 \\
   \end{array}
-\tag{25}
+\label{_auto20}
 \end{equation}
 $$
 
@@ -530,14 +530,14 @@ vilket betyder att \( \left[ \vnabla \times \vnabla f \right]_1 = \left( \partia
 <p>
 <div class="panel panel-primary">
   <div class="panel-heading">
-  <h3 class="panel-title">Bevis av Ekv <a href="#mjx-eqn-23">(23)</a></h3>
+  <h3 class="panel-title">Bevis av Ekv \eqref{eq:ddf2}</h3>
   </div>
 <div class="panel-body">
 <p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
 $$
 \begin{equation}
   \left[ \vnabla \cdot \left( \vnabla \times \vec{F} \right) \right] = \partial_i \varepsilon_{ijk} \partial_j F_k = \varepsilon_{ijk} \partial_i \partial_j F_k
-\tag{26}
+\label{_auto21}
 \end{equation}
 $$
 
@@ -590,11 +590,6 @@ $$
 
 d&#228;r vi anv&#228;nt oss av att \( \partial_j (f u_k) = (\partial_j f) u_k + f \partial_j u_k \). Vi reproducerar allts&#229; det resultat som vi resonerade oss fram till vid starten av f&#246;rel&#228;sningen.
 
-<p>
-<!-- navigation buttons at the bottom of the page -->
-<ul class="pagination">
-  <li class="active"><a href="._05-indexnotation-bs000.html">1</a></li>
-</ul>
 <!-- ------------------- end of main content --------------- -->
 
 </div>  <!-- end container -->
