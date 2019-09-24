@@ -335,3 +335,23 @@ translating doconce text in tmp_mako__06-singulara_falt.do.txt to html
 copying after regex "Start initialization" until "End fieldline plot"
      file: fig/dipole.py, lines 2-27 (format: pycod)
 output in 06-singulara_falt-bs.html
+running mako on 06-singulara_falt.do.txt to make tmp_mako__06-singulara_falt.do.txt
+mako variables: {'FORMAT': 'pdflatex', 'DEVICE': 'screen', 'Terminal}},framesep': '2.5mm,framerule=0.7pt]'}
+translating doconce text in tmp_mako__06-singulara_falt.do.txt to pdflatex
+open file with encoding utf-8
+output in 06-singulara_falt.tex
+running mako on 06-singulara_falt.do.txt to make tmp_mako__06-singulara_falt.do.txt
+translating doconce text in tmp_mako__06-singulara_falt.do.txt to html
+copying after regex "Start initialization" until "End fieldline plot"
+     file: fig/dipole.py, lines 2-27 (format: pycod)
+output in 06-singulara_falt-bs.html
+running mako on 06-singulara_falt.do.txt to make tmp_mako__06-singulara_falt.do.txt
+mako variables: {'FORMAT': 'pdflatex', 'DEVICE': 'screen', 'Terminal}},framesep': '2.5mm,framerule=0.7pt]'}
+translating doconce text in tmp_mako__06-singulara_falt.do.txt to pdflatex
+open file with encoding utf-8
+output in 06-singulara_falt.tex
+running mako on 06-singulara_falt.do.txt to make tmp_mako__06-singulara_falt.do.txt
+translating doconce text in tmp_mako__06-singulara_falt.do.txt to html
+copying after regex "Start initialization" until "End fieldline plot"
+     file: fig/dipole.py, lines 2-27 (format: pycod)
+output in 06-singulara_falt-bs.html
