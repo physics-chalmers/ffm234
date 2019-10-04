@@ -6,6 +6,7 @@ Automatically generated HTML file from DocOnce source
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
 
 <title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
@@ -151,7 +152,7 @@ $$
 
 <br>
 <p>
-<center><h4>Oct 8, 2018</h4></center> <!-- date -->
+<center><h4>Oct 4, 2019</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -181,7 +182,7 @@ d&#228;r \( \phi \) kallas f&#246;r det konservativa f&#228;ltets potential. G&#
 $$
 \vnabla \times \vec{F} = 0 \, \Longleftrightarrow \, \vec{F} = - \vnabla \phi \, ??
 $$
-Nej, det har vi &#228;nnu inte visat! Vi har att \( \vec{F} = - \vnabla \phi \, \Rightarrow \, \vnabla \times \vec{F} = 0  \) eftersom \( \vnabla \times ( \vnabla \phi) = 0 \) (se nedan), men det omv&#228;nda g&#228;ller inte per automatik. Vi har &#228;nnu inte visat att konservativa f&#228;lt alltid kan skrivas som \( -\vnabla \phi \).
+Nej, det har vi &#228;nnu inte visat! Vi har att \( \vec{F} = - \vnabla \phi \, \Rightarrow \, \vnabla \times \vec{F} = 0 \, \Rightarrow \, \oint_C \vec{F}\cdot \mbox{d}\vec{r} = 0 \) eftersom \( \vnabla \times ( \vnabla \phi) = 0 \) (se nedan), men det omv&#228;nda g&#228;ller inte per automatik. Vi har &#228;nnu inte visat att konservativa f&#228;lt alltid kan skrivas som \( -\vnabla \phi \).
 
 <p>
 <div class="panel panel-primary">
@@ -269,8 +270,6 @@ H&#228;r har vi anv&#228;nt NII. Tidpunkterna \( t_A \) och \( t_B \) motsvarar 
 
 <p>
 Ett exempel p&#229; ett s&#229;dant konservativt kraftf&#228;lt &#228;r gravitationskraften n&#228;ra jordytan: \( \vec{F} = - m g \hat{z} \).
-
-<p>
 Med v&#229;r nuvarande kunskap skulle vi uttrycka detta som \( \vec{F} = -\vnabla \phi \), d&#228;r vi allts&#229; anv&#228;nder beteckningen \( \phi \) ist&#228;llet f&#246;r \( V \). F&#246;r v&#229;rt exempel finner vi att potentialen \( \phi(\vec{r}) = m g z \) uppfyller denna likhet.
 
 <p>
@@ -305,12 +304,10 @@ $$
 Konservativa vektorf&#228;lt &#228;r allts&#229; rotationsfria, men de kan fortfarande ha nollskild divergens. Denna kallas ofta f&#246;r <em>k&#228;llt&#228;thet</em>
 $$
 \begin{equation}
-\rho(\vec{r}) = \vnabla \cdot \vec{F},
+\rho(\vec{r}) = \vnabla \cdot \vec{F}.
 \label{_auto9}
 \end{equation}
 $$
-
-och vi har st&#246;tt p&#229; exempel d&#228;r denna har tolkats i termer av elektrostatik och massfl&#246;de.
 
 <p>
 <div class="panel panel-warning">
@@ -386,6 +383,37 @@ Vi kommer t.ex. se att (ett station&#228;rt) temperaturf&#228;lt uppfyller n&#22
 
 <p>
 Olika tekniker f&#246;r l&#246;sning av dessa ekvationer presenteras i kapitel 9.
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Integral- och differentialform f&#246;r potentialen</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Sammanfattningsvis kan vi uttrycka potentialen \( \phi(\vec{r}) \) f&#246;r ett konservativt f&#228;lt p&#229; tv&#229; olika s&#228;tt utg&#229;ende fr&#229;n dess k&#228;llt&#228;thet \( \rho(\vec{r}) \). 
+
+<ul>
+<li> Dels p&#229; integralform enligt superpositionsprincipen</li>
+</ul>
+
+$$
+\phi(\vec{r}) = \frac{1}{4\pi} \int \frac{1}{\left| \vec{r} - \vec{r}\,' \right|} \rho(\vec{r}\,') dV'.
+$$
+
+
+<ul>
+<li> Dels p&#229; differentialform enligt Poissons ekvation</li>
+</ul>
+
+$$
+\Delta \phi(\vec{r}) = -\rho(\vec{r}).
+$$
+
+Vi kommer dock att beh&#246;va prata mer om <em>randvillkor</em>.
+</div>
+</div>
+
 
 <h2 id="___sec3" class="anchor">Divergensfria f&#228;lt </h2>
 
@@ -659,11 +687,21 @@ Skissa g&#228;rna hur ett f&#228;lt som uppfyller Laplaces ekvation beter sig.
 L&#246;sningarna &#228;r s&#229; kallade harmoniska funktioner. Villkoret \( \Delta \phi = 0 \) ger att det inte finns n&#229;gra extrempunkter inuti omr&#229;det, dvs maximum och minimum m&#229;ste ligga p&#229; randen.
 
 <p>
-Titta p&#229; ett f&#228;lt \( \phi(x,y) \) och anv&#228;nd Taylorexpansion f&#246;r att teckna beteendet <em>n&#228;ra</em> en punkt \( \vec{r}_0 \). F&#246;rsumma termer som &#228;r \( \mathcal{O}(\Delta r^3 \), d&#228;r \( \Delta r = \max(x-x_0,y-y_0) \). Villkoret \( \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0 \) ger en andragradskurva 
+Titta p&#229; ett f&#228;lt \( \phi(x,y) \) och anv&#228;nd Taylorexpansion f&#246;r att teckna beteendet <em>n&#228;ra</em> en punkt \( \vec{r}_0 \)
 $$
-\phi(\vec{r}) =  c_0 + c_x (x-x_0) + c_y (y-y_0) + c_{xy} (x-x_0)(y-y_0)+ \frac{c_{ii}}{2}(x-x_0)^2 - \frac{c_{ii}}{2}(y-y_0)^2,
+\begin{align*}
+\phi(\vec{r}) =  &c_0 + c_x (x-x_0) + c_y (y-y_0) \\
+&+ c_{xy} (x-x_0)(y-y_0)+ \frac{c_{xx}}{2}(x-x_0)^2 + \frac{c_{yy}}{2}(y-y_0)^2 +\ldots,
+\end{align*}
 $$
-d&#228;r t.ex. \( c_0 = \phi(\vec{r}_0) \), \( c_x = d\phi/dx(\vec{r}_0) \), etc. Det viktiga &#228;r allts&#229; att expansionen slutar med den kvadratiska termen och att dessa &#228;r lika, men motriktade, i \( x \)- och \( y \)-led.
+
+d&#228;r t.ex. \( c_0 = \phi(\vec{r}_0) \), \( c_x = \left. \frac{d\phi}{dx} \right|_{\vec{r} = \vec{r}_0} \), etc.
+
+<p>
+Villkoret \( \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0 \) (&#246;verallt) betyder att \( c_{xx} = -c_{yy}\equiv c_{ii} \) samt att alla h&#246;gre ordningens termer m&#229;ste vara noll.
+
+<p>
+Det viktiga &#228;r allts&#229; att expansionen slutar med den kvadratiska termen och att dessa &#228;r lika, men motriktade, i \( x \)- och \( y \)-led. De specifika v&#228;rdena p&#229; konstanterna \( (c_0, c_x, c_y,c_{xy},c_{ii}) \) kommer f&#246;rst&#229;s att bero p&#229; vilken punkt \( \vec{r}_0 \) som vi anv&#228;nder f&#246;r Taylorexpansionen.
 </div>
 </div>
 

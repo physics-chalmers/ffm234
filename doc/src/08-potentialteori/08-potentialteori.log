@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.6)  8 OCT 2018 08:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.31)  4 OCT 2019 08:51
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1173,7 +1173,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (1.3966pt too wide) detected at line 389
+Overfull \hbox (1.3966pt too wide) detected at line 387
 [] \OMS/lmsy/m/n/10 ^^A [] \OT1/lmr/m/n/10 = [] [] [] \OMS/lmsy/m/n/10 ^^A [] \
 OML/lmm/m/it/10 ^^Z\OT1/lmr/m/n/10 ([] [])\OML/lmm/m/it/10 dV[] \OT1/lmr/m/n/10
  = [] [] 4\OML/lmm/m/it/10 ^^Y^^N\OT1/lmr/m/n/10 ([] \OMS/lmsy/m/n/10 ^^@ [] []
@@ -1182,61 +1182,52 @@ OML/lmm/m/it/10 ^^Z\OT1/lmr/m/n/10 ([] [])\OML/lmm/m/it/10 dV[] \OT1/lmr/m/n/10
 
  []
 
-Package mdframed Info: Box was splittet wrong
- starting loop to iterate the splitting point
-(mdframed)              on input line 390.
-[3] [4]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 487.
+[3]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 426.
 
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 487.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 426.
+ [4]
+Package mdframed Info: Not enough space on this page on input line 490.
  [5]
-<fig/stagnation_fieldplot.png, id=61, 433.62pt x 433.62pt>
+Package mdframed Info: Not enough space on this page on input line 490.
+
+<fig/stagnation_fieldplot.png, id=60, 433.62pt x 433.62pt>
 File: fig/stagnation_fieldplot.png Graphic file (type png)
 
 <use fig/stagnation_fieldplot.png>
-Package pdftex.def Info: fig/stagnation_fieldplot.png used on input line 533.
+Package pdftex.def Info: fig/stagnation_fieldplot.png used on input line 556.
 (pdftex.def)             Requested size: 256.80098pt x 256.81282pt.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 563.
  [6] [7 <./fig/stagnation_fieldplot.png>]
-Overfull \hbox (13.2858pt too wide) detected at line 652
-\OML/lmm/m/it/10 ^^^\OT1/lmr/m/n/10 ([]) = \OML/lmm/m/it/10 c[] \OT1/lmr/m/n/10
- + \OML/lmm/m/it/10 c[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x \OMS/lmsy/m/n/10 ^^@
- \OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 ) + \OML/lmm/m/it/10 c[]\OT1/lmr/m/n/10 (\
-OML/lmm/m/it/10 y \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 y[]\OT1/lmr/m/n/10 ) + 
-\OML/lmm/m/it/10 c[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x \OMS/lmsy/m/n/10 ^^@ \O
-ML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 )(\OML/lmm/m/it/10 y \OMS/lmsy/m/n/10 ^^@ \OM
-L/lmm/m/it/10 y[]\OT1/lmr/m/n/10 ) + [](\OML/lmm/m/it/10 x \OMS/lmsy/m/n/10 ^^@
- \OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 )[] \OMS/lmsy/m/n/10 ^^@ []\OT1/lmr/m/n/10
- (\OML/lmm/m/it/10 y \OMS/lmsy/m/n/10 ^^@ \OML/lmm/m/it/10 y[]\OT1/lmr/m/n/10 )
-[]\OML/lmm/m/it/10 ;
- []
-
 [8] <fig/xy.png, id=85, 578.16pt x 433.62pt>
 File: fig/xy.png Graphic file (type png)
  <use fig/xy.png>
-Package pdftex.def Info: fig/xy.png used on input line 660.
+Package pdftex.def Info: fig/xy.png used on input line 688.
 (pdftex.def)             Requested size: 276.00105pt x 206.9972pt.
 
 <fig/x2y2.png, id=86, 578.16pt x 433.62pt>
 File: fig/x2y2.png Graphic file (type png)
  <use fig/x2y2.png>
-Package pdftex.def Info: fig/x2y2.png used on input line 670.
+Package pdftex.def Info: fig/x2y2.png used on input line 698.
 (pdftex.def)             Requested size: 276.00105pt x 206.9972pt.
  [9 <./fig/xy.png>] [10 <./fig/x2y2.png>]
 
-LaTeX Warning: Command \r invalid in math mode on input line 731.
+LaTeX Warning: Command \r invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \r invalid in math mode on input line 741.
+LaTeX Warning: Command \r invalid in math mode on input line 769.
 
 [11]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 756.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 756.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 784.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 784.
  (./08-potentialteori.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 756.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 784.
 
 
  *File List*
@@ -1377,17 +1368,17 @@ fig/stagnation_fieldplot.png
 fig/x2y2.png
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 756.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 784.
 Package rerunfilecheck Info: File `08-potentialteori.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 756.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 784.
  ) 
 Here is how much of TeX's memory you used:
- 28389 strings out of 492995
- 535759 string characters out of 6132705
- 639506 words of memory out of 5000000
- 31352 multiletter control sequences out of 15000+600000
- 51418 words of font info for 90 fonts, out of 8000000 for 9000
+ 28383 strings out of 492995
+ 535612 string characters out of 6132703
+ 639853 words of memory out of 5000000
+ 31346 multiletter control sequences out of 15000+600000
+ 51371 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,18n,79p,10406b,1053s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
@@ -1405,7 +1396,7 @@ blic/lm/lmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr7
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on 08-potentialteori.pdf (11 pages, 486790 bytes).
+Output written on 08-potentialteori.pdf (11 pages, 488329 bytes).
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  134 compressed objects within 2 object streams

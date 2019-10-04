@@ -22,7 +22,7 @@ där $\phi$ kallas för det konservativa fältets potential. Gäller då
 $$
 \vnabla \times \vec{F} = 0 \, \Longleftrightarrow \, \vec{F} = - \vnabla \phi \, ??
 $$
-Nej, det har vi ännu inte visat! Vi har att $\vec{F} = - \vnabla \phi \, \Rightarrow \, \vnabla \times \vec{F} = 0 $ eftersom $\vnabla \times ( \vnabla \phi) = 0$ (se nedan), men det omvända gäller inte per automatik. Vi har ännu inte visat att konservativa fält alltid kan skrivas som $-\vnabla \phi$.
+Nej, det har vi ännu inte visat! Vi har att $\vec{F} = - \vnabla \phi \, \Rightarrow \, \vnabla \times \vec{F} = 0 \, \Rightarrow \, \oint_C \vec{F}\cdot \mbox{d}\vec{r} = 0$ eftersom $\vnabla \times ( \vnabla \phi) = 0$ (se nedan), men det omvända gäller inte per automatik. Vi har ännu inte visat att konservativa fält alltid kan skrivas som $-\vnabla \phi$.
 
 !bnotice Bevis av $\vnabla \times ( \vnabla \phi) = 0$ mha indexnotation 
 Vi kan visa att $\vnabla \times ( \vnabla \phi) = 0$ mha indexnotation: Vektorn $\left[ \vnabla \times ( \vnabla \phi) \right]_i = \epsilon_{ijk} \partial_j \partial_k \phi = 0$ eftersom den resulterande summan med nio termer $\sum_{j,k=1}^3$ har två nollskilda som tar ut varandra. T.ex. för $i=1$ fås $\partial_2\partial_3 \phi - \partial_3\partial_2 \phi = 0$.
@@ -77,7 +77,6 @@ Arbetet som uträttas längs en kurva $C$ motsvaras av kurvintegralen
 Här har vi använt NII. Tidpunkterna $t_A$ och $t_B$ motsvarar start- respektive sluttiden för rörelsen.
 
 Ett exempel på ett sådant konservativt kraftfält är gravitationskraften nära jordytan: $\vec{F} = - m g \hat{z}$.
-
 Med vår nuvarande kunskap skulle vi uttrycka detta som $\vec{F} = -\vnabla \phi$, där vi alltså använder beteckningen $\phi$ istället för $V$. För vårt exempel finner vi att potentialen $\phi(\vec{r}) = m g z$ uppfyller denna likhet.
 
 Vidare uppfyller kraftfältet $\vnabla \times \vec{F} = 0$. Vi kontrollerar detta för vårt exempel: 
@@ -106,10 +105,9 @@ $$
 Konservativa vektorfält är alltså rotationsfria, men de kan fortfarande ha nollskild divergens. Denna kallas ofta för *källtäthet*
 !bt
 \begin{equation}
-\rho(\vec{r}) = \vnabla \cdot \vec{F},
+\rho(\vec{r}) = \vnabla \cdot \vec{F}.
 \end{equation}
 !et
-och vi har stött på exempel där denna har tolkats i termer av elektrostatik och massflöde. 
 
 !bwarning Kommentar 
 Låt oss använda superposition och deltafunktioner för att visa att $\vnabla \cdot \vec{F} = \rho(\vec{r})$. Superposition ger oss potentialen från en laddningsfördelning på integralform
@@ -159,6 +157,24 @@ Notera att Poissons och Laplaces ekvationer är exempel på *differentialekvatio
 Vi kommer t.ex. se att (ett stationärt) temperaturfält uppfyller någon av dessa ekvationer (Laplaces ekvation om det inte finns en värmekälla). För att t.ex. räkna ut temperaturfältet inuti ett värmeisolerande fönster behöver vi veta randvillkor för fältet på glasets in- och utsida.
 
 Olika tekniker för lösning av dessa ekvationer presenteras i kapitel 9.
+
+!bwarning Integral- och differentialform för potentialen
+Sammanfattningsvis kan vi uttrycka potentialen $\phi(\vec{r})$ för ett konservativt fält på två olika sätt utgående från dess källtäthet $\rho(\vec{r})$. 
+* Dels på integralform enligt superpositionsprincipen
+!bt
+\[
+\phi(\vec{r}) = \frac{1}{4\pi} \int \frac{1}{\left| \vec{r} - \vec{r}\,' \right|} \rho(\vec{r}\,') dV'.
+\] 
+!et
+* Dels på differentialform enligt Poissons ekvation
+!bt
+\[
+\Delta \phi(\vec{r}) = -\rho(\vec{r}).
+\]
+!et
+Vi kommer dock att behöva prata mer om *randvillkor*.
+!ewarning
+
 
 ===== Divergensfria fält =====
 
@@ -336,11 +352,18 @@ Skissa gärna hur ett fält som uppfyller Laplaces ekvation beter sig.
 
 Lösningarna är så kallade harmoniska funktioner. Villkoret $\Delta \phi = 0$ ger att det inte finns några extrempunkter inuti området, dvs maximum och minimum måste ligga på randen.
 
-Titta på ett fält $\phi(x,y)$ och använd Taylorexpansion för att teckna beteendet *nära* en punkt $\vec{r}_0$. Försumma termer som är $\mathcal{O}(\Delta r^3)$, där $\Delta r = \max(x-x_0,y-y_0)$. Villkoret $\frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0$ ger en andragradskurva 
-$$
-\phi(\vec{r}) =  c_0 + c_x (x-x_0) + c_y (y-y_0) + c_{xy} (x-x_0)(y-y_0)+ \frac{c_{ii}}{2}(x-x_0)^2 - \frac{c_{ii}}{2}(y-y_0)^2,
-$$
-där t.ex. $c_0 = \phi(\vec{r}_0)$, $c_x = d\phi/dx(\vec{r}_0)$, etc. Det viktiga är alltså att expansionen slutar med den kvadratiska termen och att dessa är lika, men motriktade, i $x$- och $y$-led.
+Titta på ett fält $\phi(x,y)$ och använd Taylorexpansion för att teckna beteendet *nära* en punkt $\vec{r}_0$
+!bt
+\begin{align*}
+\phi(\vec{r}) =  &c_0 + c_x (x-x_0) + c_y (y-y_0) \\
+&+ c_{xy} (x-x_0)(y-y_0)+ \frac{c_{xx}}{2}(x-x_0)^2 + \frac{c_{yy}}{2}(y-y_0)^2 +\ldots,
+\end{align*}
+!et
+där t.ex. $c_0 = \phi(\vec{r}_0)$, $c_x = \left. \frac{d\phi}{dx} \right|_{\vec{r} = \vec{r}_0}$, etc. 
+
+Villkoret $\frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0$ (överallt) betyder att $c_{xx} = -c_{yy}\equiv c_{ii}$ samt att alla högre ordningens termer måste vara noll. 
+
+Det viktiga är alltså att expansionen slutar med den kvadratiska termen och att dessa är lika, men motriktade, i $x$- och $y$-led. De specifika värdena på konstanterna $(c_0, c_x, c_y,c_{xy},c_{ii})$ kommer förstås att bero på vilken punkt $\vec{r}_0$ som vi använder för Taylorexpansionen.
 !ewarning
 
 === Exempel: Lösningar till Laplaces ekvation ===

@@ -324,6 +324,24 @@ $$
 \rho(\vec{r}) = \vnabla \cdot \vec{F} = -\Delta \phi = q \delta^3(\vec{r}).
 $$
 
+Ett differentiellt uttryck för deltafunktionen
+!bt
+\[
+\delta^{(3)} \left( \vec{r} \right) 
+= \frac{1}{4\pi} \vec{\nabla} \cdot \frac{\hat{r}}{r^2},
+\]
+!et
+eller mer allmänt
+!bt
+\[
+\delta^{(3)} \left( \vec{r} - \vec{r}\,' \right) 
+= \frac{1}{4\pi} \vec{\nabla} \cdot 
+\frac{ \left| \vec{r} - \vec{r}\,' \right|}{\left( \vec{r} - \vec{r}\,' \right)^3 },
+\]
+!et
+där vi noterar att $\vec{\nabla}$ opererar på koordinaten $\vec{r}$.
+
+
 === Linjekälla ===
 Linjekällan $\vec{F} = \frac{k}{2 \pi \rho} \hat{e}_\rho$ (motsvarar en punktkälla i $D=2$).
 Källtätheten kan skrivas

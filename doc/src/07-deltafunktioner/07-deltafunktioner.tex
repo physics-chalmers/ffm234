@@ -263,7 +263,7 @@ FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
 
 % --- begin date ---
 \begin{center}
-Sep 30, 2019
+Oct 4, 2019
 \end{center}
 % --- end date ---
 
@@ -640,6 +640,20 @@ Alltså skriver vi källtätheten
 $$
 \rho(\vec{r}) = \vnabla \cdot \vec{F} = -\Delta \phi = q \delta^3(\vec{r}).
 $$
+
+Ett differentiellt uttryck för deltafunktionen
+\[
+\delta^{(3)} \left( \vec{r} \right) 
+= \frac{1}{4\pi} \vec{\nabla} \cdot \frac{\hat{r}}{r^2},
+\]
+eller mer allmänt
+\[
+\delta^{(3)} \left( \vec{r} - \vec{r}\,' \right) 
+= \frac{1}{4\pi} \vec{\nabla} \cdot 
+\frac{ \left| \vec{r} - \vec{r}\,' \right|}{\left( \vec{r} - \vec{r}\,' \right)^3 },
+\]
+där vi noterar att $\vec{\nabla}$ opererar på koordinaten $\vec{r}$.
+
 
 \paragraph{Linjekälla.}
 Linjekällan $\vec{F} = \frac{k}{2 \pi \rho} \hat{e}_\rho$ (motsvarar en punktkälla i $D=2$).
