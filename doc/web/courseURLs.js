@@ -34,3 +34,4 @@ if (inIframe()) {
 }
 
 var datorlab1 = "https://chalmers.instructure.com/courses/7435/assignments/4895";
+var datorlab2 = "https://chalmers.instructure.com/courses/7435/assignments/5310";
