@@ -572,3 +572,37 @@ translating doconce text in 09-diffekv.do.txt to html
 *** warning: inline math in HTML must have space around <:
     z<0  ->  z < 0
 output in 09-diffekv-bs.html
+translating doconce text in 09-diffekv.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+qq_1
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+}_0 = (x_0,y_0,z_0)\vec{r}_1 = (x_0,y_0,-z_0)q_1 = qq_1 = -qz=0\phi=0z=0\vec{r}\,' = (x',y',z')\vec{r}\,'' = (
+output in 09-diffekv.tex
+translating doconce text in 09-diffekv.do.txt to html
+*** warning: inline math in HTML must have space around <:
+    \varrho=\sqrt{x^2+y^2}<a  ->  \varrho=\sqrt{x^2+y^2} < a
+*** warning: inline math in HTML must have space around <:
+    z<0  ->  z < 0
+output in 09-diffekv-bs.html
+translating doconce text in 09-diffekv.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+qq_1
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+}_0 = (x_0,y_0,z_0)\vec{r}_1 = (x_0,y_0,-z_0)q_1 = qq_1 = -qz=0\phi=0z=0\vec{r}\,' = (x',y',z')\vec{r}\,'' = (
+output in 09-diffekv.tex
+translating doconce text in 09-diffekv.do.txt to html
+*** warning: inline math in HTML must have space around <:
+    \varrho=\sqrt{x^2+y^2}<a  ->  \varrho=\sqrt{x^2+y^2} < a
+*** warning: inline math in HTML must have space around <:
+    z<0  ->  z < 0
+output in 09-diffekv-bs.html
