@@ -401,6 +401,16 @@ Maxwells lösning var att lägga till en term (förskjutningsströmmen)
 \end{equation}
 !et
 
+Notera att den extra termen betyder att kontinuitetsekvationen uppfylls eftersom
+!bt
+\[
+-\vnabla \cdot \vec{\jmath} = -\frac{1}{\mu_0} \vnabla \cdot \left(\vnabla \times
+\vec{B}\right) + \epsilon_0 \frac{\partial (\vnabla \cdot \vec{E})}{\partial t}
+= \frac{\partial \rho}{\partial t},
+\]
+!et
+där vi har utnyttjat Gauss lag.
+
 === EM koppling 2: Induktion (Faradays lag) ===
 
 Vi har sedan tidigare funnit att elektriska laddningar kan skapa elektriska fält  och att elektriska strömmar kan skapa magnetfält.

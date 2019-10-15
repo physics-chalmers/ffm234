@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.6)  16 OCT 2018 10:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.31)  15 OCT 2019 17:04
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1192,37 +1192,41 @@ Package mdframed Info: Box was splittet wrong
  starting loop to iterate the splitting point
 (mdframed)              on input line 587.
  [6]
-[7] [8]
-Package mdframed Info: Not enough space on this page on input line 765.
- [9]
-Package mdframed Info: Not enough space on this page on input line 765.
+[7] [8] [9]
 
+Package mdframed Warning: You got a bad break
+(mdframed)                because the last box will be empty
+(mdframed)                you have to change it manually
+(mdframed)                by changing the text, the space
+(mdframed)                or something else on input line 773.
 
-LaTeX Warning: Command \" invalid in math mode on input line 771.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 773.
+[10]
 
-[10] [11]
-Overfull \hbox (6.39052pt too wide) detected at line 847
+LaTeX Warning: Command \" invalid in math mode on input line 779.
+
+[11]
+Overfull \hbox (6.39052pt too wide) detected at line 855
 [] \OMS/lmsy/m/n/10 ^^A [] \OT1/lmr/m/n/10 = \OMS/lmsy/m/n/10 ^^@\OT1/lmr/m/n/1
 0 ^^A\OML/lmm/m/it/10 ^^^ \OMS/lmsy/m/n/10 ^^@ []\OT1/lmr/m/n/10 ([] \OMS/lmsy/
 m/n/10 ^^A []\OT1/lmr/m/n/10 ) = [] = [] \OML/lmm/m/it/10 ^^^ \OMS/lmsy/m/n/10 
 ^^Q ^^@\U/msa/m/n/10 ^^C\OML/lmm/m/it/10 ^^^;
  []
 
-Package mdframed Info: Not enough space on this page on input line 908.
 [12]
-Package mdframed Info: Not enough space on this page on input line 908.
+
+LaTeX Warning: Command \" invalid in math mode on input line 929.
 
 
-LaTeX Warning: Command \" invalid in math mode on input line 921.
-
-
-LaTeX Warning: Command \" invalid in math mode on input line 921.
+LaTeX Warning: Command \" invalid in math mode on input line 929.
 
 [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 928.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 928.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 936.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 936.
  (./11-elektromagnetism.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 928.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 936.
 
 
  *File List*
@@ -1359,16 +1363,16 @@ newcommands_keep.tex
   omslmr.fd    2009/10/30 v1.6 Font defs for Latin Modern
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 928.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 936.
 Package rerunfilecheck Info: File `11-elektromagnetism.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 928.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 936.
  ) 
 Here is how much of TeX's memory you used:
- 28378 strings out of 492995
- 535367 string characters out of 6132705
- 665473 words of memory out of 5000000
- 31328 multiletter control sequences out of 15000+600000
+ 28388 strings out of 492995
+ 535583 string characters out of 6132703
+ 665568 words of memory out of 5000000
+ 31338 multiletter control sequences out of 15000+600000
  50649 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,12n,79p,10408b,1053s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1389,7 +1393,7 @@ blic/lm/lmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr7
 live/2017/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/20
 17/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on 11-elektromagnetism.pdf (13 pages, 237886 bytes).
+Output written on 11-elektromagnetism.pdf (13 pages, 238165 bytes).
 PDF statistics:
  221 PDF objects out of 1000 (max. 8388607)
  190 compressed objects within 2 object streams

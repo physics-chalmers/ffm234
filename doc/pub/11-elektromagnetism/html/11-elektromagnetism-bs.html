@@ -6,6 +6,7 @@ Automatically generated HTML file from DocOnce source
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
 
 <title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
@@ -147,7 +148,7 @@ $$
 
 <br>
 <p>
-<center><h4>Oct 16, 2018</h4></center> <!-- date -->
+<center><h4>Oct 15, 2019</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -360,24 +361,24 @@ $$
 \end{equation}
 $$
 
+<p>
 Vi skall nu utnyttja detta f&#246;r att best&#228;mma potentialen, f&#246;r vilken det
-g&#228;ller att \( \vec{E} = - \vnabla \phi \).  I v&#229;rt fall kan vi uttrycka 
+g&#228;ller att \( \vec{E} = - \vnabla \phi \).  Eftersom enbart den radiella komponenten av E-f&#228;ltet &#228;r nollskild har vi att \( E_r = -\partial_r \phi \). I v&#229;rt fall kan vi uttrycka 
 potentialen som integralen
 $$
 \begin{equation}
-  \phi\left(r\right) = \int_r^\infty E_r \mbox{d}r,
+  \int_r^\infty E_r \mbox{d}r = -\int_r^\infty \partial_r \phi \mbox{d}r = \phi\left(r\right) - \phi(\infty).
 \label{_auto15}
 \end{equation}
 $$
 
-vilket s&#228;tter potentialen till 0 i o&#228;ndligheten i enlighet med den vanliga
-konventionen.  Vi b&#246;rjar d&#229; med att best&#228;mma potentialen f&#246;r intervallet
+Vi s&#228;tter potentialen till 0 i o&#228;ndligheten och b&#246;rjar med att best&#228;mma potentialen f&#246;r intervallet
 \( r > 2a \).  Eftersom \( E_r = 0 \) h&#228;r s&#229; f&#246;ljer det att ocks&#229; potentialen
 blir 0.
 
 <p>
 Potentialen skall &#246;verallt vara kontinuerlig, vilket inte beh&#246;ver vara
-sant f&#246;r \( E \)-f&#228;ltet.  D&#228;rf&#246;r f&#246;ljer att n&#228;r vi g&#229;r till
+sant f&#246;r \( E \)-f&#228;ltet. N&#228;r vi g&#229;r till
 intervallet \( a \le r \le 2a \) s&#229; kan den &#246;vre integrationsgr&#228;nsen
 s&#228;ttas till \( 2a \), eftersom potentialen &#228;r 0 utanf&#246;r.
 $$
@@ -677,6 +678,16 @@ $$
 \end{equation}
 $$
 
+<p>
+Notera att den extra termen betyder att kontinuitetsekvationen uppfylls eftersom
+$$
+-\vnabla \cdot \vec{\jmath} = -\frac{1}{\mu_0} \vnabla \cdot \left(\vnabla \times
+\vec{B}\right) + \epsilon_0 \frac{\partial (\vnabla \cdot \vec{E})}{\partial t}
+= \frac{\partial \rho}{\partial t},
+$$
+
+d&#228;r vi har utnyttjat Gauss lag.
+
 <h3 id="___sec7" class="anchor">EM koppling 2: Induktion (Faradays lag) </h3>
 
 <p>
@@ -710,7 +721,7 @@ $$
 
 Vi s&#228;tter nu Ekv \eqref{eq:indU} och \eqref{eq:faraday} lika med varandra och f&#229;r Faradays lag p&#229; integralform
 $$
-  oint_{\partial S} \vec{E} \cdot \mbox{d}\vec{r} = -
+  \oint_{\partial S} \vec{E} \cdot \mbox{d}\vec{r} = -
 \int_S \frac{\partial \vec{B}}{\partial t} \cdot \mbox{d}\vec{S}.
 $$
 

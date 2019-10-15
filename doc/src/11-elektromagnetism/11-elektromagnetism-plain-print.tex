@@ -252,7 +252,7 @@ FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
 
 % --- begin date ---
 \begin{center}
-Oct 16, 2018
+Oct 15, 2019
 \end{center}
 % --- end date ---
 
@@ -615,6 +615,14 @@ Maxwells lösning var att lägga till en term (förskjutningsströmmen)
 \begin{equation}
   \vnabla \times \vec{B} = \mu_0 \vec{\jmath} + \mu_0 \epsilon_0 \frac{\partial \vec{E}}{\partial t}.
 \end{equation}
+
+Notera att den extra termen betyder att kontinuitetsekvationen uppfylls eftersom
+\[
+-\vnabla \cdot \vec{\jmath} = -\frac{1}{\mu_0} \vnabla \cdot \left(\vnabla \times
+\vec{B}\right) + \epsilon_0 \frac{\partial (\vnabla \cdot \vec{E})}{\partial t}
+= \frac{\partial \rho}{\partial t},
+\]
+där vi har utnyttjat Gauss lag.
 
 \paragraph{EM koppling 2: Induktion (Faradays lag).}
 Vi har sedan tidigare funnit att elektriska laddningar kan skapa elektriska fält  och att elektriska strömmar kan skapa magnetfält.
