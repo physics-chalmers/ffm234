@@ -143,7 +143,7 @@ MathJax.Hub.Config({
 <center><b>Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige, Email: <a href="mailto:christian.forssen@chalmers.se" target="_self"><tt>christian.forssen@chalmers.se</tt></a></b></center>
 <br>
 <p>
-<center><h4>Oct 6, 2019 </h4></center> <!-- date -->
+<center><h4>Oct 16, 2019 </h4></center> <!-- date -->
 <br>
 <br /><br /><center><p><img src="fig/isotermer.png" align="bottom" width=600></p></center><br /><br />
 
@@ -226,7 +226,7 @@ Vad som nu &#229;terst&#229;r att g&#246;ra &#228;r att best&#228;mma en bra sto
 $$
 \begin{equation}
   \delta t = K \frac{\delta x^2}{k},
-\label{_auto4}
+\label{eq:tidssteg}
 \end{equation}
 $$
 
@@ -311,7 +311,7 @@ Finn den station&#228;ra temperaturf&#246;rdelningen i plattan genom att l&#246;
 <p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
 
 <ul>
-<li> Gruppens rapport skall inneh&#229;lla en figur som visar en f&#228;ltbild med isotermer (niv&#229;kurvor f&#246;r temperaturf&#228;ltet) och v&#228;rmestr&#246;m (\( \vec{q} = - \lambda \vec{\nabla}T \)). Det kan vara l&#228;mpligt att v&#228;lja isotermerna \( T = 1, 5, 10, 20, 40\,^\mathrm{o}\mathrm{C} \)</li>
+<li> Gruppens rapport skall inneh&#229;lla en figur som visar en f&#228;ltbild med isotermer (niv&#229;kurvor f&#246;r temperaturf&#228;ltet) och v&#228;rmestr&#246;m (\( \vec{q} = - \lambda \vec{\nabla}T \)). Det kan vara l&#228;mpligt att v&#228;lja isotermerna \( T = 0.001, 0.002, 0.004, 0.008, 0.012, 0.014\,^\mathrm{o}\mathrm{C} \).</li>
 <li> Det skall framg&#229; hur snabbt tidsf&#246;rloppet &#228;r och vilket kriterium ni har anv&#228;nt f&#246;r att definiera att station&#228;rl&#246;sningen har uppn&#229;tts.</li>
 <li> Ni skall &#228;ven redovisa vilka materialkonstanter ni har anv&#228;nt och vilken k&#228;lla ni har tagit dessa fr&#229;n.</li>
 </ul>
@@ -338,6 +338,9 @@ T_{i,j-1}\left(t\right) \Big] + \delta t u_{i,j},
 $$
 
 d&#228;r v&#228;rmek&#228;llorna &#228;r tidsoberoende.
+
+<p>
+Notera ocks&#229; att den numeriska l&#246;sningen i tv&#229; dimensioner blir &#228;nnu k&#228;nsligare f&#246;r valet av diskretisering. Man m&#228;rker givetvis n&#228;r l&#246;sningen inte konvergerar. Vad g&#228;ller tidssteget kan ni eventuellt beh&#246;va anv&#228;nda konstanten \( K \lesssim 0.25 \), se ekv \eqref{eq:tidssteg}.
 
 <h1 id="___sec7" class="anchor">Matlab och Python </h1>
 
