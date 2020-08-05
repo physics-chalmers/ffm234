@@ -1,0 +1,422 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="FFM234, Datoruppgift 2: Värmeledning">
+
+<title>FFM234, Datoruppgift 2: Värmeledning</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('Inledning', 1, None, '___sec0'),
+              ('Numerisk behandling av värmeledningsekvationen i en dimension',
+               1,
+               None,
+               '___sec1'),
+              ('Uppgift 1-1: Endimensionell temperaturfördelning med '
+               'Dirichlets randvillkor',
+               2,
+               None,
+               '___sec2'),
+              ('Goda råd:', 3, None, '___sec3'),
+              ('Uppgift 1-2: Endimensionell temperaturfördelning med '
+               'värmekälla',
+               2,
+               None,
+               '___sec4'),
+              ('Del 2: Extra uppgift', 1, None, '___sec5'),
+              ('Uppgift 2-1: Tvådimensionell temperaturfördelning: värmerör i '
+               'mark',
+               2,
+               None,
+               '___sec6'),
+              ('Goda råd:', 3, None, '___sec7'),
+              ('Matlab och Python', 1, None, '___sec8'),
+              ('Om rapporten', 1, None, '___sec9')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="markvarme-bs.html">FFM234, Datoruppgift 2: Värmeledning</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Inledning</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;"><b>Numerisk behandling av värmeledningsekvationen i en dimension</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 1-1: Endimensionell temperaturfördelning med Dirichlets randvillkor</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goda råd:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 1-2: Endimensionell temperaturfördelning med värmekälla</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;"><b>Del 2: Extra uppgift</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 2-1: Tvådimensionell temperaturfördelning: värmerör i mark</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Goda råd:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;"><b>Matlab och Python</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;"><b>Om rapporten</b></a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Datoruppgift 2: V&#228;rmeledning</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a> -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a></b> 
+</center>
+
+<p>
+<!-- institution -->
+
+<center><b>Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige, Email: <a href="mailto:christian.forssen@chalmers.se" target="_self"><tt>christian.forssen@chalmers.se</tt></a></b></center>
+<br>
+<p>
+<center><h4>Aug 5, 2020 </h4></center> <!-- date -->
+<br>
+<br /><br /><center><p><img src="fig/isotermer.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+</div> <!-- end jumbotron -->
+
+<h1 id="___sec0" class="anchor">Inledning </h1>
+
+<p>
+I den h&#228;r datorlaborationen skall vi studera v&#228;rmeledning genom marken under en kall vinterdag. Vi kommer framf&#246;rallt att studera ett symmetriskt scenario d&#228;r det r&#228;cker att betrakta ett endimensionellt snitt mellan markytan (med fix temperatur \( -10^\circ \) C) ner till ett tj&#228;lfritt djup p&#229; en meter (med fix temperatur \( 0^\circ \) C). Vi kommer att betrakta tv&#229; olika situationer d&#228;r korrekta l&#246;sningar av b&#228;gge uppgifterna inom detta endimensionella problem kr&#228;vs f&#246;r att bli godk&#228;nd p&#229; laborationen.
+
+<p>
+I den frivilliga andra delen av denna laboration betraktar vi ett tv&#229;dimensionellt tv&#228;rsnitt och modellerar effekten av ett nedgr&#228;vt v&#228;rmer&#246;r. En korrekt l&#246;sning av denna del kan ge bonuspo&#228;ng som r&#228;knas mot &#246;verbetyg; dock hj&#228;lper dessa bonuspo&#228;ng ej mot godk&#228;nt betyg.
+
+<p>
+Den fysikaliska processen i b&#228;gge fallen beskrivs av v&#228;rmeledningsekvationen
+$$
+\begin{equation}
+  \frac{\partial T}{\partial t} = k \nabla^2 T + u,
+\label{eq:heateq}
+\end{equation}
+$$
+
+d&#228;r \( T \) &#228;r ett skal&#228;rf&#228;lt som beskriver temperaturen som en funktion av l&#228;get och tiden. Parametern \( k = \lambda /(c\rho) \) best&#229;r av materialkonstanterna \( \lambda \)  (v&#228;rmeledningsf&#246;rm&#229;gan), \( c \) (v&#228;rmekapacitiviten) och \( \rho \) (materialets densitet). Eventuella v&#228;rmek&#228;llor beskrivs av skal&#228;rf&#228;ltet \( u \equiv s / (c \rho) \), d&#228;r SI-enheten f&#246;r \( s \) &#228;r \( \mathrm{W/m}^3 \). F&#246;r att ge en entydig l&#246;sning m&#229;ste v&#228;rmeledningsekvationen kompletteras med begynnelse- och randvillkor f&#246;r temperaturen, det vill s&#228;ga vi m&#229;ste beskriva temperaturf&#246;rdelningen i den aktuella geometrin vid starttidpunkten, och ge villkor f&#246;r temperaturen (eller temperaturgradienten) p&#229; geometrins rand vid varje tidpunkt.
+
+<p>
+N&#228;r \( \partial T/\partial t = 0 \) har vi uppn&#229;tt en station&#228;rl&#246;sning.
+
+<h1 id="___sec1" class="anchor">Numerisk behandling av v&#228;rmeledningsekvationen i en dimension </h1>
+
+<p>
+Det finns analytiska tekniker f&#246;r att l&#246;sa den tidsberoende v&#228;rmeledningsekvationen, men dessa fungerar enbart i vissa situationer och kr&#228;ver metoder som ing&#229;r i Fourier-analys, och faller d&#228;rmed utanf&#246;r ramen f&#246;r v&#229;r kurs. D&#228;remot kan vi konstruera en enkel numerisk metod f&#246;r att l&#246;sa v&#228;rmeledningsekvationen.  L&#229;t oss till att b&#246;rja med att betrakta en endimensionell modell. Detta motsvarar en situation d&#228;r vi har temperaturvariatoner endast i en riktning medan f&#228;ltet inte varierar i de andra tv&#229; riktningarna, t.ex. beroende p&#229; att utstr&#228;ckningen kan betraktas som o&#228;ndlig. V&#228;rmeledningsekvationen reduceras d&#229; till den endimensionella ekvationen
+$$
+\begin{equation}
+  \frac{\partial T}{\partial t} = k \frac{\partial^2 T}{\partial x^2} + u,
+\label{eq:1dheateq}
+\end{equation}
+$$
+
+d&#228;r \( x \) &#228;r avst&#229;ndet fr&#229;n markytan. Vi delar nu in djupriktningen i \( m \) punkter, s&#229; att den f&#246;rsta och sista punkten ligger p&#229; markytan respektive p&#229; det st&#246;rsta djupet \( d \). Med en linj&#228;r diskretisering ligger  punkterna p&#229; ett avst&#229;nd \( \delta x = d/(m-1) \) fr&#229;n varandra. Temperaturf&#228;ltet kommer nu att representeras av dess v&#228;rden i diskreta punkter \( T(x_i,t) \equiv T_i(t) \). En enkel numerisk approximation till Laplacianen \( \nabla^2 T \) i punkten \( x_i \) kan d&#229; skrivas
+$$
+\begin{equation}
+  \frac{\partial^2 T_i}{\partial x^2} = \frac{T_{i+1} - 2 T_i +
+T_{i-1}}{\delta x^2}.
+\label{_auto1}
+\end{equation}
+$$
+
+P&#229; samma s&#228;tt kan vi approximera tidsderivatan i punkten \( i \) med
+$$
+\begin{equation}
+  \frac{\partial T_i}{\partial t} = \frac{T_i\left(t+\delta t\right) - T_i
+\left(t\right)}{\delta t}.
+\label{_auto2}
+\end{equation}
+$$
+
+<p>
+Detta ger oss differensekvationen
+$$
+\begin{equation}
+  \frac{T_i\left(t+\delta t\right) -T_i\left(t\right)}{\delta t} = k
+\frac{T_{i+1}\left(t\right) - 2 T_i\left(t\right) +
+T_{i-1}\left(t\right)}{\delta x^2} + u_i\left(t\right),
+\label{_auto3}
+\end{equation}
+$$
+
+d&#228;r vi ocks&#229; har diskretiserat k&#228;llt&#228;theten \( u(x_i,t) \equiv u_i(t) \).
+
+<p>
+Vi kan nu l&#246;sa ut \( T_i(t + \delta t) \) och ber&#228;kna dess v&#228;rde givet det diskretiserade temperaturf&#228;ltet vid tiden \( t \):
+$$
+\begin{equation}
+  T_i\left(t + \delta t\right) = T_i\left(t\right) + \delta t k
+\frac{T_{i+1}\left(t\right) - 2 T_i\left(t\right) +
+T_{i-1}\left(t\right)}{\delta x^2} + \delta t u_i\left(t\right).
+\label{eq:algo}
+\end{equation}
+$$
+
+Detta ger oss en enkel metod f&#246;r att l&#246;sa (tidsintegrera) v&#228;rmeledningsekvationen.
+
+<p>
+Vad som nu &#229;terst&#229;r att g&#246;ra &#228;r att best&#228;mma en bra storlek p&#229; tidssteget \( \delta t \).  Om \( \delta t \) blir f&#246;r stor blir n&#228;mligen v&#229;r algoritm instabil.  F&#246;r stabilitet kr&#228;vs ett tidssteg
+$$
+\begin{equation}
+  \delta t = K \frac{\delta x^2}{k},
+\label{eq:tidssteg}
+\end{equation}
+$$
+
+d&#228;r \( K \) skall vara av storleksordningen 0.25&ndash;0.5.  Det syns tydligt om algoritmen blir instabil, eftersom temperaturen i s&#229; fall snabbt kommer att bli orimligt h&#246;g i n&#229;gon punkt. V&#229;rt uttryck f&#246;r \( \delta t \) visar ocks&#229; p&#229; begr&#228;nsningen med v&#229;r metod.  Tidssteget kommer att bli v&#228;ldigt kort om vi beh&#246;ver ett kort avst&#229;nd mellan v&#229;ra punkter. Mer sofistikerade metoder anv&#228;nds ofta i professionella ber&#228;kningar.
+
+<h2 id="___sec2" class="anchor">Uppgift 1-1: Endimensionell temperaturf&#246;rdelning med Dirichlets randvillkor </h2>
+
+<p>
+Skriv ett Matlab- (eller Python-) program f&#246;r att studera temperaturf&#246;rdelningen i marken givet f&#246;ljande:  Vi betraktar omr&#229;det fr&#229;n markytan ner till ett tj&#228;lfritt djup p&#229; 1.0 meter d&#228;r temperaturen alltid &#228;r \( 0\,^\mathrm{o}\mathrm{C} \). Vi &#228;r intresserade av uppkomsten av en station&#228;r l&#246;sning som uppn&#229;s efter en viss tid. Antag att hela marken vid starttidpunkten \( (t = 0) \) h&#229;ller temperaturen \( 0\,^\mathrm{o}\mathrm{C} \) f&#246;rutom ytan vid \( x=0 \) d&#228;r tempteraturen &#228;r fix \( -10\,^\mathrm{o}\mathrm{C} \). I denna f&#246;rsta uppgift finns det ingen v&#228;rmek&#228;lla i det aktuella omr&#229;det. Vi antar att vi har Dirichlets randvillkor s&#229; att ytan och den djupaste punkten h&#229;ller sin respektive konstanta temperatur. Vi antar vidare att jorden &#228;r leraktig och att de relevanta materialegenskaperna har f&#246;ljande numeriska v&#228;rden: densiteten \( \rho = 1500 \mathrm{kg}\cdot\mathrm{m}^{-3} \), v&#228;rmeledningsf&#246;rm&#229;ga \( \lambda = 1.0 \mathrm{W}\cdot\mathrm{m}^{-1}\cdot\mathrm{K}^{-1} \), v&#228;rmekapacitivitet \( c = 1000 \mathrm{J}\cdot\mathrm{kg}^{-1}\cdot\mathrm{K}^{-1} \) (om ni s&#246;ker sj&#228;lva i tabeller eller digitala k&#228;llor s&#229; inser ni s&#228;kert att markens termiska egenskaper beror ganska mycket p&#229; jordens sammans&#228;ttning).
+
+<p>
+L&#246;s det tidsberoende problemet numeriskt och finn den station&#228;ra l&#246;sningen d&#228;r temperaturf&#246;rdelningen inte l&#228;ngre &#228;ndras n&#228;mnv&#228;rt. Best&#228;m &#228;ven den station&#228;ra temperaturf&#246;rdelningen analytiskt och j&#228;mf&#246;r detta med ert numeriska resultat.
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Redovisning</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ul>
+<li> Gruppens rapport skall inneh&#229;lla en figur som visar tidsf&#246;rloppet f&#246;r temperaturf&#228;tet.</li> 
+<li> Det skall framg&#229; hur snabbt tidsf&#246;rloppet &#228;r och vilket kriterium ni har anv&#228;nt f&#246;r att definiera att station&#228;rl&#246;sningen har uppn&#229;tts.</li>
+<li> J&#228;mf&#246;r med den analytiska l&#246;sningen f&#246;r att kontrollera er numeriska l&#246;sning.</li>
+<li> Redovisa kortfattat h&#228;rledningen av den analytiska l&#246;sningen i rapporten.</li>
+<li> Ni kommer att finna att v&#228;rme str&#246;mmar in genom den ena &#228;ndpunken och ut genom den andra. Ber&#228;kna (analytiskt eller numeriskt) det totala fl&#246;det ut ur omr&#229;det.</li>
+</ul>
+</div>
+</div>
+
+
+<h3 id="___sec3" class="anchor">Goda r&#229;d: </h3>
+
+B&#246;rja med att best&#228;mma hur m&#229;nga punkter ni skall anv&#228;nda, cirka 30 stycken torde r&#228;cka.  Den f&#246;rsta punkten kommer d&#229; att ligga p&#229; markytan och den sista motsvarar den djupaste punkten.  Skapa sedan tv&#229; vektorer <em>T\_old</em> och <em>T\_new</em>, som b&#229;da har lika m&#229;nga element som antalet diskretiseringspunkter.  <em>T\_old</em> skall f&#229; lagra temperaturen vid den gamla tidpunkten, medan <em>T\_new</em> kommer att inneh&#229;lla temperaturen vid den nya tidpunkten, vilken i sin tur ber&#228;knas ur Ekv. \eqref{eq:algo}.  Vid starten m&#229;ste du allts&#229; s&#228;tta <em>T\_old</em> till glasrutans temperaturf&#246;rdelning vid \( t = 0 \). Detta &#228;r enkelt att g&#246;ra om du anv&#228;nder funktionen <code>zeros(m)</code>, som ger dig en flyttalsvektor med \( m \) element, som alla &#228;r 0, och sedan kan du bara &#228;ndra p&#229; temperaturen i den f&#246;rsta punkten.  Ber&#228;kna sedan &#246;vriga konstanter som du beh&#246;ver.
+
+<p>
+Konstruera en loop som tar sm&#229; tidssteg och ber&#228;knar <em>T\_new</em> ur <em>T\_old</em> enligt Ekv. \eqref{eq:algo}, men kom ih&#229;g att de f&#246;rsta och sista punkterna i <em>T\_new</em> best&#228;ms av randvillkoren.  Fundera p&#229; ett bra villkor f&#246;r att definiera n&#228;r station&#228;rl&#246;sningen har uppn&#229;tts s&#229; att loopen avbryts. T&#228;nk p&#229; att i slutet av varje tidssteg, n&#228;r hela <em>T\_new</em> &#228;r ber&#228;knad, m&#229;ste du tilldela <em>T\_old</em> = <em>T\_new</em> har eftersom det blir situationen vid starten p&#229; n&#228;sta tidssteg.
+
+<p>
+Vi har nu l&#246;st v&#228;rmeledningsekvationen f&#246;r en dimension med randvillkoret att temperaturen &#228;r konstant p&#229; randpunkterna.  Detta &#228;r ett exempel p&#229; ett Dirichletvillkor.  I ett v&#228;rmeledningsproblem betyder detta att v&#228;rmestr&#246;mmen genom randen anpassas s&#229; som kr&#228;vs f&#246;r att den skall beh&#229;lla samma temperatur. En annan m&#246;jlighet skulle vara att randen &#228;r isolerad p&#229; ett s&#229;dant s&#228;tt att ingen v&#228;rme kan tas emot eller avges till omgivningen.  Det betyder att v&#228;rmestr&#246;mmen, \( -\lambda dT/dx \) &#228;r noll p&#229; randen, allts&#229; m&#229;ste \( dT/dx \) f&#246;rsvinna d&#228;r. S&#229;dana randvillkor kallar vi f&#246;r Neumann-villkor.
+
+<h2 id="___sec4" class="anchor">Uppgift 1-2: Endimensionell temperaturf&#246;rdelning med v&#228;rmek&#228;lla </h2>
+
+<p>
+Antag nu att det finns en konstant och homogen v&#228;rmek&#228;lla \( s \) inuti marken.  L&#246;s v&#228;rmeledningsekvationen f&#246;r fallet att \( s = 100\,\mathrm{W}\,\mathrm{m}^{-3} \).  Anv&#228;nd samma begynnelse- och randvillkor som i den f&#246;rsta uppgiften. Best&#228;m dessutom analytiskt den station&#228;ra temperaturf&#246;rdelningen.
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Redovisning</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ul>
+<li> Gruppens rapport skall inneh&#229;lla en figur som visar tidsf&#246;rloppet f&#246;r temperaturf&#228;ltet.</li> 
+<li> Det skall framg&#229; hur snabbt tidsf&#246;rloppet &#228;r och vilket kriterium ni har anv&#228;nt f&#246;r att definiera att station&#228;rl&#246;sningen har uppn&#229;tts.</li>
+<li> J&#228;mf&#246;r med den analytiska l&#246;sningen f&#246;r att kontrollera er numeriska l&#246;sning.</li>
+<li> Redovisa kortfattat h&#228;rledningen av den analytiska l&#246;sningen i rapporten.</li>
+<li> Ni kommer att finna att v&#228;rme str&#246;mmar ut genom b&#228;gge &#228;ndpunkterna. Ber&#228;kna (analytiskt eller numeriskt) det totala fl&#246;det ut ur omr&#229;det.</li>
+</ul>
+</div>
+</div>
+
+
+<h1 id="___sec5" class="anchor">Del 2: Extra uppgift </h1>
+
+<p>
+Denna uppgift &#228;r ej obligatorisk, men kan ge bonuspo&#228;ng som r&#228;knas mot att n&#229; betyg 4 eller 5.
+
+<h2 id="___sec6" class="anchor">Uppgift 2-1: Tv&#229;dimensionell temperaturf&#246;rdelning: v&#228;rmer&#246;r i mark </h2>
+
+<p>
+Vi studerar nu ett tv&#229;dimensionellt problem som inte &#228;r lika enkelt att l&#246;sa analytiskt. Uppgiften &#228;r att modellera temperaturf&#246;rdelningen och v&#228;rmefl&#246;det som uppst&#229;r d&#229; det finns ett l&#229;ngt v&#228;rmer&#246;r nedgr&#228;vt i horisontell z-led i marken p&#229; djupet \( d_r = 30 \) cm. F&#246;r denna uppgift t&#228;nker oss att r&#246;rets utstr&#228;ckning i z-led &#228;r o&#228;ndlig s&#229; att vi inte beh&#246;ver ta h&#228;nsyn till n&#229;gon rand i denna riktning. D&#228;remot kommer temperaturen nu att variera i horisontell y-led. Vi betraktar ett kvadratiskt tv&#228;rsnitt med sidl&#228;ngderna 1 x 1 m. V&#228;rmer&#246;ret passerar p&#229; djupet \( x=d_r \) m och p&#229; mitten i y-led av v&#229;rt kvadratiska tv&#228;rsnitt.
+
+<p>
+Diskretisera det tv&#229;-dimensionella omr&#229;det genom att skapa ett rutn&#228;t med 51 x 51 punkter och konstant stegl&#228;ngd (\( \delta x = \delta y = 0.02 \) m). Vi antar att v&#228;rmer&#246;rets diameter &#228;r cirka 2 cm s&#229; att det beskrivs v&#228;l av en v&#228;rmek&#228;lla som &#228;r nollskild enbart i en ruta i v&#229;rt tv&#229;dimensionella rutn&#228;t. D&#228;r &#228;r k&#228;llt&#228;theten \( s = 250 \mathrm{kW} \cdot \mathrm{m}^{-3} \). Notera att det inneb&#228;r att f&#246;r varje meter i z-led avger v&#228;rmer&#246;ret effekten \( 250 \cdot 10^3 \mathrm{W/m}^3  \cdot 0.02^2 \mathrm{m}^2 \cdot 1.0 \mathrm{m} = 100 \mathrm{W} \).
+
+<p>
+Skriv ett Matlab- (eller Python-) program f&#246;r att studera hur det tv&#229;dimensionella temperaturf&#228;ltet utvecklas med tiden. Vid starttidpunkten \( (t = 0) \) h&#229;ller hela plattan temperaturen \( 0\,^\mathrm{o}\mathrm{C} \) f&#246;rutom markytan som h&#229;ller temperaturen \( -10\,^\mathrm{o}\mathrm{C} \). Vi har en blandning av olika randvillkor. Temperaturen &#228;r konstant, dvs Dirichlets randvillkor, vid markytan (\( -10\,^\mathrm{o}\mathrm{C} \) ) och vid den djupa randen (\( 0\,^\mathrm{o}\mathrm{C} \)). Dessutom antar vi att tv&#228;rsnittets utstr&#228;ckning i y-led &#228;r tillr&#228;ckligt stor s&#229; att v&#228;rmer&#246;rets p&#229;verkan p&#229; temperaturf&#228;ltet blir f&#246;rsumbar p&#229; sidor&#228;nderna. Detta skulle inneb&#228;ra att vi inte har n&#229;gon v&#228;rmestr&#246;m i y-led vid dessa tv&#229; r&#228;nderna, vilket i sin motsvarar Neumanns homogena randvillkor.
+
+<p>
+Finn det station&#228;ra temperaturf&#246;rdelningen genom att l&#246;sa v&#228;rmeledningsekvationen numeriskt och stega fram i tiden tills temperaturf&#228;ltet inte &#228;ndrar sig n&#228;mnv&#228;rt mellan tv&#229; tidssteg.
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Redovisning</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ul>
+<li> Gruppens rapport skall inneh&#229;lla en figur som visar en f&#228;ltbild med isotermer (niv&#229;kurvor f&#246;r temperaturf&#228;ltet) och f&#228;ltlinjer som visar v&#228;rmestr&#246;mmen (\( \vec{q} = - \lambda \vec{\nabla}T \)).</li> 
+<li> Det skall framg&#229; hur snabbt tidsf&#246;rloppet &#228;r och vilket kriterium ni har anv&#228;nt f&#246;r att definiera att station&#228;rl&#246;sningen har uppn&#229;tts.</li>
+<li> Ber&#228;kna hur mycket v&#228;rme som fl&#246;dar ut genom markytan respektive genom bottenytan. Ett m&#246;jligt till&#228;mpningsomr&#229;de f&#246;r montering av s&#229;dana h&#228;r v&#228;rmer&#246;r skulle vara f&#246;r issm&#228;ltning, vilket f&#246;rst&#229;s inneb&#228;r att vi vill ha s&#229; mycket v&#228;rmefl&#246;de som m&#246;jligt genom markytan.</li>
+</ul>
+
+F&#246;r maximal po&#228;ngutdelning skall ni &#228;ven resonera kring f&#246;ljande:
+
+<ul>
+<li> En duktig fysiker som betraktar er f&#228;ltbild skulle kunna bli skeptisk till era resultat. Hur skulle ni f&#246;resl&#229; att modifiera er numeriska modell f&#246;r att g&#246;ra en mer realistisk simulering?</li>
+<li> I en verklig till&#228;mpning skulle det &#246;vre marklagret best&#229; av sand eller grus. Detta material har en h&#246;gre v&#228;rmeledningsf&#246;rm&#229;ga &#228;n den leraktiga jorden under v&#228;rmer&#246;ret (medan vi kan t&#228;nka oss att densiteten samt v&#228;rmekapacitiviteten &#228;r ungef&#228;r densamma). Vad skulle detta ha f&#246;r effekt p&#229; v&#228;rmefl&#246;det genom markytan?</li>
+</ul>
+
+F&#246;rs&#246;k att motivera era svar och eventuellt demonstrera med numeriska simuleringar.
+
+<p>
+</div>
+</div>
+
+
+<h3 id="___sec7" class="anchor">Goda r&#229;d: </h3>
+
+Beteckna temperaturf&#228;ltet \( T(x_i,y_j,t) \equiv T_{i,j}(t) \).
+Vi kan d&#229; generalisera den numeriska formuleringen av v&#228;rmeledningsekvationen till
+$$
+\begin{align*}
+  T_{i,j}\left(t + \delta t\right) &= T_{i,j}\left(t\right) 
+  + \frac{k \delta t}{\delta x^2}
+  \Big[
+T_{i+1,j}\left(t\right) - 2 T_{i,j}\left(t\right) \\
+&+
+T_{i-1,j}\left(t\right)
++T_{i,j+1}\left(t\right) - 2 T_{i,j}\left(t\right) +
+T_{i,j-1}\left(t\right) \Big] + \delta t u_{i,j},
+\label{eq:algo2d}
+\end{align*}
+$$
+
+d&#228;r v&#228;rmek&#228;llorna &#228;r tidsoberoende.
+
+<p>
+Man kan approximativt uppfylla randvillkoret att \( \partial_y T = 0 \) p&#229; sidor&#228;nderna genom att s&#228;tta <code>T(i,1) = T(i,2)</code> och <code>T(i,m) = T(i,m-1)</code>.  Str&#228;ngt taget s&#229; betyder det att derivatan blir 0 n&#229;gonstans mellan de b&#229;da f&#246;rsta respektive de b&#229;da sista punkterna i y-led, men detta r&#228;cker f&#246;r v&#229;ra syften. Som &#246;verkurs g&#229;r det att generalisera den h&#228;r metoden s&#229; att derivatan blir 0 precis p&#229; randen.
+
+<p>
+Notera ocks&#229; att den numeriska l&#246;sningen i tv&#229; dimensioner &#228;r &#228;nnu k&#228;nsligare f&#246;r valet av diskretisering. Man m&#228;rker givetvis n&#228;r l&#246;sningen inte konvergerar. Vad g&#228;ller tidssteget kan ni eventuellt beh&#246;va anv&#228;nda konstanten \( K \lesssim 0.25 \), se ekv \eqref{eq:tidssteg}.
+
+<h1 id="___sec8" class="anchor">Matlab och Python </h1>
+
+<p>
+Programmeringsspr&#229;ket <code>Matlab</code> har ni antagligen redan stiftat bekantskap med. Det finns dock vissa speciella funktioner som &#228;r s&#228;rskilt anv&#228;ndbara f&#246;r att visualisera och hantera vektorf&#228;lt. Se g&#228;rna appendix A i kurskompendiet (<em>En f&#246;rsta kurs i matematisk fysik</em>, 2017).
+
+<p>
+F&#246;r den intresserade rekommenderar vi &#228;ven det mycket kraftfulla programmeringsspr&#229;ket <code>Python</code> som ocks&#229; diskuteras i kurskompendiet, appendix A. Tillsammans med modulen <code>numpy</code>, f&#246;r matematiska funktioner, och <code>matplotlib</code>, f&#246;r visualisering med matlab-liknande syntax, erbjuder detta ett fullgott alternativ. Att f&#246;lja andras exempel &#228;r ofta en bra start. Se g&#228;rna <a href="http://wiki.scipy.org/Cookbook/Matplotlib" target="_self">Cookbook / Matplotlib</a>  om ni vill testa.
+
+<h1 id="___sec9" class="anchor">Om rapporten </h1>
+
+<p>
+Rapporten till denna uppgift skall vara mycket begr&#228;nsad i omfattning. Det &#228;r inte n&#246;dv&#228;ndigt att skriva en inledning eller ett metodavsnitt. Men beh&#246;ver inte heller reproducera sj&#228;lva uppgiftsformuleringen. Ist&#228;llet g&#228;ller f&#246;ljande riktlinjer tillsammans med de mer specifika instruktionerna till varje uppgift:
+
+<ul>
+<li> Uppgiften utf&#246;rs i par. Rapporten skall skrivas i TeX/LaTeX och varje par l&#228;mnar in en gemensam rapport. Detta g&#246;rs via projektgrupper som finns p&#229; PingPong.</li>
+<li> Rapporten skall inte omfatta mer &#228;n tre sidor inklusive era figurer (fem sidor om man &#228;ven redovisar en l&#246;sning av det tv&#229;dimensionella problemet). Bifoga er k&#228;llkod i ett appendix (r&#228;knas ej med i sidantalet).</li>
+<li> Numeriska v&#228;rden p&#229; erforderliga materialkonstanter (med enheter) m&#229;ste anges i rapporten.</li>
+<li> F&#246;r varje deluppgift skall ni:</li>
+
+<ul>
+  <li> Redovisa era resultat i grafisk form. Figurerna skall vara tydliga. Gl&#246;m inte enheter.</li> 
+  <li> Diskutera kortfattat era resultat. &#196;r den ber&#228;knade station&#228;ra temperaturf&#246;rdelningen rimlig givet de olika randvillkoren? Vad &#228;r v&#228;rmefl&#246;det genom r&#228;nderna?</li>
+  <li> Notera att en n&#229;got mer omfattande diskussion beh&#246;vs f&#246;r full po&#228;ngutdelning p&#229; den andra delen.</li>
+</ul>
+
+</ul>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+
