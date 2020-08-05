@@ -8,13 +8,13 @@ function inIframe () {
 }
 
 // course-specific URL
-var courseURL = "https://chalmers.instructure.com/courses/7435/";
+var courseURL = "https://chalmers.instructure.com/courses/10268/";
 
 // Course-specific url if the current page is within an iFrame.
 // Relative link to file if the current page is the top window
 var kursmaterial = "";
 if (inIframe()) {
-	kursmaterial = courseURL + "external_tools/214";
+	kursmaterial = courseURL + "external_tools/562";
 } else {
 	kursmaterial = 'material.html';
 }
@@ -28,12 +28,12 @@ if (inIframe()) {
 
 var veckoplanering = "";
 if (inIframe()) {
-	veckoplanering = courseURL + "external_tools/212";
+	veckoplanering = courseURL + "external_tools/566";
 } else {
 	veckoplanering = 'schedule.html';
 }
 
-var datorlab1 = "https://chalmers.instructure.com/courses/7435/assignments/4895";
+var datorlab1 = "https://chalmers.instructure.com/courses/10268/assignments/19703";
 
-var datorlab2 = "https://chalmers.instructure.com/courses/7435/assignments/5310";
+var datorlab2 = "https://chalmers.instructure.com/courses/10268/assignments/19704";
 
