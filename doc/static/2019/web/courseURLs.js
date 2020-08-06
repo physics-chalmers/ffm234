@@ -14,7 +14,7 @@ var courseURL = "https://chalmers.instructure.com/courses/7435/";
 // Relative link to file if the current page is the top window
 var kursmaterial = "";
 if (inIframe()) {
-	kursmaterial = courseURL + "external_tools/214";
+	kursmaterial = courseURL + "external_tools/567";
 } else {
 	kursmaterial = 'material.html';
 }
@@ -28,7 +28,7 @@ if (inIframe()) {
 
 var veckoplanering = "";
 if (inIframe()) {
-	veckoplanering = courseURL + "external_tools/212";
+	veckoplanering = courseURL + "external_tools/568";
 } else {
 	veckoplanering = 'schedule.html';
 }
