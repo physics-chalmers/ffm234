@@ -1,0 +1,417 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Datoruppgift 1: Visualisering av fält">
+
+<title>FFM234, Datoruppgift 1: Visualisering av fält</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('Introduktion', 1, None, '___sec0'),
+              ('Meteorologi', 1, None, '___sec1'),
+              ('Uppgift', 1, None, '___sec2'),
+              ('Inläsning av data', 2, None, '___sec3'),
+              ('Uppgift 1: Isobarer', 2, None, '___sec4'),
+              ('Uppgift 2: Vindfält', 2, None, '___sec5'),
+              ('Uppgift 3: Divergens och rotation', 2, None, '___sec6'),
+              ('Ledtråd', 3, None, '___sec7'),
+              ('Uppgift 4: Tolkning', 2, None, '___sec8'),
+              ('Tips', 3, None, '___sec9'),
+              ('Matlab och Python', 1, None, '___sec10'),
+              ('Inläsning av data', 3, None, '___sec11'),
+              ('Om rapporten', 1, None, '___sec12')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="meteorologi-bs.html">FFM234, Datoruppgift 1: Visualisering av fält</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>Introduktion</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;"><b>Meteorologi</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Uppgift</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Inläsning av data</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 1: Isobarer</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 2: Vindfält</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 3: Divergens och rotation</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ledtråd</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Uppgift 4: Tolkning</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tips</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec10" style="font-size: 80%;"><b>Matlab och Python</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec11" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inläsning av data</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec12" style="font-size: 80%;"><b>Om rapporten</b></a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Datoruppgift 1: Visualisering av f&#228;lt</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a> -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a></b> 
+</center>
+
+<p>
+<!-- institution -->
+
+<center><b>Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige, Email: <a href="mailto:christian.forssen@chalmers.se" target="_self"><tt>christian.forssen@chalmers.se</tt></a></b></center>
+<br>
+<p>
+<center><h4>Sep 3, 2018</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h1 id="___sec0" class="anchor">Introduktion </h1>
+Ett viktigt vetenskapligt anv&#228;ndningsomr&#229;de f&#246;r datorer &#228;r att visualisera
+olika fysikaliska f&#246;rlopp. Detta best&#229;r ofta i att skapa bilder av
+tv&#229;- eller tre-dimensionella f&#228;lt. Det finns m&#229;nga sofistikerade s&#228;tt
+att g&#246;ra detta p&#229; , s&#228;rskilt om man vill titta p&#229; tidsutvecklingen av
+tre-dimensionella f&#228;lt. Speciella programpaket och, i vissa fall,
+datorer har utvecklats f&#246;r detta &#228;ndam&#229;l. Vi skall dock begr&#228;nsa oss
+till enklare f&#228;lt i tv&#229; dimensioner f&#246;r vilka vi kan anv&#228;nda ett
+enkelt matematikprogram s&#229;som Matlab eller Python (s&#229; kallade
+interpreterande programspr&#229;k).
+
+<p>
+Vi kan s&#228;rskilja tv&#229; huvudtyper av f&#228;lt inom den h&#228;r kursen, skal&#228;ra
+f&#228;lt och vektorf&#228;lt. Ett enkelt exempel p&#229; ett skal&#228;rt f&#228;lt &#228;r trycket
+i en gas. Skal&#228;ra f&#228;lt illustrerar man ofta genom att rita niv&#229;kurvor,
+det vill s&#228;ga kurvor l&#228;ngs med vilka f&#228;ltet antar ett konstant
+v&#228;rde. P&#229; v&#228;derkartor ritar man till exempel ut isobarer f&#246;r att visa
+hur trycket varierar. En annan m&#246;jlighet &#228;r att ge varje punkt en
+f&#228;rg, som anger ungef&#228;r hur starkt f&#228;ltet &#228;r i just den
+punkten. Ibland kan man v&#228;lja att illustrera ett f&#228;lt med en f&#228;rgskala
+och ett annat f&#228;lt med niv&#229;kurvor.
+
+<p>
+Vektorf&#228;lt &#228;r n&#229;got kr&#229;ngligare att illustrera eftersom de skall ha
+b&#229;de en storlek och en riktning. Det enklaste s&#228;ttet att g&#246;ra detta p&#229;
+med en modern dator &#228;r att rita ut pilar. L&#229;nga pilar d&#228;r f&#228;ltet &#228;r
+starkt och korta pilar d&#228;r det &#228;r svagt. Ett annat s&#228;tt &#228;r att
+konstruera f&#228;ltlinjer. Tangenten till en f&#228;ltlinje ger d&#229; f&#228;ltets
+riktning i en punkt, och t&#228;theten av f&#228;ltlinjerna ger f&#228;ltets styrka.
+
+<p>
+En speciell typ av skal&#228;rt f&#228;lt &#228;r en potential. Potentialen kan
+visualiseras genom att plotta niv&#229;kurvor, vilka vi i detta fall kallar
+ekvipotentialkurvor (eller ekvipotentialytor om vi arbetar i tre
+dimensioner). Ur en potential \( \phi \) kan vi ber&#228;kna en f&#228;ltstyrka
+\( \vec{F} = - \vec{\vnabla}\phi \). Till \( \vec{F} \) kan vi sedan konstruera
+f&#228;ltlinjer. En figur d&#228;r vi plottar b&#229;de ekvipotentialytorna till
+\( \phi \) och f&#228;ltlinjerna till \( \vec{F} \) kallar vi en f&#228;ltbild.
+
+<h1 id="___sec1" class="anchor">Meteorologi </h1>
+
+<p>
+Meteorologi &#228;r ett vetenskapligt omr&#229;de d&#228;r f&#228;ltteori ofta till&#228;mpas. F&#246;r att g&#246;ra prognoser f&#246;ljer meteorologer utvecklingen av lufttryck, temperatur och vind med hj&#228;lp av v&#228;derkartor. Vi vill h&#228;r visa hur \( \vnabla \) operatorn, som t.ex. ger ett vektorf&#228;lts divergens och rotation, kan vara anv&#228;ndbar i analysen av v&#228;derdata. F&#246;rhoppningsvis kommer detta exempel ocks&#229; att bidra till att f&#246;rdjupa den fysikaliska f&#246;rst&#229;elsen av divergens och virvlar.
+
+<p>
+Den meteorologiska data vi kommer att analysera &#228;r fr&#229;n ett omr&#229;de i Nordatlanten, Norska havet och Nordsj&#246;n som omfattar Norges v&#228;stkust, norra England, Skottland, Nordirland och Island (se Figur <a href="#karta">1</a>). Ett stort antal manuella och automatiska v&#228;derstationer &#228;r verksamma i omr&#229;det och genomf&#246;r regelbundna observationer flera g&#229;nger om dagen.
+
+<p>
+<center> <!-- figure label: --> <div id="karta"></div> <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 1:  Den v&#228;derdata som vi kommer att analysera &#228;r fr&#229;n det markerade omr&#229;det i kartan.  <!-- caption label: karta --> </p></center>
+<p><img src="fig-meteorologi/karta-vaderdata.png" align="bottom" width=600></p>
+</center>
+
+<p>
+V&#228;derstationer &#228;r inte j&#228;mnt f&#246;rdelade och &#228;r, av naturliga orsaker, mer frekventa &#246;ver land &#228;n &#246;ver hav. M&#228;tningar fr&#229;n ett v&#228;rldsomsp&#228;nnande n&#228;tverk av m&#228;tstationer ger data som analyseras med prognosmodeller. Dessa modeller kan bed&#246;ma tillst&#229;ndet i atmosf&#228;ren ocks&#229; i omr&#229;den d&#228;r observationer saknas. Med s&#229;dana modeller kan man till exempel ber&#228;kna lufttryck, vindhastighet och vindriktning i en upps&#228;ttning punkter som bildar ett regelbundet gittersystem l&#228;ngs markytan (Figur <a href="#gridsystem">3</a>).
+
+<p>
+De uppgifter som vi kommer att anv&#228;nda kommer fr&#229;n Meteorologisk institutt, Blindern, Oslo. Det &#228;r lufttryck vid havsniv&#229;n och vindvektorer i isobarytan 850 hektopascal, som i sin tur ligger ca 1000- 1500 meter &#246;ver havsniv&#229;n. Dessa data ber&#228;knas i ett rutsystem med \( \Delta x = \Delta y = 55 \) km, tisdagen den 19:e februari, 2002 kl 18 UTC (standardtid) och representerar den b&#228;sta m&#246;jliga uppskattningen av tillst&#229;ndet i atmosf&#228;ren vid det h&#228;r tillf&#228;llet. Datan har gjorts tillg&#228;nglig av Oslo Universitet.
+
+<p>
+En satellitbild (Figur <a href="#satellit">2</a>) tas samma dag, men vid ett n&#229;got tidigare tillf&#228;lle (16:13 UTC). Bilden visar att ett stort sammanh&#228;ngande regnsystem t&#228;cker Irland, en del av England och Skottland och str&#228;cker sig som ett ljusgr&#229;tt band nordv&#228;st bort &#246;ver Island. Nordost om detta regnsystem, dvs &#246;ver Nordsj&#246;n och Norska havet, &#228;r det n&#228;stan klar himmel med l&#228;tta skurar i de norra delarna av Norska havet. P&#229; v&#228;stra sidan av regnsystemet, dvs s&#246;der om Island, &#228;r det n&#228;stan helt klar himmel. Ni kommer att kunna f&#229; ett m&#229;tt p&#229; hur bra er dataanalys &#228;r genom att j&#228;mf&#246;ra era resultat med denna satellitbild.
+
+<p>
+<center> <!-- figure label: --> <div id="satellit"></div> <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 2:  Satellitbild fr&#229;n den 19:e februari, 2002. Ljusgr&#229; f&#228;rgton motsvarar regnv&#228;der, medan m&#246;rka toner &#228;r hav eller land. Bilden kan laddas ner i <a href="http://fy.chalmers.se/subatom/cforssen/vektorfalt/meteorologi/html/fig-meteorologi/satellitbild-vaderdata.pdf" target="_self">pdf format</a>  <!-- caption label: satellit --> </p></center>
+<p><img src="fig-meteorologi/satellitbild-vaderdata.png" align="bottom" width=600></p>
+</center>
+
+<h1 id="___sec2" class="anchor">Uppgift </h1>
+
+<p>
+Uppgifterna nedan g&#229;r ut p&#229; att analysera och visualisera v&#228;derdata. Ni kan f&#246;rslagsvis anv&#228;nda ett interpreterande programmeringsspr&#229;k f&#246;r att utf&#246;ra detta. En m&#246;jlighet &#228;r att anv&#228;nda <code>Matlab</code>, men ett minst lika bra alternativ &#228;r <code>Python</code> &ndash; som dessutom &#228;r gratis och bygger p&#229; &#246;ppen k&#228;llkod. N&#229;gra nyttiga kommandon f&#246;r b&#228;gge dessa programmeringsspr&#229;k beskrivs i n&#228;sta kapitel. Mer finns att l&#228;sa i kurskompendiet (<em>En f&#246;rsta kurs i matematisk fysik</em>, 2018), appendix A.
+
+<h2 id="___sec3" class="anchor">Inl&#228;sning av data </h2>
+
+<p>
+Innanf&#246;r det utm&#228;rkta omr&#229;det i Figur <a href="#karta">1</a> definierar vi ett rutsystem med 30 x 31 punkter (se Figur <a href="#gridsystem">3</a>). Det &#228;r 30 punkter i syd-nordlig riktning och 31 punkter i v&#228;st-&#246;stlig riktning.
+
+<p>
+<center> <!-- figure label: --> <div id="gridsystem"></div> <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 3:  V&#228;derdata f&#246;r omr&#229;det i Figur <a href="#karta">1</a> &#228;r givet p&#229; ett rutsystem med 30 x 31 punkter. Avst&#229;nden mellan tv&#229; n&#228;rliggande gitterpunkter &#228;r \( \Delta x = \Delta y = 55 \mathrm{km} \).  <!-- caption label: gridsystem --> </p></center>
+<p><img src="fig-meteorologi/grid-vaderdata.png" align="bottom" width=600></p>
+</center>
+
+<p>
+V&#228;derdatan &#228;r allts&#229; sparad som matriser
+$$
+D(y_i,x_j) = D_{ij}, \quad i=1,2,\ldots,30, \quad j=1,2,\ldots,31
+$$
+
+<p>
+Det finns tre filer:
+
+<ul>
+<li> <a href="http://fy.chalmers.se/subatom/cforssen/vektorfalt/meteorologi/html/data-meteorologi/tryckfalt.dat" target="_self"><tt>tryckfalt.dat</tt></a> inneh&#229;ller lufttrycket (givet i hPa) vid havsniv&#229;n.</li>
+<li> <a href="http://fy.chalmers.se/subatom/cforssen/vektorfalt/meteorologi/html/data-meteorologi/vindfalt_u.dat" target="_self"><tt>vindfalt_u.dat</tt></a> inneh&#229;ller vindf&#228;ltets komponent i v&#228;st-&#246;stlig riktning (dvs \( x \)-riktningen) vid isobarytan 850 hPa given i m/s.</li>
+<li> <a href="http://fy.chalmers.se/subatom/cforssen/vektorfalt/meteorologi/html/data-meteorologi/vindfalt_v.dat" target="_self"><tt>vindfalt_v.dat</tt></a> inneh&#229;ller vindf&#228;ltets komponent i syd-nordlig riktning (dvs \( y \)-riktningen) vid isobarytan 850 hPa given i m/s.</li>
+</ul>
+
+En liten kommentar kring vindf&#228;ltet: Detta &#228;r allts&#229; givet som ett tv&#229;dimensionellt f&#228;lt vilket allts&#229; betyder att vi f&#246;rsummar komponenten i h&#246;jdled (\( z \)-riktningen). Detta kan vi enkelt motivera genom att konstatera att de relevanta l&#228;ngdskalorna skiljer v&#228;ldigt mycket. I horisontell riktning studerar vi ett v&#228;dersystem &#246;ver flera hundratals kilometer (v&#229;rt rutsystem karakteriseras av \( \Delta x = \Delta y = 55 \mathrm{km} \)). I h&#246;jdled d&#228;remot &#228;r den relevanta l&#228;ngdskalan av storleksordningen hundratals meter. Hastighetskomponenterna &#228;r allts&#229; betydligt mindre i vertikal riktning.
+
+<h2 id="___sec4" class="anchor">Uppgift 1: Isobarer </h2>
+
+<p>
+L&#228;s in lufttrycksdata och rita konturlinjer f&#246;r tryckf&#228;ltet (isobarer) eftersom detta &#228;r ett skal&#228;rf&#228;lt. Det kan kr&#228;vas lite experimenterande f&#246;r att finna ett bra antal konturlinjer s&#229; att figuren blir tydlig. Kom ih&#229;g att v&#228;derdata &#228;r sparad som en matris och att rutsystemet motsvarar en fix stegl&#228;ngd p&#229; 55 km.
+
+<p>
+F&#246;rs&#246;k att identifiera ett l&#229;gtrycksomr&#229;de och beskriv var det ligger.
+
+<h2 id="___sec5" class="anchor">Uppgift 2: Vindf&#228;lt </h2>
+
+<p>
+Vindhastigheten i (x,y)-planet &#228;r sparad i komponentform, med en matris f&#246;r varje hastighetskomponent. Visualisera vektorf&#228;ltet genom att rita ut vindvektorerna samt genom att rita upp f&#228;ltlinjer.
+
+<p>
+J&#228;mf&#246;r bilden av vindf&#228;ltet med lufttrycket i samma omr&#229;de. Vad &#228;r den st&#246;rsta vindstyrkan och vad motsvarar denna i en vindstyrketabell (Beaufortskalan)? Notera dock att v&#229;r vinddata &#228;r insamlad p&#229; cirka 1000-1500 m&#246;h.
+
+<h2 id="___sec6" class="anchor">Uppgift 3: Divergens och rotation </h2>
+
+<p>
+Divergensen av ett vektorf&#228;lt &#228;r en skal&#228;r storhet. Med hastighetskomponenterna \( v_x = u \) och \( v_y = v \) samt \( v_z = 0 \) s&#229; f&#229;r vi
+
+$$
+\vec{\vnabla} \cdot \vec{v} = \frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}.
+$$
+
+<p>
+Men eftersom \( u \) och \( v \) bara &#228;r k&#228;nda p&#229; det diskreta rutsystemet med matriserna \( U_{ij} \) och \( v_{ij} \), m&#229;ste vi approximera derivatorna med finita differenser. Vi kan t.ex. anv&#228;nda trepunktsformeln
+$$
+\left( \frac{\partial u}{\partial x} \right)_{ij} \approx 
+\frac{1}{2} \left( \frac{u_{i,j+1}-u_{ij}}{\Delta x} + \frac{u_{ij}-u_{i,j-1}}{\Delta x} \right) = \frac{u_{i,j+1}-u_{i,j-1}}{2\Delta x}.
+$$
+
+Vi f&#229;r givetvis ett liknande uttryck f&#246;r \( (\partial v / \partial y)_{ij} \).
+
+<p>
+Rotationen till v&#229;rt tv&#229;dimensionella vektorf&#228;lt kommer ju att bli riktat i normalriktningen, dvs i \( z \)-led (\( \vec{\vnabla} \times \vec{v} \propto \hat{z} \)). Kontrollera g&#228;rna detta f&#246;r att vara helt s&#228;ker. Denna storhet blir d&#228;rf&#246;r i detta fall en skal&#228;r
+$$
+(\vec{\vnabla} \times \vec{v})_z = 
+\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y},
+$$
+
+och vi f&#229;r &#229;terigen utnyttja finita differenser f&#246;r att r&#228;kna ut de relevanta derivatorna.
+
+<p>
+R&#228;kna ut och rita upp divergens och rotation f&#246;r v&#229;rt vindf&#228;lt. J&#228;mf&#246;r speciellt divergensen med v&#228;dersystemet i Figur <a href="#satellit">2</a> och rotationen med l&#229;gtrycksomr&#229;det fr&#229;n Uppgift 1.
+
+<h3 id="___sec7" class="anchor">Ledtr&#229;d </h3>
+
+<p>
+P&#229; randpunkterna, d&#228;r man ju saknar datav&#228;rden utanf&#246;r omr&#229;det, kan man anv&#228;nda en enkel tv&#229;punktsapproximation till derivatan ist&#228;llet f&#246;r trepunktsformeln ovanf&#246;r.
+
+<p>
+Det finns ocks&#229; f&#228;rdiga funktioner i b&#229;de <code>Matlab</code> och <code>Python</code> som utf&#246;r dessa derivator p&#229; en diskret datam&#228;ngd. Notera dock att dessa funktioner vanligtvis antar att \( \Delta x = \Delta y = 1 \) och att man d&#228;rf&#246;r m&#229;ste applicera en skalfaktor f&#246;r att f&#229; r&#228;tt enhet.
+
+<h2 id="___sec8" class="anchor">Uppgift 4: Tolkning </h2>
+
+<p>
+F&#246;rs&#246;k att ge en kortfattad tolkning av dataanalysen ovan och j&#228;mf&#246;relsen med det faktiskt observerade v&#228;dersystemet.
+
+<h3 id="___sec9" class="anchor">Tips </h3>
+
+<p>
+Luften kan betraktas som inkompressibel. Det betyder att luften m&#229;ste stiga upp&#229;t i omr&#229;den d&#228;r vindf&#228;ltet uppvisar en konvergens (dvs d&#228;r konvergerande vindstr&#246;mmar ansamlar luftmassa). Som ett resultat stiger fuktig luft upp&#229;t, kyls ned och ger moln och nederb&#246;rd.
+
+<p>
+Situationen blir tv&#228;rtom i omr&#229;den d&#228;r vindf&#228;ltet expanderar. Luft fr&#229;n de &#246;vre skikten tvingas d&#229; att r&#246;ra sig ned&#229;t med resultatet att den v&#228;rms upp och molnen l&#246;ses upp.
+
+<h1 id="___sec10" class="anchor">Matlab och Python </h1>
+
+<p>
+Programmeringsspr&#229;ket <code>Matlab</code> har ni antagligen redan stiftat bekantskap med. Det finns dock vissa speciella funktioner som &#228;r s&#228;rskilt anv&#228;ndbara f&#246;r att visualisera och hantera vektorf&#228;lt. Vi diskuterar n&#229;gra av dessa nedan. Mer finns att l&#228;sa i kurskompendiet (<em>En f&#246;rsta kurs i matematisk fysik</em>, 2017), appendix A.
+
+<p>
+F&#246;r den intresserade rekommenderar vi &#228;ven det mycket kraftfulla programmeringsspr&#229;ket <code>Python</code> som ocks&#229; diskuteras i kurskompendiet, appendix A. Tillsammans med modulen <code>numpy</code>, f&#246;r matematiska funktioner, och <code>matplotlib</code>, f&#246;r visualisering med matlab-liknande syntax, erbjuder detta ett fullgott alternativ. Att f&#246;lja andras exempel &#228;r ofta en bra start. Se g&#228;rna <a href="https://matplotlib.org/tutorials/index.html" target="_self">Matplotlib Tutorials</a>  om ni vill testa.
+
+<h3 id="___sec11" class="anchor">Inl&#228;sning av data </h3>
+
+<p>
+Datafilerna som listas ovan l&#228;ses enkelt in med <code>Matlab</code>-funktionen <a href="http://se.mathworks.com/help/matlab/ref/load.html" target="_self"><tt>load</tt></a>
+<p>
+
+<!-- code=matlab (!bc mcod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic">% Read data</span>
+p = load(<span style="color: #BA2121">&#39;tryckfalt.dat&#39;</span>);
+u = load(<span style="color: #BA2121">&#39;vindfalt_u.dat&#39;</span>);
+v = load(<span style="color: #BA2121">&#39;vindfalt_v.dat&#39;</span>);
+</pre></div>
+<p>
+eller med <code>Python/numpy</code>-funktionen <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html" target="_self"><tt>loadtxt</tt></a>
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #408080; font-style: italic"># Import modules.</span>
+<span style="color: #408080; font-style: italic"># pylab contains matplotlib</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">p</span>
+
+<span style="color: #408080; font-style: italic"># Read data</span>
+P <span style="color: #666666">=</span> np<span style="color: #666666">.</span>loadtxt(<span style="color: #BA2121">&#39;tryckfalt.dat&#39;</span>)
+u <span style="color: #666666">=</span> np<span style="color: #666666">.</span>loadtxt(<span style="color: #BA2121">&#39;vindfalt_u.dat&#39;</span>)
+v <span style="color: #666666">=</span> np<span style="color: #666666">.</span>loadtxt(<span style="color: #BA2121">&#39;vindfalt_v.dat&#39;</span>)
+</pre></div>
+<p>
+F&#246;r att &#229;terskapa rutsystemet i uppgiften anv&#228;nder vi t.ex. kolon-notationen i <code>Matlab</code>
+<p>
+
+<!-- code=matlab (!bc mcod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>x = <span style="color: #666666">0</span>:<span style="color: #666666">55</span>:<span style="color: #666666">55*30</span>;
+y = <span style="color: #666666">0</span>:<span style="color: #666666">55</span>:<span style="color: #666666">55*29</span>;
+</pre></div>
+<p>
+eller funktionen <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.linspace.html" target="_self"><tt>linspace</tt></a> i <code>Python/numpy</code> (som &#228;ven finns i <code>Matlab</code>)
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>x <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0</span>,<span style="color: #666666">55*30</span>,<span style="color: #666666">31</span>)
+y <span style="color: #666666">=</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0</span>,<span style="color: #666666">55*29</span>,<span style="color: #666666">30</span>)
+</pre></div>
+<p>
+Andra bra funktioner &#228;r
+
+<ul>
+<li> <a href="http://se.mathworks.com/help/matlab/ref/quiver.html" target="_self"><tt>quiver</tt></a> (<code>Matlab</code>) och <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.quiver" target="_self"><tt>quiver</tt></a> (<code>Python/matplotlib</code>) f&#246;r att rita vektorf&#228;lt.</li>
+<li> <a href="http://se.mathworks.com/help/matlab/ref/streamline.html" target="_self"><tt>streamline</tt></a> (<code>Matlab</code>) och <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.streamplot" target="_self"><tt>streamplot</tt></a> (<code>Python/matplotlib</code>) f&#246;r att rita f&#228;ltlinjer.</li>
+<li> <a href="http://se.mathworks.com/help/matlab/ref/contour.html" target="_self"><tt>contour</tt></a> (<code>Matlab</code>) och <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.contour" target="_self"><tt>contour</tt></a> (<code>Python/matplotlib</code>) f&#246;r att rita niv&#229;kurvor.</li>
+<li> Funktionerna <a href="http://se.mathworks.com/help/matlab/ref/divergence.html" target="_self"><tt>divergence</tt></a> och <a href="http://se.mathworks.com/help/matlab/ref/curl.html" target="_self"><tt>curl</tt></a> i <code>Matlab</code> medan <code>Python</code>-programmerare f&#229;r n&#246;ja sig med <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.gradient.html" target="_self"><tt>gradient</tt></a> och r&#228;kna ut &#246;vriga storheter d&#228;rifr&#229;n.</li>
+</ul>
+
+<h1 id="___sec12" class="anchor">Om rapporten </h1>
+
+<ul>
+<li> Uppgiften utf&#246;rs i par. Rapporten skall produceras i pdf-format (anv&#228;nd helst TeX/LaTeX) och varje par l&#228;mnar in en gemensam rapport.</li>  
+<li> Rapporten skall inte omfatta mer &#228;n fyra sidor inklusive era figurer. Detta inneb&#228;r att inledningen kan g&#246;ras v&#228;ldigt kortfattad.</li> 
+<li> T&#228;nk p&#229; att h&#229;lla en god rapportstruktur och att ge s&#229; mycket detaljer att n&#229;gon annan kan f&#246;lja er l&#246;sning och era resonemang. Bifoga er k&#228;llkod i ett appendix (r&#228;knas ej med i sidantalet).</li>
+<li> Beskriv i rapporten hur ni g&#229;r tillv&#228;ga och vilka ekvationer ni anv&#228;nder. Det skall g&#229; att l&#228;sa er rapport utan att ha tillg&#229;ng till den bakomvarande uppgiftsformuleringen.</li> 
+<li> Redovisa era resultat i grafisk form n&#228;r det &#228;r l&#228;mpligt. Gl&#246;m inte enheter.</li> 
+<li> Diskutera och tolka era resultat.</li>
+</ul>
+
+Lycka till!
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._meteorologi-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

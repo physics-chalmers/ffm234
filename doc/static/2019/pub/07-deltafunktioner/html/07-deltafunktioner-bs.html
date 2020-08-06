@@ -1,0 +1,770 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 2,
+ 'sections': [('Punktkälla i origo', 3, None, '___sec0'),
+              ('7. Deltafunktioner', 2, None, '___sec1'),
+              ('Deltafunktioner i en dimension', 2, None, '___sec2'),
+              ('Punktkälla i $D=1$', 3, None, '___sec3'),
+              ('Distributioner', 3, None, '___sec4'),
+              ('Kontrollera', 3, None, '___sec5'),
+              ('Egenskaper hos Diracs deltafunktion', 2, None, '___sec6'),
+              ('Deltafunktioner i högre dimensioner', 2, None, '___sec7'),
+              ('Linjekälla', 3, None, '___sec8'),
+              ('Virveltråd', 3, None, '___sec9')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="07-deltafunktioner-bs.html">FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Punktkälla i origo</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;"><b>7. Deltafunktioner</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;"><b>Deltafunktioner i en dimension</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Punktkälla i \( D=1 \)</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Distributioner</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Kontrollera</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;"><b>Egenskaper hos Diracs deltafunktion</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;"><b>Deltafunktioner i högre dimensioner</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Linjekälla</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Virveltråd</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 4, 2019</h4></center> <!-- date -->
+<br>
+<p>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+  <h3 class="panel-title">Repetition: Singul&#228;ra f&#228;lt</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+</div> <!-- end jumbotron -->
+
+<h3 id="___sec0" class="anchor">Punktk&#228;lla i origo </h3>
+
+<ul>
+<li> F&#228;ltet i punkten \( \vec{r} \)</li>
+</ul>
+
+$$
+\begin{equation}
+  \vec{F}(\vec{r}) = \frac{q}{4 \pi r^2} \hat{e}_r,
+\label{_auto1}
+\end{equation}
+$$
+
+f&#229;s av potentialen
+$$
+\begin{equation}
+  \phi(\vec{r}) = \frac{q}{4 \pi r},
+\label{_auto2}
+\end{equation}
+$$
+
+eftersom \( \vec{F} = - \vnabla \phi \).
+
+<ul>
+<li> Superposition ger potentialen i punkten \( \vec{r} \) fr&#229;n en laddningsf&#246;rdelning \( \phi(\vec{r}) = \int \rho(\vec{r}\,') \frac{1}{4\pi|\vec{r} - \vec{r}\,'|} dV' \), d&#228;r \( G(\vec{r}, \vec{r}\,') \equiv \frac{1}{4\pi|\vec{r} - \vec{r}\,'|} \) kallas f&#246;r Greensfunktionen i \( \Bbb{R}^3 \).</li>
+<li> Hur skall vi skriva k&#228;llt&#228;theten, \( \rho (\vec{r}) = \vnabla \cdot \vec{F} \), f&#246;r en punktk&#228;lla? Och hur skall vi hantera Gauss sats?</li>
+</ul>
+
+$$
+\begin{equation}
+  \int_V \vnabla \cdot \vec{F} \mbox{d}V = \oint_{\partial V} \vec{F} \cdot \mbox{d} \vec{S},
+\label{_auto3}
+\end{equation}
+$$
+
+Vi har att \( \vnabla \cdot \vec{F} = 0 \) f&#246;r $ r \neq 0 $,
+men explicit utr&#228;kning ger \( \mathrm{HL} = q \) om den inneslutna volymen \( V \) inneh&#229;ller origo.
+</div>
+</div>
+
+
+<h2 id="___sec1" class="anchor">7. Deltafunktioner </h2>
+
+<p>
+Kan vi approximera \( \vnabla \cdot \vec{F} = \rho (\vec{r}) \), d&#228;r laddningsf&#246;rdelningen motsvarar en punktk&#228;lla, p&#229; n&#229;got s&#228;tt? T.ex.
+$$
+\begin{equation}
+\rho_\varepsilon (\vec{r}) = \left\{
+\begin{array}{ll}
+c & r < \varepsilon \\ 
+0 & r > \varepsilon
+\end{array}
+\right.
+\label{_auto4}
+\end{equation}
+$$
+
+Dvs, en &quot;utsmetad&quot; punktladdning d&#228;r vi v&#228;ljer \( c \) s&#229; att den totala laddningen &#228;r \( q \), dvs
+$$
+\begin{equation}
+\rho_\varepsilon (\vec{r}) = \left\{
+\begin{array}{ll}
+\frac{q}{4\pi\varepsilon^3/3} & r \le \varepsilon \\ 
+0 & r > \varepsilon
+\end{array}
+\right.
+\label{_auto5}
+\end{equation}
+$$
+
+
+<ul>
+<li> Vad blir funktionen d&#229; \( \varepsilon \to 0^+ \)?</li> 
+<li> Det kan vi tyv&#228;rr inte definiera.</li>
+<li> \( \rho(\vec{r}) = \lim_{\varepsilon \to 0^+} \rho_\varepsilon(\vec{r}) \) &#228;r inte en funktion; sekvensen av funktioner som erh&#229;lls genom att variera \( \varepsilon \) kallas f&#246;r en distribution.</li>
+</ul>
+
+<h2 id="___sec2" class="anchor">Deltafunktioner i en dimension </h2>
+
+<h3 id="___sec3" class="anchor">Punktk&#228;lla i \( D=1 \) </h3>
+
+I en dimension kan vi definiera en punktk&#228;lla fr&#229;n potentialen
+$$
+\begin{equation}
+\phi(x) = -\frac{q}{2} \left| x \right|
+\label{_auto6}
+\end{equation}
+$$
+
+<p>
+<br /><br /><center><p><img src="fig/pointcharge_pot_1dim.png" align="bottom" width=500></p></center><br /><br />
+
+<p>
+vilket ger f&#228;ltet
+$$
+\begin{equation}
+\vec{F}(x) = -\hat{x} \frac{\mbox{d}\phi}{\mbox{d}x} = 
+\left\{
+\begin{array}{ll}
+\frac{q}{2} \hat{x} & x > 0 \\ 
+-\frac{q}{2} \hat{x} & x < 0 \\ 
+\end{array}
+\right.
+\label{_auto7}
+\end{equation}
+$$
+
+<p>
+<br /><br /><center><p><img src="fig/pointcharge_field_1dim.png" align="bottom" width=500></p></center><br /><br />
+
+<p>
+Vi kallar den enda komponenten av detta vektorf&#228;lt f&#246;r \( F(x) \), dvs \( F(x) = \frac{q}{2}\sign(x) \). Motsvarigheten till Gauss sats f&#246;r detta endimensionella f&#228;lt &#228;r 
+$$
+\begin{equation}
+\int_a^b \frac{dF}{dx} dx  = F(b) - F(a) = 
+\left\{
+\begin{array}{ll}
+q, & \mathrm{om~} a < 0 < b \\ 
+0, & \mathrm{annars} \\ 
+\end{array}
+\right.
+\label{_auto8}
+\end{equation}
+$$
+
+medan en naiv ins&#228;ttning av \( \mbox{d}F / \mbox{d}x = 0 \) i VL hade gett noll.
+
+<p>
+Problemet &#228;r ju att \( \frac{dF}{dx} = 0 \) f&#246;r \( x \neq 0 \), men &quot;$\frac{dF}{dx} =  \infty$&quot; f&#246;r \( x = 0 \). Vi kan uttrycka detta som en &quot;funktion&quot;, \( \frac{dF}{dx} = q \delta(x) \), d&#228;r
+
+<ul>
+<li> \( \delta(x) \) &#228;r noll d&#229; \( x \neq 0 \), och</li>
+<li> integralen \( \int_{a < 0}^{b>0} \delta(x) \mbox{d}x = 1 \).</li>
+</ul>
+
+<h3 id="___sec4" class="anchor">Distributioner </h3>
+
+Vi konstruerar denna &quot;funktion&quot; som en gr&#228;ns \( \varepsilon \to 0^+ \) f&#246;r distributionen
+$$
+\begin{equation}
+h_\varepsilon(x)
+= \left\{
+\begin{array}{ll}
+0 & |x| > \frac{\varepsilon}{2} \\ 
+\frac{1}{\varepsilon} & |x| < \frac{\varepsilon}{2} \\ 
+\end{array}
+\right.
+\label{_auto9}
+\end{equation}
+$$
+
+<p>
+<br /><br /><center><p><img src="fig/delta_step.png" align="bottom" width=500></p></center><br /><br />
+
+<h3 id="___sec5" class="anchor">Kontrollera </h3>
+
+$$
+\lim_{\varepsilon \to 0} h_\varepsilon(x) = 0,
+$$
+f&#246;r \( x \neq 0 \). Dessutom har vi
+$$
+\lim_{\varepsilon \to 0} \int_{a<0}^{b>0} h_\varepsilon(x) \mbox{d}x 
+= \lim_{\varepsilon \to 0} \int_{-\varepsilon/2}^{\varepsilon/2} \frac{1}{\varepsilon} \mbox{d}x = \lim_{\varepsilon \to 0} \frac{1}{\varepsilon} \left[ x \right]_{-\varepsilon/2}^{\varepsilon/2}
+= \lim_{\varepsilon \to 0} 1 = 1.
+$$
+<hr>
+
+<p>
+Men det finns ocks&#229; andra m&#246;jligheter:
+$$
+\begin{align}
+h_\varepsilon(x) &= \frac{\exp(-x^2 / \varepsilon^2)}{\sqrt{\pi} \varepsilon}, 
+\label{_auto10}\\ 
+h_\varepsilon(x) &= \frac{\varepsilon}{\pi (x^2 + \varepsilon^2)}, 
+\label{_auto11}\\ 
+h_\varepsilon(x) &= \frac{\sin(x/\varepsilon)}{\pi x} \label{eq:sinxdelta}.
+\end{align}
+$$
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">p</span>
+
+<span style="color: #408080; font-style: italic"># Delta function approximation 1 - 4</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">h</span>(eps,x,case):
+    <span style="color: #008000; font-weight: bold">if</span> case<span style="color: #666666">==0</span>:
+        h <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(<span style="color: #008000">len</span>(x))
+        h [<span style="color: #008000">abs</span>(x) <span style="color: #666666">&lt;</span> eps] <span style="color: #666666">=</span> <span style="color: #666666">1/</span>eps
+        <span style="color: #008000; font-weight: bold">return</span> h
+    <span style="color: #008000; font-weight: bold">elif</span> case<span style="color: #666666">==1</span>:
+        <span style="color: #008000; font-weight: bold">return</span> np<span style="color: #666666">.</span>exp(<span style="color: #666666">-</span>x<span style="color: #666666">**2/</span>eps<span style="color: #666666">**2</span>) <span style="color: #666666">/</span> (np<span style="color: #666666">.</span>sqrt(np<span style="color: #666666">.</span>pi)<span style="color: #666666">*</span>eps)
+    <span style="color: #008000; font-weight: bold">elif</span> case<span style="color: #666666">==2</span>:
+        <span style="color: #008000; font-weight: bold">return</span> eps <span style="color: #666666">/</span> (np<span style="color: #666666">.</span>pi <span style="color: #666666">*</span> (x<span style="color: #666666">**2</span> <span style="color: #666666">+</span> eps<span style="color: #666666">**2</span>))
+    <span style="color: #008000; font-weight: bold">elif</span> case<span style="color: #666666">==3</span>:
+        <span style="color: #008000; font-weight: bold">return</span> np<span style="color: #666666">.</span>sin(x<span style="color: #666666">/</span>eps) <span style="color: #666666">/</span> (np<span style="color: #666666">.</span>sqrt(np<span style="color: #666666">.</span>pi)<span style="color: #666666">*</span>x)
+    
+<span style="color: #408080; font-style: italic"># End initialization</span>
+
+<span style="color: #408080; font-style: italic"># Start plot</span>
+x<span style="color: #666666">=</span>np<span style="color: #666666">.</span>linspace(<span style="color: #666666">-1</span>,<span style="color: #666666">1</span>,<span style="color: #666666">200</span>)
+<span style="color: #008000; font-weight: bold">for</span> case <span style="color: #AA22FF; font-weight: bold">in</span> <span style="color: #008000">range</span>(<span style="color: #666666">4</span>):
+    p<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">6</span>,<span style="color: #666666">6</span>))
+    <span style="color: #008000; font-weight: bold">for</span> eps <span style="color: #AA22FF; font-weight: bold">in</span> np<span style="color: #666666">.</span>linspace(<span style="color: #666666">0.5</span>,<span style="color: #666666">0.1</span>,<span style="color: #666666">5</span>):
+        p<span style="color: #666666">.</span>plot(x,h(eps,x,case))
+    p<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">r&#39;$x$&#39;</span>)
+    p<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">r&#39;$h_{</span><span style="color: #BB6688; font-weight: bold">%i</span><span style="color: #BA2121">,\epsilon}(x)$&#39;</span> <span style="color: #666666">%</span>case)
+</pre></div>
+<p>
+<br /><br /><center><p><img src="fig/deltas.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+Samtliga dessa utg&#246;r en <em>sekvens av funktioner</em> (en <em>distribution</em>) fr&#229;n vilka vi kan definiera <em>Diracs deltafunktion</em>
+$$
+\begin{equation}
+\delta(x) = \lim_{\varepsilon \to 0^+} h_\varepsilon(x)
+\label{_auto12}
+\end{equation}
+$$
+
+med de definierande egenskaperna
+<div class="panel panel-default">
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+$$
+\begin{align}
+\delta(x) &= 0, \quad x \neq 0 
+\label{_auto13}\\ 
+f(0) &= \int_a^b f(x) \delta(x) \mbox{d}x,
+\label{_auto14}
+\end{align}
+$$
+
+d&#228;r \( f(x) \) &#228;r en v&#228;lbeteende funktion och \( \left[ a,b \right] \) inkluderar 0.
+</div>
+</div>
+
+
+<p>
+Ett specialfall (\( f(x)=1 \)) av ovanst&#229;ende &#228;r
+$$
+\begin{equation}
+\int_{-\infty}^{+\infty} \delta(x) \mbox{d}x = 1
+\label{_auto15}
+\end{equation}
+$$
+
+<p>
+<hr>
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: endimensionella deltafunktioner</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+Kontrollera att vi erh&#229;ller Diracs deltafunktion fr&#229;n sekvensen \( h_\varepsilon(x) = \frac{\exp(-x^2 / \varepsilon^2)}{\sqrt{\pi} \varepsilon} \).
+
+<p>
+<em>L&#246;sning</em>:
+F&#246;r \( x \neq 0 \) g&#228;ller
+$$
+\begin{align}
+h_\varepsilon(x) 
+&= \frac{1}{\sqrt{\pi} \varepsilon \exp(x^2 / \varepsilon^2)}
+= \frac{1}{\sqrt{\pi} \varepsilon \left[ 1 + \frac{x^2}{\varepsilon^2} + \frac{1}{2}\left(\frac{x^2}{\varepsilon^2}\right)^2 + \ldots \right] } \nonumber \\ 
+&= \frac{\varepsilon}{\sqrt{\pi}} \frac{1}{\left( x^2 + \varepsilon^2 + \frac{x^4}{2\varepsilon^2} + \ldots \right)} \to 0 \quad \mathrm{då~} \varepsilon \to 0^+
+\label{eq:heps0}
+\end{align}
+$$
+
+Vidare har vi integralen \( \int_{-\infty}^\infty e^{-x^2 / \varepsilon^2} \mbox{d}x = \sqrt{\pi \varepsilon^2} \) (se tabell &#246;ver definita integraler, eventuellt Beta 7.5-41). Detta ger
+$$
+\begin{equation}
+\lim_{\varepsilon \to 0^+}
+\int_{-\infty}^{+\infty} \frac{\exp(-x^2 / \varepsilon^2)}{\sqrt{\pi} \varepsilon} \mbox{d}x = \lim_{\varepsilon \to 0} \frac{\sqrt{\pi \varepsilon^2}}{\sqrt{\pi} \varepsilon} = 1, \quad \mathrm{för~} \varepsilon>0.
+\label{eq:heps1}
+\end{equation}
+$$
+
+F&#246;r att vara helt korrekta skall vi egentligen visa den mer allm&#228;nna egenskapen \( \int_a^b f(x) \delta(x) \mbox{d}x = f(0) \) f&#246;r en v&#228;l beteende funktion \( f(x) \). Eftersom ekv. \eqref{eq:heps0} g&#228;ller, och \( f(x) \) inte utg&#246;r n&#229;got problem, kan vi ut&#246;ka integrationsintervallet och ist&#228;llet studera
+$$
+\begin{equation}
+\int_{-\infty}^{+\infty} f(x) \delta(x) \mbox{d}x = f(0).
+\label{_auto16}
+\end{equation}
+$$
+
+Vi Taylorutvecklar, \( f(x) = f(0) + f'(0)x + f''(0)x^2/2+\ldots \), och konstaterar att 
+
+$$
+\begin{equation}
+\lim_{\varepsilon \to 0} \int_{-\infty}^{+\infty} f(0) h_\varepsilon(x) \mbox{d}x = f(0) \lim_{\varepsilon \to 0} \int_{-\infty}^{+\infty} h_\varepsilon(x) \mbox{d}x = f(0),
+\label{_auto17}
+\end{equation}
+$$
+
+enligt vad vi visat ovan \eqref{eq:heps1}. Det &#229;terst&#229;r att visa att 
+$$
+\begin{equation}
+\lim_{\varepsilon \to 0} \int_{-\infty}^{+\infty} x^n h_\varepsilon(x) \mbox{d}x = 0,
+\label{eq:xnheps0}
+\end{equation}
+$$
+
+f&#246;r alla heltal \( n>0 \). I v&#229;rt fall har vi en j&#228;mn funktion \( h_\varepsilon(x) \) vilket g&#246;r att ekv. \eqref{eq:xnheps0} &#228;r trivialt uppfyllt f&#246;r udda \( n \) d&#229; integranden blir udda. F&#246;r j&#228;mna \( n=2k \) finner vi (se t.ex. Beta 7.5-42) 
+$$
+\begin{equation}
+\lim_{\varepsilon \to 0^+}
+\int_{-\infty}^{+\infty} x^{2k} \frac{\exp(-x^2 / \varepsilon^2)}{\sqrt{\pi} \varepsilon} \mbox{d}x = \lim_{\varepsilon \to 0} \frac{2}{\sqrt{\pi} \varepsilon} \frac{(2k-1)!!}{2^{k+1}} \sqrt{\pi} \varepsilon \varepsilon^{2k} = 0.
+\label{_auto18}
+\end{equation}
+$$
+
+Allts&#229; har vi visat att
+$$
+\begin{equation}
+\lim_{\varepsilon \to 0^+}
+\int_{a < 0}^{b>0} f(x) \frac{\exp(-x^2 / \varepsilon^2)}{\sqrt{\pi} \varepsilon} \mbox{d}x = f(0), \quad \mathrm{för~} \varepsilon>0.
+\label{_auto19}
+\end{equation}
+$$
+</div>
+</div>
+
+
+<h2 id="___sec6" class="anchor">Egenskaper hos Diracs deltafunktion </h2>
+
+<ul>
+<li> J&#228;mn: $$\delta(-x) = \delta(x)$$</li>
+<li> Skalning:</li> 
+</ul>
+
+$$
+\delta(ax) = \frac{1}{|a|} \delta(x).
+$$
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Visas enklast genom att g&#246;ra substitutionen \( y=x a \) i uttrycket 
+$$
+\int_{-\infty}^{+\infty} f(x) \delta(ax) \mbox{d}x.
+$$ 
+Var noga med tecknet p&#229; integrationsgr&#228;nserna.
+</div>
+</div>
+
+
+<ul>
+<li> Translation:</li> 
+</ul>
+
+$$
+\int_{-\infty}^{+\infty} f(x) \delta(x-x_0) \mbox{d}x = f(x_0).
+$$
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+visas genom substitutionen \( y=x-x_0 \).
+</div>
+</div>
+
+
+<ul>
+<li> Derivata</li> 
+</ul>
+
+$$
+\int_{-\infty}^{+\infty} f(x) \delta'(x-x_0) \mbox{d}x = -\int_{-\infty}^{+\infty} f'(x) \delta(x-x_0) \mbox{d}x = -f'(x_0),
+$$
+vilket kan betraktas som definitionen av derivatan \( \delta'(x) \).
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Visas genom partiell integration med n&#229;gon av funktionssekvenserna som definierar deltafunktionen.
+</div>
+</div>
+
+
+<ul>
+<li> Kan generaliseras till fler dimensioner. Vi skriver generellt \( \delta^{(D)}(\vec{r}) \), d&#228;r vi skall tolka superskriptet som antalet dimensioner. T.ex. har vi f&#246;r \( D=3 \)</li> 
+</ul>
+
+$$
+\delta^{(3)}(\vec{r}) = \delta(x) \delta(y) \delta(z).
+$$
+I sf&#228;riska koordinater blir detta
+$$
+\iiint f(\vec{r}) \delta^{(3)}(\vec{r} - \vec{r}_0) r^2 \sin\theta \mbox{d}r \mbox{d}\theta \mbox{d}\phi = f(\vec{r}_0).
+$$
+Med vissa f&#246;rbeh&#229;ll (se t.ex. upp f&#246;r punkten \( \vec{r}_0=0 \) i sf&#228;riska koordinater) kan deltafunktionen i kroklinjiga koordinater skrivas
+$$
+\delta^{(3)}(\vec{r} - \vec{r}_0) = \frac{1}{h_1(\vec{r}_0) h_2(\vec{r}_0) h_3(\vec{r}_0)} \delta(u_1-u_{1,0}) \delta(u_2-u_{2,0}) \delta(u_3-u_{3,0}).
+$$
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Rita</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Skissa g&#228;rna den &quot;primitiva funktionen&quot; till en deltafunktion i en dimension.
+</div>
+</div>
+
+
+<h2 id="___sec7" class="anchor">Deltafunktioner i h&#246;gre dimensioner </h2>
+
+<p>
+Vi startar med punktk&#228;llan i origo: \( \vec{F} = \frac{q}{4 \pi r^2} \hat{e}_r \), och den problematiska volymsintegralen
+$$
+\int_V \vnabla \cdot \vec{F} \mbox{d}V,
+$$
+som borde bli lika med \( q \) om \( V \) omfattar origo. Detta kan vi &#229;stadkomma genom att inf&#246;ra \( \vnabla \cdot \vec{F} = q \delta^3(x) = q \delta(x)\delta(y)\delta(z) \) eftersom
+$$
+\int_V \delta(x)\delta(y)\delta(z) \mbox{d}x \mbox{d}y \mbox{d}z = 1.
+$$
+L&#229;t oss anv&#228;nda sf&#228;riska koordinater. Hur kan vi uttrycka \( \delta^{(3)}(\vec{r}) \) s&#229; att f&#246;ljande integralegenskap uppfylls?
+$$
+\int_V \delta^{(3)}(\vec{r}) r^2 \sin\theta dr d\theta d\varphi = 1,
+$$
+om volymen \( V \) innesluter origo. Vi vill finna \( \delta^{(3)}(\vec{r}) \) som ett gr&#228;nsv&#228;rde av en distribution \( h_\varepsilon(\vec{r}) \).
+
+<p>
+Starta fr&#229;n ett <em>regulariserat</em> f&#228;lt
+$$
+\begin{equation}
+\vec{F}_\varepsilon(\vec{r}) = \frac{q}{4 \pi (r^2 + \varepsilon^2)} \hat{e}_r
+\label{_auto20}
+\end{equation}
+$$
+
+som uppenbarligen g&#229;r mot \( \vec{F} \) d&#229; \( \varepsilon \to 0^+ \).
+
+<p>
+Divergensen f&#246;r \( r \neq 0 \) blir (\( \vnabla \cdot \vec{F} = \frac{1}{r^2} \frac{\partial}{\partial r} (r^2 F_r) + \ldots \))
+$$
+\begin{equation}
+\vnabla \cdot \vec{F}_\varepsilon(\vec{r}) = \frac{q}{4 \pi r^2} \underbrace{\frac{\partial}{\partial r} \left( \frac{r^2}{r^2 + \varepsilon^2} \right)}_{=\frac{2r}{r^2 + \varepsilon^2} - \frac{2 r r^2}{(r^2 + \varepsilon^2)^2} = \frac{2 r \varepsilon^2}{(r^2 + \varepsilon^2)^2}}
+= \frac{q \varepsilon^2}{2 \pi} \frac{1}{r(r^2 + \varepsilon^2)^2} \to 0 \quad \mathrm{då} \; \varepsilon \to 0.
+\label{_auto21}
+\end{equation}
+$$
+
+Utan styrkan \( q \) kallar vi denna sekvens av funktioner f&#246;r \( h_\varepsilon(\vec{r}) \) och p&#229;st&#229;r att \( \lim_{\varepsilon \to 0} h_\varepsilon(\vec{r}) = \delta^3(\vec{r}) \). Utf&#246;r integralen
+$$
+\begin{align}
+\int_V \vnabla \cdot \vec{F}_\varepsilon \mbox{d} V &= \int_V q h_\varepsilon(\vec{r}) \mbox{d} V = \frac{ q \varepsilon^2}{2 \pi} 4\pi \int_0^\infty r^2 \mbox{d} r \frac{1}{r(r^2 + \varepsilon^2)^2} 
+\label{_auto22}\\ 
+&= 2 q \varepsilon^2 \left[ -\frac{1}{2} \frac{1}{r^2 + \varepsilon^2} \right]_0^\infty = 2 q \varepsilon^2 \frac{1}{2 \varepsilon^2} = q
+\label{_auto23}
+\end{align}
+$$
+
+Allts&#229; har vi visat att
+
+<ul>
+<li> \( \lim_{\varepsilon \to 0} h_\varepsilon(\vec{r}) = 0 \) f&#246;r \( r \neq 0 \).</li>
+<li> \( \int_{\mathbf{R}^3} h_\varepsilon(\vec{r}) \mbox{d}V = 1 \)</li>
+</ul>
+
+Allts&#229; skriver vi k&#228;llt&#228;theten 
+$$
+\rho(\vec{r}) = \vnabla \cdot \vec{F} = -\Delta \phi = q \delta^3(\vec{r}).
+$$
+
+<p>
+Ett differentiellt uttryck f&#246;r deltafunktionen
+$$
+\delta^{(3)} \left( \vec{r} \right) 
+= \frac{1}{4\pi} \vec{\nabla} \cdot \frac{\hat{r}}{r^2},
+$$
+
+eller mer allm&#228;nt
+$$
+\delta^{(3)} \left( \vec{r} - \vec{r}\,' \right) 
+= \frac{1}{4\pi} \vec{\nabla} \cdot 
+\frac{ \left| \vec{r} - \vec{r}\,' \right|}{\left( \vec{r} - \vec{r}\,' \right)^3 },
+$$
+
+d&#228;r vi noterar att \( \vec{\nabla} \) opererar p&#229; koordinaten \( \vec{r} \).
+
+<h3 id="___sec8" class="anchor">Linjek&#228;lla </h3>
+
+Linjek&#228;llan \( \vec{F} = \frac{k}{2 \pi \rho} \hat{e}_\rho \) (motsvarar en punktk&#228;lla i \( D=2 \)).
+K&#228;llt&#228;theten kan skrivas
+$$
+\vnabla \cdot \vec{F} = k \delta^2(\vec{\rho}) \left( = k \delta(x) \delta(y) \right).
+$$
+Studera t.ex. normalytintegralen genom en cylinder med h&#246;jden \( L \) runt linjek&#228;llan
+$$
+\int_S \vec{F} \cdot \mbox{d}\vec{S} = \int_{S+S_0+S_L} \vec{F} \cdot \mbox{d}\vec{S} = \int_V \vnabla \cdot \vec{F} \mbox{d} V = \int_0^L \mbox{d} z \int \mbox{d}x \mbox{d}y k \delta(x)\delta(y) = \int_0^L \mbox{d} z k = k L.
+$$
+d&#228;r vi f&#246;rst har slutit ytan genom att inf&#246;ra ytorna \( S_0 \) och \( S_L \) som &#228;r cirkelskivor vid botten och toppen och som har normalytintegralen noll eftersom f&#228;ltet &#228;r vinkelr&#228;t mot normalen.
+
+<h3 id="___sec9" class="anchor">Virveltr&#229;d </h3>
+
+Vi kan resonera p&#229; liknande s&#228;tt f&#246;r en virveltr&#229;d \( \vec{F} = \frac{J}{2 \pi \rho} \hat{e}_\phi \). Stokes sats s&#228;ger att
+$$
+\int_{\partial S} \vec{F} \cdot \mbox{d} \vec{r} = \int_S (\vnabla \times \vec{F}) \cdot \mbox{d} \vec{S},
+$$
+d&#228;r vi kan r&#228;kna ut \( \mathrm{VL} = J \) (t.ex. f&#246;r en cirkel runt virveltr&#229;den). F&#246;r detta f&#228;lt &#228;r det rotationen som &#228;r problematisk. Notera att detta &#228;r en vektor.
+$$
+\vnabla \times \vec{F} = J \delta^2(\vec{\rho}) \hat{z} = \vec{J} \delta(x)\delta(y).
+$$
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Avancerat exempel: till&#228;mpning av deltafunktionen; Fouriertransform och ortogonalitet.</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+Givet en funktion \( f(x) \) definieras dess Fouriertransform som
+$$
+\tilde f(k)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty dx\,e^{-ikx}f(x)
+$$
+Den inversa transformen ger frekvenss&#246;nderl&#228;ggningen av \( f(x) \), i detta fall motsvaras &quot;frekvensen&quot; av v&#229;gtalet \( k \):
+$$
+f(x)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^\infty dk\,e^{ikx}\tilde f(k)
+$$
+(normeringen har valts f&#246;r att &#229;stadkomma symmetri mellan de tv&#229; uttrycken).
+
+<p>
+Genom att s&#228;tta in det f&#246;rsta uttrycket i det andra f&#229;r man, under f&#246;rut&#228;ttning att man kan byta integrationsordning,
+$$
+\begin{align*}
+f(x)&=\frac{1}{2\pi}\int_{-\infty}^\infty dk\,e^{ikx}
+\int_{-\infty}^\infty dx'\,e^{-ikx'}f(x') \\ 
+&=
+\frac{1}{2\pi}\int_{-\infty}^\infty dx'
+\left(\,\int_{-\infty}^\infty dk\,e^{ik(x-x')}\right)f(x')
+\end{align*}
+$$
+
+<p>
+Uttrycket inom parenteser i det sista ledet beror bara p&#229; \( x-x' \), och om resultatet skall bli \( f(x) \) m&#229;ste det vara en deltafunktion lika med \( 2\pi\delta(x-x') \). Dvs
+$$
+\begin{equation}
+\delta(x-x') = \frac{1}{2\pi} \int_{-\infty}^\infty dk\,e^{ik(x-x')}.
+\label{eq:expdelta}
+\end{equation}
+$$
+
+Genom att byta v&#229;gtalet \( k \) och koordinaten \( x \) f&#229;r man ocks&#229; \( 2\pi \delta(k-k') = \int_{-\infty}^\infty dx\,e^{i(k-k')x} \). Detta s&#228;tt att skriva deltafunktionen kunde vi ocks&#229; ha anat fr&#229;n ekv. \eqref{eq:sinxdelta} genom att byta 
+$$
+\lim_{\varepsilon \to 0} \frac{\sin(x/\varepsilon)}{\pi x} \Rightarrow \lim_{n \to \infty} \frac{\sin(n x)}{\pi x}.
+$$
+H&#228;r kan man n&#228;mligen g&#246;ra omskrivningen
+$$
+\begin{equation}
+\int_{-n}^n e^{i x k} dk = \left[ \frac{e^{ixk}}{ix} \right]_{-n}^n 
+= \left[ \frac{\cos(xk)+i\sin(xk)}{ix} \right]_{-n}^n 
+= 2 \frac{\sin(nx)}{x},
+\label{_auto24}
+\end{equation}
+$$
+
+s&#229; att vi f&#229;r
+$$
+\begin{equation}
+\delta(x) = \lim_{n \to \infty} \frac{1}{2\pi} \int_{-n}^n e^{i x k} dk,
+\label{_auto25}
+\end{equation}
+$$
+
+vilket &#228;r analogt med ekv. \eqref{eq:expdelta}
+
+<p>
+Funktionerna \( e_k(x)=\frac{1}{\sqrt{2\pi}}e^{ikx} \) kan allts&#229; ses som ortogonala och &quot;deltafunktionsnormerade&quot; med ortogonalitetsrelationen
+$$
+\int_{-\infty}^\infty dx\,e^{\mathstrut}_k(x)e^*_{k'}(x)=\delta(k-k')
+$$
+
+<p>
+Man kan bekr&#228;fta resultatet genom att g&#246;ra ber&#228;kningen explicit 
+f&#246;r de regulariserade funktionerna \( e_{k,\varepsilon}(x)={1\over\sqrt{2\pi}}e^{ikx-\varepsilon^2x^2} \) och l&#229;ta \( \varepsilon\rightarrow0 \) (se uppgift 7.15).
+</div>
+</div>
+
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

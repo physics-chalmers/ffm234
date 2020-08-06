@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="Datoruppgift: Visualisering av fält">
+
+<title>Datoruppgift: Visualisering av fält</title>
+
+
+
+
+
+
+
+<!-- reveal.js: http://lab.hakim.se/reveal-js/ -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<!--
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/beigesmall.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/solarized.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/serif.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/sky.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/darkgray.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/cbc.css" id="theme">
+<link rel="stylesheet" href="reveal.js/css/theme/simula.css" id="theme">
+-->
+
+<!-- For syntax highlighting -->
+<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+<script>
+document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+</script>
+
+<style type="text/css">
+    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    p.caption { width: 80%; font-size: 60%; font-style: italic; text-align: left; }
+    hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+    .reveal .alert-text-small   { font-size: 80%;  }
+    .reveal .alert-text-large   { font-size: 130%; }
+    .reveal .alert-text-normal  { font-size: 90%;  }
+    .reveal .alert {
+             padding:8px 35px 8px 14px; margin-bottom:18px;
+             text-shadow:0 1px 0 rgba(255,255,255,0.5);
+             border:5px solid #bababa;
+             -webkit-border-radius: 14px; -moz-border-radius: 14px;
+             border-radius:14px
+             background-position: 10px 10px;
+             background-repeat: no-repeat;
+             background-size: 38px;
+             padding-left: 30px; /* 55px; if icon */
+     }
+     .reveal .alert-block {padding-top:14px; padding-bottom:14px}
+     .reveal .alert-block > p, .alert-block > ul {margin-bottom:1em}
+     /*.reveal .alert li {margin-top: 1em}*/
+     .reveal .alert-block p+p {margin-top:5px}
+     /*.reveal .alert-notice { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_notice.png); }
+     .reveal .alert-summary  { background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_summary.png); }
+     .reveal .alert-warning { background-image: url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_warning.png); }
+     .reveal .alert-question {background-image:url(http://hplgit.github.io/doconce/bundled/html_images/small_gray_question.png); } */
+
+</style>
+
+
+
+<!-- Styles for table layout of slides -->
+<style type="text/css">
+td.padding {
+  padding-top:20px;
+  padding-bottom:20px;
+  padding-right:50px;
+  padding-left:50px;
+}
+</style>
+
+</head>
+
+<body>
+<div class="reveal">
+
+<!-- Any section element inside the <div class="slides"> container
+     is displayed as a slide -->
+
+<div class="slides">
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+
+
+
+<section>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1 style="text-align: center;">Datoruppgift: Visualisering av fält</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>, -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/nt/" target="_blank">Christian Forssén</a>,</b> 
+</center>
+
+<p>&nbsp;<br>
+<!-- institution(s) -->
+
+<br>
+Institutionen för fundamental fysik, Chalmers, Göteborg, Sverige 
+<p>&nbsp;<br>
+<center><h4>Aug 29, 2015</h4></center> <!-- date -->
+<br>
+
+<h1 id="___sec0">Introduktion </h1>
+Ett viktigt vetenskapligt användningsområde för datorer är att visualisera
+olika fysikaliska förlopp. Detta består ofta i att skapa bilder av
+två- eller tre-dimensionella fält. Det finns många sofistikerade sätt
+att göra detta på , särskilt om man vill titta på tidsutvecklingen av
+tre-dimensionella fält. Speciella programpaket och, i vissa fall,
+datorer har utvecklats för detta ändamål. Vi skall dock begränsa oss
+till enklare fält i två dimensioner för vilka vi kan använda ett
+enkelt matematikprogram såsom Matlab eller Python (så kallade
+interpreterande programspråk).
+
+<p>
+Vi kan särskilja två huvudtyper av fält inom den här kursen, skalära
+fält och vektorfält. Ett enkelt exempel på ett skalärt fält är trycket
+i en gas. Skalära fält illustrerar man ofta genom att rita nivåkurvor,
+det vill säga kurvor längs med vilka fältet antar ett konstant
+värde. På väderkartor ritar man till exempel ut isobarer för att visa
+hur trycket varierar. En annan möjlighet är att ge varje punkt en
+färg, som anger ungefär hur starkt fältet är i just den
+punkten. Ibland kan man välja att illustrera ett fält med en färgskala
+och ett annat fält med nivåkurvor.
+
+<p>
+Vektorfält är något krångligare att illustrera eftersom de skall ha
+både en storlek och en riktning. Det enklaste sättet att göra detta på
+med en modern dator är att rita ut pilar. Långa pilar där fältet är
+starkt och korta pilar där det är svagt. Ett annat sätt är att
+konstruera fältlinjer. Tangenten till en fältlinje ger då fältets
+riktning i en punkt, och tätheten av fältlinjerna ger fältets styrka.
+
+<p>
+En speciell typ av skalärt fält är en potential. Potentialen kan
+visualiseras genom att plotta nivåkurvor, vilka vi i detta fall kallar
+ekvipotentialkurvor (eller ekvipotentialytor om vi arbetar i tre
+dimensioner). Ur en potential \( \phi \) kan vi beräkna en fältstyrka
+\( \vec{F} = - \vec{\nabla}\phi \). Till \( \vec{F} \) kan vi sedan konstruera
+fältlinjer. En figur där vi plottar både ekvipotentialytorna till
+\( \phi \) och fältlinjerna till \( \vec{F} \) kallar vi en fältbild.
+
+<h1 id="___sec1">Meteorologi </h1>
+
+<p>
+Meteorologi är ett vetenskapligt område där fältteori ofta tillämpas. För att göra prognoser följer meteorologer utvecklingen av lufttryck, temperatur och vind med hjälp av väderkartor. Vi vill här visa hur \( \nabla \) operatörer som divergens och rotation kan vara användbara i analysen av väderdata. Förhoppningsvis kommer detta exempel också att bidra till att fördjupa den fysiska förståelsen av divergens och virvlar.
+
+<p>
+Den meteorologiska data vi kommer att analysera är från ett område i Nordatlanten, Norska havet och Nordsjön som omfattar Norges västkust, norra England, Skottland, Nordirland och Island (se Figur <a href="#karta">1</a>). Ett stort antal manuella och automatiska väderstationer är verksamma i området och genomför regelbundna observationer flera gånger om dagen.
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 1:  Den väderdata som vi kommer att analysera är från det markerade området i kartan. <div id="karta"></div> </p></center>
+<p><img src="fig-meteorologi/karta-vaderdata.png" align="bottom" width=600></p>
+</center>
+
+<p>
+Väderstationer är inte jämnt fördelade och är, av naturliga orsaker, mer frekventa över land än över hav. Mätningar från ett världsomspännande nätverk av mätstationer ger data som analyseras med prognosmodeller. Dessa modeller kan bedöma tillståndet i atmosfären också i områden där observationer saknas. Med sådana modeller kan man till exempel beräkna lufttryck, vindhastighet och vindriktning i en uppsättning punkter som bildar ett regelbundet gittersystem längs markytan (Figur XX).
+
+<p>
+De uppgifter som vi kommer att använda kommer från Meteorologisk institutt, Blindern, Oslo. Det är lufttryck vid havsnivån och vindvektorer i isobarytan 850 hektopascal, som i sin tur ligger ca 1000- 1500 meter över havsnivån. Dessa data beräknas i ett rutsystem med \( \Delta x = \Delta y = 55 \) km, tisdagen den 19:e februari, 2002 kl 18 UTC (standardtid) och representerar den bästa möjliga uppskattningen av tillståndet i atmosfären vid det här tillfället.
+
+<p>
+En satellitbild (Figur <a href="#satellit">2</a>) tas samma dag, men vid ett något tidigare tillfälle (16:13 UTC). Bilden visar att ett stort sammanhängande regnsystem täcker Irland, en del av England och Skottland och sträcker sig som ett ljusgrått band nordväst bort över Island. Nordost om detta regnsystem, dvs över Nordsjön och Norska havet, är det nästan klar himmel med lätta skurar i de norra delarna av Norska havet. På västra sidan av regnsystemet, dvs söder om Island, är det nästan helt klar himmel. Ni kommer att kunna få ett mått på hur bra er dataanalys är genom att jämföra era resultat med denna satellitbild.
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 2:  Satellitbild från den 19:e februari, 2002. Ljusgrå färgton motsvarar regnväder, medan mörka toner är hav eller land. <div id="satellit"></div> </p></center>
+<p><img src="fig-meteorologi/satellitbild-vaderdata.png" align="bottom" width=600></p>
+</center>
+
+<h1 id="___sec2">Uppgift </h1>
+
+<h2 id="___sec3">Inläsning av data </h2>
+
+<p>
+Innanför det utmärkta området i Figur <a href="#karta">1</a> definierar vi ett rutsystem med 30 x 31 punkter (se Figur <a href="#gridsystem">3</a>). Det är 30 punkter i syd-nordlig riktning och 31 punkter i öst-västlig riktning.
+
+<p>
+<center> <!-- figure -->
+<hr class="figure">
+<center><p class="caption">Figure 3:  Väderdata för området i Figur \<a href="#karta">1</a> är givet på ett rutsystem med 30 x 31 punkter. Avstånden mellan två närliggande gitterpunkter är \( \Delta x = \Delta y = 55 \mathrm{km} \). <div id="gridsystem"></div> </p></center>
+<p><img src="fig-meteorologi/grid-vaderdata.png" align="bottom" width=600></p>
+</center>
+
+<p>
+Väderdatan är alltså sparad som matriser
+<p>&nbsp;<br>
+$$
+D(x_i,y_j) = D_{ij}, \quad i=1,2,\ldots,30, \quad j=1,2,\ldots,31
+$$
+<p>&nbsp;<br>
+
+<p>
+Det finns tre filer:
+
+<ul>
+<p><li> <code>tryckfalt.dat</code> innehåller lufttrycket (givet i hPa) vid havsnivån.</li>
+<p><li> <code>vindfalt_u.dat</code> innehåller vindfältets komponent i öst-västlig riktning (dvs \( x \)-riktningen) vid isobarytan 850 hPa given i m/s.</li>
+<p><li> <code>vindfalt_v.dat</code> innehåller vindfältets komponent i syd-nordlig riktning (dvs \( y \)-riktningen) vid isobarytan 850 hPa given i m/s.</li>
+</ul>
+
+<h2 id="___sec4">Uppgift 1: isobarer </h2>
+
+<p>
+Läs in lufttrycksdata och rita konturlinjer för tryckfältet (isobarar) eftersom detta är ett skalärfält. Det kan krävas lite experimenterande för att finna ett bra antal konturlinjer så att figuren blir tydlig. Kom ihåg att väderdata är sparad som en matris och att rutsystemet motsvarar en fix steglängd på 55 km.
+
+<p>
+Försök att identifiera ett lågtrycksområde och beskriv var det ligger.
+
+<h1 id="___sec5">Om rapporten </h1>
+
+<ul>
+<p><li> Rapporten skall skrivas i TeX/LaTeX. Arbetar man i par lämnas en</li>
+</ul>
+<p>
+
+gemensam rapport in.  
+
+<ul>
+<p><li> Rapporten skall inte omfatta mer än fyra sidor inklusive era figurer.</li>
+<p><li> Beskriv i rapporten hur ni går tillväga och vilka ekvationer ni</li>
+</ul>
+<p>
+
+använder, men ni behöver inte redovisa era program. 
+
+<ul>
+<p><li> Tänk på att ge så mycket detaljer så att någon annan kan upprepa era</li>
+</ul>
+<p>
+
+beräkningar. Glöm inte enheter. 
+
+<ul>
+<p><li> Redovisa era resultat i grafisk form när det är lämpligt.</li> 
+<p><li> Diskutera och tolka era resultat.</li>
+</ul>
+</section>
+
+
+
+</div> <!-- class="slides" -->
+</div> <!-- class="reveal" -->
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.min.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+    // Display navigation controls in the bottom right corner
+    controls: true,
+
+    // Display progress bar (below the horiz. slider)
+    progress: true,
+
+    // Display the page number of the current slide
+    slideNumber: true,
+
+    // Push each slide change to the browser history
+    history: false,
+
+    // Enable keyboard shortcuts for navigation
+    keyboard: true,
+
+    // Enable the slide overview mode
+    overview: true,
+
+    // Vertical centering of slides
+    //center: true,
+    center: false,
+
+    // Enables touch navigation on devices with touch input
+    touch: true,
+
+    // Loop the presentation
+    loop: false,
+
+    // Change the presentation direction to be RTL
+    rtl: false,
+
+    // Turns fragments on and off globally
+    fragments: true,
+
+    // Flags if the presentation is running in an embedded mode,
+    // i.e. contained within a limited portion of the screen
+    embedded: false,
+
+    // Number of milliseconds between automatically proceeding to the
+    // next slide, disabled when set to 0, this value can be overwritten
+    // by using a data-autoslide attribute on your slides
+    autoSlide: 0,
+
+    // Stop auto-sliding after user input
+    autoSlideStoppable: true,
+
+    // Enable slide navigation via mouse wheel
+    mouseWheel: false,
+
+    // Hides the address bar on mobile devices
+    hideAddressBar: true,
+
+    // Opens links in an iframe preview overlay
+    previewLinks: false,
+
+    // Transition style
+    transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Transition speed
+    transitionSpeed: 'default', // default/fast/slow
+
+    // Transition style for full page slide backgrounds
+    backgroundTransition: 'default', // default/none/slide/concave/convex/zoom
+
+    // Number of slides away from the current that are visible
+    viewDistance: 3,
+
+    // Parallax background image
+    //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+    // Parallax background size
+    //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+    theme: Reveal.getQueryHash().theme, // available themes are in reveal.js/css/theme
+    transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+});
+
+Reveal.initialize({
+    dependencies: [
+        // Cross-browser shim that fully implements classList - https://github.com/eligrey/classList.js/
+        { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+        // Interpret Markdown in <section> elements
+        { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+
+        // Syntax highlight for <code> elements
+        { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+
+        // Zoom in and out with Alt+click
+        { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Speaker notes
+        { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // Remote control your reveal.js presentation using a touch device
+        //{ src: 'reveal.js/plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } },
+
+        // MathJax
+        //{ src: 'reveal.js/plugin/math/math.js', async: true }
+    ]
+});
+
+Reveal.initialize({
+
+    // The "normal" size of the presentation, aspect ratio will be preserved
+    // when the presentation is scaled to fit different resolutions. Can be
+    // specified using percentage units.
+    width: 1170,  // original: 960,
+    height: 700,
+
+    // Factor of the display size that should remain empty around the content
+    margin: 0.1,
+
+    // Bounds for smallest/largest possible scale to apply to content
+    minScale: 0.2,
+    maxScale: 1.0
+
+});
+</script>
+
+<!-- begin footer logo
+<div style="position: absolute; bottom: 0px; left: 0; margin-left: 0px">
+<img src="somelogo.png">
+</div>
+     end footer logo -->
+
+
+
+</body>
+</html>

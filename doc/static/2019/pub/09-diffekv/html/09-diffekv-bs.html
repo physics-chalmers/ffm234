@@ -1,0 +1,605 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('9. Lösningar av Poissons ekvation', 1, None, '___sec0'),
+              ('1. Greensfunktionsmetoden', 3, None, '___sec1'),
+              ('2. Spegling', 3, None, '___sec2'),
+              ('3. Variabelseparation', 3, None, '___sec3'),
+              ('4. Numeriska metoder', 3, None, '___sec4'),
+              ('3. Variabelseparation', 2, None, '___sec5'),
+              ('Exempel', 3, None, '___sec6'),
+              ('1. Greensfunktionsmetoden', 2, None, '___sec7'),
+              ('Greensfunktioner för en begränsad volym med randvillkor',
+               3,
+               None,
+               '___sec8'),
+              ('2. Spegling', 2, None, '___sec9')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "AMS"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="09-diffekv-bs.html">FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>9. Lösningar av Poissons ekvation</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Greensfunktionsmetoden</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Spegling</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Variabelseparation</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Numeriska metoder</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;3. Variabelseparation</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exempel</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;1. Greensfunktionsmetoden</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec8" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Greensfunktioner för en begränsad volym med randvillkor</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec9" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;2. Spegling</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 8, 2019</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h1 id="___sec0" class="anchor">9. L&#246;sningar av Poissons ekvation </h1>
+Vi vet att Poissons ekvation
+$$
+\Delta \phi(\vec{r}) = - \rho(\vec{r}),
+$$
+har entydiga l&#246;sningar om
+$$
+\begin{align}
+\phi|_{\partial V} &= f(\vec{r}) \quad & \mathrm{Dirichlets~randvillkor} \nonumber \\
+(\vnabla\phi)|_{\partial V} \cdot \vec{n} &= g(\vec{r}) \quad & \mathrm{Neumans~randvillkor} \nonumber 
+\end{align}
+$$
+
+d&#228;r \( f \) och \( g \) &#228;r funktioner p&#229; randen \( \partial V \).
+
+<p>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+  <h3 class="panel-title">L&#246;sning av Poissons ekvation</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Vi kommer att betrakta fyra olika l&#246;sningsmetoder:
+
+<h3 id="___sec1" class="anchor">1. Greensfunktionsmetoden </h3>
+
+Generell metod, men det &#228;r ofta sv&#229;rt att finna analytiska uttryck f&#246;r Greensfunktionen.
+
+<h3 id="___sec2" class="anchor">2. Spegling </h3>
+
+Ger uttryck f&#246;r Greensfunktionen i vissa speciella geometrier och homogena randvillkor.
+
+<h3 id="___sec3" class="anchor">3. Variabelseparation </h3>
+
+Kraftfull analytisk metod. Riktigt anv&#228;ndbar i kombination med Fourieranalys.
+
+<h3 id="___sec4" class="anchor">4. Numeriska metoder </h3>
+
+<ul>
+<li> De tre f&#246;rstn&#228;mnda &#228;r analytiska metoder som vi introducerar f&#246;r att ge en fysikalisk f&#246;rst&#229;else av l&#246;sningarna.</li>
+<li> De numeriska metoderna &#228;r f&#246;rst&#229;s viktigast f&#246;r praktiska till&#228;mpningar. Se datoruppgift.</li>
+</ul>
+</div>
+</div>
+
+
+<h2 id="___sec5" class="anchor">3. Variabelseparation </h2>
+
+<ul>
+<li> Bygger p&#229; att man l&#246;ser ekvationerna stegvis f&#246;r en variabel i taget.</li> 
+<li> Problemet skall <em>passa bra</em> ihop med ett visst koordinatsystem.</li>
+</ul>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: Laplaces ekvation p&#229; en cirkelskiva</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ul>
+<li> \( \Delta\phi=0 \), p&#229; \( \varrho=\sqrt{x^2+y^2} < a \).</li> 
+<li> Betrakta fallet d&#228;r randvillkoret enbart inneh&#229;ller ett vinkelberoende</li>
+</ul>
+
+$$
+\left. \phi(\vec{r}) \right|_{\partial V} = h(\varphi)
+$$
+
+<p>
+Laplaceoperatorn &#228;r
+$$
+\Delta = \frac{1}{\varrho} \frac{\partial}{\partial \varrho} \varrho \frac{\partial}{\partial \varrho} +
+ \frac{1}{\varrho^2} \frac{\partial^2}{\partial \varphi^2}.
+$$
+M&#229;let &#228;r att l&#246;sa ekvationen, samtidigt som vi uppfyller randvillkoret, genom att separera beroendet p&#229; variabeln \( \varphi \) och \( \varrho \) genom en ansats av formen
+$$
+\phi(\varrho,\varphi) = f(\varrho) g(\varphi)
+$$
+
+<h3 id="___sec6" class="anchor">Exempel </h3>
+
+Antag att randvillkoret &#228;r
+$$
+\phi(a,\varphi)=\phi_0\cos m\varphi,
+$$ 
+d&#228;r \( m \) &#228;r ett heltal.
+
+<p>
+Vi ans&#228;tter att hela l&#246;sningen har just detta beroende av \( \varphi \), s&#229; att 
+$$
+\phi(\varrho,\varphi)=f(\varrho)\cos m\varphi
+$$
+Funktionen \( \cos m\varphi \) uppfyller 
+$$
+\frac{\partial ^2}{\partial \varphi^2} \cos m\varphi = -m^2 \cos m\varphi,
+$$
+dvs, den &#228;r en egenfunktion till \( \frac{\partial^2}{\partial \varphi^2} \) med egenv&#228;rdet \( -m^2 \).
+
+<p>
+Ins&#228;ttning:
+$$
+\frac{1}{\varrho} \frac{\mbox{d}}{\mbox{d}\varrho} \left( \varrho \frac{\mbox{d}f(\varrho)}{\mbox{d}\varrho} \right) \cos m \varphi - \frac{m^2}{\varrho^2}f(\varrho)\cos m\varphi=0,
+$$
+och om detta skall g&#228;lla &#246;verallt p&#229; cirkelskivan m&#229;ste man ha
+$$
+\varrho \frac{\mbox{d}}{\mbox{d}\varrho} \left(\varrho \frac{\mbox{d}f(\varrho)}{\mbox{d}\varrho} \right)
+-m^2f(\varrho)=0.
+$$
+Den partiella differentialekvationen har nu reducerats till en ordin&#228;r differentialekvation f&#246;r funktionen \( f(\varrho) \)
+
+<ul>
+<li> Ansatz: \( f(\varrho)=A\varrho^p \)</li> 
+<li> L&#246;ser ekvationen med \( p^2-m^2=0 \), dvs. \( p=\pm m \), d&#228;r minustecknet v&#228;ljs bort p&#229; grund av singulariteten i origo.</li> 
+<li> Slutsats:</li>
+</ul>
+
+$$
+\phi(\varrho,\varphi)=\phi_0\left( \frac{\varrho}{a}\right)^m \cos m\varphi,
+$$
+&#228;r en l&#246;sning till Laplaces ekvation p&#229; cirkelskivan med randvillkoret \( \phi(a,\varphi)=\phi_0\cos m\varphi \).
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel 2: Laplaces ekvation p&#229; en cirkelskiva med allm&#228;nt Dirichlet randvillkor</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">OBS!</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Detta exempel inkluderar Fourieranalys som ej ing&#229;r i kursen. Anteckningarna &#228;r endast med f&#246;r b&#228;ttre koppling till motsvarande material i andra kurser och f&#246;r att antyda den mer generella anv&#228;ndningen av variabelseparationsmetoden.
+</div>
+</div>
+
+
+<p>
+Med randvillkoret
+$$
+\phi(a,\varphi)=h(\varphi),
+$$
+ans&#228;tter vi l&#246;sningen \( \phi(\varrho,\varphi) = f(\varrho) g(\varphi) \).
+
+<p>
+Laplacianen blir
+$$
+\Delta \phi = \Delta \left( f(\varrho) g(\varphi) \right) = g(\varphi) \frac{1}{\varrho} \frac{\partial}{\partial\varrho} \left( \varrho \frac{\partial f(\varrho)}{\partial\varrho} \right) + \frac{f(\varrho)}{\rho^2} \frac{\partial^2 g}{\partial\varphi^2} = 0.
+$$
+Detta ger den <em>separerade</em> ekvationen
+$$
+\frac{f(\varrho) g(\varphi)}{\varrho^2} \left[ \frac{\varrho^2}{f(\varrho)} \frac{1}{\varrho} \frac{\partial}{\partial\varrho} \left( \varrho \frac{\partial f(\varrho)}{\partial\varrho} \right) + \frac{1}{g(\varphi)} \frac{\partial^2 g}{\partial\varphi^2} \right] = 0,
+$$
+d&#228;r den f&#246;rsta termen i hakparantesen enbart beror p&#229; \( \varrho \) och den andra bara p&#229; \( \varphi \). D&#228;rmed m&#229;ste b&#228;gge vara konstanta (f&#246;r att g&#228;lla f&#246;r alla \( \varrho,\varphi \)). Vi s&#228;tter den f&#246;rsta till \( -\lambda \) och den andra till \( +\lambda \).
+
+<p>
+Studera vinkelekvationen f&#246;rst
+$$
+\frac{\partial^2 g}{\partial\varphi^2} = \lambda g(\varphi),
+$$
+dvs vi kan tolka \( g \) som en egenfunktion till \( \partial^2 / \partial\varphi^2 \). L&#246;sningen &#228;r
+$$
+g(\varphi) = A \cos (m \varphi) + B \sin (m \varphi),
+$$
+med <em>egenv&#228;rdet</em> \( \lambda = -m^2 \). Funktionen m&#229;ste uppfylla randvillkoret \( g(0) = g(2\pi) \) vilket ger att \( m = 0,1,2,\ldots \) (notera att \( m=0 \) &#228;r meningsl&#246;s f&#246;r sinus-termen).
+
+<p>
+Den kvarvarande, radiella ekvationen blir nu
+$$
+\frac{1}{\varrho} \frac{\partial}{\partial\varrho} \left( \varrho \frac{\partial f(\varrho)}{\partial\varrho} \right) - \frac{m^2}{\varrho^2} f(\varrho) = 0.
+$$
+
+<ul>
+<li> \( m=0 \), vilket inneb&#228;r att \( g(\varphi) = A \)</li>
+</ul>
+
+$$
+\frac{\partial}{\partial\varrho} \left( \varrho \frac{\partial f(\varrho)}{\partial\varrho} \right) = 0 \quad \Rightarrow \quad
+\varrho \frac{\partial f(\varrho)}{\partial\varrho} = B \quad \Rightarrow \quad
+\frac{\partial f(\varrho)}{\partial\varrho} = B \varrho.
+$$
+Med l&#246;sningen \( f(\varrho) = A + B \ln(\varrho) \), d&#228;r den andra termen motsvarar en punktk&#228;lla i tv&#229; dimensioner (vi skippar denna).
+
+<p>
+Allts&#229; &#228;r \( \phi(\vec{r}) = A \) (konstant) en l&#246;sning om randvillkoret &#228;r \( h(\varphi) = A \) (konstant).
+
+<ul>
+<li> \( m > 0 \), ans&#228;tt l&#246;sning \( f(\varrho) = C \varrho^p \)</li>
+</ul>
+
+$$
+\frac{1}{\varrho} \frac{\partial}{\partial\varrho} \left( \varrho \frac{\partial}{\partial\varrho} \varrho^p \right) - \frac{m^2}{\varrho^2} \varrho^p = 0 \quad \Rightarrow \quad p^2 \varrho^{p-2} - m^2 \varrho^{p-2} = 0 \quad \Rightarrow \quad 
+p = \pm m
+$$
+Med l&#246;sningen \( f(\varrho) = A \varrho^m + \frac{B}{\varrho^m} \), d&#228;r den andra termen &#228;r singul&#228;r i origo (vi skippar denna).
+
+<p>
+Med randvillkoret fr&#229;n ovan \( h(\varphi) = \cos m \varphi \), \( f(a) = \phi_0 \) f&#229;r vi l&#246;sningen
+$$
+\phi(\vec{r}) = \phi_0 \left( \frac{\varrho}{a} \right)^m \cos m\varphi,
+$$
+som ovan.
+
+<p>
+F&#246;r ett mer allm&#228;nt randvillkor kan man (Fourier)-utveckla
+$$
+h(\varphi) = \sum_{m=0}^\infty a_m \cos(m\varphi) + b_m \sin(m\varphi),
+$$
+vilket ger l&#246;sningen
+$$
+\phi(\vec{r}) = \sum_{m=0}^\infty a_m \left( \frac{\varrho}{a} \right)^m \cos(m\varphi) + b_m \left( \frac{\varrho}{a} \right)^m \sin(m\varphi).
+$$
+OBS: ing&#229;r ej i denna kurs att kunna g&#246;ra en s&#229;dan Fourierutveckling.
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Separationsmetoden kan f&#246;rst&#229;s anv&#228;ndas med fler &#228;n tv&#229; variabler. Vill man t.ex. anv&#228;nda den i sf&#228;riska koordinater, hittar man egenfunktioner i tur och ordning i \( \varphi \), \( \theta \) och \( r \). Se veckans tal. Eller s&#229; hittar man direkt egenfunktioner p&#229; \( S^2 \), s.k. klotytefunktioner (se kvantmekanik).
+</div>
+</div>
+
+
+<h2 id="___sec7" class="anchor">1. Greensfunktionsmetoden </h2>
+
+<p>
+Vi tecknar Poissons ekvation i hela \( \Bbb{R}^3 \),
+$$
+\Delta\phi(\vec{r})=-\rho(\vec{r}).
+$$ 
+En l&#246;sningsstrategi som vi har betraktat tidigare &#228;r att:
+
+<ul>
+<li> Ber&#228;kna bidraget till potentialen i punkten \( \vec{r} \) givet en punktladdningen med styrkan \( q=1 \) bel&#228;gen i punkten \( \vec{r}\,' \).</li>
+<li> Superpositionsprincipen ger potentialen som en summa/integral &#246;ver k&#228;llt&#228;theten g&#229;nger ovanst&#229;ende &quot;Greensfunktion&quot;.</li>
+</ul>
+
+Vi har redan visat att
+$$
+G_{\Bbb{R}^3}(\vec{r},\vec{r}{\;}') = \frac{1}{4\pi|\vec{r}-\vec{r}{\;}'|},
+$$
+d&#228;r vi f&#246;rtydligar att detta g&#228;ller p&#229; \( \Bbb{R}^3 \). Eftersom en punktk&#228;lla i punkten \( \vec{r} = \vec{r}{\;}' \) med styrkan \( q=1 \) beskrivs av k&#228;llt&#228;theten \( \rho(\vec{r}) = \delta^{(3)}(\vec{r} - \vec{r}{\;}') \), inser vi att Greensfunktionen l&#246;ser f&#246;ljande differentialekvation
+$$
+\begin{equation}
+\Delta G_{\Bbb{R}^3}(\vec{r},\vec{r}{\;}') = -\delta^{(3)}(\vec{r} - \vec{r}{\;}'),
+\label{eq:Greensdiffekv}
+\end{equation}
+$$
+
+p&#229; hela \( \Bbb{R}^3 \).
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 1</b>: Notera att Laplaceoperatorn verkar p&#229; variabeln \( \vec{r} \) (inte \( \vec{r}{\;}' \)). Dvs., \( \Delta = \Delta_{\vec{r}} = \partial_x^2 + \partial_y^2 + \partial_z^2 \).)</font>
+<!-- end inline comment -->
+
+<p>
+L&#246;sningen till Poissons ekvation i \( \Bbb{R}^3 \) med en allm&#228;n k&#228;lla \( \rho \) blir en superposition
+$$
+\phi(\vec{r})=\int_{\Bbb{R}^3}\mbox{d}V'\,\frac{\rho(\vec{r}{\;}')}{4\pi|\vec{r}-\vec{r}{\;}'|}.
+$$
+
+<p>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: linjek&#228;lla</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Betrakta en linjek&#228;lla, \( \rho(\vec{r})=k\delta^2(\vec{\rho}) \), i \( \Bbb{R}^3 \).
+
+<p>
+Vi skall integrera &#246;ver linjek&#228;llan och introducerar koordinaten
+$$
+\vec{r}{\;}' = \vec{\rho}{\;}' + z' \hat{z}' = \rho' \hat{\rho}' + z' \hat{z},
+$$
+d&#228;r vi noterar att det inte beh&#246;vs n&#229;got &quot;prim&quot; p&#229; \( z \)-riktningen.
+
+<p>
+Vi s&#228;tter in i 
+$$
+\phi(\vec{r}) = \int_{\Bbb{R}^3}\rho(\vec{r}{\;}')G_{\Bbb{R}^3}(\vec{r},\vec{r}{\;}')\mbox{d}V'
+=\int_{-\infty}^{\infty}dz'\int_{\Bbb{R}^2}dS'
+       \frac{k\delta^2(\vec{\rho}{\;}')}{4\pi|\vec{r}-(\rho'\hat\rho{}'+z'\hat z)|} .
+$$
+
+<p>
+Integralen \( \int dS' \) &#246;ver \( x' \) och \( y' \) kan enkelt utf&#246;ras tack vare deltafunktionen. Resultatet:
+$$
+\phi(\vec{r})=\int_{-\infty}^{\infty}dz' \frac{k}{4\pi|\vec{r}-z'\hat z|}
+$$  
+som &#228;r identiskt med den direkta konstruktionen fr&#229;n kap. 6.
+</div>
+</div>
+
+
+<h3 id="___sec8" class="anchor">Greensfunktioner f&#246;r en begr&#228;nsad volym med randvillkor </h3>
+
+L&#229;t oss g&#246;ra denna metod mer generell. Studera Poissons ekvation 
+$$
+\Delta\phi(\vec{r})=-\rho(\vec{r}).
+$$ 
+
+<ul>
+<li> ... inuti en (begr&#228;nsad) volym \( V \).</li>
+<li> ... med homogena randvillkor, dvs. \( f=0 \) eller \( g=0 \) p&#229; randen \( \partial V \).</li>
+<li> ... f&#246;r en allm&#228;n k&#228;llt&#228;thet \( \rho(\vec{r}) \).</li>
+</ul>
+
+L&#246;sningen kan skrivas
+$$
+\phi(\vec{r})=\int_{V'}\mbox{d}V'\,G(\vec{r},\vec{r}{\;}')\rho(\vec{r}{\;}'),
+$$
+d&#228;r Greensfunktionen l&#246;ser Ekv. \eqref{eq:Greensdiffekv} <em>inuti volymen</em> \( V \) och med det <em>givna randvillkoret</em>.
+
+<p>
+Att detta &#228;r en l&#246;sning visas genom ins&#228;ttning:
+$$
+\begin{align}
+\Delta\phi(\vec{r}) &= \Delta\int_{V'}\mbox{d}V'\,G(\vec{r},\vec{r}{\;}')\rho(\vec{r}{\;}')
+=\int_{V'}\mbox{d}V'\,\Delta G(\vec{r},\vec{r}{\;}')\rho(\vec{r}{\;}') \nonumber \\
+&=-\int_{V'}\mbox{d}V'\,\delta^3(\vec{r}-\vec{r}{\;}')\rho(\vec{r}{\;}')
+=-\rho(\vec{r}).
+\label{_auto1}
+\end{align}
+$$
+
+
+<ul>
+<li> Notera att \( \vec{r} \)-beroendet bara sitter i Greensfunktionen.</li>
+<li> Notera att Greensfunktionen \( G \) p&#229; ett omr&#229;de \( V \) best&#228;ms av formen p&#229; omr&#229;det och av randvillkoren p&#229; \( \partial V \).</li>
+<li> Genom att \( G(\vec{r},\vec{r}{\;}') \) uppfyller det homogena randvillkoret kommer ovanst&#229;ende superposition ocks&#229; att uppfylla det.</li>
+</ul>
+
+<h2 id="___sec9" class="anchor">2. Spegling </h2>
+
+<ul>
+<li> Vi s&#229;g att l&#246;sningen \( \phi(\vec{r}) \) erh&#229;lls enkelt om man har tillg&#229;ng till Greensfunktionen. Men denna &#228;r ofta sv&#229;r att finna.</li> 
+<li> F&#246;r vissa geometrier erbjuder <em>speglingsmetoden</em> ett v&#228;ldigt elegant s&#228;tt att konstruera Greensfunktionen.</li>
+</ul>
+
+<div class="panel panel-danger">
+  <div class="panel-heading">
+  <h3 class="panel-title">Rita: F&#228;ltbilder tre olika konfigurationer med punktladdningar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Skissa f&#228;ltbilder f&#246;r tre olika fall:
+
+<ul>
+<li> En punktladdning \( +q \) (bel&#228;gen i det &#246;vre halvplanet, \( z>0 \));</li>
+<li> Tv&#229; punktladdningar \( +q \) och \( -q \) (den f&#246;rsta i det &#246;vre halvplanet och den andra i det undre);</li>
+<li> Tv&#229; punktladdningar \( +q \) och \( +q \) (den f&#246;rsta i det &#246;vre halvplanet och den andra i det undre).</li>
+</ul>
+
+Betrakta speciellt potentialen vid speglingsytan \( z=0 \).
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+  <h3 class="panel-title">Fundera: Poissons ekvation</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Det f&#246;rsta fallet ger en potential \( \phi \) som l&#246;ser Poissons ekvation 
+$$
+\Delta \phi = -q \delta^{(3)}(\vec{r}_0),
+$$ 
+i hela \( \Bbb{R}^3 \).
+Vilken differentialekvation l&#246;ser det andra respektive det tredje fallet om vi begr&#228;nsar oss till &#246;vre halvplanet?
+</div>
+</div>
+
+
+<p>
+Betrakta halvrymden \( \{\vec{r}:\,z>0\} \) med ett homogent randvillkor p&#229; planet
+\( z=0 \): 
+
+<ul>
+<li> Dirichlets randvillkor: \( \phi=0 \), eller</li> 
+<li> Neumanns, \( \frac{\partial \phi}{\partial z} = 0 \).</li>
+</ul>
+
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 2</b>: Detta &#228;r ett bra tillf&#228;lle att repetera begreppen ekvipotentialytor och f&#228;ltlinjer (till vektorf&#228;ltet \( -\vnabla\phi \)). Se till att f&#246;rst&#229; att ett randvillkor \( \phi=0 \) (Dirichlet) betyder att randen &#228;r en ekvipotentialyta, och att \( \vec n \cdot \vnabla\phi=0 \) betyder att f&#228;ltlinjerna &#228;r parallella med randen.)</font>
+<!-- end inline comment -->
+
+<p>
+Betrakta nu en punktladdning bel&#228;gen i det &#246;vre halvplanet. Vi kan inf&#246;ra en spegelladdning i det omr&#229;de som vi inte &#228;r intresserade av (\( z < 0 \)). Den p&#229;verkar allts&#229; inte k&#228;llt&#228;theten i det fysikaliska omr&#229;det (\( z>0 \)), men hj&#228;lper till att uppfylla randvillkoren.
+
+<p>
+<br /><br /><center><p><img src="fig/spegling.png" align="bottom" width=300></p></center><br /><br />
+
+<p>
+Med \( \vec{r}_0 = (x_0,y_0,z_0) \) och \( \vec{r}_1 = (x_0,y_0,-z_0) \) och:
+
+<ul>
+<li> \( q_1 = q \) uppfylls Neumanns randvillor</li>
+<li> \( q_1 = -q \) uppfylls Dirichlets randvillor</li>
+</ul>
+
+dvs potentialen fr&#229;n den tv&#229; punktladdningarna
+$$
+\phi(\vec{r}) = \frac{q}{4 \pi |\vec{r} - \vec{r}_0|} \pm \frac{q}{4 \pi |\vec{r} - \vec{r}_1|}
+$$
+I det f&#246;rra fallet &#228;r f&#228;ltlinjerna parallella med \( z=0 \) planet, i det senare fallet ligger ekvipotentialytan \( \phi=0 \) i \( z=0 \) planet.
+
+<p>
+Vi kan allts&#229; konstruera Greensfunktioner f&#246;r &#246;vre halvplanet med dessa tv&#229; randvillkor. Med Dirichlets homogena randvillkor blir allts&#229; Greensfunktionen
+$$
+G (\vec{r},\vec{r}\,')=\frac{1}{4\pi|\vec{r}-\vec{r}\,'|} - \frac{1} {4\pi|\vec{r}-\vec{r}\,''|},
+$$
+d&#228;r \( \vec{r}\,' = (x',y',z') \) och \( \vec{r}\,'' = (x',y',-z') \), med \( z'>0 \).
+
+<p>
+Notera att \( G(\vec{r},\vec{r}\,') \) uppfyller \( \Delta G(\vec{r},\vec{r}\,') = - \delta(\vec{r}-\vec{r}\,') \) i det &#246;vre halvrummet.
+
+<p>
+Intressant nog fungerar speglingsmetoden &#228;ven f&#246;r cirklar i tv&#229; dimensioner och sf&#228;rer i tre dimensioner (i det senare fallet dock endast f&#246;r Dirichlets randvillkor). Se demonstrationsuppgift.
+
+<p>
+<br /><br /><center><p><img src="fig/spegling2.png" align="bottom" width=300></p></center><br /><br />
+
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

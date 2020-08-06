@@ -1,0 +1,658 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('10. Värmeledning, diffusionsekvation', 1, None, '___sec0'),
+              ('Värmeledning (diffusion)', 2, None, '___sec1'),
+              ('Stationär lösning', 3, None, '___sec2'),
+              ('Värmekälla', 3, None, '___sec3'),
+              ('Lösning:', 3, None, '___sec4'),
+              ('Lösning:', 3, None, '___sec5'),
+              ('Greensfunktioner för värmeledningsekvationen',
+               2,
+               None,
+               '___sec6'),
+              ('Värmeledning (konvektion)', 2, None, '___sec7')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="10-varmeledning-bs.html">FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>10. Värmeledning, diffusionsekvation</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Värmeledning (diffusion)</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stationär lösning</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Värmekälla</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lösning:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lösning:</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec6" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Greensfunktioner för värmeledningsekvationen</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec7" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Värmeledning (konvektion)</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 2, 2017</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h1 id="___sec0" class="anchor">10. V&#228;rmeledning, diffusionsekvation </h1>
+
+<p>
+Betrakta ett temperaturf&#228;lt \( T(\vec{r},t) \)
+
+<ul>
+<li> P&#229; ett omr&#229;de \( V \).</li>
+<li> Med randvillkor l&#228;ngs \( \partial V \).</li>
+<li> I n&#228;rvaro av eventuella v&#228;rmek&#228;llor.</li>
+<li> Med ett explicit tidsberoende.</li>
+</ul>
+
+Vi s&#246;ker nu en differentialekvation f&#246;r detta f&#228;lt.
+
+<h2 id="___sec1" class="anchor">V&#228;rmeledning (diffusion) </h2>
+
+<p>
+Vi vet att v&#228;rme str&#246;mmar fr&#229;n varmare till kallare.  Det inneb&#228;r att
+vi har ett fl&#246;de av v&#228;rmeenergi i en riktning som &#228;r motsatt \( \vnabla T \).
+
+<p>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+  <h3 class="panel-title">Antagande 1</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+V&#228;rmestr&#246;mmen kan skrivas
+$$
+\begin{equation}
+  \vec{q} = -\lambda\vnabla T,
+\tag{1}
+\end{equation}
+$$
+
+d&#228;r \( \lambda \) &#228;r v&#228;rmekonduktiviteten (v&#228;rmeledningsf&#246;rm&#229;gan), och \( \vec{q} \) &#228;r sj&#228;lva 
+v&#228;rmefl&#246;det med enheten J\,s$^{-1}$\,m$^{-2}$.
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+  <h3 class="panel-title">Antagande 2</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+V&#228;rmet&#228;theten \( \varepsilon \) &#228;r proportionell mot temperaturen
+$$
+\varepsilon = c \rho T,
+$$
+d&#228;r \( c \) &#228;r v&#228;rmekapacitiviteten och \( \rho \) &#228;r densiteten.
+
+<ul>
+<li> \( [\varepsilon] = \mathrm{J}/\mathrm{m}^3 \)</li>
+<li> \( [c] = \mathrm{J} \mathrm{kg}^{-1} \mathrm{K}^{-1} \)</li>
+<li> \( [\rho] = \mathrm{kg} \mathrm{m}^{-3} \)</li>
+</ul>
+</div>
+</div>
+
+
+<p>
+Betrakta nu en volym \( \Delta V \), vilken begr&#228;nsas av en sluten yta \( S = \partial(\Delta V) \).  
+
+<ul>
+<li> V&#228;rmeenergin i denna volym &#228;r</li>
+</ul>
+
+$$
+\begin{equation}
+  H = \int_{\Delta V} Tc\rho \mbox{d}V
+\tag{2}
+\end{equation}
+$$
+
+
+<ul>
+<li> Utfl&#246;det av v&#228;rme fr&#229;n denna volym &#228;r</li> 
+</ul>
+
+$$
+\begin{equation}
+  \oint_{\partial (\Delta V)} \vec{q}\cdot \mbox{d}\vec{S}.
+\tag{3}
+\end{equation}
+$$
+
+F&#246;rutsatt att det inte finns n&#229;gra v&#228;rmek&#228;llor i \( \Delta V \)  m&#229;ste 
+utfl&#246;det motsvara f&#246;r&#228;ndringen per tidsenhet av v&#228;rmen
+i \( \Delta V \)
+$$
+\begin{equation}
+  \frac{\partial H}{\partial t} = - \oint_{\partial (\Delta V)} {\vec{q}\cdot \mbox{d}S}.
+\tag{4}
+\end{equation}
+$$
+
+Med ins&#228;ttning av ekv. <a href="#mjx-eqn-2">(2)</a> i VL och anv&#228;ndande av Gauss sats i HL f&#229;s
+$$
+\begin{equation}
+  \int_{\Delta V}
+\frac{\partial}{\partial t} \left( Tc\rho \right) \mbox{d}V = -\int_{\Delta V} \vnabla \cdot \vec{q}\mbox{d}V.
+\tag{5}
+\end{equation}
+$$
+
+Volymen \( \Delta V \) &#228;r helt godtyckligt vald, s&#229; likheten m&#229;ste g&#228;lla f&#246;r alla volymer \( \Delta V \). I s&#229; fall kan vi s&#228;tta integranderna lika med varandra
+$$
+\begin{equation}
+  \frac{\partial}{\partial t}\left(T c\rho\right) = - \vnabla \cdot \vec{q}
+= \vnabla \cdot \lambda \vnabla T = \lambda \nabla^2 T.
+\tag{6}
+\end{equation}
+$$
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 1</b>: H&#228;r skriver vi Laplacianen som \( \nabla^2 \).)</font>
+<!-- end inline comment -->
+
+<p>
+Om vi nu antar att \( c \), \( \rho \) och \( \lambda \)  &#228;r konstanter, s&#229; kan vi skriva ekvationen som
+$$
+\begin{equation}
+  \frac{\partial T}{\partial t} = k \nabla^2 T,
+\tag{7}
+\end{equation}
+$$
+
+d&#228;r 
+$$
+\begin{equation}
+  k \equiv \frac{\lambda}{c\rho}.
+\tag{8}
+\end{equation}
+$$
+
+Den h&#228;r ekvationen kallas f&#246;r v&#228;rmeledningsekvationen.
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+V&#228;rmeledningsekvationen &#228;r en kontinuitetsekvation f&#246;r v&#228;rmeenergin. Ni k&#228;nner antagligen igen h&#228;rledningen fr&#229;n det liknande bevis som gjordes i kap. 4 i kurskompendiet.
+</div>
+</div>
+
+
+<h3 id="___sec2" class="anchor">Station&#228;r l&#246;sning </h3>
+
+F&#246;r en tidsoberoende v&#228;rmef&#246;rdelning g&#228;ller \( \partial T / \partial t = 0 \) och d&#228;rmed
+$$
+\begin{equation}
+  \nabla^2 T = 0
+\tag{9}
+\end{equation}
+$$
+
+som vi kallar f&#246;r Laplace-ekvation.
+
+<h3 id="___sec3" class="anchor">V&#228;rmek&#228;lla </h3>
+
+Vad h&#228;nder nu om vi har en v&#228;rmek&#228;lla i volymen \( \Delta V \)?  Antag att v&#228;rme
+produceras av en k&#228;lla med t&#228;theten \( s = s(\vec{r},t) \) med enheten W\,m$^{-3}$.
+D&#229; m&#229;ste vi komplettera ekv. <a href="#mjx-eqn-5">(5)</a> med en term f&#246;r denna
+uppv&#228;rmning
+$$
+\begin{equation}
+  \int_{\Delta V} \frac{\partial}{\partial t} \left( Tc\rho \right) \mbox{d}V = \int_{\Delta V} \lambda 
+\nabla^2 T
+\mbox{d}V + \int_{\Delta V} s \mbox{d}V.
+\tag{10}
+\end{equation}
+$$
+
+V&#228;rmeledningsekvationen (med konstant \( c,\rho \)) blir d&#229;
+$$
+\begin{equation}
+  \frac{\partial T}{\partial t} = k \nabla^2 T + \frac{s}{c\rho}.
+\tag{11}
+\end{equation}
+$$
+
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 2</b>: Vi anv&#228;nder ibland beteckningen \( u = s/(c\rho) \), som ocks&#229; kallas f&#246;r <em>v&#228;rmek&#228;llt&#228;thet</em>.)</font>
+<!-- end inline comment -->
+
+<p>
+Om temperaturf&#246;rdelningen &#228;r tidsoberoende kan vi skriva ekvationen som
+$$
+\begin{equation}
+  \nabla^2 T = -\frac{s}{\lambda}
+\tag{12}
+\end{equation}
+$$
+
+som &#228;r ett exempel p&#229; Poissons ekvation.
+H&#246;gerledet kallar vi d&#229; f&#246;r en k&#228;llterm.
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: En-dimensionell v&#228;rmeledning</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+Betrakta ett omr&#229;de \( x \in [0,L] \) i en dimension med f&#246;ljande villkor p&#229; temperaturf&#246;rdelningen \( T = T(x,t) \)
+
+<ul>
+<li> Begynnelsevillkor: \( T(x,0) = T_0 \sin \frac{\pi x}{L} \).</li>
+<li> Randvillkor: \( T(0,t) = T(L,t) = 0 \) (dvs Dirichlets homogena RV).</li>
+</ul>
+
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 3</b>: Teckna \( T(x,0) \) och j&#228;mf&#246;r g&#228;rna med Neumanns homogena randvillkor som hade stoppat v&#228;rmetransport genom &#228;ndarna eftersom \( \partial T / \partial x = 0 \) (vid \( x=0 \) och \( x=L \)).)</font>
+<!-- end inline comment -->
+
+<p>
+Finn temperaturf&#246;rdelningen f&#246;r \( t > 0 \) i avsaknad av n&#229;gon v&#228;rmek&#228;lla.
+
+<h3 id="___sec4" class="anchor">L&#246;sning: </h3>
+
+V&#228;rmeledningsekvationen &#228;r
+$$
+\frac{\partial T(x,t)}{\partial t} - k \frac{\partial^2 T(x,t)}{\partial x^2} = 0.
+$$
+Notera att 
+$$
+\frac{\partial^2}{\partial x^2} \sin \frac{\pi x}{L} = - \frac{\pi^2}{L^2} \sin \frac{\pi x}{L},
+$$
+vilket g&#246;r det naturligt att ans&#228;tta l&#246;sningen \( T(x,t) = f(t) \sin \frac{\pi x}{L} \).
+
+<p>
+Denna ansats uppfyller randvillkoren och begynnelsevillkoret om \( f(0) = T_0 \). Ins&#228;ttning i v&#228;rmeledningsekvationen ger
+$$
+f'(t) \sin \frac{\pi x}{L} + k f(t) \frac{\pi^2}{L^2} \sin \frac{\pi x}{L} = 0,
+$$
+vilket har l&#246;sningen
+$$
+f(t) = A e^{-\pi^2 k t / L^2},
+$$
+d&#228;r \( A = T_0 \) best&#228;ms av begynnelsevillkoret. L&#246;sningen 
+$$
+T(x,t) = T_0 e^{-\pi^2 k t / L^2} \sin \frac{\pi x}{L}
+$$
+inneb&#228;r att temperaturen minskar kontinuerligt (fl&#246;dar ut genom &#228;ndarna) och att en station&#228;r l&#246;sning, \( T=0 \), erh&#229;lls f&#246;r stora \( t \).
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: V&#228;rmeledning med k&#228;llterm</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<p>
+Granitberggrunden i Sverige inneh&#229;ller en viss m&#228;ngd
+radium, vars radioaktiva s&#246;nderfall ger en uppv&#228;rming som av en rymdk&#228;lla
+f&#246;r v&#228;rme med konstant k&#228;llt&#228;thet \( \rho_\mathrm{T} \).  Granitens 
+v&#228;rmeledningsf&#246;rm&#229;ga &#228;r \( \lambda \) (i W\,m$^{-1}$\,K$^{-1}$).  L&#229;t
+oss g&#246;ra det orealistiska antagandet att Jorden alltigenom bestod av granit
+med dessa egenskaper.  Hur skulle i s&#229; fall den station&#228;ra 
+temperaturf&#246;rdelningen i Jordens inre se ut?  Vad blir temperaturen i 
+centrum?
+
+<h3 id="___sec5" class="anchor">L&#246;sning: </h3>
+
+Vi kan st&#228;lla upp differentialekvationen
+$$
+\begin{equation}
+  \nabla^2T = - \frac{\rho_{\rm T}}{\lambda}
+\tag{13}
+\end{equation}
+$$
+
+I sf&#228;riska koordinater under antagande om sf&#228;risk symmetri blir ekvationen
+$$
+\begin{equation}
+  \frac{1}{r^2} \frac{\partial}{\partial r}\left(r^2 \frac{\partial T}
+{\partial r}\right) = -Q,
+\tag{14}
+\end{equation}
+$$
+
+d&#228;r \( Q = \rho_{\rm T}/\lambda \).  Vi kan skriva detta som
+$$
+\begin{equation}
+  \frac{\partial}{\partial r}\left(r^2 \frac{\partial T}
+{\partial r}\right) = -Q r^2,
+\tag{15}
+\end{equation}
+$$
+
+och sedan integrera en g&#229;ng.
+$$
+\begin{equation}
+  r^2 \frac{\partial T}{\partial r} = -\frac{1}{3}Qr^3 + A,
+\tag{16}
+\end{equation}
+$$
+
+d&#228;r \( A \) &#228;r en integrationsvariabel.  Om vi dividerar med \( r^2 \) f&#229;r vi
+$$
+\begin{equation}
+  \frac{\partial T}{\partial r} = -\frac{1}{3}Qr + \frac{A}{r^2}.
+\tag{17}
+\end{equation}
+$$
+
+Integrerar vi &#228;n en g&#229;ng f&#229;r vi
+$$
+\begin{equation}
+  T\left(r\right) = - \frac{1}{6} Q r^2 - \frac{A}{r} + B,
+\tag{18}
+\end{equation}
+$$
+
+d&#228;r \( B \) &#228;r &#228;nnu en integrationsvariabel.  Vi m&#229;ste nu best&#228;mma
+v&#228;rden p&#229; de b&#229;da integrationsvariablerna.  F&#246;rst kan vi notera
+att det inte finns n&#229;gon v&#228;rmepunktk&#228;lla, s&#229; temperaturen inte b&#246;r bli o&#228;ndlig i Jordens inre, dvs \( A = 0 \).
+
+<p>
+F&#246;r det andra noterar vi att temperaturen vid jordytan, \( r = R \), &#228;r 
+praktiskt taget 0 j&#228;mf&#246;rt med temperaturen i Jordens centrum, s&#229; vi
+f&#229;r ekvationen
+$$
+\begin{equation}
+  0 = -\frac{1}{6} Q R^2 + B.
+\tag{19}
+\end{equation}
+$$
+
+vilket ger \( B = QR^2/6 \). Fysikaliskt s&#229; &#228;r \( B \) temperaturen i Jordens centrum.  Om vi s&#228;tter in realistiska v&#228;rden p&#229; \( \rho_{\rm T} = 5\times
+10^{-8} \) W\,m$^{-3}$, \( \lambda = 3,5 \) W\,m$^{-1}$\,K$^{-1}$ och \( R = 6,4\times
+10^6 \) m, s&#229; f&#229;r vi \( B = 6\times 10^5 \) K, vilket &#228;r en grov
+&#246;verskattning av den verkliga temperaturen.
+</div>
+</div>
+
+
+<h2 id="___sec6" class="anchor">Greensfunktioner f&#246;r v&#228;rmeledningsekvationen </h2>
+
+<ul>
+<li> Kan vi anv&#228;nda Greensfunktioner f&#246;r att teckna l&#246;sningar till allm&#228;nna k&#228;llf&#246;rdelningar?</li>
+<li> Notera att f&#228;lten (temperatur, v&#228;rmek&#228;lla) &#228;r b&#229;de rums- och tidsberoende.</li>
+<li> Ja, det kan man - Greensfunktionen &#228;r d&#229; l&#246;sningen (med givna randvillkor) till v&#228;rmeledningsekvationen f&#246;r en punktk&#228;lla i b&#229;de tid och rum.</li>
+</ul>
+
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 4</b>: En punktlik energik&#228;lla som bara existerar under ett &#246;gonblick, men &#228;r precis s&#229; stark att den tillf&#246;rda energim&#228;ngden &#228;r &#228;ndlig. Fundera p&#229; hur temperaturf&#228;ltet borde se ut.)</font>
+<!-- end inline comment -->
+
+<p>
+Vi s&#246;ker allts&#229; l&#246;sningen till Greensfunktionsekvationen svarande mot v&#228;rmeledningsekvationen:
+$$   
+\left(
+\frac{\partial}{\partial t}-k\Delta\right)G(\vec{r},t;\vec{r}{\;}',t')
+=\delta^D(\vec{r}-\vec{r}{\;}')\delta(t-t')
+$$
+p&#229; hela \( D \)-dimensionella rummet \( \mathbb{R}^D \). 
+Finner vi l&#246;sningen till denna ekvation, kan l&#246;sningen till v&#228;rmeledningsekvationen f&#246;r godtycklig k&#228;llf&#246;rdelning \( u \) skrivas
+$$
+T(\vec{r},t)=\int_{-\infty}^\infty dt'\int d^Dx'\, G(\vec{r},t;\vec{r}{\;}',t')u(\vec{r}{\;}',t')
+$$
+vilket ses genom direkt ins&#228;ttning
+$$
+\begin{align}
+\left( \frac{\partial}{\partial t}-k\Delta\right)T(\vec{r},t)
+&=\int_{-\infty}^\infty dt'\int d^Dx'\,
+\left( \frac{\partial}{\partial t}-k\Delta\right)G(\vec{r},t;\vec{r}{\;}',t')u(\vec{r}{\;}',t')
+\nonumber \\ 
+&=\int_{-\infty}^\infty dt'\int d^Dx'\,
+\delta^D(\vec{r}-\vec{r}{\;}')\delta(t-t')u(\vec{r}{\;}',t')
+=u(\vec{r},t).
+\tag{20}
+\end{align}
+$$
+
+som allts&#229; visar att v&#228;rmeledningsekvationen uppfylls f&#246;r detta \( T \).
+
+<ul>
+<li> Vi studerar l&#246;sningen p&#229; ett o&#228;ndligt, \( D \)-dimensionellt rum.</li> 
+<li> F&#246;r det f&#246;rsta kan vi anv&#228;nda translationsinvarians i rum och tid f&#246;r att skriva \( G(\vec{r},t;\vec{r}{\;}',t') = \tilde G(\vec{r}-\vec{r}{\;}',t-t') \).</li>
+<li> F&#246;ljande l&#246;sning uppfyller ekvationen</li>
+</ul>
+
+$$
+\tilde G(\vec{r}-\vec{r}\,',t-t')=\frac{\sigma(t-t')}{(4\pi k (t-t'))^{D/2}}
+e^{-\frac{|\vec{r}-\vec{r}\,'|^2}{4k(t-t')}},
+$$
+d&#228;r \( \sigma(t) \) &#228;r stegfunktionen som tar v&#228;rdet \( 0 \) f&#246;r \( t < 0 \)
+och \( 1 \) f&#246;r \( t>0 \).
+
+<p>
+Faktorn \( \sigma(t-t') \) g&#246;r att en k&#228;lla vid tidpunkten \( t' \) bara kan p&#229;verka vad som h&#228;nder vid senare tidpunkter \( t\geq t' \), s&#229; vi har kausalitet.
+
+<p>
+Skissa Greensfunktionens utseende f&#246;r olika \( t \):
+
+<ul>
+<li> den b&#246;rjar som en deltafunktion vid \( t-t'=0^+ \)</li> 
+<li> f&#246;r att n&#228;r tiden g&#229;r bli bredare och l&#228;gre, hela tiden med Gaussisk form.</li> 
+</ul>
+
+<p>
+
+<!-- code=python (!bc pycod) typeset with pygments style "default" -->
+<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">numpy</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">np</span>
+<span style="color: #008000; font-weight: bold">import</span> <span style="color: #0000FF; font-weight: bold">pylab</span> <span style="color: #008000; font-weight: bold">as</span> <span style="color: #0000FF; font-weight: bold">p</span>
+
+<span style="color: #408080; font-style: italic"># Greens function D=1</span>
+<span style="color: #008000; font-weight: bold">def</span> <span style="color: #0000FF">G</span>(x,t):
+    <span style="color: #008000; font-weight: bold">if</span> t<span style="color: #666666">&lt;0</span>:
+        g <span style="color: #666666">=</span> np<span style="color: #666666">.</span>zeros(<span style="color: #008000">len</span>(x))
+        <span style="color: #008000; font-weight: bold">return</span> g
+    <span style="color: #008000; font-weight: bold">else</span>:
+        <span style="color: #008000; font-weight: bold">return</span> np<span style="color: #666666">.</span>exp(<span style="color: #666666">-</span>x<span style="color: #666666">**2/</span>(<span style="color: #666666">4*</span>t)) <span style="color: #666666">/</span> (np<span style="color: #666666">.</span>sqrt(<span style="color: #666666">4*</span>np<span style="color: #666666">.</span>pi<span style="color: #666666">*</span>t)) 
+    
+<span style="color: #408080; font-style: italic"># End initialization</span>
+
+<span style="color: #408080; font-style: italic"># Start plot 1</span>
+x<span style="color: #666666">=</span>np<span style="color: #666666">.</span>linspace(<span style="color: #666666">-1</span>,<span style="color: #666666">1</span>,<span style="color: #666666">200</span>)
+p<span style="color: #666666">.</span>figure(figsize<span style="color: #666666">=</span>(<span style="color: #666666">6</span>,<span style="color: #666666">6</span>))
+<span style="color: #008000; font-weight: bold">for</span> t <span style="color: #AA22FF; font-weight: bold">in</span> [<span style="color: #666666">-1</span>,<span style="color: #666666">.001</span>,<span style="color: #666666">0.005</span>,<span style="color: #666666">0.01</span>,<span style="color: #666666">0.05</span>,<span style="color: #666666">0.1</span>]:
+    p<span style="color: #666666">.</span>plot(x,G(x,t))
+p<span style="color: #666666">.</span>xlabel(<span style="color: #BA2121">r&#39;$x$&#39;</span>)
+p<span style="color: #666666">.</span>ylabel(<span style="color: #BA2121">r&#39;$G(x,t)$&#39;</span>)
+<span style="color: #408080; font-style: italic"># p.ylim([-1,6])</span>
+</pre></div>
+<p>
+<br /><br /><center><p><img src="fig/greens_function_1dim_wtime.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Det faktum att rumsintegralen av \( G \) &#228;r konstant i tiden f&#246;r \( t-t'>0 \),
+$$
+\int_{\mathbb{R}^D}d^Dx\,G(\vec{r},\vec{r}\,',t,t')=1,
+$$
+&#228;r ett uttryck f&#246;r energins bevarande, och naturlig om vi minns att vi kan se v&#228;rmeledningsekvationen som en kontinuitetsekvation.
+</div>
+</div>
+
+
+<p>
+V&#228;rmeledningsekvationen heter p&#229; engelska &quot;the heat equation&quot;. Dess Greensfunktion kallas &quot;heat kernel&quot;, p&#229; svenska ibland &quot;v&#228;rmek&#228;rna&quot;.
+
+<h2 id="___sec7" class="anchor">V&#228;rmeledning (konvektion) </h2>
+
+<ul>
+<li> Ovan har vi enbart behandlat v&#228;rmeledning via diffusion.</li>
+<li> Konvektion erbjuder betydligt effektivare v&#228;rmetransport f&#246;r fluider (v&#228;tskor och gaser) genom att varm materia str&#246;mmar.</li>
+<li> Vi beskriver detta med en v&#228;rmestr&#246;m</li>
+</ul>
+
+$$
+\vec{q}_\mathrm{konv} = \rho c T \vec{v}
+$$
+som skall adderas till diffusionsstr&#246;mmen fr&#229;n tidigare
+$$
+\vec{q}_\mathrm{diff} = - \lambda \vnabla T.
+$$
+Kontinuitetsekvationen f&#246;r v&#228;rmeenergin s&#228;ger att 
+$$
+\frac{\partial  T}{\partial t} (T c \rho) = -\vnabla \cdot \vec{q} = -\vnabla \cdot (\vec{q}_\mathrm{diff} + \vec{q}_\mathrm{konv}).
+$$
+Antar vi &#229;terigen att \( c \), \( \rho \) och \( \lambda \) &#228;r konstanter (notera att detta inneb&#228;r att \( \vnabla \cdot \vec{v} \propto \partial \rho / \partial t = 0 \)) f&#229;r vi
+$$
+\begin{equation}
+  \frac{\partial T}{\partial t} + \vec{v} \cdot \vnabla T = k \nabla^2 T + \frac{u}{c\rho},
+\tag{21}
+\end{equation}
+$$
+
+d&#228;r vi ocks&#229; inkluderat m&#246;jligheten att det finns v&#228;rmek&#228;llor.
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._10-varmeledning-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

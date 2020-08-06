@@ -1,0 +1,179 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [(u'Repetition', 1, None, '___sec0'),
+              (u'N\xe5got mer om l\xf6sningar av differentialekvationer',
+               2,
+               None,
+               '___sec1')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+    
+<a name="part0000"></a>
+<p>
+
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forssén</a>, Institutionen för fysik, Chalmers, Göteborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forssén</a>, Institutionen för fysik, Chalmers, Göteborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 21, 2016</h4></center> <!-- date -->
+<br>
+
+<h1 id="___sec0">Repetition </h1>
+
+<dl>
+ <dt>Kapitel 1 Fält och derivator:<dd> 
+   Introducerande kapitel. 
+</dl>
+
+Nivåytor och fältlinjer för att visualisera fält.
+
+<dl>
+ <dt>Kapitel 2,3,4 Koordinater, integraler, integralsatser:<dd> 
+   Matematiska verktyg 
+</dl>
+
+<em>MEN</em> vi vill betona fysiken
+
+<ul>
+   <li> derivatan av ett fält har en fysikalisk betydelse</li>
+   <li> integralen av ett fält har en fysikalisk betydelse</li>
+</ul>
+
+Kurv-, yt-, rymdintegraler: Kan vi använda oss av en integralsats (se lösningsstrategi från kap. 4).
+
+<dl>
+ <dt>Kapitel 5, 12 Indexnotation, tensorer:<dd> 
+   Fundament
+</dl>
+
+ Dessa kapitel ger fundamentet för vad som definierar en skalär, 
+ en vektor (tensorer). Viktigt för framtida kurser. Men indexnotation 
+ erbjuder också ett kraftfullt verktyg att härleda vektoridentiteter.
+
+<dl>
+ <dt>Kapitel 6, 7 Singulära fält, deltafunktioer:<dd> 
+</dl>
+
+ Introducerar singulära fält (källor, virvlar) och ger verktyg för 
+ att hantera dessa matematiskt.
+
+<dl>
+ <dt>Kapitel 8, 9 Potentialteori, Laplaces och Poissons ekvationer:<dd> 
+   Kronjuvelerna
+</dl>
+
+ Vi kommer fram till de generella differentialekvationerna som styr fysikaliska 
+ fält och diskuterar hur vi skall lösa dem (se nedan). Dessa avsnitt är något 
+ av kronjuvelerna i denna kurs.
+
+<dl>
+ <dt>Kapitel 10, 11 Värmeledning,elektromagnetism:<dd> 
+   Tillämpningar
+</dl>
+
+ Ger en tydligare fysikalisk tolkning av det vi har lärt oss genom ganska konkreta exempel.
+
+<h2 id="___sec1">Något mer om lösningar av differentialekvationer </h2>
+Olika lösningsstrategier lämpar sig olika väl för olika problem. Här listas några problemtyper:
+
+<ul>
+  <li> Symmetrier: Kan man inse att fältet bara beror på en koordinat? Då blir differentialekvationen mycket enklare och den går oftast att integrera direkt. Notera att detta ger integrationskonstanter vilka måste bestämmas (från randvillkor, existens av singulära källor, etc). Ett alternativ kan vara att använda Gauss sats för att få ett uttryck för vektorfältet.</li>
+  <li> Vinkelberoende randvillkor: Gör en lösningsansats som kan uppfylla randvillkoret och som samtidigt är en egenfunktion till Laplacianen (\( \cos\theta \), \( \sin\theta \), konstant). Detta gör att differentialekvationen separeras i två delar som kan lösas var för sig. Metoden kallas för variabelseparation.</li>
+  <li> Helt allmän metod: Greensfunktioner. Gör differentialekvationen till en integralekvation. Problemet blir att finna Greensfunktionen (och eventuellt att lösa integralen).</li>
+
+<ul>
+    <li> För vissa speciella geometrier (halvrymd, sfär, cirkel) och randvillkor kan man använda sig av spegelladdningar (utanför det fysikaliska området) för att konstruera en Greensfunktion.</li> 
+</ul>
+
+</ul>
+
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

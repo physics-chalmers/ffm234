@@ -1,0 +1,548 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+<!-- Bootstrap style: bootstrap -->
+<link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- not necessary
+<link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+-->
+
+<style type="text/css">
+
+/* Add scrollbar to dropdown menus in bootstrap navigation bar */
+.dropdown-menu {
+   height: auto;
+   max-height: 400px;
+   overflow-x: hidden;
+}
+
+/* Adds an invisible element before each target to offset for the navigation
+   bar */
+.anchor::before {
+  content:"";
+  display:block;
+  height:50px;      /* fixed header height for style bootstrap */
+  margin:-50px 0 0; /* negative fixed header height */
+}
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('12. Tensorer', 1, None, '___sec0'),
+              ('Koordinattransformationer', 2, None, '___sec1'),
+              ('Skalärer och vektorer', 2, None, '___sec2'),
+              ('Tensorer', 2, None, '___sec3'),
+              ('Produkt av tensorer', 3, None, '___sec4'),
+              ('Vektoroperatorn', 3, None, '___sec5')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<!-- Bootstrap navigation bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="12-tensorer-bs.html">FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</a>
+  </div>
+
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+     <!-- navigation toc: --> <li><a href="#___sec0" style="font-size: 80%;"><b>12. Tensorer</b></a></li>
+     <!-- navigation toc: --> <li><a href="#___sec1" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Koordinattransformationer</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec2" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Skalärer och vektorer</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec3" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;Tensorer</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec4" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Produkt av tensorer</a></li>
+     <!-- navigation toc: --> <li><a href="#___sec5" style="font-size: 80%;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vektoroperatorn</a></li>
+
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+</div> <!-- end of navigation bar -->
+
+<div class="container">
+
+<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p> <!-- add vertical space -->
+
+<a name="part0000"></a>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<div class="jumbotron">
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_self">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 14, 2018</h4></center> <!-- date -->
+<br>
+<p>
+</div> <!-- end jumbotron -->
+
+<h1 id="___sec0" class="anchor">12. Tensorer </h1>
+<div class="panel panel-danger">
+  <div class="panel-heading">
+  <h3 class="panel-title">Introduktion till tensorbegreppet</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+
+<ul>
+<li> Fysikaliska lagar skall inte bero p&#229; i vilket koordinatsystem de beskrivs.</li>
+<li> Detta kan vi &#229;stadkomma genom att skriva dessa lagar som en likhet mellan tv&#229; objekt vilka vi vet transformerar likadant under en koordinattransformation.</li>
+<li> Vi kommer att kalla s&#229;dana objekt f&#246;r <em>tensorer</em>.</li>
+<li> En invarians kan kopplas till en symmetri (t.ex. rotationssymmetri). Invariansen kan kodas in genom att anv&#228;nda &quot;tensorspr&#229;ket&quot;.</li>
+<li> Kan generaliseras till st&#246;rre symmetrier. T.ex. Lorentzinvarians i speciell relativitetsteori vilken involverar rum-tiden (fyra dimensioner); och mer allm&#228;nna koordinattransformationer i allm&#228;n relativitetsteori.</li>
+</ul>
+</div>
+</div>
+
+
+<p>
+Plan:
+
+<ul>
+<li> Hur beskriva transformation mellan cartesiska koordinatsystem</li>
+<li> Transformationsegenskaper hos: Skal&#228;r, vektor, ... generell tensor</li>
+<li> Visa att diverse objekt verkligen &#228;r tensorer</li>
+<li> Fysikaliskt exempel: Tr&#246;ghetstensorn</li>
+</ul>
+
+<h2 id="___sec1" class="anchor">Koordinattransformationer </h2>
+
+<p>
+N&#228;r vi byter koordinater fr&#229;n ett Cartesiskt h&#246;gersystem, med koordinater
+\( x_i \), till ett annat (med origo i samma punkt), med koordinater \( x'_i \), relateras 
+$$
+\begin{equation}
+x'_i=L_{ij}x_j,
+\tag{1}
+\end{equation}
+$$
+
+d&#228;r \( \mathbf{L} \) &#228;r en ortogonal matris som uppfyller \( \mathbf{L}\mathbf{L}^t = \mathbf{I}=\mathbf{L}^t\mathbf{L} \). Fr&#229;n detta f&#246;ljer direkt att \( \det(\mathbf{L}^t\mathbf{L}) =  \det(\mathbf{L})^2 = \det\mathbf{I}=1 \) vilket ger \( \det\mathbf{L}=\pm 1 \).
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Rita</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+\( x'y' \)-system som &#228;r roterat en vinkel \( \alpha \) relativt ett \( xy \)-system.
+$$
+\begin{equation}
+\begin{pmatrix}
+x' \\ y'
+\end{pmatrix}
+= 
+\begin{pmatrix}
+\cos\alpha & \sin\alpha \\
+-\sin\alpha & \cos\alpha
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+\tag{2}
+\end{equation}
+$$
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Om \( \mathbf{L} \) transformerar ett h&#246;gersystem till ett h&#246;gersystem g&#228;ller plustecknet, \( \det\mathbf{L}=1 \). Kolla exemplet ovan att \( \mathbf{L}^t \mathbf{L} = \mathbf{I} \).
+</div>
+</div>
+
+
+<p>
+I indexnotation
+$$
+\begin{equation}
+\left( L^t L \right)_{ij} = \left( L^t \right)_{ik} L_{kj} 
+= L_{ki}L_{kj}=\delta_{ij}.
+\tag{3}
+\end{equation}
+$$
+
+<p>
+Ett allm&#228;nt uttryck f&#246;r determinanten av en \( (3\times3) \)-matris &#228;r 
+$$
+\begin{equation}
+\det\mathbf{M}=\varepsilon^{ijk}M_{1i}M_{2j}M_{3k}
+\tag{4}
+\end{equation}
+$$
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Kontrollera g&#228;rna. Detta uttryck ger en summa med sex nollskilda termer (3 positiva och 3 negativa) vilket allts&#229; motsvarar determinanten.
+</div>
+</div>
+
+
+<p>
+Notera att vi genom att derivera Ekv. <a href="#mjx-eqn-1">(1)</a> kan skriva matrisen \( \mathbf{L} \) som \( L_{ij}=\frac{\partial x'_i}{\partial x_j} \). Eftersom matrisen &#228;r ortogonal g&#228;ller den inversa relationen \( x_i=L_{ji}x'_j \), och vi har d&#228;rf&#246;r ocks&#229; \( L_{ji}=\frac{\partial x_i}{\partial x'_j} \).
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Bevis av invers relation</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Starta fr&#229;n transformationen \( x'_i=L_{ij}x_j \) och multiplicera med inversa transformationen \( \mathbf{L}^t \)
+$$
+\begin{equation}
+(L^t)_{ki} x'_i=(L^t)_{ki} L_{ij}x_j = \delta_{kj} x_j = x_k,
+\tag{5}
+\end{equation}
+$$
+
+Vi noterar att \( (L^t)_{ki} = L_{ik} \) i v&#228;nsterledet s&#229; att vi f&#229;r den inversa relationen \( L_{ik} x'_i = x_k \). Fr&#229;n detta uttryck byter vi bara namn p&#229; indexen: \( i \mapsto j \), \( k \mapsto i \) s&#229; att
+$$
+\begin{equation}
+x_i=L_{ji} x_j.
+\tag{6}
+\end{equation}
+$$
+</div>
+</div>
+
+
+<h2 id="___sec2" class="anchor">Skal&#228;rer och vektorer </h2>
+En skal&#228;r \( s \) (= enklaste exempel p&#229; en tensor) k&#228;nnetecknas av att den tar samma v&#228;rde i alla koordinatsystem, dvs. \( s'=s \).
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Det &#228;r viktigt att f&#246;rst&#229; att det &#228;r transformationsregeln som &#228;r det viktiga. Det r&#228;cker inte med att "$s$ &#228;r ett tal".
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Rita</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+En punkt P i ovanst&#229;ende tv&#229; koordinatsystem och illustrera dess \( x' \)- och \( x \)-koordinat.
+</div>
+</div>
+
+
+<p>
+S&#229;lunda &#228;r \( x \)-koordinaten f&#246;r en punkt i \( \mathbf{R}^3 \) inte en skal&#228;r, medan t.ex. temperaturen i en punkt &#228;r en skal&#228;r.
+
+<p>
+En vektor \( \vec v \) &#228;r en upps&#228;ttning tal som beter sig likadant som ortvektorns komponenter n&#228;r vi byter system, dvs.
+$$
+\begin{equation}
+v'_i=L_{ij}v_j
+\tag{7}
+\end{equation}
+$$
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Det &#228;r denna transformationsregel som definierar vilka upps&#228;ttningar av tre (eller \( D \)) tal som f&#229;r privilegiet att kallas vektor.
+</div>
+</div>
+
+
+<h2 id="___sec3" class="anchor">Tensorer </h2>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Nu &#228;r det r&#228;ttframt att g&#229; vidare och definiera objekt,  tensorer, som har fler &#228;n ett index. En matris kan, som vi redan sett, skrivas som en tensor med tv&#229; index, \( T_{ij} \). Men inget hindrar att man har ett godtyckligt antal, s&#228;g \( p \).
+</div>
+</div>
+
+
+<p>
+Transformationsregeln f&#246;r en tensor med tv&#229; index (t&#228;nk matris) &#228;r
+$$
+\begin{equation} 
+T'_{ij} = L_{ik} L_{jl} T_{kl} \left( = L_{ik} T_{kl} \left( L^t \right)_{lj} \right),
+\tag{8}
+\end{equation}
+$$
+
+vilket ju motsvarar \( \mathbf{T}' = \mathbf{L} \mathbf{T} \mathbf{L}^t \).
+
+<p>
+En tensor med \( p \) index (en tensor av rank \( p \)) skrivs \( T_{i_1i_2\ldots i_p} \).  och allm&#228;nt
+$$
+\begin{equation}
+T'_{i_1\ldots i_p}=L_{i_1j_1}\ldots L_{i_pj_p}T_{j_1\ldots j_p}.
+\tag{9}
+\end{equation}
+$$
+
+<p>
+Po&#228;ngen med detta &#228;r att man kan multiplicera samman tensorer och
+vara s&#228;ker p&#229; att resultatet blir en tensor.
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Skal&#228;rprodukt</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+&#196;r \( \vec{u} \cdot \vec{v} \) en skal&#228;r? Hur beter den sig vid ett koordinatbyte?
+$$
+\begin{equation}
+u_i' v_i' = L_{ij} u_j L_{ik} v_k = \delta_{jk} u_j v_k = u_k v_k
+\tag{10}
+\end{equation}
+$$
+
+Resultatet &#228;r allts&#229; oberoende av koordinatsystem, dvs det &#228;r en skal&#228;r.
+</div>
+</div>
+
+
+<h3 id="___sec4" class="anchor">Produkt av tensorer </h3>
+
+Produkten av tv&#229; tensorer &#228;r ocks&#229; en tensor.
+
+<ul>
+<li> \( c_{ij}=a_i b_j \) &#228;r ocks&#229; en tensor.</li> 
+<li> \( u_i=M_{ij}v_j \) &#228;r ocks&#229; en tensor.</li> 
+</ul>
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+I f&#246;rsta fallet kan man &quot;kontrahera&quot; tv&#229; index, s&#229;som man bildar skal&#228;rprodukten.
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+F&#246;r det andra fallet har vi \( M'_{ij}v'_j=L_{ik}L_{jl}M_{kl}L_{jm}v_m=L_{ik}\delta_{lm}M_{kl}v_m=L_{ik}M_{kl}v_l
+=L_{ik}u_k \) (d&#228;r vi i f&#246;rsta steget har anv&#228;nt att \( \mathbf{L} \) &#228;r ortogonal). Om \( M_{ij} \) och \( v_i \) &#228;r tensorer &#228;r allts&#229; &#228;ven \( u_i \) det. Det allm&#228;nna beviset g&#229;r likadant (och innefattar f&#246;rst&#229;s det faktum att skal&#228;rprodukten av tv&#229; vektorer &#228;r en skal&#228;r).
+</div>
+</div>
+
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Exempel: Kryssprodukt</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+&#196;r \( (\vec a\times\vec b)_i = \varepsilon_{ijk}a_jb_k \) en tensor? Dvs &#228;r resultatet en vektor?
+
+<p>
+<div class="panel panel-warning">
+  <div class="panel-heading">
+  <h3 class="panel-title">Kommentar</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+I linj&#228;r algebrakurserna har ni s&#228;kert visat att detta &#228;r en vektor.
+</div>
+</div>
+
+
+<p>
+R&#228;knereglerna ovan ger att vi bara m&#229;ste visa att \( \varepsilon_{ijk} \) &#228;r en tensor. Transformationsreglerna s&#228;ger:
+$$
+\begin{equation}
+\varepsilon'_{ijk}=L_{il}L_{jm}L_{kn}\varepsilon_{lmn}
+\tag{11}
+\end{equation}
+$$
+
+Vi kommer att visa att \( \varepsilon \) &#228;r helt invariant under koordinattransformationer. Men l&#229;t oss f&#246;rst visa att \( \varepsilon'_{ijk} \) &#228;r antisymmetriskt. Byt plats p&#229; tv&#229; index
+$$
+\begin{equation}
+\varepsilon'_{jik}=L_{jl}L_{im}L_{kn}\varepsilon_{lmn} = L_{jm}L_{il}L_{kn}\varepsilon_{mln} = - L_{il} L_{jm}L_{kn}\varepsilon_{lmn} = - \varepsilon'_{ijk},
+\tag{12}
+\end{equation}
+$$
+
+d&#228;r vi f&#246;rst bytte namn p&#229; tv&#229; summationsindex, och sedan bytte plats p&#229; dem och utnyttjade att \( \varepsilon_{ijk} \) &#228;r antisymmetrisk.
+
+<p>
+Den bevisade antisymmetrin betyder ju ocks&#229; att element med tv&#229; lika index m&#229;ste vara noll. T.ex. \( \varepsilon'_{iik} = -\varepsilon'_{iik} \).
+
+<p>
+\( \varepsilon'_{ijk} \) &#228;r allts&#229; proportionell mot \( \varepsilon_{ijk} \). Visa d&#228;rf&#246;r en permutation, t.ex. \( ijk=123 \). 
+$$
+\begin{equation}
+\varepsilon'_{123}=L_{1l}L_{2m}L_{3n}\varepsilon_{lmn} = \det \mathbf{L} = +1,
+\tag{13}
+\end{equation}
+$$
+
+f&#246;r en h&#246;gertransformation.
+
+<p>
+S&#229; \( \varepsilon'_{ijk}=\varepsilon_{ijk} \), Levi&ndash;Civita-tensorn &#228;r en <em>invariant tensor</em>. Den enda andra invarianta tensorn &#228;r Kroneckers delta. Visa sj&#228;lv att \( \delta'_{ij}=\delta_{ij} \).
+</div>
+</div>
+
+
+<h3 id="___sec5" class="anchor">Vektoroperatorn </h3>
+
+Vi beh&#246;ver ocks&#229; kunna derivera. L&#229;t oss visa det litet triviala p&#229;st&#229;endet att gradienten
+av en skal&#228;r &#228;r en vektor. Vi har \( (\vnabla\phi)'_i=\frac{\partial}{\partial x'_i}\phi'=\frac{\partial \phi}{\partial x_j} \frac{\partial x_j}{\partial x'_i}=
+L_{ij} \frac{\partial \phi}{\partial x_j}=L_{ij}(\vnabla\phi)_j \). Detta visar att \( \partial _i \) &#228;r en vektoroperator, och man kan sedan anv&#228;nda den f&#246;r att konstruera andra derivator (divergens, rotation osv.). Samma regler g&#228;ller f&#246;r \( \partial _i \) som f&#246;r andra tensorer.
+
+<p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+  <h3 class="panel-title">Tr&#246;ghetstensorn</h3>
+  </div>
+<div class="panel-body">
+<p> <!-- subsequent paragraphs come in larger fonts, so start with a paragraph -->
+Ett annat klassiskt exempel &#228;r tr&#246;ghetstensorn,  
+$$
+\begin{equation}
+I_{ij}=\int_VdV\,\rho(r^2\delta_{ij}-x_ix_j),
+\tag{14}
+\end{equation}
+$$
+
+som man r&#228;knade ut i stelkroppsdynamik. Den relaterar r&#246;relsem&#228;ngdsmomentet till
+rotationsvektorn enligt \( L_i=I_{ij}\omega_j \). I och med att den inneh&#229;ller upprepade
+kryssprodukter &#228;r det enklare att h&#228;rleda den i tensorformalism.
+
+<p>
+Ett litet volymelement \( dV \) av en stel kropp har massan \( dm=\rho dV \),
+och om kroppen roterar med en rotationsvektor \( \omega_i \) har
+det hastigheten \( v_i=(\vec\omega\times\vec{r})_i=\varepsilon_{ijk}\omega_jx_k \). 
+Dess r&#246;relsem&#228;ngd &#228;r \( \mbox{d}p_i=\mbox{d}mv_i=\mbox{d}m\varepsilon_{ijk}\omega_jx_k \). Bidraget till r&#246;relsem&#228;ngdsmomentet fr&#229;n volymelementet &#228;r 
+$$
+\begin{align}
+\mbox{d}L_i = \varepsilon_{ijk}x_j \mbox{d}p_k &= \mbox{d}m\varepsilon_{ijk}x_j\varepsilon_{klm}\omega_lx_m
+=\mbox{d}m(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})x_jx_m\omega_l \nonumber \\
+&=\mbox{d}m(r^2\omega_i-x_ix_j\omega_j)=\mbox{d}V\rho(r^2\delta_{ij}-x_ix_j)\omega_j
+\tag{15}
+\end{align}
+$$
+
+och totalt blir detta
+$$
+\begin{equation}
+L_i = \int_V \mbox{d}V\,\rho(r^2\delta_{ij}-x_ix_j) \omega_j = I_{ij} \omega_j,
+\tag{16}
+\end{equation}
+$$
+</div>
+</div>
+
+
+<p>
+<!-- navigation buttons at the bottom of the page -->
+<ul class="pagination">
+  <li class="active"><a href="._12-tensorer-bs000.html">1</a></li>
+</ul>
+<!-- ------------------- end of main content --------------- -->
+
+</div>  <!-- end container -->
+<!-- include javascript, jQuery *first* -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- Bootstrap footer
+<footer>
+<a href="http://..."><img width="250" align=right src="http://..."></a>
+</footer>
+-->
+
+
+</body>
+</html>
+    
+

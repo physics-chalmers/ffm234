@@ -1,0 +1,564 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('5. Indexnotation', 1, None, '___sec0'),
+              ('Gradient, divergens och rotation av en produkt av fält',
+               2,
+               None,
+               '___sec1'),
+              ('Indexnotation', 2, None, '___sec2'),
+              ('Produkter av vektorer', 3, None, '___sec3'),
+              ('Enhetsmatrisen', 3, None, '___sec4'),
+              ('Kryssprodukt', 3, None, '___sec5'),
+              ('Produkter av flera vektorer', 2, None, '___sec6'),
+              ('Kombinationer med två vektoroperatorer', 2, None, '___sec7'),
+              ('Tillbaks till början', 2, None, '___sec8')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<a name="part0000"></a>
+<p>
+<!-- begin top navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end top navigation -->
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Sep 14, 2018</h4></center> <!-- date -->
+<br>
+
+<h1 id="___sec0">5. Indexnotation </h1>
+
+<p>
+Precis som vi har r&#228;kneregler f&#246;r derivatorer, s&#229; kan vi h&#228;rleda r&#228;kneregler f&#246;r v&#229;ra differentialoperatorer. Det &#228;r d&#229; viktigt att komma ih&#229;g att f&#228;lten p&#229; de b&#229;da sidorna av likhetstecknet skall vara av samma typ, det vill s&#228;ga om vi har ett skal&#228;rt f&#228;lt till v&#228;nster om likhetstecknet skall vi ha ett skal&#228;rt f&#228;lt till h&#246;ger om likhetstecknet, och om vi har ett vektorf&#228;lt till v&#228;nster om likhetstecknet skall ocks&#229; f&#228;ltet till h&#246;ger vara ett vektorf&#228;lt.  P&#229; s&#229; s&#228;tt kan man resonera sig fram till n&#229;gra av r&#228;knereglerna.
+
+<h2 id="___sec1">Gradient, divergens och rotation av en produkt av f&#228;lt </h2>
+
+<p>
+F&#246;r vanliga funktioner \( f \) och \( g \) g&#228;ller att
+$$
+\begin{equation}
+  \frac{\mbox{d}}{\mbox{d}x}\left(fg\right) = \frac{\mbox{d}f}{\mbox{d}x}g
++ f\frac{\mbox{d}g}{\mbox{d}x}.
+\tag{1}
+\end{equation}
+$$
+
+<p>
+Om vi ist&#228;llet betraktar \( \vnabla (fg) \), d&#228;r \( f \) och \( g \) &#228;r skal&#228;ra f&#228;lt, ser vi att det resulterande f&#228;ltet skall vara ett vektorf&#228;lt, och att vi m&#229;ste derivera ett av f&#228;lten &#229;t g&#229;ngen. Om vi tar gradienten av ett skal&#228;rt f&#228;lt, s&#229; f&#229;r vi ett vektorf&#228;lt och om vi sedan multiplicerar med ytterligare ett skal&#228;rt f&#228;lt, s&#229; har vi fortfarande ett vektorf&#228;lt, allts&#229; b&#246;r r&#228;knereglen
+$$
+\begin{equation}
+  \vnabla \left(fg\right) = f \vnabla g + g\vnabla f
+\tag{2}
+\end{equation}
+$$
+
+g&#228;lla. P&#229; liknande s&#228;tt kan vi resonera oss fram till
+$$
+\begin{equation}
+  \vnabla \cdot \left(f\vec{u}\right) = \vnabla f \cdot \vec{u} + f \vnabla \cdot \vec{u},
+\tag{3}
+\end{equation}
+$$
+
+och
+$$
+\begin{equation}
+  \vnabla \times \left(f\vec{u}\right) = \vnabla f\times \vec{u} + f \vnabla \times \vec{u}.
+\tag{4}
+\end{equation}
+$$
+
+<p>
+Mer komplexa samband &#228;r dock sv&#229;rare att resonera sig fram till. Detta g&#228;ller &#228;ven kombinationer av flera vektoroperatorer. Vad blir t.ex. \( \vnabla \times (\vnabla \times \vec{A}) \)? I princip kan man visa dem genom att skriva ut ekvationerna komponentvis, men en effektivare metod &#228;r att anv&#228;nda indexnotation. Indexnotationen &#228;r ett effektivt verktyg i stora delar av den teoretiska fysiken.
+
+<h2 id="___sec2">Indexnotation </h2>
+
+<p>
+Vektorn \( \vec{A} \) &#228;r densamma i alla koordinatsystem, Cartesiska s&#229;v&#228;l som kroklinjiga. I n&#229;gon given bas kan dess komponenter skrivas ut: \( \vec{A}=\sum_{i=1}^3A_i\vec{e}_i \). 
+
+<ul>
+<li> Vi kommer nu att betrakta \( A_i \) som komponenterna till \( \vec{A} \) i ett Cartesiskt koordinatsystem.</li>
+<li> Detta kan verka som en begr&#228;nsning, men kommer faktiskt att ge oss en v&#228;ldigt kraftfull formalism.</li>
+<li> Vi kommer allts&#229; att skriva vektorn \( \vec{A} \) som \( A_i \), vilket vi kan tolka som en lista &#246;ver komponenterna, \( \{A_i\}_{i=1}^3 \).</li> 
+<li> Indexet \( i \) kallas ett <em>fritt index</em>, eftersom det kan ta v&#228;rdena \( i=1,2,3 \)</li> 
+</ul>
+
+<h3 id="___sec3">Produkter av vektorer </h3>
+
+<p>
+Skal&#228;rprodukten av tv&#229; vektorer \( \vec{A} \) och \( \vec{B} \) &#228;r \( \vec{A}\cdot\vec{B}=\sum_{i=1}^3A_iB_i \). F&#246;r att g&#246;ra notationen mer kompakt inf&#246;r vi nu <em>Einsteins summationskonvention</em>, som s&#228;ger att summation &#228;r underf&#246;rst&#229;dd s&#229; snart ett index f&#246;rekommer tv&#229; g&#229;nger. Med dessa skrivregler har vi d&#229;
+$$
+\begin{equation}
+\vec{A}\cdot\vec{B}=A_iB_i
+\tag{5}
+\end{equation}
+$$
+
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Kommentar.</b>
+<p>
+Att vi skriver l&#228;gre index har ingen betydelse, om man vill kan man t.ex. skriva \( A_iB^i \). F&#246;rst n&#228;r man sysslar med vektorer/tensorer i icke-Cartesiska system beh&#246;ver man g&#246;ra &#229;tskillnad p&#229; index uppe och nere. Detta g&#228;ller t.ex. i speciell relativitetsteori.
+</div>
+
+
+<p>
+Det h&#228;r uttrycket f&#246;r skal&#228;rprodukten g&#228;ller i godtyckligt antal dimensioner. Resultatet av skal&#228;rprodukten &#228;r f&#246;rst&#229;s en skal&#228;r. Indexen \( i \) ovan &#228;r <em>inte</em> fria index, utan <em>summationsindex</em>, eller kontraherade index.
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: matris-vektor-multiplikation.</b>
+<p>
+En matris representeras av sina matriselement (precis som enhetsmatrisen ovan). Det f&#246;rsta indexet &#228;r rad- och det andra kolumnindex. Matris-vektor-multiplikationen \( \mathbf{M} \vec{v} \) kan skrivas med indexnotation
+$$
+\begin{equation}
+\left[ \mathbf{M} \vec{v} \right]_i = M_{ij} v_j
+\tag{6}
+\end{equation}
+$$
+</div>
+
+
+<h3 id="___sec4">Enhetsmatrisen </h3>
+
+Vi har redan sett Kroneckers delta, \( \delta_{ij} \), som definieras av
+$$
+\begin{equation}
+\delta_{ij}=\left\{
+\begin{matrix}
+1,&i=j\cr
+0,&i\neq j\cr
+\end{matrix}
+\right.
+\tag{7}
+\end{equation}
+$$
+
+(notera att detta helt enkelt &#228;r matriselementen av enhetsmatrisen).
+
+<p>
+Betrakta uttrycket \( \delta_{ij}A_j \). H&#228;r &#228;r indexet \( j \) repeterat och d&#228;rf&#246;r ett summationsindex, och uttrycket skall utl&#228;sas \( \sum_{j=1}^3\delta_{ij}A_j=A_i \), dvs. helt enkelt multiplikation av vektorn \( \vec{A} \) med enhetsmatrisen.
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Kommentar.</b>
+<p>
+Notera att Kroneckers delta leder till att ett summationsindex &quot;elimineras&quot;; den plockar ut en term ur summan.
+</div>
+
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: matris-matris-multiplikation och sp&#229;r av en matris.</b>
+<p>
+Matrismultiplikation \( \mathbf{M}\mathbf{N}=\mathbf{P} \) skrivs som \( M_{ik}N_{kj}=P_{ij} \). Sp&#229;ret av en matris, dvs. summan av diagonalelementen &#228;r \( \mathrm{tr}\mathbf{M}=M_{ii} \).
+</div>
+
+
+<h3 id="___sec5">Kryssprodukt </h3>
+
+L&#229;t \( \vec{A}\times\vec{B}=\vec{C} \). Komponentvis g&#228;ller \( C_1=A_2B_3-A_3B_2 \), och de andra komponenterna ges av cykliska permutationer av indexen. Vi inf&#246;r nu objektet \( \varepsilon_{ijk} \), som definieras av
+$$
+\begin{equation}
+\varepsilon_{ijk}=\left\{
+\begin{matrix}
+\phantom{-}1,\quad\hfill&ijk\hbox{ jämn permutation av 123,}\hfill\cr
+-1,\quad\hfill&ijk\hbox{ udda permutation av 123,}\hfill\cr
+\phantom{-}0,\hfill&\hbox{annars, dvs. om minst två index tar samma
+värde.}
+\end{matrix}
+\right.
+\tag{8}
+\end{equation}
+$$
+
+\( \varepsilon_{ijk} \) kallas &quot;$\varepsilon$-tensorn&quot;, eller <em>Levi-Civita-tensorn</em>.
+
+<p>
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Kommentar.</b>
+<p>
+Vi har inte riktigt definierat vad en tensor &#228;r &#228;nnu. Det kommer senare, och &#228;r inte speciellt dramatiskt. F&#246;r tillf&#228;llet kan vi bara t&#228;nka p&#229; det som ett objekt som har ett antal index, allts&#229; en naturlig generalisering av vektor- och matrisbegreppen.
+</div>
+
+
+<p>
+Definitionen g&#246;r att \( \varepsilon_{ijk} \) har egenskapen att den byter tecken om man byter plats p&#229; tv&#229; index, vilka som helst. Man s&#228;ger att den &#228;r fullst&#228;ndigt antisymmetrisk.
+
+<p>
+Eftersom \( \varepsilon_{ijk} \) har tre index, kan vi kontrahera tv&#229; av dem med index p&#229; vektorer, och allts&#229; bilda \( C_i=\varepsilon_{ijk}A_jB_k \). Med hj&#228;lp av definitionen kan vi r&#228;kna ut t.ex. \( C_1 \) (vi s&#228;tter \( i=1 \) och summerar &#246;ver \( j,k \)):
+$$
+\begin{equation}
+  \begin{array}{ccccc}
+  	i & j & k & \varepsilon_{ijk} & \mathrm{term}\\
+  	1 & 2 & 3 & +1 & A_2 B_3\\
+  	1 & 3 & 2 & -1 & -A_3 B_2 \\
+  	1 & \multicolumn{2}{c}{\mathrm{alla~andra}} & 0 & 0
+  \end{array}
+\tag{9}
+\end{equation}
+$$
+
+och vi f&#229;r resultatet \( C_1=A_2B_3-A_3B_2 \), dvs. samma som f&#246;rsta komponenten av \( \vec{A}\times\vec{B} \). Detsamma g&#228;ller de andra komponenterna. Kryssprodukten skrivs allts&#229;
+$$
+\begin{equation}
+[\vec{A}\times\vec{B}]_i=\varepsilon_{ijk}A_jB_k .
+\tag{10}
+\end{equation}
+$$
+
+Kryssprodukten &#228;r specifik f&#246;r tre dimensioner, just f&#246;r att \( \varepsilon \)-tensorn har tre index i tre dimensioner. Motsvarande objekt i \( D \) dimensioner har \( D \) index: \( \varepsilon_{i_1i_2\ldots i_D} \).
+
+<h2 id="___sec6">Produkter av flera vektorer </h2>
+
+<p>
+L&#229;t oss studera f&#246;ljande vektorprodukt
+$$
+\begin{equation}
+  \vec{A} \times \left( \vec{B} \times \vec{C} \right)
+\tag{11}
+\end{equation}
+$$
+
+vilket blir en vektor. Denna skrivs med indexnotation
+$$
+\begin{equation}
+\tag{12}
+  \left[ \vec{A} \times \left( \vec{B} \times \vec{C} \right) \right]_i =
+  \varepsilon_{ijk} A_j \varepsilon_{klm} B_l C_m = \varepsilon_{ijk} \varepsilon_{klm} A_j B_l C_m.
+\end{equation}
+$$
+
+L&#229;t oss f&#246;rst po&#228;ngtera att vi kan byta plats p&#229; faktorerna som vi gjorde ovan. Eftersom dessa &#228;r reella tal g&#228;ller t.ex. att \( A_j B_l = B_l A_j \) och motsvarande f&#246;r \( \varepsilon \)-tensorerna.
+
+<p>
+H&#228;r dyker en produkt av tv&#229; Levi-Cevita-tensorer upp. L&#229;t oss se om s&#229;dana produkter kan f&#246;renklas
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Produkter av tv&#229; \( \varepsilon_{ijk} \).</b>
+<p>
+F&#246;rst produkten med enbart tv&#229; fria index
+$$
+\begin{equation}
+  \varepsilon_{ikl} \varepsilon_{jkl} = 2 \delta_{ij}.
+\tag{13}
+\end{equation}
+$$
+
+Detta inses ganska enkelt eftersom 
+
+<ul>
+<li> Produkten m&#229;ste bli noll d&#229; \( i \neq j \). T.ex. \( i=1 \) inneb&#228;r att \( kl \) m&#229;ste vara 23 eller 32, och d&#229; m&#229;ste &#228;ven \( j=1 \) f&#246;r att den andra tensorn skall vara nollskild.</li>
+<li> Med \( i=j \) m&#229;ste summan &#246;ver \( kl \) bli 2. Studera t.ex. \( i=j=1 \); de nollskilda termerna i summan blir \( ikl=jkl \in [123,132] \), dvs</li>
+</ul>
+
+$$
+\begin{equation}
+	\sum_{k,l=1}^3 \varepsilon_{1kl} \varepsilon_{1kl} = \varepsilon_{123} \varepsilon_{123} + \varepsilon_{132} \varepsilon_{132} = 1 \cdot 1 + (-1) \cdot (-1) = 2
+\tag{14}
+\end{equation}
+$$
+
+<br />
+------------<br />
+Nu produkten med enbart ett kontraherat index. Vi kommer att visa att
+$$
+\begin{equation}
+\tag{15}
+  \varepsilon_{ijk} \varepsilon_{klm} = \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}.
+\end{equation}
+$$
+
+F&#246;rst, genom cyklisk permutation,
+$$
+\begin{equation}
+  \varepsilon_{ijk} \varepsilon_{klm} = \varepsilon_{ijk} \varepsilon_{lmk} .
+\tag{16}
+\end{equation}
+$$
+
+Det inses l&#228;tt att \( i \neq j \) och \( l \neq m \) (annars blir termerna lika med noll). Vidare inses att paret \( ij \) m&#229;ste vara lika med \( lm \) eller \( ml \). Betrakta ett s&#229;dant par, t.ex. \( i,j \in [1,2] \) (alla andra m&#246;jligheter visas helt analogt). 
+D&#229; kommer enbart \( k=3 \) termen fr&#229;n summan att bidra och vi har f&#246;ljande m&#246;jligheter
+$$
+\begin{equation}
+  \begin{array}{llcccc}
+  	& & \multicolumn{2}{c}{\sum_k: \mathrm{bara~} k=3.} \\
+  	ij & lm & ijk & lmk & \mathrm{Resultat} & \delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}\\
+  	12 & 12 & 123 & 123 & = 1 & =1-0\\
+  	12 & 21 & 123 & 213 & = -1 & =0-1\\
+  	21 & 12 & 213 & 123 & = -1 & =0-1\\
+  	21 & 21 & 213 & 213 & = 1 & =1-0,
+  \end{array}
+\tag{17}
+\end{equation}
+$$
+
+dvs, resultaten motsvarar exakt kombinationen av deltafunktioner i Ekv <a href="#mjx-eqn-15">(15)</a> ovan.<br />
+</div>
+
+
+<p>
+Ekv <a href="#mjx-eqn-15">(15)</a> motsvarar precis den produkt som d&#246;k upp i Ekv <a href="#mjx-eqn-12">(12)</a> ovan. Vi forts&#228;tter
+$$
+\begin{align}
+  \left[ \vec{A} \times \left( \vec{B} \times \vec{C} \right) \right]_i 
+  &= \left( \delta_{il} \delta_{jm} - \delta_{im} \delta_{jl} \right) A_j B_l C_m \nonumber \\
+  &= B_i A_m C_m - A_j B_j C_i = B_i \vec{A}\cdot\vec{C} - \vec{A}\cdot\vec{B} C_i 
+\tag{18}
+\end{align}
+$$
+
+H&#228;r har vi bytt plats p&#229; \( A_m B_i = B_i A_m \). Notera vidare att vi lika g&#228;rna kunde ha bytt t.ex. \( m \to j \) i den f&#246;rsta termen. Dessa blir &#228;nd&#229; ett summationsindex och det spelar ingen roll om det heter \( m \) eller \( j \).
+
+<p>
+Till slut finner vi allts&#229; likheten
+$$
+\begin{equation}
+\tag{19}
+  \vec{A} \times \left( \vec{B} \times \vec{C} \right) = \vec{B} (\vec{A}\cdot\vec{C}) - (\vec{A}\cdot\vec{B}) \vec{C}.
+\end{equation}
+$$
+
+<h2 id="___sec7">Kombinationer med tv&#229; vektoroperatorer </h2>
+
+<p>
+En viktig konsekvens av Ekv <a href="#mjx-eqn-19">(19)</a> &#228;r
+$$
+\begin{equation}
+  \vnabla \times \left( \vnabla \times \vec{F} \right) = \vnabla \left( \vnabla \cdot \vec{F} \right) - \vnabla \cdot \vnabla \vec{F},
+\tag{20}
+\end{equation}
+$$
+
+vilket ger oss f&#246;ljande uttryck f&#246;r Laplacianen
+$$
+\begin{equation}
+  \Delta \vec{F} = \vnabla \cdot \vnabla \vec{F} = \vnabla \left( \vnabla \cdot \vec{F} \right) - \vnabla \times \left( \vnabla \times \vec{F} \right),
+\tag{21}
+\end{equation}
+$$
+
+eller <em>VektorLaplace = grad div - rot rot</em>.
+
+<p>
+Slutligen, tv&#229; viktiga samband, vilka dessutom &#228;r enkla att h&#228;rleda, &#228;r 
+$$
+\begin{equation}
+\tag{22}
+  \vnabla \times \vnabla f = 0
+\end{equation}
+$$
+
+och
+$$
+\begin{equation}
+\tag{23}
+  \vnabla \cdot \left( \vnabla \times \vec{F}\right) = 0.
+\end{equation}
+$$
+
+Visa g&#228;rna dessa sj&#228;lv (eller se bevis nedan)
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Bevis av Ekv <a href="#mjx-eqn-22">(22)</a>.</b>
+<p>
+$$
+\begin{equation}
+  \left[ \vnabla \times \vnabla f \right]_i = \varepsilon_{ijk} \partial_j \partial_k f
+\tag{24}
+\end{equation}
+$$
+
+Till exempel f&#246;r \( i=1 \)
+$$
+\begin{equation}
+  \begin{array}{llll}
+  	ijk & \partial_j & \partial_k & \mathrm{faktor} \\
+  	123 & 2 & 3 & +1 \\
+  	132 & 3 & 2 & -1 \\
+  \end{array}
+\tag{25}
+\end{equation}
+$$
+
+vilket betyder att \( \left[ \vnabla \times \vnabla f \right]_1 = \left( \partial_2\partial_3 - \partial_3\partial_2 \right) f = 0 \).
+</div>
+
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Bevis av Ekv <a href="#mjx-eqn-23">(23)</a>.</b>
+<p>
+$$
+\begin{equation}
+  \left[ \vnabla \cdot \left( \vnabla \times \vec{F} \right) \right] = \partial_i \varepsilon_{ijk} \partial_j F_k = \varepsilon_{ijk} \partial_i \partial_j F_k
+\tag{26}
+\end{equation}
+$$
+
+
+<ul>
+<li> En viktig po&#228;ng &#228;r att de sista tv&#229; faktorerna <em>inte</em> f&#229;r byta plats eftersom \( \partial_j F_k \neq F_k \partial_j \).</li>
+<li> D&#228;remot har vi att \( \partial_i \partial_j F_k = \partial_j \partial_i F_k \), vilket betyder att dessa tv&#229; faktorer kan byta plats.</li>
+</ul>
+
+Summan ovan har 27 termer, men enbart sex nollskilda
+<table border="1">
+<thead>
+<tr><td align="center">\( ijk \)</td> <th align="center">              term              </th> </tr>
+</thead>
+<tbody>
+<tr><td align="center">   123          </td> <td align="right">   \( \partial_1 \partial_2 F_3 \)     </td> </tr>
+<tr><td align="center">   231          </td> <td align="right">   \( \partial_2 \partial_3 F_1 \)     </td> </tr>
+<tr><td align="center">   312          </td> <td align="right">   \( \partial_3 \partial_1 F_2 \)     </td> </tr>
+<tr><td align="center">   132          </td> <td align="right">   \( -\partial_1 \partial_3 F_2 \)    </td> </tr>
+<tr><td align="center">   213          </td> <td align="right">   \( -\partial_2 \partial_1 F_3 \)    </td> </tr>
+<tr><td align="center">   321          </td> <td align="right">   \( -\partial_3 \partial_2 F_1 \)    </td> </tr>
+</tbody>
+</table>
+<p>
+och eftersom dessa tar ut varandra parvis blir summan noll.
+</div>
+
+
+<h2 id="___sec8">Tillbaks till b&#246;rjan </h2>
+
+<p>
+Vi startade med diverse r&#228;kneregler f&#246;r differentialekvationer. L&#229;t oss studera en av dem med de tekniker som vi nu har l&#228;rt oss.
+
+$$
+\begin{align*}
+  \vnabla \times \left(f\vec{u}\right) 
+  &= 
+  \left[ \vnabla \times \left(f\vec{u}\right)\right]_i 
+  = \varepsilon_{ijk} \partial_j (f u_k) 
+  = \varepsilon_{ijk} (\partial_j f) u_k + f \varepsilon_{ijk} \partial_j u_k  \\
+  &=\vnabla f\times \vec{u} + f \vnabla \times \vec{u},
+\end{align*}
+$$
+
+d&#228;r vi anv&#228;nt oss av att \( \partial_j (f u_k) = (\partial_j f) u_k + f \partial_j u_k \). Vi reproducerar allts&#229; det resultat som vi resonerade oss fram till vid starten av f&#246;rel&#228;sningen.
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

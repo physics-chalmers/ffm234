@@ -1,0 +1,702 @@
+<!--
+Automatically generated HTML file from DocOnce source
+(https://github.com/hplgit/doconce/)
+-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="description" content="FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar">
+
+<title>FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar</title>
+
+
+<style type="text/css">
+/* bloodish style */
+
+body {
+  font-family: Helvetica, Verdana, Arial, Sans-serif;
+  color: #404040;
+  background: #ffffff;
+}
+h1 { font-size: 1.8em;  color: #8A0808; }
+h2 { font-size: 1.6em;  color: #8A0808; }
+h3 { font-size: 1.4em;  color: #8A0808; }
+h4 { color: #8A0808; }
+a { color: #8A0808; text-decoration:none; }
+tt { font-family: "Courier New", Courier; }
+/* pre style removed because it will interfer with pygments */
+p { text-indent: 0px; }
+hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+p.caption { width: 80%; font-style: normal; text-align: left; }
+hr.figure { border: 0; width: 80%; border-bottom: 1px solid #aaa}
+.alert-text-small   { font-size: 80%;  }
+.alert-text-large   { font-size: 130%; }
+.alert-text-normal  { font-size: 90%;  }
+.alert {
+  padding:8px 35px 8px 14px; margin-bottom:18px;
+  text-shadow:0 1px 0 rgba(255,255,255,0.5);
+  border:1px solid #bababa;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  color: #555;
+  background-color: #f8f8f8;
+  background-position: 10px 5px;
+  background-repeat: no-repeat;
+  background-size: 38px;
+  padding-left: 55px;
+  width: 75%;
+ }
+.alert-block {padding-top:14px; padding-bottom:14px}
+.alert-block > p, .alert-block > ul {margin-bottom:1em}
+.alert li {margin-top: 1em}
+.alert-block p+p {margin-top:5px}
+.alert-notice { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_notice.png); }
+.alert-summary  { background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_summary.png); }
+.alert-warning { background-image: url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_warning.png); }
+.alert-question {background-image:url(https://cdn.rawgit.com/hplgit/doconce/master/bundled/html_images/small_gray_question.png); }
+
+div { text-align: justify; text-justify: inter-word; }
+</style>
+
+
+</head>
+
+<!-- tocinfo
+{'highest level': 1,
+ 'sections': [('8. Potentialteori', 1, None, '___sec0'),
+              ('Konservativa fält och potentialer', 2, None, '___sec1'),
+              ('Poissons och Laplaces ekvationer', 2, None, '___sec2'),
+              ('Divergensfria fält', 2, None, '___sec3'),
+              ('Potentialer för godtyckliga vektorfält', 2, None, '___sec4'),
+              ('Standardexempel på käll- och virvelfördelningar',
+               2,
+               None,
+               '___sec5'),
+              ('Punktkälla med styrkan $q$ i origo', 3, None, '___sec6'),
+              ('Linjekälla på $z$-axeln med konstant styrka $k$',
+               3,
+               None,
+               '___sec7'),
+              ('Virveltråd på $z$-axeln med styrka $J$', 3, None, '___sec8'),
+              ('Randvärdesproblem', 2, None, '___sec9'),
+              ('Exempel: Lösningar till Laplaces ekvation',
+               3,
+               None,
+               '___sec10'),
+              ('Dirichlets randvillkor:', 3, None, '___sec11'),
+              ('Neumanns randvillkor:', 3, None, '___sec12'),
+              ('Sammanfattning:', 3, None, '___sec13')]}
+end of tocinfo -->
+
+<body>
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+     equationNumbers: {  autoNumber: "none"  },
+     extensions: ["AMSmath.js", "AMSsymbols.js", "autobold.js", "color.js"]
+  }
+});
+</script>
+<script type="text/javascript" async
+ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<!-- newcommands_keep.tex -->
+$$
+\newcommand{\vnabla}{\vec{\nabla}}
+$$
+
+
+
+
+    
+<a name="part0000"></a>
+<p>
+
+</p>
+
+<p>
+<!-- ------------------- main content ---------------------- -->
+
+
+
+<center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - F&#246;rel&#228;sningsanteckningar</h1></center>  <!-- document title -->
+
+<p>
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige -->
+
+<center>
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige</b> 
+</center>
+
+<p>
+<!-- institution(s) -->
+
+<br>
+<p>
+<center><h4>Oct 3, 2017</h4></center> <!-- date -->
+<br>
+
+<h1 id="___sec0">8. Potentialteori </h1>
+
+<h2 id="___sec1">Konservativa f&#228;lt och potentialer </h2>
+
+<p>
+Vi har definierat ett konservativt f&#228;lt som ett f&#228;lt \( \vec{F} \) s&#229;dant att
+$$
+\begin{equation}
+  \oint_C \vec{F}\cdot \mbox{d}\vec{r} = 0
+\tag{1}
+\end{equation}
+$$
+
+f&#246;r varje sluten kurva \( C \).  Enligt Stokes sats f&#246;ljer det nu att ett f&#228;lt som har \( \vnabla \times \vec{F} = 0 \) &#246;verallt i ett enkelt sammanh&#228;ngande omr&#229;de &#228;r konservativt. Vi har sedan antagit att vi kan skriva
+$$
+\begin{equation}
+\vec{F} = - \vnabla \phi,
+\tag{2}
+\end{equation}
+$$
+
+d&#228;r \( \phi \) kallas f&#246;r det konservativa f&#228;ltets potential. G&#228;ller d&#229; 
+$$
+\vnabla \times \vec{F} = 0 \, \Longleftrightarrow \, \vec{F} = - \vnabla \phi \, ??
+$$
+Nej, det har vi &#228;nnu inte visat! Vi har att \( \vec{F} = - \vnabla \phi \, \Rightarrow \, \vnabla \times \vec{F} = 0  \) eftersom \( \vnabla \times ( \vnabla \phi) = 0 \) (se nedan), men det omv&#228;nda g&#228;ller inte per automatik. Vi har &#228;nnu inte visat att konservativa f&#228;lt alltid kan skrivas som \( -\vnabla \phi \).
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Bevis av \( \vnabla \times ( \vnabla \phi) = 0 \) mha indexnotation.</b>
+<p>
+Vi kan visa att \( \vnabla \times ( \vnabla \phi) = 0 \) mha indexnotation: Vektorn \( \left[ \vnabla \times ( \vnabla \phi) \right]_i = \epsilon_{ijk} \partial_j \partial_k \phi = 0 \) eftersom den resulterande summan med nio termer \( \sum_{j,k=1}^3 \) har tv&#229; nollskilda som tar ut varandra. T.ex. f&#246;r \( i=1 \) f&#229;s \( \partial_2\partial_3 \phi - \partial_3\partial_2 \phi = 0 \).
+</div>
+
+
+<p>
+Definitionen av ett konservativt f&#228;lt g&#246;r dock att vi kan definiera en potential fr&#229;n
+$$
+\begin{equation}
+  \int_{\vec{r}_1}^{\vec{r}_2} \vec{F} \cdot \mbox{d} \vec{r} = \phi\left( \vec{r}_1 \right) - \phi\left( \vec{r}_2 \right).
+\tag{3}
+\end{equation}
+$$
+
+Notera tecknet p&#229; potentialskillnaden i HL. Det hade g&#229;tt lika bra med det omv&#228;nda, men just denna konvention st&#228;mmer &#246;verens med energitolkningen i klassisk mekanik.
+
+<p>
+Vi ser nu att f&#246;r&#228;ndringen av potentialen mellan punkterna \( \vec{r} \) och \( \vec{r} + \mbox{d}\vec{r} \) &#228;r
+$$
+\begin{equation}
+  \mbox{d}\phi = -\vec{F}\cdot \mbox{d}\vec{r},
+\tag{4}
+\end{equation}
+$$
+
+men denna f&#246;r&#228;ndring kan ocks&#229; skrivas som
+$$
+\begin{equation}
+  \mbox{d}\phi = \vnabla \phi \cdot \mbox{d}\vec{r}.
+\tag{5}
+\end{equation}
+$$
+
+Det f&#246;ljer d&#228;rmed att det finns en potential \( \phi \) s&#229; att det konservativa f&#228;ltet \( \vec{F} \) kan skrivas
+$$
+\begin{equation}
+  \vec{F} = -\vnabla \phi.
+\tag{6}
+\end{equation}
+$$
+
+Faktum &#228;r att \( \phi \) inte &#228;r entydigt best&#228;md.  Man kan skapa en ny potential genom att addera en konstant till en potential: \( \phi \mapsto \phi + \phi_0 \).
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Arbete i klassisk mekanik.</b>
+<p>
+
+<p>
+F&#246;r ett konservativt kraftf&#228;lt \( \vec{F} \) g&#228;ller att det utr&#228;ttade arbetet l&#228;ngs en r&#246;relsebana motsvarar en <em>&#246;kning</em> av den kinetiska energin &#229;tf&#246;ljt av en motsvarade <em>minskning</em> av en potentiell energi s&#229; att den totala mekaniska energin \( E = T + V \) &#228;r <em>konserverad</em>.
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 1</b>: Notera att utr&#228;ttat arbete kan vara negativt vilket isf inneb&#228;r en minskning av den kinetiska energin och en &#246;kning av den potentiella.)</font>
+<!-- end inline comment -->
+
+<p>
+Arbetet som utr&#228;ttas l&#228;ngs en kurva \( C \) motsvaras av kurvintegralen
+$$
+\begin{align}
+\int_C \vec{F} \cdot \mbox{d}\vec{r} &= \left\{ \begin{array}{l}
+\vec{F} = m \vec{a} = m \frac{\mbox{d}\vec{v}}{\mbox{d}t} \\
+\mbox{d}\vec{r} = \vec{v} \mbox{d}t
+\end{array} 
+, \quad \frac{\mbox{d}\vec{v}}{\mbox{d}t} \cdot \vec{v} = \frac{1}{2}\frac{\mbox{d}}{\mbox{d}t} (\vec{v} \cdot \vec{v})
+\right\}  \tag{7}
+\\
+&= \frac{m}{2} \int_{t_A}^{t_B} \frac{\mbox{d}}{\mbox{d}t} (\vec{v} \cdot \vec{v}) \mbox{d}t = \frac{m v_2^2}{2} - \frac{m v_1^2}{2} = \delta T.
+\tag{8}
+\end{align}$$
+
+H&#228;r har vi anv&#228;nt NII. Tidpunkterna \( t_A \) och \( t_B \) motsvarar start- respektive sluttiden f&#246;r r&#246;relsen.
+
+<p>
+Ett exempel p&#229; ett s&#229;dant konservativt kraftf&#228;lt &#228;r gravitationskraften n&#228;ra jordytan: \( \vec{F} = - m g \hat{z} \).
+
+<p>
+Med v&#229;r nuvarande kunskap skulle vi uttrycka detta som \( \vec{F} = -\vnabla \phi \), d&#228;r vi allts&#229; anv&#228;nder beteckningen \( \phi \) ist&#228;llet f&#246;r \( V \). F&#246;r v&#229;rt exempel finner vi att potentialen \( \phi(\vec{r}) = m g z \) uppfyller denna likhet.
+
+<p>
+Vidare uppfyller kraftf&#228;ltet \( \vnabla \times \vec{F} = 0 \). Vi kontrollerar detta f&#246;r v&#229;rt exempel: 
+$$
+\begin{vmatrix}
+\hat{x} & \hat{y} & \hat{z} \\
+\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+\mbox{0}  &  \mbox{0}  & -mg \\
+\end{vmatrix}
+= 0
+$$
+
+<p>
+Kurvintegralen
+$$
+\int_C \vec{F} \cdot \mbox{d}\vec{r} = \phi\left( \vec{r}_A \right) - \phi\left( \vec{r}_B \right),
+$$
+d&#228;r \( A \) och \( B \) &#228;r kurvans start- respektive slutpunkt. H&#228;r finner vi att potentialskillnaden \( -\delta \phi = \phi(z_A) - \phi(z_B) = mg (z_A-z_B) \). Detta &#228;r allts&#229; den negativa skillnaden i potentiell energi och vi f&#229;r
+$$
+\delta T = - \delta \phi \quad \Rightarrow \quad \delta(T+V) = 0.
+$$
+
+
+</div>
+
+
+<h2 id="___sec2">Poissons och Laplaces ekvationer </h2>
+
+<p>
+Konservativa vektorf&#228;lt &#228;r allts&#229; rotationsfria, men de kan fortfarande ha nollskild divergens. Denna kallas ofta f&#246;r <em>k&#228;llt&#228;thet</em>
+$$
+\begin{equation}
+\rho(\vec{r}) = \vnabla \cdot \vec{F},
+\tag{9}
+\end{equation}
+$$
+
+och vi har st&#246;tt p&#229; exempel d&#228;r denna har tolkats i termer av elektrostatik och massfl&#246;de. Med \( \vec{F} = -\vnabla \phi \) f&#229;r vi <em>Poissons ekvation</em>
+$$
+\begin{equation}
+\vnabla \cdot \vnabla \phi(\vec{r}) = \Delta \phi(\vec{r}) = -\rho(\vec{r}),
+\tag{10}
+\end{equation}
+$$
+
+Specialfallet av denna ekvation utan k&#228;lla, dvs divergensfritt, ger <em>Laplaces ekvation</em>
+$$
+\begin{equation}
+\Delta \phi(\vec{r}) = 0.
+\tag{11}
+\end{equation}
+$$
+
+Kom ih&#229;g att \( \Delta \) &#228;r Laplacianen vilken kan skrivas
+$$
+\begin{equation}
+\Delta \phi = \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) \phi,
+\tag{12}
+\end{equation}
+$$
+
+i cartesiska koordinater. Den ser annorlunda ut i kroklinjiga koordinatsystem.
+
+<p>
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Kommentar.</b>
+<p>
+Notera att \( \vec{F} = -m g \hat{z} \) &#228;r divergensfritt och att potentialen \( \phi = m g z \) uppfyller Laplaces ekvation \( \Delta \phi = 0 \).
+</div>
+
+
+<p>
+Notera att Poissons och Laplaces ekvationer &#228;r exempel p&#229; <em>differentialekvationer</em>. F&#246;r att l&#246;sa dessa i ett omr&#229;de beh&#246;ver man ocks&#229; veta randvillkor f&#246;r f&#228;ltet \( \phi \).
+
+<p>
+Vi kommer t.ex. se att (ett station&#228;rt) temperaturf&#228;lt uppfyller n&#229;gon av dessa ekvationer (Laplaces ekvation om det inte finns en v&#228;rmek&#228;lla). F&#246;r att t.ex. r&#228;kna ut temperaturf&#228;ltet inuti ett v&#228;rmeisolerande f&#246;nster beh&#246;ver vi veta randvillkor f&#246;r f&#228;ltet p&#229; glasets in- och utsida.
+
+<p>
+Olika tekniker f&#246;r l&#246;sning av dessa ekvationer presenteras i kapitel 9.
+
+<h2 id="___sec3">Divergensfria f&#228;lt </h2>
+
+<p>
+Kan man erh&#229;lla <em>divergensfria</em> f&#228;lt fr&#229;n n&#229;gon potential p&#229; liknande s&#228;tt som vi just gjorde f&#246;r rotationsfria f&#228;lt?
+
+<p>
+Vi betraktar ett divergensfritt f&#228;lt \( \vec{G} \)
+$$
+\vnabla \cdot \vec{G} = 0,
+$$
+och n&#246;jer oss med att konstatera att divergensfriheten uppenbarligen uppfylls om f&#228;ltet kan skrivas
+$$
+\begin{equation}
+\vec{G} = \vnabla \times \vec{A}.
+\tag{13}
+\end{equation}
+$$
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Kommentar 2</b>: Visa detta om ni &#228;r os&#228;kra. G&#228;rna med indexnotation. $$ \vnabla \cdot (\vnabla \times \vec{A}) = \partial_i \epsilon_{ijk} \partial_j A_k, $$ Vilket &#228;r en summa med 27 termer, vara sex &#228;r nollskilda och dessa tar ut varandra parvis.)</font>
+<!-- end inline comment -->
+
+<p>
+Vektorf&#228;ltet \( \vec{A} \) kallas d&#229; f&#246;r en <em>vektorpotential</em>.
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Standardexempel: Statiskt magnetf&#228;lt.</b>
+<p>
+
+<p>
+Ett statiskt magnetf&#228;lt \( \vec{B}(\vec{r}) \) &#228;r divergensfritt och uppfyller \( \vec{B}(\vec{r}) = \vnabla \times \vec{A}(\vec{r}) \) d&#228;r \( \vec{A} \) kallas f&#246;r den elektromagnetiska vektorpotentialen.
+</div>
+
+
+<p>
+Vi fann tidigare att skal&#228;ra potentialer hade en invarians genom att vi kunde addera en konstant term \( \phi \mapsto \phi + \phi_0 \) utan att &#228;ndra f&#228;ltstyrkan.
+
+<p>
+P&#229; samma s&#228;tt har vektorpotentialen en invarians
+$$
+\begin{equation}
+\vec{A}(\vec{r}) \mapsto \vec{A}(\vec{r}) + \vnabla \Lambda(\vec{r}),
+\tag{14}
+\end{equation}
+$$
+
+d&#228;r \( \Lambda \) kallas f&#246;r en Gaugeparameter och invariansen kallas f&#246;r <em>Gaugeinvarians</em>.
+
+<p>
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Kommentar.</b>
+<p>
+Detta m&#229; verka som en kuriositet, men just Gaugeinvarians &#228;r av fundamental betydelse f&#246;r v&#229;r teoretiska f&#246;rst&#229;else av elektromagnetiska, svaga och starka krafter.
+</div>
+
+
+<p>
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Kommentar.</b>
+<p>
+Ofta anv&#228;nder man Gaugeinvariansen till att skapa en vektorpotential som &#228;r divergensfri. Dvs man v&#228;ljer \( \Lambda \) s&#229; att \( \Delta \Lambda = -\vnabla \cdot \vec{A} \).
+</div>
+
+
+<p>
+Rotationen kallas ofta f&#246;r virvelt&#228;thet
+$$
+\vnabla \times \vec{G} = \vec{j} \quad \Rightarrow \vnabla \times (\vnabla \times \vec{A}) = \vec{j}.
+$$
+Vi anv&#228;nder sambandet \( \vnabla \times \left( \vnabla \times \vec{A} \right) = \vnabla \left( \vnabla \cdot \vec{A} \right) - \Delta \vec{A} \) vilket allts&#229; ger
+$$
+\Delta \vec{A} - \vnabla \left( \vnabla \cdot \vec{A} \right) = -\vec{j}.
+$$
+Genom att v&#228;lja Gaugeparametern s&#229; att \( \vnabla \cdot \vec{A} = 0 \) f&#229;r vi Poissons ekvation f&#246;r vektorpotentialen
+$$
+\begin{equation}
+\Delta \vec{A} = -\vec{j}.
+\tag{15}
+\end{equation}
+$$
+
+<h2 id="___sec4">Potentialer f&#246;r godtyckliga vektorf&#228;lt </h2>
+
+<ul>
+<li> Betrakta ett f&#228;lt med b&#229;de k&#228;llor och virvlar, dvs \( \vnabla \cdot \vec{H} = \rho \neq 0 \) och \( \vnabla \times \vec{H} = \vec{j} \neq 0 \).</li>
+<li> Detta allm&#228;nna vektorf&#228;lt kan vi dela upp i tv&#229; delar \( \vec{H} = \vec{F} + \vec{G} \) d&#228;r</li>
+</ul>
+
+$$
+\begin{align}
+\vnabla \cdot \vec{F} &= \rho \quad  &\vnabla \cdot \vec{G} &= 0 
+\tag{16}\\
+\vnabla \times \vec{F} &= 0 \quad  &\vnabla \times \vec{G} &= \vec{j}
+\tag{17}
+\end{align}
+$$
+
+
+<ul>
+<li> Dvs, f&#228;ltet \( \vec{H} \) kan skrivas som summan av ett rotationsfritt f&#228;lt \( \vec{F} \) och ett divergensfritt f&#228;lt \( \vec{G} \) som representeras av potentialerna \( \phi \) och \( \vec{A} \).</li>
+</ul>
+
+$$
+\vec{H} = \vec{F} + \vec{G} = -\vnabla \phi + \vnabla \times \vec{A}.
+$$
+
+<p>
+<div class="alert alert-block alert-notice alert-text-normal">
+<b>Exempel: Stagnationsstr&#246;m konservativt hastighetsf&#228;lt.</b>
+<p>
+
+<p>
+Betrakta (det rotationsfria) hastighetsf&#228;ltet som ges av potentialen
+$$
+\phi(x,y) = \frac{A}{2}(x^2 - y^2),
+$$
+d&#228;r \( A \) &#228;r en positiv konstant. Hastighetsf&#228;ltet blir
+$$
+\vec{v} = -\vnabla \phi \quad \Rightarrow 
+\left\{
+\begin{array}{l}
+v_x = -A x \\
+v_y = A y
+\end{array}
+\right.
+$$
+Vi noterar att detta f&#228;lt ocks&#229; &#228;r divergensfritt.
+
+<p>
+En f&#228;ltbild (potential och f&#228;ltlinjer) visas nedan. Notera att det finns omr&#229;den d&#228;r hastigheten &#228;r noll. Dessa kallas stagnationspunkter. Vi noterar ocks&#229; att f&#228;ltlinjerna blir parallella med \( x \)- och \( y \)-axlarna n&#228;r vi kommer tillr&#228;ckligt n&#228;ra. Vi kan d&#228;rf&#246;r t&#228;nka oss dessa som fasta v&#228;ggar och att v&#229;rt hastighetsf&#228;lt beskriver str&#246;mmen vid ett h&#246;rn.
+
+<p>
+<br /><br /><center><p><img src="fig/stagnation_fieldplot.png" align="bottom" width=600></p></center><br /><br />
+
+<p>
+I verkligheten kommer dock friktionen n&#228;ra v&#228;ggen att skapa virvlar, och v&#229;r rotationsfria approximation ger en s&#228;mre beskrivning.
+</div>
+
+
+<h2 id="___sec5">Standardexempel p&#229; k&#228;ll- och virvelf&#246;rdelningar </h2>
+
+<h3 id="___sec6">Punktk&#228;lla med styrkan \( q \) i origo </h3>
+
+<ul>
+<li> vektorf&#228;lt</li> 
+</ul>
+
+$$
+\vec F=\frac{q}{4\pi r^2}\hat r.
+$$
+
+<ul>
+<li> rotationsfritt, men med en k&#228;lla \( \rho=q\delta^3(\vec{r}) \). F&#228;ltet har en potential</li>
+</ul>
+
+$$
+\phi=\frac{q}{4\pi r},
+$$
+som uppfyller Poissons ekvation med k&#228;llan \( \rho=q\delta^3(\vec{r}) \), 
+$$
+\Delta\phi=-q\delta^3(\vec{r}).
+$$
+
+<h3 id="___sec7">Linjek&#228;lla p&#229; \( z \)-axeln med konstant styrka \( k \) </h3>
+
+<ul>
+<li> vektorf&#228;lt</li>
+</ul>
+
+$$
+\vec F=\frac{k}{2\pi\varrho}\hat\varrho
+$$
+
+<ul>
+<li> Motsvarande potential &#228;r</li> 
+</ul>
+
+$$
+\phi=-\frac{k}{2\pi}\log\frac{\varrho}{\varrho_0},
+$$
+
+<ul>
+<li> Potentialen uppfyller Poissons ekvation:</li>
+</ul>
+
+$$
+\Delta\phi=-k\delta^2(\vec{\varrho}).
+$$
+
+<h3 id="___sec8">Virveltr&#229;d p&#229; \( z \)-axeln med styrka \( J \) </h3>
+
+<ul>
+<li> f&#228;ltet</li> 
+</ul>
+
+$$
+\vec G=\frac{J}{2\pi\varrho}\hat\varphi.
+$$
+
+<ul>
+<li> Vektorpotentialen &#228;r (t.ex., med tanke p&#229; gaugeinvarians)</li>
+</ul>
+
+$$
+\vec A=-\frac{J\hat z}{2\pi}\log\frac{\varrho}{\varrho_0},
+$$
+(kontrollera; \( \vnabla\times\vec A \) i cylindriska koordinater)
+$$
+\vnabla\times\vec A=\frac{1}{\varrho}
+	\begin{vmatrix}
+        \hat\varrho & \varrho\hat\varphi & \hat z \\ \frac{\partial}{\partial \varrho} & 
+\frac{\partial}{\partial \varphi} &
+        \frac{\partial}{\partial z} \\ 0\mbox{} & 0\mbox{} & -\frac{J}{2\pi}\log\varrho \\
+        \end{vmatrix}
+           =\frac{J}{2\pi\varrho}\hat\varphi.
+$$
+
+<ul>
+<li> Notera att denna vektorpotential uppfyller \( \vnabla\cdot\vec A=0 \), och d&#228;rf&#246;r ges virvelf&#246;rdelningen av</li> 
+</ul>
+
+$$
+\vnabla \times \vec{G} = \vec{\jmath} = -\Delta\vec A.
+$$ 
+
+<ul>
+<li> Poissons ekvation,</li> 
+</ul>
+
+$$
+\Delta\vec A=-J\hat z\delta^2(\vec{\varrho}).
+$$
+
+<h2 id="___sec9">Randv&#228;rdesproblem </h2>
+
+<p>
+En l&#246;sning av t.ex. Laplaces ekvation \( \Delta \phi = 0 \) ger upphov till integrationskonstanter. F&#246;r att entydigt best&#228;mma l&#246;sningen beh&#246;vs d&#228;rf&#246;r <em>randvillkor</em> f&#246;r f&#228;ltet.
+
+<p>
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Rita.</b>
+<p>
+Skissa g&#228;rna hur ett f&#228;lt som uppfyller Laplaces ekvation beter sig. Titta p&#229; ett f&#228;lt \( \phi(x,y) \) och anv&#228;nd Taylorexpansion f&#246;r att teckna beteendet n&#228;ra en punkt \( \vec{r}_0 \). Villkoret \( \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} = 0 \) ger en andragradskurva 
+$$
+\phi(\vec{r}) =  c_0 + c_x (x-x_0) + c_y (y-y_0) + c_{xy} (x-x_0)(y-y_0)+ \frac{c_{ii}}{2}(x-x_0)^2 - \frac{c_{ii}}{2}(y-y_0)^2,
+$$
+d&#228;r t.ex. \( c_0 = \phi(\vec{r}_0) \), \( c_x = d\phi/dx(\vec{r}_0) \), etc. Det viktiga &#228;r allts&#229; att expansionen slutar med den kvadratiska termen och att dessa &#228;r lika, men motriktade, i \( x \)- och \( y \)-led.
+</div>
+
+
+<h3 id="___sec10">Exempel: L&#246;sningar till Laplaces ekvation </h3>
+
+<p>
+<center> <!-- figure label: --> <div id="fig:xy"></div> <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 1:  L&#246;sningen (\( \phi = xy \)) till Laplaces ekvation i tv&#229; dimensioner p&#229; ett kvadratiskt omr&#229;de med randvillkor enligt figuren.  <!-- caption label: fig:xy --> </p></center>
+<p><img src="fig/xy.png" align="bottom" width=600></p>
+</center>
+
+<p>
+<center> <!-- figure label: --> <div id="fig:x2y2"></div> <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 2:  L&#246;sningen (\( \phi = x^2 - y^2 \)) till Laplaces ekvation i tv&#229; dimensioner p&#229; ett cirkul&#228;rt omr&#229;de med vinkelberoende randvillkor enligt figuren.  <!-- caption label: fig:x2y2 --> </p></center>
+<p><img src="fig/x2y2.png" align="bottom" width=600></p>
+</center>
+
+<p>
+Tv&#229; exempel p&#229; l&#246;sningar till Laplaces ekvation i ett omr&#229;de med givna randvillkor visas i figurerna <a href="#fig:xy">1</a> och <a href="#fig:x2y2">2</a>.
+
+<p>
+<div class="alert alert-block alert-warning alert-text-normal">
+<b>Kommentar.</b>
+<p>
+Att ta reda p&#229; precis &quot;hur mycket&quot; villkor, och av vilket slag, man b&#246;r l&#228;gga p&#229; f&#228;ltet p&#229; randen \( \partial V \) &#228;r ju ett matematiskt problem, men det matematiska svaret p&#229; fr&#229;gan b&#246;r ocks&#229; vara ett svar inom fysik, s&#229; att en given fysikalisk f&#246;ruts&#228;ttning ger en unik l&#246;sning (f&#228;ltkonfiguration).
+</div>
+
+
+<ul>
+<li> V&#229;rt randv&#228;rdesproblem best&#229;r av den partiella differentialekvationen \( \Delta\phi=-\rho \) samt n&#229;gra randvillkor.</li> 
+<li> Vilka randvillkor ger en <em>unik</em> l&#246;sning? Eller hur skall &quot;bra&quot; randvillkor formuleras?</li> 
+<li> Antag att \( \phi_1 \) och \( \phi_2 \) b&#229;da &#228;r l&#246;sningar.</li> 
+<li> \( \psi=\phi_1-\phi_2 \), uppfyller Laplaces ekvation, \( \Delta\psi=0 \).</li> 
+<li> En trivial l&#246;sning, \( \psi=\mathrm{konstant} \), inneb&#228;r att l&#246;sningen till Poissons ekvation &#228;r unik.</li>
+</ul>
+
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 3</b>: Eftersom \( \phi_1 \) och \( \phi_2 \) ger samma vektorf&#228;lt om de enbart skiljer p&#229; en konstant.)</font>
+<!-- end inline comment -->
+
+<p>
+Betrakta nu identiteten
+$$
+\vnabla\cdot(\psi\vnabla\psi)=\vnabla\psi\cdot\vnabla\psi+\psi\Delta\psi
+=\vnabla\psi\cdot\vnabla\psi=|\vnabla\psi|^2,
+$$
+som g&#228;ller n&#228;r \( \Delta\psi=0 \). Till&#228;mpa nu Gauss sats p&#229; vektorf&#228;ltet \( \psi\vnabla\psi \). 
+$$
+\int_V|\vnabla\psi|^2dV=\int_{\partial V}\psi\vnabla\psi\cdot d\vec S.
+$$
+
+<ul>
+<li> VL &#228;r positivt semidefinit, och noll endast om \( \psi = \mathrm{konstant} \).</li> 
+<li> Randvillkor som g&#246;r HL till noll inneb&#228;r d&#228;rf&#246;r det vi vill.</li>
+</ul>
+
+Ytintegralen i h&#246;gerledet &#228;r 
+$$
+\int_{\partial V}\psi(\vnabla\psi\cdot\vec n)dS.
+$$ 
+Tv&#229; faktorer i integranden: \( \psi \) och \( \vnabla\psi\cdot\vec n \).
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 4</b>: Den andra faktorn &#228;r &quot;normalderivatan&quot; vid randen, allts&#229; riktningsderivatan i normalens riktning.)</font>
+<!-- end inline comment -->
+
+<p>
+
+<!-- begin inline comment -->
+<font color="red">(<b>Comment 5</b>: L&#246;sningen till Laplaces ekvation &#228;r trivial (konstant) om den ena eller den andra &#228;r noll p&#229; randen.)</font>
+<!-- end inline comment -->
+
+<h3 id="___sec11">Dirichlets randvillkor: </h3>
+
+$$
+\psi = 0 \mathrm{~p&#229;~} \partial V \quad \Rightarrow \quad \psi = 0 \mathrm{~i~} V
+$$
+Detta ger att
+$$
+\phi|_{\partial V}=f,
+$$
+d&#228;r \( f \) &#228;r en funktion p&#229; randen
+
+<h3 id="___sec12">Neumanns randvillkor: </h3>
+
+$$
+(\vnabla\psi) \cdot \vec n=0 \mathrm{~p&#229;~} \partial V \quad \Rightarrow \quad \psi = \mathrm{konstant} \mathrm{~i~} V
+$$
+Detta ger att
+$$
+(\vnabla\phi)|_{\partial V}\cdot\vec n=g,
+$$
+d&#228;r \( g \) &#228;r en funktion p&#229; randen.
+
+<h3 id="___sec13">Sammanfattning: </h3>
+
+Poissons ekvation i volymen \( V \) med n&#229;gon k&#228;llf&#246;rdelning \( \rho \) har en unik l&#246;sning (s&#229;n&#228;r
+som p&#229; en ointressant konstant) f&#246;r dessa tv&#229; typer av randvillkor.
+
+<p>
+<!-- begin bottom navigation -->
+<table style="width: 100%"><tr><td>
+</td><td>
+</td></tr></table>
+<!-- end bottom navigation -->
+</p>
+
+<!-- ------------------- end of main content --------------- -->
+
+
+</body>
+</html>
+    
+

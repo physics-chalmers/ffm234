@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" >
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml/>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>Vektorfält och klassisk fysik [FFM234]</title>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700&amp;subset=latin-ext&amp;display=swap" rel="stylesheet">
+<link href="vektorfalt.css" rel="stylesheet" type="text/css" />
+
+<script src="courseURLs.js"></script>
+
+<base target="_parent">
+</head>
+
+<body>
+
+
+<div id="content">
+
+<div class='main_box'>
+<h2><span>Kurs-PM</span></h2>
+<h3><span>FFM234 Vektorfält och klassisk fysik, lp1 HT19 (4,5 hp)</span></h3>
+Kursen ges av institutionen för Fysik
+</div>
+
+<div class='main_box'>
+<h3>Kontaktuppgifter</h3>
+
+  <p><b>Föreläsare</b><br/>
+  är <a href="http://fy.chalmers.se/subatom/tsp">
+  Christian Forss&eacute;n</a>, 
+  rum F8006, vån. 8 Forskarhuset, tel. 7723261, <br/>
+  Email: 
+	<SCRIPT TYPE="text/javascript">
+		server='chalmers.se'
+		name='christian.forssen'
+		emailE=(name + '@' + server)
+		document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+	</SCRIPT>
+	<NOSCRIPT>
+    	christian.forssen[at]chalmers.se
+	</NOSCRIPT>  
+  </p>
+  
+  <p><b>Övningsledare</b><br/>
+			   är Måns Wallner, vån 8 Forskarhuset, <br/>
+  Email: 
+	<SCRIPT TYPE="text/javascript">
+		server='physics.gu.se'
+		name='mans.wallner'
+		emailE=(name + '@' + server)
+		document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+	</SCRIPT>
+	<NOSCRIPT>
+    	mans.wallner[at]physics.gu.se
+	</NOSCRIPT>  
+    <br/>
+  och Kevin Marc Seja, vån 5 MC2<br/>
+  Email: 
+	<SCRIPT TYPE="text/javascript">
+		server='chalmers.se'
+		name='seja'
+		emailE=(name + '@' + server)
+		document.write('<A href="mailto:' + emailE + '">' + emailE + '</a>')
+	</SCRIPT>
+	<NOSCRIPT>
+    	seja[at]chalmers.se
+	</NOSCRIPT>  
+  </p>
+  
+  <p><b>Kursutvärderare</b>
+  <br/>
+      <!--Kontaktuppgifter kommer att läggas upp här. -->
+      är Alva Kinman, kinman[at]student.chalmers.se  <br/>
+samt David Hambraeus, davham[at]student.chalmers.se
+  </p>
+
+</div>
+
+<div class='main_box'>
+<h3>Kursens syfte</h3>
+<p>Kursen avser att dels ge en förtrogenhet med de matematiska metoder som används för att undersöka fysikaliska fenomen i det tredimensionella rummet, dels fördjupa kunskaperna i grundläggande klassisk fysik.</p>
+</div>
+
+<div class='main_box'>
+<h3>Schema</h3>
+<ul>
+<li>Se detaljerad veckoplanering under 
+    <script>
+	document.write('<a href="' + veckoplanering + '">Veckoplanering</a>');
+	</script>
+    <noscript>
+		Veckoplanering
+	</noscript>
+	.</li>
+<li>Generellt gäller att föreläsningarna äger rum på tisdagar (kl 13-15 i
+  HB2), onsdagar (kl 8-10 i HA4) och fredagar (kl 10-12 i
+  HA4). Räkneövningarna är på <strike>fredagar</strike> onsdagar (kl 10-12 i FL salarna).</li>
+<li>Aktuellt schema i <a href="https://cloud.timeedit.net/chalmers/web/public/s.html?sid=3&amp;object=course_FFM234&amp;type=course&amp;p=0.m,2.w">TimeEdit</a> med lokaler.</li>
+</div>
+
+<div class='main_box'>
+<h3>Kurslitteratur</h3>
+  Kursen definieras av innehållet i kapitel 1-12 (exklusive avsnitt
+  11.3-7) av kurskompendiet (se nedan). Kursboken används som referenslitteratur och
+  erbjuder  ofta mer detaljer.
+  <ul>
+    <li>Kurskompendium: Martin
+      Cederwall och Christian Forssén, <i>"En
+	första kurs i matematisk fysik"</i>
+    Kurskompendiet säljs på Store men är även fritt tillgängligt elektroniskt. 
+    Se 
+    <script>
+	document.write('<a href="' + kursmaterial + '">Kursmaterial</a>');
+	</script>
+    <noscript>
+		Kursmaterial
+	</noscript>
+    .</li> 
+    <li>Formelsamling. Se 
+    <script>
+	document.write('<a href="' + kursmaterial + '">Kursmaterial</a>');
+	</script>
+    <noscript>
+		Kursmaterial
+	</noscript>
+	.</li>
+    <li>Referenslitteratur: <i>"Mathematical methods for physicists"</i> (7th ed), av
+    Arfken, Weber och Harris, 2013. 
+      <br/>
+      Vi använder huvudsakligen kapitel 1,3,9 samt delar av kapitel 4,10. Boken finns
+    att köpas på Store men är även tillgänglig elektroniskt via Chalmers bibliotek (inloggning krävs). Se
+    <script>
+	document.write('<a href="' + kursmaterial + '">Kursmaterial</a>');
+	</script>
+    <noscript>
+		Kursmaterial
+	</noscript>
+	.    
+    <br/>Notera att man kan läsa kursen med enbart kurskompendiet, 
+    men att boken utgör bra
+    referenslitteratur inom flera delar av matematisk fysik och att
+    den även används i den valbara kursen FTF131 "Matematisk fysik"
+    för F3.</li>
+  </ul>
+</div>
+
+<div class='main_box'>
+<h3>Kursens upplägg</h3>
+  <p> 
+  Se detaljerad 
+    <script>
+	document.write('<a href="' + veckoplanering + '">Veckoplanering</a>');
+	</script>
+    <noscript>
+		Veckoplanering
+	</noscript>
+  (med referenser till motsvarande avsnitt i kursboken och
+  kompendiet).
+  </p>
+
+  <h4>Lärarledd undervisning</h4>
+  <ul>
+    <li><b>Föreläsningar med demonstrationsövning</b>: teorigenomgång
+      med exempel, diskussionsuppgifter, demonstration av problemlösning i helklass.</li> 
+    <li><b>Övningar</b>: demonstrationsövning samt självverksamhet med
+    handledning. OBS: försök lösa de listade demonstrationsuppgifterna
+    själv i förhand så blir demonstrationen mycket mer givande.</li>
+  </ul>
+  <p> 
+    Men en stor del av inlärningen förväntas äga rum genom eget arbete
+  med de rekommenderade uppgifterna och datoruppgifterna samt vid
+  genomläsning av kursmaterial inför föreläsningarna.
+  </p> 
+
+  <h4>Problemlösning</h4>
+  <p>De rekommenderade uppgifterna gäller både
+övningstillfällena och självverksamhet utanför dessa. 
+  <br/>
+<h5>Allmänna råd:</h5>
+<ul>
+<li>Nyckeln till framgång är problemlösning. Räkna med att behöva
+  arbeta hårt med problemlösning från första kursveckan.</li> 
+<li>Det är en förutsättning för framgång i klassisk fysik (och andra
+  fysikämnen) att matematiken man använder behärskas flytande. Ställer
+  matematiken till problem för dig, gå då tillbaka till motsvarande
+  avsnitt i matematiklitteraturen och red ut dem. Det går inte att
+  fuska med detta.</li> 
+</ul>
+</p>
+
+  <h4>Piazza</h4>
+  <p>Kursen har ett diskussionsforum på Piazza. Kursens lärare kommer att svara på frågor här, men vi uppmanar också er studenter att diskutera uppgifter och lösningar med varandra via detta forum. 
+  <!-- Mer information följer. -->
+  Ni går själva med i klassen FFM234 genom följande länk:
+<a href="http://piazza.com/chalmers.se/fall2019/ffm234">
+http://piazza.com/chalmers.se/fall2019/ffm234</a>. <br/>
+En direktlänk till detta Piazzaforum finns i huvudmenyn. 
+</p>
+
+  <h4>OpenTA</h4>
+  <p>Kursen har en OpenTA server med samtliga rekommenderade uppgifter. Inloggning sker via Canvas.</p>
+  <p>Om någon har problem med autentiseringen beror det oftast på inställningar för tredjeparts-cookies och CSRF (rekommendation från OpenTAs utvecklare: "You must allow third-party cookies and disable browser CSRF protection"). Hör av er till oss med så mycket detaljer som möjligt kring er webbläsare och era inställningar om ni har problem med inloggningen.</p>
+  <p>OpenTA via Canvas hamnar i en frame med Canvasmenyn till vänster, vilket kan upplevas som en lite onödig förlust av utrymme. Ni får gärna prova "Frameless OpenTA" i er webbläsare. Även via Canvas app på mobiltelefonen fungerar layouten bättre. </p>
+</p>
+
+<h4>Förändringar sedan förra kurstillfället</h4>
+<ul>
+<li>Kurshemsidan och all kursinformation har migrerats till Chalmers nya lärplattform Canvas. Allt kursmaterial och kursinfo finns nu som ett publikt repository på <a href="https://github.com/physics-chalmers/ffm234">github</a> och har integrerats med kurshemsidan på Canvas.</li>
+<li>En översyn av de rekommenderade uppgifterna har genomförts så att det totala antalet prioriterade uppgifter har kunnat reduceras.</li>
+<li>Inloggning på OpenTA sker numera via Canvas (kommer snart) och ytterligare uppgifter (samtliga Veckans tal) har lagts upp på OpenTA.</li>
+<li>Veckans räkneövning har flyttats till fredagar (15-17). Den kommer att äga rum i två salar bredvid varandra (FL71,72) vilket gör det lättare för räkneövningsledarna att hjälpas åt att besvara frågor under den sista timmen då det är räknestuga.</li>
+<li>Referenslitteraturen Arfken är nu lättare att utnyttja då det finns en direktlänk till Chalmers bibliotek där boken finns tillgänglig elektroniskt.</li>
+</ul>
+
+</div>
+
+<div class='main_box'>
+<h3>Lärandemål</h3>
+
+<p>Efter fullgjord kurs kan studenten utföra konstruktiv analys av problem inom fysik och tekniktillämpningar som berör fysikaliska storheters variation i rummet. Studenten har särskilt tillägnat sig matematiska färdigheter för derivering och integrering av skalära fält och vektorfält, analys och syntes av fält, inklusive singulariteter. Studenten kan redogöra för fältbegreppet i klassisk fysik, och tillämpa detta på enklare problem inom teorierna för klassisk elektrodynamik (Maxwells ekvationer) och termodynamik (diffusions- och värmeledningsekvationerna). Efter genomgången kurs kan studenten gå vidare med mer avancerade studier inom klassisk fysik.</p>
+
+<p>Det övergripande målet är att man skall tillägna sig en färdighet i
+att använda lådan med matematiska verktyg inom algebra,
+flervariabelanalys och differentialekvationer för att modellera
+fysikaliska problem.</p>
+
+<ul>
+  <li>Behärska fältbegreppet. Skalära fält, vektorfält,
+tensorfält. Beräkna och skissera ekvipotentialytor och
+fältlinjer. Räkna ut och förstå gradient, riktningsderivata,
+divergens, rotation och Laplaceoperatorn i cartesiska koordinater.</li>
+  <li>Behärska elementära metoder för grafisk visualisering av fält,
+och kunna använda dem som stöd i kursens olika moment.</li>
+  <li>Förstå och kunna använda kroklinjiga koordinater med ortogonala
+basvektorer. Givet relationen mellan de kroklinjiga och cartesiska
+koordinaterna, kunna räkna ut och tolka skalfaktorer. Kunna beräkna
+gradient, divergens och rotation och Laplaceoperatorn i givna
+kroklinjiga koordinater (speciellt sfäriska och cylindriska).</li>
+  <li>Kunna beräkna linje-, yt-, och volymintegraler genom
+parametrisering och i kroklinjiga koordinater. Tillämpa linjeintegral
+på mekaniskt arbete. Tillämpa ytintegral på flöde genom
+yta. Volymintegral för att integrera en täthet.</li>
+  <li>Kunna använda Gauss och Stokes satser i konkreta beräkningar och
+för teoretiska överlägganden.</li>
+  <li>Förstå och kunna härleda kontinuitetsekvationen utgående från en
+  storhets bevarande. </li>
+  <li>Kunna hantera indexnotation (tensornotation), inklusive
+Einsteins summationskonvention, för vektorer, matriser och mer
+allmänna tensorer. Förstå och bevisa hur resultat av multiplikation
+och "kontraktion" ger tensorer som resultat. Kroneckers delta och
+Levi-Civita-tensorn. Kryssprodukt, skalär trippelprodukt och
+determinant i termer av Levi-Civita-tensorn. Identiteter för produkter
+av två epsilon. Identiteter för uttryck med två derivator, t.ex. rot
+rot.</li>
+  <li>Kunna hantera Diracs deltafunktion i en och flera
+dimensioner. Approximationer genom "smala och höga" funktioner. Kunna
+utföra integraler med deltafunktioner i integranden.</li>
+  <li>Förstå och känna igen enkla typer av singulära fält: punktkälla,
+linjekälla, virveltråd i termer av deltafunktioner. Kunna utföra
+integraler med singulära fält. Kunna använda Gauss och Stokes satser i
+närvaro av singulära källor och virvlar.</li>
+  <li>Kunna och kunna tillämpa kriterierna för existens av skalär
+potential och vektorpotential till vektorfält. Tolkning och
+tillämpning av rotationsfrihet i termer av konservativt kraftfält och
+i termer av elektrostatiskt fält. Tolkning och tillämpning av
+divergensfrihet i termer av magnetostatiskt fält.</li>
+  <li>Laplaces och Poissons ekvationer. Känna till entydigheten av
+lösningar för vissa randvillkor: Dirichlets och Neumanns. Kunna lösa
+genom vettiga ansatser i enkla geometrier med enkla randvärden.</li> 
+  <li>Greensfunktioner. Definition av Greensfunktion till Poissons
+ekvation som lösning till ekvationen med punktkälla. Kunna tillämpa
+principen för att lösa Poissons ekvation på R<sup>2</sup> och
+R<sup>3</sup> med givna källfördelningar.</li>
+  <li>Kunna tillämpa speglingsmetoden för Laplaces ekvation med
+Dirichlets och Neumanns randvillkor på plan.</li>
+  <li>Visa viss kännedom om separationsmetoden. Kunna tillämpa den i
+enkla fall med ledning av randvärdenas utseende.</li>
+  <li>Kunna härleda och förstå värmeledningsekvationen. Dess relation
+till Poissons ekvation.  Kunna tillämpa Greensfunktionsmetod (man
+behöver inte kunna Greensfunktionen utantill) för
+begynnelsevärdesproblem vid värmeledning på R<sup>D</sup>. Kunna lösa
+stationära värmeledningsproblem med och utan värmekällor.</li>
+  <li>Visa kännedom om Maxwells ekvationer i vacuum, med källor och
+strömmar. Kontinuitetsekvationen för elektrisk laddning och ström, och
+dess relation till Maxwells ekvationer.  Tillämpningar på
+elektrostatiska och magnetostatiska problem: potentialer och
+vektorpotentialer från laddnings- och strömfördelningar. </li>
+  <li>Kunna använda metoder och tankemönster från kursen och tidigare
+kurser för att hantera nya och oväntade problem.</li>
+</ul>
+</div>
+
+<div class='main_box'>
+<h3>Examination</h3>
+  Examination sker via 
+  <ul>
+    <li>skriftlig tentamen</li>
+    <li>två obligatoriska inlämningsuppgifter (separat kursmoment på 1.5 hp)</li> 
+  </ul>
+  <p>Länk till kursplanen i Studieportalen <a href="https://student.portal.chalmers.se/sv/chalmersstudier/minkursinformation/Sidor/SokKurs.aspx?course_id=29191&amp;parsergrp=3">Studieplan</a></p>
+
+<h4>Skriftlig tentamen</h4>
+<p>Tentamen består av uppgifter av problemlösnings- och
+teorikaraktär, och ger maximalt 60 poäng. </p>
+
+<p>Tillåtna hjälpmedel på tentamen är Physics Handbook, Beta och Olle
+Branders formelsamling.</p>
+
+  <h5><a name="principer">Rättningsprinciper</a></h5>
+  Alla svar skall motiveras, införda storheter förklaras liksom val av
+  metoder. Lösningarna förväntas vara välstrukturerade och begripligt
+  presenterade. Erhållna svar skall, om möjligt, analyseras
+  m.a.p. dimension och rimlighet. Skriv och rita tydligt! Vid
+  tentamensrättning gäller följande allmänna principer: 
+  <ul>
+    <li>För full (10) poäng krävs fullständigt korrekt lösning.
+    </li>
+    <li>Mindre fel ger 1-3 poängs avdrag. Gäller även mindre brister i
+  presentationen. </li>
+    <li>Allvarliga fel (t.ex. dimensionsfel eller andra fel som leder till
+  orimliga resultat) ger mindre poängavdrag om orimligheten pekas
+  ut. </li> 
+    <li>Lösningar som inte går att följa (t.ex. avsaknad av figur,
+  ej definierade variabler, svårläst, etc) renderar poängavdrag även
+  om svaret verkar vara korrekt.</li>
+    <li>Allvarliga principiella fel ger fullt poängavdrag.
+    </li>
+    <li>Även skisserade lösningar kan ge delpoäng.</li>
+    </ul>
+
+  <h5><a name="betyg">Betygsgränser</a></h5>
+  Slutbetyget bestäms av den totala poängen enligt följande:
+  <ul>
+    <li>För att bli godkänd på kursen krävs godkända inlämningsuppgifter samt
+    minst 24 poäng på tentamen.
+    </li>
+    <li>Betygsgränser:
+    <br/>
+    24-35 poäng ger betyg 3,
+    <br/>
+    36-47 poäng ger betyg 4,
+    <br/>
+    48+ poäng ger betyg 5.
+    </li>
+  </ul>
+  
+  <h4>Inlämningsuppgifter</h4>
+  Godkända inlämningsuppgifter är ett krav för godkänt slutbetyg på
+  kursen.
+  <ul>
+  <li>Inlämningsuppgifterna är datorbaserade och redovisas skriftligt. Enbart omdömena Godkänt / Underkänt kommer att ges. </li>
+  <li>Uppgifterna görs i grupper om <b>två</b> studenter och man lämnar
+  en gemensam, skriftlig rapport. Notera att det krävs en speciell
+  överenskommelse med examinator för att få
+  göra arbetet ensam. Använd gärna kursens diskussionsforum om ni har svårt att hitta en
+  labpartner.</li>
+  <li>Det finns ett
+  schemalagt handledningstillfälle och man är alltid välkommen att
+  fråga lärarna på kursen. </li>
+  <li>Rapporten skall produceras i pdf-format (använd helst TeX/LaTeX) och varje par lämnar in en gemensam rapport. Se vidare instruktioner i
+  uppgiftsformuleringarna.</li>
+  <li>Rapporten och bifogad källkod lämnas in
+  via Canvas. Det är gruppinlämning så man måste först gå med i en
+  av de öppna projektgrupperna.</li>
+  </ul>
+  <h5>Deadline, inlämning</h5> 
+  <ul>
+    <li>
+    <script>
+	document.write('<a href="' + datorlab1 + '">Datorlaboration 1</a>');
+	</script>
+    <noscript>
+		Datorlaboration 1
+	</noscript>
+    : Inlämning senast fredag i läsvecka 3.
+    </li> 
+    <li>
+    <script>
+	document.write('<a href="' + datorlab2 + '">Datorlaboration 2</a>');
+	</script>
+    <noscript>
+		Datorlaboration 2
+	</noscript>
+	: Inlämning senast tisdag i läsvecka 8 (med mindre omfattning på den skriftliga redovisningen).
+    </li>
+  <li>Icke-godkända uppgiftsrapporter (som lämnats in före deadline) ges möjlighet till komplettering. </li>
+  <li>Eventuella inlämningar efter deadline rättas först i samband med omtentamina. Detta gäller även för eventuella returer som lämnas in efter angiven deadline.</li>
+  </ul>
+  <p>
+    För uppgiftsformuleringar, se 
+    <script>
+	document.write('<a href="' + kursmaterial + '">Kursmaterial</a>');
+	</script>
+    <noscript>
+		Kursmaterial
+	</noscript>
+    .
+  </p>
+</div>
+
+</div>
+
+</body>
+</html>
