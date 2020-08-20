@@ -149,3 +149,24 @@ copying after regex "Start initialization" until "End plot"
 *** warning: inline math in HTML must have space around <:
     t<0  ->  t < 0
 output in 10-varmeledning-bs.html
+running mako on 10-varmeledning.do.txt to make tmp_mako__10-varmeledning.do.txt
+mako variables: {'FORMAT': 'pdflatex', 'DEVICE': 'screen', 'Terminal}},framesep': '2.5mm,framerule=0.7pt]'}
+translating doconce text in tmp_mako__10-varmeledning.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+T_0
+T_0A
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+3}c,\rhou = s/(c\rho)x \in [0,L]T = T(x,t)T(x,0) = T_0 \sin \frac{\pi x}{L}T(0,t) = T(L,t) = 0T(x,0)\partial T
+output in 10-varmeledning.tex
+running mako on 10-varmeledning.do.txt to make tmp_mako__10-varmeledning.do.txt
+translating doconce text in tmp_mako__10-varmeledning.do.txt to html
+copying after regex "Start initialization" until "End plot"
+     file: fig/figs-ch10.py, lines 2-23 (format: pycod)
+*** warning: inline math in HTML must have space around <:
+    t<0  ->  t < 0
+output in 10-varmeledning-bs.html

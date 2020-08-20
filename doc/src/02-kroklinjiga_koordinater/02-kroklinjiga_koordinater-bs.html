@@ -138,7 +138,7 @@ $$
 
 <br>
 <p>
-<center><h4>Sep 3, 2019</h4></center> <!-- date -->
+<center><h4>Aug 18, 2020</h4></center> <!-- date -->
 <br>
 <p>
 </div> <!-- end jumbotron -->
@@ -696,7 +696,7 @@ start_x=[<span style="color: #008000">zeros</span>(<span style="color: #008000">
 strm=streamline(X<span style="color: #666666">&#39;</span>, Y<span style="color: #666666">&#39;</span>, v_x<span style="color: #666666">&#39;</span>, v_y<span style="color: #666666">&#39;</span>, start_x, start_y,[<span style="color: #666666">0.01</span>]);
 set(strm,<span style="color: #BA2121">&#39;LineWidth&#39;</span>,<span style="color: #666666">2</span>,<span style="color: #BA2121">&#39;Color&#39;</span>,<span style="color: #BA2121">&#39;k&#39;</span>)
 
-hold on
+hold <span style="color: #BA2121">on</span>
 
 <span style="color: #408080; font-style: italic">% Matlab streamlines have no arrows. Combine with quiver.</span>
 <span style="color: #408080; font-style: italic">% Use fewer grid points to avoid too many arrows in the plot.</span>
@@ -728,7 +728,7 @@ Och samma exempel med Python:
 
 <!-- code=python (!bc pycod) typeset with pygments style "default" -->
 <div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>w <span style="color: #666666">=</span> <span style="color: #666666">3</span>
-Y, X <span style="color: #666666">=</span> np<span style="color: #666666">.</span>mgrid[<span style="color: #666666">-</span>w:w:<span style="color: #666666">100j</span>, <span style="color: #666666">-</span>w:w:<span style="color: #666666">100j</span>]
+Y, X <span style="color: #666666">=</span> np<span style="color: #666666">.</span>mgrid[<span style="color: #666666">-</span>w:w:<span style="color: #666666">100</span>j, <span style="color: #666666">-</span>w:w:<span style="color: #666666">100</span>j]
 R <span style="color: #666666">=</span> np<span style="color: #666666">.</span>sqrt(X<span style="color: #666666">**2+</span>Y<span style="color: #666666">**2</span>)
 U <span style="color: #666666">=</span> <span style="color: #666666">-</span>Y <span style="color: #666666">/</span> R<span style="color: #666666">**2</span> <span style="color: #408080; font-style: italic"># Note that -Y/R = -sin(phi)</span>
 V <span style="color: #666666">=</span> X <span style="color: #666666">/</span> R<span style="color: #666666">**2</span>  <span style="color: #408080; font-style: italic"># Note that X/R = cos(phi)</span>
@@ -739,7 +739,7 @@ ax <span style="color: #666666">=</span> fig<span style="color: #666666">.</span
 strm <span style="color: #666666">=</span> ax<span style="color: #666666">.</span>streamplot(X, Y, U, V, linewidth<span style="color: #666666">=2</span>)
 
 ax<span style="color: #666666">.</span>set_title(<span style="color: #BA2121">r&#39;Streamplot, vortex field &#39;</span> <span style="color: #666666">+</span>\ 
-        <span style="color: #BA2121">r&#39;$\vec{F} = \frac{J}{2\pi\rho}\hat\varphi$&#39;</span>)
+        <span style="color: #BA2121">r&#39;$\vec</span><span style="color: #BB6688; font-weight: bold">{F}</span><span style="color: #BA2121"> = \frac</span><span style="color: #BB6688; font-weight: bold">{J}</span><span style="color: #BA2121">{2\pi\rho}\hat\varphi$&#39;</span>)
 ax<span style="color: #666666">.</span>set_xlabel(<span style="color: #BA2121">&#39;$x$&#39;</span>)
 ax<span style="color: #666666">.</span>set_ylabel(<span style="color: #BA2121">&#39;$y$&#39;</span>)
 

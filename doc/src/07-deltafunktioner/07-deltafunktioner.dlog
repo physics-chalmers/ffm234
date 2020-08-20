@@ -1259,3 +1259,29 @@ label{_auto19}
 \end{equation}
 
 output in 07-deltafunktioner-bs.html
+running mako on 07-deltafunktioner.do.txt to make tmp_mako__07-deltafunktioner.do.txt
+mako variables: {'FORMAT': 'pdflatex', 'DEVICE': 'screen', 'Terminal}},framesep': '2.5mm,framerule=0.7pt]'}
+translating doconce text in tmp_mako__07-deltafunktioner.do.txt to pdflatex
+open file with encoding utf-8
+output in 07-deltafunktioner.tex
+running mako on 07-deltafunktioner.do.txt to make tmp_mako__07-deltafunktioner.do.txt
+translating doconce text in tmp_mako__07-deltafunktioner.do.txt to html
+copying after regex "Start initialization" until "End plot"
+     file: fig/delta.py, lines 2-28 (format: pycod)
+*** warning: inline math in HTML must have space around <:
+    \int_{a<0}^{b>0} \delta(x) \mbox{d}x = 1  ->  \int_{a < 0}^{b>0} \delta(x) \mbox{d}x = 1
+*** warning: math block in HTML must have space around <:
+\begin{equation}
+\lim_{\varepsilon \to 0^+}
+\int_{a<0}^{b>0} f(x) \frac{\exp(-x^2 / \varepsilon^2)}{\sqrt{\pi} \varepsilon} \mbox{d}x = f(0), \quad \mathrm{för~} \varepsilon>0.
+label{_auto19}
+\end{equation}
+
+    changed to
+\begin{equation}
+\lim_{\varepsilon \to 0^+}
+\int_{a < 0}^{b>0} f(x) \frac{\exp(-x^2 / \varepsilon^2)}{\sqrt{\pi} \varepsilon} \mbox{d}x = f(0), \quad \mathrm{för~} \varepsilon>0.
+label{_auto19}
+\end{equation}
+
+output in 07-deltafunktioner-bs.html

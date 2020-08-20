@@ -120,3 +120,8 @@ open file with encoding utf-8
 output in 12-tensorer.tex
 translating doconce text in 12-tensorer.do.txt to html
 output in 12-tensorer-bs.html
+translating doconce text in 12-tensorer.do.txt to pdflatex
+open file with encoding utf-8
+output in 12-tensorer.tex
+translating doconce text in 12-tensorer.do.txt to html
+output in 12-tensorer-bs.html

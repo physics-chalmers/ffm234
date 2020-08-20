@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.31)  9 SEP 2019 23:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.31)  18 AUG 2020 07:30
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1373,7 +1373,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 765.
 Here is how much of TeX's memory you used:
  28420 strings out of 492995
  536305 string characters out of 6132703
- 650995 words of memory out of 5000000
+ 650994 words of memory out of 5000000
  31363 multiletter control sequences out of 15000+600000
  50566 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1396,7 +1396,7 @@ xlive/2017/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2017
 1/public/lm/lmr5.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/
 lmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on 03-integraler.pdf (12 pages, 247367 bytes).
+Output written on 03-integraler.pdf (12 pages, 247374 bytes).
 PDF statistics:
  252 PDF objects out of 1000 (max. 8388607)
  208 compressed objects within 3 object streams

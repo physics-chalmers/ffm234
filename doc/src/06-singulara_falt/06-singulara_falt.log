@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.31)  24 SEP 2019 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.12.31)  18 AUG 2020 07:31
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1375,7 +1375,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 786.
 Here is how much of TeX's memory you used:
  28442 strings out of 492995
  536788 string characters out of 6132703
- 653097 words of memory out of 5000000
+ 654096 words of memory out of 5000000
  31396 multiletter control sequences out of 15000+600000
  50636 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1396,7 +1396,7 @@ lic/lm/lmr7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri1
 r/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on 06-singulara_falt.pdf (11 pages, 363880 bytes).
+Output written on 06-singulara_falt.pdf (11 pages, 363888 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  179 compressed objects within 2 object streams
