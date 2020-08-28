@@ -1110,3 +1110,25 @@ copying after regex "Start initialization" until "End initialization"
 copying after regex "Start Alt2" until "End Alt2"
      file: fig/streamlines-vortex.py, lines 7-26 (format: pycod)
 output in 02-kroklinjiga_koordinater-bs.html
+running mako on 02-kroklinjiga_koordinater.do.txt to make tmp_mako__02-kroklinjiga_koordinater.do.txt
+mako variables: {'FORMAT': 'pdflatex', 'DEVICE': 'screen', 'Terminal}},framesep': '2.5mm,framerule=0.7pt]'}
+translating doconce text in tmp_mako__02-kroklinjiga_koordinater.do.txt to pdflatex
+open file with encoding utf-8
+copy complete file fig/streamlines-vortex.m (format: mpro)
+copying after regex "Start initialization" until "End initialization"
+     file: fig/streamlines-vortex.py, lines 2-5 (format: pycod)
+copying after regex "Start Alt2" until "End Alt2"
+     file: fig/streamlines-vortex.py, lines 7-26 (format: pycod)
+output in 02-kroklinjiga_koordinater.tex
+running mako on 02-kroklinjiga_koordinater.do.txt to make tmp_mako__02-kroklinjiga_koordinater.do.txt
+translating doconce text in tmp_mako__02-kroklinjiga_koordinater.do.txt to html
+copying after regex "Start initialization" until "End initialization"
+     file: fig/tenta-20100826-1b.py, lines 2-11 (format: pycod)
+copying after regex "Start contour plot" until "End contour plot"
+     file: fig/tenta-20100826-1b.py, lines 14-23 (format: pycod)
+copy complete file fig/streamlines-vortex.m (format: mpro)
+copying after regex "Start initialization" until "End initialization"
+     file: fig/streamlines-vortex.py, lines 2-5 (format: pycod)
+copying after regex "Start Alt2" until "End Alt2"
+     file: fig/streamlines-vortex.py, lines 7-26 (format: pycod)
+output in 02-kroklinjiga_koordinater-bs.html

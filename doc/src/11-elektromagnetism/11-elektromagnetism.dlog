@@ -423,3 +423,20 @@ a d\varphi\rho(r) = \epsilon_0 \vec\nabla\cdot\vec EQ_rr > 2aQ - Q = 0E_r = 0ra 
 output in 11-elektromagnetism.tex
 translating doconce text in 11-elektromagnetism.do.txt to html
 output in 11-elektromagnetism-bs.html
+translating doconce text in 11-elektromagnetism.do.txt to pdflatex
+open file with encoding utf-8
+*** warning: latex format will have problem with words
+    containing underscores (this warning is very uncertain, might be wrong too):
+
+EQ_rr
+0E_r
+2aE_r
+E_0
+E_0
+
+    typeset these words with `inline verbatim` or escape with backslash
+    First word appears here:
+a d\varphi\rho(r) = \epsilon_0 \vec\nabla\cdot\vec EQ_rr > 2aQ - Q = 0E_r = 0ra < r < 2aSQr < aQ\vec{E} = - \v
+output in 11-elektromagnetism.tex
+translating doconce text in 11-elektromagnetism.do.txt to html
+output in 11-elektromagnetism-bs.html
