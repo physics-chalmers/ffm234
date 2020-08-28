@@ -145,7 +145,7 @@ MathJax.Hub.Config({
 <center><b>Institutionen f&#246;r fysik, Chalmers, G&#246;teborg, Sverige, Email: <a href="mailto:christian.forssen@chalmers.se" target="_self"><tt>christian.forssen@chalmers.se</tt></a></b></center>
 <br>
 <p>
-<center><h4>Aug 5, 2020 </h4></center> <!-- date -->
+<center><h4>Aug 28, 2020 </h4></center> <!-- date -->
 <br>
 <br /><br /><center><p><img src="fig/isotermer.png" align="bottom" width=600></p></center><br /><br />
 
@@ -309,7 +309,14 @@ Denna uppgift &#228;r ej obligatorisk, men kan ge bonuspo&#228;ng som r&#228;kna
 <h2 id="___sec6" class="anchor">Uppgift 2-1: Tv&#229;dimensionell temperaturf&#246;rdelning: v&#228;rmer&#246;r i mark </h2>
 
 <p>
-Vi studerar nu ett tv&#229;dimensionellt problem som inte &#228;r lika enkelt att l&#246;sa analytiskt. Uppgiften &#228;r att modellera temperaturf&#246;rdelningen och v&#228;rmefl&#246;det som uppst&#229;r d&#229; det finns ett l&#229;ngt v&#228;rmer&#246;r nedgr&#228;vt i horisontell z-led i marken p&#229; djupet \( d_r = 30 \) cm. F&#246;r denna uppgift t&#228;nker oss att r&#246;rets utstr&#228;ckning i z-led &#228;r o&#228;ndlig s&#229; att vi inte beh&#246;ver ta h&#228;nsyn till n&#229;gon rand i denna riktning. D&#228;remot kommer temperaturen nu att variera i horisontell y-led. Vi betraktar ett kvadratiskt tv&#228;rsnitt med sidl&#228;ngderna 1 x 1 m. V&#228;rmer&#246;ret passerar p&#229; djupet \( x=d_r \) m och p&#229; mitten i y-led av v&#229;rt kvadratiska tv&#228;rsnitt.
+Vi studerar nu ett tv&#229;dimensionellt problem som inte &#228;r lika enkelt att l&#246;sa analytiskt. Uppgiften &#228;r att modellera temperaturf&#246;rdelningen och v&#228;rmefl&#246;det som uppst&#229;r d&#229; det finns ett l&#229;ngt v&#228;rmer&#246;r nedgr&#228;vt i horisontell z-led i marken p&#229; djupet \( d_r = 30 \) cm. F&#246;r denna uppgift t&#228;nker oss att r&#246;rets utstr&#228;ckning i z-led &#228;r o&#228;ndlig s&#229; att vi inte beh&#246;ver ta h&#228;nsyn till n&#229;gon rand i denna riktning. D&#228;remot kommer temperaturen nu att variera i horisontell y-led. Vi betraktar ett kvadratiskt tv&#228;rsnitt med sidl&#228;ngderna \( L \times L = 1 \times 1 \) m. V&#228;rmer&#246;ret passerar p&#229; djupet \( x=d_r \) och p&#229; mitten i y-led av v&#229;rt kvadratiska tv&#228;rsnitt (se figur).
+
+<p>
+<center>  <!-- FIGURE -->
+<hr class="figure">
+<center><p class="caption">Figure 1:  Kvadratiskt marktv&#228;rsnitt med randvillkor. V&#228;rmek&#228;llan ligger p&#229; djupet \( d_R \) under markytan. </p></center>
+<p><img src="fig/uppgift_2_1.png" align="bottom" width=400></p>
+</center>
 
 <p>
 Diskretisera det tv&#229;-dimensionella omr&#229;det genom att skapa ett rutn&#228;t med 51 x 51 punkter och konstant stegl&#228;ngd (\( \delta x = \delta y = 0.02 \) m). Vi antar att v&#228;rmer&#246;rets diameter &#228;r cirka 2 cm s&#229; att det beskrivs v&#228;l av en v&#228;rmek&#228;lla som &#228;r nollskild enbart i en ruta i v&#229;rt tv&#229;dimensionella rutn&#228;t. D&#228;r &#228;r k&#228;llt&#228;theten \( s = 250 \mathrm{kW} \cdot \mathrm{m}^{-3} \). Notera att det inneb&#228;r att f&#246;r varje meter i z-led avger v&#228;rmer&#246;ret effekten \( 250 \cdot 10^3 \mathrm{W/m}^3  \cdot 0.02^2 \mathrm{m}^2 \cdot 1.0 \mathrm{m} = 100 \mathrm{W} \).
@@ -337,11 +344,11 @@ Finn det station&#228;ra temperaturf&#246;rdelningen genom att l&#246;sa v&#228;
 F&#246;r maximal po&#228;ngutdelning skall ni &#228;ven resonera kring f&#246;ljande:
 
 <ul>
-<li> En duktig fysiker som betraktar er f&#228;ltbild skulle kunna bli skeptisk till era resultat. Hur skulle ni f&#246;resl&#229; att modifiera er numeriska modell f&#246;r att g&#246;ra en mer realistisk simulering?</li>
+<li> Faktum &#228;r att ovanst&#229;ende simulering har en uppenbar brist och en duktig fysiker som betraktar er f&#228;ltbild borde bli n&#229;got skeptisk till era resultat. Hur skulle ni f&#246;resl&#229; att modifiera er numeriska modell f&#246;r att g&#246;ra en mer realistisk simulering?</li> 
 <li> I en verklig till&#228;mpning skulle det &#246;vre marklagret best&#229; av sand eller grus. Detta material har en h&#246;gre v&#228;rmeledningsf&#246;rm&#229;ga &#228;n den leraktiga jorden under v&#228;rmer&#246;ret (medan vi kan t&#228;nka oss att densiteten samt v&#228;rmekapacitiviteten &#228;r ungef&#228;r densamma). Vad skulle detta ha f&#246;r effekt p&#229; v&#228;rmefl&#246;det genom markytan?</li>
 </ul>
 
-F&#246;rs&#246;k att motivera era svar och eventuellt demonstrera med numeriska simuleringar.
+F&#246;rs&#246;k att motivera era svar och demonstrera eventuellt med numeriska simuleringar.
 
 <p>
 </div>
