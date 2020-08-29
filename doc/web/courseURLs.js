@@ -33,6 +33,13 @@ if (inIframe()) {
 	veckoplanering = 'schedule.html';
 }
 
+var distansundervisning = "";
+if (inIframe()) {
+	distansundervisning = courseURL + "external_tools/566";
+} else {
+	distansundervisning = 'distansundervisning.html';
+}
+
 var datorlab1 = "https://chalmers.instructure.com/courses/10268/assignments/19703";
 
 var datorlab2 = "https://chalmers.instructure.com/courses/10268/assignments/19704";
