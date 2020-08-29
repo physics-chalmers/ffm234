@@ -35,7 +35,7 @@ if (inIframe()) {
 
 var distansundervisning = "";
 if (inIframe()) {
-	distansundervisning = courseURL + "external_tools/566";
+	distansundervisning = courseURL + "external_tools/602";
 } else {
 	distansundervisning = 'distansundervisning.html';
 }
