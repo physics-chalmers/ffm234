@@ -6,24 +6,28 @@ Automatically generated HTML file from DocOnce source
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="DocOnce: https://github.com/hplgit/doconce/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="FFM234, Klassisk fysik och vektorfält - Veckans tal">
 
 <title>FFM234, Klassisk fysik och vektorfält - Veckans tal</title>
 
 
 <style type="text/css">
-/* bloodish style */
+/* blueish style */
+
+/* Color definitions:  http://www.december.com/html/spec/color0.html
+   CSS examples:       http://www.w3schools.com/css/css_examples.asp */
 
 body {
-  font-family: Helvetica, Verdana, Arial, Sans-serif;
-  color: #404040;
-  background: #ffffff;
+  margin-top: 1.0em;
+  background-color: #ffffff;
+  font-family: Helvetica, Arial, FreeSans, san-serif;
+  color: #000000;
 }
-h1 { font-size: 1.8em;  color: #8A0808; }
-h2 { font-size: 1.6em;  color: #8A0808; }
-h3 { font-size: 1.4em;  color: #8A0808; }
-h4 { color: #8A0808; }
-a { color: #8A0808; text-decoration:none; }
+h1 { font-size: 1.8em; color: #1e36ce; }
+h2 { font-size: 1.6em; color: #1e36ce; }
+h3 { font-size: 1.4em; color: #1e36ce; }
+a { color: #1e36ce; text-decoration:none; }
 tt { font-family: "Courier New", Courier; }
 /* pre style removed because it will interfer with pygments */
 p { text-indent: 0px; }
@@ -79,10 +83,10 @@ MathJax.Hub.Config({
 <center><h1>FFM234, Klassisk fysik och vektorf&#228;lt - Veckans tal</h1></center>  <!-- document title -->
 
 <p>
-<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r  fysik, Chalmers, G&#246;teborg, Sverige -->
+<!-- author(s): <a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a> och Kevin Marc Seja, Institutionen f&#246;r  fysik, Chalmers -->
 
 <center>
-<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a>, Institutionen f&#246;r  fysik, Chalmers, G&#246;teborg, Sverige</b> 
+<b><a href="http://fy.chalmers.se/subatom/tsp/" target="_blank">Christian Forss&#233;n</a> och Kevin Marc Seja, Institutionen f&#246;r  fysik, Chalmers</b> 
 </center>
 
 <p>
@@ -90,7 +94,7 @@ MathJax.Hub.Config({
 
 <br>
 <p>
-<center><h4>Aug 9, 2019</h4></center> <!-- date -->
+<center><h4>Sep 26, 2020</h4></center> <!-- date -->
 <br>
 <p>
 <!-- --- begin exercise --- -->
@@ -152,7 +156,33 @@ d&#228;r \( h_i \) &#228;r koordinatsystemets skalfaktorer.
 <p>
 <!-- --- begin solution of exercise --- -->
 <b>Solution.</b>
-Att g&#246;ra
+I sf&#228;riska koordinater &#228;r de tre skalfaktorerna
+$$
+h_r = 1, h_\theta = r, h_\varphi = r \sin \theta.
+$$
+F&#246;rskjutningsvektorn &#228;r
+$$
+\mbox{d}\vec{r} = h_r \hat{r}&nbsp;\mbox{d}r + h_\theta \hat{\theta} ~\mbox{d}\theta + h_\varphi \hat{\varphi} ~ \mbox{d}\varphi.
+$$
+Vi f&#229;r de tre separata differentialekvationerna genom att ta skal&#228;rprodukten av differentialekvationen
+$$ \frac{\mbox{d}\vec{r} }{ \mbox{d}\tau} = C \vec{E},$$
+med de tre basvektorerna \( \hat{r}, \hat{\theta}, \hat{\varphi} \). Vi v&#228;ljer $ C = 4\pi/m$. Detta leder till
+$$ \underbrace{h_r}_{=1} \frac{\mbox{d}r}{\mbox{d}\tau} = \frac{2 \cos \theta}{r^3}  = E_r$$
+$$  \underbrace{h_\theta}_{= r } \frac{\mbox{d}\theta}{\mbox{d}\tau} = \frac{\sin \theta }{r^3} = E_\theta$$
+$$ \underbrace{h_\varphi}_{=r \sin \theta} \frac{\mbox{d} \varphi}{\mbox{d}\tau} = 0 = E_\phi$$
+Ekvationen f&#246;r \( \varphi \) leder direkt till \( \varphi = \mbox{const.} = \pi/6 = \varphi_0  \). De andra tv&#229; ekvationer kan skrivas som
+$$ \frac{\mbox{d}r}{\mbox{d}\tau} = \frac{2 \cos \theta}{ r^3}, $$
+$$ \frac{\mbox{d}\theta}{\mbox{d}\tau} = \frac{\sin \theta}{ r^4}.$$
+Vi kombinerar de tv&#229; ekvationer f&#246;r att f&#229;
+$$ \frac{\mbox{d}\theta}{ \mbox{d} r} = \frac{1}{2r} \frac{\sin \theta}{\cos \theta} = \frac{1}{2r} \tan\theta.$$
+Detta leder d&#229; till 
+$$ \frac{\mbox{d}\theta}{\tan \theta} = \frac{\mbox{d}r}{2r}.$$
+Vi integrerar b&#229;de sidor med startpunkt i den givna punkten \( (r_0 = 2, \theta_0 = \pi/4, \varphi_0=\pi/6) \) som startv&#228;rde och f&#229;r
+$$ \ln \left| \frac{\sin\theta}{\sin \theta_0} \right| = \frac{1}{2} \ln \left| \frac{r}{r_0} \right|$$
+[Anm.: V&#228;nstersidans integral finns tabulerad.] 
+\\Man anv&#228;nder nu r&#228;kneregler f&#246;r logaritmer och resultatet blir 
+$$ \sin^2 \theta = \sin^2 \theta_0 \frac{1}{r_0} r.$$ F&#246;r det givna startv&#228;rdet f&#229;r man \( \sin^2 \theta_0 = \frac{1}{2} \), \( r_0 = 2 \), s&#229; att f&#228;ltlinjerna beskrivs av
+$$ \sin^2 \theta = \frac{1}{4} r \Leftrightarrow r = 4 \sin^2 \theta$$ och \( \varphi = \pi/6 = \mbox{const.} \) hade vi visat tidigare.
 
 <p>
 <!-- --- end solution of exercise --- -->
