@@ -263,15 +263,7 @@ Visas genom partiell integration med någon av funktionssekvenserna som definier
 !ewarning
 * Kan generaliseras till fler dimensioner. Vi skriver generellt $\delta^{(D)}(\vec{r})$, där vi skall tolka superskriptet som antalet dimensioner. T.ex. har vi för $D=3$ 
 $$
-\delta^{(3)}(\vec{r}) = \delta(x) \delta(y) \delta(z).
-$$
-I sfäriska koordinater blir detta
-$$
-\iiint f(\vec{r}) \delta^{(3)}(\vec{r} - \vec{r}_0) r^2 \sin\theta \mbox{d}r \mbox{d}\theta \mbox{d}\phi = f(\vec{r}_0).
-$$
-Med vissa förbehåll (se t.ex. upp för punkten $\vec{r}_0=0$ i sfäriska koordinater) kan deltafunktionen i kroklinjiga koordinater skrivas
-$$
-\delta^{(3)}(\vec{r} - \vec{r}_0) = \frac{1}{h_1(\vec{r}_0) h_2(\vec{r}_0) h_3(\vec{r}_0)} \delta(u_1-u_{1,0}) \delta(u_2-u_{2,0}) \delta(u_3-u_{3,0}).
+\delta^{(3)}(\vec{r}) = \delta^{(3)}(x,y,z).
 $$
 
 !bwarning Rita
@@ -284,9 +276,9 @@ Vi startar med punktkällan i origo: $\vec{F} = \frac{q}{4 \pi r^2} \hat{e}_r$, 
 $$
 \int_V \vnabla \cdot \vec{F} \mbox{d}V,
 $$
-som borde bli lika med $q$ om $V$ omfattar origo. Detta kan vi åstadkomma genom att införa $\vnabla \cdot \vec{F} = q \delta^3(x) = q \delta(x)\delta(y)\delta(z)$ eftersom
+som borde bli lika med $q$ om $V$ omfattar origo. Detta kan vi åstadkomma genom att införa $\vnabla \cdot \vec{F} = q \delta^{(3)}(\vec{r}) = q \delta^{(3)}(x,y,z)$ eftersom
 $$
-\int_V \delta(x)\delta(y)\delta(z) \mbox{d}x \mbox{d}y \mbox{d}z = 1.
+\int_V \delta^{(3)}(x,y,z) \mbox{d}x \mbox{d}y \mbox{d}z = 1.
 $$
 Låt oss använda sfäriska koordinater. Hur kan vi uttrycka $\delta^{(3)}(\vec{r})$ så att följande integralegenskap uppfylls?
 $$
@@ -346,11 +338,11 @@ där vi noterar att $\vec{\nabla}$ opererar på koordinaten $\vec{r}$.
 Linjekällan $\vec{F} = \frac{k}{2 \pi \rho} \hat{e}_\rho$ (motsvarar en punktkälla i $D=2$).
 Källtätheten kan skrivas
 $$
-\vnabla \cdot \vec{F} = k \delta^2(\vec{\rho}) \left( = k \delta(x) \delta(y) \right).
+\vnabla \cdot \vec{F} = k \delta^2(\vec{\rho}) \left( = k \delta^{(2)}(x,y) \right).
 $$
 Studera t.ex. normalytintegralen genom en cylinder med höjden $L$ runt linjekällan
 $$
-\int_S \vec{F} \cdot \mbox{d}\vec{S} = \int_{S+S_0+S_L} \vec{F} \cdot \mbox{d}\vec{S} = \int_V \vnabla \cdot \vec{F} \mbox{d} V = \int_0^L \mbox{d} z \int \mbox{d}x \mbox{d}y k \delta(x)\delta(y) = \int_0^L \mbox{d} z k = k L.
+\int_S \vec{F} \cdot \mbox{d}\vec{S} = \int_{S+S_0+S_L} \vec{F} \cdot \mbox{d}\vec{S} = \int_V \vnabla \cdot \vec{F} \mbox{d} V = \int_0^L \mbox{d} z \int \mbox{d}x \mbox{d}y k \delta^{(2)}(x,y) = \int_0^L \mbox{d} z k = k L.
 $$
 där vi först har slutit ytan genom att införa ytorna $S_0$ och $S_L$ som är cirkelskivor vid botten och toppen och som har normalytintegralen noll eftersom fältet är vinkelrät mot normalen.
 
@@ -361,7 +353,7 @@ $$
 $$
 där vi kan räkna ut $\mathrm{VL} = J$ (t.ex. för en cirkel runt virveltråden). För detta fält är det rotationen som är problematisk. Notera att detta är en vektor.
 $$
-\vnabla \times \vec{F} = J \delta^2(\vec{\rho}) \hat{z} = \vec{J} \delta(x)\delta(y).
+\vnabla \times \vec{F} = J \delta^2(\vec{\rho}) \hat{z} = \vec{J} \delta^{(2)}(x,y).
 $$
 
 !bnotice Avancerat exempel: tillämpning av deltafunktionen; Fouriertransform och ortogonalitet. 

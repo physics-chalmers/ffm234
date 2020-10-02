@@ -136,7 +136,7 @@ $$
 
 <br>
 <p>
-<center><h4>Aug 28, 2020</h4></center> <!-- date -->
+<center><h4>Oct 2, 2020</h4></center> <!-- date -->
 <br>
 <p>
 <div class="panel panel-danger">
@@ -550,15 +550,7 @@ Visas genom partiell integration med n&#229;gon av funktionssekvenserna som defi
 </ul>
 
 $$
-\delta^{(3)}(\vec{r}) = \delta(x) \delta(y) \delta(z).
-$$
-I sf&#228;riska koordinater blir detta
-$$
-\iiint f(\vec{r}) \delta^{(3)}(\vec{r} - \vec{r}_0) r^2 \sin\theta \mbox{d}r \mbox{d}\theta \mbox{d}\phi = f(\vec{r}_0).
-$$
-Med vissa f&#246;rbeh&#229;ll (se t.ex. upp f&#246;r punkten \( \vec{r}_0=0 \) i sf&#228;riska koordinater) kan deltafunktionen i kroklinjiga koordinater skrivas
-$$
-\delta^{(3)}(\vec{r} - \vec{r}_0) = \frac{1}{h_1(\vec{r}_0) h_2(\vec{r}_0) h_3(\vec{r}_0)} \delta(u_1-u_{1,0}) \delta(u_2-u_{2,0}) \delta(u_3-u_{3,0}).
+\delta^{(3)}(\vec{r}) = \delta^{(3)}(x,y,z).
 $$
 
 <p>
@@ -580,9 +572,9 @@ Vi startar med punktk&#228;llan i origo: \( \vec{F} = \frac{q}{4 \pi r^2} \hat{e
 $$
 \int_V \vnabla \cdot \vec{F} \mbox{d}V,
 $$
-som borde bli lika med \( q \) om \( V \) omfattar origo. Detta kan vi &#229;stadkomma genom att inf&#246;ra \( \vnabla \cdot \vec{F} = q \delta^3(x) = q \delta(x)\delta(y)\delta(z) \) eftersom
+som borde bli lika med \( q \) om \( V \) omfattar origo. Detta kan vi &#229;stadkomma genom att inf&#246;ra \( \vnabla \cdot \vec{F} = q \delta^{(3)}(\vec{r}) = q \delta^{(3)}(x,y,z) \) eftersom
 $$
-\int_V \delta(x)\delta(y)\delta(z) \mbox{d}x \mbox{d}y \mbox{d}z = 1.
+\int_V \delta^{(3)}(x,y,z) \mbox{d}x \mbox{d}y \mbox{d}z = 1.
 $$
 L&#229;t oss anv&#228;nda sf&#228;riska koordinater. Hur kan vi uttrycka \( \delta^{(3)}(\vec{r}) \) s&#229; att f&#246;ljande integralegenskap uppfylls?
 $$
@@ -654,11 +646,11 @@ d&#228;r vi noterar att \( \vec{\nabla} \) opererar p&#229; koordinaten \( \vec{
 Linjek&#228;llan \( \vec{F} = \frac{k}{2 \pi \rho} \hat{e}_\rho \) (motsvarar en punktk&#228;lla i \( D=2 \)).
 K&#228;llt&#228;theten kan skrivas
 $$
-\vnabla \cdot \vec{F} = k \delta^2(\vec{\rho}) \left( = k \delta(x) \delta(y) \right).
+\vnabla \cdot \vec{F} = k \delta^2(\vec{\rho}) \left( = k \delta^{(2)}(x,y) \right).
 $$
 Studera t.ex. normalytintegralen genom en cylinder med h&#246;jden \( L \) runt linjek&#228;llan
 $$
-\int_S \vec{F} \cdot \mbox{d}\vec{S} = \int_{S+S_0+S_L} \vec{F} \cdot \mbox{d}\vec{S} = \int_V \vnabla \cdot \vec{F} \mbox{d} V = \int_0^L \mbox{d} z \int \mbox{d}x \mbox{d}y k \delta(x)\delta(y) = \int_0^L \mbox{d} z k = k L.
+\int_S \vec{F} \cdot \mbox{d}\vec{S} = \int_{S+S_0+S_L} \vec{F} \cdot \mbox{d}\vec{S} = \int_V \vnabla \cdot \vec{F} \mbox{d} V = \int_0^L \mbox{d} z \int \mbox{d}x \mbox{d}y k \delta^{(2)}(x,y) = \int_0^L \mbox{d} z k = k L.
 $$
 d&#228;r vi f&#246;rst har slutit ytan genom att inf&#246;ra ytorna \( S_0 \) och \( S_L \) som &#228;r cirkelskivor vid botten och toppen och som har normalytintegralen noll eftersom f&#228;ltet &#228;r vinkelr&#228;t mot normalen.
 
@@ -670,7 +662,7 @@ $$
 $$
 d&#228;r vi kan r&#228;kna ut \( \mathrm{VL} = J \) (t.ex. f&#246;r en cirkel runt virveltr&#229;den). F&#246;r detta f&#228;lt &#228;r det rotationen som &#228;r problematisk. Notera att detta &#228;r en vektor.
 $$
-\vnabla \times \vec{F} = J \delta^2(\vec{\rho}) \hat{z} = \vec{J} \delta(x)\delta(y).
+\vnabla \times \vec{F} = J \delta^2(\vec{\rho}) \hat{z} = \vec{J} \delta^{(2)}(x,y).
 $$
 
 <p>
