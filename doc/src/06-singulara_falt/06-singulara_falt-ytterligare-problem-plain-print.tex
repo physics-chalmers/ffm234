@@ -2,9 +2,10 @@
 %% Automatically generated file from DocOnce source
 %% (https://github.com/hplgit/doconce/)
 %%
-%%
 
+% #define PREAMBLE
 
+% #ifdef PREAMBLE
 %-------------------- begin preamble ----------------------
 
 \documentclass[%
@@ -12,11 +13,11 @@ oneside,                 % oneside: electronic viewing, twoside: printing
 final,                   % draft: marks overfull hboxes, figures with paths
 10pt]{article}
 
-\listfiles               % print all files needed to compile this document
+\listfiles               %  print all files needed to compile this document
 
 \usepackage{relsize,makeidx,color,setspace,amsmath,amsfonts,amssymb}
 \usepackage[table]{xcolor}
-\usepackage{bm,microtype}
+\usepackage{bm,ltablex,microtype}
 
 \usepackage[pdftex]{graphicx}
 
@@ -44,7 +45,7 @@ final,                   % draft: marks overfull hboxes, figures with paths
     }
 %\hyperbaseurl{}   % hyperlinks are relative to this root
 
-\setcounter{tocdepth}{2}  % number chapter, section, subsection
+\setcounter{tocdepth}{2}  % levels in table of contents
 
 % prevent orhpans and widows
 \clubpenalty = 10000
@@ -53,17 +54,23 @@ final,                   % draft: marks overfull hboxes, figures with paths
 % --- end of standard preamble for documents ---
 
 
-% insert custom LaTeX commands...
+\usepackage[swedish]{babel}
 
 \raggedbottom
 \makeindex
+\usepackage[totoc]{idxlayout}   % for index in the toc
+\usepackage[nottoc]{tocbibind}  % for references/bibliography in the toc
 
 %-------------------- end preamble ----------------------
 
 \begin{document}
 
-% endif for #ifdef PREAMBLE
+% matching end for #ifdef PREAMBLE
+% #endif
 
+\newcommand{\exercisesection}[1]{\subsection*{#1}}
+
+\input{newcommands_keep}
 
 % ------------------- main content ----------------------
 
@@ -76,7 +83,7 @@ final,                   % draft: marks overfull hboxes, figures with paths
 \begin{center}
 {\LARGE\bf
 \begin{spacing}{1.25}
-FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
 \end{spacing}
 }
 \end{center}
@@ -84,7 +91,7 @@ FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar
 % ----------------- author(s) -------------------------
 
 \begin{center}
-{\bf \href{{http://fy.chalmers.se/subatom/nt/}}{Christian Forssén}, Institutionen för fundamental fysik, Chalmers, Göteborg, Sverige${}^{}$} \\ [0mm]
+{\bf \href{{http://fy.chalmers.se/subatom/tsp/}}{Christian Forssén}, Institutionen för fysik, Chalmers, Göteborg, Sverige${}^{}$} \\ [0mm]
 \end{center}
 
 \begin{center}
@@ -95,7 +102,7 @@ FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar
 
 % --- begin date ---
 \begin{center}
-Sep 30, 2015
+Oct 2, 2020
 \end{center}
 % --- end date ---
 
@@ -261,11 +268,11 @@ Vi tar nu hand om ytintegralerna.  Först $S_\epsilon$, där $\rho = \epsilon$ p
   \int_{S_\epsilon} \vec{F} \cdot \mbox{d}\vec{S} &= \int_{S_\epsilon}  F_0 \left[
 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right) \hat{e}_{\rho} + 
 \frac{z}{a}\hat{e}_{z}\right) \cdot \left(-\hat{e}_{\rho}\right) \mbox{d}S \nonumber \\
-& = \int_{S_\epsilon} F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
-\mbox{d}S = F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
+& = -\int_{S_\epsilon} F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
+\mbox{d}S = -F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
 \int_{S_\epsilon} \mbox{d}S \nonumber \\
-&= F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right) 2\pi \epsilon 2\sqrt{2}
-a \to 4\sqrt{2} \pi F_0 a^2 \,\,\,\,\mbox{då }\,\,\,\,\epsilon \to 0
+&= -F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right) 2\pi \epsilon 2\sqrt{2}
+a \to - 4\sqrt{2} \pi F_0 a^2 \,\,\,\,\mbox{då }\,\,\,\,\epsilon \to 0
 \end{align}
 På ytan $S_+$  har vi
 \begin{equation}
@@ -275,13 +282,13 @@ På ytan $S_+$  har vi
 \end{equation}
 På $S_+$ är $z = \sqrt{2}a$, vilket också är skivans ytterradie
 \begin{equation}
-  \int_{S_+} \vec{F} \cdot \mbox{d}\vec{S} = F_0 \sqrt{2} \pi 2a^2 = 2\sqrt{2} a^2F_0.\end{equation}
+  \int_{S_+} \vec{F} \cdot \mbox{d}\vec{S} = F_0 \sqrt{2} \pi 2a^2 = 2\sqrt{2} \pi a^2F_0.\end{equation}
 Vi inser att av symmetriskäl får integralen över $S_-$ samma värde.
 
 Summerar vi nu ihop integralerna får vi
 \begin{equation}
-  \int_S \vec{F} \cdot \mbox{d}\vec{S} = 20 \sqrt{2} F_0 a^2 - 4 \sqrt{2} F_0 a^2
-- 2 \times 2 \sqrt{2} F_0 a^2 = 12\sqrt{2} F_0 a^2.
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} = 20 \sqrt{2} \pi F_0 a^2 - ( - 4 \sqrt{2} \pi F_0 a^2)
+- 2 \times 2 \sqrt{2} \pi F_0 a^2 = 20 \sqrt{2} \pi F_0 a^2.
 \end{equation}
 
 ---------------------------------------------
@@ -358,8 +365,7 @@ Det följer att integralen blir
 
 % ------------------- end of main content ---------------
 
-
-\printindex
-
+% #ifdef PREAMBLE
 \end{document}
+% #endif
 

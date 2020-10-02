@@ -1,4 +1,4 @@
-TITLE: FFM232, Klassisk fysik och vektorfält - Föreläsningsanteckningar
+TITLE: FFM234, Klassisk fysik och vektorfält - Föreläsningsanteckningar
 AUTHOR: "Christian Forssén":"http://fy.chalmers.se/subatom/tsp/", Institutionen för fysik, Chalmers, Göteborg, Sverige 
 DATE: today
 
@@ -185,11 +185,11 @@ Vi tar nu hand om ytintegralerna.  Först $S_\epsilon$, där $\rho = \epsilon$ p
   \int_{S_\epsilon} \vec{F} \cdot \mbox{d}\vec{S} &= \int_{S_\epsilon}  F_0 \left[
 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right) \hat{e}_{\rho} + 
 \frac{z}{a}\hat{e}_{z}\right) \cdot \left(-\hat{e}_{\rho}\right) \mbox{d}S \nonumber \\
-& = \int_{S_\epsilon} F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
-\mbox{d}S = F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
+& = -\int_{S_\epsilon} F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
+\mbox{d}S = -F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right)
 \int_{S_\epsilon} \mbox{d}S \nonumber \\
-&= F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right) 2\pi \epsilon 2\sqrt{2}
-a \to 4\sqrt{2} \pi F_0 a^2 \,\,\,\,\mbox{då }\,\,\,\,\epsilon \to 0
+&= -F_0 \left(\frac{a}{\epsilon} + \frac{\epsilon}{a}\right) 2\pi \epsilon 2\sqrt{2}
+a \to - 4\sqrt{2} \pi F_0 a^2 \,\,\,\,\mbox{då }\,\,\,\,\epsilon \to 0
 \end{align}
 !et
 På ytan $S_+$  har vi
@@ -203,15 +203,15 @@ På ytan $S_+$  har vi
 På $S_+$ är $z = \sqrt{2}a$, vilket också är skivans ytterradie
 !bt
 \begin{equation}
-  \int_{S_+} \vec{F} \cdot \mbox{d}\vec{S} = F_0 \sqrt{2} \pi 2a^2 = 2\sqrt{2} a^2F_0.\end{equation}
+  \int_{S_+} \vec{F} \cdot \mbox{d}\vec{S} = F_0 \sqrt{2} \pi 2a^2 = 2\sqrt{2} \pi a^2F_0.\end{equation}
 !et
 Vi inser att av symmetriskäl får integralen över $S_-$ samma värde.
 
 Summerar vi nu ihop integralerna får vi
 !bt
 \begin{equation}
-  \int_S \vec{F} \cdot \mbox{d}\vec{S} = 20 \sqrt{2} F_0 a^2 - 4 \sqrt{2} F_0 a^2
-- 2 \times 2 \sqrt{2} F_0 a^2 = 12\sqrt{2} F_0 a^2.
+  \int_S \vec{F} \cdot \mbox{d}\vec{S} = 20 \sqrt{2} \pi F_0 a^2 - ( - 4 \sqrt{2} \pi F_0 a^2)
+- 2 \times 2 \sqrt{2} \pi F_0 a^2 = 20 \sqrt{2} \pi F_0 a^2.
 \end{equation}
 !et
 
