@@ -8,13 +8,13 @@ function inIframe () {
 }
 
 // course-specific URL
-var courseURL = "https://chalmers.instructure.com/courses/10268/";
+var courseURL = "https://chalmers.instructure.com/courses/15292/";
 
 // Course-specific url if the current page is within an iFrame.
 // Relative link to file if the current page is the top window
 var kursmaterial = "";
 if (inIframe()) {
-	kursmaterial = courseURL + "external_tools/562";
+	kursmaterial = courseURL + "external_tools/743";
 } else {
 	kursmaterial = 'material.html';
 }
@@ -23,12 +23,12 @@ var syllabus = "";
 if (inIframe()) {
 	syllabus = courseURL + "assignments/syllabus";
 } else {
-	syllabus = 'syllabus.html';
+	syllabus = 'syllabus2021.html';
 }
 
 var veckoplanering = "";
 if (inIframe()) {
-	veckoplanering = courseURL + "external_tools/566";
+	veckoplanering = courseURL + "external_tools/741";
 } else {
 	veckoplanering = 'schedule.html';
 }
@@ -40,7 +40,7 @@ if (inIframe()) {
 	distansundervisning = 'distansundervisning.html';
 }
 
-var datorlab1 = "https://chalmers.instructure.com/courses/10268/assignments/19703";
+var datorlab1 = "https://chalmers.instructure.com/courses/15292/assignments/19703";
 
-var datorlab2 = "https://chalmers.instructure.com/courses/10268/assignments/19704";
+var datorlab2 = "https://chalmers.instructure.com/courses/15292/assignments/19704";
 
